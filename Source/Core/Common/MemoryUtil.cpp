@@ -22,6 +22,9 @@
 #include <sys/types.h>
 #if defined __APPLE__ || defined __FreeBSD__ || defined __OpenBSD__ || defined __NetBSD__
 #include <sys/sysctl.h>
+#ifdef _BULLETPROOF_JIT
+#include <mach/mach.h>
+#endif
 #elif defined __HAIKU__
 #include <OS.h>
 #else
@@ -40,7 +43,7 @@ void* AllocateExecutableMemory(size_t size)
   void* ptr = VirtualAlloc(nullptr, size, MEM_COMMIT, PAGE_EXECUTE_READWRITE);
 #else
   int map_flags = MAP_ANON | MAP_PRIVATE;
-#if defined(__APPLE__)
+#if defined(__APPLE__) && !defined(IPHONEOS)
   // This check is in place to prepare for x86_64 MAP_JIT support. While MAP_JIT did exist
   // prior to 10.14, it had restrictions on the number of JIT allocations that were removed
   // in 10.14.
@@ -49,7 +52,7 @@ void* AllocateExecutableMemory(size_t size)
 #endif
   int prot_flags = PROT_READ | PROT_EXEC;
 
-#ifndef IPHONEOS
+#ifndef _BULLETPROOF_JIT
   prot_flags |= PROT_WRITE;
 #endif
 
@@ -140,6 +143,34 @@ void JITPageWriteDisableExecuteEnable()
   }
 #endif
 }
+
+#ifdef _BULLETPROOF_JIT
+void* RemapExecutableRegion(void* region, size_t size)
+{
+  vm_address_t new_region;
+  vm_address_t target = reinterpret_cast<vm_address_t>(region);
+  vm_prot_t cur_protection = 0;
+  vm_prot_t max_protection = 0;
+
+  kern_return_t retval =
+      vm_remap(mach_task_self(), &new_region, size, 0, true, mach_task_self(), target, false,
+               &cur_protection, &max_protection, VM_INHERIT_DEFAULT);
+  if (retval != KERN_SUCCESS)
+  {
+    PanicAlert("vm_remap failed for RemapExecutableRegion (0x%x)", retval);
+    return nullptr;
+  }
+
+  void* ptr = reinterpret_cast<void*>(new_region);
+
+  if (mprotect(ptr, size, PROT_READ | PROT_WRITE) != 0)
+  {
+    PanicAlertFmt("RemapExecutableRegion failed!\nmprotect: {}", LastStrerrorString());
+  }
+
+  return ptr;
+}
+#endif
 
 void* AllocateMemoryPages(size_t size)
 {

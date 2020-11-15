@@ -27,6 +27,11 @@ struct ScopedJITPageWriteAndNoExecute
   ScopedJITPageWriteAndNoExecute() { JITPageWriteEnableExecuteDisable(); }
   ~ScopedJITPageWriteAndNoExecute() { JITPageWriteDisableExecuteEnable(); }
 };
+
+#ifdef _BULLETPROOF_JIT
+void* RemapExecutableRegion(void* region, size_t size);
+#endif
+
 void* AllocateMemoryPages(size_t size);
 void FreeMemoryPages(void* ptr, size_t size);
 void* AllocateAlignedMemory(size_t size, size_t alignment);

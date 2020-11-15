@@ -290,7 +290,12 @@ bool JitArm64::HandleFastmemFault(uintptr_t access_address, SContext* ctx)
     return false;
 
   const Common::ScopedJITPageWriteAndNoExecute enable_jit_page_writes;
+
+#ifdef _BULLETPROOF_JIT
+  ARM64XEmitter emitter((u8*)fault_location, GetBpDifference());
+#else
   ARM64XEmitter emitter((u8*)fault_location);
+#endif
 
   emitter.BL(slow_handler_iter->second.slowmem_code);
 
