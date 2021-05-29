@@ -20,8 +20,6 @@
 
 #ifdef _WIN32
 #include <Windows.h>
-#elif defined(IPHONEOS)
-#include <libkern/OSCacheControl.h>
 #endif
 #ifdef __APPLE__
 #include <libkern/OSCacheControl.h>
@@ -298,13 +296,6 @@ void ARM64XEmitter::SetCodePtr(u8* ptr, u8* end, bool write_failed)
   m_lastCacheFlushEnd = ptr;
 }
 
-#ifdef _BULLETPROOF_JIT
-void ARM64XEmitter::SetBpDifference(long difference)
-{
-  m_writable_difference = difference;
-}
-#endif
-
 const u8* ARM64XEmitter::GetCodePtr() const
 {
   return m_code;
@@ -314,13 +305,6 @@ u8* ARM64XEmitter::GetWritableCodePtr()
 {
   return m_code;
 }
-
-#ifdef _BULLETPROOF_JIT
-long ARM64XEmitter::GetBpDifference()
-{
-  return m_writable_difference;
-}
-#endif
 
 void ARM64XEmitter::ReserveCodeSpace(u32 bytes)
 {
@@ -346,22 +330,13 @@ u8* ARM64XEmitter::AlignCodePage()
 
 void ARM64XEmitter::Write32(u32 value)
 {
-  u8* dest = m_code;
-
-#ifdef _BULLETPROOF_JIT
-  dest += m_writable_difference;
-#endif
-
-  std::memcpy(dest, &value, sizeof(u32));
+  std::memcpy(m_code, &value, sizeof(u32));
   m_code += sizeof(u32);
 }
 
 void ARM64XEmitter::FlushIcache()
 {
   FlushIcacheSection(m_lastCacheFlushEnd, m_code);
-#ifdef _BULLETPROOF_JIT
-  FlushIcacheSection(m_lastCacheFlushEnd + m_writable_difference, m_code + m_writable_difference);
-#endif
   m_lastCacheFlushEnd = m_code;
 }
 
@@ -941,13 +916,7 @@ void ARM64XEmitter::SetJumpTarget(FixupBranch const& branch)
     break;
   }
 
-  u8* dest = branch.ptr;
-
-#ifdef _BULLETPROOF_JIT
-  dest += m_writable_difference;
-#endif
-
-  std::memcpy(dest, &inst, sizeof(inst));
+  std::memcpy(branch.ptr, &inst, sizeof(inst));
 }
 
 FixupBranch ARM64XEmitter::CBZ(ARM64Reg Rt)
