@@ -70,7 +70,10 @@ Motor::~Motor() API_AVAILABLE(ios(13.0))
     NSError* error;
     [this->m_haptic_player stopAtTime:CHHapticTimeImmediate error:&error];
 
-    LOG_NSERROR("Failed to stop haptics on Motor destruction: %s", error);
+    if (error)
+    {
+      LOG_NSERROR("Failed to stop haptics on Motor destruction: %s", error);
+    }
   }
 
   this->m_haptic_engine = nil;
