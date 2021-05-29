@@ -6,6 +6,7 @@
 
 #import "Common/MsgHandler.h"
 
+#import "Core/Config/MainSettings.h"
 #import "Core/ConfigManager.h"
 
 @interface ConfigInterfaceViewController ()
@@ -31,8 +32,8 @@
   [super viewWillAppear:animated];
   
   [self.m_confirm_stop_switch setOn:SConfig::GetInstance().bConfirmStop];
-  [self.m_panic_handlers_switch setOn:SConfig::GetInstance().bUsePanicHandlers];
-  [self.m_osd_switch setOn:SConfig::GetInstance().bOnScreenDisplayMessages];
+  [self.m_panic_handlers_switch setOn:Config::Get(Config::MAIN_USE_PANIC_HANDLERS)];
+  [self.m_osd_switch setOn:Config::Get(Config::MAIN_OSD_MESSAGES)];
   [self.m_center_image_switch setOn:[[NSUserDefaults standardUserDefaults] boolForKey:@"do_not_raise_rendering_view"]];
   [self.m_status_bar_switch setOn:[[NSUserDefaults standardUserDefaults] boolForKey:@"show_status_bar"]];
 }
@@ -44,13 +45,13 @@
 
 - (IBAction)UsePanicHandlersChanged:(id)sender
 {
-  SConfig::GetInstance().bUsePanicHandlers = [self.m_panic_handlers_switch isOn];
+  Config::SetBaseOrCurrent(Config::MAIN_USE_PANIC_HANDLERS, [self.m_panic_handlers_switch isOn]);
   Common::SetEnableAlert([self.m_panic_handlers_switch isOn]);
 }
 
 - (IBAction)ShowOsdChanged:(id)sender
 {
-  SConfig::GetInstance().bOnScreenDisplayMessages = [self.m_osd_switch isOn];
+  Config::SetBaseOrCurrent(Config::MAIN_OSD_MESSAGES, [self.m_osd_switch isOn]);
 }
 
 - (IBAction)CenterImageChanged:(id)sender
