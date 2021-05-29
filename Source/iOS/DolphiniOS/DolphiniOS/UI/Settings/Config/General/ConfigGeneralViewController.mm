@@ -31,9 +31,9 @@
 {
   [super viewWillAppear:animated];
   
-  [self.m_dual_core_switch setOn:SConfig::GetInstance().bCPUThread];
-  [self.m_cheats_switch setOn:SConfig::GetInstance().bEnableCheats];
-  [self.m_mismatched_region_switch setOn:SConfig::GetInstance().bOverrideRegionSettings];
+  [self.m_dual_core_switch setOn:Config::Get(Config::MAIN_CPU_THREAD)];
+  [self.m_cheats_switch setOn:Config::Get(Config::MAIN_ENABLE_CHEATS)];
+  [self.m_mismatched_region_switch setOn:Config::Get(Config::MAIN_OVERRIDE_REGION_SETTINGS)];
   [self.m_change_discs_switch setOn:Config::Get(Config::MAIN_AUTO_DISC_CHANGE)];
   [self.m_statistics_switch setOn:Config::GetBase(Config::MAIN_ANALYTICS_ENABLED)];
   [self.m_crash_report_switch setOn:[[NSUserDefaults standardUserDefaults] boolForKey:@"crash_reporting_enabled"]];
@@ -51,19 +51,16 @@
 
 - (IBAction)DualCoreChanged:(id)sender
 {
-  SConfig::GetInstance().bCPUThread = [self.m_dual_core_switch isOn];
   Config::SetBaseOrCurrent(Config::MAIN_CPU_THREAD, [self.m_dual_core_switch isOn]);
 }
 
 - (IBAction)EnableCheatsChanged:(id)sender
 {
-  SConfig::GetInstance().bEnableCheats = [self.m_cheats_switch isOn];
   Config::SetBaseOrCurrent(Config::MAIN_ENABLE_CHEATS, [self.m_cheats_switch isOn]);
 }
 
 - (IBAction)MismatchedRegionChanged:(id)sender
 {
-  SConfig::GetInstance().bOverrideRegionSettings = [self.m_mismatched_region_switch isOn];
   Config::SetBaseOrCurrent(Config::MAIN_OVERRIDE_REGION_SETTINGS,
                            [self.m_mismatched_region_switch isOn]);
 }
