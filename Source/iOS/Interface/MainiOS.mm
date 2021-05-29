@@ -3,6 +3,7 @@
 // Refer to the license.txt file included.
 
 #include <string>
+#include <vector>
 
 #include <MetalKit/MetalKit.h>
 
@@ -131,6 +132,13 @@ std::vector<std::string> Host_GetPreferredLocales()
 {
   // TODO
   return {};
+}
+
+bool Host_RendererHasFullFocus()
+{
+  // An iOS app most likely has full focus of the screen.
+  // TODO: iPadOS multitasking?
+  return true;
 }
 
 static bool MsgAlert(const char* caption, const char* text, bool yes_no, Common::MsgType /*style*/)
