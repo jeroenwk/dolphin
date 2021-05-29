@@ -25,7 +25,7 @@
 {
   [super viewWillAppear:animated];
   
-  self.navigationItem.title = CppToFoundationString(self.m_game_file->GetUniqueIdentifier());
+  self.navigationItem.title = CppToFoundationString(self.m_game_file->GetGameID());
 }
 
 - (IBAction)DonePressed:(id)sender
