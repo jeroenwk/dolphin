@@ -260,11 +260,9 @@
   NSInteger launch_times = [[NSUserDefaults standardUserDefaults] integerForKey:@"launch_times"];
   if (launch_times == 0)
   {
-    SConfig::GetInstance().cpu_core = correct_core;
-    Config::SetBaseOrCurrent(Config::MAIN_CPU_CORE, correct_core);
+    Config::SetBase(Config::MAIN_CPU_CORE, correct_core);
     
     Config::Save();
-    SConfig::GetInstance().SaveSettings();
   }
   else
   {
@@ -285,8 +283,7 @@
       if (core_type != correct_core)
       {
         // Reset the CPUCore
-        SConfig::GetInstance().cpu_core = correct_core;
-        Config::SetBaseOrCurrent(Config::MAIN_CPU_CORE, correct_core);
+        Config::SetBase(Config::MAIN_CPU_CORE, correct_core);
         
         [nav_controller pushViewController:[[InvalidCpuCoreNoticeViewController alloc] initWithNibName:@"InvalidCpuCoreNotice" bundle:nil] animated:true];
       }
