@@ -12,11 +12,9 @@
 
 static bool s_has_jit = false;
 static bool s_has_jit_with_ptrace = false;
-static bool s_has_jit_with_psychicpaper = false;
 static bool s_is_arm64e = false;
 static DOLJitError s_acquisition_error = DOLJitErrorNone;
 static char s_acquisition_error_message[256];
-
 
 bool GetCpuArchitecture()
 {
@@ -120,35 +118,7 @@ void AcquireJit()
   }
   else
   {
-    // Check for psychicpaper - should be able to use proper fastmem
-    if (CanEnableFastmem() && GetFastmemType() == DOLFastmemTypeProper)
-    {
-      s_has_jit = true;
-      s_has_jit_with_psychicpaper = true;
-    }
-    else
-    {
-      // Something is up with the entitlements.
-      s_acquisition_error = DOLJitErrorImproperlySigned;
-      
-      DOLFastmemType type = GetFastmemType();
-      if (!CanEnableFastmem())
-      {
-        SetJitAcquisitionErrorMessage("Fastmem cannot be enabled. psychicpaper builds should allow fastmem to be enabled.");
-      }
-      else if (type == DOLFastmemTypeNone)
-      {
-        SetJitAcquisitionErrorMessage("DOLFastmemTypeNone was found. This is supposed to be impossible.");
-      }
-      else if (type == DOLFastmemTypeHacky)
-      {
-        SetJitAcquisitionErrorMessage("Hacky fastmem is the 'maximum fastmem level' that is supported. psychicpaper builds should allow proper fastmem instead of only hacky fastmem.");
-      }
-      else
-      {
-        SetJitAcquisitionErrorMessage("Unknown error.");
-      }
-    }
+    s_acquisition_error = DOLJitErrorNeedUpdate;
   }
 #else // jailbroken
   bool success = false;
@@ -184,11 +154,6 @@ bool HasJit()
 bool HasJitWithPTrace()
 {
   return s_has_jit_with_ptrace;
-}
-
-bool HasJitWithPsychicpaper()
-{
-  return s_has_jit_with_psychicpaper;
 }
 
 DOLJitError GetJitAcqusitionError()
