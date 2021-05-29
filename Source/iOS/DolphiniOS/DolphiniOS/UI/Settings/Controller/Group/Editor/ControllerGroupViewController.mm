@@ -21,6 +21,10 @@
 #define SECTION_BUTTONS 1
 #define SECTION_NUMERIC_SETTINGS 2
 
+constexpr auto INPUT_DETECT_INITIAL_TIME = std::chrono::seconds(3);
+constexpr auto INPUT_DETECT_CONFIRMATION_TIME = std::chrono::milliseconds(0);
+constexpr auto INPUT_DETECT_MAXIMUM_TIME = std::chrono::seconds(5);
+
 @interface ControllerGroupViewController ()
 
 @end
@@ -180,9 +184,10 @@
     [self.tabBarController.tabBar setUserInteractionEnabled:false];
     
     dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0), ^{
-      const auto [device, input] = g_controller_interface.DetectInput(3000, {self.m_controller->GetDefaultDevice().ToString()});
-        
-      if (!input)
+      auto detections = g_controller_interface.DetectInput({self.m_controller->GetDefaultDevice().ToString()}, INPUT_DETECT_INITIAL_TIME, INPUT_DETECT_CONFIRMATION_TIME, INPUT_DETECT_MAXIMUM_TIME);
+      
+      // TODO: this probably isn't correct
+      if (detections.size() != 1)
       {
         dispatch_sync(dispatch_get_main_queue(), ^{
           [self StopEditingCell:cell];
@@ -191,7 +196,7 @@
         return;
       }
       
-      std::string expression = "`" + input->GetName() + "`";
+      std::string expression = "`" + detections[0].input->GetName() + "`";
       cell.m_reference->SetExpression(expression);
       cell.m_controller->UpdateSingleControlReference(g_controller_interface, cell.m_reference);
       
