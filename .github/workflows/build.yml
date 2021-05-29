@@ -8,7 +8,7 @@ on:
 
 jobs:
   build-jb:
-    runs-on: macos-10.15
+    runs-on: macos-11
     
     steps:
     - uses: actions/checkout@v2
@@ -89,7 +89,7 @@ jobs:
         s3cmd put ${{ env.JB_PATREON_DEB_PATH }}/DolphiniOS.deb ${{ env.BUCKET_ROOT_PATH }}/DolphiniOS-JB-Beta-${{ github.run_number }}.deb ${{ env.S3CMD_ARGS }}
   
   build-njb:
-    runs-on: macos-10.15
+    runs-on: macos-11
     
     steps:
     - uses: actions/checkout@v2
