@@ -10,7 +10,6 @@
 #import "Core/ConfigManager.h"
 #import "Core/Core.h"
 #import "Core/HW/SystemTimers.h"
-#import "Core/PowerPC/PowerPC.h"
 
 @interface ConfigAdvancedViewController ()
 
