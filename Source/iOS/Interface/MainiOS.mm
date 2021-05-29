@@ -127,6 +127,12 @@ void Host_TitleChanged()
   [s_view_controller RunningTitleUpdated];
 }
 
+std::vector<std::string> Host_GetPreferredLocales()
+{
+  // TODO
+  return {};
+}
+
 static bool MsgAlert(const char* caption, const char* text, bool yes_no, Common::MsgType /*style*/)
 {
   @autoreleasepool
