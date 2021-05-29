@@ -21,7 +21,7 @@ Launching these titles may also fix the issues." = "
 启动这些游戏也许可以解决此问题。";
 " (Disc %1)" = " (光盘 %1)";
 "! Not" = "! 非";
-"\"%s\" is an invalid GCM/ISO file, or is not a GC/Wii ISO." = "\"%s\" 不是一个有效的 GCM/ISO 文件，或者不是一个 GC/Wii 镜像。";
+"\"{0}\" is an invalid GCM/ISO file, or is not a GC/Wii ISO." = "“{0}” 不是一个有效的 GCM/ISO 文件，或者不是一个 GC/Wii 镜像。";
 "%" = "%";
 "% Modulo" = "% 模除";
 "%1
@@ -33,6 +33,7 @@ wants to join your party." = "%1
 "%1 (Copy)" = "%1 (复制)";
 "%1 (Disc %2, Revision %3)" = "%1 (光盘 %2, 修订版 %3)";
 "%1 (Revision %3)" = "%1 (修订版 %3)";
+"%1 (Stock)" = "%1 (库)";
 "%1 (recommended)" = "%1 (推荐)";
 "%1 (slow)" = "%1 (慢)";
 "%1 FIFO bytes
@@ -40,7 +41,6 @@ wants to join your party." = "%1
 %3 frames" = "%1 FIFO 字节
 %2 存储字节
 %3 帧";
-"%1 Free Blocks; %2 Free Dir Entries" = "%1 空闲区块; %2 空闲目录项目";
 "%1 Graphics Configuration" = "%1 图形配置";
 "%1 Match(es)" = "%1 处匹配";
 "%1 doesn't support this feature on your system." = "%1 在你的系统上不支持此特性。";
@@ -57,19 +57,13 @@ Current Frame: %3" = "%1 帧
 "%1 session found" = "已找到 %1 个会话";
 "%1 sessions found" = "已找到 %1 个会话";
 "%1% (Normal Speed)" = "%1%（正常速度）";
+"%1: %2" = "%1: %2";
 "%1MB (MEM1)" = "%1MB (内存1)";
 "%1MB (MEM2)" = "%1MB (内存2)";
 "%1[%2]: %3" = "%1[%2]: %3";
 "%1[%2]: %3 %" = "%1[%2]: %3 %";
 "%1[%2]: %3/%4 MiB" = "%1[%2]: %3/%4 MiB";
 "%1x Native (%2x%3)" = "%1x 原生 (%2x%3)";
-"%i of %i blocks. Compression ratio %i%%" = "区块 %i，共 %i，压缩率 %i%%";
-"%s (Masterpiece)" = "%s （杰作）";
-"%s IPL found in %s directory. The disc might not be recognized" = "%s IPL 位于 %s 目录中，光盘可能无法识别。";
-"%s is not a directory, failed to move to *.original.
- Verify your write permissions or move the file outside of Dolphin" = "%s 不是一个目录，未能移动至 *.original.
-请重新确认你的写入请求或者将其移动至 Dolphin 之外。";
-"%s was not a directory, moved to *.original" = "%s 不是一个目录，已移动至 *.original.";
 "& And" = "& 与";
 "About" = "关于";
 "Add Memory Breakpoint" = "添加内存断点";
@@ -97,10 +91,11 @@ Current Frame: %3" = "%1 帧
 "Edit..." = "编辑...";
 "Eject Disc" = "弹出光盘";
 "Emulation" = "模拟";
-"Export..." = "导出...";
+"Export as .gci..." = "导出为 .gci ...";
 "File" = "文件";
 "Font..." = "字体...";
 "Frame Advance" = "逐帧播放";
+"Free Look Settings" = "自由视点设置";
 "Generate Symbols From" = "生成符号自";
 "GitHub Repository" = "GitHub 资源库";
 "Graphics Settings" = "图形设置";
@@ -116,6 +111,7 @@ Current Frame: %3" = "%1 帧
 "Memory" = "内存";
 "Movie" = "影片";
 "Network" = "网络";
+"No" = "否";
 "Open..." = "打开...";
 "Options" = "选项";
 "Patch HLE Functions" = "修补 HLE 功能函数";
@@ -139,6 +135,7 @@ Current Frame: %3" = "%1 帧
 "Watch" = "监视";
 "Website" = "网站";
 "Wiki" = "百科";
+"Yes" = "是";
 "'%1' not found, no symbol names generated" = "找不到 '%1'，未生成符号名";
 "'%1' not found, scanning for common functions instead" = "找不到 '%1'，改为扫描常用函数";
 "(None)" = "(无)";
@@ -188,15 +185,15 @@ Current Frame: %3" = "%1 帧
 "A NetPlay Session is already in progress!" = "已经有一个联机会话正在进行！";
 "A different version of this title is already installed on the NAND.
 
-Installed version: %u
-WAD version: %u
+Installed version: {0}
+WAD version: {1}
 
 Installing this WAD will replace it irreversibly. Continue?" = "NAND 上已经安装了该游戏的不同版本。
 
-已安装版本：%u
-WAD 版本：%u
+已安装版本：{0}
+WAD 版本：{1}
 
-安装此 WAD 替换是不可逆转的。 是否继续？";
+安装此 WAD 替换是不可逆转的。是否继续？";
 "A disc is already about to be inserted." = "光盘已可插入。";
 "A save state cannot be loaded without specifying a game to launch." = "载入保存状态必须指定要启动的游戏";
 "A shutdown is already in progress. Unsaved data may be lost if you stop the current emulation before it completes. Force stop?" = "关闭命令已在进行中。如果在程序完成前停止当前模拟则未保存的数据会丢失。强制停止？";
@@ -234,51 +231,53 @@ Wii 遥控器的联机还在实验阶段，可能不会正常工作。
 Parity Check Failed
 
 Culprit Code:
-%s" = "Action Replay 代码解密错误:
+{0}" = "Action Replay 代码解密错误:
 奇偶校验失败
 
 错误代码:
-%s";
-"Action Replay Error: Invalid size (%08x : address = %08x) in Add Code (%s)" = "Action Replay 错误: 无效大小 (%08x : 地址 = %08x) 于 添加代码 (%s)";
-"Action Replay Error: Invalid size (%08x : address = %08x) in Fill and Slide (%s)" = "Action Replay 错误: 无效大小 (%08x : 地址 = %08x) 于 填充和滑动 (%s)";
-"Action Replay Error: Invalid size (%08x : address = %08x) in Ram Write And Fill (%s)" = "Action Replay 错误: 无效大小 (%08x : 地址 = %08x) 于 内存写入和填充 (%s)";
-"Action Replay Error: Invalid size (%08x : address = %08x) in Write To Pointer (%s)" = "Action Replay 错误: 无效大小 (%08x : 地址 = %08x) 于 写入到指针 (%s)";
-"Action Replay Error: Invalid value (%08x) in Memory Copy (%s)" = "Action Replay 错误: 无效数值 (%08x) 于 内存复制 (%s)";
-"Action Replay Error: Master Code and Write To CCXXXXXX not implemented (%s)
-Master codes are not needed. Do not use master codes." = "Action Replay 错误: 主代码与写入到 CCXXXXXX 尚未实现(%s)
+{0}";
+"Action Replay Error: Invalid size ({0:08x} : address = {1:08x}) in Add Code ({2})" = "Action Replay 错误: 无效大小 ({0:08x} : 地址 = {1:08x}) 于 添加代码 ({2})";
+"Action Replay Error: Invalid size ({0:08x} : address = {1:08x}) in Fill and Slide ({2})" = "Action Replay 错误: 无效大小 ({0:08x} : 地址 = {1:08x}) 于 填充和滑动 ({2})";
+"Action Replay Error: Invalid size ({0:08x} : address = {1:08x}) in Ram Write And Fill ({2})" = "Action Replay 错误: 无效大小 ({0:08x} : 地址 = {1:08x}) 于 内存写入和填充 ({2})";
+"Action Replay Error: Invalid size ({0:08x} : address = {1:08x}) in Write To Pointer ({2})" = "Action Replay 错误: 无效大小 ({0:08x} : 地址 = {1:08x}) 于 写入到指针 ({2})";
+"Action Replay Error: Invalid value ({0:08x}) in Memory Copy ({1})" = "Action Replay 错误: 无效数值 ({0:08x}) 于 内存复制 ({1})";
+"Action Replay Error: Master Code and Write To CCXXXXXX not implemented ({0})
+Master codes are not needed. Do not use master codes." = "Action Replay 错误: 主代码与写入到 CCXXXXXX 尚未实现 ({0})
 不需要主代码。请不要使用主代码。";
-"Action Replay Error: invalid AR code line: %s" = "Action Replay 错误: 无效 AR 代码行: %s";
-"Action Replay: Conditional Code: Invalid Size %08x (%s)" = "Action Replay: 条件代码: 无效大小 %08x (%s)";
-"Action Replay: Invalid Normal Code Type %08x (%s)" = "Action Replay: 无效正常代码类型 %08x (%s)";
-"Action Replay: Normal Code %i: Invalid subtype %08x (%s)" = "Action Replay: 正常代码 %i: 无效子类型 %08x (%s)";
-"Action Replay: Normal Code 0: Invalid Subtype %08x (%s)" = "Action Replay: 正常代码 0: 无效子类型 %08x (%s)";
+"Action Replay Error: invalid AR code line: {0}" = "Action Replay 错误: 无效 AR 代码行: {0}";
+"Action Replay: Conditional Code: Invalid Size {0:08x} ({1})" = "Action Replay: 条件代码: 无效大小 {0:08x} ({1})";
+"Action Replay: Invalid Normal Code Type {0:08x} ({1})" = "Action Replay: 无效正常代码类型 {0:08x} ({1})";
+"Action Replay: Normal Code 0: Invalid Subtype {0:08x} ({1})" = "Action Replay: 正常代码 0: 无效子类型 {0:08x} ({1})";
+"Action Replay: Normal Code {0}: Invalid subtype {1:08x} ({2})" = "Action Replay: 正常代码 {0}: 无效子类型 {1:08x} ({2})";
 "Activate NetPlay Chat" = "激活联机聊天";
 "Active" = "激活";
 "Active thread queue" = "活动线程队列";
 "Active threads" = "活动线程";
+"Adapter" = "适配器";
 "Adapter Detected" = "检测到适配器";
 "Adapter" = "适配器";
 "Add" = "添加";
 "Add breakpoint" = "添加断点";
+"Add New DSU Server" = "添加新的 DSU 服务器";
 "Add New USB Device" = "添加新的 USB 设备";
+"Add Shortcut to Desktop" = "添加快捷方式到桌面";
 "Add a Breakpoint" = "添加一个断点";
 "Add a Memory Breakpoint" = "添加内存断点";
 "Add memory breakpoint" = "添加内存断点";
+"Add memory breakpoint" = "添加内存断点";
 "Add to watch" = "添加到监视";
 "Add to Watch" = "添加到监视";
+"Add to watch" = "添加到监视";
 "Add..." = "添加...";
 "Address" = "地址";
 "Address Space" = "地址空间";
 "Address" = "地址";
-"Adjusts the accuracy at which the GPU receives texture updates from RAM.
+"Adjusts the accuracy at which the GPU receives texture updates from RAM.<br><br>The \"Safe\" setting eliminates the likelihood of the GPU missing texture updates from RAM. Lower accuracies cause in-game text to appear garbled in certain games.<br><br><dolphin_emphasis>If unsure, select the rightmost value.</dolphin_emphasis>" = "调整 GPU 接收内存中的纹理更新的精确度。<br><br>选择“安全”能防止 GPU 错过内存中纹理更新。较低的精确度将导致一些游戏中文字出现错乱。<br><br><dolphin_emphasis>如果不确定，请将滑块拖动至最右端。</dolphin_emphasis>";
+"Adjusts the amount of RAM in the emulated console.
 
-The \"Safe\" setting eliminates the likelihood of the GPU missing texture updates from RAM. Lower accuracies cause in-game text to appear garbled in certain games.
+WARNING: Enabling this will completely break many games. Only a small number of games can benefit from this." = "调整模拟主机的内存大小。
 
-If unsure, select the rightmost value." = "调整 GPU 接收内存中的纹理更新的精确度。
-
-选择“安全”能防止 GPU 错过内存中纹理更新。较低的精确度将导致一些游戏中文字出现错乱。
-
-如果不确定，请将滑块拖动至最右端。";
+警告：启用此功能会使很多游戏彻底奔溃。只有少数游戏可以从中受益。";
 "Adjusts the emulated CPU's clock rate.
 
 Higher values may make variable-framerate games run at a higher framerate, at the expense of performance. Lower values may activate a game's internal frameskip, potentially improving performance.
@@ -290,14 +289,10 @@ WARNING: Changing this from the default (100%) can and will break games and caus
 
 警告：改动默认值 (100%) 可能会破坏游戏而导致故障。
 这样做需要您自担风险。请不要提交非默认时钟频率下出现的错误。";
-"Adjusts the emulated sizes of MEM1 and MEM2.
-
-Some titles may recognize the larger memory arena(s) and take advantage of it, though retail titles are normally optimized for the retail memory limitations." = "调整模拟内存 1 和内存 2 的大小。
-
-尽管商业游戏通常针对零售版主机限定的内存进行了优化，但某些游戏可能会识别出更大的内存领域并加以利用。";
 "Advance Game Port" = "GBA 游戏端口";
 "Advanced" = "高级";
 "Africa" = "非洲";
+"All Files" = "所有文件";
 "All Files (*)" = "所有文件 (*)";
 "All GC/Wii files (*.elf *.dol *.gcm *.iso *.tgc *.wbfs *.ciso *.gcz *.wia *.rvz *.wad *.dff *.m3u);;All Files (*)" = "所有 GC/Wii 文件 (*.elf *.dol *.gcm *.iso *.tgc *.wbfs *.ciso *.gcz *.wia *.rvz *.wad *.dff *.m3u);;所有文件 (*)";
 "All GC/Wii files (*.elf *.dol *.gcm *.iso *.tgc *.wbfs *.ciso *.gcz *.wia *.rvz *.wad *.m3u);;All Files (*)" = "所有 GC/Wii 文件 (*.elf *.dol *.gcm *.iso *.tgc *.wbfs *.ciso *.gcz *.wia *.rvz *.wad *.m3u);;所有文件 (*)";
@@ -308,15 +303,7 @@ Some titles may recognize the larger memory arena(s) and take advantage of it, t
 "Allow Mismatched Region Settings" = "允许不匹配的区域设置";
 "Allow Usage Statistics Reporting" = "允许使用情况统计报告";
 "Allow Writes to SD Card" = "允许写入 SD 卡";
-"Allows manipulation of the in-game camera. Move the mouse while holding the right button to pan or middle button to roll.
-
-Use the WASD keys while holding SHIFT to move the camera. Press SHIFT+2 to increase speed or SHIFT+1 to decrease speed. Press SHIFT+R to reset the camera or SHIFT+F to reset the speed.
-
-If unsure, leave this unchecked. " = "允许操控游戏中的镜头。按住右键移动鼠标以摇动，按住中键移动鼠标以旋转。
-
-按住 SHIFT 时可使用 WASD 键平移镜头。按 SHIFT+2 提高速度、SHIFT+1 降低速度。按 SHIFT+R 重置镜头或按 SHIFT+F 重置速度。
-
-如果不确定，请不要勾选此项。";
+"Allows manipulation of the in-game camera.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "允许操纵游戏中的镜头。<br><br><dolphin_emphasis>如果不确定，请不要勾选此项。</dolphin_emphasis>";
 "Alternate Input Sources" = "其他输入源";
 "Always Connected" = "始终连接";
 "Always Hide Mouse Cursor" = "始终隐藏鼠标光标";
@@ -335,18 +322,16 @@ File: %s
 "Anaglyph" = "色差";
 "Analyze" = "分析";
 "Angle" = "角度";
-"Angular velocity to ignore." = "要忽略的角速度。";
+"Angular velocity to ignore and remap." = "Angular velocity to ignore and remap.";
 "Anisotropic Filtering" = "各向异性过滤";
+"Anisotropic Filtering" = "各向异性过滤";
+"Anti-Aliasing" = "抗锯齿";
 "Anti-Aliasing" = "抗锯齿";
 "Any Region" = "任意区域";
 "Append signature to" = "附加签名到";
 "Append to Existing Signature File..." = "附加到现有签名文件...";
 "Apply Signature File..." = "应用签名文件...";
-"Applies a post-processing effect after rendering a frame.
-
-If unsure, select (off)." = "在渲染完一帧后应用后处理效果。
-
-如果不确定，请选择“关闭”。";
+"Applies a post-processing effect after rendering a frame.<br><br /><dolphin_emphasis>If unsure, select (off).</dolphin_emphasis>" = "在渲染完一帧后应用后处理效果。<br><br /><dolphin_emphasis>如果不确定，请选择“关闭”。</dolphin_emphasis>";
 "Apploader Date" = "应用载入器时间";
 "Apply" = "应用";
 "Apply signature file" = "应用签名文件";
@@ -356,11 +341,13 @@ If unsure, select (off)." = "在渲染完一帧后应用后处理效果。
 "Are you sure you want to delete this pack?" = "确定要删除这个包吗？";
 "Are you sure you want to quit NetPlay?" = "确定要退出联机吗？";
 "Are you sure?" = "确定?";
-"Aspect Ratio" = "宽高比";
+"Aspect Ratio" = "长宽比";
+"Aspect Ratio" = "长宽比";
 "Assign Controller Ports" = "指定控制器端口";
 "Assign Controllers" = "指定控制器";
 "Asynchronous (Skip Drawing)" = "异步（跳过绘制）";
 "Asynchronous (Ubershaders)" = "异步（超着色器）";
+"At least two of the selected save files have the same internal filename." = "至少有两个选定的存档文件具有相同的内部文件名。";
 "Attach MotionPlus" = "附带 MotionPlus";
 "Audio" = "音频";
 "Audio Backend" = "音频后端";
@@ -379,17 +366,14 @@ Please select a specific internal resolution." = "严格同步模式下不允许
 "Auto-Adjust Window Size" = "自动调整窗口大小";
 "Auto-Hide" = "自动隐藏";
 "Auto-detect RSO modules?" = "自动检测 RSO 模块？";
-"Automatically adjusts the window size to the internal resolution.
-
-If unsure, leave this unchecked." = "自动将窗口大小调整为内部分辨率。
-
-如果不确定，请不要勾选此项。";
+"Automatically adjusts the window size to the internal resolution.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "自动将窗口大小调整为内部分辨率。<br><br><dolphin_emphasis>如果不确定，请不要勾选此项。</dolphin_emphasis>";
 "Auxiliary" = "副内存";
 "B" = "B";
 "BAT incorrect. Dolphin will now exit" = "BAT 错误，模拟器即将退出";
-"BBA MAC address %s invalid for XLink Kai. A valid Nintendo GameCube MAC address must be used. Generate a new MAC address starting with 00:09:bf or 00:17:ab." = "BBA MAC 地址 %s 对于 XLink Kai 无效。必须使用有效的任天堂 GameCube MAC 地址。 生成一个以 00:09:bf 或 00:17:ab 开头的新 MAC 地址。";
+"BBA MAC address {0} invalid for XLink Kai. A valid Nintendo GameCube MAC address must be used. Generate a new MAC address starting with 00:09:bf or 00:17:ab." = "BBA MAC 地址 {0} 对于 XLink Kai 无效。必须使用有效的任天堂 GameCube MAC 地址。 生成一个以 00:09:bf 或 00:17:ab 开头的新 MAC 地址。";
 "BP register " = "BP 寄存器";
 "Back Chain" = "后链";
+"Backend" = "后端";
 "Backend Multithreading" = "后端多线程";
 "Backend Settings" = "后端设置";
 "Backend" = "后端";
@@ -397,6 +381,7 @@ If unsure, leave this unchecked." = "自动将窗口大小调整为内部分辨�
 "Backward" = "后";
 "Bad address provided." = "地址格式不正确。";
 "Bad dump" = "错误的转储";
+"Bad offset provided." = "提交的偏移量不正确。";
 "Bad value provided." = "值格式不正确。";
 "Banner" = "标图";
 "Banner Details" = "标图详细信息";
@@ -409,6 +394,10 @@ If unsure, leave this unchecked." = "自动将窗口大小调整为内部分辨�
 "Batch mode cannot be used without specifying a game to launch." = "使用批处理模式必须指定要启动的游戏";
 "Battery" = "电池";
 "Beta (once a month)" = "体验版（每月一次）";
+"BetterJoy, DS4Windows, etc" = "BetterJoy，DS4Windows，等";
+"Binary SSL" = "二进制 SSL";
+"Binary SSL (read)" = "二进制 SSL (读取)";
+"Binary SSL (write)" = "二进制 SSL (写入)";
 "Bitrate (kbps)" = "比特率 (kbps)";
 "Block Size" = "区块大小";
 "Block Size" = "区块大小";
@@ -432,11 +421,15 @@ If unsure, leave this unchecked." = "自动将窗口大小调整为内部分辨�
 "Broadband Adapter (TAP)" = "宽带适配器 (TAP)";
 "Broadband Adapter (XLink Kai)" = "宽带适配器 (XLink Kai)";
 "Broadband Adapter (XLink Kai) Destination Address" = "宽带适配器 (XLink Kai) 目标地址";
+"Broadband Adapter (tapserver)" = "宽带适配器（tap 服务器）";
 "Broadband Adapter MAC address" = "宽带适配器 MAC 地址";
 "Browse NetPlay Sessions...." = "浏览联机会话...";
 "Buffer Size" = "缓冲区大小";
 "Buffer size changed to %1" = "缓冲区大小更改为 %1";
 "Buffer" = "缓冲区";
+"Buggy GPU driver detected.
+Please either install the closed-source GPU driver or update your Mesa 3D version." = "检测到错误的 GPU 驱动程序。
+请安装闭源 GPU 驱动程序或更新 Mesa 3D 版本。";
 "Button" = "按键";
 "Buttons" = "按键";
 "C Stick" = "C 摇杆";
@@ -446,30 +439,16 @@ If unsure, leave this unchecked." = "自动将窗口大小调整为内部分辨�
 "CPU Options" = "CPU 选项";
 "CRC32" = "CRC32";
 "Cached Interpreter (slower)" = "缓存解释器（较慢）";
-"Caches custom textures to system RAM on startup.
-
-This can require exponentially more RAM but fixes possible stuttering.
-
-If unsure, leave this unchecked." = "在启动时将自定义纹理缓存到系统内存。
-
-这将导致内存需求指数级增加但会修正可能的卡顿。
-
-如果不确定，请不要勾选此项。";
+"Caches custom textures to system RAM on startup.<br><br>This can require exponentially more RAM but fixes possible stuttering.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "在启动时将自定义纹理缓存到系统内存。<br><br>这将导致内存需求指数级增加但会修正可能的卡顿。<br><br><dolphin_emphasis>如果不确定，请不要勾选此项。</dolphin_emphasis>";
 "Calculate" = "计算";
-"Calculates lighting of 3D objects per-pixel rather than per-vertex, smoothing out the appearance of lit polygons and making individual triangles less noticeable.
-
-Rarely causes slowdowns or graphical issues.
-
-If unsure, leave this unchecked." = "逐个像素而非逐个顶点地计算 3D 物体的光照，这将使被照明多边形外观更平滑，单个三角面更不明显。
-
-很少造成速度降低或图像问题。
-
-如果不确定，请不要勾选此项。";
+"Calculates lighting of 3D objects per-pixel rather than per-vertex, smoothing out the appearance of lit polygons and making individual triangles less noticeable.<br><br />Rarely causes slowdowns or graphical issues.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "逐个像素而非逐个顶点地计算 3D 物体的光照，这将使被照明多边形外观更平滑，单个三角面更不明显。<br><br />很少造成速度降低或图像问题。<br><br><dolphin_emphasis>如果不确定，请不要勾选此项。</dolphin_emphasis>";
 "Calibrate" = "校准";
 "Calibration" = "校准";
 "Calibration Period" = "校准周期";
 "Callstack" = "调用堆栈";
-"Can't find Wii Remote by connection handle %02x" = "不能按照连接句柄 %02x 找到 Wii 遥控器";
+"Camera 1" = "镜头 1";
+"Camera field of view (affects sensitivity of pointing)." = "镜头视野（影响指向的灵敏度）。";
+"Can't find Wii Remote by connection handle {0:02x}" = "不能按照连接句柄 {0:02x} 找到 Wii 遥控器";
 "Can't start a NetPlay Session while a game is still running!" = "游戏运行时无法启动联机会话！";
 "Cancel" = "取消";
 "Cancel Calibration" = "取消校准";
@@ -487,16 +466,8 @@ Have you chosen the right type?" = "无法解析给定的值。
 "Change Disc..." = "切换光盘...";
 "Change Disc" = "切换光盘";
 "Change Discs Automatically" = "自动切换光盘";
-"Change the disc to %s" = "切换光盘至 %s";
-"Changes the in-game camera type during freelook.
-
-Six Axis: Offers full camera control on all axes, akin to moving a spacecraft in zero gravity. This is the most powerful freelook option but is the most challenging to use.
-First Person: Controls the free camera similarly to a first person video game. The camera can rotate and travel, but roll is impossible. Easy to use, but limiting.
-Orbital: Rotates the free camera around the original camera. Has no lateral movement, only rotation and you may zoom up to the camera's origin point." = "在自由视点下更改游戏中的镜头类型。
-
-六轴：在所有轴上提供完整的镜头控制，类似于在零重力下移动航天器。这是功能最强大的自由视点选项，但使用起来最具挑战性。
-第一人称视角：控制自由镜头类似于第一人称视角游戏。镜头可以旋转和移动，但无法滚动。 易于使用，但有局限性。
-轨道：将自由镜头围绕原始镜头旋转。没有横向移动，只能旋转，可以放大视角到镜头的原点。";
+"Change the disc to {0}" = "切换光盘至 {0}";
+"Changes the in-game camera type during Free Look.<br><br>Six Axis: Offers full camera control on all axes, akin to moving a spacecraft in zero gravity. This is the most powerful Free Look option but is the most challenging to use.<br> <br>First Person: Controls the free camera similarly to a first person video game. The camera can rotate and travel, but roll is impossible. Easy to use, but limiting.<br><br>Orbital: Rotates the free camera around the original camera. Has no lateral movement, only rotation and you may zoom up to the camera's origin point." = "在自由视点下更改游戏中的镜头类型。<br><br>六轴：在所有轴上提供完整的镜头控制，类似于在零重力下移动航天器。这是功能最强大的自由视点选项，但使用起来最具挑战性。<br /><br>第一人称视角：控制自由镜头类似于第一人称视角游戏。镜头可以旋转和移动，但无法滚动。 易于使用，但有局限性。<br><br>轨道：将自由镜头围绕原始镜头旋转。没有横向移动，只能旋转，可以放大视角到镜头的原点。";
 "Changing cheats will only take effect when the game is restarted." = "游戏重启后更改的金手指才会生效。";
 "Chat" = "聊天";
 "Cheat Code Editor" = "金手指编辑器";
@@ -512,6 +483,7 @@ Orbital: Rotates the free camera around the original camera. Has no lateral move
 "Choose priority input file" = "选择优先输入文件";
 "Choose secondary input file" = "选择次要输入文件";
 "Choose the folder to extract to" = "选择提取目标文件夹";
+"Clamping of rotation about the yaw axis." = "围绕偏转轴的旋转夹角。";
 "Classic Buttons" = "传统按键";
 "Classic Controller" = "传统控制器";
 "Clear" = "清除";
@@ -524,19 +496,21 @@ Orbital: Rotates the free camera around the original camera. Has no lateral move
 "Code" = "代码";
 "Codes received!" = "代码已接收！";
 "Combine Two Signature Files..." = "合并两个签名文件...";
-"Comment" = "注释";
 "Common" = "通用";
+"Comparand" = "被比较字";
 "Compile Shaders Before Starting" = "在开始前编译着色器";
 "Compiling Shaders" = "正在编译着色器";
 "Compression" = "压缩";
 "Compression Level" = "压缩级别";
 "Compression" = "压缩";
 "Condition" = "条件";
+"Conditional" = "条件";
 "Config" = "设置";
-"Configure" = "设置";
+"Configure" = "配置";
+"Configure Controller" = "配置控制器";
 "Configure Dolphin" = "Dolphin 配置";
-"Configure Input" = "设置输入";
-"Configure Output" = "设置输出";
+"Configure Input" = "配置输入";
+"Configure Output" = "配置输出";
 "Confirm" = "确定";
 "Confirm backend change" = "确认改变后端";
 "Confirm on Stop" = "停止游戏时确认";
@@ -554,11 +528,10 @@ Orbital: Rotates the free camera around the original camera. Has no lateral move
 "Connect to the Internet and perform an online system update?" = "是否连接到互联网并执行在线系统更新？";
 "Connected" = "已连接";
 "Connection Type" = "连接类型";
-"Content %08x is corrupt." = "内容 %08x 已损坏。";
+"Content {0:08x} is corrupt." = "内容 {0:08x} 已损坏。";
 "Continuous Scanning" = "持续扫描";
 "Control NetPlay Golf Mode" = "控制联机高尔夫模式";
 "Control Stick" = "控制摇杆";
-"Control Type" = "控制类型";
 "Controller Profile" = "控制器预设";
 "Controller Profile 1" = "控制器预设 1";
 "Controller Profile 2" = "控制器预设 2";
@@ -566,39 +539,25 @@ Orbital: Rotates the free camera around the original camera. Has no lateral move
 "Controller Profile 4" = "控制器预设 4";
 "Controller Settings" = "控制器设置";
 "Controllers" = "控制器";
-"Controls the distance of the convergence plane. This is the distance at which virtual objects will appear to be in front of the screen.
-
-A higher value creates stronger out-of-screen effects while a lower value is more comfortable." = "控制会聚平面的距离。即虚拟物体看起来出现在屏幕前方的距离。
-
-数值越高凸出屏幕效果越强，而数值越低观感会越舒适。";
-"Controls the rendering resolution.
-
-A high resolution greatly improves visual quality, but also greatly increases GPU load and can cause issues in certain games. Generally speaking, the lower the internal resolution, the better performance will be.
-
-If unsure, select Native." = "控制渲染的分辨率。
-
-选择较高的分辨率将显著提高图像质量，但也将显著增加 GPU 负荷且可能在一些游戏中引起故障。一般而言，内部分辨率越低，性能将越高。
-
-如果不确定，请选择“原生”。";
-"Controls the separation distance between the virtual cameras. 
-
-A higher value creates a stronger feeling of depth while a lower value is more comfortable." = "控制虚拟摄像机之间的分开距离。
-
-数值越高则深度感会越强，而数值越低观感会越舒适。";
+"Controls the distance of the convergence plane. This is the distance at which virtual objects will appear to be in front of the screen.<br><br>A higher value creates stronger out-of-screen effects while a lower value is more comfortable." = "控制会聚平面的距离。即虚拟物体看起来出现在屏幕前方的距离。<br><br>数值越高凸出屏幕效果越强，而数值越低观感会越舒适。";
+"Controls the rendering resolution.<br><br>A high resolution greatly improves visual quality, but also greatly increases GPU load and can cause issues in certain games. Generally speaking, the lower the internal resolution, the better performance will be.<br><br><dolphin_emphasis>If unsure, select Native.</dolphin_emphasis>" = "控制渲染的分辨率。<br><br>选择较高的分辨率将显著提高图像质量，但也将显著增加 GPU 负荷且可能在一些游戏中引起故障。一般而言，内部分辨率越低，性能将越高。<br><br><dolphin_emphasis>如果不确定，请选择“原生”。</dolphin_emphasis>";
+"Controls the separation distance between the virtual cameras.<br><br>A higher value creates a stronger feeling of depth while a lower value is more comfortable." = "控制虚拟摄像机之间的分开距离。<br><br>数值越高则深度感会越强，而数值越低观感会越舒适。";
 "Controls whether or not Dual Core should be enabled. Can improve performance but can also cause issues. Defaults to <b>True</b>" = "控制是否应启用双核心。可以提高性能但也可能造成问题。默认值为 <b>True</b>";
 "Controls whether or not the Memory Management Unit should be emulated fully. Few games require it." = "控制是否应完整模拟内存管理单元。仅少数游戏需要。";
 "Controls whether to use high or low-level DSP emulation. Defaults to <b>True</b>" = "控制使用高级还是低级 DSP 模拟。默认值为 <b>True</b>";
 "Convergence" = "会聚";
+"Convergence" = "会聚";
 "Convert" = "转换";
 "Convert File..." = "转换文件...";
 "Convert Selected Files..." = "转换所选文件...";
-"Convert..." = "Convert...";
+"Convert..." = "转换...";
 "Converting Wii disc images to GCZ without removing junk data does not save any noticeable amount of space compared to converting to ISO. Do you want to continue anyway?" = "与转换为 ISO 格式相比，在不移除垃圾数据的情况下将 Wii 光盘镜像转换为 GCZ 格式不会节省任何更明显的空间。是否仍要继续？";
 "Converting..." = "正在转换...";
 "Copy" = "复制";
 "Copy function" = "复制函数";
 "Copy hex" = "复制十六进制";
 "Copy Address" = "复制地址";
+"Copy Failed" = "复制失败";
 "Copy Hex" = "复制十六进制";
 "Copy code line" = "复制代码行";
 "Copy failed" = "复制失败";
@@ -618,31 +577,31 @@ The emulated console will now stop." = "无法找到任何用于蓝牙直通的�
 模拟主机即将停止运行。";
 "Could not find any usable Bluetooth USB adapter for Bluetooth Passthrough.
 The following error occurred when Dolphin tried to use an adapter:
-%s
+{0}
 
 The emulated console will now stop." = "无法找到任何用于蓝牙直通的蓝牙 USB 适配器。
 当 Dolphin 尝试使用适配器时发生以下错误：
-%s
+{0}
 
 模拟主机即将停止运行。";
 "Could not install an update to the Wii system memory. Please refer to logs for more information." = "无法安装更新到 Wii 系统存储。请参考日志获取更多信息。";
-"Could not launch IOS %016<PRIx64> because it is missing from the NAND.
-The emulated software will likely hang now." = "无法启动 IOS %016<PRIx64> 因为 NAND 中没有该数据。
+"Could not launch IOS {0:016x} because it is missing from the NAND.
+The emulated software will likely hang now." = "无法启动 IOS {0:016x} 因为 NAND 中没有该数据。
 已模拟运行的软件将可能挂起。";
 "Could not launch the Wii Menu because it is missing from the NAND.
 The emulated software will likely hang now." = "无法启动 Wii 菜单，因为 NAND 中没有该内容。
 已模拟运行的软件将可能挂起。";
-"Could not launch title %016<PRIx64> because it is missing from the NAND.
-The emulated software will likely hang now." = "无法启动游戏 %016<PRIx64> 因为 NAND 中没有该软件。
+"Could not launch title {0:016x} because it is missing from the NAND.
+The emulated software will likely hang now." = "无法启动游戏 {0:016x} 因为 NAND 中没有该软件。
 已模拟运行的软件将可能挂起。";
-"Could not read \"%s\". There is no disc in the drive or it is not a GameCube/Wii backup. Please note that Dolphin cannot play games directly from the original GameCube and Wii discs." = "无法读取 \"%s\"。驱动器里没有光盘或不是 GameCube/Wii 备份。请注意 Dolphin 不能直接从原始的 GameCube 与 Wii 光盘上运行游戏。";
-"Could not recognize file %s" = "无法识别文件 %s";
-"Could not write memory card file %s.
+"Could not read \"{0}\". There is no disc in the drive or it is not a GameCube/Wii backup. Please note that Dolphin cannot play games directly from the original GameCube and Wii discs." = "无法读取 “{0}”。驱动器里没有光盘或不是 GameCube/Wii 备份。请注意 Dolphin 不能直接从原始的 GameCube 与 Wii 光盘上运行游戏。";
+"Could not recognize file {0}" = "无法识别文件 {0}";
+"Could not write memory card file {0}.
 
 Are you running Dolphin from a CD/DVD, or is the save file maybe write protected?
 
 Are you receiving this after moving the emulator directory?
-If so, then you may need to re-specify your memory card location in the options." = "无法写入存储卡文件 %s。
+If so, then you may need to re-specify your memory card location in the options." = "无法写入存储卡文件 {0}。
 
 您是否正在从 CD/DVD 上运行 Dolphin，或者存档文件是否写保护?
 
@@ -654,23 +613,11 @@ If so, then you may need to re-specify your memory card location in the options.
 "Country" = "国家";
 "Create New Memory Card" = "创建新存储卡";
 "Create..." = "创建...";
-"Creates frame dumps and screenshots at the internal resolution of the renderer, rather than the size of the window it is displayed within.
-
-If the aspect ratio is widescreen, the output image will be scaled horizontally to preserve the vertical resolution.
-
-If unsure, leave this unchecked." = "以渲染器的内部分辨率创建帧转储和屏幕截图，而不是其在窗口中显示的大小。
-
-如果宽高比是宽屏，输出图像将会水平缩放以保持垂直分辨率。
-
-如果不确定，请不要勾选此项。";
+"Creates frame dumps and screenshots at the internal resolution of the renderer, rather than the size of the window it is displayed within.<br><br>If the aspect ratio is widescreen, the output image will be scaled horizontally to preserve the vertical resolution.<br><br /><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "以渲染器的内部分辨率创建帧转储和屏幕截图，而不是其在窗口中显示的大小。<br><br>如果长宽比是宽屏，输出图像将会水平缩放以保持垂直分辨率。<br><br /><dolphin_emphasis>如果不确定，请不要勾选此项。</dolphin_emphasis>";
 "Creator" = "创建者";
 "Critical" = "错误";
 "Crop" = "裁切";
-"Crops the picture from its native aspect ratio to 4:3 or 16:9.
-
-If unsure, leave this unchecked." = "将图像由原生宽高比裁切为 4:3 或 16:9 。 
-
-如果不确定，请不要勾选此项。";
+"Crops the picture from its native aspect ratio to 4:3 or 16:9.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "将图像由原生长宽比裁切为 4:3 或 16:9 。<br><br><dolphin_emphasis>如果不确定，请不要勾选此项。</dolphin_emphasis>";
 "Crossfade" = "混音";
 "Current Region" = "当前区域";
 "Current context" = "当前上下文";
@@ -691,18 +638,23 @@ If unsure, leave this unchecked." = "将图像由原生宽高比裁切为 4:3 �
 "Data Transfer" = "数据传输";
 "Data Type" = "数据类型";
 "Data in area of file that should be unused." = "文件中本应未被使用的区域存在数据。";
+"Data in unrecognized format or corrupted." = "数据格式无法识别或损坏。";
+"Data inconsistency in GCMemcardManager, aborting action." = "GC 存储卡管理器中的数据不一致，正在中止操作。";
 "Data received!" = "数据已接收！";
-"Datel MaxDrive/Pro files(*.sav)" = "Datel MaxDrive/Pro 文件(*.sav)";
+"Datel MaxDrive/Pro files" = "Datel MaxDrive/Pro 文件";
 "Dead Zone" = "死区";
 "Debug" = "调试";
 "Debug Only" = "调试专用";
 "Debugging" = "调试";
 "Decimal" = "十进制";
 "Decoding Quality" = "解码质量";
+"Decrease" = "减小";
 "Decrease Convergence" = "减小会聚";
 "Decrease Depth" = "减小深度";
 "Decrease Emulation Speed" = "减小模拟速度";
 "Decrease IR" = "减小内部分辨率";
+"Decrease X" = "减小 X";
+"Decrease Y" = "减小 Y";
 "Default" = "默认";
 "Default Config (Read Only)" = "默认配置 (只读)";
 "Default Device" = "默认设备";
@@ -711,25 +663,19 @@ If unsure, leave this unchecked." = "将图像由原生宽高比裁切为 4:3 �
 "Default thread" = "默认线程";
 "Defer EFB Cache Invalidation" = "推迟 EFB 缓存失效";
 "Defer EFB Copies to RAM" = "推迟 EFB 副本到内存";
-"Defers invalidation of the EFB access cache until a GPU synchronization command is executed. If disabled, the cache will be invalidated with every draw call. 
-
-May improve performance in some games which rely on CPU EFB Access at the cost of stability.
-
-If unsure, leave this unchecked." = "将 EFB 访问缓存失效推迟至 GPU 同步指令执行时。如果禁用，每次绘制调用都将令缓存失效。
-
-可能提高一些依靠 CPU EFB 访问游戏的性能，但会牺牲稳定性。
-
-如果不确定，请不要勾选此项。";
+"Defers invalidation of the EFB access cache until a GPU synchronization command is executed. If disabled, the cache will be invalidated with every draw call. <br><br>May improve performance in some games which rely on CPU EFB Access at the cost of stability.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "将 EFB 访问缓存失效推迟至 GPU 同步指令执行时。如果禁用，每次绘制调用都将令缓存失效。<br><br>可能提高一些依靠 CPU EFB 访问游戏的性能，但会牺牲稳定性。<br><br><dolphin_emphasis>如果不确定，请不要勾选此项。</dolphin_emphasis>";
 "Delete" = "删除";
 "Delete File..." = "删除文件...";
 "Delete Selected Files..." = "删除所选文件...";
-"Delete the existing file '%s'?" = "删除已经存在的文件 '%s' 吗?";
+"Delete the existing file '{0}'?" = "删除已经存在的文件 ‘{0}’ 吗?";
+"Depth" = "深度";
 "Depth Percentage" = "深度百分比";
 "Depth" = "深度";
 "Description" = "说明";
 "Description" = "说明";
 "Detached" = "分离的";
 "Detect" = "检测";
+"Detecting RSO Modules" = "正在检测 RSO 模块";
 "Deterministic dual core" = "确定性双核";
 "Dev (multiple times a day)" = "开发版（一天多次）";
 "Device" = "设备";
@@ -745,6 +691,7 @@ If unsure, leave this unchecked." = "将 EFB 访问缓存失效推迟至 GPU 同
 Do you really want to switch to Direct3D 11? If unsure, select 'No'." = "Direct3D 11 渲染器需要某些您的系统配置所不支持的特性。这很可能是因为您使用的是 Windows 7 系统。您仍然可以使用此后端，但您可能会遇到图像错误。
 
 你真的想切换到 Direct3D 11 吗？如果不确定，请选择“否”。";
+"Disable" = "禁用";
 "Disable Bounding Box" = "禁用边界框";
 "Disable Copy Filter" = "禁用复制过滤";
 "Disable EFB VRAM Copies" = "禁用 EFB VRAM 副本";
@@ -752,47 +699,18 @@ Do you really want to switch to Direct3D 11? If unsure, select 'No'." = "Direct3
 "Disable Fastmem" = "禁用快速内存";
 "Disable Fog" = "禁用雾化";
 "Disable JIT Cache" = "禁用 JIT 缓存";
-"Disables bounding box emulation.
-
-This may improve GPU performance significantly, but some games will break.
-
-If unsure, leave this checked." = "禁用边界框计算。
-
-这可能显著提高 GPU 性能，但是一些游戏可能会停止运行。
-
-如果不确定，请勾选此项。";
-"Disables the VRAM copy of the EFB, forcing a round-trip to RAM. Inhibits all upscaling.
-
-If unsure, leave this unchecked." = "禁用 VRAM 中的 EFB 副本，而强制从 RAM 中读取。所有放大将不可用。
-
-如果不确定，请不要勾选此项。";
-"Disables the blending of adjacent rows when copying the EFB. This is known in some games as \"deflickering\" or \"smoothing\". 
-
-Disabling the filter has no effect on performance, but may result in a sharper image. Causes few graphical issues.
-
-If unsure, leave this checked." = "禁用复制 EFB 时相邻行间的混合。一些游戏称之为“抗闪烁”或“平滑”。
-
-禁用此过滤器对性能没有影响，但会使图像更锐利，且很少导致图像问题。
-
-如果不确定，请勾选此项。";
+"Disables bounding box emulation.<br><br>This may improve GPU performance significantly, but some games will break.<br><br><dolphin_emphasis>If unsure, leave this checked.</dolphin_emphasis>" = "禁用边界框模拟。<br><br>这可能显著提高 GPU 性能，但是一些游戏可能会停止运行。<br><br><dolphin_emphasis>如果不确定，请勾选此项。</dolphin_emphasis>";
+"Disables the VRAM copy of the EFB, forcing a round-trip to RAM. Inhibits all upscaling.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "禁用 VRAM 中的 EFB 副本，而强制从 RAM 中读取。所有放大将不可用。<br><br><dolphin_emphasis>如果不确定，请不要勾选此项。</dolphin_emphasis>";
+"Disables the blending of adjacent rows when copying the EFB. This is known in some games as \"deflickering\" or \"smoothing\".<br><br>Disabling the filter has no effect on performance, but may result in a sharper image. Causes few graphical issues.<br><br><dolphin_emphasis>If unsure, leave this checked.</dolphin_emphasis>" = "禁用复制 EFB 时相邻行间的混合。一些游戏称之为“抗闪烁”或“平滑”。<br><br>禁用此过滤器对性能没有影响，但会使图像更锐利，且很少导致图像问题。<br><br><dolphin_emphasis>如果不确定，请勾选此项。</dolphin_emphasis>";
 "Disc" = "光盘";
-"Disc Read Error" = "光盘读取错误";
-"Displays XFB copies as soon as they are created, instead of waiting for scanout.
-
-Can cause graphical defects in some games if the game doesn't expect all XFB copies to be displayed. However, turning this setting on reduces latency.
-
-If unsure, leave this unchecked." = "在 XFB 副本创建后立即将其显示，而不是等待扫描输出。
-
-在一些不将所有 XFB 副本用于显示的游戏中会导致图像瑕疵。然而开启此项可以降低延迟。
-
-如果不确定，请不要勾选此项。";
+"Discard" = "丢弃";
+"Displays XFB copies as soon as they are created, instead of waiting for scanout.<br><br>Can cause graphical defects in some games if the game doesn't expect all XFB copies to be displayed. However, turning this setting on reduces latency.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "在 XFB 副本创建后立即将其显示，而不是等待扫描输出。<br><br>在一些不将所有 XFB 副本用于显示的游戏中会导致图像瑕疵。然而开启此项可以降低延迟。<br><br><dolphin_emphasis>如果不确定，请不要勾选此项。</dolphin_emphasis>";
 "Distance" = "距离";
 "Distance of travel from neutral position." = "从中间位置移动的距离。";
 "Do you authorize Dolphin to report information to Dolphin's developers?" = "是否授权 Dolphin 向开发者报告信息?";
 "Do you want to add \"%1\" to the list of Game Paths?" = "是否要添加 \"%1\" 到游戏路径列表?";
 "Do you want to clear the list of symbol names?" = "你是否要清除符号名称列表？";
-"Do you want to delete the %1 selected save files?" = "是否要删除 %1 已选定的存档文件？";
-"Do you want to delete the selected save file?" = "是否要删除已选定的存档文件？";
+"Do you want to delete the %n selected save file(s)?" = "是否要删除 %n 已选定的存档文件？";
 "Do you want to stop the current emulation?" = "您确定是否停止当前模拟?";
 "Dolby Pro Logic II Decoder" = "杜比定向逻辑II解码器";
 "Dolphin FIFO Log (*.dff)" = "Dolphin FIFO 日志 (*.dff)";
@@ -808,10 +726,11 @@ Double-click here to set a games directory..." = "Dolphin 无法找到任何 Gam
 "Dolphin is too old for traversal server" = "Dolphin 版本太旧，穿透服务器不支持";
 "Dolphin is unable to verify typical TGC files properly, since they are not dumps of actual discs." = "Dolphin 无法正确验证典型的 TGC 文件，因为其不是真实光盘的转储。";
 "Dolphin is unable to verify unlicensed discs." = "Dolphin 无法验证未经授权的光盘。";
+"Dolphin will use this for titles whose region cannot be determined automatically." = "Dolphin 会将其用于无法自动确定区域的游戏。";
 "Dolphin's cheat system is currently disabled." = "Dolphin 的金手指系统当前已禁用。";
 "Domain" = "域名";
 "Don't Update" = "不要更新";
-"Don't show this again" = "Don't show this again";
+"Don't show this again" = "不再显示";
 "Done compressing disc image." = "光盘镜像已压缩完成。";
 "Double" = "双精度";
 "Down" = "下";
@@ -830,55 +749,32 @@ Double-click here to set a games directory..." = "Dolphin 无法找到任何 Gam
 "Dump FakeVMEM" = "转储伪显存";
 "Dump MRAM" = "转储主内存";
 "Dump Audio" = "转储音频";
-"Dump Base Textures" = "Dump Base Textures";
+"Dump Base Textures" = "转储基本纹理";
 "Dump EFB Target" = "转储 EFB 目标";
 "Dump Frames" = "转储帧";
-"Dump Mip Maps" = "Dump Mip Maps";
+"Dump Mip Maps" = "转储 Mip 映射";
 "Dump Objects" = "转储对象";
 "Dump Path" = "转储路径";
-"Dump SSL read" = "转储 SSL 读取";
-"Dump SSL write" = "转储 SSL 写入";
 "Dump TEV Stages" = "转储 TEV 场景";
-"Dump TEV Stages to User/Dump/Objects/.
-
-If unsure, leave this unchecked." = "将 TEV 场景转储到 User/Dump/Objects/ 目录中。
-
-如果不确定，请不要勾选此项。";
+"Dump TEV Stages to User/Dump/Objects/.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "将 TEV 场景转储到 User/Dump/Objects/ 目录中。<br><br><dolphin_emphasis>如果不确定，请不要勾选此项。</dolphin_emphasis>";
 "Dump Texture Fetches" = "转储纹理拾取";
-"Dump Texture Fetches to User/Dump/Objects/.
-
-If unsure, leave this unchecked." = "将纹理拾取转储到 User/Dump/Objects/ 目录中。
-
-如果不确定，请不要勾选此项。";
+"Dump Texture Fetches to User/Dump/Objects/.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "将纹理拾取转储到 User/Dump/Objects/ 目录中。<br><br><dolphin_emphasis>如果不确定，请不要勾选此项。</dolphin_emphasis>";
 "Dump Textures" = "转储纹理";
 "Dump at Internal Resolution" = "以内部分辨率转储";
-"Dump decoded game textures to User/Dump/Textures/<game_id>/.
-
-If unsure, leave this unchecked." = "将解码的游戏纹理转储到 User/Dump/Textures/<game_id>/ 目录中。
-
-如果不确定，请不要勾选此项。";
-"Dump objects to User/Dump/Objects/.
-
-If unsure, leave this unchecked." = "将对象转储到 User/Dump/Objects/ 目录中。
-
-如果不确定，请不要勾选此项。";
+"Dump decoded game textures to User/Dump/Textures/lt;game_idgt;/.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "将解码的游戏纹理转储到 User/Dump/Textures/lt;game_idgt;/ 目录中。<br><br><dolphin_emphasis>如果不确定，请不要勾选此项。</dolphin_emphasis>";
+"Dump decrypted SSL reads" = "转储解密的 SSL 读取";
+"Dump decrypted SSL writes" = "转储解密的 SSL 写入";
+"Dump objects to User/Dump/Objects/.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "将对象转储到 User/Dump/Objects/ 目录中。<br><br><dolphin_emphasis>如果不确定，请不要勾选此项。</dolphin_emphasis>";
+"Dump options" = "转储选项";
 "Dump peer certificates" = "转储对等证书";
-"Dump root CA" = "转储根证书机构";
-"Dumps decoded game textures based on the other flags to User/Dump/Textures/<game_id>/.
-
-If unsure, leave this unchecked." = "Dumps decoded game textures based on the other flags to User/Dump/Textures/<game_id>/.
-
-If unsure, leave this unchecked.";
-"Dumps the contents of EFB copies to User/Dump/Textures/.
-
-If unsure, leave this unchecked." = "将 EFB 副本的内容转储到 User/Dump/Textures/ 目录中。
-
-如果不确定，请不要勾选此项。";
+"Dump root CA certificates" = "转储根 CA 证书";
+"Dumps decoded game textures based on the other flags to User/Dump/Textures/lt;game_idgt;/.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "根据其他标记将解码的游戏纹理转储到 User/Dump/Textures/lt;game_idgt;/ 目录中。<br><br><dolphin_emphasis>如果不确定，请不要勾选此项。</dolphin_emphasis>";
+"Dumps the contents of EFB copies to User/Dump/Textures/.<br><br /><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "将 EFB 副本的内容转储到 User/Dump/Textures/ 目录中。<br><br /><dolphin_emphasis>如果不确定，请不要勾选此项。</dolphin_emphasis>";
 "Duration of Turbo Button Press (frames)" = "连发按键的按下持续时间（帧）";
 "Duration of Turbo Button Release (frames)" = "连发按键的松开持续时间（帧）";
 "Dutch" = "荷兰语";
 "Exit" = "退出模拟";
-"ERROR: This version of Dolphin requires a TAP-Win32 driver that is at least version %d.%d -- If you recently upgraded your Dolphin distribution, a reboot is probably required at this point to get Windows to see the new driver." = "错误：此版本的Dolphin需要 %d.%d 或更高版本的 TAP-Win32 驱动——如果您刚刚升级您的 Dolphin，或许您现在需要重新启动您的计算机以使 Windows 加载新驱动。";
+"ERROR: This version of Dolphin requires a TAP-Win32 driver that is at least version {0}.{1} -- If you recently upgraded your Dolphin distribution, a reboot is probably required at this point to get Windows to see the new driver." = "错误：此版本的 Dolphin 需要 {0}.{1} 或更高版本的 TAP-Win32 驱动——如果您最近升级您的 Dolphin 发行版，可能现在需要重新启动计算机以使 Windows 识别新驱动。";
 "Each player sends their own inputs to the game, with equal buffer size for all players, configured by the host.
 Suitable for competitive games where fairness and minimal latency are most important." = "每个玩家将自己的输入发送到游戏，并且所有玩家的缓冲区大小相同，由主机配置。
 适用于对公平性和低延迟最注重的竞技型游戏。";
@@ -896,10 +792,10 @@ Suitable for competitive games where fairness and minimal latency are most impor
 "Emulate the Wii's Bluetooth adapter" = "模拟 Wii 的蓝牙适配器";
 "Emulated Wii Remote" = "模拟 Wii 遥控器";
 "Emulated memory size mismatch!
-Current: MEM1 %08X (%3d MiB), MEM2 %08X (%3d MiB)
-DFF: MEM1 %08X (%3d MiB), MEM2 %08X (%3d MiB)" = "模拟内存大小不匹配！
-当前: 内存 1 %08X (%3d MiB)，内存 2 %08X (%3d MiB)
-差异: 内存 1 %08X (%3d MiB)，内存 2 %08X (%3d MiB)";
+Current: MEM1 {0:08X} ({1} MiB), MEM2 {2:08X} ({3} MiB)
+DFF: MEM1 {4:08X} ({5} MiB), MEM2 {6:08X} ({7} MiB)" = "模拟内存大小不匹配！
+当前: 内存 1 {0:08X} ({1} MiB)，内存 2 {2:08X} ({3} MiB)
+差异: 内存 1 {4:08X} ({5} MiB)，内存 2 {6:08X} ({7} MiB)";
 "Emulation Speed" = "模拟速度";
 "Enable" = "启用";
 "Enable API Validation Layers" = "启用 API 验证层";
@@ -921,56 +817,23 @@ DFF: MEM1 %08X (%3d MiB), MEM2 %08X (%3d MiB)" = "模拟内存大小不匹配！
 "Enable fast disc access. This can cause crashes and other problems in some games. (ON = Fast, OFF = Compatible)" = "启用快速光盘访问。这会造成一些游戏的崩溃以及其他问题。（ON = 快速，OFF = 兼容）";
 "Enables Dolby Pro Logic II emulation using 5.1 surround. Certain backends only." = "启用杜比定向逻辑II模拟5.1环绕声。仅适用于某些后端。";
 "Enables Floating Point Result Flag calculation, needed for a few games. (ON = Compatible, OFF = Fast)" = "启用浮点结果标记运算，一些游戏需要。（开 = 兼容，关 = 快速）";
-"Enables anisotropic filtering, which enhances the visual quality of textures that are at oblique viewing angles.
-
-Might cause issues in a small number of games.
-
-If unsure, select 1x." = "启用各向异性过滤，可增强倾斜视角下纹理的视觉质量。
-
-在少部分游戏中可能造成问题。
-
-如果不确定，请选择“1x”。";
-"Enables detection of arbitrary mipmaps, which some games use for special distance-based effects.
-
-May have false positives that result in blurry textures at increased internal resolution, such as in games that use very low resolution mipmaps. Disabling this can also reduce stutter in games that frequently load new textures. This feature is not compatible with GPU Texture Decoding.
-
-If unsure, leave this checked." = "启用对非常规多级纹理的检测。一些游戏使用这一技术实现基于距离的特殊效果。
-
-可能存在误判而导致高内部分辨率下的纹理模糊，例如在使用很低分辨率的多级纹理的游戏中。禁用此功能还可以在频繁加载新纹理的游戏中减少卡顿。此功能与 GPU 纹理解码不兼容。
-
-如果不确定，请选中此选项。";
-"Enables multithreaded command submission in backends where supported. Enabling this option may result in a performance improvement on systems with more than two CPU cores. Currently, this is limited to the Vulkan backend.
-
-If unsure, leave this checked." = "在支持的后端中启用多线程指令提交。启用此选项可能会在两个以上 CPU 核心的系统中有性能提升。目前仅限于 Vulkan 后端。
-
-如果不确定，请选中此选项。";
-"Enables progressive scan if supported by the emulated software. Most games don't have any issue with this.
-
-If unsure, leave this unchecked." = "启用逐行扫描模拟支持该特性的软件。对多数游戏无任何影响。
-
-如果不确定，请不要勾选此项。";
+"Enables anisotropic filtering, which enhances the visual quality of textures that are at oblique viewing angles.<br><br>Might cause issues in a small number of games.<br><br><dolphin_emphasis>If unsure, select 1x.</dolphin_emphasis>" = "启用各向异性过滤，可增强倾斜视角下纹理的视觉质量。<br><br>在少部分游戏中可能造成问题。<br><br><dolphin_emphasis>如果不确定，请选择“1x”。</dolphin_emphasis>";
+"Enables detection of arbitrary mipmaps, which some games use for special distance-based effects.<br><br>May have false positives that result in blurry textures at increased internal resolution, such as in games that use very low resolution mipmaps. Disabling this can also reduce stutter in games that frequently load new textures. This feature is not compatible with GPU Texture Decoding.<br><br><dolphin_emphasis>If unsure, leave this checked.</dolphin_emphasis>" = "启用对非常规多级纹理的检测。一些游戏使用这一技术实现基于距离的特殊效果。<br><br>可能存在误判而导致高内部分辨率下的纹理模糊，例如在使用很低分辨率的多级纹理的游戏中。禁用此功能还可以在频繁加载新纹理的游戏中减少卡顿。此功能与 GPU 纹理解码不兼容。<br><br><dolphin_emphasis>如果不确定，请选中此选项。</dolphin_emphasis>";
+"Enables multithreaded command submission in backends where supported. Enabling this option may result in a performance improvement on systems with more than two CPU cores. Currently, this is limited to the Vulkan backend.<br><br /><dolphin_emphasis>If unsure, leave this checked.</dolphin_emphasis>" = "在支持的后端中启用多线程指令提交。启用此选项可能会在两个以上 CPU 核心的系统中有性能提升。目前仅限于 Vulkan 后端。<br><br /><dolphin_emphasis>如果不确定，请选中此选项。</dolphin_emphasis>";
+"Enables progressive scan if supported by the emulated software. Most games don't have any issue with this.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "启用逐行扫描模拟支持该特性的软件。对多数游戏无任何影响。<br><br><dolphin_emphasis>如果不确定，请不要勾选此项。</dolphin_emphasis>";
 "Enables stretching of the audio to match emulation speed." = "对音频进行伸缩以匹配模拟速度";
-"Enables texture decoding using the GPU instead of the CPU.
-
-This may result in performance gains in some scenarios, or on systems where the CPU is the bottleneck.
-
-If unsure, leave this unchecked." = "启用 GPU 而非 CPU 进行纹理解码。
-
-这将在某些场景下，或 CPU 成为瓶颈的系统中带来性能提升。
-
-如果不确定，请不要勾选此项。";
+"Enables texture decoding using the GPU instead of the CPU.<br><br>This may result in performance gains in some scenarios, or on systems where the CPU is the bottleneck.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "启用 GPU 而非 CPU 进行纹理解码。<br><br>这将在某些场景下，或 CPU 成为瓶颈的系统中带来性能提升。<br><br><dolphin_emphasis>如果不确定，请不要勾选此项。</dolphin_emphasis>";
 "Enables the Memory Management Unit, needed for some games. (ON = Compatible, OFF = Fast)" = "启用内存管理单元。一些游戏需要（开 = 兼容，关 = 快速）";
-"Enables validation of API calls made by the video backend, which may assist in debugging graphical issues.
-
-If unsure, leave this unchecked." = "启用由视频后端调用的 API 验证，这可以帮助调试图形问题。
-
-如果不确定，请不要勾选此项。";
-"Encodes frame dumps using the FFV1 codec.
-
-If unsure, leave this unchecked." = "使用 FFV1 编解码器编码转储的帧。
-
-如果不确定，请不要勾选此项。";
+"Enables validation of API calls made by the video backend, which may assist in debugging graphical issues.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "启用由视频后端调用的 API 验证，这可以帮助调试图形问题。<br><br><dolphin_emphasis>如果不确定，请不要勾选此项。</dolphin_emphasis>";
+"Encodes frame dumps using the FFV1 codec.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "使用 FFV1 编解码器编码转储的帧。<br><br><dolphin_emphasis>如果不确定，请不要勾选此项。</dolphin_emphasis>";
 "Encoding" = "编码";
+"Encountered the following errors while opening save files:
+%1
+
+Aborting import." = "打开存档文件时遇到以下错误：
+ %1
+
+ 正在中止导入。 ";
 "Enet Didn't Initialize" = "Enet 没有初始化";
 "English" = "英语";
 "Enhancements" = "增强";
@@ -978,6 +841,7 @@ If unsure, leave this unchecked." = "使用 FFV1 编解码器编码转储的帧�
 For more information see https://www.teamxlink.co.uk/wiki/Dolphin" = "输入运行 XLink Kai 客户端的设备 IP 地址。
 获取更多信息，请参见 https://www.teamxlink.co.uk/wiki/Dolphin";
 "Enter USB device ID" = "输入 USB 设备 ID";
+"Enter address to watch" = "Enter address to watch";
 "Enter new Broadband Adapter MAC address" = "输入新宽带适配器 MAC 地址";
 "Enter password" = "输入密码";
 "Enter the RSO module address" = "请输入 RSO 模块地址";
@@ -989,31 +853,37 @@ For more information see https://www.teamxlink.co.uk/wiki/Dolphin" = "输入运�
 "Error occured while loading some texture packs" = "加载一些纹理包时发生错误";
 "Error processing codes." = "处理代码时出错。";
 "Error processing data." = "处理数据时出错。";
-"Error reading file: %s" = "读取文件时出错：%s";
+"Error reading file: {0}" = "读取文件时出错：{0}";
 "Error synchronizing cheat codes!" = "同步保存金手指代码时出错！";
 "Error synchronizing save data!" = "同步存档数据时出错！";
-"Error writing file: %s" = "写入文件时出错：%s";
-"Error: After \"%s\", found %d (0x%X) instead of save marker %d (0x%X). Aborting savestate load..." = "错误: 在\"%s\"之后，发现了%d (0x%X)而非存档标记%d (0x%X)。正在中止读取即时存档...";
+"Error writing file: {0}" = "写入文件时出错：{0}";
+"Error: After \"{0}\", found {1} ({2:#x}) instead of save marker {3} ({4:#x}). Aborting savestate load..." = "错误：在 “{0}” 之后，发现了 {1} ({2:#x}) 而非存档标记 {3} ({4:#x})。正在中止加载即时存档...";
 "Error: Trying to access Shift JIS fonts but they are not loaded. Games may not show fonts correctly, or crash." = "错误: 正在试图访问 Shift JIS 字体，但它们没有加载。游戏可能无法正确显示字体，或者崩溃。";
 "Error: Trying to access Windows-1252 fonts but they are not loaded. Games may not show fonts correctly, or crash." = "错误: 正在试图访问 Windows-1252 字体，但它们没有加载。游戏可能无法正确显示字体，或者崩溃。";
-"Errors were found in %zu blocks in the %s partition." = "在 %s 分区的 %zu 区块中发现错误。";
-"Errors were found in %zu unused blocks in the %s partition." = "在 %s 分区未使用的 %zu 区块中发现错误。";
+"Errors were found in {0} blocks in the {1} partition." = "在 {1} 分区的 {0} 区块中发现错误。";
+"Errors were found in {0} unused blocks in the {1} partition." = "在 {1} 分区未使用的 {0} 区块中发现错误。";
 "Euphoria" = "Euphoria";
 "Europe" = "欧洲";
 "Exit" = "退出";
+"Expected + or closing paren." = "建议用 + 号或右圆括号。";
 "Expected arguments: " = "建议参数";
 "Expected closing paren." = "建议用右圆括号。";
 "Expected comma." = "建议用逗号。";
 "Expected end of expression." = "建议用表达式结束符。";
+"Expected name of input." = "建议使用的输入名称。";
+"Expected opening paren." = "建议用左圆括号。";
 "Expected start of expression." = "建议用表达式开始符。";
 "Experimental" = "实验性";
-"Export All..." = "导出全部...";
 "Export All Wii Saves" = "导出所有 Wii 存档";
+"Export Failed" = "导出失败";
 "Export Recording" = "导出录制";
 "Export Recording..." = "导出录制...";
 "Export Save File" = "导出存档文件";
+"Export Save Files" = "导出存档文件";
 "Export Wii Save" = "导出 Wii 存档";
 "Export Wii Saves" = "导出 Wii 存档";
+"Export as .gcs..." = "导出为 .gcs ...";
+"Export as .sav..." = "导出为 .sav ...";
 "Exported %n save(s)" = "已导出 %n 个存档";
 "Extension" = "扩展";
 "Extension Motion Input" = "扩展体感输入";
@@ -1038,57 +908,65 @@ For more information see https://www.teamxlink.co.uk/wiki/Dolphin" = "输入运�
 "Failed to claim interface for BT passthrough" = "索取蓝牙直通接口失败";
 "Failed to connect to Redump.org" = "连接 Redump.org 失败";
 "Failed to connect to server: %1" = "连接服务器失败: %1";
-"Failed to copy file" = "复制文件失败";
 "Failed to create D3D swap chain" = "创建 D3D 交换链失败";
+"Failed to create D3D12 context" = "创建 D3D12 上下文失败";
+"Failed to create D3D12 global resources" = "创建 D3D12 全局资源失败";
 "Failed to create DXGI factory" = "创建 DXGI 工厂失败";
 "Failed to delete NetPlay memory card. Verify your write permissions." = "删除联机存储卡失败。请验证你的写入权限。";
 "Failed to delete the selected file." = "无法删除所选文件。";
-"Failed to detach kernel driver for BT passthrough: {}" = "分离蓝牙直通内核驱动失败: {} ";
+"Failed to detach kernel driver for BT passthrough: {0}" = "分离蓝牙直通内核驱动失败: {0}";
 "Failed to download codes." = "下载代码失败。";
 "Failed to dump %1: Can't open file" = "转储 %1 失败：无法打开文件";
 "Failed to dump %1: Failed to write to file" = "转储 %1 失败：无法写入文件";
+"Failed to export %n out of %1 save file(s)." = "在 %1 个存档文件中 %n 个导出失败。";
 "Failed to export the following save files" = "导出以下存档文件失败";
 "Failed to extract certificates from NAND" = "从 NAND 中提取证书失败";
 "Failed to extract file." = "提取文件失败。";
 "Failed to extract system data." = "提取系统数据失败。";
 "Failed to find new filename.
-%s
- will be overwritten" = "无法找到新的文件名。 
-%s 
+{0}
+ will be overwritten" = "查找新的文件名失败。 
+{0} 
 将会被覆盖";
 "Failed to find one or more D3D symbols" = "无法找到一个或多个 D3D 符号";
 "Failed to import \"%1\"." = "导入 \"%1\" 失败。";
-"Failed to import save files." = "导入存档文件失败。";
+"Failed to import save file. Please launch the game once, then try again." = "导入存档文件失败。请运行一次游戏，然后重试。";
+"Failed to import save file. The given file appears to be corrupted or is not a valid Wii save." = "导入存档文件失败。给定的文件似乎已损坏或不是有效的 Wii 存档。";
+"Failed to import save file. Your NAND may be corrupt, or something is preventing access to files within it. Try repairing your NAND (Tools -> Manage NAND -> Check NAND...), then import the save again." = "导入存档文件失败。您的 NAND 可能已损坏，或某些因素阻止访问里面的文件。请尝试修复 NAND（工具 -> 管理 NAND -> 校验 NAND...），然后再次导入存档。";
 "Failed to init core" = "初始化核心失败";
 "Failed to initialize Direct3D.
 Make sure your video card supports at least D3D 10.0" = "初始化 Direct3D 失败。
 请确保你的显卡至少支持 D3D 10.0";
+"Failed to initialize renderer classes" = "初始化渲染器类失败";
 "Failed to install pack: %1" = "安装包失败: %1";
 "Failed to install this title to the NAND." = "无法将该游戏安装到 NAND。";
 "Failed to listen on port %1. Is another instance of the NetPlay server running?" = "监听端口 %1 失败。是否有另一个联机服务器的实例正在运行？";
-"Failed to load %s. If you are using Windows 7, try installing the KB4019990 update package." = "加载 %s 失败。如果你使用的是 Windows 7，请尝试安装 KB4019990 更新包。";
 "Failed to load RSO module at %1" = "无法在 %1 处加载 RSO 模块";
 "Failed to load d3d11.dll" = "载入 d3d11.dll 失败";
 "Failed to load dxgi.dll" = "载入 dxgi.dll 失败";
 "Failed to load map file '%1'" = "载入映射文件 '%1' 失败";
 "Failed to load the executable to memory." = "加载可执行文件到内存失败。";
+"Failed to load {0}. If you are using Windows 7, try installing the KB4019990 update package." = "加载 {0} 失败。如果你使用的是 Windows 7，请尝试安装 KB4019990 更新包。";
 "Failed to open '%1'" = "无法打开 '%1'";
-"Failed to open Bluetooth device: {}" = "打开蓝牙设备失败: {} ";
+"Failed to open Bluetooth device: {0}" = "打开蓝牙设备失败: {0} ";
 "Failed to open config file!" = "打开配置文件失败！";
-"Failed to open file \"%s\"." = "打开文件 \"%s\" 失败。";
-"Failed to open file \"%s\". Verify your write permissions." = "打开文件 \"%s\" 失败。请验证你的写入权限。";
+"Failed to open file \"{0}\"." = "打开文件 “{0}” 失败。";
+"Failed to open file \"{0}\". Verify your write permissions." = "打开文件 “{0}” 失败。请验证你的写入权限。";
 "Failed to open file in external editor.
 Make sure there's an application assigned to open INI files." = "无法在外部编辑器中打开文件。
 请确保已关联了应用程序来打开 INI 文件。";
+"Failed to open file." = "打开文件失败。";
 "Failed to open server" = "打开服务器失败";
 "Failed to open the input file \"%1\"." = "打开输入文件 \"%1\" 失败。";
-"Failed to open the output file \"%s\".
-Check that you have permissions to write the target folder and that the media can be written." = "无法打开输出文件  \"%s\"。
+"Failed to open the output file \"{0}\".
+Check that you have permissions to write the target folder and that the media can be written." = "无法打开输出文件 “{0}”。
 请检查是否有权限写入目标文件夹并且该媒体能够被写入。";
 "Failed to parse Redump.org data" = "解析 Redump.org 数据失败";
-"Failed to read %s" = "读取 %s 失败";
-"Failed to read from the input file \"%s\"." = "从输入文件 \"%s\" 读取失败。";
-"Failed to remove file" = "移除文件失败";
+"Failed to read from file." = "从文件读取失败。";
+"Failed to read from the input file \"{0}\"." = "从输入文件 “{0}” 读取失败。";
+"Failed to read selected savefile(s) from memory card." = "从存储卡读取所选的存档文件失败。";
+"Failed to read {0}" = "读取 {0} 失败";
+"Failed to remove file." = "移除文件失败。";
 "Failed to remove junk data from file \"%1\".
 
 Would you like to convert it without removing junk data?" = "从文件 \"%1\" 中移除垃圾数据失败。
@@ -1107,14 +985,19 @@ Would you like to convert it without removing junk data?" = "从文件 \"%1\" �
 "Failed to write Mii data." = "写入 Mii 数据失败。";
 "Failed to write Wii save." = "写入 Wii 存档失败。";
 "Failed to write config file!" = "写入配置文件失败!";
-"Failed to write the output file \"%s\".
-Check that you have enough space available on the target drive." = "无法写入输出文件“%s”。
+"Failed to write modified memory card to disk." = "修改过的存储卡写入磁盘失败。";
+"Failed to write savefile to disk." = "存档文件写入磁盘失败。";
+"Failed to write the output file \"{0}\".
+Check that you have enough space available on the target drive." = "无法写入输出文件 “{0}”。
 请检查目标驱动器是否有足够多的可用空间。";
 "Failure" = "失败";
 "Fair Input Delay" = "公平输入延迟";
+"Fallback Region" = "备用区域";
+"Fallback Region" = "备用区域";
 "Fast" = "快速";
 "Fast Depth Calculation" = "快速深度计算";
-"Fatal desync. Aborting playback. (Error in PlayWiimote: %u != %u, byte %u.)%s" = "致命的不同步。回放中止。(在 PlayWiimote 中发生错误: %u != %u, byte %u.)%s";
+"Fatal desync. Aborting playback. (Error in PlayWiimote: {0} != {1}, byte {2}.){3}" = "致命的不同步。回放中止。(在 PlayWiimote 中发生错误: {0} != {1}, byte {2}.){3}";
+"Field of View" = "视野";
 "File Details" = "文件详细信息";
 "File Format" = "文件格式";
 "File Format" = "文件格式";
@@ -1124,34 +1007,26 @@ Check that you have enough space available on the target drive." = "无法写入
 "File Size" = "文件大小";
 "File Size" = "文件大小";
 "File contained no codes." = "文件未包含代码。";
-"File write failed" = "文件写入失败";
+"Filename" = "文件名";
 "Files opened, ready to compress." = "文件已打开，准备压缩。";
-"Files specified in the M3U file \"%s\" were not found:
-%s" = "找不到 M3U 文件 \"%s\" 中指定的下列文件:
-%s";
+"Files specified in the M3U file \"{0}\" were not found:
+{1}" = "找不到 M3U 文件 “{0}” 中指定的下列文件:
+{1}";
 "Filesize does not match any known GameCube Memory Card size." = "文件大小与任何已知的 GameCube 存储卡大小都不匹配。";
 "Filesize in header mismatches actual card size." = "标头中的文件大小与实际卡大小不匹配。";
 "Filesystem" = "文件系统";
 "Filter Symbols" = "过滤符号";
 "Filters" = "过滤";
-"Filters all textures, including any that the game explicitly set as unfiltered.
-
-May improve quality of certain textures in some games, but will cause issues in others.
-
-If unsure, leave this unchecked." = "过滤所有纹理，包括游戏已明确设定为不过滤的。
-
-可能提升一些游戏的某些纹理质量，但会导致另一些游戏出现问题。
-
-如果不确定，请不要勾选此项。";
+"Filters all textures, including any that the game explicitly set as unfiltered.<br><br>May improve quality of certain textures in some games, but will cause issues in others.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "过滤所有纹理，包括游戏已明确设定为不过滤的。<br><br>可能提升一些游戏的某些纹理质量，但会导致另一些游戏出现问题。<br><br><dolphin_emphasis>如果不确定，请不要勾选此项。</dolphin_emphasis>";
 "Find Next" = "查找下一个";
 "Find Previous" = "查找上一个";
 "Finish Calibration" = "完成校准";
 "Finishing the update...
 This can take a while." = "正在完成更新...
 这可能需要一段时间。";
-"First Block" = "第一个区块";
 "First Person" = "第一人称";
 "Fix Checksums" = "修正校验和";
+"Fix Checksums Failed" = "修正校验和失败";
 "Flags" = "标记";
 "Float" = "浮点";
 "Follow branch" = "跟随分支";
@@ -1161,24 +1036,8 @@ This can take a while." = "正在完成更新...
 "Force 4:3" = "强制 4:3";
 "Force Listen Port" = "强制监听端口";
 "Force Texture Filtering" = "强制纹理过滤";
-"Forces the game to output graphics for any aspect ratio. Use with \"Aspect Ratio\" set to \"Force 16:9\" to force 4:3-only games to run at 16:9.
-
-Rarely produces good results and often partially breaks graphics and game UIs. Unnecessary (and detrimental) if using any AR/Gecko-code widescreen patches.
-
-If unsure, leave this unchecked." = "强制游戏输出任何比例的图像。配合“强制 16:9”的“宽高比”设置可使仅用于 4:3 比例的游戏在 16:9 下运行。
-
-很少能够得到理想的结果并经常会部分破坏图像和游戏界面。如果使用任何 AR/Gecko 宽屏补丁代码则不应勾选此项。
-
-如果不确定，请不要勾选此项。";
-"Forces the game to render the RGB color channels in 24-bit, thereby increasing quality by reducing color banding.
-
-Has no impact on performance and causes few graphical issues.
-
-If unsure, leave this checked." = "强制游戏渲染 24 位的 RGB 颜色通道，从而通过减少渐变色带来提高质量。
-
-对性能没有影响，并且几乎没有图形问题。
-
-如果不确定，请勾选此项。";
+"Forces the game to output graphics for any aspect ratio. Use with \"Aspect Ratio\" set to \"Force 16:9\" to force 4:3-only games to run at 16:9.<br><br>Rarely produces good results and often partially breaks graphics and game UIs. Unnecessary (and detrimental) if using any AR/Gecko-code widescreen patches.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "强制游戏输出任何比例的图像。配合“强制 16:9”的“长宽比”设置可使仅用于 4:3 比例的游戏在 16:9 下运行。<br><br>很少能够得到理想的结果并经常会部分破坏图像和游戏界面。如果使用任何 AR/Gecko 宽屏补丁代码则不应勾选此项。<br><br><dolphin_emphasis>如果不确定，请不要勾选此项。</dolphin_emphasis>";
+"Forces the game to render the RGB color channels in 24-bit, thereby increasing quality by reducing color banding.<br><br>Has no impact on performance and causes few graphical issues.<br><br><dolphin_emphasis>If unsure, leave this checked.</dolphin_emphasis>" = "强制游戏渲染 24 位的 RGB 颜色通道，从而通过减少渐变色带来提高质量。<br><br>对性能没有影响，并且几乎没有图形问题。<br><br><dolphin_emphasis>如果不确定，请勾选此项。</dolphin_emphasis>";
 "Format" = "格式";
 "Forward" = "前";
 "Forward port (UPnP)" = "转发端口(UPnP)";
@@ -1188,28 +1047,20 @@ If unsure, leave this checked." = "强制游戏渲染 24 位的 RGB 颜色通道
 "Frame Advance Decrease Speed" = "逐帧播放减小速度";
 "Frame Advance Increase Speed" = "逐帧播放增加速度";
 "Frame Advance Reset Speed" = "逐帧播放重置速度";
-"Frame Dumping" = "正在转储帧";
+"Frame Dumping" = "转储帧";
 "Frame Range" = "帧范围";
-"Frame dump image(s) '%s' already exists. Overwrite?" = "帧转储图像 '%s' 已经存在，是否覆盖?";
+"Frame dump image(s) '{0}' already exists. Overwrite?" = "帧转储图像 ‘{0}’ 已经存在。是否覆盖？";
 "Frames to Record" = "录制帧数";
 "France" = "法国";
-"Free Look" = "自由视点";
+"Free Blocks: %1" = "空闲区块数: %1";
+"Free Files: %1" = "空闲文件数: %1";
+"Free Look Control Type" = "自由视点控制类型";
+"Free Look Controller %1" = "自由视点控制器 %1";
+"Free Look Settings" = "自由视点设置";
+"Free Look allows for manipulation of the in-game camera. Different camera types are available from the dropdown.<br><br>For detailed instructions, <a href=\"https://wiki.dolphin-emu.org/index.php?title=Free_Look\">refer to this page</a>." = "自由视点允许操纵游戏中的镜头。下拉菜单提供不同的镜头类型。<br><br>有关详细说明，<a href=\"https://wiki.dolphin-emu.org/index.php?title=Free_Look\">请参阅此页面</a>。";
+"FreeLook" = "自由视点";
 "Freelook" = "自由视点";
-"Freelook Decrease Field of View X" = "自由视点减小 X 轴视野 ";
-"Freelook Decrease Field of View Y" = "自由视点减小 Y 轴视野 ";
-"Freelook Decrease Speed" = "自由视点减小速度";
-"Freelook Increase Field of View X" = "自由视点增加 X 轴视野 ";
-"Freelook Increase Field of View Y" = "自由视点增加 Y 轴视野 ";
-"Freelook Increase Speed" = "自由视点增加速度";
-"Freelook Move Down" = "自由视点下移";
-"Freelook Move Left" = "自由视点左移";
-"Freelook Move Right" = "自由视点右移";
-"Freelook Move Up" = "自由视点上移";
-"Freelook Reset" = "自由视点重置";
-"Freelook Reset Speed" = "自由视点重置速度";
 "Freelook Toggle" = "自由视点切换";
-"Freelook Zoom In" = "自由视点拉近";
-"Freelook Zoom Out" = "自由视点远离";
 "French" = "法语";
 "Frequency" = "频率";
 "Frets" = "品键";
@@ -1225,7 +1076,7 @@ If unsure, leave this checked." = "强制游戏渲染 24 位的 RGB 颜色通道
 "GCI Folder" = "GCI 文件夹";
 "GCMemcardDirectory: ClearBlock called with invalid block address" = "GCMemcardDirectory: ClearBlock 被用于无效的区块地址";
 "GCZ GC/Wii images (*.gcz)" = "GCZ GC/Wii 镜像 (*.gcz)";
-"GFX FIFO: Unknown Opcode (0x%02x @ %p, %s).
+"GFX FIFO: Unknown Opcode ({0:#04x} @ {1}, {2}).
 This means one of the following:
 * The emulated GPU got desynced, disabling dual core can help
 * Command stream corrupted by some spurious memory bug
@@ -1233,16 +1084,44 @@ This means one of the following:
 * Some other sort of bug
 
 Further errors will be sent to the Video Backend log and
-Dolphin will now likely crash or hang. Enjoy." = "GFX FIFO: 未知的操作码 (0x%02x @ %p, %s)。
+Dolphin will now likely crash or hang. Enjoy." = "GFX FIFO: 未知 Opcode ({0:#04x} @ {1}, {2})。
 这可能是下述中的一个原因:
 * 模拟的 GPU 未同步，禁用双核心可以改善
 * 命令流被一些伪内存错误破坏
-* 这确实是一个未知的操作码(可能性低)
+* 这确实是一个未知 Opcode（可能性低）
 * 其它类型的错误
 
 进一步的错误信息将发送到视频后端日志中并且
 Dolphin 现在可能崩溃或挂起。请关闭。";
+"GL_MAX_TEXTURE_SIZE is {0} - must be at least 1024." = "GL_最大_纹理_大小 是 {0} - 必须至少 1024 。";
 "GPU Texture Decoding" = "GPU 纹理解码";
+"GPU: ERROR: Need GL_ARB_framebuffer_object for multiple render targets.
+GPU: Does your video card support OpenGL 3.0?" = "GPU：错误：需要 GL_ARB_framebuffer_object 渲染目标。
+GPU：您的显卡是否支持 OpenGL 3.0？";
+"GPU: OGL ERROR: Does your video card support OpenGL 2.0?" = "GPU： OGL 错误：您的显卡是否支持 OpenGL 2.0？";
+"GPU: OGL ERROR: Need GL_ARB_map_buffer_range.
+GPU: Does your video card support OpenGL 3.0?" = "GPU：错误：需要 GL_ARB_map_buffer_range。
+GPU：您的显卡是否支持 OpenGL 3.0？";
+"GPU: OGL ERROR: Need GL_ARB_sampler_objects.
+GPU: Does your video card support OpenGL 3.3?" = "GPU：OGL 错误：需要 GL_ARB_sampler_objects。
+GPU：您的显卡是否支持 OpenGL 3.3？";
+"GPU: OGL ERROR: Need GL_ARB_uniform_buffer_object.
+GPU: Does your video card support OpenGL 3.1?" = "GPU：OGL 错误：需要 GL_ARB_uniform_buffer_object。
+GPU：您的显卡是否支持 OpenGL 3.1？";
+"GPU: OGL ERROR: Need GL_ARB_vertex_array_object.
+GPU: Does your video card support OpenGL 3.0?" = "GPU：OGL 错误：需要 GL_ARB_vertex_array_object。
+GPU：您的显卡是否支持 OpenGL 3.0？";
+"GPU: OGL ERROR: Need OpenGL version 3.
+GPU: Does your video card support OpenGL 3?" = "GPU：OGL 错误：需要 OpenGL 版本 3 。
+GPU：您的显卡是否支持 OpenGL 3？";
+"GPU: OGL ERROR: Need at least GLSL 1.30
+GPU: Does your video card support OpenGL 3.0?
+GPU: Your driver supports GLSL {0}" = "Gpu： Ogl 错误：至少需要 Glsl 1.30
+GPU：您的显卡是否支持 OpenGL 3.0？
+GPU：您的驱动程序支持 GLSL {0}";
+"GPU: OGL ERROR: Number of attributes {0} not enough.
+GPU: Does your video card support OpenGL 2.x?" = "GPU：OGL 错误：{0} 属性数量不足。
+GPU：您的显卡是否支持 OpenGL 2.x？";
 "Game" = "游戏";
 "Game Boy Advance Carts (*.gba)" = "GBA 游戏卡带 (*.gba)";
 "Game Config" = "游戏配置";
@@ -1253,7 +1132,7 @@ Dolphin 现在可能崩溃或挂起。请关闭。";
 "Game Status" = "游戏状态";
 "Game changed to \"%1\"" = "游戏更改为 \"%1\"";
 "Game is already running!" = "游戏已经运行!";
-"Game overwrote with another games save. Data corruption ahead 0x%x, 0x%x" = "游戏覆盖了其他的游戏存档，将会破坏数据 0x%x, 0x%x";
+"Game overwrote with another games save. Data corruption ahead {0:#x}, {1:#x}" = "游戏覆盖了其他的游戏存档，将会破坏数据 {0:#x}, {1:#x}";
 "Game-Specific Settings" = "特定游戏设置";
 "GameCube" = "GameCube";
 "GameCube Adapter for Wii U" = "Wii U GameCube 适配器";
@@ -1264,6 +1143,7 @@ Dolphin 现在可能崩溃或挂起。请关闭。";
 "GameCube Keyboard" = "GameCube 键盘";
 "GameCube Keyboard at Port %1" = "端口 %1 的 GameCube 键盘";
 "GameCube Memory Card Manager" = "GameCube 存储卡管理器";
+"GameCube Memory Cards" = "GameCube 存储卡";
 "GameCube Memory Cards (*.raw *.gcp)" = "GameCube 存储卡 (*.raw *.gcp)";
 "GameCube Microphone Slot %1" = "GameCube 麦克风插槽 %1";
 "GameCube TAS Input %1" = "GameCube TAS 输入 %1";
@@ -1277,19 +1157,12 @@ Dolphin 现在可能崩溃或挂起。请关闭。";
 "German" = "德语";
 "Germany" = "德国";
 "GiB" = "GiB";
+"Go to" = "转到";
 "Golf Mode" = "高尔夫模式";
 "Good dump" = "正确的转储";
 "Graphics" = "图形";
 "Graphics Toggles" = "图形切换";
-"Greatly increases the quality of textures generated using render-to-texture effects.
-
-Slightly increases GPU load and causes relatively few graphical issues. Raising the internal resolution will improve the effect of this setting. 
-
-If unsure, leave this checked." = "显著提高渲染到纹理效果所生成纹理的质量。
-
-轻微提升 GPU 占用率，较少产生图像问题。提高内部分辨率将增强此选项的效果。
-
-如果不确定，请勾选此项。";
+"Greatly increases the quality of textures generated using render-to-texture effects.<br><br>Slightly increases GPU load and causes relatively few graphical issues. Raising the internal resolution will improve the effect of this setting. <br><br><dolphin_emphasis>If unsure, leave this checked.</dolphin_emphasis>" = "显著提高渲染到纹理效果所生成纹理的质量。<br><br>轻微提升 GPU 占用率，较少产生图像问题。提高内部分辨率将增强此选项的效果。<br><br><dolphin_emphasis>如果不确定，请勾选此项。</dolphin_emphasis>";
 "Green" = "绿";
 "Green Left" = "绿 左";
 "Green Right" = "绿 右";
@@ -1299,14 +1172,17 @@ If unsure, leave this checked." = "显著提高渲染到纹理效果所生成纹
 "HDMI 3D" = "HDMI 3D";
 "Hacks" = "修正";
 "Head" = "头";
+"Help" = "帮助";
 "Hex" = "十六进制";
 "Hexadecimal" = "十六进制";
 "Hide" = "隐藏";
+"Hide All" = "隐藏全部";
 "Hide In-Game Sessions" = "隐藏正在游戏的会话";
 "Hide Incompatible Sessions" = "隐藏不兼容的会话";
 "High" = "高";
 "Highest" = "最高";
 "Hit Strength" = "敲击力度";
+"Horizontal FOV" = "水平视野";
 "Host" = "主机";
 "Host Code" = "主机代码 ";
 "Host Input Authority" = "主机输入优先权";
@@ -1317,14 +1193,16 @@ Suitable for casual games with 3+ players, possibly on unstable or high latency 
 "Host input authority disabled" = "主机输入优先权已禁用";
 "Host input authority enabled" = "主机输入优先权已启用";
 "Host with NetPlay" = "建主机联网";
+"Hostname" = "主机名";
 "Hotkey Settings" = "热键设置";
 "Hotkeys" = "热键";
 "Hotkeys Require Window Focus" = "热键需要窗口是活动状态";
 "Hz" = "Hz";
-"I am aware of the risks and want to continue" = "I am aware of the risks and want to continue";
+"I am aware of the risks and want to continue" = "我已知道风险并希望继续";
 "ID" = "ID";
-"IOS: A file required for SSL services (%s) is invalid. Please refer to https://dolphin-emu.org/docs/guides/wii-network-guide/ for instructions on setting up Wii networking." = "IOS: SSL 服务所必需的一个文件 (%s) 无效。请参阅 https://dolphin-emu.org/docs/guides/wii-network-guide/ 了解如何设置 Wii 联网。";
-"IOS: Could not read a file required for SSL services (%s). Please refer to https://dolphin-emu.org/docs/guides/wii-network-guide/ for instructions on setting up Wii networking." = "IOS: 无法读取 SSL 服务所必需的一个文件 (%s)。请参阅 https://dolphin-emu.org/docs/guides/wii-network-guide/ 了解如何设置 Wii 联网。";
+"IOS Version" = "IOS 版本";
+"IOS: A file required for SSL services ({0}) is invalid. Please refer to https://dolphin-emu.org/docs/guides/wii-network-guide/ for instructions on setting up Wii networking." = "IOS: SSL 服务所必需的一个文件 ({0}) 无效。请参阅 https://dolphin-emu.org/docs/guides/wii-network-guide/ 了解如何设置 Wii 联网。";
+"IOS: Could not read a file required for SSL services ({0}). Please refer to https://dolphin-emu.org/docs/guides/wii-network-guide/ for instructions on setting up Wii networking." = "IOS: 无法读取 SSL 服务所必需的一个文件 ({0})。请参阅 https://dolphin-emu.org/docs/guides/wii-network-guide/ 了解如何设置 Wii 联网。";
 "IP Address" = "IP 地址 ";
 "IPL Settings" = "IPL 设置";
 "IR" = "红外线";
@@ -1355,56 +1233,43 @@ This authorization can be revoked at any time through Dolphin's settings." = "�
 
 我们不会收集您的隐私数据。这些数据能帮助我们了解用户与被模拟的游戏怎样使用 Dolphin 以确定我们的工作重点。它们还将帮助我们发现导致故障、性能问题与稳定性问题的罕见程序设置。
 您可以随时通过 Dolphin 的程序设置取消本授权。";
+"If checked, the emulated controller is always connected.
+If unchecked, the connection state of the emulated controller is linked
+to the connection state of the real default device (if there is one)." = "If checked, the emulated controller is always connected.
+If unchecked, the connection state of the emulated controller is linked
+to the connection state of the real default device (if there is one).";
 "Ignore" = "忽略";
 "Ignore Format Changes" = "忽略格式变化";
 "Ignore for this session" = "本次会话期间忽略";
-"Ignores any changes to the EFB format.
-
-Improves performance in many games without any negative effect. Causes graphical defects in a small number of other games.
-
-If unsure, leave this checked." = "忽略 EFB 格式的任何变化。
-
-在许多游戏中会提高性能且无负面作用。但在其余一小部分游戏中也会导致图像瑕疵。
-
-如果不确定，请勾选此项。";
-"Ignores any requests from the CPU to read from or write to the EFB. 
-
-Improves performance in some games, but will disable all EFB-based graphical effects or gameplay-related features.
-
-If unsure, leave this unchecked." = "忽略 CPU 对 EFB 的任何读写请求。
-
-在一些游戏中可提高性能，但会禁用所有基于 EFB 的图形效果或与游戏相关的特性。
-
-如果不确定，请不要勾选此项。";
+"Ignores any changes to the EFB format.<br><br>Improves performance in many games without any negative effect. Causes graphical defects in a small number of other games.<br><br><dolphin_emphasis>If unsure, leave this checked.</dolphin_emphasis>" = "忽略 EFB 格式的任何变化。<br><br>在许多游戏中会提高性能且无负面作用。但在其余一小部分游戏中也会导致图像瑕疵。<br><br><dolphin_emphasis>如果不确定，请勾选此项。</dolphin_emphasis>";
+"Ignores any requests from the CPU to read from or write to the EFB. <br><br>Improves performance in some games, but will disable all EFB-based graphical effects or gameplay-related features.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "忽略 CPU 对 EFB 的任何读写请求。<br><br>在一些游戏中可提高性能，但会禁用所有基于 EFB 的图形效果或与游戏相关的特性。<br><br><dolphin_emphasis>如果不确定，请不要勾选此项。</dolphin_emphasis>";
 "Immediately Present XFB" = "立即呈现 XFB";
-"Implements fullscreen mode with a borderless window spanning the whole screen instead of using exclusive mode. Allows for faster transitions between fullscreen and windowed mode, but slightly increases input latency, makes movement less smooth and slightly decreases performance.
-
-If unsure, leave this unchecked." = "使用一个覆盖整个屏幕的无边框窗口来实现全屏模式，而非使用独占模式。开启后在全屏模式与窗口模式之间切换会更快，但是输入延迟将略有增加，影响操作流畅性并且性能也会略微降低。
-
-如果不确定，请不要勾选此项。";
+"Implements fullscreen mode with a borderless window spanning the whole screen instead of using exclusive mode. Allows for faster transitions between fullscreen and windowed mode, but slightly increases input latency, makes movement less smooth and slightly decreases performance.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "使用一个覆盖整个屏幕的无边框窗口来实现全屏模式，而非使用独占模式。开启后在全屏模式与窗口模式之间切换会更快，但是输入延迟将略有增加，影响操作流畅性并且性能也会略微降低。<br><br><dolphin_emphasis>如果不确定，请不要勾选此项。</dolphin_emphasis>";
 "Import BootMii NAND Backup..." = "导入 BootMii NAND 备份...";
-"Import Save File" = "导入存档文件";
+"Import Failed" = "导入失败";
+"Import Save File(s)" = "导入存档文件";
 "Import Wii Save..." = "导入 Wii 存档...";
-"Import failed" = "导入失败";
 "Importing NAND backup" = "正在导入 NAND 备份";
 "Importing NAND backup
  Time elapsed: %1s" = "正在导入 NAND 备份
  已用时间: %1s";
 "In-Game?" = "游戏中？";
-"Includes the contents of the embedded frame buffer (EFB) and upscaled EFB copies in save states. Fixes missing and/or non-upscaled textures/objects when loading states at the cost of additional save/load time.
-
-If unsure, leave this checked." = "在即时存档中包含内置帧缓冲 (EFB) 和放大的 EFB 副本内容。可解决读取即时存档时纹理与物体缺失或模糊的问题，但会加长存/读档时间。
-
-如果不确定，请勾选此项。";
+"Includes the contents of the embedded frame buffer (EFB) and upscaled EFB copies in save states. Fixes missing and/or non-upscaled textures/objects when loading states at the cost of additional save/load time.<br><br><dolphin_emphasis>If unsure, leave this checked.</dolphin_emphasis>" = "在即时存档中包含内置帧缓冲 (EFB) 和放大的 EFB 副本内容。可解决读取即时存档时纹理与物体缺失或模糊的问题，但会加长存/读档时间。<br><br><dolphin_emphasis>如果不确定，请勾选此项。</dolphin_emphasis>";
+"Increase" = "增加";
 "Increase Convergence" = "增加会聚";
 "Increase Depth" = "增加深度";
 "Increase Emulation Speed" = "增加模拟速度";
 "Increase IR" = "增加内部分辨率";
+"Increase X" = "增加 X";
+"Increase Y" = "增加 Y";
+"Incremental Rotation" = "增量旋转";
+"Incremental Rotation (rad/sec)" = "增量旋转（度/秒）";
 "Info" = "信息";
 "Information" = "信息";
+"Inhibit Screensaver During Emulation" = "在模拟过程中禁止屏幕保护程序";
 "Input" = "输入";
 "Input strength required for activation." = "激活所需要的输入力度。";
-"Input strength to ignore." = "要忽略的输入力度。";
+"Input strength to ignore and remap." = "Input strength to ignore and remap.";
 "Insert nop" = "插入 nop ";
 "Insert SD Card" = "插入 SD 卡";
 "Install" = "安装";
@@ -1420,19 +1285,19 @@ If unsure, leave this checked." = "在即时存档中包含内置帧缓冲 (EFB)
 "Interface" = "界面";
 "Internal LZO Error - compression failed" = "内部 LZO 错误 - 压缩失败";
 "Internal LZO Error - decompression failed" = "内部 LZO 错误 - 解压失败";
-"Internal LZO Error - decompression failed (%d) (%li, %li) 
-Try loading the state again" = "内部 LZO 错误 - 解压失败 (%d) (%li, %li) 
+"Internal LZO Error - decompression failed ({0}) ({1}, {2}) 
+Try loading the state again" = "内部 LZO 错误 - 解压失败 ({0}) ({1}, {2})
 请尝试重新加载状态";
 "Internal LZO Error - lzo_init() failed" = "内部 LZO 错误 - lzo_init() 失败";
 "Internal Resolution" = "内部分辨率";
 "Internal Resolution" = "内部分辨率";
 "Interpreter (slowest)" = "解释器（最慢）";
 "Interpreter Core" = "解释器核心";
+"Invalid Expression." = "无效表达式。";
 "Invalid Mixed Code" = "无效混合代码";
 "Invalid Pack %1 provided: %2" = "包 %1 无效: %2";
 "Invalid Player ID" = "无效玩家 ID";
 "Invalid RSO module address: %1" = "无效 RSO 模块地址: %1";
-"Invalid Token." = "无效标记。";
 "Invalid callstack" = "无效调用堆栈";
 "Invalid checksums." = "无效校验和。";
 "Invalid host" = "无效主机";
@@ -1445,10 +1310,10 @@ Try loading the state again" = "内部 LZO 错误 - 解压失败 (%d) (%li, %li)
 "Invalid search string (couldn't convert to number)" = "无效的搜索字符串（无法转换成数字）";
 "Invalid search string (only even string lengths supported)" = "无效的搜索字符串（仅支持相等长度的字符串）";
 "Invalid title ID." = "无效游戏 ID";
+"Invalid watch address: %1" = "Invalid watch address: %1";
 "Italian" = "意大利语";
 "Italy" = "意大利";
 "JIT" = "JIT";
-"JIT Arm64 (experimental)" = "JIT Arm64（实验性）";
 "JIT Block Linking Off" = "关闭 JIT 区块链接";
 "JIT Blocks" = "JIT 区块";
 "JIT Branch Off" = "关闭 JIT 分支";
@@ -1462,9 +1327,11 @@ Try loading the state again" = "内部 LZO 错误 - 解压失败 (%d) (%li, %li)
 "JIT LoadStore lwz Off" = "关闭 JIT 加载存储 Iwz";
 "JIT Off (JIT Core)" = "关闭 JIT (JIT 核心)";
 "JIT Paired Off" = "关闭 JIT 配对";
-"JIT Recompiler (recommended)" = "JIT 重编译器（推荐）";
+"JIT Recompiler for ARM64 (recommended)" = "适用于 ARM64 的 JIT 重编译器（推荐）";
+"JIT Recompiler for x86-64 (recommended)" = "适用于 x86-64 的 JIT 重编译器（推荐）";
 "JIT Register Cache Off" = "关闭 JIT 寄存器缓存";
 "JIT SystemRegisters Off" = "关闭 JIT 系统寄存器";
+"JIT failed to find code space after a cache clear. This should never happen. Please report this incident on the bug tracker. Dolphin will now exit." = "清除缓存后，JIT 无法找到代码空间。这应该从不会出现。请在错误跟踪器中上报此事件。 Dolphin 即将退出。";
 "Japan" = "日本";
 "Japanese" = "日语";
 "Japanese (Shift-JIS)" = "日本 (Shift-JIS)";
@@ -1546,11 +1413,7 @@ Middle-click to clear." = "左/右键单击配置输出。
 "Load map file" = "载入映射文件";
 "Load..." = "载入...";
 "Loaded symbols from '%1'" = "已从 '%1' 中加载符号";
-"Loads custom textures from User/Load/Textures/<game_id>/.
-
-If unsure, leave this unchecked." = "加载 User/Load/Textures/<game_id>/ 目录中的自定义纹理。
-
-如果不确定，请不要勾选此项。";
+"Loads custom textures from User/Load/Textures/lt;game_idgt;/ and User/Load/DynamicInputTextures/lt;game_idgt;/.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "加载 User/Load/Textures/lt;game_idgt;/ 和 User/Load/DynamicInputTextures/lt;game_idgt;/ 目录中的自定义纹理。<br><br><dolphin_emphasis>如果不确定，请不要勾选此项。</dolphin_emphasis>";
 "Local" = "本地";
 "Lock" = "锁定";
 "Log" = "日志";
@@ -1559,15 +1422,7 @@ If unsure, leave this unchecked." = "加载 User/Load/Textures/<game_id>/ 目录
 "Log Render Time to File" = "记录渲染时间到文件";
 "Log Types" = "日志类型";
 "Logger Outputs" = "日志输出";
-"Logs the render time of every frame to User/Logs/render_time.txt.
-
-Use this feature when to measure the performance of Dolphin.
-
-If unsure, leave this unchecked." = "将每帧的渲染时间记录于 User/Logs/render_time.txt 文件。
-
-要衡量 Dolphin 的性能时可启用此功能。
-
-如果不确定，请不要勾选此项。";
+"Logs the render time of every frame to User/Logs/render_time.txt.<br><br>Use this feature to measure Dolphin's performance.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Logs the render time of every frame to User/Logs/render_time.txt.<br><br>Use this feature to measure Dolphin's performance.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>";
 "Lost connection to NetPlay server..." = "丢失联机服务器连接...";
 "Low" = "低";
 "Lowest" = "最低";
@@ -1575,19 +1430,11 @@ If unsure, leave this unchecked." = "将每帧的渲染时间记录于 User/Logs
 "MD5" = "MD5";
 "MMU" = "MMU";
 "MORIBUND" = "即将结束";
-"MadCatz Gameshark files(*.gcs)" = "MadCatz Gameshark 文件(*.gcs)";
+"MadCatz Gameshark files" = "MadCatz Gameshark 文件";
 "Main Stick" = "主摇杆";
 "Maker" = "制作者";
 "Maker" = "制作者";
-"Makes distant objects more visible by removing fog, thus increasing the overall detail.
-
-Disabling fog will break some games which rely on proper fog emulation.
-
-If unsure, leave this unchecked." = "通过移除雾提升远处对象的可见性，进而增加整体细节。
-
-有些游戏依赖正确的雾模拟，禁用雾将破坏其游戏性。
-
-如果不确定，请不要勾选此项。";
+"Makes distant objects more visible by removing fog, thus increasing the overall detail.<br><br>Disabling fog will break some games which rely on proper fog emulation.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "通过移除雾提升远处对象的可见性，进而增加整体细节。<br><br>有些游戏依赖正确的雾模拟，禁用雾将破坏其游戏性。<br><br><dolphin_emphasis>如果不确定，请不要勾选此项。</dolphin_emphasis>";
 "Manage NAND" = "管理 NAND";
 "Mapping" = "映射";
 "Match Found" = "找到匹配";
@@ -1600,25 +1447,25 @@ If unsure, leave this unchecked." = "通过移除雾提升远处对象的可见�
 "Memory Breakpoint" = "内存断点";
 "Memory Card" = "存储卡";
 "Memory Card Manager" = "存储卡管理器";
-"Memory Card filename in Slot %c is incorrect
+"Memory Card filename in Slot {0} is incorrect
 Region not specified
 
-Slot %c path was changed to
-%s
+Slot {1} path was changed to
+{2}
 Would you like to copy the old file to this new location?
-" = "插槽 %c 中的存储卡文件名不正确
+" = "插槽 {0} 中的存储卡文件名不正确
 没有指定区域
 
-插槽 %c 路径被修改成
-%s
+插槽 {1} 路径被修改成
+{2}
 你想复制旧文件到这个新位置吗?
 ";
 "Memory Not Ready" = "内存未就绪";
 "Memory Override" = "内存覆盖";
 "Memory breakpoint options" = "内存断点选项";
-"MemoryCard: ClearBlock called on invalid address (0x%x)" = "MemoryCard: ClearBlock 在无效地址 (0x%x) 中调用";
-"MemoryCard: Read called with invalid source address (0x%x)" = "MemoryCard: 在无效源地址 (0x%x) 中读取调用";
-"MemoryCard: Write called with invalid destination address (0x%x)" = "MemoryCard: 在无效目标地址 (0x%x) 中写入调用";
+"MemoryCard: ClearBlock called on invalid address ({0:#x})" = "MemoryCard: ClearBlock 在无效地址 ({0:#x}) 中调用";
+"MemoryCard: Read called with invalid source address ({0:#x})" = "MemoryCard: 在无效源地址 ({0:#x}) 中读取调用";
+"MemoryCard: Write called with invalid destination address ({0:#x})" = "MemoryCard: 在无效目标地址 ({0:#x}) 中写入调用";
 "Merging a new NAND over your currently selected NAND will overwrite any channels and savegames that already exist. This process is not reversible, so it is recommended that you keep backups of both NANDs. Are you sure you want to continue?" = "将新 NAND 合并入当前 NAND 将会覆盖所有现有的频道与存档。此过程不可逆，建议您对两份 NAND 都进行备份。确定继续？";
 "MiB" = "MiB";
 "Microphone" = "麦克风";
@@ -1627,15 +1474,8 @@ Would you like to copy the old file to this new location?
 "Mismatch between free block count in header and actually unused blocks." = "标头中的空闲区块数与实际未使用的区块不匹配。";
 "Mismatch between internal data structures." = "内部数据结构不匹配。";
 "Modifier" = "修饰键";
-"Modifies textures to show the format they're encoded in.
-
-May require an emulation reset to apply.
-
-If unsure, leave this unchecked." = "修改纹理以显示以其编码格式。
-
-可能需要重置模拟才能生效。
-
-如果不确定，请不要勾选此项。";
+"Modifies textures to show the format they're encoded in.<br><br>May require an emulation reset to apply.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "修改纹理以显示以其编码格式。<br><br>可能需要重置模拟才能生效。<br><br><dolphin_emphasis>如果不确定，请不要勾选此项。</dolphin_emphasis>";
+"Modules found: %1" = "已找到模块: %1";
 "Mono" = "单声道";
 "Monoscopic Shadows" = "单视场阴影";
 "Monospaced Font" = "等宽字体";
@@ -1644,14 +1484,13 @@ If unsure, leave this unchecked." = "修改纹理以显示以其编码格式。
 "Motion Input" = "体感输入";
 "Motion Simulation" = "体感模拟";
 "Motor" = "马达";
-"Move the mouse pointer over an option to display a detailed description." = "将鼠标指针移至某一选项上以显示详细说明。";
+"Move" = "移动";
 "Movie" = "影片";
+"No to All" = "全部选否";
 "NAND Check" = "NAND 校验";
-"NKit Warning" = "NKit Warning";
-"NOTE: Stream size doesn't match actual data length
-" = "注意: 流大小与真实数据长度不匹配
-";
+"NKit Warning" = "NKit 警告";
 "NTSC-J" = "NTSC-J";
+"NTSC-K" = "NTSC-K";
 "NTSC-U" = "NTSC-U";
 "Name" = "名称";
 "Name for a new tag" = "命名一个新标签";
@@ -1659,7 +1498,7 @@ If unsure, leave this unchecked." = "修改纹理以显示以其编码格式。
 "Name of your session shown in the server browser" = "在服务器浏览器中所显示的会话名称";
 "Name" = "名称";
 "Native (640x528)" = "原生 (640x528)";
-"Native GCI File (*.gci)" = "内部 GCI 文件 (*.gci)";
+"Native GCI File" = "内部 GCI 文件";
 "NetPlay" = "联机";
 "NetPlay Session Browser" = "联机会话浏览器";
 "NetPlay Setup" = "联机设定";
@@ -1667,6 +1506,7 @@ If unsure, leave this unchecked." = "修改纹理以显示以其编码格式。
 "Netplay has desynced in NetPlay_GetButtonPress()" = "联机在 NetPlay_GetButtonPress() 中不同步";
 "Netplay has desynced. There is no way to recover from this." = "联机发生不同步，已无法恢复。";
 "Network" = "网络";
+"Network dump format" = "网络转储格式";
 "Never Auto-Update" = "不要自动更新";
 "New" = "新";
 "New Breakpoint" = "新断点";
@@ -1692,10 +1532,10 @@ If unsure, leave this unchecked." = "修改纹理以显示以其编码格式。
 "No extension selected." = "未选择扩展。";
 "No file loaded / recorded." = "文件未加载 / 录制";
 "No issues have been detected." = "没有发现问题。";
-"No paths found in the M3U file \"%s\"" = "在 M3U 文件 \"%s\" 中找不到路径";
+"No paths found in the M3U file \"{0}\"" = "在 M3U 文件 “{0}” 中找不到路径";
 "No problems were found." = "未发现任何问题。";
 "No problems were found. This does not guarantee that this is a good dump, but since Wii titles contain a lot of verification data, it does mean that there most likely are no problems that will affect emulation." = "未发现任何问题。虽然不能保证这是一个正确的转储，但由于 Wii 游戏包含大量的验证数据，这表明几乎不会出现影响模拟的问题。";
-"No profiles found for game setting '%s'" = "没有找到游戏设置 '%s' 的预设";
+"No profiles found for game setting '{0}'" = "没有找到游戏设置 ‘{0}’ 的预设";
 "No recording loaded." = "没有录制被载入。";
 "No save data found." = "没有找到存档数据。";
 "No search value entered." = "未输入搜索值。";
@@ -1706,7 +1546,10 @@ If unsure, leave this unchecked." = "修改纹理以显示以其编码格式。
 "Not Found" = "未找到";
 "Not Set" = "未设置";
 "Not all players have the game. Do you really want to start?" = "并不是所有玩家都有该游戏。你真的要开始吗？";
+"Not enough free blocks on the target memory card. At least %n free block(s) required." = "目标存储卡上没有足够的空闲区块。至少需要 %n 个区块。 ";
+"Not enough free files on the target memory card. At least %n free file(s) required." = "目标存储卡上没有足够的空闲文件数。至少需要 %n 个文件数。 ";
 "Not equals to" = "不等于";
+"Note: motion input may require configuring alternate input sources before use." = "注意：体感输入可能需要在使用前配置备用输入源。";
 "Notes" = "说明";
 "Nothing to configure" = "没有需要配置的项目";
 "Notice" = "提示";
@@ -1738,10 +1581,11 @@ If unsure, leave this unchecked." = "修改纹理以显示以其编码格式。
 "Open FIFO log" = "打开 FIFO 日志";
 "Open GameCube Save Folder" = "打开 GameCube 存档目录";
 "Open Wii Save Folder" = "打开 Wii 存档目录";
+"Open dump folder" = "打开转储目录";
 "Open in External Editor" = "在外部编辑器中打开";
-"OpenAL: can't create context for device %s" = "OpenAL: 不能创建设备 %s 上下文";
+"OpenAL: can't create context for device {0}" = "OpenAL: 不能创建设备 {0} 上下文";
 "OpenAL: can't find sound devices" = "OpenAL: 不能找到音频设备";
-"OpenAL: can't open device %s" = "OpenAL: 不能打开设备 %s";
+"OpenAL: can't open device {0}" = "OpenAL: 不能打开设备 {0}";
 "OpenGL" = "OpenGL";
 "OpenGL ES" = "OpenGL ES";
 "Operators" = "运算符";
@@ -1755,6 +1599,7 @@ If unsure, leave this unchecked." = "修改纹理以显示以其编码格式。
 "Overlay Information" = "屏显信息";
 "Play Input Recording..." = "播放录制...";
 "PAL" = "PAL";
+"PCAP" = "PCAP 格式";
 "PNG image file (*.png);; All Files (*)" = "PNG 图像文件 (*.png);; 所有文件 (*)";
 "PPC Size" = "PPC 大小";
 "PPC vs Host" = "PPC 对 Host";
@@ -1800,25 +1645,23 @@ If unsure, leave this unchecked." = "修改纹理以显示以其编码格式。
 "Port" = "端口 ";
 "Possible desync detected: %1 might have desynced at frame %2" = "检测到可能的非同步异常: %1  或许已在帧 %2 处不同步 ";
 "Post-Processing Effect" = "后处理效果";
+"Post-Processing Effect" = "后处理效果";
 "Post-Processing Shader Configuration" = "后处理着色器配置";
 "Prefetch Custom Textures" = "预读取自定义纹理";
-"Premature movie end in PlayController. %u + %zu > %zu" = "在 PlayController 中提前结束影片。 %u+%zu >%zu";
-"Premature movie end in PlayWiimote. %u + %d > %zu" = "在 PlayWiimote 中提前结束影片。 %u+%d> %zu";
-"Premature movie end in PlayWiimote. %u > %zu" = "在PlayWiimote 中提前结束影片。 %u> %zu";
+"Premature movie end in PlayController. {0} + {1} > {2}" = "在 PlayController 中提前结束影片。{0} + {1} > {2}";
+"Premature movie end in PlayWiimote. {0} + {1} > {2}" = "在 PlayWiimote 中提前结束影片。{0} + {1} > {2}";
+"Premature movie end in PlayWiimote. {0} > {1}" = "在PlayWiimote 中提前结束影片。{0} > {1}";
 "Preparing to update...
 This can take a while." = "正在准备更新...
 这可能需要一段时间。";
 "Presets" = "预设";
 "Press Sync Button" = "按下同步按钮";
 "Pressure" = "压感";
-"Prevents shader compilation stuttering by not rendering waiting objects. Can work in scenarios where Ubershaders doesn't, at the cost of introducing visual glitches and broken effects.
-
-Not recommended, only use if the other options give poor results." = "通过不渲染等待中的对象来避免着色器编译卡顿。在超着色器不适用的场景下也有效，但会导致图像瑕疵并破坏效果。
-
-不推荐，仅在其他选项效果不好时使用。";
+"Prevents shader compilation stuttering by not rendering waiting objects. Can work in scenarios where Ubershaders doesn't, at the cost of introducing visual glitches and broken effects.<br><br><dolphin_emphasis>Not recommended, only use if the other options give poor results.</dolphin_emphasis>" = "通过不渲染等待中的对象来避免着色器编译卡顿。在超着色器不适用的场景下也有效，但会导致图像瑕疵并破坏效果。<br><br><dolphin_emphasis>不推荐，仅在其他选项效果不好时使用。</dolphin_emphasis>";
 "Previous Game Profile" = "上一个游戏预设";
 "Previous Match" = "匹配上一个";
 "Previous Profile" = "上一个预设";
+"Primitive %1" = "Primitive %1";
 "Private" = "私密";
 "Private and Public" = "私密和公开";
 "Problem" = "问题";
@@ -1831,6 +1674,7 @@ Not recommended, only use if the other options give poor results." = "通过不�
 "Public" = "公开";
 "Purge Game List Cache" = "清除游戏列表缓存";
 "Put Main Menu roms in User/GC/{region}." = "将主菜单 ROM 放至 User/GC/{地区}.";
+"QT_LAYOUT_DIRECTION" = "LTR";
 "Quality of Service (QoS) couldn't be enabled." = "无法启用服务质量 (QoS)。";
 "Quality of Service (QoS) was successfully enabled." = "已成功启用服务质量 (QoS)。";
 "Quality of the DPLII decoder. Audio latency increases with quality." = "DPLII 解码器的质量。质量越高音频延迟越大。";
@@ -1861,15 +1705,7 @@ Not recommended, only use if the other options give poor results." = "通过不�
 "Red" = "红";
 "Red Left" = "红 左";
 "Red Right" = "红 右";
-"Reduces the amount of aliasing caused by rasterizing 3D graphics, resulting in smoother edges on objects. Increases GPU load and sometimes causes graphical issues.
-
-SSAA is significantly more demanding than MSAA, but provides top quality geometry anti-aliasing and also applies anti-aliasing to lighting, shader effects, and textures.
-
-If unsure, select None." = "减轻栅格化 3D 图像产生的图形失真。 可使物体边缘变得平滑。会增加 GPU 负载且有时导致图形问题。 
-
-SSAA 的性能需求明显高于MSAA，但能提供顶级的几何图形抗锯齿并且还可将抗锯齿应用于光源、着色器效果与纹理。
-
-如果不确定，选择“无”。";
+"Reduces the amount of aliasing caused by rasterizing 3D graphics, resulting in smoother edges on objects. Increases GPU load and sometimes causes graphical issues.<br><br>SSAA is significantly more demanding than MSAA, but provides top quality geometry anti-aliasing and also applies anti-aliasing to lighting, shader effects, and textures.<br><br><dolphin_emphasis>If unsure, select None.</dolphin_emphasis>" = "减轻栅格化 3D 图像产生的图形失真。 可使物体边缘变得平滑。会增加 GPU 负载且有时导致图形问题。<br><br>SSAA 的性能需求明显高于MSAA，但能提供顶级的几何图形抗锯齿并且还可将抗锯齿应用于光源、着色器效果与纹理。<br><br><dolphin_emphasis>如果不确定，选择“无”。</dolphin_emphasis>";
 "Redump.org Status" = "Redump.org 状态";
 "Refresh" = "刷新";
 "Refresh Game List" = "刷新游戏列表";
@@ -1881,9 +1717,9 @@ SSAA 的性能需求明显高于MSAA，但能提供顶级的几何图形抗锯�
 "Relative Input Hold" = "保持相对输入";
 "Remind Me Later" = "以后提醒我";
 "Remove" = "移除";
+"Remove Failed" = "移除失败";
 "Remove Junk Data (Irreversible)" = "移除垃圾数据(不可逆)";
 "Remove Tag..." = "移除标签...";
-"Remove failed" = "移除失败";
 "Remove from Watch" = "从监视移除";
 "Remove tag" = "移除标签";
 "Removing junk data does not save any space when converting to ISO (unless you package the ISO file in a compressed file format such as ZIP afterwards). Do you want to continue anyway?" = "转换为 ISO 格式时，移除垃圾数据不会节省任何空间（除非以后将 ISO 文件打包为压缩文件格式，例如 ZIP 文件）。是否仍要继续？";
@@ -1891,21 +1727,19 @@ SSAA 的性能需求明显高于MSAA，但能提供顶级的几何图形抗锯�
 "Render Window" = "渲染窗口";
 "Render to Main Window" = "渲染到主窗口";
 "Rendering" = "渲染";
-"Renders the scene as a wireframe.
-
-If unsure, leave this unchecked." = "将场景以线框样式渲染。
-
-如果不确定，请不要勾选此项。";
-"Report: GCIFolder Writing to unallocated block 0x%x" = "报告: GCIFolder 正在写入未分配的区块 0x%x";
+"Renders the scene as a wireframe.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "将场景以线框样式渲染。<br><br><dolphin_emphasis>如果不确定，请不要勾选此项。</dolphin_emphasis>";
+"Report: GCIFolder Writing to unallocated block {0:#x}" = "报告: GCIFolder 正在写入未分配的区块 {0:#x}";
 "Request to Join Your Party" = "请求加入你的派对";
 "Reset" = "重置";
 "Reset Traversal Server" = "重置穿透服务器";
 "Reset Traversal Server to %1:%2" = "重置穿透服务器到 %1:%2";
 "Reset Traversal Settings" = "重置穿透设置";
+"Reset View" = "重置视图";
 "Reset all saved Wii Remote pairings" = "重置所有保存的 Wii 遥控器配对";
 "Resource Pack Manager" = "资源包管理器";
 "Resource Pack Path" = "资源包路径";
 "Restart Required" = "需要重启";
+"Restore Defaults" = "恢复默认值";
 "Restore instruction" = "恢复指令";
 "Retry" = "重试";
 "Return Speed" = "返回速度";
@@ -1920,16 +1754,9 @@ If unsure, leave this unchecked." = "将场景以线框样式渲染。
 "Roll Left" = "左倾";
 "Roll Right" = "右倾";
 "Room ID" = "房间 ID";
+"Rotation" = "旋转";
 "Rotation applied at extremities of swing." = "挥舞到极限时的旋转角度。";
-"Rounds 2D vertices to whole pixels.
-
-Fixes graphical problems in some games at higher internal resolutions. This setting has no effect when native internal resolution is used.
-
-If unsure, leave this unchecked." = "将 2D 顶点舍入为整数像素。
-
-修正部分游戏在较高内部分辨率下的图像问题。该选项在使用原生内部分辨率时没有效果。
-
-如果不确定，请不要勾选此项。";
+"Rounds 2D vertices to whole pixels.<br><br>Fixes graphical problems in some games at higher internal resolutions. This setting has no effect when native internal resolution is used.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "将 2D 顶点舍入为整数像素。<br><br>修正部分游戏在较高内部分辨率下的图像问题。该选项在使用原生内部分辨率时没有效果。<br><br><dolphin_emphasis>如果不确定，请不要勾选此项。</dolphin_emphasis>";
 "Rumble" = "震动";
 "Run To Here" = "运行到此处";
 "Russia" = "俄罗斯";
@@ -1939,12 +1766,12 @@ If unsure, leave this unchecked." = "将 2D 顶点舍入为整数像素。
 "SHA-1" = "SHA-1";
 "SP1" = "SP1";
 "SSL context" = "SSL 上下文";
-"SSL options" = "SSL 选项";
 "START" = "START";
 "Save Code" = "保存代码";
 "Save State" = "保存状态";
 "Safe" = "安全";
 "Save" = "保存";
+"Save All" = "保存全部";
 "Save Export" = "存档导出";
 "Save FIFO log" = "保存 FIFO 日志";
 "Save File to" = "保存文件到";
@@ -1979,10 +1806,9 @@ Overwrite now?" = "此游戏的存档数据已存在于 NAND 中。 建议在覆
 "Save to Slot %1 - %2" = "保存到插槽 %1 - %2";
 "Save..." = "保存...";
 "Saved Wii Remote pairings can only be reset when a Wii game is running." = "只有在 Wii 游戏运行时保存的 Wii 遥控器配对才能重置。";
-"Savestate movie %s is corrupted, movie recording stopping..." = "即时存档影片 %s 被破坏, 影片录制停止...";
+"Savestate movie {0} is corrupted, movie recording stopping..." = "即时存档影片 {0} 被破坏，影片录制停止……";
 "Scaled EFB Copy" = "缩放 EFB 副本";
 "ScrShot" = "截图";
-"Screenshot failed: Could not open file \"%s\" (error %d)" = "截图失败：无法打开文件“%s”（错误 %d）";
 "Search" = "搜索";
 "Search Address" = "搜索地址";
 "Search Current Object" = "搜索当前对象";
@@ -1994,6 +1820,7 @@ Overwrite now?" = "此游戏的存档数据已存在于 NAND 中。 建议在覆
 "Section that contains all Gecko cheat codes." = "包含所有 Gecko 金手指的部分。";
 "Section that contains all graphics related settings." = "包含所有图像相关设置的部分。";
 "Section that contains most CPU and Hardware related settings." = "包含大部分 CPU 与硬件相关设置的部分。";
+"Security options" = "安全选项";
 "Select" = "选择";
 "Select Dump Path" = "选择转储路径";
 "Select Export Directory" = "选择导出目录";
@@ -2031,72 +1858,18 @@ Overwrite now?" = "此游戏的存档数据已存在于 NAND 中。 建议在覆
 "Selected game doesn't exist in game list!" = "所选游戏在游戏列表中不存在！";
 "Selected thread callstack" = "选定的线程调用栈";
 "Selected thread context" = "选定的线程上下文";
-"Selects a hardware adapter to use.
-
-If unsure, select the first one." = "选择要使用的硬件适配器。
-
-如果不确定，请选择第一个。";
-"Selects the stereoscopic 3D mode. Stereoscopy allows a better feeling of depth if the necessary hardware is present. Heavily decreases emulation speed and sometimes causes issues.
-
-Side-by-Side and Top-and-Bottom are used by most 3D TVs.
-Anaglyph is used for Red-Cyan colored glasses.
-HDMI 3D is used when the monitor supports 3D display resolutions.
-Passive is another type of 3D used by some TVs.
-
-If unsure, select Off." = "选择立体 3D 显示模式。如果硬件支持，开启此功能可产生更强的立体感。严重降低模拟速度，有时会造成问题。
-
-多数 3D 电视采用左右或上下模式。
-色差模式配合红青眼镜使用。
-显示器支持 3D 显示分辨率时可使用 HDMI 3D 模式。
-还有一部分电视采用被动模式。
-
-如果不确定，请选择“关”。";
-"Selects what graphics API to use internally.
-The software renderer is extremely slow and only useful for debugging, so you'll want to use either Direct3D or OpenGL. Different games and different GPUs will behave differently on each backend, so for the best emulation experience it's recommended to try both and choose the one that's less problematic.
-
-If unsure, select OpenGL." = "选择在内部使用的图形接口。
-软件渲染器非常慢，仅用于调试，请选择 Direct3D
-或 OpenGL。各后端具体显示效果因游戏与 GPU
-而异，因此为了更好的模拟效果建议二者分别尝试
-一下，然后选择问题较少的一个。
-
-如果不确定，请选择“OpenGL”。";
-"Selects which aspect ratio to use when rendering.
-
-Auto: Uses the native aspect ratio
-Force 16:9: Mimics an analog TV with a widescreen aspect ratio.
-Force 4:3: Mimics a standard 4:3 analog TV.
-Stretch to Window: Stretches the picture to the window size.
-
-If unsure, select Auto." = "选择渲染时使用哪种宽高比。
-
-“自动”：使用原生宽高比。 
-“强制 16:9”：模仿一个宽屏宽高比的模拟电视。 
-“强制 4:3”：模仿一个标准的 4:3 模拟电视。 
-“拉伸到窗口”：将图像拉伸至窗口大小。 
-
-如果不确定，请选择“自动”。";
-"Selects which graphics API to use internally.
-
-The software renderer is extremely slow and only useful for debugging, so any of the other backends are recommended.
-
-If unsure, select OpenGL." = "选择在内部使用的图形接口。
-
-软件渲染器非常慢，仅用于调试，所以推荐使用其他任意后端
-
-如果不确定，请选择“OpenGL”。";
-"Selects which graphics API to use internally.
-
-The software renderer is extremely slow and only useful for debugging, so either OpenGL, Direct3D, or Vulkan are recommended. Different games and different GPUs will behave differently on each backend, so for the best emulation experience it is recommended to try each and select the backend that is least problematic.
-
-If unsure, select OpenGL." = "选择在内部使用的图形接口。
-
-软件渲染器非常慢，仅用于调试，所以推荐 OpenGL、Direct3D 或 Vulkan。各后端具体表现因游戏与 GPU 而异，因此建议逐个尝试一下并选择问题最少的一个以达到最好的模拟效果。
-
-如果不确定，请选择“OpenGL”。";
+"Selects a hardware adapter to use.<br><br><dolphin_emphasis>If unsure, select the first one.</dolphin_emphasis>" = "选择要使用的硬件适配器。<br><br><dolphin_emphasis>如果不确定，请选择第一个。</dolphin_emphasis>";
+"Selects the stereoscopic 3D mode. Stereoscopy allows a better feeling of depth if the necessary hardware is present. Heavily decreases emulation speed and sometimes causes issues.<br><br>Side-by-Side and Top-and-Bottom are used by most 3D TVs.<br>Anaglyph is used for Red-Cyan colored glasses.<br>HDMI 3D is used when the monitor supports 3D display resolutions.<br>Passive is another type of 3D used by some TVs.<br><br><dolphin_emphasis>If unsure, select Off.</dolphin_emphasis>" = "选择立体 3D 显示模式。如果硬件支持，开启此功能可产生更强的立体感。严重降低模拟速度，有时会造成问题。<br><br>多数 3D 电视采用左右或上下模式。<br>色差模式配合红青眼镜使用。<br>显示器支持 3D 显示分辨率时可使用 HDMI 3D 模式。<br>还有一部分电视采用被动模式。<br><br><dolphin_emphasis>如果不确定，请选择“关”。</dolphin_emphasis>";
+"Selects what graphics API to use internally.<br>The software renderer is extremely slow and only useful for debugging, so you'll want to use either Direct3D or OpenGL. Different games and different GPUs will behave differently on each backend, so for the best emulation experience it's recommended to try both and choose the one that's less problematic.<br><br><dolphin_emphasis>If unsure, select OpenGL.</dolphin_emphasis>" = "选择在内部使用的图形接口。<br>软件渲染器非常慢，仅用于调试，请选择 Direct3D 或 OpenGL。各后端具体显示效果因游戏与 GPU 而异，因此为了更好的模拟效果建议二者分别尝试一下，然后选择问题较少的一个。<br><br><dolphin_emphasis>如果不确定，请选择“OpenGL”。</dolphin_emphasis>";
+"Selects which aspect ratio to use when rendering.<br><br>Auto: Uses the native aspect ratio<br>Force 16:9: Mimics an analog TV with a widescreen aspect ratio.<br>Force 4:3: Mimics a standard 4:3 analog TV.<br>Stretch to Window: Stretches the picture to the window size.<br><br><dolphin_emphasis>If unsure, select Auto.</dolphin_emphasis>" = "选择渲染时使用哪种长高比。<br><br>“自动”：使用原生长宽比。<br>“强制 16:9”：模仿一个宽屏长宽比的模拟电视。<br>“强制 4:3”：模仿一个标准的 4:3 模拟电视。<br>“拉伸到窗口”：将图像拉伸至窗口大小。<br><br><dolphin_emphasis>如果不确定，请选择“自动”。</dolphin_emphasis>";
+"Selects which graphics API to use internally.<br><br>The software renderer is extremely slow and only useful for debugging, so any of the other backends are recommended. Different games and different GPUs will behave differently on each backend, so for the best emulation experience it is recommended to try each and select the backend that is least problematic.<br><br><dolphin_emphasis>If unsure, select OpenGL.</dolphin_emphasis>" = "Selects which graphics API to use internally.<br><br>The software renderer is extremely slow and only useful for debugging, so any of the other backends are recommended. Different games and different GPUs will behave differently on each backend, so for the best emulation experience it is recommended to try each and select the backend that is least problematic.<br><br><dolphin_emphasis>If unsure, select OpenGL.</dolphin_emphasis>";
 "Send" = "发送";
 "Sensor Bar Position" = "感应条位置";
-"Serial and/or version data is missing from %s" = "%s 缺少序列号和/或版本数据";
+"Serial and/or version data is missing from {0}
+Please append \"{1}\" (without the quotes) to the datfile URL when downloading
+Example: {2}" = "{0} 缺少序列号和/或版本数据
+下载时请在 dat 文件网址后附加 “{0}”（不带引号）
+例如：{2}";
 "Server IP Address" = "服务器 IP 地址";
 "Server Port" = "服务器端口";
 "Server rejected traversal attempt" = "穿透尝试被服务器拒绝";
@@ -2123,6 +1896,7 @@ May not work for all games." = "将 PAL 制式 Wii 游戏的显示模式由 50Hz
 "Show Log" = "显示日志";
 "Show Toolbar" = "显示工具栏";
 "Show Active Title in Window Title" = "在标题栏显示当前游戏名";
+"Show All" = "显示全部";
 "Show Australia" = "显示澳大利亚";
 "Show Current Game on Discord" = "在 Discord 软件中显示当前游戏";
 "Show Debugging UI" = "显示调试界面";
@@ -2161,31 +1935,11 @@ May not work for all games." = "将 PAL 制式 Wii 游戏的显示模式由 50Hz
 "Show in memory" = "在内存中显示";
 "Show in code" = "在代码中显示";
 "Show in server browser" = "在服务器浏览器中显示";
-"Show various rendering statistics.
-
-If unsure, leave this unchecked." = "显示各种渲染统计数据。
-
-如果不确定，请不要勾选此项。";
-"Shows chat messages, buffer changes, and desync alerts while playing NetPlay.
-
-If unsure, leave this unchecked." = "在联机游戏时显示聊天消息、缓冲变化和未同步警告。
-
-如果不确定，请不要勾选此项。";
-"Shows the number of frames rendered per second as a measure of emulation speed.
-
-If unsure, leave this unchecked." = "显示每秒渲染的帧数以衡量模拟速度。
-
-如果不确定，请不要勾选此项。";
-"Shows the player's maximum ping while playing on NetPlay.
-
-If unsure, leave this unchecked." = "在联机游戏时显示玩家的最大延迟。
-
-如果不确定，请不要勾选此项。";
-"Shows various rendering statistics.
-
-If unsure, leave this unchecked." = "显示各种渲染统计数据。
-
-如果不确定，请不要勾选此项。";
+"Show various rendering statistics.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "显示各种渲染统计数据。<br><br><dolphin_emphasis>如果不确定，请不要勾选此项。</dolphin_emphasis>";
+"Shows chat messages, buffer changes, and desync alerts while playing NetPlay.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "在联机游戏时显示聊天消息、缓冲变化和未同步警告。<br><br><dolphin_emphasis>如果不确定，请不要勾选此项。</dolphin_emphasis>";
+"Shows the number of frames rendered per second as a measure of emulation speed.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "显示每秒渲染的帧数以衡量模拟速度。<br><br><dolphin_emphasis>如果不确定，请不要勾选此项。</dolphin_emphasis>";
+"Shows the player's maximum ping while playing on NetPlay.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "在联机游戏时显示玩家的最大延迟。<br><br><dolphin_emphasis>如果不确定，请不要勾选此项。</dolphin_emphasis>";
+"Shows various rendering statistics.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "显示各种渲染统计数据。<br><br><dolphin_emphasis>如果不确定，请不要勾选此项。</dolphin_emphasis>";
 "Side-by-Side" = "左右";
 "Sideways Hold" = "保持横握";
 "Sideways Toggle" = "切换横握";
@@ -2201,20 +1955,13 @@ If unsure, leave this unchecked." = "显示各种渲染统计数据。
 "Skip EFB Access from CPU" = "跳过 CPU 对 EFB 访问";
 "Skip Main Menu" = "跳过主菜单";
 "Skip Presenting Duplicate Frames" = "跳过重复出现的帧";
-"Skips presentation of duplicate frames (XFB copies) in 25fps/30fps games. This may improve performance on low-end devices, while making frame pacing less consistent.
-
-Disable this option as well as enabling V-Sync for optimal frame pacing.
-
-If unsure, leave this checked." = "在 25fps/30fps 游戏中跳过重复帧（XFB 副本）的显示。这可以提高低端设备的性能，同时会降低帧定步的一致性。
-
-可禁用此选项并启用 “垂直同步” 来获得最佳的帧定步。
-
-如果不确定，请保持选中状态。";
+"Skips presentation of duplicate frames (XFB copies) in 25fps/30fps games. This may improve performance on low-end devices, while making frame pacing less consistent.<br><br />Disable this option as well as enabling V-Sync for optimal frame pacing.<br><br><dolphin_emphasis>If unsure, leave this checked.</dolphin_emphasis>" = "在 25fps/30fps 游戏中跳过重复帧（XFB 副本）的显示。这可以提高低端设备的性能，同时会降低帧定步的一致性。<br><br />可禁用此选项并启用 “垂直同步” 来获得最佳的帧定步。<br><br><dolphin_emphasis>如果不确定，请保持选中状态。</dolphin_emphasis>";
 "Slider Bar" = "滑品板";
 "Slot A" = "插槽 A";
 "Slot A" = "插槽 A";
 "Slot B" = "插槽 B";
 "Slot B" = "插槽 B";
+"Snap the thumbstick position to the nearest octagonal axis." = "捕获挨着最近八边形轴的拇指摇杆位置";
 "Socket table" = "套接字表";
 "Software Renderer" = "软件渲染器";
 "Some of the data could not be read." = "一些数据无法读取。";
@@ -2240,6 +1987,7 @@ Please check the highlighted values." = "您提供的某些值无效。
 "Start NetPlay..." = "开始联机...";
 "Start Recording Input" = "开始录制输入";
 "Start Recording" = "开始录制";
+"Start in Fullscreen" = "以全屏启动";
 "Started game" = "游戏已启动";
 "State" = "状态";
 "Steering Wheel" = "方向盘";
@@ -2254,6 +2002,7 @@ Please check the highlighted values." = "您提供的某些值无效。
 "Stepping" = "步进";
 "Stereo" = "立体声";
 "Stereoscopic 3D Mode" = "立体 3D 模式";
+"Stereoscopic 3D Mode" = "立体 3D 模式";
 "Stereoscopy" = "立体 3D";
 "Stick" = "摇杆";
 "Stop" = "停止";
@@ -2261,28 +2010,8 @@ Please check the highlighted values." = "您提供的某些值无效。
 "Stopped game" = "游戏已停止";
 "Store EFB Copies to Texture Only" = "仅存储 EFB 副本为纹理";
 "Store XFB Copies to Texture Only" = "仅存储 XFB 副本为纹理";
-"Stores EFB copies exclusively on the GPU, bypassing system memory. Causes graphical defects in a small number of games.
-
-Enabled = EFB Copies to Texture
-Disabled = EFB Copies to RAM (and Texture)
-
-If unsure, leave this checked." = "绕过系统内存而仅在 GPU 中存储 EFB 副本。会在少数游戏中导致图形缺陷。
-
-开启 = EFB 副本为纹理 
-关闭 = EFB 副本为内存（和纹理）
-
-如果不确定，请勾选此项。";
-"Stores XFB copies exclusively on the GPU, bypassing system memory. Causes graphical defects in a small number of games.
-
-Enabled = XFB Copies to Texture
-Disabled = XFB Copies to RAM (and Texture)
-
-If unsure, leave this checked." = "绕过系统内存而仅在 GPU 中存储 XFB 副本。会在少数游戏中导致图形缺陷。
-
-开启 = XFB 副本为纹理 
-关闭 = XFB 副本为内存（和纹理）
-
-如果不确定，请勾选此项。";
+"Stores EFB copies exclusively on the GPU, bypassing system memory. Causes graphical defects in a small number of games.<br><br>Enabled = EFB Copies to Texture<br>Disabled = EFB Copies to RAM (and Texture)<br><br><dolphin_emphasis>If unsure, leave this checked.</dolphin_emphasis>" = "绕过系统内存而仅在 GPU 中存储 EFB 副本。会在少数游戏中导致图形缺陷。<br><br>开启 = EFB 副本为纹理<br>关闭 = EFB 副本为内存（和纹理）<br><br><dolphin_emphasis>如果不确定，请勾选此项。</dolphin_emphasis>";
+"Stores XFB copies exclusively on the GPU, bypassing system memory. Causes graphical defects in a small number of games.<br><br>Enabled = XFB Copies to Texture<br>Disabled = XFB Copies to RAM (and Texture)<br><br><dolphin_emphasis>If unsure, leave this checked.</dolphin_emphasis>" = "绕过系统内存而仅在 GPU 中存储 XFB 副本。会在少数游戏中导致图形缺陷。<br><br>开启 = XFB 副本为纹理<br>关闭 = XFB 副本为内存（和纹理）<br><br><dolphin_emphasis>如果不确定，请勾选此项。</dolphin_emphasis>";
 "Stretch to Window" = "拉伸到窗口大小";
 "Strict Settings Sync" = "严格设置同步";
 "String" = "字符串";
@@ -2291,30 +2020,24 @@ If unsure, leave this checked." = "绕过系统内存而仅在 GPU 中存储 XFB
 "Strum" = "拨弦";
 "Stylus" = "手写笔";
 "Success" = "成功";
-"Success." = "成功。";
 "Successfully added to the NetPlay index" = "已成功加入联机索引";
 "Successfully converted %n image(s)." = "成功转换 %n 个镜像。";
 "Successfully deleted '%1'." = "成功删除 '%1'。";
-"Successfully deleted files." = "删除文件成功。";
+"Successfully exported %n out of %1 save file(s)." = "在 %1 个存档文件中 %n 个导出成功。";
 "Successfully exported save files" = "成功导出存档文件";
-"Successfully exported the %1 save files." = "成功导出 %1 存档文件。";
-"Successfully exported the save file." = "成功导出存档文件。";
 "Successfully extracted certificates from NAND" = "已成功从 NAND 中提取证书";
 "Successfully extracted file." = "提取文件成功。";
 "Successfully extracted system data." = "提取系统数据成功。";
-"Successfully imported save files." = "成功导入存档文件。";
+"Successfully imported save file." = "导入存档文件成功。";
 "Successfully installed this title to the NAND." = "成功将此软件安装到 NAND。";
 "Successfully removed this title from the NAND." = "成功将此软件从 NAND 中移除。";
 "Support" = "支持";
+"Supported file formats" = "支持的文件格式";
 "Supports SD and SDHC. Default size is 128 MB." = "支持 SD 和 SDHC 格式。默认大小为 128 MB。";
 "Surround" = "环绕";
 "Suspended" = "已暂停";
 "Swap Eyes" = "交换双眼";
-"Swaps the left and right eye. Most useful in side-by-side stereoscopy mode.
-
-If unsure, leave this unchecked." = "交换左右眼图像。通常用于左右并排立体模式。
-
-如果不确定，请不要勾选此项。";
+"Swaps the left and right eye. Most useful in side-by-side stereoscopy mode.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "交换左右眼图像。通常用于左右并排立体模式。<br><br><dolphin_emphasis>如果不确定，请不要勾选此项。</dolphin_emphasis>";
 "Swing" = "挥舞";
 "Switch to A" = "转换到 A";
 "Switch to B" = "转换到 B";
@@ -2344,30 +2067,26 @@ If unsure, leave this unchecked." = "交换左右眼图像。通常用于左右�
 "Take Screenshot" = "屏幕截图";
 "Test" = "测试";
 "Texture Cache" = "纹理缓存";
-"Texture Dumping" = "Texture Dumping";
+"Texture Cache Accuracy" = "纹理缓存精度";
+"Texture Dumping" = "转储纹理";
 "Texture Format Overlay" = "显示纹理格式";
-"The %s partition does not have a valid file system." = "分区 %s 无有效的文件系统。";
-"The %s partition does not seem to contain valid data." = "分区 %s 似乎未包含有效数据。";
-"The %s partition is not correctly signed." = "分区 %s 未正确签名。";
-"The %s partition is not properly aligned." = "分区 %s 未正确对齐。";
-"The DFF's minimum loader version (%d) exceeds the version of this FIFO Player (%d)" = "DFF 的最低加载程序版本 (%d) 超过此 FIFO 播放器的版本 (%d)";
-"The H3 hash table for the %s partition is not correct." = "分区 %s 的 H3 哈希表不正确。";
-"The IPL file is not a known good dump. (CRC32: %x)" = "此 IPL 文件不是已知的正确转储。 (CRC32: %x)";
+"The DFF's minimum loader version ({0}) exceeds the version of this FIFO Player ({1})" = "DFF 的最低加载程序版本 ({0}) 超过此 FIFO 播放器的版本 ({1})";
+"The H3 hash table for the {0} partition is not correct." = "分区 {0} 的 H3 哈希表不正确。";
+"The IPL file is not a known good dump. (CRC32: {0:x})" = "此 IPL 文件不是已知的正确转储。(CRC32: {0:x})";
 "The Masterpiece partitions are missing." = "缺少杰作分区。";
 "The NAND could not be repaired. It is recommended to back up your current data and start over with a fresh NAND." = "该 NAND 无法修复。建议备份您当前的数据并使用新的 NAND 启动。";
 "The NAND has been repaired." = "NAND 已修复。";
+"The TMD is not correctly signed." = "TMD 文件未正确签名。";
 "The address is invalid" = "地址无效";
 "The channel partition is missing." = "缺少通道分区。";
 "The data partition is missing." = "缺少数据分区。";
-"The data partition is not at its normal position. This will affect the emulated loading times. When using NetPlay or sending input recordings to other people, you will experience desyncs if anyone is using a good dump." = "数据分区不在正常位置。这会影响模拟的加载时间。在使用联机或将输入录制发送给其他人时，如果有人使用正确的转储，你会遇到不同步。";
-"The disc change to \"%s\" could not be saved in the .dtm file.
-The filename of the disc image must not be longer than 40 characters." = "磁盘切换为 \"%s\" 无法保存至 .dtm 文件。
-磁盘镜像的文件名不能超过 40 个字符。";
-"The disc could not be read (at 0x%<PRIx64> - 0x%<PRIx64>)." = "无法读取此光盘 (在 0x%<PRIx64> - 0x%<PRIx64>)。";
-"The disc image \"%s\" is corrupt.
-Hash of block %<PRIu64> is %08x instead of %08x." = "磁盘镜像“%s”已损坏。
-块 %<PRIu64> 的哈希值是 %08x 而非 %08x。";
-"The disc image \"%s\" is truncated, some of the data is missing." = "光盘镜像 \"%s\" 不完整，缺失某些数据。";
+"The data partition is not at its normal position. This will affect the emulated loading times. You will be unable to share input recordings and use NetPlay with anyone who is using a good dump." = "数据分区不在正常位置。这会影响模拟的加载时间。你将无法与正在使用正确转储的其他人共享输入录制和使用联机功能。";
+"The data size for the {0} partition is not evenly divisible by the block size." = "分区 {0} 的数据大小无法用区块大小平均分配。";
+"The decryption keys need to be appended to the NAND backup file." = "解密密钥需要附加到 NAND 备份文件中。";
+"The disc change to \"{0}\" could not be saved in the .dtm file.
+The filename of the disc image must not be longer than 40 characters." = "光盘切换为 “{0}” 无法保存至 .dtm 文件中。
+光盘镜像的文件名不能超过 40 个字符。";
+"The disc could not be read (at {0:#x} - {1:#x})." = "无法读取此光盘 (at {0:#x} - {1:#x})。";
 "The disc that was about to be inserted couldn't be found." = "无法找到已可插入的光盘。";
 "The emulated NAND is damaged. System titles such as the Wii Menu and the Wii Shop Channel may not work correctly.
 
@@ -2389,21 +2108,21 @@ is either corrupted or not a GameCube memory card file.
 "The file %1 already exists.
 Do you wish to replace it?" = "文件 %1 已经存在。
 是否替换?";
-"The file %s could not be opened for writing. Please check if it's already opened by another program." = "文件%s无法以写入形式打开。请检查该文件是否已经被另一程序打开。";
-"The file %s was already open, the file header will not be written." = "文件 %s 已经打开，文件头不会被写入。";
+"The file {0} could not be opened for writing. Please check if it's already opened by another program." = "文件 {0} 无法以写入形式打开。请检查该文件是否已经被另一程序打开。";
+"The file {0} was already open, the file header will not be written." = "文件 {0} 已经打开，文件头不会被写入。";
 "The filesystem is invalid or could not be read." = "文件系统无效或无法读取。";
 "The format that the disc image is saved in does not store the size of the disc image." = "此光盘镜像的保存格式不存储光盘镜像的大小。";
-"The game ID is %s but should be %s." = "游戏 ID 是 %s ，但应该为 %s 。";
 "The game ID is inconsistent." = "游戏 ID 不一致。";
 "The game ID is unusually short." = "游戏 ID 异常短。";
+"The game ID is {0} but should be {1}." = "游戏 ID 是 {0} ，但应该为 {1} 。";
 "The game disc does not contain any usable update information." = "此游戏光盘未包含任何可用的更新信息。";
 "The game is currently running." = "游戏当前正在运行。";
 "The game's region does not match your console's. To avoid issues with the system menu, it is not possible to update the emulated console using this disc." = "该游戏区域与你的主机不匹配。为避免系统菜单出现问题，现无法使用此光盘更新模拟主机。";
 "The graphics driver is forcibly enabling anti-aliasing for Dolphin. You need to turn this off in the graphics driver's settings in order for Dolphin to work.
 
-(MSAA with %d samples found on default framebuffer)" = "图形驱动程序强制启用 Dolphin 的抗锯齿功能。你需要在图形驱动程序的设置中将其关闭，以使 Dolphin 正常工作。
+(MSAA with {0} samples found on default framebuffer)" = "图形驱动程序强制启用 Dolphin 的抗锯齿功能。你需要在图形驱动程序的设置中将其关闭，以使 Dolphin 正常工作。
 
-（在默认帧缓冲区上发现 MSAA 的 %d 样本）";
+（在默认帧缓冲区上发现 MSAA 的 {0} 个样本）";
 "The hashes do not match!" = "哈希值不匹配！";
 "The hashes match!" = "哈希值匹配！";
 "The host code is too long.
@@ -2411,11 +2130,11 @@ Please recheck that you have the correct code." = "主机代码太长。
 请重新检查你是否有正确的代码。";
 "The install partition is missing." = "缺少安装分区。";
 "The profile '%1' does not exist" = "配置文件 '%1' 不存在";
-"The recorded game (%s) is not the same as the selected game (%s)" = "被录制的游戏 (%s) 与所选游戏 (%s) 不一致";
+"The recorded game ({0}) is not the same as the selected game ({1})" = "被录制的游戏 ({0}) 与所选游戏 ({1}) 不一致";
 "The region code does not match the game ID. If this is because the region code has been modified, the game might run at the wrong speed, graphical elements might be offset, or the game might not run at all." = "区域代码与游戏 ID 不匹配。如果这是因为区域代码已被修改，那游戏可能以错误的速度运行、图形元素可能会被偏移或者游戏可能根本无法运行。";
 "The resulting decrypted AR code doesn't contain any lines." = "产生的已解密 AR 代码不包含任何行。";
 "The same file can't be used in both slots." = "不能在两个插槽中使用相同的文件。";
-"The selected CPU emulation core (%d) is not available. Please select a different CPU emulation core in the settings." = "选定的 CPU 模拟核心(%d)不可用。请在设置中选择其他的 CPU 模拟核心。";
+"The selected CPU emulation core ({0}) is not available. Please select a different CPU emulation core in the settings." = "选定的 CPU 模拟核心 ({0}) 不可用。请在设置中选择其他的 CPU 模拟核心。";
 "The server and client's NetPlay versions are incompatible." = "服务器与客户端的联机版本不兼容。";
 "The server is full." = "服务器已满。";
 "The server sent an unknown error message." = "服务器发送了一个未知错误消息。";
@@ -2424,16 +2143,23 @@ Please recheck that you have the correct code." = "主机代码太长。
 Do you really want to enable software rendering? If unsure, select 'No'." = "软件渲染比其他后端要慢一个数量级，仅推荐用于调试目的。
 
 您真的想要启用软件渲染吗？如果不确定，请选择“否”。";
-"The specified common key index is %u but should be %u." = "指定的公用密钥索引是 %u ，但应该为 %u 。";
-"The specified file \"%s\" does not exist" = "指定的文件 \"%s\" 不存在";
+"The specified common key index is {0} but should be {1}." = "指定的公用密钥索引是 {0} ，但应该为 {1} 。";
+"The specified file \"{0}\" does not exist" = "指定的文件 “{0}” 不存在";
+"The target memory card already contains a file \"%1\"." = "目标存储卡已包含文件 “%1”。";
+"The ticket is not correctly signed." = "ticket 文件未正确签名。";
 "The type of a partition could not be read." = "无法读取的分区类型。";
 "The update has been cancelled. It is strongly recommended to finish it in order to avoid inconsistent system software versions." = "更新已被取消。强烈建议你完成更新，以避免不一致的系统软件版本。";
 "The update partition does not contain the IOS used by this title." = "更新分区未包含此游戏使用的 IOS。";
 "The update partition is missing." = "缺少更新分区。";
 "The update partition is not at its normal position." = "更新分区未处于正常位置。";
 "The value is invalid" = "这个值无效";
+"The {0} partition does not have a valid file system." = "分区 {0} 无有效的文件系统。";
+"The {0} partition does not seem to contain valid data." = "分区 {0} 似乎未包含有效数据。";
+"The {0} partition is not correctly signed." = "分区 {0} 未正确签名。";
+"The {0} partition is not properly aligned." = "分区 {0} 未正确对齐。";
 "There are too many partitions in the first partition table." = "第一个分区表中的分区太多。";
 "There is nothing to undo!" = "没有需要撤销的操作。";
+"There was an issue adding a shortcut to the desktop" = "向桌面添加快捷方式时出现问题";
 "These settings override core Dolphin settings.
 Undetermined means the game uses Dolphin's setting." = "这些设置将覆盖核心 Dolphin 设置。
 未决设置将使用 Dolphin 的设置。";
@@ -2450,7 +2176,7 @@ Do you want to discard all unencrypted lines?" = "此 Action Replay 代码同时
 "This cannot be undone!" = "不能被撤销！";
 "This debug disc image has the size of a retail disc image." = "此调试版光盘镜像和零售版光盘镜像大小一样。";
 "This disc image has an unusual size." = "此光盘镜像大小异常。";
-"This disc image has an unusual size. This will likely make the emulated loading times longer. When using NetPlay or sending input recordings to other people, you will likely experience desyncs if anyone is using a good dump." = "此光盘镜像大小异常。这可能会使模拟的加载时间更长。当使用联机或将输入录制发送给其他人时，如果有人使用正确的转储，你可能会遇到不同步。";
+"This disc image has an unusual size. This will likely make the emulated loading times longer. You will likely be unable to share input recordings and use NetPlay with anyone who is using a good dump." = "此光盘镜像大小异常。这可能会使模拟的加载时间更长。你将无法与正在使用正确转储的其他人共享输入录制和使用联机功能。";
 "This disc image is in the NKit format. It is not a good dump in its current form, but it might become a good dump if converted back. The CRC32 of this file might match the CRC32 of a good dump even though the files are not identical." = "此光盘镜像采用 NKit 格式。这种格式并不是一个正确的转储，但如果转换回去可能会变成正确转储。即使文件不相同，此文件的 CRC32 也可能与正确转储的 CRC32 匹配。";
 "This disc image is too small and lacks some data. If your dumping program saved the disc image as several parts, you need to merge them into one file." = "此光盘镜像太小并且缺少一些数据。如果你的转储程序将光盘镜像保存为多个部分，则需要将其合并为一个文件。";
 "This disc image is too small and lacks some data. The problem is most likely that this is a dual-layer disc that has been dumped as a single-layer disc." = "此光盘镜像太小并且缺少一些数据。问题原因很可能这是一个双层光盘但被转储为单层光盘。";
@@ -2469,19 +2195,18 @@ If unsure, leave this unchecked." = "该设定可以让你设置一个与当前�
 如果不确定，请不要勾选此项。";
 "This software should not be used to play games you do not legally own." = "该软件不能用于运行你非法持有的游戏。";
 "This title cannot be booted." = "无法启动该软件。";
-"This title is not correctly signed." = "此游戏未正确签名。";
 "This title is set to use an invalid IOS." = "此游戏设置为使用无效的 IOS。";
 "This title is set to use an invalid common key." = "此游戏设置为使用无效的公用密钥。";
 "This title might be incompatible with DSP HLE emulation. Try using LLE if this is homebrew.
 
-DSPHLE: Unknown ucode (CRC = %08x) - forcing AX." = "该游戏可能与 DSP HLE 模拟不兼容，如果这是 Homebrew 请尝试使用 LLE.
+DSPHLE: Unknown ucode (CRC = {0:08x}) - forcing AX." = "该游戏可能与 DSP HLE 模拟不兼容，如果这是自制软件请尝试使用 LLE。
 
-DSP HLE: 未知 Ucode (CRC = %08x) - 强制 AX.";
+DSP HLE: 未知 Ucode (CRC = {0:08x}) - 强制 AX.";
 "This title might be incompatible with DSP HLE emulation. Try using LLE if this is homebrew.
 
-Unknown ucode (CRC = %08x) - forcing AXWii." = "该游戏可能与 DSP HLE 模拟不兼容，如果这是 Homebrew 请尝试使用 LLE.
+Unknown ucode (CRC = {0:08x}) - forcing AXWii." = "该游戏可能与 DSP HLE 模拟不兼容，如果这是自制软件请尝试使用 LLE。
 
-未知 Ucode (CRC = %08x) - 强制 AXWii.";
+未知 Ucode (CRC = {0:08x}) - 强制 AXWii.";
 "This value is added to the convergence value set in the graphics configuration." = "该数值将与图像设置中设定的会聚值相加。";
 "This value is multiplied with the depth set in the graphics configuration." = "该数值将与图像设置中设定的深度值相乘。";
 "This will limit the speed of chunked uploading per client, which is used for save sync." = "这将限制每个客户端用于存档同步的数据块上传速度。";
@@ -2502,7 +2227,7 @@ May prevent desync in some games that use EFB reads. Please ensure everyone uses
 "Toggle 3D Side-by-Side" = "切换左右 3D";
 "Toggle 3D Top-Bottom" = "切换上下 3D";
 "Toggle All Log Types" = "全选/反选所有日志类型";
-"Toggle Aspect Ratio" = "切换宽高比";
+"Toggle Aspect Ratio" = "切换长宽比";
 "Toggle Breakpoint" = "切换断点";
 "Toggle Crop" = "切换画面边界";
 "Toggle Custom Textures" = "切换自定义纹理";
@@ -2511,6 +2236,7 @@ May prevent desync in some games that use EFB reads. Please ensure everyone uses
 "Toggle Fullscreen" = "切换全屏";
 "Toggle Pause" = "切换暂停";
 "Toggle SD Card" = "切换 SD 卡";
+"Toggle Skip EFB Access" = "切换跳过 EFB 访问";
 "Toggle Texture Dumping" = "切换纹理转储";
 "Toggle USB Keyboard" = "切换 USB 键盘";
 "Toggle XFB Copies" = "切换 XFB 副本";
@@ -2540,25 +2266,9 @@ May prevent desync in some games that use EFB reads. Please ensure everyone uses
 "USA" = "美国";
 "USB Gecko" = "USB Gecko";
 "USB Whitelist Error" = "USB 白名单错误";
-"Ubershaders are never used. Stuttering will occur during shader compilation, but GPU demands are low.
-
-Recommended for low-end hardware. 
-
-If unsure, select this mode." = "不使用超着色器。在着色器编译期间将产生卡顿，但对 GPU 要求低。
-
-推荐用于低端硬件。
-
-如果不确定，请选择此模式。";
-"Ubershaders will always be used. Provides a near stutter-free experience at the cost of high GPU performance requirements.
-
-Only recommended for high-end systems." = "一直使用超着色器。以高 GPU 性能需求为代价提供近乎无卡顿的体验。
-
-仅推荐用于高端系统。";
-"Ubershaders will be used to prevent stuttering during shader compilation, but specialized shaders will be used when they will not cause stuttering.
-
-In the best case it eliminates shader compilation stuttering while having minimal performance impact, but results depend on video driver behavior." = "在着色器编译期间使用超着色器以避免卡顿，当不会产生卡顿时使用专用着色器。
-
-在理想情况下将在消除着色器编译卡顿的同时尽可能减小性能影响，但效果因视频驱动的行为而异。";
+"Ubershaders are never used. Stuttering will occur during shader compilation, but GPU demands are low.<br><br>Recommended for low-end hardware. <br><br><dolphin_emphasis>If unsure, select this mode.</dolphin_emphasis>" = "不使用超着色器。在着色器编译期间将产生卡顿，但对 GPU 要求低。<br><br>推荐用于低端硬件。<br><br><dolphin_emphasis>如果不确定，请选择此模式。</dolphin_emphasis>";
+"Ubershaders will always be used. Provides a near stutter-free experience at the cost of high GPU performance requirements.<br><br><dolphin_emphasis>Only recommended for high-end systems.</dolphin_emphasis>" = "一直使用超着色器。以高 GPU 性能需求为代价提供近乎无卡顿的体验。<br><br><dolphin_emphasis>仅推荐用于高端系统。</dolphin_emphasis>";
+"Ubershaders will be used to prevent stuttering during shader compilation, but specialized shaders will be used when they will not cause stuttering.<br><br>In the best case it eliminates shader compilation stuttering while having minimal performance impact, but results depend on video driver behavior." = "在着色器编译期间使用超着色器以避免卡顿，当不会产生卡顿时使用专用着色器。<br><br>在理想情况下将在消除着色器编译卡顿的同时尽可能减小性能影响，但效果因视频驱动的行为而异。";
 "Unable to auto-detect RSO module" = "无法自动检测 RSO 模块";
 "Unable to parse line %1 of the entered AR code as a valid encrypted or decrypted code. Make sure you typed it correctly.
 
@@ -2570,25 +2280,25 @@ Would you like to ignore this line and continue parsing?" = "不能将所输入 
 Would you like to ignore this line and continue parsing?" = "不能将所输入 AR 代码的第 %1 行作为有效代码进行分析。请确保代码输入正确。
 
 是否要忽略此行继续分析？";
-"Unable to write to file %s" = "无法写入文件 %s";
+"Unable to write to file {0}" = "无法写入文件 {0}";
 "Unbound" = "未绑定";
 "Uncompressed GC/Wii images (*.iso *.gcm)" = "未压缩的 GC/Wii 镜像 (*.iso *.gcm)";
 "Undo Load State" = "撤销载入状态";
 "Undo Save State" = "撤销保存状态";
-"Unexpected 0x80 call? Aborting..." = "意外的 0x80 调用? 正在中止...";
 "Uninstall" = "卸载";
 "Uninstall from the NAND" = "从 NAND 中卸载";
 "Uninstalling the WAD will remove the currently installed version of this title from the NAND without deleting its save data. Continue?" = "卸载 WAD 会将该游戏的当前已安装版本从 NAND 中移除，而不会删除其存档。是否继续？";
 "United States" = "美国";
 "Unknown" = "未知";
-"Unknown DVD command %08x - fatal error" = "未知 DVD 命令 %08x - 致命错误";
-"Unknown SYNC_GECKO_CODES message with id:%d received from player:%d Kicking player!" = "收到未知的同步 GECKO 代码消息，ID：%d 来自玩家:%d 剔除玩家!";
-"Unknown SYNC_SAVE_DATA message received with id: %d" = "收到未知的同步存档数据消息，ID：%d";
-"Unknown SYNC_SAVE_DATA message with id:%d received from player:%d Kicking player!" = "收到未知的同步存档数据消息，ID：%d 来自玩家:%d 剔除玩家!";
+"Unknown DVD command {0:08x} - fatal error" = "未知 DVD 命令 {0:08x} - 致命错误";
+"Unknown SYNC_GECKO_CODES message with id:{0} received from player:{1} Kicking player!" = "收到未知的 同步_GECKO_代码 消息，ID：{0} 来自玩家：{1} 剔除玩家！";
+"Unknown SYNC_SAVE_DATA message received with id: {0}" = "收到未知的 同步_存档_数据 消息，ID：{0}";
+"Unknown SYNC_SAVE_DATA message with id:{0} received from player:{1} Kicking player!" = "收到未知的 同步_存档_数据 消息，ID：{0} 来自玩家：{1} 剔除玩家！";
 "Unknown disc" = "未知光盘";
-"Unknown error %x" = "未知错误 %x";
-"Unknown message received with id : %d" = "收到未知的消息，ID： %d";
-"Unknown message with id:%d received from player:%d Kicking player!" = "收到未知的消息，ID：%d 来自玩家:%d 剔除玩家!";
+"Unknown error {0:x}" = "未知错误 {0:x}";
+"Unknown error." = "未知错误。";
+"Unknown message received with id : {0}" = "收到未知的消息，ID：{0}";
+"Unknown message with id:{0} received from player:{1} Kicking player!" = "收到未知的消息，ID：{0} 来自玩家：{1} 剔除玩家！";
 "Unlimited" = "无限制";
 "Unpacking" = "正在解包";
 "Unsigned Integer" = "不带符号整数";
@@ -2609,7 +2319,6 @@ This can take a while." = "正在更新软件 %1...
 "Usage Statistics Reporting Settings" = "使用情况统计报告设置";
 "Use Built-In Database of Game Names" = "使用内建数据库游戏名称";
 "Use Custom User Style" = "使用自定义用户风格";
-"Use Fullscreen" = "全屏显示";
 "Use Lossless Codec (FFV1)" = "使用无损编解码器 (FFV1)";
 "Use PAL60 Mode (EuRGB60)" = "使用 PAL60 模式 (EuRGB60)";
 "Use Panic Handlers" = "使用警告程序";
@@ -2617,31 +2326,14 @@ This can take a while." = "正在更新软件 %1...
 "User Config" = "用户配置";
 "User Interface" = "用户界面";
 "User Style" = "用户风格";
-"Uses a less accurate algorithm to calculate depth values.
-
-Causes issues in a few games, but can result in a decent speed increase depending on the game and/or GPU.
-
-If unsure, leave this checked." = "使用精确度较低的算法计算深度值。 
-
-在一些游戏中将导致问题但可能带来可观的提速，
-取决于游戏和/或 GPU。
-
-如果不确定，请勾选此项。";
-"Uses the entire screen for rendering.
-
-If disabled, a render window will be created instead.
-
-If unsure, leave this unchecked." = "使用整个屏幕进行渲染。
-
-如果禁用，则会创建一个渲染窗口。
-
-如果不确定，请不要勾选此项。";
-"Uses the main Dolphin window for rendering rather than a separate render window.
-
-If unsure, leave this unchecked." = "使用 Dolphin 主窗口而非单独的渲染窗口进行渲染。
-
-如果不确定，请不要勾选此项。";
+"Uses a less accurate algorithm to calculate depth values.<br><br>Causes issues in a few games, but can result in a decent speed increase depending on the game and/or GPU.<br><br><dolphin_emphasis>If unsure, leave this checked.</dolphin_emphasis>" = "使用精确度较低的算法计算深度值。<br><br>在一些游戏中将导致问题但可能带来可观的提速，取决于游戏和/或 GPU。<br><br><dolphin_emphasis>如果不确定，请勾选此项。</dolphin_emphasis>";
+"Uses the entire screen for rendering.<br><br>If disabled, a render window will be created instead.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "使用整个屏幕进行渲染。<br><br>如果禁用，则会创建一个渲染窗口。<br><br><dolphin_emphasis>如果不确定，请不要勾选此项。</dolphin_emphasis>";
+"Uses the main Dolphin window for rendering rather than a separate render window.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "使用 Dolphin 主窗口而非单独的渲染窗口进行渲染。<br><br><dolphin_emphasis>如果不确定，请不要勾选此项。</dolphin_emphasis>";
 "Using Qt %1" = "使用 Qt %1";
+"Usually used for light objects" = "Usually used for light objects";
+"Usually used for normal matrices" = "Usually used for normal matrices";
+"Usually used for position matrices" = "Usually used for position matrices";
+"Usually used for tex coord matrices" = "Usually used for tex coord matrices";
 "Utility" = "实用功能";
 "V-Sync" = "垂直同步";
 "Value" = "值";
@@ -2654,86 +2346,60 @@ If unsure, leave this unchecked." = "使用 Dolphin 主窗口而非单独的渲�
 "Verifying" = "正在验证";
 "Version" = "版本";
 "Vertex Rounding" = "顶点取整";
+"Vertical FOV" = "垂直视野";
 "Vertical Offset" = "垂直偏移";
 "Video" = "视频";
 "View code" = "查看代码";
 "View memory" = "查看内存";
+"Virtual Notches" = "虚拟接口";
 "Volume" = "音量";
 "Volume Down" = "减小音量";
 "Volume Toggle Mute" = "静音切换";
 "Volume Up" = "增大音量";
 "Vulkan" = "Vulkan";
 "WAD files (*.wad)" = "WAD 文件 (*.wad)";
+"WAD installation failed: Could not create Wii Shop log files." = "WAD 安装失败：无法创建 Wii 商店日志文件。";
 "WAD installation failed: Could not finalise title import." = "WAD 安装失败: 无法完成游戏导入。";
-"WAD installation failed: Could not import content %08x." = "WAD 安装失败: 无法导入内容 %08x。";
-"WAD installation failed: Could not initialise title import (error %d)." = "WAD 安装失败: 无法开始游戏导入（错误 %d）。";
+"WAD installation failed: Could not import content {0:08x}." = "WAD 安装失败：无法导入内容 {0:08x}。";
+"WAD installation failed: Could not initialise title import (error {0})." = "WAD 安装失败：无法初始化游戏导入（错误 {0}）。";
 "WAD installation failed: The selected file is not a valid WAD." = "WAD 安装失败: 所选文件不是有效的 WAD。";
 "WAITING" = "等待";
 "WARNING: The controls under Accelerometer and Gyroscope are designed to interface directly with motion sensor hardware. They are not intended for mapping traditional buttons, triggers or axes. You might need to configure alternate input sources before using these controls." = "警告: 加速度计与陀螺仪组内的各控制项用于直接对接体感硬件，而非映射至传统按键、扳机或轴。使用这些控制项前可能需要先进行其他输入源的配置。";
 "WARNING: These controls are designed to interface directly with motion sensor hardware. They are not intended for mapping traditional buttons, triggers or axes. You might need to configure alternate input sources before using these controls." = "警告: 这些控制项用于直接对接体感硬件，而非映射至传统按键、扳机或轴。使用这些控制项前可能需要先进行其他输入源的配置。";
 "WASAPI (Exclusive Mode)" = "WASAPI （独占模式）";
 "WIA GC/Wii images (*.wia)" = "WIA GC/Wii 镜像 (*.wia)";
-"Waits for all shaders to finish compiling before starting a game. Enabling this option may reduce stuttering or hitching for a short time after the game is started, at the cost of a longer delay before the game starts. For systems with two or fewer cores, it is recommended to enable this option, as a large shader queue may reduce frame rates.
-
-Otherwise, if unsure, leave this unchecked." = "等到所有着色器编译完成再开始游戏。启用此选项将会减少游戏开始后短时间的卡顿，但游戏开始前会有更长的延迟。对于有两个或以下核心的系统，较大的着色器队列将降低帧率，因而建议启用此选项。
-
-其他情况下，如果不确定，请不要勾选此项。";
-"Waits for vertical blanks in order to prevent tearing.
-
-Decreases performance if emulation speed is below 100%.
-
-If unsure, leave this unchecked." = "等待场消隐期以防止撕裂。
-
-模拟速度低于 100% 时会降低性能。
-
-如果不确定，请不要勾选此项。";
-"Waits until the game synchronizes with the emulated GPU before writing the contents of EFB copies to RAM.
-
-Reduces the overhead of EFB RAM copies, providing a performance boost in many games, at the risk of breaking those which do not safely synchronize with the emulated GPU.
-
-If unsure, leave this checked." = "在将 EFB 副本的内容写入内存之前等待，直到游戏与模拟 GPU 同步。
-
-可减少 EFB 内存副本占用，在许多游戏中有性能提升，但有可能导致某些无法与模拟 GPU 安全同步的风险。
-
-如果不确定，请选中此选项。";
+"Waits for all shaders to finish compiling before starting a game. Enabling this option may reduce stuttering or hitching for a short time after the game is started, at the cost of a longer delay before the game starts. For systems with two or fewer cores, it is recommended to enable this option, as a large shader queue may reduce frame rates.<br><br><dolphin_emphasis>Otherwise, if unsure, leave this unchecked.</dolphin_emphasis>" = "等到所有着色器编译完成再开始游戏。启用此选项将会减少游戏开始后短时间的卡顿，但游戏开始前会有更长的延迟。对于有两个或以下核心的系统，较大的着色器队列将降低帧率，因而建议启用此选项。<br><br><dolphin_emphasis>其他情况下，如果不确定，请不要勾选此项。</dolphin_emphasis>";
+"Waits for vertical blanks in order to prevent tearing.<br><br>Decreases performance if emulation speed is below 100%.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "等待场消隐期以防止撕裂。<br><br>模拟速度低于 100% 时会降低性能。<br><br><dolphin_emphasis>如果不确定，请不要勾选此项。</dolphin_emphasis>";
+"Waits until the game synchronizes with the emulated GPU before writing the contents of EFB copies to RAM.<br><br>Reduces the overhead of EFB RAM copies, providing a performance boost in many games, at the risk of breaking those which do not safely synchronize with the emulated GPU.<br><br><dolphin_emphasis>If unsure, leave this checked.</dolphin_emphasis>" = "在将 EFB 副本的内容写入内存之前等待，直到游戏与模拟 GPU 同步。<br><br>可减少 EFB 内存副本占用，在许多游戏中有性能提升，但有可能导致某些无法与模拟 GPU 安全同步的风险。<br><br><dolphin_emphasis>如果不确定，请选中此选项。</dolphin_emphasis>";
 "Warning" = "警告";
 "Warning: Analog inputs may reset to controller values at random. In some cases this can be fixed by adding a deadzone." = "警告：模拟输入可能会随机重置控制器值。在某些情况下可以通过添加死区来解决此问题。";
-"Warning: Number of blocks indicated by the BAT (%u) does not match that of the loaded file header (%u)" = "警告：BAT 所标示的区块数 (%u) 与已载入文件头中的 (%u) 不匹配";
-"Warning: You loaded a save that's after the end of the current movie. (byte %u > %zu) (input %u > %u). You should load another save before continuing, or load this state with read-only mode off." = "警告: 您读取的存档在当前影片结束之后。 (字节 %u > %zu) (输入 %u > %u) 。您需要读取另一个存档方可继续，或关闭只读模式再读取此状态存档。";
-"Warning: You loaded a save whose movie ends before the current frame in the save (byte %u < %u) (frame %u < %u). You should load another save before continuing." = "警告: 您读取的存档影片已结束在存档的当前帧之前(字节%u < %u) (帧%u < %u)。您需要读取另一个存档方可继续。";
-"Warning: You loaded a save whose movie mismatches on byte %zu (0x%zX). You should load another save before continuing, or load this state with read-only mode off. Otherwise you'll probably get a desync." = "警告: 您读取的存档在 %zu (0x%zX) 字节处与影片不匹配。您需要读取另一个存档方可继续，或关闭只读模式再读取此状态存档。否则将可能发生不同步。";
-"Warning: You loaded a save whose movie mismatches on frame %td. You should load another save before continuing, or load this state with read-only mode off. Otherwise you'll probably get a desync.
+"Warning: Number of blocks indicated by the BAT ({0}) does not match that of the loaded file header ({1})" = "警告：BAT 所标示的区块数 ({0}) 与已载入文件头中的 ({1}) 不匹配";
+"Warning: You loaded a save that's after the end of the current movie. (byte {0} > {1}) (input {2} > {3}). You should load another save before continuing, or load this state with read-only mode off." = "警告：您读取的存档在当前影片结束之后。(字节 {0} > {1}) (输入 {2} > {3}) 。您需要读取另一个存档方可继续，或关闭只读模式再读取此状态存档。";
+"Warning: You loaded a save whose movie ends before the current frame in the save (byte {0} < {1}) (frame {2} < {3}). You should load another save before continuing." = "警告：您读取的存档影片已结束在存档的当前帧之前 (字节 {0} < {1}) (帧 {2} < {3})。您需要读取另一个存档方可继续。";
+"Warning: You loaded a save whose movie mismatches on byte {0} ({1:#x}). You should load another save before continuing, or load this state with read-only mode off. Otherwise you'll probably get a desync." = "警告：您读取的存档在 {0} ({1:#x}) 字节处与影片不匹配。您需要读取另一个存档方可继续，或关闭只读模式再读取此状态存档。否则将可能发生不同步。";
+"Warning: You loaded a save whose movie mismatches on frame {0}. You should load another save before continuing, or load this state with read-only mode off. Otherwise you'll probably get a desync.
 
-More information: The current movie is %d frames long and the savestate's movie is %d frames long.
+More information: The current movie is {1} frames long and the savestate's movie is {2} frames long.
 
-On frame %td, the current movie presses:
-Start=%d, A=%d, B=%d, X=%d, Y=%d, Z=%d, DUp=%d, DDown=%d, DLeft=%d, DRight=%d, L=%d, R=%d, LT=%d, RT=%d, AnalogX=%d, AnalogY=%d, CX=%d, CY=%d, Connected=%d
+On frame {3}, the current movie presses:
+Start={4}, A={5}, B={6}, X={7}, Y={8}, Z={9}, DUp={10}, DDown={11}, DLeft={12}, DRight={13}, L={14}, R={15}, LT={16}, RT={17}, AnalogX={18}, AnalogY={19}, CX={20}, CY={21}, Connected={22}
 
-On frame %td, the savestate's movie presses:
-Start=%d, A=%d, B=%d, X=%d, Y=%d, Z=%d, DUp=%d, DDown=%d, DLeft=%d, DRight=%d, L=%d, R=%d, LT=%d, RT=%d, AnalogX=%d, AnalogY=%d, CX=%d, CY=%d, Connected=%d" = "警告: 您所读取存档的第 %td 帧与影片不匹配。您需要读取另一个存档方可继续，或关闭只读模式再读取此状态存档。否则将可能发生不同步。
+On frame {23}, the savestate's movie presses:
+Start={24}, A={25}, B={26}, X={27}, Y={28}, Z={29}, DUp={30}, DDown={31}, DLeft={32}, DRight={33}, L={34}, R={35}, LT={36}, RT={37}, AnalogX={38}, AnalogY={39}, CX={40}, CY={41}, Connected={42}" = "警告：您所读取存档的第 {0} 帧与影片不匹配。您需要读取另一个存档方可继续，或关闭只读模式再读取此状态存档。否则将可能发生不同步。
 
-更多信息: 当前影片长度为 %d 帧而状态存档的影片长度为 %d 帧。
+更多信息：当前影片长度为 {1} 帧而状态存档的影片长度为 {2} 帧。
 
-在第 %td 帧，当前影片按下了:
-Start=%d, A=%d, B=%d, X=%d, Y=%d, Z=%d, DUp=%d, DDown=%d, DLeft=%d, DRight=%d, L=%d, R=%d, LT=%d, RT=%d, AnalogX=%d, AnalogY=%d, CX=%d, CY=%d, Connected=%d
+在第 {3} 帧，当前影片按下了：
+Start={4}, A={5}, B={6}, X={7}, Y={8}, Z={9}, DUp={10}, DDown={11}, DLeft={12}, DRight={13}, L={14}, R={15}, LT={16}, RT={17}, AnalogX={18}, AnalogY={19}, CX={20}, CY={21}, Connected={22}
 
-在第 %td 帧，状态存档的影片按下了:
-Start=%d, A=%d, B=%d, X=%d, Y=%d, Z=%d, DUp=%d, DDown=%d, DLeft=%d, DRight=%d, L=%d, R=%d, LT=%d, RT=%d, AnalogX=%d, AnalogY=%d, CX=%d, CY=%d, Connected=%d";
+在第 {23} 帧，状态存档的影片按下了：
+Start={24}, A={25}, B={26}, X={27}, Y={28}, Z={29}, DUp={30}, DDown={31}, DLeft={32}, DRight={33}, L={34}, R={35}, LT={36}, RT={37}, AnalogX={38}, AnalogY={39}, CX={40}, CY={41}, Connected={42}";
 "Watch" = "监视";
-"WaveFileWriter - file not open." = "波形文件写入器 - 文件未打开.";
 "Website" = "网站";
 "Western (Windows-1252)" = "西方 (Windows-1252)";
 "Whammy" = "颤音";
-"Whether to dump base game textures to User/Dump/Textures/<game_id>/.  This includes arbitrary base textures if 'Arbitrary Mipmap Detection' is enabled in Enhancements.
-
-If unsure, leave this checked." = "Whether to dump base game textures to User/Dump/Textures/<game_id>/.  This includes arbitrary base textures if 'Arbitrary Mipmap Detection' is enabled in Enhancements.
-
-If unsure, leave this checked.";
-"Whether to dump mipmapped game textures to User/Dump/Textures/<game_id>/.  This includes arbitrary mipmapped textures if 'Arbitrary Mipmap Detection' is enabled in Enhancements.
-
-If unsure, leave this checked." = "Whether to dump mipmapped game textures to User/Dump/Textures/<game_id>/.  This includes arbitrary mipmapped textures if 'Arbitrary Mipmap Detection' is enabled in Enhancements.
-
-If unsure, leave this checked.";
+"Whether to dump base game textures to User/Dump/Textures/lt;game_idgt;/.  This includes arbitrary base textures if 'Arbitrary Mipmap Detection' is enabled in Enhancements.<br><br><dolphin_emphasis>If unsure, leave this checked.</dolphin_emphasis>" = "是否将基本游戏纹理转储到 User/Dump/Textures/lt;game_idgt;/。如果在增强选项卡中启用了“特殊多级纹理检测”，则特殊基本纹理也会被转储。<br><br><dolphin_emphasis>如果不确定，请保持选中状态。</dolphin_emphasis>";
+"Whether to dump mipmapped game textures to User/Dump/Textures/lt;game_idgt;/.  This includes arbitrary mipmapped textures if 'Arbitrary Mipmap Detection' is enabled in Enhancements.<br><br><dolphin_emphasis>If unsure, leave this checked.</dolphin_emphasis>" = "是否将多级纹理的游戏材质转储到 User/Dump/Textures/lt;game_idgt;/。如果在增强选项卡中启用了“特殊多级纹理检测”，则特殊多级纹理也会被转储。<br><br><dolphin_emphasis>如果不确定，请保持选中状态。</dolphin_emphasis>";
 "Whitelisted USB Passthrough Devices" = "USB 直通设备白名单";
 "Widescreen Hack" = "宽屏修正";
 "Wii" = "Wii";
@@ -2763,6 +2429,7 @@ If unsure, leave this checked.";
 "Write to Log" = "写入到日志";
 "Write to Log and Break" = "写入到日志并中断";
 "Write to Window" = "写入到窗口";
+"Wrong Version" = "错误版本";
 "X" = "X";
 "XF register " = "XF 寄存器";
 "Y" = "Y";
@@ -2770,27 +2437,26 @@ If unsure, leave this checked.";
 "Yaw Right" = "右转";
 "Yellow" = "黄";
 "Yes" = "是";
+"Yes to All" = "全部选是";
 "You are about to run an NKit disc image. NKit disc images cause problems that don't happen with normal disc images. These problems include:
 
 • The emulated loading times are longer
 • You can't use NetPlay with people who have normal disc images
 • Input recordings are not compatible between NKit disc images and normal disc images
 • Savestates are not compatible between NKit disc images and normal disc images
-• Some games crash, such as Super Paper Mario
+• Some games can crash, such as Super Paper Mario and Metal Gear Solid: The Twin Snakes
 • Wii games don't work at all in older versions of Dolphin and in many other programs
 
-Are you sure you want to continue anyway?
-" = "You are about to run an NKit disc image. NKit disc images cause problems that don't happen with normal disc images. These problems include:
+Are you sure you want to continue anyway?" = "您将要运行 NKit 光盘镜像。NKit 光盘镜像会出现一些正常光盘镜像不会发生的问题。这些问题包括：
 
-• The emulated loading times are longer
-• You can't use NetPlay with people who have normal disc images
-• Input recordings are not compatible between NKit disc images and normal disc images
-• Savestates are not compatible between NKit disc images and normal disc images
-• Some games crash, such as Super Paper Mario
-• Wii games don't work at all in older versions of Dolphin and in many other programs
+• 模拟的加载时间更长
+• 不能与具有正常光盘镜像的人一起联机
+• NKit 光盘镜像和正常光盘镜像之间的输入记录不兼容
+• NKit 光盘镜像和正常光盘镜像之间的保存状态不兼容
+• 一些游戏会崩溃，例如超级纸片马里奥和合金装备：孪蛇
+• Wii 游戏无法在旧版 Dolphin 和很多其他程序中运作
 
-Are you sure you want to continue anyway?
-";
+您确定要继续吗？";
 "You are attempting to use the Vulkan (Metal) backend on an unsupported operating system. For all functionality to be enabled, you must use macOS 10.14 (Mojave) or newer. Please do not report any issues encountered unless they also occur on 10.14+." = "您试图在不受支持的操作系统上使用 Vulkan (Metal) 后端。要启用所有特性，您必须使用 macOS 10.14 (Mojave) 或更高版本。请不要报告遇到的任何问题，除非在 10.14+ 上也出现了。";
 "You are running the latest version available on this update track." = "您正在运行此更新通道上提供的最新版本。";
 "You cannot use the Wii Shop Channel without using your own device credentials.
@@ -2803,12 +2469,12 @@ Please refer to the NAND usage guide for setup instructions: https://dolphin-emu
 "You must select a game to host!" = "你必须选择一个游戏来建主机！";
 "Your DSP ROMs have incorrect hashes.
 Would you like to stop now to fix the problem?
-If you select \"No\", audio might be garbled." = "您的DSP ROM校检不正确。
+If you select \"No\", audio might be garbled." = "您的 DSP ROM 校检不正确。
 是否要现在停止以处理这个问题?
 如果选择“否”，声音可能会出现混乱。";
 "Z" = "Z";
 "Zero 3 code not supported" = "Zero 3 代码不支持";
-"Zero code unknown to Dolphin: %08x" = "Dophin 未知的无地址代码: %08x";
+"Zero code unknown to Dolphin: {0:08x}" = "Dophin 未知的零代码：{0:08x}";
 "^ Xor" = "^ 异或";
 "auto" = "自动";
 "cm" = "厘米";
@@ -2818,12 +2484,21 @@ If you select \"No\", audio might be garbled." = "您的DSP ROM校检不正确�
 "fake-completion" = "伪完成";
 "m/s" = "米/秒";
 "none" = "无";
+"off" = "关";
 "on" = "开";
 "or select a device" = "或选择一个设备";
 "s" = "秒";
 "uDraw GameTablet" = "uDraw 绘图板";
-"{} failed to synchronize codes." = "{} 同步代码失败。";
-"{} failed to synchronize." = "{} 同步失败。";
+"{0} (Masterpiece)" = "{0} (Masterpiece)";
+"{0} (NKit)" = "{0} (NKit)";
+"{0} IPL found in {1} directory. The disc might not be recognized" = "{0} IPL 位于 {1} 目录中。光盘可能无法识别";
+"{0} failed to synchronize codes." = "{0} 同步代码失败。";
+"{0} failed to synchronize." = "{0} 同步失败。";
+"{0} is not a directory, failed to move to *.original.
+ Verify your write permissions or move the file outside of Dolphin" = "{0} 不是一个目录，移动至 *.original 失败。
+请验证你的写入权限或者将文件移动至 Dolphin 之外";
+"{0} of {1} blocks. Compression ratio {2}%" = "区块 {0} ，共 {1} 。压缩率 {2}%";
+"{0} was not a directory, moved to *.original" = "{0} 不是一个目录，已移动至 *.original";
 "| Or" = "| 或";
 "© 2003-2015+ Dolphin Team. “GameCube” and “Wii” are trademarks of Nintendo. Dolphin is not affiliated with Nintendo in any way." = "© 2003-2015+ Dolphin 团队。“GameCube” 和 “Wii” 是任天堂的商标。Dolphin 与任天堂没有任何形式的关联。";
 "°" = "°";

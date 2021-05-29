@@ -21,7 +21,7 @@ ATTENZIONE: La riparazione di questa NAND richiede l'eliminazione dei titoli con
 L'avvio di questi titoli potrebbe sistemare eventuali problemi.";
 " (Disc %1)" = " (Disco %1)";
 "! Not" = "! Not";
-"\"%s\" is an invalid GCM/ISO file, or is not a GC/Wii ISO." = "\"%s\" è un file GCM/ISO non valido, oppure non è un ISO GC/Wii.";
+"\"{0}\" is an invalid GCM/ISO file, or is not a GC/Wii ISO." = "\"{0}\" è un file GCM/ISO non valido, oppure non è un ISO GC/Wii.";
 "%" = "%";
 "% Modulo" = "% Modulo";
 "%1
@@ -33,6 +33,7 @@ vuole entrare nel party.";
 "%1 (Copy)" = "%1 (Copia)";
 "%1 (Disc %2, Revision %3)" = "%1 (Disco %2, Revisione %3)";
 "%1 (Revision %3)" = "%1 (Revisione %3)";
+"%1 (Stock)" = "%1 (Prefefinito)";
 "%1 (recommended)" = "%1 (consigliato)";
 "%1 (slow)" = "%1 (lento)";
 "%1 FIFO bytes
@@ -40,7 +41,6 @@ vuole entrare nel party.";
 %3 frames" = "%1 byte FIFO
 %2 byte memoria
 %3 frame";
-"%1 Free Blocks; %2 Free Dir Entries" = "%1 Blocchi Liberi; %2 Voci Directory Libere";
 "%1 Graphics Configuration" = "Configurazione Video %1";
 "%1 Match(es)" = "%1 Occorrenza/e";
 "%1 doesn't support this feature on your system." = "%1 non supporta questa funzionalità sul tuo sistema.";
@@ -57,19 +57,13 @@ Frame Corrente: %3";
 "%1 session found" = "Trovata %1 sessione";
 "%1 sessions found" = "Trovate %1 sessioni";
 "%1% (Normal Speed)" = "%1% (Velocità Normale)";
+"%1: %2" = "%1: %2";
 "%1MB (MEM1)" = "%1MB (MEM1)";
 "%1MB (MEM2)" = "%1MB (MEM2)";
 "%1[%2]: %3" = "%1[%2]: %3";
 "%1[%2]: %3 %" = "%1[%2]: %3 %";
 "%1[%2]: %3/%4 MiB" = "%1[%2]: %3/%4 MiB";
 "%1x Native (%2x%3)" = "%1x Nativo (%2x%3)";
-"%i of %i blocks. Compression ratio %i%%" = "%i blocchi su %i. Rapporto di compressione %i%%";
-"%s (Masterpiece)" = "%s (Capolavori)";
-"%s IPL found in %s directory. The disc might not be recognized" = "%s IPL trovato nella directory %s. Il disco potrebbe non venire riconosciuto";
-"%s is not a directory, failed to move to *.original.
- Verify your write permissions or move the file outside of Dolphin" = "%s non è una directory, ed è stato impossibile spostare in *.original.
- Si prega di verificare i permessi di scrittura o di spostare il file al di fuori di Dolphin";
-"%s was not a directory, moved to *.original" = "%s non è una directory, spostato in *.original";
 "& And" = "& And";
 "About" = "A proposito di...";
 "Add Memory Breakpoint" = "Aggiungi Punto di Interruzione dei Dati";
@@ -97,10 +91,11 @@ Frame Corrente: %3";
 "Edit..." = "Modifica...";
 "Eject Disc" = "Espelli Disco";
 "Emulation" = "Emulazione";
-"Export..." = "Esporta...";
+"Export as .gci..." = "Esporta come .gci...";
 "File" = "File";
 "Font..." = "Font...";
 "Frame Advance" = "Fotogramma per Fotogramma";
+"Free Look Settings" = "Impostazioni Camera Libera";
 "Generate Symbols From" = "Genera Simboli Da";
 "GitHub Repository" = "Repository GitHub";
 "Graphics Settings" = "Impostazioni Video";
@@ -116,6 +111,7 @@ Frame Corrente: %3";
 "Memory" = "Memoria";
 "Movie" = "Filmato";
 "Network" = "Network";
+"No" = "No";
 "Open..." = "Apri...";
 "Options" = "Opzioni";
 "Patch HLE Functions" = "Patch Funzioni HLE";
@@ -139,6 +135,7 @@ Frame Corrente: %3";
 "Watch" = " Espressione di controllo";
 "Website" = "Website";
 "Wiki" = "Wiki";
+"Yes" = "Sì";
 "'%1' not found, no symbol names generated" = "'%1' non trovato, non sono stati generati nomi dei simboli";
 "'%1' not found, scanning for common functions instead" = "'%1' non trovato, ora cercherò nomi di funzioni comuni";
 "(None)" = "(Nulla)";
@@ -188,13 +185,13 @@ Frame Corrente: %3";
 "A NetPlay Session is already in progress!" = "Una sessione NetPlay è già in corso!";
 "A different version of this title is already installed on the NAND.
 
-Installed version: %u
-WAD version: %u
+Installed version: {0}
+WAD version: {1}
 
 Installing this WAD will replace it irreversibly. Continue?" = "Nella NAND è presente una versione differente di questo titolo.
 
-Versione installata: %u
-Versione del WAD: %u
+Versione installata: {0}
+Versione del WAD: {1}
 
 Non sarà possibile ripristinare la versione precedente dopo l'installazione del WAD. Continuare?";
 "A disc is already about to be inserted." = "Un disco è già in inserimento.";
@@ -234,51 +231,53 @@ Usalo a tuo rischio e pericolo.
 Parity Check Failed
 
 Culprit Code:
-%s" = "Errore di Decrittazione del Codice Action Replay:
+{0}" = "Errore di Decrittazione del Codice Action Replay:
 Controllo di Parità Fallito
 
 Codice Incriminato:
-%s";
-"Action Replay Error: Invalid size (%08x : address = %08x) in Add Code (%s)" = "Errore Action Replay: Dimensioni non valide (%08x : indirizzo = %08x) in Aggiungi Codice (%s)";
-"Action Replay Error: Invalid size (%08x : address = %08x) in Fill and Slide (%s)" = "Errore Action Replay: Dimensioni non valide (%08x : indirizzo = %08x) nelle istruzioni Fill e Slide (%s)";
-"Action Replay Error: Invalid size (%08x : address = %08x) in Ram Write And Fill (%s)" = "Errore Action Replay: Dimensioni non valide (%08x : indirizzo = %08x) nelle istruzioni Ram Write e Fill (%s)";
-"Action Replay Error: Invalid size (%08x : address = %08x) in Write To Pointer (%s)" = "Errore Action Replay: Dimensioni non valide (%08x : indirizzo = %08x) nell'istruzione Write To Pointer (%s)";
-"Action Replay Error: Invalid value (%08x) in Memory Copy (%s)" = "Errore Action Replay: Valore non valido (%08x) nell'istruzione Memory Copy (%s)";
-"Action Replay Error: Master Code and Write To CCXXXXXX not implemented (%s)
-Master codes are not needed. Do not use master codes." = "Errore Action Replay: Master Code e Write To CCXXXXXX non implementati (%s)
+{0}";
+"Action Replay Error: Invalid size ({0:08x} : address = {1:08x}) in Add Code ({2})" = "Errore Action Replay: Dimensioni non valide ({0:08x} : indirizzo = {1:08x}) in Aggiungi Codice ({2})";
+"Action Replay Error: Invalid size ({0:08x} : address = {1:08x}) in Fill and Slide ({2})" = "Errore Action Replay: Dimensioni non valide ({0:08x} : indirizzo = {1:08x}) in Fill e Slide ({2})";
+"Action Replay Error: Invalid size ({0:08x} : address = {1:08x}) in Ram Write And Fill ({2})" = "Errore Action Replay: Dimensioni non valide ({0:08x} : indirizzo = {1:08x}) nelle istruzioni Ram Write e Fill ({2})";
+"Action Replay Error: Invalid size ({0:08x} : address = {1:08x}) in Write To Pointer ({2})" = "Errore Action Replay: Dimensioni non valide ({0:08x} : indirizzo = {1:08x}) nell'istruzione Write To Pointer ({2})";
+"Action Replay Error: Invalid value ({0:08x}) in Memory Copy ({1})" = "Errore Action Replay: Valore non valido ({0:08x}) nell'istruzione Memory Copy ({1})";
+"Action Replay Error: Master Code and Write To CCXXXXXX not implemented ({0})
+Master codes are not needed. Do not use master codes." = "Errore Action Replay: Master Code e Write To CCXXXXXX non implementati ({0})
 I Master Code non sono necessari. Non usarli.";
-"Action Replay Error: invalid AR code line: %s" = "Errore Action Replay: codice AR non valido in riga: %s";
-"Action Replay: Conditional Code: Invalid Size %08x (%s)" = "Action Replay: Conditional Code: Dimensioni non valide %08x (%s)";
-"Action Replay: Invalid Normal Code Type %08x (%s)" = "Action Replay: Normal Code Type %08x (%s) non valido";
-"Action Replay: Normal Code %i: Invalid subtype %08x (%s)" = "Action Replay: Normal Code %i: Sottotipo %08x (%s) non valido";
-"Action Replay: Normal Code 0: Invalid Subtype %08x (%s)" = "Action Replay: Normal Code 0: Sottotipo %08x (%s) non valido";
+"Action Replay Error: invalid AR code line: {0}" = "Errore Action Replay: codice AR non valido in riga: {0}";
+"Action Replay: Conditional Code: Invalid Size {0:08x} ({1})" = "Action Replay: Conditional Code: Dimensioni non valide {0:08x} ({1})";
+"Action Replay: Invalid Normal Code Type {0:08x} ({1})" = "Action Replay: Normal Code Type {0:08x} ({1}) non valido";
+"Action Replay: Normal Code 0: Invalid Subtype {0:08x} ({1})" = "Action Replay: Normal Code 0: Sottotipo {0:08x} ({1}) non valido";
+"Action Replay: Normal Code {0}: Invalid subtype {1:08x} ({2})" = "Action Replay: Normal Code {0}: Sottotipo {1:08x} ({2}) non valido";
 "Activate NetPlay Chat" = "Attiva Chat NetPlay";
 "Active" = "Attivo";
 "Active thread queue" = "Cosa thread attivo";
 "Active threads" = "Thread attivi";
+"Adapter" = "Adattatore";
 "Adapter Detected" = "Rilevato adattatore";
 "Adapter" = "Adattatore";
 "Add" = "Aggiungi";
 "Add breakpoint" = "Aggiungi punto di interruzione";
+"Add New DSU Server" = "Aggiungi Nuovo Server DSU";
 "Add New USB Device" = "Aggiungi un nuovo Dispositivo USB";
+"Add Shortcut to Desktop" = "Aggiungi Collegamento su Desktop";
 "Add a Breakpoint" = "Aggiungi un Punto di Interruzione";
 "Add a Memory Breakpoint" = "Aggiungi Punto di Interruzione dei Dati";
 "Add memory breakpoint" = "Aggiungi punto di interruzione dei dati";
+"Add memory breakpoint" = "Aggiungi punto di interruzione dei dati";
 "Add to watch" = "Aggiungi espressione di controllo";
 "Add to Watch" = "Aggiungi espressione di controllo";
+"Add to watch" = "Aggiungi espressione di controllo";
 "Add..." = "Aggiungi...";
 "Address" = "Indirizzo";
 "Address Space" = "Spazio degli Indirizzi";
 "Address" = "Indirizzo";
-"Adjusts the accuracy at which the GPU receives texture updates from RAM.
+"Adjusts the accuracy at which the GPU receives texture updates from RAM.<br><br>The \"Safe\" setting eliminates the likelihood of the GPU missing texture updates from RAM. Lower accuracies cause in-game text to appear garbled in certain games.<br><br><dolphin_emphasis>If unsure, select the rightmost value.</dolphin_emphasis>" = "Regola la precisione con cui la GPU riceve gli aggiornamenti delle texture dalla RAM.<br><br>L'opzione \"Sicura\" elimina la possibilità che la GPU salti l'aggiornamento delle texture dalla RAM. Una minore precisione può rendere confusi i testi di gioco in alcuni titoli.<br><br><dolphin_emphasis>Nel dubbio, utilizza il valore più a destra.</dolphin_emphasis>";
+"Adjusts the amount of RAM in the emulated console.
 
-The \"Safe\" setting eliminates the likelihood of the GPU missing texture updates from RAM. Lower accuracies cause in-game text to appear garbled in certain games.
+WARNING: Enabling this will completely break many games. Only a small number of games can benefit from this." = "Modifica la quantità di RAM disponibile nella console emulata.
 
-If unsure, select the rightmost value." = "Regola la precisione con cui la GPU riceve gli aggiornamenti delle texture dalla RAM.
-
-L'opzione \"Sicura\" elimina la possibilità che la GPU salti l'aggiornamento delle texture dalla RAM. Una minore precisione può rendere confusi i testi di gioco in alcuni titoli.
-
-Nel dubbio, utilizza il valore più a destra.";
+ATTENZIONE: L'abilitazione impedirà il funzionamento di molti giochi. Solo pochi possono beneficiarne correttamente.";
 "Adjusts the emulated CPU's clock rate.
 
 Higher values may make variable-framerate games run at a higher framerate, at the expense of performance. Lower values may activate a game's internal frameskip, potentially improving performance.
@@ -289,14 +288,10 @@ Valori maggiori possono far eseguire giochi dal framerate variabile ad un framer
 
 ATTENZIONE: Modificare il valore di default (100%) causerà sicuramente corruzioni e glitch. Fallo a tuo rischio e pericolo.
 Si prega di non segnalare bug che si verificano utilizzando un clock non di default.";
-"Adjusts the emulated sizes of MEM1 and MEM2.
-
-Some titles may recognize the larger memory arena(s) and take advantage of it, though retail titles are normally optimized for the retail memory limitations." = "Modifica le dimensioni delle MEM1 e MEM2 emulate.
-
-Alcuni titoli potrebbero riconoscere ed usufruire della memoria più estesa, ma generalmente quelli in commercio sono ottimizzati per le limitazioni standard di memoria.";
 "Advance Game Port" = "Porta Gioco Advance";
 "Advanced" = "Avanzate";
 "Africa" = "Africa";
+"All Files" = "Tutti i File";
 "All Files (*)" = "Tutti i File (*)";
 "All GC/Wii files (*.elf *.dol *.gcm *.iso *.tgc *.wbfs *.ciso *.gcz *.wia *.rvz *.wad *.dff *.m3u);;All Files (*)" = "Tutti i file GC/Wii (*.elf *.dol *.gcm *.iso *.tgc *.wbfs *.ciso *.gcz *.wia *.rvz *.wad *.dff *.m3u);;Tutti i  File (*)";
 "All GC/Wii files (*.elf *.dol *.gcm *.iso *.tgc *.wbfs *.ciso *.gcz *.wia *.rvz *.wad *.m3u);;All Files (*)" = "Tutti i file GC/Wii (*.elf *.dol *.gcm *.iso *.tgc *.wbfs *.ciso *.gcz *.wia *.rvz *.wad *.m3u);;Tutti i  File (*)";
@@ -307,15 +302,7 @@ Alcuni titoli potrebbero riconoscere ed usufruire della memoria più estesa, ma 
 "Allow Mismatched Region Settings" = "Permetti Impostazioni Regione Discordanti";
 "Allow Usage Statistics Reporting" = "Permetti Report Statistiche d'Uso";
 "Allow Writes to SD Card" = "Permetti Scrittura su Scheda SD";
-"Allows manipulation of the in-game camera. Move the mouse while holding the right button to pan or middle button to roll.
-
-Use the WASD keys while holding SHIFT to move the camera. Press SHIFT+2 to increase speed or SHIFT+1 to decrease speed. Press SHIFT+R to reset the camera or SHIFT+F to reset the speed.
-
-If unsure, leave this unchecked. " = "Permette di muovere la telecamera di gioco. Muovi il mouse tenendo premuto il tasto destro per zoomarla o il tasto centrale per ruotarla.
-
-Usa i pulsanti WASD tenendo premuto SHIFT per muovere la telecamera. Premi SHIFT+2 per aumentare la velocità e SHIFT+1 per diminuirla. Premi SHIFT+R per resettare la telecamera e SHIFT+F per resettare la velocità.
-
-Nel dubbio, lascia deselezionato.";
+"Allows manipulation of the in-game camera.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Permette di manipolare la camera di gioco.<br><br><dolphin_emphasis>Nel dubbio, lascia deselezionato.</dolphin_emphasis>";
 "Alternate Input Sources" = "Sorgenti di Input Alternative";
 "Always Connected" = "Sempre Connesso";
 "Always Hide Mouse Cursor" = "Nascondi sempre il cursore del mouse";
@@ -334,18 +321,16 @@ Ignorare e continuare?";
 "Anaglyph" = "Anaglifo";
 "Analyze" = "Analizza";
 "Angle" = "Angolo";
-"Angular velocity to ignore." = "Velocità angolare da ignorare.";
+"Angular velocity to ignore and remap." = "Angular velocity to ignore and remap.";
+"Anisotropic Filtering" = "Filtro Anisotropico";
 "Anisotropic Filtering" = "Filtraggio Anisotropico";
+"Anti-Aliasing" = "Anti-Aliasing";
 "Anti-Aliasing" = "Anti-Aliasing";
 "Any Region" = "Qualunque Regione";
 "Append signature to" = "Accoda signature a";
 "Append to Existing Signature File..." = "Accoda ad un File di Signature Preesistente...";
 "Apply Signature File..." = "Applica File Signature...";
-"Applies a post-processing effect after rendering a frame.
-
-If unsure, select (off)." = "Applica un effetto di post-processing dopo aver renderizzato un frame.
-
-Nel dubbio, seleziona (nessuno).";
+"Applies a post-processing effect after rendering a frame.<br><br /><dolphin_emphasis>If unsure, select (off).</dolphin_emphasis>" = "Applica un effetto di post-processing dopo il rendering di un frame.<br><br /><dolphin_emphasis>Nel dubbio, seleziona (off).</dolphin_emphasis>";
 "Apploader Date" = "Data dell'Apploader";
 "Apply" = "Applica";
 "Apply signature file" = "Applica file di signature";
@@ -355,11 +340,13 @@ Nel dubbio, seleziona (nessuno).";
 "Are you sure you want to delete this pack?" = "Sei sicuro di voler disinstallare questo pack?";
 "Are you sure you want to quit NetPlay?" = "Sei sicuro di voler chiudere NetPlay?";
 "Are you sure?" = "Sei sicuro?";
+"Aspect Ratio" = "Rapporto d'aspetto";
 "Aspect Ratio" = "Rapporto d'Aspetto";
 "Assign Controller Ports" = "Assegna Porte Controller";
 "Assign Controllers" = "Assegna Controller";
 "Asynchronous (Skip Drawing)" = "Asincrono (Salta Rendering)";
 "Asynchronous (Ubershaders)" = "Asincrono (Ubershader)";
+"At least two of the selected save files have the same internal filename." = "Almeno due dei file di salvataggio selezionati hanno lo stesso nome interno.";
 "Attach MotionPlus" = "Collega MotionPlus";
 "Audio" = "Audio";
 "Audio Backend" = "Motore Audio";
@@ -378,17 +365,14 @@ Seleziona una specifica risoluzione interna.";
 "Auto-Adjust Window Size" = "Ridimensiona Automaticamente la Finestra";
 "Auto-Hide" = "Nascondi Automaticamente";
 "Auto-detect RSO modules?" = "Individua automaticamente i moduli RSO?";
-"Automatically adjusts the window size to the internal resolution.
-
-If unsure, leave this unchecked." = "Ridimensiona automaticamente la dimensione della finestra alla risoluzione interna.
-
-Nel dubbio, lascia deselezionato.";
+"Automatically adjusts the window size to the internal resolution.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Ridimensiona automaticamente la dimensione della finestra alla risoluzione interna.<br><br><dolphin_emphasis>Nel dubbio, lascia deselezionato.</dolphin_emphasis>";
 "Auxiliary" = "Ausiliario";
 "B" = "B";
 "BAT incorrect. Dolphin will now exit" = "BAT errato. Dolphin verrà chiuso.";
-"BBA MAC address %s invalid for XLink Kai. A valid Nintendo GameCube MAC address must be used. Generate a new MAC address starting with 00:09:bf or 00:17:ab." = "L'indirizzo BBA MAC %s non è valido per XLink Kai. Deve essere utilizzato un indirizzo MAC Nintendo GameCube valido. Genera un nuovo indirizzo MAC che cominci con 00:09:bf oppure 00:17:ab.";
+"BBA MAC address {0} invalid for XLink Kai. A valid Nintendo GameCube MAC address must be used. Generate a new MAC address starting with 00:09:bf or 00:17:ab." = "L'indirizzo BBA MAC {0} non è valido per XLink Kai. Deve essere utilizzato un indirizzo MAC Nintendo GameCube valido. Genera un nuovo indirizzo MAC che cominci con 00:09:bf oppure 00:17:ab.";
 "BP register " = "Registro BP";
 "Back Chain" = "Back Chain";
+"Backend" = "Motore";
 "Backend Multithreading" = "Multithreading Backend";
 "Backend Settings" = "Impostazioni Motore";
 "Backend" = "Motore";
@@ -396,6 +380,7 @@ Nel dubbio, lascia deselezionato.";
 "Backward" = "all'Indietro";
 "Bad address provided." = "Indirizzo non valido.";
 "Bad dump" = "Dump invalido";
+"Bad offset provided." = "Offset non valido.";
 "Bad value provided." = "Valore non valido.";
 "Banner" = "Banner";
 "Banner Details" = "Dettagli Banner";
@@ -408,6 +393,10 @@ Nel dubbio, lascia deselezionato.";
 "Batch mode cannot be used without specifying a game to launch." = "La modalità batch non può essere usata senza indicare che gioco avviare.";
 "Battery" = "Batteria";
 "Beta (once a month)" = "Beta (una volta al mese)";
+"BetterJoy, DS4Windows, etc" = "BetterJoy, DS4Windows, ecc";
+"Binary SSL" = "Binary SSL";
+"Binary SSL (read)" = "Binary SSL (lettura)";
+"Binary SSL (write)" = "Binary SSL (scrittura)";
 "Bitrate (kbps)" = "Bitrate (kbps)";
 "Block Size" = "Dimensione Blocco";
 "Block Size" = "Dimensione Blocco";
@@ -431,11 +420,15 @@ Nel dubbio, lascia deselezionato.";
 "Broadband Adapter (TAP)" = "Adattatore Broadband (TAP)";
 "Broadband Adapter (XLink Kai)" = "Adattatore Broadband (XLink Kai)";
 "Broadband Adapter (XLink Kai) Destination Address" = "Indirizzo Destinazione Adattatore Broadband (XLink Kai)";
+"Broadband Adapter (tapserver)" = "Adattatore Broadband (tapserver)";
 "Broadband Adapter MAC address" = "Indirizzo MAC Adattatore Broadband";
 "Browse NetPlay Sessions...." = "Sfoglia Sessioni %NetPlay...";
 "Buffer Size" = "Dimensione Buffer";
 "Buffer size changed to %1" = "Dimensione del buffer cambiata a %1";
 "Buffer" = "Buffer";
+"Buggy GPU driver detected.
+Please either install the closed-source GPU driver or update your Mesa 3D version." = "Rilevato driver GPU buggato.
+Installa la versione closed-source dei driver o aggiorna la tua versione di Mesa 3D";
 "Button" = "Pulsante";
 "Buttons" = "Pulsanti";
 "C Stick" = "C Stick";
@@ -445,30 +438,16 @@ Nel dubbio, lascia deselezionato.";
 "CPU Options" = "Opzioni CPU";
 "CRC32" = "CRC32";
 "Cached Interpreter (slower)" = "Cached Interpreter (lento)";
-"Caches custom textures to system RAM on startup.
-
-This can require exponentially more RAM but fixes possible stuttering.
-
-If unsure, leave this unchecked." = "Salva le texture utente nella RAM di sistema all'avvio.
-
-Potrebbe richiedere una quantità esponenziale in più di RAM, ma potrebbe correggere lo stuttering.
-
-Nel dubbio, lascia deselezionato.";
+"Caches custom textures to system RAM on startup.<br><br>This can require exponentially more RAM but fixes possible stuttering.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Salva le texture utente nella RAM di sistema all'avvio.<br><br>Potrebbe richiedere una quantità esponenziale in più di RAM, ma potrebbe correggere lo stuttering.<br><br><dolphin_emphasis>Nel dubbio, lascia deselezionato.</dolphin_emphasis>";
 "Calculate" = "Calcola";
-"Calculates lighting of 3D objects per-pixel rather than per-vertex, smoothing out the appearance of lit polygons and making individual triangles less noticeable.
-
-Rarely causes slowdowns or graphical issues.
-
-If unsure, leave this unchecked." = "Calcola l'illuminazione dei modelli 3D tramite algoritmo per-pixel anziché per-vertex, ammorbidendo i poligoni illuminati e rendendo meno visibili i singoli triangoli.
-
-Non dovrebbe causare rallentamenti o difetti grafici.
-
-Nel dubbio, lascia deselezionato.";
+"Calculates lighting of 3D objects per-pixel rather than per-vertex, smoothing out the appearance of lit polygons and making individual triangles less noticeable.<br><br />Rarely causes slowdowns or graphical issues.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Calcola l'illuminazione dei modelli 3D tramite algorimo per-pixel anziché per-vertex, ammorbidendo i poligoni illuminati e rendendo meno visibili i singoli triangoli.<br><br />Non dovrebbe causare rallentamenti o difetti grafici.<br><br><dolphin_emphasis>Nel dubbio, lascia deselezionato.</dolphin_emphasis>";
 "Calibrate" = "Calibra";
 "Calibration" = "Calibrazione";
 "Calibration Period" = "Tempo di calibrazione";
 "Callstack" = "Stack di chiamate";
-"Can't find Wii Remote by connection handle %02x" = "Impossibile trovare Wii Remote con handle di connessione %02x";
+"Camera 1" = "Camera 1";
+"Camera field of view (affects sensitivity of pointing)." = "Campo di visione della telecamera (influisce sulla sensibilità del puntamento).";
+"Can't find Wii Remote by connection handle {0:02x}" = "Impossibile trovare Wii Remote con handle di connessione {0:02x}";
 "Can't start a NetPlay Session while a game is still running!" = "Non è possibile avviare una sessione NetPlay se un gioco è in esecuzione!";
 "Cancel" = "Annulla";
 "Cancel Calibration" = "Annulla Calibrazione";
@@ -486,22 +465,14 @@ Hai scelto il tipo corretto?";
 "Change Disc..." = "Cambia Disco...";
 "Change Disc" = "Cambia Disco";
 "Change Discs Automatically" = "Cambia Automaticamente Disco";
-"Change the disc to %s" = "Inserire il disco %s";
-"Changes the in-game camera type during freelook.
-
-Six Axis: Offers full camera control on all axes, akin to moving a spacecraft in zero gravity. This is the most powerful freelook option but is the most challenging to use.
-First Person: Controls the free camera similarly to a first person video game. The camera can rotate and travel, but roll is impossible. Easy to use, but limiting.
-Orbital: Rotates the free camera around the original camera. Has no lateral movement, only rotation and you may zoom up to the camera's origin point." = "Cambia la camera in-game durante la visualizzazione a telecamera libera.
-
-Six Axis: Concede il completo controllo della telecamera su tutti gli assi, come se muovessi una navicella spaziale a gravità zero. È lo strumento più potente ma più difficile da usare.
-Prima Persona: Controlla la camera libera come se fossi in un gioco in prima persona. La camera può ruotare e spostarsi, ma non può inclinarsi. Facile da usare, ma limitata.
-Orbita: Ruota la telecamera attorno il punto originale. Non ha movimento laterale, ma solo rotazione e zoom fino al punto di origine della telecamera.";
+"Change the disc to {0}" = "Inserire il disco {0}";
+"Changes the in-game camera type during Free Look.<br><br>Six Axis: Offers full camera control on all axes, akin to moving a spacecraft in zero gravity. This is the most powerful Free Look option but is the most challenging to use.<br> <br>First Person: Controls the free camera similarly to a first person video game. The camera can rotate and travel, but roll is impossible. Easy to use, but limiting.<br><br>Orbital: Rotates the free camera around the original camera. Has no lateral movement, only rotation and you may zoom up to the camera's origin point." = "Cambia la camera in-game durante la visualizzazione a telecamera libera.<br><br>Six Axis: Concede il completo controllo della telecamera su tutti gli assi, come se muovessi una navicella spaziale a gravità zero. È lo strumento più potente ma più difficile da usare.<br><br>Prima Persona: Controlla la camera libera come se fossi in un gioco in prima persona. La camera può ruotare e spostarsi, ma non può inclinarsi. Facile da usare, ma limitata.<br><br>Orbita: Ruota la telecamera attorno il punto originale. Non ha movimento laterale, ma solo rotazione e zoom fino al punto di origine della telecamera.";
 "Changing cheats will only take effect when the game is restarted." = "Cambiare i trucchi avrà effetto soltanto dopo aver riavviato il gioco.";
 "Chat" = "Chat";
 "Cheat Code Editor" = "Editor di Codici";
 "Cheat Search" = "Cerca Codice";
 "Cheats Manager" = "Gestione Codici";
-"Check NAND..." = "Controllo NAND...";
+"Check NAND..." = "Controlla NAND...";
 "Check for Game List Changes in the Background" = "Controlla cambiamenti nella Lista dei Giochi in Background";
 "Check for updates" = "Controlla la presenza di aggiornamenti";
 "Check whether you have the permissions required to delete the file or whether it's still in use." = "Controlla di avere i permessi per eliminare il file o se il file è attualmente in uso.";
@@ -511,6 +482,7 @@ Orbita: Ruota la telecamera attorno il punto originale. Non ha movimento lateral
 "Choose priority input file" = "Scegli file di input prioritario";
 "Choose secondary input file" = "Scegli file di input secondario";
 "Choose the folder to extract to" = "Scegli la cartella in cui estrarre";
+"Clamping of rotation about the yaw axis." = "Limite di rotazione sull'asse verticale";
 "Classic Buttons" = "Pulsanti Classic Controller";
 "Classic Controller" = "Controller Classico";
 "Clear" = "Pulisci";
@@ -523,16 +495,18 @@ Orbita: Ruota la telecamera attorno il punto originale. Non ha movimento lateral
 "Code" = "Codice";
 "Codes received!" = "Codici ricevuti!";
 "Combine Two Signature Files..." = "Combina Due File Signature...";
-"Comment" = "Note";
 "Common" = "Condiviso";
+"Comparand" = "Comparando";
 "Compile Shaders Before Starting" = "Compila gli Shader Prima dell'Avvio";
 "Compiling Shaders" = "Compilazione degli Shader";
 "Compression" = "Compressione";
 "Compression Level" = "Livello di Compressione";
 "Compression" = "Compressione";
 "Condition" = "Condizione";
+"Conditional" = "Condizionale";
 "Config" = "Configurazione";
 "Configure" = "Configura";
+"Configure Controller" = "Configura Controller";
 "Configure Dolphin" = "Configura Dolphin";
 "Configure Input" = "Configura Input";
 "Configure Output" = "Configura Output";
@@ -553,11 +527,10 @@ Orbita: Ruota la telecamera attorno il punto originale. Non ha movimento lateral
 "Connect to the Internet and perform an online system update?" = "Connettersi a internet per avviare l'aggiornamento online di sistema?";
 "Connected" = "Connesso";
 "Connection Type" = "Tipo di Connessione";
-"Content %08x is corrupt." = "Il contenuto %08x è corrotto.";
+"Content {0:08x} is corrupt." = "Il contenuto {0:08x} è corrotto.";
 "Continuous Scanning" = "Scansione Continua";
 "Control NetPlay Golf Mode" = "Controlla Modalità Golf NetPlay";
 "Control Stick" = "Control Stick";
-"Control Type" = "Tipo di Controllo";
 "Controller Profile" = "Profilo Controller";
 "Controller Profile 1" = "Profilo Controller 1";
 "Controller Profile 2" = "Profilo Controller 2";
@@ -565,39 +538,25 @@ Orbita: Ruota la telecamera attorno il punto originale. Non ha movimento lateral
 "Controller Profile 4" = "Profilo Controller 4";
 "Controller Settings" = "Impostazioni Controller";
 "Controllers" = "Controller";
-"Controls the distance of the convergence plane. This is the distance at which virtual objects will appear to be in front of the screen.
-
-A higher value creates stronger out-of-screen effects while a lower value is more comfortable." = "Modifica la distanza del piano di convergenza. Si tratta della distanza alla quale gli oggetti virtuali appariranno in fronte allo schermo.
-
-Un valore alto crea un maggiore effetto di fuori-dallo-schermo, mentre un valore più basso potrebbe risultare meno fastidioso.";
-"Controls the rendering resolution.
-
-A high resolution greatly improves visual quality, but also greatly increases GPU load and can cause issues in certain games. Generally speaking, the lower the internal resolution, the better performance will be.
-
-If unsure, select Native." = "Controlla la risoluzione di rendering.
-
-Un'alta risoluzione aumenterà di molto la qualità visiva ma avrà un grande impatto sulla GPU, e potrebbe anche causare artefatti in alcuni giochi. In generale, minore è la risoluzione interna, migliori saranno le prestazioni.
-
-Nel dubbio, seleziona Nativo";
-"Controls the separation distance between the virtual cameras. 
-
-A higher value creates a stronger feeling of depth while a lower value is more comfortable." = "Modifica la distanza di separazione tra le telecamere virtuali.
-
-Un valore alto crea una sensazione più forte di distanza, mentre un valore più basso potrebbe risultare meno fastidioso.";
+"Controls the distance of the convergence plane. This is the distance at which virtual objects will appear to be in front of the screen.<br><br>A higher value creates stronger out-of-screen effects while a lower value is more comfortable." = "Modifica la distanza del piano di convergenza. Si tratta della distanza alla quale gli oggetti virtuali appariranno in fronte allo schermo.<br><br>Un valore alto crea un maggiore effetto di fuori-dallo-schermo, mentre un valore più basso potrebbe risultare meno fastidioso.";
+"Controls the rendering resolution.<br><br>A high resolution greatly improves visual quality, but also greatly increases GPU load and can cause issues in certain games. Generally speaking, the lower the internal resolution, the better performance will be.<br><br><dolphin_emphasis>If unsure, select Native.</dolphin_emphasis>" = "Controlla la risoluzione di rendering.<br><br>Un'alta risoluzione aumenterà di molto la qualità visiva ma avrà un grande impatto sulla GPU, e potrebbe anche causare artefatti in alcuni giochi. In generale, minore è la risoluzione interna, migliori saranno le prestazioni.<br><br><dolphin_emphasis>Nel dubbio, seleziona Nativo.</dolphin_emphasis>";
+"Controls the separation distance between the virtual cameras.<br><br>A higher value creates a stronger feeling of depth while a lower value is more comfortable." = "Modifica la distanza di separazione tra le telecamere virtuali.<br><br>Un valore alto crea una sensazione più forte di distanza, mentre un valore più basso potrebbe risultare meno fastidioso.";
 "Controls whether or not Dual Core should be enabled. Can improve performance but can also cause issues. Defaults to <b>True</b>" = "Controlla l'abilitazione del Dual Core. Potrebbe migliorare le performance, ma anche causare problemi. Il default è <b>Attivo</b>";
 "Controls whether or not the Memory Management Unit should be emulated fully. Few games require it." = "Controlla se la Memory Management Unit debba essere completamente emulata. Pochi giochi la richiedono.";
 "Controls whether to use high or low-level DSP emulation. Defaults to <b>True</b>" = "Controlla se usare l'emulazione DSP di alto o basso livello. Il default è <b>Attivo</b>";
 "Convergence" = "Convergenza";
+"Convergence" = "Convergenza";
 "Convert" = "Converti";
 "Convert File..." = "Converti File...";
 "Convert Selected Files..." = "Converti i File Selezionati...";
-"Convert..." = "Convert...";
+"Convert..." = "Converti...";
 "Converting Wii disc images to GCZ without removing junk data does not save any noticeable amount of space compared to converting to ISO. Do you want to continue anyway?" = "Convertire le immagini disco Wii in GCZ senza rimuovere i dati inutilizzati non permetterà di risparmiare molto spazio rispetto la conversione in ISO. Vuoi continuare lo stesso?";
 "Converting..." = "Conversione in corso...";
 "Copy" = "Copia";
 "Copy function" = "Copia funzione";
 "Copy hex" = "Copia esadecimale";
 "Copy Address" = "Copia Indirizzo";
+"Copy Failed" = "Copia non Riuscita";
 "Copy Hex" = "Copia Esadecimale";
 "Copy code line" = " Copia riga di codice";
 "Copy failed" = "Copia non riuscita";
@@ -617,31 +576,31 @@ The emulated console will now stop." = "Impossibile rilevare un adattatore Bluet
 La console emulata terminerà.";
 "Could not find any usable Bluetooth USB adapter for Bluetooth Passthrough.
 The following error occurred when Dolphin tried to use an adapter:
-%s
+{0}
 
 The emulated console will now stop." = "Impossibile rilevare un adattatore Bluetooth USB utilizzabile come Passthrough Bluetooth.
 Dolphin ha riscontrato il seguente errore:
-%s
+{0}
 
 La console emulata terminerà.";
 "Could not install an update to the Wii system memory. Please refer to logs for more information." = "Impossibile installare l'aggiornamento di sistema Wii. Consulta i log per ulteriori dettagli.";
-"Could not launch IOS %016<PRIx64> because it is missing from the NAND.
-The emulated software will likely hang now." = "Impossibile avviare IOS %016<PRIx64> in quanto mancante dalla NAND.
+"Could not launch IOS {0:016x} because it is missing from the NAND.
+The emulated software will likely hang now." = "Impossibile avviare IOS {0:016x} in quanto mancante dalla NAND.
 Il software attualmente emulato probabilmente ora si bloccherà.";
 "Could not launch the Wii Menu because it is missing from the NAND.
 The emulated software will likely hang now." = "Impossibile avviare il Menu Wii in quanto mancante dalla NAND.
 Il software attualmente emulato probabilmente ora si bloccherà.";
-"Could not launch title %016<PRIx64> because it is missing from the NAND.
-The emulated software will likely hang now." = "Impossibile avviare il title %016<PRIx64> in quanto mancante dalla NAND.
+"Could not launch title {0:016x} because it is missing from the NAND.
+The emulated software will likely hang now." = "Impossibile avviare il titolo {0:016x} in quanto mancante dalla NAND.
 Il software attualmente emulato probabilmente ora si bloccherà.";
-"Could not read \"%s\". There is no disc in the drive or it is not a GameCube/Wii backup. Please note that Dolphin cannot play games directly from the original GameCube and Wii discs." = "Impossibile leggere \"%s\". Nessun disco trovato nell'unità, oppure non è un backup GC/Wii. Tieni presente che Dolphin non può avviare giochi direttamente dai dischi originali GameCube/Wii.";
-"Could not recognize file %s" = "Impossibile riconoscere il file %s";
-"Could not write memory card file %s.
+"Could not read \"{0}\". There is no disc in the drive or it is not a GameCube/Wii backup. Please note that Dolphin cannot play games directly from the original GameCube and Wii discs." = "Impossibile leggere \"{0}\". Nessun disco trovato nell'unità, oppure non è un backup GC/Wii. Tieni presente che Dolphin non può avviare giochi direttamente dai dischi originali GameCube/Wii.";
+"Could not recognize file {0}" = "Impossibile riconoscere il file {0}";
+"Could not write memory card file {0}.
 
 Are you running Dolphin from a CD/DVD, or is the save file maybe write protected?
 
 Are you receiving this after moving the emulator directory?
-If so, then you may need to re-specify your memory card location in the options." = "Impossibile scrivere sul file memory card %s.
+If so, then you may need to re-specify your memory card location in the options." = "Impossibile scrivere sul file memory card {0}.
 
 Stai avviando Dolphin da un CD o da un DVD, o il file di salvataggio è protetto da scrittura?
 
@@ -653,23 +612,11 @@ Se è così, allora potresti dover reimpostare la posizione della memory card ne
 "Country" = "Paese";
 "Create New Memory Card" = "Crea una Nuova Memory Card";
 "Create..." = "Crea...";
-"Creates frame dumps and screenshots at the internal resolution of the renderer, rather than the size of the window it is displayed within.
-
-If the aspect ratio is widescreen, the output image will be scaled horizontally to preserve the vertical resolution.
-
-If unsure, leave this unchecked." = "Crea frame dump e screenshot alla risoluzione interna del renderer, invece di utilizzare la dimensione della finestra.
-
-Se il rapporto d'aspetto è widescreen, l'immagine risultante verrà scalata orizzontalmente per mantenerne la risoluzione verticale.
-
-Nel dubbio, lascia deselezionato.";
+"Creates frame dumps and screenshots at the internal resolution of the renderer, rather than the size of the window it is displayed within.<br><br>If the aspect ratio is widescreen, the output image will be scaled horizontally to preserve the vertical resolution.<br><br /><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Crea frame dump e screenshot alla risoluzione interna del renderer, invece di utilizzare la dimensione della finestra.<br><br>Se il rapporto d'aspetto è widescreen, l'immagine risultante verrà scalata orizzontalmente per mantenerne la risoluzione verticale.<br><br /><dolphin_emphasis>Nel dubbio, lascia deselezionato.</dolphin_emphasis>";
 "Creator" = "Autore: ";
 "Critical" = "Critico";
 "Crop" = "Taglia Immagine lungo i Bordi";
-"Crops the picture from its native aspect ratio to 4:3 or 16:9.
-
-If unsure, leave this unchecked." = "Ritaglia l'immagine per modificare il rapporto d'aspetto originale a 4:3 o 16:9.
-
-Nel dubbio, lascia deselezionato.";
+"Crops the picture from its native aspect ratio to 4:3 or 16:9.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Ritaglia l'immagine per modificare il rapporto d'aspetto originale a 4:3 o 16:9.<br><br><dolphin_emphasis>Nel dubbio, lascia deselezionato.</dolphin_emphasis>";
 "Crossfade" = "Crossfade";
 "Current Region" = "Regione Corrente";
 "Current context" = "Contesto corrente";
@@ -690,18 +637,23 @@ Nel dubbio, lascia deselezionato.";
 "Data Transfer" = "Trasferimento Dati";
 "Data Type" = "Tipo Dati";
 "Data in area of file that should be unused." = "Dati nell'area del file che dovrebbero rimanere inutilizzati.";
+"Data in unrecognized format or corrupted." = "Dati in un formato non riconosciuto o corrotti.";
+"Data inconsistency in GCMemcardManager, aborting action." = "Inconsistenza nei dati in GCMemcardManager, azione annullata.";
 "Data received!" = "Dati ricevuti!";
-"Datel MaxDrive/Pro files(*.sav)" = "File Datel MaxDrive/Pro(*.sav)";
+"Datel MaxDrive/Pro files" = "File Datel MaxDrive/Pro";
 "Dead Zone" = "Zona Morta";
 "Debug" = "Debug";
 "Debug Only" = "Solo Debug";
 "Debugging" = "Debugging";
 "Decimal" = "Decimale";
 "Decoding Quality" = "Qualità Decodifica";
+"Decrease" = "Riduci";
 "Decrease Convergence" = "Riduci Convergenza";
 "Decrease Depth" = "Riduci Profondità";
 "Decrease Emulation Speed" = "Diminuisci Velocità di Emulazione";
 "Decrease IR" = "Riduci IR";
+"Decrease X" = "Riduci X";
+"Decrease Y" = "Riduci Y";
 "Default" = "Default";
 "Default Config (Read Only)" = "Configurazione di Default (Sola Lettura)";
 "Default Device" = "Dispositivo Predefinito";
@@ -710,25 +662,19 @@ Nel dubbio, lascia deselezionato.";
 "Default thread" = "Thread predefinito";
 "Defer EFB Cache Invalidation" = "Posponi Invalidazione Cache EFB";
 "Defer EFB Copies to RAM" = "Posponi Copie EFB su RAM";
-"Defers invalidation of the EFB access cache until a GPU synchronization command is executed. If disabled, the cache will be invalidated with every draw call. 
-
-May improve performance in some games which rely on CPU EFB Access at the cost of stability.
-
-If unsure, leave this unchecked." = "Ritarda l'invalidazione della cache d'accesso all'EFB finché non viene eseguito un comando di sincronizzazione GPU. Se disabilitato, la cache verrà invalidata ad ogni draw call.
-
-Potrebbe aumentare le performance in alcuni giochi che si basano sull'accesso della CPU all'EFB al prezzo della stabilità.
-
-Nel dubbio, lascia disabilitato.";
+"Defers invalidation of the EFB access cache until a GPU synchronization command is executed. If disabled, the cache will be invalidated with every draw call. <br><br>May improve performance in some games which rely on CPU EFB Access at the cost of stability.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Ritarda l'invalidazione della cache d'accesso all'EFB finché non viene eseguito un comando di sincronizzazione GPU. Se disabilitato, la cache verrà invalidata ad ogni draw call.<br><br>Potrebbe aumentare le performance in alcuni giochi che si basano sull'accesso della CPU all'EFB al prezzo della stabilità.<br><br><dolphin_emphasis>Nel dubbio, lascia disabilitato.</dolphin_emphasis>";
 "Delete" = "Elimina";
 "Delete File..." = "Elimina File...";
 "Delete Selected Files..." = "Elimina i File Selezionati...";
-"Delete the existing file '%s'?" = "Eliminare il file esistente '%s'?";
+"Delete the existing file '{0}'?" = "Eliminare il file esistente '{0}'?";
+"Depth" = "Profondità";
 "Depth Percentage" = "Percentuale Profondità";
 "Depth" = "Profondità";
 "Description" = "Descrizione";
 "Description" = "Descrizione";
 "Detached" = "Scollegato";
 "Detect" = "Rileva";
+"Detecting RSO Modules" = "Individuazione Moduli RSO";
 "Deterministic dual core" = "Dual core deterministico";
 "Dev (multiple times a day)" = "Dev (più volte al giorno)";
 "Device" = "Periferica";
@@ -744,6 +690,7 @@ Nel dubbio, lascia disabilitato.";
 Do you really want to switch to Direct3D 11? If unsure, select 'No'." = "Il renderer Direct3D 11 richiede il supporto a funzionalità non disponibili sulla tua configurazione di sistema. Probabilmente è perché stai usando Windows 7. Puoi comunque usare questo backend, ma potresti riscontrare artefatti grafici.
 
 Vuoi davvero passare a Direct3D 11? Nel dubbio, seleziona 'No'.";
+"Disable" = "Disabilita";
 "Disable Bounding Box" = "Disabilita Bounding Box";
 "Disable Copy Filter" = "Disabilita Copia Filtro";
 "Disable EFB VRAM Copies" = "Disattiva Copie EFB VRAM";
@@ -751,47 +698,18 @@ Vuoi davvero passare a Direct3D 11? Nel dubbio, seleziona 'No'.";
 "Disable Fastmem" = "Disabilita Fastmem";
 "Disable Fog" = "Disabilita Nebbia";
 "Disable JIT Cache" = "Disabilita Cache JIT";
-"Disables bounding box emulation.
-
-This may improve GPU performance significantly, but some games will break.
-
-If unsure, leave this checked." = "Disabilita l'emulazione delle bounding box.
-
-Potrebbe migliorare significativamente le prestazioni della GPU, ma corromperà la grafica di alcuni giochi.
-
-Nel dubbio, lascia selezionato.";
-"Disables the VRAM copy of the EFB, forcing a round-trip to RAM. Inhibits all upscaling.
-
-If unsure, leave this unchecked." = "Disabilita le copie della VRAM nell'EFB, forzando l'utilizzo della RAM. Blocca l'upscaling.
-
-Nel dubbio, lascia deselezionato.";
-"Disables the blending of adjacent rows when copying the EFB. This is known in some games as \"deflickering\" or \"smoothing\". 
-
-Disabling the filter has no effect on performance, but may result in a sharper image. Causes few graphical issues.
-
-If unsure, leave this checked." = "Disabilita il blending di righe adiacenti durante la copia dell'EFB. In alcuni giochi è conosciuto come \"deflickering\" o \"smoothing\".
-
-La disattivazione del filtro non migliora le performance, ma potrebbe risultare in immagini più nitide. Causa alcuni difetti grafici.
-
-Nel dubbio, lascia selezionato.";
+"Disables bounding box emulation.<br><br>This may improve GPU performance significantly, but some games will break.<br><br><dolphin_emphasis>If unsure, leave this checked.</dolphin_emphasis>" = "Disabilita l'emulazione delle bounding box.<br><br>Potrebbe migliorare significativamente le prestazioni della GPU, ma corromperà la grafica di alcuni giochi.<br><br><dolphin_emphasis>Nel dubbio, lascia selezionato.</dolphin_emphasis>";
+"Disables the VRAM copy of the EFB, forcing a round-trip to RAM. Inhibits all upscaling.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Disabilita le copie della VRAM nell'EFB, forzando l'utilizzo della RAM. Blocca l'upscaling.<br><br><dolphin_emphasis>Nel dubbio, lascia deselezionato.</dolphin_emphasis>";
+"Disables the blending of adjacent rows when copying the EFB. This is known in some games as \"deflickering\" or \"smoothing\".<br><br>Disabling the filter has no effect on performance, but may result in a sharper image. Causes few graphical issues.<br><br><dolphin_emphasis>If unsure, leave this checked.</dolphin_emphasis>" = "Disabilita il blending di righe adiacenti durante la copia dell'EFB. In alcuni giochi è conosciuto come \"deflickering\" o \"smoothing\".<br><br>La disattivazione del filtro non migliora le performance, ma potrebbe risultare in immagini più nitide. Causa alcuni difetti grafici.<br><br><dolphin_emphasis>Nel dubbio, lascia selezionato.</dolphin_emphasis>";
 "Disc" = "Disco";
-"Disc Read Error" = "Errore Lettura Disco";
-"Displays XFB copies as soon as they are created, instead of waiting for scanout.
-
-Can cause graphical defects in some games if the game doesn't expect all XFB copies to be displayed. However, turning this setting on reduces latency.
-
-If unsure, leave this unchecked." = "Visualizza le copie dell'XFB non appena vengono create, senza attendere lo scanout.
-
-Può causare artefatti grafici in alcuni giochi che non si aspettano la visualizzazione di tutte le copie XFB. Tuttavia, l'attivazione di questa opzione riduce la latenza.
-
-Nel dubbio, lascia deselezionato.";
+"Discard" = "Annulla";
+"Displays XFB copies as soon as they are created, instead of waiting for scanout.<br><br>Can cause graphical defects in some games if the game doesn't expect all XFB copies to be displayed. However, turning this setting on reduces latency.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Visualizza le copie dell'XFB non appena vengono create, senza attendere lo scanout.<br><br>Può causare artefatti grafici in alcuni giochi che non si aspettano la visualizzazione di tutte le copie XFB. Tuttavia, l'attivazione di questa opzione riduce la latenza.<br><br><dolphin_emphasis>Nel dubbio, lascia deselezionato.</dolphin_emphasis>";
 "Distance" = "Distanza";
 "Distance of travel from neutral position." = "Distanza di movimento dalla posizione neutrale.";
 "Do you authorize Dolphin to report information to Dolphin's developers?" = "Autorizzi Dolphin a inviare informazioni agli sviluppatori di Dolphin?";
 "Do you want to add \"%1\" to the list of Game Paths?" = "Vuoi aggiungere \"%1\" alla lista dei Percorsi di Gioco?";
 "Do you want to clear the list of symbol names?" = "Vuoi cancellare la lista dei nomi dei simboli?";
-"Do you want to delete the %1 selected save files?" = "Vuoi eliminare i %1 file di salvataggio selezionati?";
-"Do you want to delete the selected save file?" = "Vuoi eliminare il file di salvataggio selezionato?";
+"Do you want to delete the %n selected save file(s)?" = "Vuoi eliminare i %n file di salvataggio selezionati?";
 "Do you want to stop the current emulation?" = "Vuoi interrompere l'emulazione in corso?";
 "Dolby Pro Logic II Decoder" = "Decoder Dolby Pro Logic II";
 "Dolphin FIFO Log (*.dff)" = "Log FIFO Dolphin (*.dff)";
@@ -807,10 +725,11 @@ Doppioclicca qui per impostare una cartella di gioco.";
 "Dolphin is too old for traversal server" = "Dolphin è troppo vecchio per il server traversal";
 "Dolphin is unable to verify typical TGC files properly, since they are not dumps of actual discs." = "Dolphin non è in grado di verificare correttamente i file TGC, in quanto non sono dump di dischi effettivi.";
 "Dolphin is unable to verify unlicensed discs." = "Dolphin non è in grado di verificare dischi senza licenza.";
+"Dolphin will use this for titles whose region cannot be determined automatically." = "Dolhin userà questa impostazione per i titoli di cui non potrà riconoscere automaticamente la regione.";
 "Dolphin's cheat system is currently disabled." = "Il sistema codici di Dolphin è attualmente disabilitato.";
 "Domain" = "Dominio";
 "Don't Update" = "Non aggiornare";
-"Don't show this again" = "Don't show this again";
+"Don't show this again" = "Non mostrare più";
 "Done compressing disc image." = "Ho finito di comprimere l'immagine disco";
 "Double" = "Double";
 "Down" = "Giù";
@@ -829,55 +748,32 @@ Doppioclicca qui per impostare una cartella di gioco.";
 "Dump FakeVMEM" = "Dump FakeVMEM";
 "Dump MRAM" = "Dump MRAM";
 "Dump Audio" = "Dump Audio";
-"Dump Base Textures" = "Dump Base Textures";
+"Dump Base Textures" = "Dump Texture Base";
 "Dump EFB Target" = "Dump del Target EFB";
 "Dump Frames" = "Dump dei Frame";
-"Dump Mip Maps" = "Dump Mip Maps";
+"Dump Mip Maps" = "Dump Mip Map";
 "Dump Objects" = "Dump degli Oggetti";
 "Dump Path" = "Percorso Dump";
-"Dump SSL read" = "Dump lettura SSL";
-"Dump SSL write" = "Dump scrittura SSL";
 "Dump TEV Stages" = "Dump Stage TEV";
-"Dump TEV Stages to User/Dump/Objects/.
-
-If unsure, leave this unchecked." = "Salva TEV Stages in User/Dump/Objects/.
-
-Nel dubbio, lascia deselezionato.";
+"Dump TEV Stages to User/Dump/Objects/.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Estrae i TEV Stages in User/Dump/Objects/.<br><br><dolphin_emphasis>Nel dubbio, lascia deselezionato.</dolphin_emphasis>";
 "Dump Texture Fetches" = "Dump Fetch delle Texture";
-"Dump Texture Fetches to User/Dump/Objects/.
-
-If unsure, leave this unchecked." = "Salva Texture Fetch in User/Dump/Objects/.
-
-Nel dubbio, lascia deselezionato.";
+"Dump Texture Fetches to User/Dump/Objects/.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Estrae le Texture Fetches in User/Dump/Objects/.<br><br><dolphin_emphasis>Nel dubbio, lascia deselezionato.</dolphin_emphasis>";
 "Dump Textures" = "Dump delle Texture";
 "Dump at Internal Resolution" = "Dump a Risoluzione Interna";
-"Dump decoded game textures to User/Dump/Textures/<game_id>/.
-
-If unsure, leave this unchecked." = "Salva le texture decodificate in User/Dump/Textures/<game-id>/.
-
-Nel dubbio, lascia deselezionato.";
-"Dump objects to User/Dump/Objects/.
-
-If unsure, leave this unchecked." = "Salva gli oggetti in User/Dump/Objects/.
-
-Nel dubbio, lascia deselezionato.";
+"Dump decoded game textures to User/Dump/Textures/lt;game_idgt;/.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Estrae le texture decodificate di gioco in User/Dump/Textures/lt;game_idgt;/.<br><br><dolphin_emphasis>Nel dubbio, lascia deselezionato.</dolphin_emphasis>";
+"Dump decrypted SSL reads" = "Dump letture SSL decrittate";
+"Dump decrypted SSL writes" = "Dump scritture SSL decrittate";
+"Dump objects to User/Dump/Objects/.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Estrae gli oggetti in User/Dump/Objects/.<br><br><dolphin_emphasis>Nel dubbio, lascia deselezionato.</dolphin_emphasis>";
+"Dump options" = "Dump opzioni";
 "Dump peer certificates" = "Dump certificati peer";
-"Dump root CA" = "Dump CA root";
-"Dumps decoded game textures based on the other flags to User/Dump/Textures/<game_id>/.
-
-If unsure, leave this unchecked." = "Dumps decoded game textures based on the other flags to User/Dump/Textures/<game_id>/.
-
-If unsure, leave this unchecked.";
-"Dumps the contents of EFB copies to User/Dump/Textures/.
-
-If unsure, leave this unchecked." = "Salva il contenuto delle copie EFB in User/Dump/Textures/.
-
-Nel dubbio, lascia deselezionato.";
+"Dump root CA certificates" = "Dump certificati root CA";
+"Dumps decoded game textures based on the other flags to User/Dump/Textures/lt;game_idgt;/.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Estrae le texture decodificate di gioco in base alle altre impostazioni in User/Dump/Textures/lt;game_idgt/.<br><br></dolphin_emphasis>Nel dubbio, lascia deselezionato.</dolphin_emphasis>";
+"Dumps the contents of EFB copies to User/Dump/Textures/.<br><br /><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Estrae il contenuto delle copie EFB in User/Dump/Textures/.<br><br /><dolphin_emphasis>Nel dubbio, lascia deselezionato.</dolphin_emphasis>";
 "Duration of Turbo Button Press (frames)" = "Durata Pressione Pulsante Turbo (in frame)";
 "Duration of Turbo Button Release (frames)" = "Durata Rilascio Pulsante Turbo (in frame)";
 "Dutch" = "Olandese";
 "Exit" = "Esci";
-"ERROR: This version of Dolphin requires a TAP-Win32 driver that is at least version %d.%d -- If you recently upgraded your Dolphin distribution, a reboot is probably required at this point to get Windows to see the new driver." = "ERRORE: Questa versione di Dolphin richiede un driver TAP-Win32 di versione almeno %d.%d -- Se hai recentemente aggiornato la tua versione di Dolphin, potrebbe essere necessario un riavvio per permettere a Windows di riconoscere il nuovo driver.";
+"ERROR: This version of Dolphin requires a TAP-Win32 driver that is at least version {0}.{1} -- If you recently upgraded your Dolphin distribution, a reboot is probably required at this point to get Windows to see the new driver." = "ERRORE: Questa versione di Dolphin richiede un driver TAP-Win32 di versione almeno {0}.{1} -- Se hai recentemente aggiornato la tua versione di Dolphin, potrebbe essere necessario un riavvio per permettere a Windows di riconoscere il nuovo driver.";
 "Each player sends their own inputs to the game, with equal buffer size for all players, configured by the host.
 Suitable for competitive games where fairness and minimal latency are most important." = "Ogni giocatore manda i propri input al gioco, con dimensione del buffer scelta dall'host identica per tutti i giocatori.
 Adatto ai giochi competitivi dove l'imparzialità e la latenza minima sono più importanti.";
@@ -895,10 +791,10 @@ Adatto ai giochi competitivi dove l'imparzialità e la latenza minima sono più 
 "Emulate the Wii's Bluetooth adapter" = "Emula l'adattatore Bluetooth del Wii";
 "Emulated Wii Remote" = "Wii Remote Emulato";
 "Emulated memory size mismatch!
-Current: MEM1 %08X (%3d MiB), MEM2 %08X (%3d MiB)
-DFF: MEM1 %08X (%3d MiB), MEM2 %08X (%3d MiB)" = "Dimensioni memoria emulata non corrispondenti!
-Attuale: MEM1 %08X (%3d MiB), MEM2 %08X (%3d MiB)
-DFF: MEM1 %08X (%3d MiB), MEM2 %08X (%3d MiB)";
+Current: MEM1 {0:08X} ({1} MiB), MEM2 {2:08X} ({3} MiB)
+DFF: MEM1 {4:08X} ({5} MiB), MEM2 {6:08X} ({7} MiB)" = "Dimensioni memoria emulata non corrispondenti!
+Attuale: MEM1 {0:08X} ({1} MiB), MEM2 {2:08X} ({3} MiB)
+DFF: MEM1 {4:08X} ({5} MiB), MEM2 {6:08X} ({7} MiB)";
 "Emulation Speed" = "Velocità di Emulazione";
 "Enable" = "Attiva";
 "Enable API Validation Layers" = "Abilita Layer di Validazione API";
@@ -920,57 +816,24 @@ DFF: MEM1 %08X (%3d MiB), MEM2 %08X (%3d MiB)";
 "Enable fast disc access. This can cause crashes and other problems in some games. (ON = Fast, OFF = Compatible)" = "Abilita l'accesso rapido al disco. Potrebbe causare crash e diversi problemi in alcuni giochi. (ON = Velocità, OFF = Compatibilità)";
 "Enables Dolby Pro Logic II emulation using 5.1 surround. Certain backends only." = "Abilita l'emulazione Dolby Pro Logic II utilizzando il surround 5.1. Solo con determinati backend.";
 "Enables Floating Point Result Flag calculation, needed for a few games. (ON = Compatible, OFF = Fast)" = "Abilita il calcolo rapido delle unità a virgola mobile, necessario per alcuni giochi. (ON = Compatibilità, OFF = Velocità)";
-"Enables anisotropic filtering, which enhances the visual quality of textures that are at oblique viewing angles.
-
-Might cause issues in a small number of games.
-
-If unsure, select 1x." = "Abilita il filtraggio anisotropico, che migliora la qualità visiva delle texture visualizzate ad angolazioni inclinate.
-
-Potrebbe causare problemi in una minoranza di titoli.
-
-Nel dubbio, seleziona 1x.";
-"Enables detection of arbitrary mipmaps, which some games use for special distance-based effects.
-
-May have false positives that result in blurry textures at increased internal resolution, such as in games that use very low resolution mipmaps. Disabling this can also reduce stutter in games that frequently load new textures. This feature is not compatible with GPU Texture Decoding.
-
-If unsure, leave this checked." = "Abilita il riconoscimento di mipmap arbitrarie, usate da alcuni giochi per ottenere effetti dipendenti dalla distanza. Potrebbe ottenere falsi positivi, causando texture sfocate a maggiori risoluzioni interne, come in giochi che utilizzano mipmap di risoluzioni molto basse.
-
-Disabilitandolo, potrebbe ridursi lo stutter in giochi che caricano spesso nuove texture. Questa funzione non è compatibile con Decodifica Texture GPU.
-
-Nel dubbio, lascia selezionato.";
-"Enables multithreaded command submission in backends where supported. Enabling this option may result in a performance improvement on systems with more than two CPU cores. Currently, this is limited to the Vulkan backend.
-
-If unsure, leave this checked." = "Abilita l'invio di comandi multithread nel backend quando supportato. Potrebbe aumentare le performance in sistemi con più di due CPU. Al momento, solo il backend Vulkan ne trarrebbe beneficio.
-
-Nel dubbio, lascia selezionato.";
-"Enables progressive scan if supported by the emulated software. Most games don't have any issue with this.
-
-If unsure, leave this unchecked." = "Abilita la scansione progressiva, se supportata dal software emulato.
-La maggior parte dei giochi ne è compatibile.
-
-Nel dubbio, lascia deselezionato.";
+"Enables anisotropic filtering, which enhances the visual quality of textures that are at oblique viewing angles.<br><br>Might cause issues in a small number of games.<br><br><dolphin_emphasis>If unsure, select 1x.</dolphin_emphasis>" = "Abilita il filtraggio anisotropico, che migliora la qualità visiva delle texture visualizzate ad angolazioni inclinate.<br><br>Potrebbe causare problemi in una minoranza di titoli.<br><br><dolphin_emphasis>Nel dubbio, seleziona 1x.</dolphin_emphasis>";
+"Enables detection of arbitrary mipmaps, which some games use for special distance-based effects.<br><br>May have false positives that result in blurry textures at increased internal resolution, such as in games that use very low resolution mipmaps. Disabling this can also reduce stutter in games that frequently load new textures. This feature is not compatible with GPU Texture Decoding.<br><br><dolphin_emphasis>If unsure, leave this checked.</dolphin_emphasis>" = "Abilita il riconoscimento di mipmap arbitrarie, usate da alcuni giochi per ottenere effetti dipendenti dalla distanza. Potrebbe ottenere falsi positivi, causando texture sfocate a maggiori risoluzioni interne, come in giochi che utilizzano mipmap di risoluzioni molto basse.<br><br>Disabilitandolo, potrebbe ridursi lo stutter in giochi che caricano spesso nuove texture. Questa funzione non è compatibile con Decodifica Texture GPU.<br><br><dolphin_emphasis>Nel dubbio, lascia selezionato.</dolphin_emphasis>";
+"Enables multithreaded command submission in backends where supported. Enabling this option may result in a performance improvement on systems with more than two CPU cores. Currently, this is limited to the Vulkan backend.<br><br /><dolphin_emphasis>If unsure, leave this checked.</dolphin_emphasis>" = "Abilita l'invio di comandi multithread nel backend quando supportato. Potrebbe aumentare le performance in sistemi con più di due CPU. Al momento, solo il backend Vulkan ne trarrebbe beneficio.<br><br /><dolphin_emphasis>Nel dubbio, lascia selezionato.</dolphin_emphasis>";
+"Enables progressive scan if supported by the emulated software. Most games don't have any issue with this.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Abilita la scansione progressiva, se supportata dal software emulato.
+La maggior parte dei giochi ne è compatibile.<br><br><dolphin_emphasis>Nel dubbio, lascia deselezionato.</dolphin_emphasis>";
 "Enables stretching of the audio to match emulation speed." = "Attiva lo stretching dell'audio affinché corrisponda alla velocità d'emulazione";
-"Enables texture decoding using the GPU instead of the CPU.
-
-This may result in performance gains in some scenarios, or on systems where the CPU is the bottleneck.
-
-If unsure, leave this unchecked." = "Abilita la decodifica delle texture usando la GPU al posto della CPU. 
-
-Potrebbe aumentare le perfomance in alcuni casi, soprattutto se la CPU fa da collo di bottiglia.
-
-Nel dubbio, lascia deselezionato.";
+"Enables texture decoding using the GPU instead of the CPU.<br><br>This may result in performance gains in some scenarios, or on systems where the CPU is the bottleneck.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Abilita la decodifica delle texture usando la GPU al posto della CPU.<br><br>Potrebbe aumentare le perfomance in alcuni casi, soprattutto se la CPU fa da collo di bottiglia.<br><br><dolphin_emphasis>Nel dubbio, lascia deselezionato.</dolphin_emphasis>";
 "Enables the Memory Management Unit, needed for some games. (ON = Compatible, OFF = Fast)" = "Abilita l'Unità di Gestione della Memoria (MMU), necessaria per alcuni giochi. (ON = Compatibilità, OFF = Velocità)";
-"Enables validation of API calls made by the video backend, which may assist in debugging graphical issues.
-
-If unsure, leave this unchecked." = "Abilita la validazione delle chiamate API fatte dal backend video. Aiuta il debugging di difetti grafici.
-
-Nel dubbio, lascia deselezionato.";
-"Encodes frame dumps using the FFV1 codec.
-
-If unsure, leave this unchecked." = "Codifica il dump dei frame utilizzando il codec FFV1.
-
-Nel dubbio, lascia deselezionato.";
+"Enables validation of API calls made by the video backend, which may assist in debugging graphical issues.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Abilita la validazione delle chiamate API fatte dal backend video. Aiuta il debugging di difetti grafici.<br><br><dolphin_emphasis>Nel dubbio, lascia deselezionato.</dolphin_emphasis>";
+"Encodes frame dumps using the FFV1 codec.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Codifica i frame dump usando il codec FFV1.<br><dolphin_emphasis>Nel dubbio, lascia deselezionato.</dolphin_emphasis>";
 "Encoding" = "Codifica";
+"Encountered the following errors while opening save files:
+%1
+
+Aborting import." = "I seguenti errori sono stati riscontrati durante l'apertura dei file di salvataggio:
+%1
+
+Importazione annullata.";
 "Enet Didn't Initialize" = "Enet non è stato inizializzato";
 "English" = "Inglese";
 "Enhancements" = "Miglioramenti";
@@ -978,6 +841,7 @@ Nel dubbio, lascia deselezionato.";
 For more information see https://www.teamxlink.co.uk/wiki/Dolphin" = "Inserisci l'indirizzo IP del dispositivo con il Client XLink Kai.
 Per ulteriori informazioni consulta https://www.teamxlink.co.uk/wiki/Dolphin";
 "Enter USB device ID" = "Inserisci ID del dispositivo USB";
+"Enter address to watch" = "Enter address to watch";
 "Enter new Broadband Adapter MAC address" = "Inserisci il nuovo indirizzo MAC dell'Adattatore Broadband";
 "Enter password" = "Inserisci la password";
 "Enter the RSO module address" = "Inserisci l'indirizzo del modulo RSO";
@@ -989,31 +853,37 @@ Per ulteriori informazioni consulta https://www.teamxlink.co.uk/wiki/Dolphin";
 "Error occured while loading some texture packs" = "Si è verificato un errore durante il caricamento dei texture pack";
 "Error processing codes." = "Errore processando i codici.";
 "Error processing data." = "Errore processando i dati.";
-"Error reading file: %s" = "Errore durante la lettura del file: %s";
+"Error reading file: {0}" = "Errore durante la lettura del file: {0}";
 "Error synchronizing cheat codes!" = "Errore sincronizzando i cheat code!";
 "Error synchronizing save data!" = "Errore sincronizzando i dati di salvataggio!";
-"Error writing file: %s" = "Errore durante la scrittura del file: %s";
-"Error: After \"%s\", found %d (0x%X) instead of save marker %d (0x%X). Aborting savestate load..." = "Errore: Dopo \"%s\", trovato %d (0x%X) invece del save marker %d (0x%X). Interruzione del caricamento dello stato di gioco...";
+"Error writing file: {0}" = "Errore durante la scrittura del file: {0}";
+"Error: After \"{0}\", found {1} ({2:#x}) instead of save marker {3} ({4:#x}). Aborting savestate load..." = "Errore: Dopo \"{0}\", trovato {1} ({2:#x}) invece del save marker {3} ({4:#x}). Interruzione del caricamento dello stato di gioco...";
 "Error: Trying to access Shift JIS fonts but they are not loaded. Games may not show fonts correctly, or crash." = "Errore: Tentativo di accesso ai font Shift JIS, ma non risultano caricati. I giochi potrebbero non mostrare correttamente i caratteri, o crashare.";
 "Error: Trying to access Windows-1252 fonts but they are not loaded. Games may not show fonts correctly, or crash." = "Errore: Tentativo di accesso ai font Windows-1252, ma non risultano caricati. I giochi potrebbero non mostrare correttamente i caratteri, o crashare.";
-"Errors were found in %zu blocks in the %s partition." = "Sono stati trovati errori in %zu blocchi nella partizione %s.";
-"Errors were found in %zu unused blocks in the %s partition." = "Sono stati trovati errori in %zu blocchi inutilizzati nella partizione %s.";
+"Errors were found in {0} blocks in the {1} partition." = "Sono stati trovati errori in {0} blocchi nella partizione {1}.";
+"Errors were found in {0} unused blocks in the {1} partition." = "Sono stati trovati errori in {0} blocchi inutilizzati nella partizione {1}.";
 "Euphoria" = "Euforia";
 "Europe" = "Europa";
 "Exit" = "Esci";
+"Expected + or closing paren." = "Previsto + o chiusa paren.";
 "Expected arguments: " = "Argomenti previsti";
 "Expected closing paren." = "Prevista chiusa paren.";
 "Expected comma." = "Virgola prevista.";
 "Expected end of expression." = "Termine di espressione prevista.";
+"Expected name of input." = "Previsto nome dell'input.";
+"Expected opening paren." = "Prevista apri paren.";
 "Expected start of expression." = "Inizio di espressione prevista.";
 "Experimental" = "Sperimentale";
-"Export All..." = "Esporta Tutto...";
 "Export All Wii Saves" = "Esporta tutti i Salvataggi Wii";
+"Export Failed" = "Esportazione non Riuscita";
 "Export Recording" = "Esporta Registrazione";
 "Export Recording..." = "Esporta Registrazione...";
 "Export Save File" = "Esporta File di Salvataggio";
+"Export Save Files" = "Esporta File di Salvataggio";
 "Export Wii Save" = "Esporta Salvataggio Wii";
 "Export Wii Saves" = "Esporta Salvataggi Wii";
+"Export as .gcs..." = "Esporta come .gcs...";
+"Export as .sav..." = "Esporta come .sav...";
 "Exported %n save(s)" = "Esportato/i %n salvataggio/i";
 "Extension" = "Estensione";
 "Extension Motion Input" = "Estensione Input di Movimento";
@@ -1038,57 +908,65 @@ Per ulteriori informazioni consulta https://www.teamxlink.co.uk/wiki/Dolphin";
 "Failed to claim interface for BT passthrough" = "Impossibile richiedere l'interfaccia per il ponte BT";
 "Failed to connect to Redump.org" = "Impossibile connettersi a Redump.org";
 "Failed to connect to server: %1" = "Impossibile connettersi al server: %1";
-"Failed to copy file" = "Copia del file non riuscita";
 "Failed to create D3D swap chain" = "Impossibile creare la swap chain D3D";
+"Failed to create D3D12 context" = "Impossibile creare il contesto D3D12";
+"Failed to create D3D12 global resources" = "Impossibile creare le risorse globali D3D12";
 "Failed to create DXGI factory" = "Impossibile creare la factory DXGI";
 "Failed to delete NetPlay memory card. Verify your write permissions." = "Impossibile eliminare la memory card NetPlay. Controlla di avere i corretti permessi di scrittura.";
 "Failed to delete the selected file." = "Fallita la rimozione del file selezionato.";
-"Failed to detach kernel driver for BT passthrough: {}" = "Impossibile disconnettere il driver kernel per il ponte BT: {}";
+"Failed to detach kernel driver for BT passthrough: {0}" = "Impossibile disconnettere il driver kernel per il ponte BT: {0}";
 "Failed to download codes." = "Download dei codici non riuscito.";
 "Failed to dump %1: Can't open file" = "Fallito il dump %1: Impossibile aprire il file";
 "Failed to dump %1: Failed to write to file" = "Fallito il dump %1: Impossibile scrivere il file";
+"Failed to export %n out of %1 save file(s)." = "Fallita l'esportazione di %n su %1 file di salvataggio.";
 "Failed to export the following save files" = "Fallita l'esportazione dei seguenti file di salvataggio";
 "Failed to extract certificates from NAND" = "Fallita estrazione dei certificati dalla NAND";
 "Failed to extract file." = "Estrazione del file non riuscita.";
 "Failed to extract system data." = "Fallita estrazione dei dati di sistema.";
 "Failed to find new filename.
-%s
+{0}
  will be overwritten" = "Impossibile trovare il nuovo file.
-%s
-verrà sovrascritto";
+{0}
+ verrà sovrascritto";
 "Failed to find one or more D3D symbols" = "Impossibile trovare uno o più simboli D3D";
 "Failed to import \"%1\"." = "Importazione di \"%1\" non riuscita.";
-"Failed to import save files." = "Importazione dei file di salvataggio non riuscita.";
+"Failed to import save file. Please launch the game once, then try again." = "Fallita l'importazione del salvataggio. Avvia il gioco una volta, poi riprova.";
+"Failed to import save file. The given file appears to be corrupted or is not a valid Wii save." = "Fallita l'importazione del salvataggio. Il file sembra corrotto o non è un file di salvataggio Wii valido.";
+"Failed to import save file. Your NAND may be corrupt, or something is preventing access to files within it. Try repairing your NAND (Tools -> Manage NAND -> Check NAND...), then import the save again." = "Non è stato possibile importare il salvataggio. la tua NAND potrebbe essere corrotta, o qualcosa sta impedendo l'accesso ai file al suo interno. Prova a ripararla (Strumenti -> Gestisci NAND -> Controlla NAND...), quindi importa di nuovo il salvataggio.";
 "Failed to init core" = "Inizializzazione fallita";
 "Failed to initialize Direct3D.
 Make sure your video card supports at least D3D 10.0" = "Impossibile inizializzare Direct3D.
 Accertati che la tua scheda video supporti almeno D3D 10.0";
+"Failed to initialize renderer classes" = "Impossibile inizializzare le classi del renderer";
 "Failed to install pack: %1" = "Fallita installazione del pack: %1";
 "Failed to install this title to the NAND." = "Fallita installazione del titolo nella NAND.";
 "Failed to listen on port %1. Is another instance of the NetPlay server running?" = "Fallito l'ascolto sulla porta %1. C'è già un'altra istanza di un server NetPlay in esecuzione?";
-"Failed to load %s. If you are using Windows 7, try installing the KB4019990 update package." = "Impossibile caricare %s. Se stai utilizzando Windows 7, prova a installare l'aggiornamento KB4019990.";
 "Failed to load RSO module at %1" = "Fallito caricamento del modulo RSO a %1";
 "Failed to load d3d11.dll" = "Caricamento d3d11.dll non riuscito";
 "Failed to load dxgi.dll" = "Caricamento dxgi.dll non riuscito";
 "Failed to load map file '%1'" = "Fallita l'apertura del file mappa '%1'";
 "Failed to load the executable to memory." = "Impossibile caricare l'eseguibile in memoria.";
+"Failed to load {0}. If you are using Windows 7, try installing the KB4019990 update package." = "Impossibile caricare {0}. Se stai utilizzando Windows 7, prova a installare l'aggiornamento KB4019990.";
 "Failed to open '%1'" = "Fallita l'apertura di '%1'";
-"Failed to open Bluetooth device: {}" = "Impossibile aprire il dispositivo Bluetooth: {}";
+"Failed to open Bluetooth device: {0}" = "Impossibile aprire il dispositivo Bluetooth: {0}";
 "Failed to open config file!" = "Apertura del file di configurazione non riuscita";
-"Failed to open file \"%s\"." = "Impossibile aprire il file \"%s\".";
-"Failed to open file \"%s\". Verify your write permissions." = "Impossibile aprire il file \"%s\". Verifica di avere i corretti permessi di scrittura.";
+"Failed to open file \"{0}\"." = "Impossibile aprire il file \"{0}\".";
+"Failed to open file \"{0}\". Verify your write permissions." = "Impossibile aprire il file \"{0}\". Verifica di avere i corretti permessi di scrittura.";
 "Failed to open file in external editor.
 Make sure there's an application assigned to open INI files." = "Impossibile aprire il file con un editor esterno.
 Assicurati di avere un'applicazione di default per l'apertura dei file INI.";
+"Failed to open file." = "Impossibile aprire il file.";
 "Failed to open server" = "Impossibile avviare il server";
 "Failed to open the input file \"%1\"." = "Fallita l'apertura del file di input \"%1\".";
-"Failed to open the output file \"%s\".
-Check that you have permissions to write the target folder and that the media can be written." = "Fallita l'apertura del file di output \"%s\".
+"Failed to open the output file \"{0}\".
+Check that you have permissions to write the target folder and that the media can be written." = "Fallita l'apertura del file di output \"{0}\".
 Controlla di avere i permessi di scrittura nella cartella di destinazione e che sia possibile scrivere sul dispositivo.";
 "Failed to parse Redump.org data" = "Fallito parsing dei dati di Redump.org";
-"Failed to read %s" = "Fallita lettura di %s";
-"Failed to read from the input file \"%s\"." = "Fallita la lettura dal file di input \"%s\".";
-"Failed to remove file" = "Rimozione del file non riuscita";
+"Failed to read from file." = "Accesso non riuscito al file.";
+"Failed to read from the input file \"{0}\"." = "Fallita la lettura dal file di input \"{0}\".";
+"Failed to read selected savefile(s) from memory card." = "Impossibile leggere i file di salvataggio selezionati dalla memory card.";
+"Failed to read {0}" = "Fallita lettura di {0}";
+"Failed to remove file." = "Rimozione del file non riuscita.";
 "Failed to remove junk data from file \"%1\".
 
 Would you like to convert it without removing junk data?" = "Fallita la rimozione dei dati inutilizzati dal file \"%1\".
@@ -1107,14 +985,19 @@ Vuoi convertirlo senza la loro rimozione?";
 "Failed to write Mii data." = "Fallita scrittura dei dati Mii.";
 "Failed to write Wii save." = "Fallita scrittura del salvataggio Wii.";
 "Failed to write config file!" = "Fallita la scrittura del file di configurazione!";
-"Failed to write the output file \"%s\".
-Check that you have enough space available on the target drive." = "Fallita la scrittura del file di output \"%s\".
+"Failed to write modified memory card to disk." = "Impossibile scrivere la memory card modificata sul disco.";
+"Failed to write savefile to disk." = "Impossibile scrivere il salvataggio su disco.";
+"Failed to write the output file \"{0}\".
+Check that you have enough space available on the target drive." = "Fallita la scrittura del file di output \"{0}\".
 Controlla di avere abbastanza spazio sul dispositivo di destinazione.";
 "Failure" = "Errore";
 "Fair Input Delay" = "Ritardo Input Imparziale";
+"Fallback Region" = "Regione di Fallback";
+"Fallback Region" = "Regione di Fallback";
 "Fast" = "Rapida";
 "Fast Depth Calculation" = "Calcolo Rapido della Profondità";
-"Fatal desync. Aborting playback. (Error in PlayWiimote: %u != %u, byte %u.)%s" = "Desincronizzazione fatale. Interruzione della riproduzione. (Errore in PlayWiimote: %u != %u, byte %u.)%s";
+"Fatal desync. Aborting playback. (Error in PlayWiimote: {0} != {1}, byte {2}.){3}" = "Desincronizzazione fatale. Interruzione della riproduzione. (Errore in PlayWiimote: {0} != {1}, byte {2}.){3}";
+"Field of View" = "Campo Visivo";
 "File Details" = "Dettagli del File";
 "File Format" = "Formato del File";
 "File Format" = "Formato del File";
@@ -1124,34 +1007,26 @@ Controlla di avere abbastanza spazio sul dispositivo di destinazione.";
 "File Size" = "Dimensioni del File";
 "File Size" = "Dimensione del File";
 "File contained no codes." = "Il file non contiene codici.";
-"File write failed" = "Fallita la scrittura del file";
+"Filename" = "Nome file";
 "Files opened, ready to compress." = "File aperti, pronti alla compressione.";
-"Files specified in the M3U file \"%s\" were not found:
-%s" = "I file specificati nel flie M3U \"%s\" non esistono:
-%s";
+"Files specified in the M3U file \"{0}\" were not found:
+{1}" = "I file specificati nel flie M3U \"{0}\" non esistono:
+{1}";
 "Filesize does not match any known GameCube Memory Card size." = "Le dimensioni non corrispondono a nessuna Memory Card GameCube conosciuta.";
 "Filesize in header mismatches actual card size." = "La dimensione nell'intestazione non corrisponde alla dimensione effettiva della scheda.";
 "Filesystem" = "Filesystem";
 "Filter Symbols" = "Filtra Simboli";
 "Filters" = "Filtri";
-"Filters all textures, including any that the game explicitly set as unfiltered.
-
-May improve quality of certain textures in some games, but will cause issues in others.
-
-If unsure, leave this unchecked." = "Filtra tutte le texture, comprese quelle che il gioco dichiara esplicitamente come non filtrate.
-
-Potrebbe aumentare la qualità di alcune texture in alcuni giochi, ma causa problemi in altri.
-
-Nel dubbio, lascia deselezionato.";
+"Filters all textures, including any that the game explicitly set as unfiltered.<br><br>May improve quality of certain textures in some games, but will cause issues in others.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Filtra tutte le texture, comprese quelle che il gioco dichiara esplicitamente come non filtrate.<br><br>Potrebbe aumentare la qualità di alcune texture in alcuni giochi, ma causa problemi in altri.<br><br><dolphin_emphasis>Nel dubbio, lascia deselezionato.</dolphin_emphasis>";
 "Find Next" = "Trova Successivo";
 "Find Previous" = "Trova Precedente";
 "Finish Calibration" = "Termina Calibrazione";
 "Finishing the update...
 This can take a while." = "Completando l'aggiornamento...
 Potrebbe volerci un po'.";
-"First Block" = "Primo Blocco";
 "First Person" = "Prima Persona";
 "Fix Checksums" = "Ripara Checksum";
+"Fix Checksums Failed" = "Ripara Checksum Falliti";
 "Flags" = "Flag";
 "Float" = "Float";
 "Follow branch" = "(b) Segui flusso";
@@ -1161,24 +1036,8 @@ Potrebbe volerci un po'.";
 "Force 4:3" = "Forza 4:3";
 "Force Listen Port" = "Forza Ascolto su Porta";
 "Force Texture Filtering" = "Forza Filtraggio Texture";
-"Forces the game to output graphics for any aspect ratio. Use with \"Aspect Ratio\" set to \"Force 16:9\" to force 4:3-only games to run at 16:9.
-
-Rarely produces good results and often partially breaks graphics and game UIs. Unnecessary (and detrimental) if using any AR/Gecko-code widescreen patches.
-
-If unsure, leave this unchecked." = "Forza il gioco ad adattare l'output grafico a qualunque rapporto d'aspetto. Usalo con \"Rapporto d'aspetto\" settato a \"Forza 16:9\" per forzare i giochi a modalità 4:3 in modalità 16:9.
-
-Raramente produce buoni risultati, e spesso corrompe parzialmente la grafica e la UI di gioco. Non necessario (e controproducente) se usato assieme a patch widescreen AR/Gecko.
-
-Nel dubbio, lascia deselezionato.";
-"Forces the game to render the RGB color channels in 24-bit, thereby increasing quality by reducing color banding.
-
-Has no impact on performance and causes few graphical issues.
-
-If unsure, leave this checked." = "Forza il gioco a renderizzare i canali di colore RGB a 24-bit, aumentando la qualità riducendo il colour banding.
-
-Non influisce sulle prestazioni e causa minori difetti grafici.
-
-Nel dubbio, lascia selezionato.";
+"Forces the game to output graphics for any aspect ratio. Use with \"Aspect Ratio\" set to \"Force 16:9\" to force 4:3-only games to run at 16:9.<br><br>Rarely produces good results and often partially breaks graphics and game UIs. Unnecessary (and detrimental) if using any AR/Gecko-code widescreen patches.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Forza il gioco ad adattare l'output grafico a qualunque rapporto d'aspetto. Usalo con \"Rapporto d'aspetto\" settato a \"Forza 16:9\" per forzare i giochi a modalità 4:3 in modalità 16:9.<br><br>Raramente produce buoni risultati, e spesso corrompe parzialmente la grafica e la UI di gioco. Non necessario (e controproducente) se usato assieme a patch widescreen AR/Gecko.<br><br><dolphin_emphasis>Nel dubbio, lascia deselezionato.</dolphin_emphasis>";
+"Forces the game to render the RGB color channels in 24-bit, thereby increasing quality by reducing color banding.<br><br>Has no impact on performance and causes few graphical issues.<br><br><dolphin_emphasis>If unsure, leave this checked.</dolphin_emphasis>" = "Forza il gioco a renderizzare i canali di colore RGB a 24-bit, aumentando la qualità riducendo il colour banding.<br><br>Non influisce sulle prestazioni e causa minori difetti grafici.<br><br><dolphin_emphasis>Nel dubbio, lascia selezionato.</dolphin_emphasis>";
 "Format" = "Formato";
 "Forward" = "in Avanti";
 "Forward port (UPnP)" = "Inoltra porta (UPnP)";
@@ -1190,26 +1049,18 @@ Nel dubbio, lascia selezionato.";
 "Frame Advance Reset Speed" = "Reimposta Velocità Avanzamento Frame";
 "Frame Dumping" = "Dumping dei Frame";
 "Frame Range" = "Intervallo Fotogramma";
-"Frame dump image(s) '%s' already exists. Overwrite?" = "L'immagine del(dei) frame '%s' esiste già. Vuoi Sovrascrivere?";
+"Frame dump image(s) '{0}' already exists. Overwrite?" = "L'immagine del/dei frame '{0}' esiste già. Vuoi Sovrascrivere?";
 "Frames to Record" = "Fotogrammi da Registrare";
 "France" = "Francia";
-"Free Look" = "Visuale Libera";
+"Free Blocks: %1" = "Blocchi Liberi: %1";
+"Free Files: %1" = "Blocchi Liberi: %1";
+"Free Look Control Type" = "Tipo Controlli Camera Libera";
+"Free Look Controller %1" = "Controller Camera Libera %1";
+"Free Look Settings" = "Impostazioni Camera Libera";
+"Free Look allows for manipulation of the in-game camera. Different camera types are available from the dropdown.<br><br>For detailed instructions, <a href=\"https://wiki.dolphin-emu.org/index.php?title=Free_Look\">refer to this page</a>." = "La Camera Libera permette la manipolazione della telecamera in-game. Diversi tipi di telecamera sono disponibili dal menu a tendina.<br><br>Per istruzioni dettagliate, <a href=\"https://wiki.dolphin-emu.org/index.php?title=Free_Look\">consulta questa pagina</a>.";
+"FreeLook" = "CameraLibera";
 "Freelook" = "Camera libera";
-"Freelook Decrease Field of View X" = "Telecamera Libera Riduci Angolo Visivo X";
-"Freelook Decrease Field of View Y" = "Telecamera Libera Riduci Angolo Visivo Y";
-"Freelook Decrease Speed" = "Riduci Velocità Telecamera Libera";
-"Freelook Increase Field of View X" = "Telecamera Libera Aumenta Angolo Visivo X";
-"Freelook Increase Field of View Y" = "Telecamera Libera Aumenta Angolo Visivo Y";
-"Freelook Increase Speed" = "Aumenta Velocità Telecamera Libera";
-"Freelook Move Down" = "Sposta in Basso la Telecamera Libera";
-"Freelook Move Left" = "Sposta a Sinistra la Telecamera Libera";
-"Freelook Move Right" = "Sposta a Destra la Telecamera Libera";
-"Freelook Move Up" = "Sposta in Alto la Telecamera Libera";
-"Freelook Reset" = "Resetta la Telecamera Libera";
-"Freelook Reset Speed" = "Velocità di Reset Telecamera Libera";
-"Freelook Toggle" = "Abilita/Disabilita Telecamera Libera";
-"Freelook Zoom In" = "Zoom In Telecamera Libera";
-"Freelook Zoom Out" = "Zoom Out Telecamera Libera";
+"Freelook Toggle" = "Abilita/Disabilita Camera Libera";
 "French" = "Francese";
 "Frequency" = "Frequenza";
 "Frets" = "Tasti";
@@ -1225,7 +1076,7 @@ Nel dubbio, lascia selezionato.";
 "GCI Folder" = "Cartella GCI";
 "GCMemcardDirectory: ClearBlock called with invalid block address" = "GCMemcardDirectory: ClearBlock chiamato con indirizzo non valido";
 "GCZ GC/Wii images (*.gcz)" = "Immagini GCZ GC/Wii (*.gcz)";
-"GFX FIFO: Unknown Opcode (0x%02x @ %p, %s).
+"GFX FIFO: Unknown Opcode ({0:#04x} @ {1}, {2}).
 This means one of the following:
 * The emulated GPU got desynced, disabling dual core can help
 * Command stream corrupted by some spurious memory bug
@@ -1233,7 +1084,7 @@ This means one of the following:
 * Some other sort of bug
 
 Further errors will be sent to the Video Backend log and
-Dolphin will now likely crash or hang. Enjoy." = "GFX FIFO: Opcode Sconosciuto (0x%02x @ %p, %s).
+Dolphin will now likely crash or hang. Enjoy." = "GFX FIFO: Opcode Sconosciuto ({0:#04x} @ {1}, {2}).
 Può voler dire uno dei seguenti casi:
 * La GPU emulata ha desincato. Disabilitare Dual Core mitiga il problema
 * Lo stream di comandi è stato corrotto da qualche bug di memoria spuria
@@ -1242,7 +1093,35 @@ Può voler dire uno dei seguenti casi:
 
 Ulteriori errori saranno indicati nel log del Backend Video.
 Probabilmente Dolphin ora crasherà o si bloccherà. Auguri.";
+"GL_MAX_TEXTURE_SIZE is {0} - must be at least 1024." = "GL_MAX_TEXTURE_SIZE è {0} - deve essere almeno 1024.";
 "GPU Texture Decoding" = "Decodificatore Texture GPU";
+"GPU: ERROR: Need GL_ARB_framebuffer_object for multiple render targets.
+GPU: Does your video card support OpenGL 3.0?" = "GPU: ERRORE: Occorre GL_ARB_framebuffer_object per render target multipli.
+GPU: La tua scheda video supporta OpenGL 3.0?";
+"GPU: OGL ERROR: Does your video card support OpenGL 2.0?" = "GPU: ERRORE OGL: La tua scheda video supporta OpenGL 2.0?";
+"GPU: OGL ERROR: Need GL_ARB_map_buffer_range.
+GPU: Does your video card support OpenGL 3.0?" = "GPU: ERRORE OGL: Serve GL_ARB_map_buffer_range.
+GPU: La tua scheda video supporta OpenGL 3.0?";
+"GPU: OGL ERROR: Need GL_ARB_sampler_objects.
+GPU: Does your video card support OpenGL 3.3?" = "GPU: ERRORE OGL: Occorre GL_ARB_sampler_objects.
+GPU: La tua scheda video supporta OpenGL 3.3?";
+"GPU: OGL ERROR: Need GL_ARB_uniform_buffer_object.
+GPU: Does your video card support OpenGL 3.1?" = "GPU: ERRORE OGL: Occorre GL_ARB_uniform_buffer_object.
+GPU: La tua scheda video supporta OpenGL 3.1?";
+"GPU: OGL ERROR: Need GL_ARB_vertex_array_object.
+GPU: Does your video card support OpenGL 3.0?" = "GPU: ERRORE OGL: Occorre GL_ARB_vertex_array_object.
+GPU: La tua scheda video supporta OpenGL 3.0?";
+"GPU: OGL ERROR: Need OpenGL version 3.
+GPU: Does your video card support OpenGL 3?" = "GPU: ERRORE OGL: Occorre OpenGL versione 3.
+GPU: La tua scheda video supporta OpenGL 3?";
+"GPU: OGL ERROR: Need at least GLSL 1.30
+GPU: Does your video card support OpenGL 3.0?
+GPU: Your driver supports GLSL {0}" = "GPU: ERRORE OGL: Occorre almeno GLSL 1.30
+GPU: La tua scheda video supporta OpenGL 3.0?
+GPU: I tuoi driver supportano GLSL {0}";
+"GPU: OGL ERROR: Number of attributes {0} not enough.
+GPU: Does your video card support OpenGL 2.x?" = "GPU: ERRORE OGL: Numero di attributi {0} insufficienti.
+GPU: La tua scheda video supporta OpenGL 2.x?";
 "Game" = "Gioco";
 "Game Boy Advance Carts (*.gba)" = "Schede di gioco Game Boy Advance (*.gba)";
 "Game Config" = "Configurazione di Gioco";
@@ -1253,7 +1132,7 @@ Probabilmente Dolphin ora crasherà o si bloccherà. Auguri.";
 "Game Status" = "Stato del Gioco";
 "Game changed to \"%1\"" = "Cambiato gioco in \"%1\"";
 "Game is already running!" = "Il Gioco è già in esecuzione!";
-"Game overwrote with another games save. Data corruption ahead 0x%x, 0x%x" = "Gioco sovrascritto con un altro salvataggio, corruzione in posizione 0x%x, 0x%x";
+"Game overwrote with another games save. Data corruption ahead {0:#x}, {1:#x}" = "Gioco sovrascritto con un altro salvataggio. Corruzione in posizione {0:#x}, {1:#x}";
 "Game-Specific Settings" = "Impostazioni Specifiche del Gioco";
 "GameCube" = "GameCube";
 "GameCube Adapter for Wii U" = "Adattatore GameCube per Wii U";
@@ -1264,6 +1143,7 @@ Probabilmente Dolphin ora crasherà o si bloccherà. Auguri.";
 "GameCube Keyboard" = "Tastiera GameCube";
 "GameCube Keyboard at Port %1" = "Tastiera GameCube su Porta %1";
 "GameCube Memory Card Manager" = "GameCube Memory Card Manager";
+"GameCube Memory Cards" = "Memory Card GameCube";
 "GameCube Memory Cards (*.raw *.gcp)" = "GameCube Memory Card (*.raw *.gcp)";
 "GameCube Microphone Slot %1" = "Microfono GameCube Slot %1";
 "GameCube TAS Input %1" = "GameCube TAS Input %1";
@@ -1277,19 +1157,12 @@ Probabilmente Dolphin ora crasherà o si bloccherà. Auguri.";
 "German" = "Tedesco";
 "Germany" = "Germania";
 "GiB" = "GiB";
+"Go to" = "Vai a";
 "Golf Mode" = "Modalità Golf";
 "Good dump" = "Buon dump";
 "Graphics" = "Video";
 "Graphics Toggles" = "Settaggi Grafici";
-"Greatly increases the quality of textures generated using render-to-texture effects.
-
-Slightly increases GPU load and causes relatively few graphical issues. Raising the internal resolution will improve the effect of this setting. 
-
-If unsure, leave this checked." = "Aumenta di molto la qualità delle texture generate utilizzando gli effetti di rendering su texture.
-
-Aumenta leggermente il carico GPU e causa leggeri difetti grafici. Aumentare la risoluzione interna migliora gli effetti di questa impostazione.
-
-Nel dubbio, lascia selezionato.";
+"Greatly increases the quality of textures generated using render-to-texture effects.<br><br>Slightly increases GPU load and causes relatively few graphical issues. Raising the internal resolution will improve the effect of this setting. <br><br><dolphin_emphasis>If unsure, leave this checked.</dolphin_emphasis>" = "Aumenta di molto la qualità delle texture generate utilizzando gli effetti di rendering su texture.<br><br>Aumenta leggermente il carico GPU e causa leggeri difetti grafici. Aumentare la risoluzione interna migliora gli effetti di questa impostazione.<br><br><dolphin_emphasis>Nel dubbio, lascia selezionato.</dolphin_emphasis>";
 "Green" = "Verde";
 "Green Left" = "Verde Sinistro";
 "Green Right" = "Verde Destro";
@@ -1299,14 +1172,17 @@ Nel dubbio, lascia selezionato.";
 "HDMI 3D" = "HDMI 3D";
 "Hacks" = "Hacks";
 "Head" = "Testa";
+"Help" = "Aiuto";
 "Hex" = "Hex";
 "Hexadecimal" = "Esadecimale";
 "Hide" = "Nascondi";
+"Hide All" = "Nascondi Tutto";
 "Hide In-Game Sessions" = "Nascondi Sessioni In-Game";
 "Hide Incompatible Sessions" = "Nascondi Sessioni Incompatibili";
 "High" = "Alta";
 "Highest" = "Più alta";
 "Hit Strength" = "Forza";
+"Horizontal FOV" = "FOV Orizzontale";
 "Host" = "Host";
 "Host Code" = "Codice Host";
 "Host Input Authority" = "Autorità Input Host";
@@ -1317,14 +1193,16 @@ Adatto a giochi casual con più di 3 giocatori, ma potenzialmente instabile su c
 "Host input authority disabled" = "Autorità input host disattivata";
 "Host input authority enabled" = "Autorità input host attivata";
 "Host with NetPlay" = "Host con NetPlay";
+"Hostname" = "Hostname";
 "Hotkey Settings" = "Impostazioni Tasti di Scelta Rapida";
 "Hotkeys" = "Tasti di Scelta Rapida";
 "Hotkeys Require Window Focus" = "I tasti rapidi richiedono il focus";
 "Hz" = "Hz";
-"I am aware of the risks and want to continue" = "I am aware of the risks and want to continue";
+"I am aware of the risks and want to continue" = "Sono cosciente del rischio e voglio continuare";
 "ID" = "ID";
-"IOS: A file required for SSL services (%s) is invalid. Please refer to https://dolphin-emu.org/docs/guides/wii-network-guide/ for instructions on setting up Wii networking." = "IOS: Un file richiesto per i servizi SSL (%s) non è valido. Si prega di consultare https://dolphin-emu.org/docs/guides/wii-network-guide/ per istruzioni su come impostare le connettività Wii";
-"IOS: Could not read a file required for SSL services (%s). Please refer to https://dolphin-emu.org/docs/guides/wii-network-guide/ for instructions on setting up Wii networking." = "IOS: Impossibile leggere un file richiesto per i servizi SSL (%s). Si prega di consultare https://dolphin-emu.org/docs/guides/wii-network-guide/ per istruzioni su come impostare le connettività Wii";
+"IOS Version" = "Versione IOS";
+"IOS: A file required for SSL services ({0}) is invalid. Please refer to https://dolphin-emu.org/docs/guides/wii-network-guide/ for instructions on setting up Wii networking." = "IOS: Un file richiesto per i servizi SSL ({0}) non è valido. Si prega di consultare https://dolphin-emu.org/docs/guides/wii-network-guide/ per istruzioni su come impostare le connettività Wii";
+"IOS: Could not read a file required for SSL services ({0}). Please refer to https://dolphin-emu.org/docs/guides/wii-network-guide/ for instructions on setting up Wii networking." = "IOS: Impossibile leggere un file richiesto per i servizi SSL ({0}). Si prega di consultare https://dolphin-emu.org/docs/guides/wii-network-guide/ per istruzioni su come impostare le connettività Wii";
 "IP Address" = "Indirizzo IP";
 "IPL Settings" = "Impostazioni IPL";
 "IR" = "Puntamento IR";
@@ -1355,56 +1233,43 @@ This authorization can be revoked at any time through Dolphin's settings." = "Se
 
 Non verranno raccolti dati privati. Questi dati ci aiutano a capire come giochi e giocatori utilizzano Dolphin per indicarci dove dobbiamo impegnarci maggiormente. Ci permettono anche di scovare configurazioni particolari che causano bug o problemi di performance e stabilità.
 Questa autorizzazione può essere revocata in qualunque momento dal menu delle impostazioni di Dolphin.";
+"If checked, the emulated controller is always connected.
+If unchecked, the connection state of the emulated controller is linked
+to the connection state of the real default device (if there is one)." = "If checked, the emulated controller is always connected.
+If unchecked, the connection state of the emulated controller is linked
+to the connection state of the real default device (if there is one).";
 "Ignore" = "Ignora";
 "Ignore Format Changes" = "Ignora Cambiamenti di Formato";
 "Ignore for this session" = "Ignora per questa sessione";
-"Ignores any changes to the EFB format.
-
-Improves performance in many games without any negative effect. Causes graphical defects in a small number of other games.
-
-If unsure, leave this checked." = "Ignora qualunque cambiamento al formato dell'EFB.
-
-Migliora le prestazioni in molti giochi senza effetti collaterali. Causa difetti grafici in un ristretto numero di titoli.
-
-Nel dubbio, lascia selezionato.";
-"Ignores any requests from the CPU to read from or write to the EFB. 
-
-Improves performance in some games, but will disable all EFB-based graphical effects or gameplay-related features.
-
-If unsure, leave this unchecked." = "Ignora tutte le richieste da parte della CPU di leggere da o scrivere sull'EFB.
-
-Migliora le prestazioni in alcuni giochi, ma disabiliterà gli effetti grafici basati sull'EFB o funzionalità di gameplay relative.
-
-Nel dubbio, lascia deselezionato.";
+"Ignores any changes to the EFB format.<br><br>Improves performance in many games without any negative effect. Causes graphical defects in a small number of other games.<br><br><dolphin_emphasis>If unsure, leave this checked.</dolphin_emphasis>" = "Ignora qualunque cambiamento al formato dell'EFB.<br><br>Migliora le prestazioni in molti giochi senza effetti collaterali. Causa difetti grafici in un ristretto numero di titoli.<br><br><dolphin_emphasis>Nel dubbio, lascia selezionato.</dolphin_emphasis>";
+"Ignores any requests from the CPU to read from or write to the EFB. <br><br>Improves performance in some games, but will disable all EFB-based graphical effects or gameplay-related features.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Ignora tutte le richieste da parte della CPU di leggere da o scrivere sull'EFB.<br><br>Migliora le prestazioni in alcuni giochi, ma disabiliterà gli effetti grafici basati sull'EFB o funzionalità di gameplay relative.<br><br><dolphin_emphasis>Nel dubbio, lascia deselezionato.</dolphin_emphasis>";
 "Immediately Present XFB" = "XFB Immediatamente Presente";
-"Implements fullscreen mode with a borderless window spanning the whole screen instead of using exclusive mode. Allows for faster transitions between fullscreen and windowed mode, but slightly increases input latency, makes movement less smooth and slightly decreases performance.
-
-If unsure, leave this unchecked." = "Permette di allargare la finestra a schermo intero, senza visualizzarne i bordi. In questo modo le transizioni tra schermo intero e finestra saranno più rapide, ma aumenta leggermente il ritardo nell'input, rendendo i movimenti meno fluidi e riducendo leggermente le performance.
-
-Nel dubbio, lascia deselezionato.";
+"Implements fullscreen mode with a borderless window spanning the whole screen instead of using exclusive mode. Allows for faster transitions between fullscreen and windowed mode, but slightly increases input latency, makes movement less smooth and slightly decreases performance.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Permette di allargare la finestra a schermo intero, senza visualizzarne i bordi. In questo modo le transizioni tra schermo intero e finestra saranno più rapide, ma aumenta leggermente il ritardo nell'input, rendendo i movimenti meno fluidi e riducendo leggermente le performance.<br><br><dolphin_emphasis>Nel dubbio, lascia deselezionato.</dolphin_emphasis>";
 "Import BootMii NAND Backup..." = "Importa Backup NAND BootMII...";
-"Import Save File" = "Importa File di Salvataggio";
+"Import Failed" = "Importazione non Riuscita";
+"Import Save File(s)" = "Importa File di Salvataggio";
 "Import Wii Save..." = "Importa Salvataggio Wii...";
-"Import failed" = "Importazione non riuscita";
 "Importing NAND backup" = "Importazione di backup NAND in corso";
 "Importing NAND backup
  Time elapsed: %1s" = "Importazione del backup NAND in corso
  Tempo trascorso: %1s";
 "In-Game?" = "In gioco?";
-"Includes the contents of the embedded frame buffer (EFB) and upscaled EFB copies in save states. Fixes missing and/or non-upscaled textures/objects when loading states at the cost of additional save/load time.
-
-If unsure, leave this checked." = "Include il contenuto dell'Embedded Frame Buffer (EFB) e delle copie EFB upscalate nei salvataggi di stato. Corregge texture/oggetti mancanti e/o non upscalati durante il caricamento degli stati di gioco al prezzo di un maggior tempo di salvataggio/caricamento.
-
-Nel dubbio, lascia selezionato.";
+"Includes the contents of the embedded frame buffer (EFB) and upscaled EFB copies in save states. Fixes missing and/or non-upscaled textures/objects when loading states at the cost of additional save/load time.<br><br><dolphin_emphasis>If unsure, leave this checked.</dolphin_emphasis>" = "Include il contenuto dell'Embedded Frame Buffer (EFB) e delle copie EFB upscalate nei salvataggi di stato. Corregge texture/oggetti mancanti e/o non upscalati durante il caricamento degli stati di gioco al prezzo di un maggior tempo di salvataggio/caricamento.<br><br><dolphin_emphasis>Nel dubbio, lascia selezionato.</dolphin_emphasis>";
+"Increase" = "Aumenta";
 "Increase Convergence" = "Aumenta Convergenza";
 "Increase Depth" = "Aumenta Profondità";
 "Increase Emulation Speed" = "Aumenta Velocità di Emulazione";
 "Increase IR" = "Aumenta IR";
+"Increase X" = "Aumenta X";
+"Increase Y" = "Aumenta Y";
+"Incremental Rotation" = "Rotazione Incrementale";
+"Incremental Rotation (rad/sec)" = "Rotazione Incrementale (rad/sec)";
 "Info" = "Info";
 "Information" = "Informazioni";
+"Inhibit Screensaver During Emulation" = "Disabilita lo Screensaver durante l'Emulazione";
 "Input" = "Input";
 "Input strength required for activation." = "Forza richiesta per l'attivazione";
-"Input strength to ignore." = "Forza da ignorare";
+"Input strength to ignore and remap." = "Input strength to ignore and remap.";
 "Insert nop" = "Inserisci nop";
 "Insert SD Card" = "Inserisci SD Card";
 "Install" = "Installa";
@@ -1420,19 +1285,19 @@ Nel dubbio, lascia selezionato.";
 "Interface" = "Interfaccia";
 "Internal LZO Error - compression failed" = "Errore Interno LZO - compressione non riuscita";
 "Internal LZO Error - decompression failed" = "Errore Interno LZO - decompressione non riuscita";
-"Internal LZO Error - decompression failed (%d) (%li, %li) 
-Try loading the state again" = "Errore Interno LZO - decompressione non riuscita (%d) (%li, %li) 
+"Internal LZO Error - decompression failed ({0}) ({1}, {2}) 
+Try loading the state again" = "Errore Interno LZO - decompressione non riuscita ({0}) ({1}, {2})
 Prova a caricare di nuovo lo stato di salvataggio";
 "Internal LZO Error - lzo_init() failed" = "Errore Interno LZO - lzo_init() fallito";
 "Internal Resolution" = "Risoluzione Interna";
 "Internal Resolution" = "Risoluzione Interna";
 "Interpreter (slowest)" = "Interpreter (il più lento)";
 "Interpreter Core" = "Interpreter Core";
+"Invalid Expression." = "Espressione non Valida";
 "Invalid Mixed Code" = "Codice Misto Invalido";
 "Invalid Pack %1 provided: %2" = "Pack non valido %1 fornito: %2";
 "Invalid Player ID" = "ID Giocatore non valido";
 "Invalid RSO module address: %1" = "Indirizzo del modulo RSO non valido: %1";
-"Invalid Token." = "Token non valido.";
 "Invalid callstack" = "Stack di chiamate non valido";
 "Invalid checksums." = "Checksum invalidi.";
 "Invalid host" = "Host non valido";
@@ -1445,10 +1310,10 @@ Prova a caricare di nuovo lo stato di salvataggio";
 "Invalid search string (couldn't convert to number)" = "Stringa di ricerca non valida (impossibile convertire in numero)";
 "Invalid search string (only even string lengths supported)" = "Stringa di ricerca non valida (solo stringhe di lunghezza pari sono supportate)";
 "Invalid title ID." = "Title ID non valido.";
+"Invalid watch address: %1" = "Invalid watch address: %1";
 "Italian" = "Italiano";
 "Italy" = "Italia";
 "JIT" = "JIT";
-"JIT Arm64 (experimental)" = "JIT Arm64 (sperimentale)";
 "JIT Block Linking Off" = "Disattiva Linking dei Blocchi JIT";
 "JIT Blocks" = "Blocchi JIT";
 "JIT Branch Off" = "JIT Branch Off";
@@ -1462,9 +1327,11 @@ Prova a caricare di nuovo lo stato di salvataggio";
 "JIT LoadStore lwz Off" = "JIT LoadStore lwz Off";
 "JIT Off (JIT Core)" = "JIT Off (JIT Core)";
 "JIT Paired Off" = "JIT Paired Off";
-"JIT Recompiler (recommended)" = "Ricompilatore JIT (consigliato)";
+"JIT Recompiler for ARM64 (recommended)" = "Ricompilatore JIT per ARM64 (consigliato)";
+"JIT Recompiler for x86-64 (recommended)" = "Ricompilatore JIT per x86-64 (consigliato)";
 "JIT Register Cache Off" = "Registro Cache JIT Off";
 "JIT SystemRegisters Off" = "JIT SystemRegisters Off";
+"JIT failed to find code space after a cache clear. This should never happen. Please report this incident on the bug tracker. Dolphin will now exit." = "JIT non è riuscito a trovare spazio per il codice dopo la pulizia della cache. Questo non dovrebbe mai accadere. Per cortesia segnala questo problema nel bug tracker. Dolphin ora terminerà.";
 "Japan" = "Giappone";
 "Japanese" = "Giapponese";
 "Japanese (Shift-JIS)" = "Giapponese (Shift-JIS)";
@@ -1546,11 +1413,7 @@ Click centrale per cancellare.";
 "Load map file" = "Carica mappa";
 "Load..." = "Carica...";
 "Loaded symbols from '%1'" = "Caricati simboli da '%1'";
-"Loads custom textures from User/Load/Textures/<game_id>/.
-
-If unsure, leave this unchecked." = "Carica le texture da User/Load/Textures/<game_id>/.
-
-Nel dubbio, lascia deselezionato.";
+"Loads custom textures from User/Load/Textures/lt;game_idgt;/ and User/Load/DynamicInputTextures/lt;game_idgt;/.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Carica le texture personalizzate da User/Load/Textures/lt;game_idgt;/ e User/Load/DynamicInputTextures/lt;game_idgt/.<br><br><dolphin_emphasis>Nel dubbio, lascia deselezionato.</dolphin_emphasis>";
 "Local" = "Locale";
 "Lock" = "Blocca";
 "Log" = "Log";
@@ -1559,15 +1422,7 @@ Nel dubbio, lascia deselezionato.";
 "Log Render Time to File" = "Scrivi log del tempo di rendering su file";
 "Log Types" = "Tipi di Log";
 "Logger Outputs" = "Destinazione Logger";
-"Logs the render time of every frame to User/Logs/render_time.txt.
-
-Use this feature when to measure the performance of Dolphin.
-
-If unsure, leave this unchecked." = "Salva il log del numero di frame renderizzati ogni secondo in User/Logs/render_time.txt.
-
-Usa questa funzione per misurare le performance di Dolphin.
-
-Nel dubbio, lascia deselezionato.";
+"Logs the render time of every frame to User/Logs/render_time.txt.<br><br>Use this feature to measure Dolphin's performance.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Logs the render time of every frame to User/Logs/render_time.txt.<br><br>Use this feature to measure Dolphin's performance.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>";
 "Lost connection to NetPlay server..." = "Persa la connessione al server NetPlay...";
 "Low" = "Bassa";
 "Lowest" = "Più bassa";
@@ -1575,19 +1430,11 @@ Nel dubbio, lascia deselezionato.";
 "MD5" = "MD5";
 "MMU" = "MMU";
 "MORIBUND" = "MORIBUND";
-"MadCatz Gameshark files(*.gcs)" = "File Gameshark MadCatz(*.gcs)";
+"MadCatz Gameshark files" = "File Gameshark MadCatz";
 "Main Stick" = "Levetta Principale";
 "Maker" = "Produttore";
 "Maker" = "Produttore";
-"Makes distant objects more visible by removing fog, thus increasing the overall detail.
-
-Disabling fog will break some games which rely on proper fog emulation.
-
-If unsure, leave this unchecked." = "Rende gli oggetti distanti più visibili rimuovendo la nebbia, aumentando così la quantità di dettagli disponibili.
-
-Disabilitarla tuttavia corromperà i giochi che si basano su una corretta emulazione della nebbia.
-
-Nel dubbio, lascia deselezionato.";
+"Makes distant objects more visible by removing fog, thus increasing the overall detail.<br><br>Disabling fog will break some games which rely on proper fog emulation.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Rende gli oggetti distanti più visibili rimuovendo la nebbia, aumentando così la quantità di dettagli disponibili.<br><br>Disabilitarla tuttavia corromperà i giochi che si basano su una corretta emulazione della nebbia.<br><br><dolphin_emphasis>Nel dubbio, lascia deselezionato.</dolphin_emphasis>";
 "Manage NAND" = "Gestisci NAND";
 "Mapping" = "Mappatura";
 "Match Found" = "Trovata Corrispondenza";
@@ -1600,25 +1447,25 @@ Nel dubbio, lascia deselezionato.";
 "Memory Breakpoint" = "Punto di Interruzione dei Dati";
 "Memory Card" = "Memory Card";
 "Memory Card Manager" = "Memory Card Manager";
-"Memory Card filename in Slot %c is incorrect
+"Memory Card filename in Slot {0} is incorrect
 Region not specified
 
-Slot %c path was changed to
-%s
+Slot {1} path was changed to
+{2}
 Would you like to copy the old file to this new location?
-" = "Il Nome file della Memory Card nell'Ingresso %c non è corretto
+" = "Il Nome file della Memory Card nell'Ingresso {0} non è corretto
 Regionalità non specificata
 
-Il percorso dell'Ingresso %c è stato cambiato in
-%s
+Il percorso dell'Ingresso {1} è stato cambiato in
+{2}
 Si desidera copiare il precedente file in questa nuova locazione?
 ";
 "Memory Not Ready" = "Memoria Non Pronta";
 "Memory Override" = "Override Memoria";
 "Memory breakpoint options" = "Opzioni punti di interruzione";
-"MemoryCard: ClearBlock called on invalid address (0x%x)" = "MemoryCard: ClearBlock chiamato su indirizzo non valido (0x%x)";
-"MemoryCard: Read called with invalid source address (0x%x)" = "MemoryCard: Read chiamata su indirizzo d'origine non valido (0x%x)";
-"MemoryCard: Write called with invalid destination address (0x%x)" = "MemoryCard: Write chiamata su indirizzo di destinazione non valido (0x%x)";
+"MemoryCard: ClearBlock called on invalid address ({0:#x})" = "MemoryCard: ClearBlock chiamato su indirizzo non valido ({0:#x})";
+"MemoryCard: Read called with invalid source address ({0:#x})" = "MemoryCard: Read chiamata su indirizzo d'origine non valido ({0:#x})";
+"MemoryCard: Write called with invalid destination address ({0:#x})" = "MemoryCard: Write chiamata su indirizzo di destinazione non valido ({0:#x})";
 "Merging a new NAND over your currently selected NAND will overwrite any channels and savegames that already exist. This process is not reversible, so it is recommended that you keep backups of both NANDs. Are you sure you want to continue?" = "Applicare una nuova NAND su quella attualmente in uso sovrascriverà i canali e i salvataggi esistenti. Questo processo è irreversibile, quindi si consiglia di mantenere un backup di entrambe le NAND. Sei sicuro di voler continuare?";
 "MiB" = "MiB";
 "Microphone" = "Microfono";
@@ -1627,15 +1474,8 @@ Si desidera copiare il precedente file in questa nuova locazione?
 "Mismatch between free block count in header and actually unused blocks." = "Discordanza tra il conto dei blocchi liberi nell'intestazione e i blocchi effettivamente liberi.";
 "Mismatch between internal data structures." = "Discordanza tra le strutture dati interne.";
 "Modifier" = "Mezza Incl.";
-"Modifies textures to show the format they're encoded in.
-
-May require an emulation reset to apply.
-
-If unsure, leave this unchecked." = "Modifica le texture perché mostrino il formato in cui sono codificate. 
-
-Potrebbe richiede un reset dell'emulazione per l'applicazione.
-
-Nel dubbio, lascia deselezionato.";
+"Modifies textures to show the format they're encoded in.<br><br>May require an emulation reset to apply.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Modifica le texture perché mostrino il formato in cui sono codificate.<br><br>Potrebbe richiede un reset dell'emulazione per l'applicazione.<br><br><dolphin_emphasis>Nel dubbio, lascia deselezionato.</dolphin_emphasis>";
+"Modules found: %1" = "Moduli trovati: %1";
 "Mono" = "Mono";
 "Monoscopic Shadows" = "Ombre Monoscopiche";
 "Monospaced Font" = "Carattere a spaziatura fissa";
@@ -1644,14 +1484,13 @@ Nel dubbio, lascia deselezionato.";
 "Motion Input" = "Input di Movimento";
 "Motion Simulation" = "Simulazione di Movimento";
 "Motor" = "Motore";
-"Move the mouse pointer over an option to display a detailed description." = "Muovi il puntatore sopra un opzione per visualizzarne una descrizione dettagliata.";
+"Move" = "Muovi";
 "Movie" = "Filmato";
+"No to All" = "No a Tutto";
 "NAND Check" = "Controllo NAND";
-"NKit Warning" = "NKit Warning";
-"NOTE: Stream size doesn't match actual data length
-" = "NOTA: La dimensione dello stream non coincide con la dimensione dei dati
-";
+"NKit Warning" = "Attenzione NKit";
 "NTSC-J" = "NTSC-J";
+"NTSC-K" = "NTSC-K";
 "NTSC-U" = "NTSC-U";
 "Name" = "Nome";
 "Name for a new tag" = "Nome del nuovo tag";
@@ -1659,7 +1498,7 @@ Nel dubbio, lascia deselezionato.";
 "Name of your session shown in the server browser" = "Nome della sessione da visualizzare nel server browser";
 "Name" = "Nome";
 "Native (640x528)" = "Nativo (640x528)";
-"Native GCI File (*.gci)" = "File GCI Nativo (*.gci)";
+"Native GCI File" = "File GCI Nativo";
 "NetPlay" = "NetPlay";
 "NetPlay Session Browser" = "Browser Sessioni NetPlay";
 "NetPlay Setup" = "Impostazioni NetPlay";
@@ -1667,6 +1506,7 @@ Nel dubbio, lascia deselezionato.";
 "Netplay has desynced in NetPlay_GetButtonPress()" = "Netplay desincronizzato su NetPlay_GetButtonPress()";
 "Netplay has desynced. There is no way to recover from this." = "Il NetPlay è stato desincronizzato. Non è possibile ripristinare la situazione.";
 "Network" = "Network";
+"Network dump format" = "Formato dump network";
 "Never Auto-Update" = "Disabilita Aggiornamento Automatico";
 "New" = "Nuovo";
 "New Breakpoint" = "Nuovo Punto di Interruzione";
@@ -1692,10 +1532,10 @@ Nel dubbio, lascia deselezionato.";
 "No extension selected." = "Nessuna estensione selezionata.";
 "No file loaded / recorded." = "Nessun file caricato / registrato.";
 "No issues have been detected." = "Non sono stati rilevati problemi.";
-"No paths found in the M3U file \"%s\"" = "Non sono stati trovati percorsi nel file M3U \"%s\"";
+"No paths found in the M3U file \"{0}\"" = "Non sono stati trovati percorsi nel file M3U \"{0}\"";
 "No problems were found." = "Non sono stati rilevati problemi.";
 "No problems were found. This does not guarantee that this is a good dump, but since Wii titles contain a lot of verification data, it does mean that there most likely are no problems that will affect emulation." = "Non sono stati rilevati problemi. Questo non garantisce che sia un buon dump, ma dato che i titoli Wii contengono molti dati di verifica, vuol dire che molto probabilmente non ci sono problemi che possano influenzare l'emulazione.";
-"No profiles found for game setting '%s'" = "Nessun profilo trovato per l'impostazione di gioco  '%s'";
+"No profiles found for game setting '{0}'" = "Nessun profilo trovato per l'impostazione di gioco  '{0}'";
 "No recording loaded." = "Nessuna registrazione caricata.";
 "No save data found." = "Non sono stati trovati dati di salvataggio.";
 "No search value entered." = "Nessun valore di ricerca fornito.";
@@ -1706,7 +1546,10 @@ Nel dubbio, lascia deselezionato.";
 "Not Found" = "Non Trovato";
 "Not Set" = "Non Impostato";
 "Not all players have the game. Do you really want to start?" = "Non tutti i giocatori hanno il gioco. Vuoi davvero continuare?";
+"Not enough free blocks on the target memory card. At least %n free block(s) required." = "Non ci sono abbastanza blocchi liberi nella memory card di destinazione. Ne sono necessari almeno %n.";
+"Not enough free files on the target memory card. At least %n free file(s) required." = "Non ci sono abbastanza file liberi nella memory card di destinazione. Ne sono necessari almeno %n.";
 "Not equals to" = "Diverso da";
+"Note: motion input may require configuring alternate input sources before use." = "Attenzione: il motion input potrebbe richiedere la configurazione di sorgenti input alternative prima di poter essere utilizzato.";
 "Notes" = "Note: ";
 "Nothing to configure" = "Nulla da configurare";
 "Notice" = "Avviso/i";
@@ -1738,10 +1581,11 @@ Nel dubbio, lascia deselezionato.";
 "Open FIFO log" = "Apri log FIFO";
 "Open GameCube Save Folder" = "Apri Cartella dei Salvataggi GameCube";
 "Open Wii Save Folder" = "Apri Cartella dei Salvataggi Wii";
+"Open dump folder" = "Apri cartella dump";
 "Open in External Editor" = "Apri con l'Editor Esterno";
-"OpenAL: can't create context for device %s" = "OpenAL: impossibile creare il contesto per il dispositivo %s";
+"OpenAL: can't create context for device {0}" = "OpenAL: impossibile creare il contesto per il dispositivo {0}";
 "OpenAL: can't find sound devices" = "OpenAL: impossibile trovare la periferica audio";
-"OpenAL: can't open device %s" = "OpenAL: impossibile aprire il dispositivo %s";
+"OpenAL: can't open device {0}" = "OpenAL: impossibile aprire il dispositivo {0}";
 "OpenGL" = "OpenGL";
 "OpenGL ES" = "OpenGL ES";
 "Operators" = "Operatori";
@@ -1755,6 +1599,7 @@ Nel dubbio, lascia deselezionato.";
 "Overlay Information" = "Informazioni in sovraimpressione";
 "Play Input Recording..." = "Riproduci Registrazione Input...";
 "PAL" = "PAL";
+"PCAP" = "PCAP";
 "PNG image file (*.png);; All Files (*)" = "File immagine PNG (*.png);; Tutti i File (*)";
 "PPC Size" = "Dimensione PPC";
 "PPC vs Host" = "PPC vs Host";
@@ -1800,25 +1645,23 @@ Nel dubbio, lascia deselezionato.";
 "Port" = "Porta";
 "Possible desync detected: %1 might have desynced at frame %2" = "Rilevato possibile desync: %1 potrebbe aver desyncato al frame %2";
 "Post-Processing Effect" = "Effetto di Post-Processing";
+"Post-Processing Effect" = "Effetto di Post-Processing";
 "Post-Processing Shader Configuration" = "Configura Shader di Post-Processing";
 "Prefetch Custom Textures" = "Precarica Texture Personalizzate";
-"Premature movie end in PlayController. %u + %zu > %zu" = "Termine prematuro del filmato in PlayController.  %u + %zu > %zu";
-"Premature movie end in PlayWiimote. %u + %d > %zu" = "Termine prematuro del filmato in PlayWiimote. %u + %d > %zu";
-"Premature movie end in PlayWiimote. %u > %zu" = "Termine prematuro del filmato in PlayWiimote. %u > %zu";
+"Premature movie end in PlayController. {0} + {1} > {2}" = "Termine prematuro del filmato in PlayController. {0} + {1} > {2}";
+"Premature movie end in PlayWiimote. {0} + {1} > {2}" = "Termine prematuro del filmato in PlayWiimote. {0} + {1} > {2}";
+"Premature movie end in PlayWiimote. {0} > {1}" = "Termine prematuro del filmato in PlayWiimote. {0} > {1}";
 "Preparing to update...
 This can take a while." = "Preparando l'aggiornamento...
 Potrebbe volerci un po'.";
 "Presets" = "Preimpostazioni";
 "Press Sync Button" = "Premi il Pulsante Sync";
 "Pressure" = "Pressione";
-"Prevents shader compilation stuttering by not rendering waiting objects. Can work in scenarios where Ubershaders doesn't, at the cost of introducing visual glitches and broken effects.
-
-Not recommended, only use if the other options give poor results." = "Previene scatti durante la compilazione degli shader non renderizzando gli oggetti in attesa. Può funzionare quando gli Ubershader non sembrano servire, ma potrebbero introdursi difetti grafici ed effetti corrotti.
-
-Non raccomandato, usa soltanto se le altre opzioni non danno i risultati sperati.";
+"Prevents shader compilation stuttering by not rendering waiting objects. Can work in scenarios where Ubershaders doesn't, at the cost of introducing visual glitches and broken effects.<br><br><dolphin_emphasis>Not recommended, only use if the other options give poor results.</dolphin_emphasis>" = "Previene scatti durante la compilazione degli shader non renderizzando gli oggetti in attesa. Può funzionare quando gli Ubershader non sembrano servire, ma potrebbero introdursi difetti grafici ed effetti corrotti.<br><br><dolphin_emphasis>Non raccomandato, usa soltanto se le altre opzioni non danno i risultati sperati.</dolphin_emphasis>";
 "Previous Game Profile" = "Profilo di Gioco Precedente";
 "Previous Match" = "Corrispondenza Precedente";
 "Previous Profile" = "Profilo Precedente";
+"Primitive %1" = "Primitive %1";
 "Private" = "Privato";
 "Private and Public" = "Privato e Pubblico";
 "Problem" = "Problema";
@@ -1831,6 +1674,7 @@ Non raccomandato, usa soltanto se le altre opzioni non danno i risultati sperati
 "Public" = "Pubblica";
 "Purge Game List Cache" = "Pulisci Cache Lista Giochi";
 "Put Main Menu roms in User/GC/{region}." = "Posiziona le rom del Main Menu in User/GC/{region}.";
+"QT_LAYOUT_DIRECTION" = "LTR";
 "Quality of Service (QoS) couldn't be enabled." = "Impossibile abilitare Quality of Service (QoS).";
 "Quality of Service (QoS) was successfully enabled." = "Quality of Service (QoS) abilitato con successo.";
 "Quality of the DPLII decoder. Audio latency increases with quality." = "Qualità del decoder DPLII. La latenza audio aumenta con la qualità.";
@@ -1861,15 +1705,7 @@ Non raccomandato, usa soltanto se le altre opzioni non danno i risultati sperati
 "Red" = "Rosso";
 "Red Left" = "Rosso Sinistro";
 "Red Right" = "Rosso Destro";
-"Reduces the amount of aliasing caused by rasterizing 3D graphics, resulting in smoother edges on objects. Increases GPU load and sometimes causes graphical issues.
-
-SSAA is significantly more demanding than MSAA, but provides top quality geometry anti-aliasing and also applies anti-aliasing to lighting, shader effects, and textures.
-
-If unsure, select None." = "Riduce l'aliasing causato dalla rasterizzazione della grafica 3D, ammorbidendo i bordi pixellosi degli oggetti. Aumenta il carico GPU e a volte causa difetti grafici.
-
-SSAA richiede molte più risorse di MSAA, ma garantisce un anti-aliasing delle geometrie di miglior qualità, e viene applicato anche alle luci, agli effetti di shader e alle texture.
-
-Nel dubbio, seleziona Nessuno.";
+"Reduces the amount of aliasing caused by rasterizing 3D graphics, resulting in smoother edges on objects. Increases GPU load and sometimes causes graphical issues.<br><br>SSAA is significantly more demanding than MSAA, but provides top quality geometry anti-aliasing and also applies anti-aliasing to lighting, shader effects, and textures.<br><br><dolphin_emphasis>If unsure, select None.</dolphin_emphasis>" = "Riduce l'aliasing causato dalla rasterizzazione della grafica 3D, ammorbidendo i bordi pixellosi degli oggetti. Aumenta il carico GPU e a volte causa difetti grafici.<br><br>SSAA richiede molte più risorse di MSAA, ma garantisce un anti-aliasing delle geometrie di miglior qualità, e viene applicato anche alle luci, agli effetti di shader e alle texture.<br><br><dolphin_emphasis>Nel dubbio, seleziona Nessuno.</dolphin_emphasis>";
 "Redump.org Status" = "Stato di Redump.org";
 "Refresh" = "Aggiorna";
 "Refresh Game List" = "Aggiorna l'Elenco dei Giochi";
@@ -1881,9 +1717,9 @@ Nel dubbio, seleziona Nessuno.";
 "Relative Input Hold" = "Pressione Relativa Input";
 "Remind Me Later" = "Ricorda Più Tardi";
 "Remove" = "Rimuovi";
+"Remove Failed" = "Rimozione non Riuscita";
 "Remove Junk Data (Irreversible)" = "Rimuovi Dati Inutilizzati (Irreversibile)";
 "Remove Tag..." = "Rimuovi Tag...";
-"Remove failed" = "Rimozione non riuscita";
 "Remove from Watch" = "Rimuovi Espressione di Controllo";
 "Remove tag" = "Rimuovi tag";
 "Removing junk data does not save any space when converting to ISO (unless you package the ISO file in a compressed file format such as ZIP afterwards). Do you want to continue anyway?" = "La rimozione dei dati inutilizzati non salva spazio durante la conversione in ISO (a meno che poi tu non comprima il file ISO in un file ad esempio ZIP). Vuoi proseguire lo stesso?";
@@ -1891,21 +1727,19 @@ Nel dubbio, seleziona Nessuno.";
 "Render Window" = "Finestra di Render";
 "Render to Main Window" = "Renderizza nella Finestra Principale";
 "Rendering" = "Rendering";
-"Renders the scene as a wireframe.
-
-If unsure, leave this unchecked." = "Renderizza la scena in wireframe.
-
-Nel dubbio, lascia deselezionato.";
-"Report: GCIFolder Writing to unallocated block 0x%x" = "Report: GCIFolder Scrittura su blocco non allocato 0x%x";
+"Renders the scene as a wireframe.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Renderizza la scena in wireframe.<br><br><dolphin_emphasis>Nel dubbio, lascia deselezionato.</dolphin_emphasis>";
+"Report: GCIFolder Writing to unallocated block {0:#x}" = "Report: GCIFolder Scrittura su blocco non allocato {0:#x}";
 "Request to Join Your Party" = "Invita al tuo party";
 "Reset" = "Resetta";
 "Reset Traversal Server" = "Reset Server Traversal";
 "Reset Traversal Server to %1:%2" = "Server Traversal resettato a %1:%2";
 "Reset Traversal Settings" = "Reset Impostazioni Traversal";
+"Reset View" = "Ripristina Visuale";
 "Reset all saved Wii Remote pairings" = "Resetta tutti gli abbinamenti salvati con i Wii Remote";
 "Resource Pack Manager" = "Resource Pack Manager";
 "Resource Pack Path" = "Percorso Resource Pack";
 "Restart Required" = "Riavvio Necessario";
+"Restore Defaults" = "Ripristina Predefiniti";
 "Restore instruction" = "Ripristina istruzione";
 "Retry" = "Riprova";
 "Return Speed" = "Velocità di Ritorno";
@@ -1920,16 +1754,9 @@ Nel dubbio, lascia deselezionato.";
 "Roll Left" = "Rotazione a Sinistra";
 "Roll Right" = "Rotazione a Destra";
 "Room ID" = "ID Stanza";
+"Rotation" = "Rotazione";
 "Rotation applied at extremities of swing." = "Rotazione applicata agli estremi dell'oscillazione";
-"Rounds 2D vertices to whole pixels.
-
-Fixes graphical problems in some games at higher internal resolutions. This setting has no effect when native internal resolution is used.
-
-If unsure, leave this unchecked." = "Arrotonda i vertici 2D al pixel più vicino.
-
-Corregge difetti grafici su alcuni giochi a maggiori risoluzioni interne. Questa opzione non ha effetto quando viene utilizzata la risoluzione interna nativa.
-
-Nel dubbio, lascia deselezionato.";
+"Rounds 2D vertices to whole pixels.<br><br>Fixes graphical problems in some games at higher internal resolutions. This setting has no effect when native internal resolution is used.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Arrotonda i vertici 2D al pixel più vicino.<br><br>Corregge difetti grafici su alcuni giochi a maggiori risoluzioni interne. Questa opzione non ha effetto quando viene utilizzata la risoluzione interna nativa.<br><br><dolphin_emphasis>Nel dubbio, lascia deselezionato.</dolphin_emphasis>";
 "Rumble" = "Vibrazione";
 "Run To Here" = " Esegui Fino al Cursore";
 "Russia" = "Russia";
@@ -1939,12 +1766,12 @@ Nel dubbio, lascia deselezionato.";
 "SHA-1" = "SHA-1";
 "SP1" = "SP1";
 "SSL context" = "Contesto SSL";
-"SSL options" = "Opzioni SSL";
 "START" = "START";
 "Save Code" = "Salva Codice";
 "Save State" = "Salva Stato di Gioco";
 "Safe" = "Sicura";
 "Save" = "Salva";
+"Save All" = "Salva Tutto";
 "Save Export" = "Esporta Salvataggio";
 "Save FIFO log" = "Salva log FIFO";
 "Save File to" = "Salva con nome";
@@ -1979,10 +1806,9 @@ Vuoi proseguire?";
 "Save to Slot %1 - %2" = "Salva su Slot %1 - %2";
 "Save..." = "Salva...";
 "Saved Wii Remote pairings can only be reset when a Wii game is running." = "Gli abbinamenti salvati con i Wii Remote possono essere resettati soltanto durante l'esecuzione di un gioco Wii.";
-"Savestate movie %s is corrupted, movie recording stopping..." = "Il salvataggio del filmato %s è corrotto, arresto registrazione...";
+"Savestate movie {0} is corrupted, movie recording stopping..." = "Il salvataggio del filmato {0} è corrotto, arresto registrazione...";
 "Scaled EFB Copy" = "Copia EFB in scala";
 "ScrShot" = "Screenshot";
-"Screenshot failed: Could not open file \"%s\" (error %d)" = "Cattura schermo fallita: Impossibile aprire il file \"%s\" (errore %d)";
 "Search" = "Cerca";
 "Search Address" = "Cerca Indirizzo";
 "Search Current Object" = "Cerca Oggetto Corrente";
@@ -1994,6 +1820,7 @@ Vuoi proseguire?";
 "Section that contains all Gecko cheat codes." = "Sezione che contiene tutti i codici Gecko.";
 "Section that contains all graphics related settings." = "Sezione che contiene tutte le impostazioni di natura grafica.";
 "Section that contains most CPU and Hardware related settings." = "Sezione che contiene la maggior parte delle impostazioni di CPU e Hardware.";
+"Security options" = "Opzioni di sicurezza";
 "Select" = "Seleziona";
 "Select Dump Path" = "Seleziona Percorso Dump";
 "Select Export Directory" = "Seleziona Directory di Estrazione";
@@ -2031,69 +1858,18 @@ Vuoi proseguire?";
 "Selected game doesn't exist in game list!" = "Il gioco selezionato non esiste nella lista dei giochi!";
 "Selected thread callstack" = "Callstack thread selezionato";
 "Selected thread context" = "Contesto thread selezionato";
-"Selects a hardware adapter to use.
-
-If unsure, select the first one." = "Seleziona l'adattatore hardware da utilizzare.
-
-Nel dubbio, seleziona il primo.";
-"Selects the stereoscopic 3D mode. Stereoscopy allows a better feeling of depth if the necessary hardware is present. Heavily decreases emulation speed and sometimes causes issues.
-
-Side-by-Side and Top-and-Bottom are used by most 3D TVs.
-Anaglyph is used for Red-Cyan colored glasses.
-HDMI 3D is used when the monitor supports 3D display resolutions.
-Passive is another type of 3D used by some TVs.
-
-If unsure, select Off." = "Seleziona la modalità di stereoscopia 3D. Se hai l'hardware necessario, la stereoscopia ti permette di avere una migliore sensazione di profondità. Diminuisce pesantemente la velocità di emulazione e talvolta causa problemi.
-
-Fianco-a-Fianco e Sopra-e-Sotto sono utilizzate dalla maggior parte delle TV 3D.
-Anaglifo è utilizzato con gli occhialini colorati rosso-blu.
-HDMI 3D è usato in caso il monitor supporti risoluzioni 3D.
-Passivo è una tipologia di 3D usata da alcune TV.
-
-Nel dubbio, seleziona Off.";
-"Selects what graphics API to use internally.
-The software renderer is extremely slow and only useful for debugging, so you'll want to use either Direct3D or OpenGL. Different games and different GPUs will behave differently on each backend, so for the best emulation experience it's recommended to try both and choose the one that's less problematic.
-
-If unsure, select OpenGL." = "Seleziona quale API grafica usare internamente.
-Il renderer software è estremamente lento, e viene utilizzato solo a scopo di debug, quindi faresti meglio a selezionare Direct3D o OpenGL. I giochi e le GPU si comporteranno in modo diverso a seconda del motore utilizzato, quindi per una migliore esperienza si consiglia di provare entrambi e scegliere quello che si adatta maggiormente ai tuoi bisogni.
-
-Nel dubbio, seleziona OpenGL.";
-"Selects which aspect ratio to use when rendering.
-
-Auto: Uses the native aspect ratio
-Force 16:9: Mimics an analog TV with a widescreen aspect ratio.
-Force 4:3: Mimics a standard 4:3 analog TV.
-Stretch to Window: Stretches the picture to the window size.
-
-If unsure, select Auto." = "Seleziona il rapporto d'aspetto da utilizzare in fase di rendering:
-
-Auto: utilizza il rapporto d'aspetto nativo
-Forza 16:9: Simula una TV analogica con un rapporto d'aspetto widescreen.
-Forza 4:3: Simula una standard TV analogica con rapporto d'aspetto di 4:3.
-Adatta a Finestra: Allarga l'immagine perché si adatti alle dimensioni della finestra.
-
-Nel dubbio, seleziona Auto.";
-"Selects which graphics API to use internally.
-
-The software renderer is extremely slow and only useful for debugging, so any of the other backends are recommended.
-
-If unsure, select OpenGL." = "Seleziona quale API grafica usare internamente.
-
-Il renderer software è estremamente lento e utile solo a scopo di debug, quindi si consiglia di usare uno degli altri backend.
-
-Nel dubbio, usa OpenGL.";
-"Selects which graphics API to use internally.
-
-The software renderer is extremely slow and only useful for debugging, so either OpenGL, Direct3D, or Vulkan are recommended. Different games and different GPUs will behave differently on each backend, so for the best emulation experience it is recommended to try each and select the backend that is least problematic.
-
-If unsure, select OpenGL." = "Seleziona quale API grafica usare internamente.
-
-Il renderer software è estremamente lento, e viene utilizzato solo a scopo di debug, quindi si consigliano OpenGL, Direct3D o Vulkan. I giochi e le GPU si comporteranno in modo diverso a seconda del motore utilizzato, quindi per una migliore esperienza si consiglia di provarli tutti e scegliere il backend che sembra più compatibile.
-
-Nel dubbio, seleziona OpenGL.";
+"Selects a hardware adapter to use.<br><br><dolphin_emphasis>If unsure, select the first one.</dolphin_emphasis>" = "Seleziona l'adattatore hardware da utilizzare.<br><br><dolphin_emphasis>Nel dubbio, seleziona il primo.</dolphin_emphasis>";
+"Selects the stereoscopic 3D mode. Stereoscopy allows a better feeling of depth if the necessary hardware is present. Heavily decreases emulation speed and sometimes causes issues.<br><br>Side-by-Side and Top-and-Bottom are used by most 3D TVs.<br>Anaglyph is used for Red-Cyan colored glasses.<br>HDMI 3D is used when the monitor supports 3D display resolutions.<br>Passive is another type of 3D used by some TVs.<br><br><dolphin_emphasis>If unsure, select Off.</dolphin_emphasis>" = "Seleziona la modalità di stereoscopia 3D. Se hai l'hardware necessario, la stereoscopia ti permette di avere una migliore sensazione di profondità. Diminuisce pesantemente la velocità di emulazione e talvolta causa problemi.<br><br>Fianco-a-Fianco e Sopra-e-Sotto sono utilizzate dalla maggior parte delle TV 3D.<br>Anaglifo è utilizzato con gli occhialini colorati rosso-blu.<br>HDMI 3D è usato in caso il monitor supporti risoluzioni 3D.<br>Passivo è una tipologia di 3D usata da alcune TV.<br><br><dolphin_emphasis>Nel dubbio, seleziona Off.</dolphin_emphasis>";
+"Selects what graphics API to use internally.<br>The software renderer is extremely slow and only useful for debugging, so you'll want to use either Direct3D or OpenGL. Different games and different GPUs will behave differently on each backend, so for the best emulation experience it's recommended to try both and choose the one that's less problematic.<br><br><dolphin_emphasis>If unsure, select OpenGL.</dolphin_emphasis>" = "Seleziona quale API grafica usare internamente.<br>Il renderer software è estremamente lento, e viene utilizzato solo a scopo di debug, quindi faresti meglio a selezionare Direct3D o OpenGL. I giochi e le GPU si comporteranno in modo diverso a seconda del motore utilizzato, quindi per una migliore esperienza si consiglia di provare entrambi e scegliere quello che si adatta maggiormente ai tuoi bisogni.<br><br><dolphin_emphasis>Nel dubbio, seleziona OpenGL.</dolphin_emphasis>";
+"Selects which aspect ratio to use when rendering.<br><br>Auto: Uses the native aspect ratio<br>Force 16:9: Mimics an analog TV with a widescreen aspect ratio.<br>Force 4:3: Mimics a standard 4:3 analog TV.<br>Stretch to Window: Stretches the picture to the window size.<br><br><dolphin_emphasis>If unsure, select Auto.</dolphin_emphasis>" = "Seleziona il rapporto d'aspetto da utilizzare in fase di rendering:<br><br>Auto: utilizza il rapporto d'aspetto nativo<br>Forza 16:9: Simula una TV analogica con un rapporto d'aspetto widescreen.<br>Forza 4:3: Simula una standard TV analogica con rapporto d'aspetto di 4:3.<br>Adatta a Finestra: Allarga l'immagine perché si adatti alle dimensioni della finestra.<br><br><dolphin_emphasis>Nel dubbio, seleziona Auto.</dolphin_emphasis>";
+"Selects which graphics API to use internally.<br><br>The software renderer is extremely slow and only useful for debugging, so any of the other backends are recommended. Different games and different GPUs will behave differently on each backend, so for the best emulation experience it is recommended to try each and select the backend that is least problematic.<br><br><dolphin_emphasis>If unsure, select OpenGL.</dolphin_emphasis>" = "Selects which graphics API to use internally.<br><br>The software renderer is extremely slow and only useful for debugging, so any of the other backends are recommended. Different games and different GPUs will behave differently on each backend, so for the best emulation experience it is recommended to try each and select the backend that is least problematic.<br><br><dolphin_emphasis>If unsure, select OpenGL.</dolphin_emphasis>";
 "Send" = "Invia";
 "Sensor Bar Position" = "Posizione della Sensor Bar: ";
-"Serial and/or version data is missing from %s" = "Seriale e/o dati di versione mancano da %s";
+"Serial and/or version data is missing from {0}
+Please append \"{1}\" (without the quotes) to the datfile URL when downloading
+Example: {2}" = "Seriale e/o versione dei dati mancanti da {0}
+Per favore aggiungi \"{1}\" (senza le virgolette) all'URL del datfile durante lo scaricamento
+Esempio: {2}";
 "Server IP Address" = "Indirizzo IP del Server";
 "Server Port" = "Porta del Server";
 "Server rejected traversal attempt" = "Il server ha rifiutato il tentativo di connessione in modalità traversal";
@@ -2120,6 +1896,7 @@ Potrebbe non funzionare su tutti i giochi.";
 "Show Log" = "Mostra Finestra di Log";
 "Show Toolbar" = "Mostra Barra degli Strumenti";
 "Show Active Title in Window Title" = "Mostra Gioco Corrente nella Barra del Titolo";
+"Show All" = "Mostra Tutto";
 "Show Australia" = "Mostra Australia";
 "Show Current Game on Discord" = "Mostra Gioco Corrente su Discord";
 "Show Debugging UI" = "Mostra UI Debugging";
@@ -2158,31 +1935,11 @@ Potrebbe non funzionare su tutti i giochi.";
 "Show in memory" = "Mostra in memoria";
 "Show in code" = "Mostra nel codice";
 "Show in server browser" = "Mostra nel server browser";
-"Show various rendering statistics.
-
-If unsure, leave this unchecked." = "Mostra diverse informazioni di rendering.
-
-Nel dubbio, lascia deselezionato.";
-"Shows chat messages, buffer changes, and desync alerts while playing NetPlay.
-
-If unsure, leave this unchecked." = "Mostra messaggi di chat, cambiamenti di buffer e avvisi di desync durante una partita NetPlay.
-
-Nel dubbio, lascia deselezionato.";
-"Shows the number of frames rendered per second as a measure of emulation speed.
-
-If unsure, leave this unchecked." = "Mostra il numero di frame renderizzati ogni secondo come metro di misura della velocità di emulazione.
-
-Nel dubbio, lascia deselezionato.";
-"Shows the player's maximum ping while playing on NetPlay.
-
-If unsure, leave this unchecked." = "Mostra più alto valore di ping dei giocatori durante una partita NetPlay.
-
-Nel dubbio, lascia deselezionato.";
-"Shows various rendering statistics.
-
-If unsure, leave this unchecked." = "Mostra diverse informazioni di rendering.
-
-Nel dubbio, lascia deselezionato.";
+"Show various rendering statistics.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Mostra diverse informazioni di rendering.<br><br><dolphin_emphasis>Nel dubbio, lascia deselezionato.</dolphin_emphasis>";
+"Shows chat messages, buffer changes, and desync alerts while playing NetPlay.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Mostra messaggi di chat, cambiamenti di buffer e avvisi di desync durante una partita NetPlay.<br><br><dolphin_emphasis>Nel dubbio, lascia deselezionato.</dolphin_emphasis>";
+"Shows the number of frames rendered per second as a measure of emulation speed.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Mostra il numero di frame renderizzati ogni secondo come metro di misura della velocità di emulazione.<br><br><dolphin_emphasis>Nel dubbio, lascia deselezionato.</dolphin_emphasis>";
+"Shows the player's maximum ping while playing on NetPlay.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Mostra più alto valore di ping dei giocatori durante una partita NetPlay.<br><br><dolphin_emphasis>Nel dubbio, lascia deselezionato.</dolphin_emphasis>";
+"Shows various rendering statistics.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Mostra diverse informazioni di rendering.<br><br><dolphin_emphasis>Nel dubbio, lascia deselezionato.</dolphin_emphasis>";
 "Side-by-Side" = "Fianco-a-Fianco";
 "Sideways Hold" = "Mantieni posizione di traverso";
 "Sideways Toggle" = "Attiva/Disattiva posizione di traverso";
@@ -2198,21 +1955,14 @@ Nel dubbio, lascia deselezionato.";
 "Skip EFB Access from CPU" = "Salta Accesso della CPU all'EFB";
 "Skip Main Menu" = "Salta Main Menu";
 "Skip Presenting Duplicate Frames" = "Salta Frame Duplicati";
-"Skips presentation of duplicate frames (XFB copies) in 25fps/30fps games. This may improve performance on low-end devices, while making frame pacing less consistent.
-
-Disable this option as well as enabling V-Sync for optimal frame pacing.
-
-If unsure, leave this checked." = "Salta la presentazione di frame duplicati (copie XFB) in giochi a 25/30fps.
-Potrebbe migliorare le prestazioni in dispositivi più datati, al prezzo di un framerate meno stabile.
-
-Disabilitare questa opzione e abilitare il V-Sync migliora la stabilità del framerate.
-
-Nel dubbio, lascia selezionato.";
+"Skips presentation of duplicate frames (XFB copies) in 25fps/30fps games. This may improve performance on low-end devices, while making frame pacing less consistent.<br><br />Disable this option as well as enabling V-Sync for optimal frame pacing.<br><br><dolphin_emphasis>If unsure, leave this checked.</dolphin_emphasis>" = "Salta la presentazione di frame duplicati (copie XFB) in giochi a 25/30fps.
+Potrebbe migliorare le prestazioni in dispositivi più datati, al prezzo di un framerate meno stabile.<br><br />Disabilitare questa opzione e abilitare il V-Sync migliora la stabilità del framerate.<br><br><dolphin_emphasis>Nel dubbio, lascia selezionato.</dolphin_emphasis>";
 "Slider Bar" = "Slider Bar";
 "Slot A" = "Ingresso A";
 "Slot A" = "Slot A";
 "Slot B" = "Ingresso B";
 "Slot B" = "Slot B";
+"Snap the thumbstick position to the nearest octagonal axis." = "Cattura la posizione dell'analogico al più vicino asse ottagonale.";
 "Socket table" = "Tabella Socket";
 "Software Renderer" = "Software Renderer";
 "Some of the data could not be read." = "Non è stato possibile leggere alcuni dati.";
@@ -2238,6 +1988,7 @@ Controlla i valori evidenziati.";
 "Start NetPlay..." = "Avvia NetPlay";
 "Start Recording Input" = "Avvia Registrazione Input";
 "Start Recording" = "Avvia Registrazione";
+"Start in Fullscreen" = "Avvia a Schermo Intero.";
 "Started game" = "Gioco avviato";
 "State" = "Stato";
 "Steering Wheel" = "Volante";
@@ -2252,6 +2003,7 @@ Controlla i valori evidenziati.";
 "Stepping" = "Entrando";
 "Stereo" = "Stereo";
 "Stereoscopic 3D Mode" = "Modalità Stereoscopia 3D";
+"Stereoscopic 3D Mode" = "Modalità Stereoscopia 3D";
 "Stereoscopy" = "Stereoscopia";
 "Stick" = "Levetta";
 "Stop" = "Arresta";
@@ -2259,28 +2011,8 @@ Controlla i valori evidenziati.";
 "Stopped game" = "Gioco fermato";
 "Store EFB Copies to Texture Only" = "Salva le copie dell'EFB solo su texture";
 "Store XFB Copies to Texture Only" = "Salva le copie dell'XFB solo su texture";
-"Stores EFB copies exclusively on the GPU, bypassing system memory. Causes graphical defects in a small number of games.
-
-Enabled = EFB Copies to Texture
-Disabled = EFB Copies to RAM (and Texture)
-
-If unsure, leave this checked." = "Salva le copie dell'EFB esclusivamente sulla GPU, bypassando la memoria di sistema. Causa difetti grafici in un ristretto numero di giochi.
-
-Abilitato = Copie EFB su texture.
-Disabilitato = Copie EFB nella RAM (e su texture)
-
-Nel dubbio, lascia deselezionato.";
-"Stores XFB copies exclusively on the GPU, bypassing system memory. Causes graphical defects in a small number of games.
-
-Enabled = XFB Copies to Texture
-Disabled = XFB Copies to RAM (and Texture)
-
-If unsure, leave this checked." = "Salva le copie dell'XFB esclusivamente sulla GPU, bypassando la memoria di sistema. Causa difetti grafici in un ristretto numero di giochi.
-
-Abilitato = Copie XFB su texture.
-Disabilitato = Copie XFB nella RAM (e su texture)
-
-Nel dubbio, lascia deselezionato.";
+"Stores EFB copies exclusively on the GPU, bypassing system memory. Causes graphical defects in a small number of games.<br><br>Enabled = EFB Copies to Texture<br>Disabled = EFB Copies to RAM (and Texture)<br><br><dolphin_emphasis>If unsure, leave this checked.</dolphin_emphasis>" = "Salva le copie dell'EFB esclusivamente sulla GPU, bypassando la memoria di sistema. Causa difetti grafici in un ristretto numero di giochi.<br><br>Abilitato = Copie EFB su texture.<br>Disabilitato = Copie EFB nella RAM (e su texture)<br><br><dolphin_emphasis>Nel dubbio, lascia selezionato.</dolphin_emphasis>";
+"Stores XFB copies exclusively on the GPU, bypassing system memory. Causes graphical defects in a small number of games.<br><br>Enabled = XFB Copies to Texture<br>Disabled = XFB Copies to RAM (and Texture)<br><br><dolphin_emphasis>If unsure, leave this checked.</dolphin_emphasis>" = "Salva le copie dell'XFB esclusivamente sulla GPU, bypassando la memoria di sistema. Causa difetti grafici in un ristretto numero di giochi.<br><br>Abilitato = Copie XFB su texture.<br>Disabilitato = Copie XFB nella RAM (e su texture)<br><br><dolphin_emphasis>Nel dubbio, lascia selezionato.</dolphin_emphasis>";
 "Stretch to Window" = "Adatta a Finestra";
 "Strict Settings Sync" = "Sincronizzazione Esatta Impostazioni";
 "String" = "Stringa";
@@ -2289,30 +2021,24 @@ Nel dubbio, lascia deselezionato.";
 "Strum" = "Strimpellata";
 "Stylus" = "Stilo";
 "Success" = "Completato";
-"Success." = "Completato.";
 "Successfully added to the NetPlay index" = "Inserito con successo nell'indice NetPlay";
 "Successfully converted %n image(s)." = "Convertiti con successo %n immagini.";
 "Successfully deleted '%1'." = "'%1' eliminato con successo.";
-"Successfully deleted files." = "File eliminati con successo.";
+"Successfully exported %n out of %1 save file(s)." = "Esportati con successo %n file di salvataggio su %1.";
 "Successfully exported save files" = "File di salvataggio esportati con successo";
-"Successfully exported the %1 save files." = "%1 file di salvataggio esportati con successo.";
-"Successfully exported the save file." = "File di salvataggio esportato con successo.";
 "Successfully extracted certificates from NAND" = "I certificati sono stati estratti con successo dalla NAND";
 "Successfully extracted file." = "File estratto con successo.";
 "Successfully extracted system data." = "Dati di sistema estratti con successo.";
-"Successfully imported save files." = "I file di salvataggio sono stati importati con successo.";
+"Successfully imported save file." = "Salvataggio importato con successo.";
 "Successfully installed this title to the NAND." = "Il titolo è stato installato con successo su NAND.";
 "Successfully removed this title from the NAND." = "Il titolo è stato rimosso con successo dalla NAND.";
 "Support" = "Supporto";
+"Supported file formats" = "Formato file supportati";
 "Supports SD and SDHC. Default size is 128 MB." = "Supporta SD e SDHC. La dimensione standard è 128 MB.";
 "Surround" = "Surround";
 "Suspended" = "Sospeso";
 "Swap Eyes" = "Inverti Occhi";
-"Swaps the left and right eye. Most useful in side-by-side stereoscopy mode.
-
-If unsure, leave this unchecked." = "Inverte l'occhio destro con il sinistro. Utile soprattutto in modalità stereoscopica Fianco-a-Fianco.
-
-Nel dubbio, lascia deselezionato.";
+"Swaps the left and right eye. Most useful in side-by-side stereoscopy mode.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Inverte l'occhio destro con il sinistro. Utile soprattutto in modalità stereoscopica Fianco-a-Fianco.<br><br><dolphin_emphasis>Nel dubbio, lascia deselezionato.</dolphin_emphasis>";
 "Swing" = "Ruota/Oscilla";
 "Switch to A" = "Scambia ad A";
 "Switch to B" = "Scambia a B";
@@ -2342,30 +2068,26 @@ Nel dubbio, lascia deselezionato.";
 "Take Screenshot" = "Cattura uno Screenshot";
 "Test" = "Prova";
 "Texture Cache" = "Cache Texture";
-"Texture Dumping" = "Texture Dumping";
+"Texture Cache Accuracy" = "Accuratezza Cache Texture";
+"Texture Dumping" = "Dump delle Texture";
 "Texture Format Overlay" = "Overlay Formato Texture";
-"The %s partition does not have a valid file system." = "La partizione %s non contiene un file system valido.";
-"The %s partition does not seem to contain valid data." = "La partizione %s non sembra contenere dati validi.";
-"The %s partition is not correctly signed." = "La partizione %s non è firmata correttamente.";
-"The %s partition is not properly aligned." = "La partizione %s non è correttamente allineata.";
-"The DFF's minimum loader version (%d) exceeds the version of this FIFO Player (%d)" = "La versinoe minima del loader DFF (%d) supera la versione di questo Player FIFO (%d)";
-"The H3 hash table for the %s partition is not correct." = "L'hash table H3 della partizione %s non è corretta.";
-"The IPL file is not a known good dump. (CRC32: %x)" = "Il file IPL non è un dump conosciuto ben formato. (CRC32: %x)";
+"The DFF's minimum loader version ({0}) exceeds the version of this FIFO Player ({1})" = "La versinoe minima del loader DFF ({0}) supera la versione di questo Player FIFO ({1})";
+"The H3 hash table for the {0} partition is not correct." = "L'hash table H3 della partizione {0} non è corretta.";
+"The IPL file is not a known good dump. (CRC32: {0:x})" = "Il file IPL non è un dump conosciuto ben formato. (CRC32: {0:x})";
 "The Masterpiece partitions are missing." = "Le partizioni Capolavori sono assenti.";
 "The NAND could not be repaired. It is recommended to back up your current data and start over with a fresh NAND." = "Non è stato possibile riparare la NAND. Si consiglia di fare un backup dei dati attualmente presenti e ricominciare con una NAND pulita.";
 "The NAND has been repaired." = "La NAND è stata riparata.";
+"The TMD is not correctly signed." = "Il TMD non è correttamente firmato.";
 "The address is invalid" = "L'indirizzo non è valido";
 "The channel partition is missing." = "La partizione del canale è assente.";
 "The data partition is missing." = "La partizione dati è assente";
-"The data partition is not at its normal position. This will affect the emulated loading times. When using NetPlay or sending input recordings to other people, you will experience desyncs if anyone is using a good dump." = "La partizione dati non si trova nella posizione predefinita. I tempi di caricamento ne verranno influenzati. Usando il NetPlay o inviando registrazioni degli input ad altre persone con dump corretti si verificheranno desincronizzazioni.";
-"The disc change to \"%s\" could not be saved in the .dtm file.
-The filename of the disc image must not be longer than 40 characters." = "Non è stato possibile salvare nel file .dtm il cambio del disco \"%s\".
+"The data partition is not at its normal position. This will affect the emulated loading times. You will be unable to share input recordings and use NetPlay with anyone who is using a good dump." = "La partizione dati si trova in una posizione insolita. I tempi di caricamento ne verranno influenzati. È probabile che non potrai condividere registrazioni degli input o usare il NetPlay con chi possiede un dump corretto.";
+"The data size for the {0} partition is not evenly divisible by the block size." = "La dimensione dati per la partizione {0} non è divisibile per la dimensione del blocco.";
+"The decryption keys need to be appended to the NAND backup file." = "Le chiavi di decrittazione devono essere inserite nel file di backup NAND.";
+"The disc change to \"{0}\" could not be saved in the .dtm file.
+The filename of the disc image must not be longer than 40 characters." = "Non è stato possibile salvare nel file .dtm il cambio del disco \"{0}\".
 Il nome del file dell'immagine del disco non può andare oltre i 40 caratteri.";
-"The disc could not be read (at 0x%<PRIx64> - 0x%<PRIx64>)." = "Impossibile leggere il disco (a 0x%<PRIx64> - 0x%<PRIx64>).";
-"The disc image \"%s\" is corrupt.
-Hash of block %<PRIu64> is %08x instead of %08x." = "L'immagine disco \"%s\" è corrotta.
-L'hash del blocco %<PRIu64> è %08x anziché %08x.";
-"The disc image \"%s\" is truncated, some of the data is missing." = "L'immagine disco \"%s\" è incompleta, mancano dei dati.";
+"The disc could not be read (at {0:#x} - {1:#x})." = "Impossibile leggere il disco (a {0:#x} - {1:#x}).";
 "The disc that was about to be inserted couldn't be found." = "Impossibile trovare il disco che stava per essere inserito.";
 "The emulated NAND is damaged. System titles such as the Wii Menu and the Wii Shop Channel may not work correctly.
 
@@ -2387,21 +2109,21 @@ is either corrupted or not a GameCube memory card file.
 "The file %1 already exists.
 Do you wish to replace it?" = "Il file %1 esiste già.
 Vuoi sostituirlo?";
-"The file %s could not be opened for writing. Please check if it's already opened by another program." = "Impossibile aprire il file %s in scrittura. Verificare che non sia già aperto in un altro programma.";
-"The file %s was already open, the file header will not be written." = "Il file %s è già stato aperto, l'intestazione non verrà scritta.";
+"The file {0} could not be opened for writing. Please check if it's already opened by another program." = "Impossibile aprire il file {0} in scrittura. Verificare che non sia già aperto in un altro programma.";
+"The file {0} was already open, the file header will not be written." = "Il file {0} è già stato aperto, l'intestazione non verrà scritta.";
 "The filesystem is invalid or could not be read." = "Il filesystem non è valido o è illeggibile.";
 "The format that the disc image is saved in does not store the size of the disc image." = "Il formato con cui è stata salvata l'immagine disco non contiene la dimensione stessa dell'immagine";
-"The game ID is %s but should be %s." = "L'ID del gioco è %s ma dovrebbe essere %s.";
 "The game ID is inconsistent." = "L'ID del gioco non è consistente.";
 "The game ID is unusually short." = "L'ID del gioco è insolitamente breve.";
+"The game ID is {0} but should be {1}." = "L'ID del gioco è {0} ma dovrebbe essere {1}.";
 "The game disc does not contain any usable update information." = "Questo disco di gioco non contiene alcun aggiornamento utilizzabile.";
 "The game is currently running." = "Il gioco è attualmente avviato.";
 "The game's region does not match your console's. To avoid issues with the system menu, it is not possible to update the emulated console using this disc." = "La regione del gioco non corrisponde a quella della tua console. Per evitare problemi col menu di sistema, non è possibile aggiornare la console emulata con questo disco.";
 "The graphics driver is forcibly enabling anti-aliasing for Dolphin. You need to turn this off in the graphics driver's settings in order for Dolphin to work.
 
-(MSAA with %d samples found on default framebuffer)" = "I driver grafici stanno abilitando forzatamente l'anti-aliasing su Dolphin. Devi disattivare l'impostazione nel pannello di controllo dei driver grafici per permettere il corretto funzionamento di Dolphin.
+(MSAA with {0} samples found on default framebuffer)" = "I driver grafici stanno abilitando forzatamente l'anti-aliasing su Dolphin. Devi disattivare l'impostazione nel pannello di controllo dei driver grafici per permettere il corretto funzionamento di Dolphin.
 
-(MSAA con %d sample trovato nel framebuffer di default)";
+(MSAA con {0} sample trovato nel framebuffer di default)";
 "The hashes do not match!" = "Gli hash non coincidono!";
 "The hashes match!" = "Gli hash coincidono!";
 "The host code is too long.
@@ -2409,11 +2131,11 @@ Please recheck that you have the correct code." = "Il codice host è troppo lung
 Controlla di avere il codice corretto.";
 "The install partition is missing." = "La partizione di installazione è assente";
 "The profile '%1' does not exist" = "Il profilo '%1' non esiste";
-"The recorded game (%s) is not the same as the selected game (%s)" = "Il gioco registrato (%s) non coincide con il gioco selezionato (%s)";
+"The recorded game ({0}) is not the same as the selected game ({1})" = "Il gioco registrato ({0}) non coincide con il gioco selezionato ({1})";
 "The region code does not match the game ID. If this is because the region code has been modified, the game might run at the wrong speed, graphical elements might be offset, or the game might not run at all." = "Il codice regionale non corrisponde all'ID del gioco. Se è a causa di una modifica del codice regionale, il gioco potrebbe venire eseguito alla velocità errata, elementi grafici potrebbero essere spostati, o potrebbe non avviarsi affatto.";
 "The resulting decrypted AR code doesn't contain any lines." = "Il codice AR decriptato risultante non contiene alcuna riga.";
 "The same file can't be used in both slots." = "Lo stesso file non può essere usato in entrambi gli slot.";
-"The selected CPU emulation core (%d) is not available. Please select a different CPU emulation core in the settings." = "Il core d'emulazione CPU selezionato (%d) non è disponibile. Seleziona un core d'emulazione CPU alternativo dalle impostazioni.";
+"The selected CPU emulation core ({0}) is not available. Please select a different CPU emulation core in the settings." = "Il core d'emulazione CPU selezionato ({0}) non è disponibile. Seleziona un core d'emulazione CPU alternativo dalle impostazioni.";
 "The server and client's NetPlay versions are incompatible." = "Le versioni di NetPlay del server e del client non sono compatibili.";
 "The server is full." = "Il server è pieno.";
 "The server sent an unknown error message." = "Il server ha inviato un messaggio d'errore sconosciuto.";
@@ -2422,16 +2144,23 @@ Controlla di avere il codice corretto.";
 Do you really want to enable software rendering? If unsure, select 'No'." = "Il rendering software è enormemente più lento rispetto l'utilizzo degli altri motori ed utile solamente ai fini di debugging.
 
 Vuoi davvero abilitare il rendering software? Nel dubbio, seleziona 'No'.";
-"The specified common key index is %u but should be %u." = "L'indice della chiave condivisa specificata è %u ma dovrebbe essere %u.";
-"The specified file \"%s\" does not exist" = "il file specificato \"%s\" non esiste";
+"The specified common key index is {0} but should be {1}." = "L'indice della chiave condivisa specificata è {0} ma dovrebbe essere {1}.";
+"The specified file \"{0}\" does not exist" = "il file specificato \"{0}\" non esiste";
+"The target memory card already contains a file \"%1\"." = "La memory card di destinazione contiene già un file \"%1\".";
+"The ticket is not correctly signed." = "Il ticket non è correttamente firmato.";
 "The type of a partition could not be read." = "Impossibile leggere il tipo di una partizione.";
 "The update has been cancelled. It is strongly recommended to finish it in order to avoid inconsistent system software versions." = "L'aggiornamento è stato annullato. È altamente consigliato di terminarlo per evitare versioni di sistema inconsistenti.";
 "The update partition does not contain the IOS used by this title." = "La partizione d'aggiornamento non contiene l'IOS usato da questo titolo.";
 "The update partition is missing." = "La partizione di aggiornamento è assente";
 "The update partition is not at its normal position." = "La partizione di aggiornamento non si trova nella posizione predefinita.";
 "The value is invalid" = "Il valore non è valido";
+"The {0} partition does not have a valid file system." = "La partizione {0} non contiene un file system valido.";
+"The {0} partition does not seem to contain valid data." = "La partizione {0} non sembra contenere dati validi.";
+"The {0} partition is not correctly signed." = "La partizione {0} non è firmata correttamente.";
+"The {0} partition is not properly aligned." = "La partizione {0} non è correttamente allineata.";
 "There are too many partitions in the first partition table." = "Ci sono troppe partizioni nella prima tabella delle partizioni.";
 "There is nothing to undo!" = "Non c'è nulla da annullare!";
+"There was an issue adding a shortcut to the desktop" = "Non è stato possibile creare un collegamento sul desktop.";
 "These settings override core Dolphin settings.
 Undetermined means the game uses Dolphin's setting." = "Queste impostazioni possono sovrascrivere quelle settate in Dolphin. 
 L'opzione 'indeterminato' utilizzerà le impostazioni di Dolphin.";
@@ -2448,7 +2177,7 @@ Vuoi scartare tutte le righe non criptate?";
 "This cannot be undone!" = "Impossibile annullare l'operazione!";
 "This debug disc image has the size of a retail disc image." = "La dimensione di questa immagine disco di debug è quella di un'immagine disco retail.";
 "This disc image has an unusual size." = "Questa immagine disco ha una dimensione insolita.";
-"This disc image has an unusual size. This will likely make the emulated loading times longer. When using NetPlay or sending input recordings to other people, you will likely experience desyncs if anyone is using a good dump." = "Questa immagine disco ha una dimensione insolita. I tempi di caricamento ne verranno probabilmente influenzati. Usando il NetPlay o inviando registrazioni degli input ad altre persone con dump corretti è probabile che si verifichino desincronizzazioni.";
+"This disc image has an unusual size. This will likely make the emulated loading times longer. You will likely be unable to share input recordings and use NetPlay with anyone who is using a good dump." = "Questa immagine disco ha una dimensione insolita. I tempi di caricamento ne verranno probabilmente influenzati. È probabile che non potrai condividere registrazioni degli input o usare il NetPlay con chi possiede un dump corretto.";
 "This disc image is in the NKit format. It is not a good dump in its current form, but it might become a good dump if converted back. The CRC32 of this file might match the CRC32 of a good dump even though the files are not identical." = "Questa immagine disco è in formato NKit. Attualmente non è un buon dump, ma potrebbe diventarlo una volta riconvertito. Il CRC32 di questo file potrebbe corrispondere al CRC32 di un buon dump anche se i file non sono identici.";
 "This disc image is too small and lacks some data. If your dumping program saved the disc image as several parts, you need to merge them into one file." = "Questa immagine disco è troppo piccola e manca di alcuni dati. Se il tuo programma di dump ha salvato l'immagine in più parti, devi riunirle in un unico file.";
 "This disc image is too small and lacks some data. The problem is most likely that this is a dual-layer disc that has been dumped as a single-layer disc." = "Questa immagine disco è troppo piccola e manca di alcuni dati. Probabilmente si tratta di un disco dual-layer estratto come disco single-layer.";
@@ -2467,19 +2196,18 @@ If unsure, leave this unchecked." = "Questa opzione ti permette di impostare un 
 Nel dubbio, lascia deselezinoato.";
 "This software should not be used to play games you do not legally own." = "Questo software non dovrebbe essere utilizzato per la riproduzione di giochi di cui non sei legalmente in possesso.";
 "This title cannot be booted." = "Impossibile avviare questo titolo.";
-"This title is not correctly signed." = "Questo titolo non è correttamente firmato.";
 "This title is set to use an invalid IOS." = "Questo titolo è impostato per utilizzare un IOS non valido.";
 "This title is set to use an invalid common key." = "Questo titolo è impostato per utilizzare una common key non valida.";
 "This title might be incompatible with DSP HLE emulation. Try using LLE if this is homebrew.
 
-DSPHLE: Unknown ucode (CRC = %08x) - forcing AX." = "Questo titolo potrebbe essere incompatibile con l'emulazione DSP HLE. Prova a utilizzare LLE se si tratta di un homebrew.
+DSPHLE: Unknown ucode (CRC = {0:08x}) - forcing AX." = "Questo titolo potrebbe essere incompatibile con l'emulazione DSP HLE. Prova a utilizzare LLE se si tratta di un homebrew.
 
-DSPHLE: Ucode sconosciuto (CRC = %08x) - AX forzato";
+DSPHLE: Ucode sconosciuto (CRC = {0:08x}) - AX forzato";
 "This title might be incompatible with DSP HLE emulation. Try using LLE if this is homebrew.
 
-Unknown ucode (CRC = %08x) - forcing AXWii." = "Questo titolo potrebbe essere incompatibile con l'emulazione DSP HLE. Prova a utilizzare LLE se si tratta di un homebrew.
+Unknown ucode (CRC = {0:08x}) - forcing AXWii." = "Questo titolo potrebbe essere incompatibile con l'emulazione DSP HLE. Prova a utilizzare LLE se si tratta di un homebrew.
 
-Ucode sconosciuto (CRC = %08x) - AXWii forzato";
+Ucode sconosciuto (CRC = {0:08x}) - AXWii forzato";
 "This value is added to the convergence value set in the graphics configuration." = "Questo valore viene sommato alla convergenza impostata nelle configurazioni grafiche.";
 "This value is multiplied with the depth set in the graphics configuration." = "Questo valore viene moltiplicato per la profondità impostata nelle configurazioni grafiche.";
 "This will limit the speed of chunked uploading per client, which is used for save sync." = "Serve a limitare la velocità di chunked upload per ogni client, utilizzato per la sincronizzazione dei salvataggi.";
@@ -2509,6 +2237,7 @@ Può servire a prevenire il desync in alcuni giochi che utilizzano le letture de
 "Toggle Fullscreen" = "Visualizza a Schermo Intero";
 "Toggle Pause" = "Attiva/Disattiva Pausa";
 "Toggle SD Card" = "Attiva/Disattiva Scheda SD";
+"Toggle Skip EFB Access" = "Attiva/Disattiva Salta Accesso EFB";
 "Toggle Texture Dumping" = "Attiva/Disattiva Texture Dump";
 "Toggle USB Keyboard" = "Attiva/Disattiva Tastiera USB";
 "Toggle XFB Copies" = "Attiva/Disattiva Copie XFB";
@@ -2538,25 +2267,9 @@ Può servire a prevenire il desync in alcuni giochi che utilizzano le letture de
 "USA" = "USA";
 "USB Gecko" = "USB Gecko";
 "USB Whitelist Error" = "Errore USB Whitelist";
-"Ubershaders are never used. Stuttering will occur during shader compilation, but GPU demands are low.
-
-Recommended for low-end hardware. 
-
-If unsure, select this mode." = "Non verranno usati gli Ubershader. Si verificheranno rallentamenti durante la compilazione degli shader, ma i requisiti GPU saranno bassi.
-
-Preferibile con hardware di fascia bassa.
-
-Nel dubbio, seleziona questa modalità.";
-"Ubershaders will always be used. Provides a near stutter-free experience at the cost of high GPU performance requirements.
-
-Only recommended for high-end systems." = "Gli Ubershader verranno sempre usati. Garantisce un'esperienza di gioco quasi senza rallentamenti, al prezzo di maggiori requisiti GPU. 
-
-Raccomandato solo per sistemi di fascia alta.";
-"Ubershaders will be used to prevent stuttering during shader compilation, but specialized shaders will be used when they will not cause stuttering.
-
-In the best case it eliminates shader compilation stuttering while having minimal performance impact, but results depend on video driver behavior." = "Verranno usati degli Ubershader per evitare rallentamenti durante la compilazione degli shader, ma degli shader specializzati verranno usati quando non causeranno rallentamenti.
-
-Nel caso migliore elimina scatti durante la compilazione degli shader con un minore impatto sulle performance, ma il risultato dipende dai driver della scheda grafica.";
+"Ubershaders are never used. Stuttering will occur during shader compilation, but GPU demands are low.<br><br>Recommended for low-end hardware. <br><br><dolphin_emphasis>If unsure, select this mode.</dolphin_emphasis>" = "Non verranno usati gli Ubershader. Si verificheranno rallentamenti durante la compilazione degli shader, ma i requisiti GPU saranno bassi.<br><br>Preferibile con hardware di fascia bassa.<br><br><dolphin_emphasis>Nel dubbio, seleziona questa modalità.</dolphin_emphasis>";
+"Ubershaders will always be used. Provides a near stutter-free experience at the cost of high GPU performance requirements.<br><br><dolphin_emphasis>Only recommended for high-end systems.</dolphin_emphasis>" = "Gli Ubershader verranno sempre usati. Garantisce un'esperienza di gioco quasi senza rallentamenti, al prezzo di maggiori requisiti GPU.<br><br><dolphin_emphasis>Raccomandato solo per sistemi di fascia alta.</dolphin_emphasis>";
+"Ubershaders will be used to prevent stuttering during shader compilation, but specialized shaders will be used when they will not cause stuttering.<br><br>In the best case it eliminates shader compilation stuttering while having minimal performance impact, but results depend on video driver behavior." = "Verranno usati degli Ubershader per evitare rallentamenti durante la compilazione degli shader, ma degli shader specializzati verranno usati quando non causeranno rallentamenti.<br><br>Nel caso migliore elimina scatti durante la compilazione degli shader con un minore impatto sulle performance, ma il risultato dipende dai driver della scheda grafica.";
 "Unable to auto-detect RSO module" = "Impossibile individuare automaticamente il modulo RSO";
 "Unable to parse line %1 of the entered AR code as a valid encrypted or decrypted code. Make sure you typed it correctly.
 
@@ -2568,25 +2281,25 @@ Vuoi ignorare questa riga e continuare l'analisi?";
 Would you like to ignore this line and continue parsing?" = "Impossibile analizzare come un codice valido la riga %1 del codice Gecko inserito. Assicurati di averlo inserito correttamente.
 
 Vuoi ignorare questa riga e continuare l'analisi?";
-"Unable to write to file %s" = "Impossibile scrivere su file %s";
+"Unable to write to file {0}" = "Impossibile scrivere su file {0}";
 "Unbound" = "Non assegnato";
 "Uncompressed GC/Wii images (*.iso *.gcm)" = "Immagini GC/Wii non compresse (*.iso *.gcm)";
 "Undo Load State" = "Annulla Caricamento Stato di Gioco";
 "Undo Save State" = "Annulla Salvataggio dello Stato di Gioco";
-"Unexpected 0x80 call? Aborting..." = "Chiamata 0x80 inaspettata? Interruzione...";
 "Uninstall" = "Disinstalla";
 "Uninstall from the NAND" = "Disinstalla dalla NAND";
 "Uninstalling the WAD will remove the currently installed version of this title from the NAND without deleting its save data. Continue?" = "La disinstallazione del WAD rimuoverà la versione di questo titolo attualmente installata su NAND senza cancellarne i file di salvataggio. Continuare?";
 "United States" = "Stati Uniti";
 "Unknown" = "Sconosciuto";
-"Unknown DVD command %08x - fatal error" = "Comando DVD %08x sconosciuto - errore fatale";
-"Unknown SYNC_GECKO_CODES message with id:%d received from player:%d Kicking player!" = "Ricevuto messaggio SYNC_GECKO_CODES sconosciuto con id:%d dal giocatore:%d Giocatore espulso!";
-"Unknown SYNC_SAVE_DATA message received with id: %d" = "Messaggio SYNC_SAVE_DATA sconosciuto ricevuto con id: %d";
-"Unknown SYNC_SAVE_DATA message with id:%d received from player:%d Kicking player!" = "Ricevuto messaggio SYNC_SAVE_DATA sconosciuto con id:%d dal giocatore:%d Giocatore espulso!";
+"Unknown DVD command {0:08x} - fatal error" = "Comando DVD {0:08x} sconosciuto - errore fatale";
+"Unknown SYNC_GECKO_CODES message with id:{0} received from player:{1} Kicking player!" = "Ricevuto messaggio SYNC_GECKO_CODES sconosciuto con id:{0} dal giocatore:{1} Giocatore espulso!";
+"Unknown SYNC_SAVE_DATA message received with id: {0}" = "Messaggio SYNC_SAVE_DATA sconosciuto ricevuto con id: {0}";
+"Unknown SYNC_SAVE_DATA message with id:{0} received from player:{1} Kicking player!" = "Ricevuto messaggio SYNC_SAVE_DATA sconosciuto con id:{0} dal giocatore:{1} Giocatore espulso!";
 "Unknown disc" = "Disco sconosciuto";
-"Unknown error %x" = "Errore sconosciuto %x";
-"Unknown message received with id : %d" = "Ricevuto messaggio sconosciuto con id : %d";
-"Unknown message with id:%d received from player:%d Kicking player!" = "Ricevuto messaggio sconosciuto con id:%d ricevuto dal giocatore:%d Giocatore espulso!";
+"Unknown error {0:x}" = "Errore sconosciuto {0:x}";
+"Unknown error." = "Errore sconosciuto.";
+"Unknown message received with id : {0}" = "Ricevuto messaggio sconosciuto con id : {0}";
+"Unknown message with id:{0} received from player:{1} Kicking player!" = "Ricevuto messaggio sconosciuto con id:{0} ricevuto dal giocatore:{1} Giocatore espulso!";
 "Unlimited" = "Illimitato";
 "Unpacking" = "Apertura";
 "Unsigned Integer" = "Unsigned Integer";
@@ -2607,7 +2320,6 @@ Potrebbe volerci un po'.";
 "Usage Statistics Reporting Settings" = "Impostazioni Report Statistiche d'Uso";
 "Use Built-In Database of Game Names" = "Usa Database Interno per i Nomi dei Giochi";
 "Use Custom User Style" = "Usa Stile Utente Personalizzato";
-"Use Fullscreen" = "Usa Schermo Intero";
 "Use Lossless Codec (FFV1)" = "Usa Codec Lossless (FFV1)";
 "Use PAL60 Mode (EuRGB60)" = "Usa Modalità PAL60 (EuRGB60)";
 "Use Panic Handlers" = "Avvisi di Errore";
@@ -2615,30 +2327,14 @@ Potrebbe volerci un po'.";
 "User Config" = "Configurazione Utente";
 "User Interface" = "Interfaccia Utente";
 "User Style" = "Stile Utente";
-"Uses a less accurate algorithm to calculate depth values.
-
-Causes issues in a few games, but can result in a decent speed increase depending on the game and/or GPU.
-
-If unsure, leave this checked." = "Utilizza un algoritmo meno preciso per calcolare i valori di profondità.
-
-Causa problemi in alcuni giochi ma potrebbe fornire un buon aumento di velocità a seconda del gioco e/o della tua GPU.
-
-Nel dubbio, lascia selezionato.";
-"Uses the entire screen for rendering.
-
-If disabled, a render window will be created instead.
-
-If unsure, leave this unchecked." = "Utilizza l'intero schermo per il rendering.
-
-Se è disabilitata, verrà invece creata invece una finestra per il rendering.
-
-Nel dubbio, lascia deselezionato.";
-"Uses the main Dolphin window for rendering rather than a separate render window.
-
-If unsure, leave this unchecked." = "Utilizza la finestra principale di Dolphin per il rendering grafico, invece di una finestra separata.
-
-Nel dubbio, lascia deselezionato.";
+"Uses a less accurate algorithm to calculate depth values.<br><br>Causes issues in a few games, but can result in a decent speed increase depending on the game and/or GPU.<br><br><dolphin_emphasis>If unsure, leave this checked.</dolphin_emphasis>" = "Utilizza un algoritmo meno preciso per calcolare i valori di profondità.<br><br>Causa problemi in alcuni giochi ma potrebbe fornire un buon aumento di velocità a seconda del gioco e/o della tua GPU.<br><br><dolphin_emphasis>Nel dubbio, lascia selezionato.</dolphin_emphasis>";
+"Uses the entire screen for rendering.<br><br>If disabled, a render window will be created instead.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Utilizza l'intero schermo per il rendering.<br><br>Se è disabilitata, verrà invece creata invece una finestra per il rendering.<br><br><dolphin_emphasis>Nel dubbio, lascia deselezionato.</dolphin_emphasis>";
+"Uses the main Dolphin window for rendering rather than a separate render window.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Utilizza la finestra principale di Dolphin per il rendering grafico, invece di una finestra separata.<br><br><dolphin_emphasis>Nel dubbio, lascia deselezionato.</dolphin_emphasis>";
 "Using Qt %1" = "Qt %1 in uso";
+"Usually used for light objects" = "Usually used for light objects";
+"Usually used for normal matrices" = "Usually used for normal matrices";
+"Usually used for position matrices" = "Usually used for position matrices";
+"Usually used for tex coord matrices" = "Usually used for tex coord matrices";
 "Utility" = "Utilità";
 "V-Sync" = "V-Sync";
 "Value" = "Valore";
@@ -2651,86 +2347,60 @@ Nel dubbio, lascia deselezionato.";
 "Verifying" = "Verifica in corso";
 "Version" = "Versione";
 "Vertex Rounding" = "Vertex Rounding";
+"Vertical FOV" = "FOV Verticale";
 "Vertical Offset" = "Offset Verticale";
 "Video" = "Video";
 "View code" = "Visualizza codice";
 "View memory" = "Visualizza memoria";
+"Virtual Notches" = "Tacche Virtuali";
 "Volume" = "Volume";
 "Volume Down" = "Abbassa il Volume";
 "Volume Toggle Mute" = "Abilita/Disabilita il Volume";
 "Volume Up" = "Alza il Volume";
 "Vulkan" = "Vulkan";
 "WAD files (*.wad)" = "File WAD (*.wad)";
+"WAD installation failed: Could not create Wii Shop log files." = "Installazione WAD non riuscita: Impossibile creare i file di log Wii Shop";
 "WAD installation failed: Could not finalise title import." = "Installazione WAD non riuscita: Impossibile completare l'importazione del titolo";
-"WAD installation failed: Could not import content %08x." = "Installazione WAD non riuscita: Impossibile importare il contenuto %08x.";
-"WAD installation failed: Could not initialise title import (error %d)." = "Installazione WAD non riuscita: Impossibile inizializzare l'importazione del titolo (errore %d).";
+"WAD installation failed: Could not import content {0:08x}." = "Installazione WAD non riuscita: Impossibile importare il contenuto {0:08x}.";
+"WAD installation failed: Could not initialise title import (error {0})." = "Installazione WAD non riuscita: Impossibile inizializzare l'importazione del titolo (errore {0}).";
 "WAD installation failed: The selected file is not a valid WAD." = "Installazione WAD non riuscita: Il file selezionato non è un WAD valido";
 "WAITING" = "ATTESA";
 "WARNING: The controls under Accelerometer and Gyroscope are designed to interface directly with motion sensor hardware. They are not intended for mapping traditional buttons, triggers or axes. You might need to configure alternate input sources before using these controls." = "ATTENZIONE: I controlli sotto Accelerometro e Giroscopio sono programmati per interfacciarsi direttamente con l'hardware dei sensori di movimento. Non sono fatti per essere mappati a pulsanti tradizionali, grilletti o assi. Dovresti configurare sorgenti di input diverse prima di usarli.";
 "WARNING: These controls are designed to interface directly with motion sensor hardware. They are not intended for mapping traditional buttons, triggers or axes. You might need to configure alternate input sources before using these controls." = "ATTENZIONE: questi controlli sono progettati per interfacciarsi direttamente con l'hardware dei sensori di movimento. Non sono fatti per essere mappati a pulsanti tradizionali, grilletti o assi. Dovresti configurare sorgenti di input diverse prima di usarli.";
 "WASAPI (Exclusive Mode)" = "WASAPI (Modalità Esclusiva)";
 "WIA GC/Wii images (*.wia)" = "Immagini WIA GC/Wii (*.wia)";
-"Waits for all shaders to finish compiling before starting a game. Enabling this option may reduce stuttering or hitching for a short time after the game is started, at the cost of a longer delay before the game starts. For systems with two or fewer cores, it is recommended to enable this option, as a large shader queue may reduce frame rates.
-
-Otherwise, if unsure, leave this unchecked." = "Attende la compilazione di tutti gli shader prima di avviare il gioco. Attivando questa opzione potrebbero ridursi i rallentamenti dopo l'avvio del gioco, al prezzo di un tempo di avvio maggiore. Se possiedi un sistema con due processori o meno ti conviene attivare questa opzione in quanto shader pesanti potrebbero ridurre il framerate.
-
-Altrimenti, nel dubbio, lascia disattivato.";
-"Waits for vertical blanks in order to prevent tearing.
-
-Decreases performance if emulation speed is below 100%.
-
-If unsure, leave this unchecked." = "Attende il disegno completo dei frame per ridurre i fenomeni di tearing. 
-
-Riduce le performance se la velocità d'emulazione è inferiore al 100%.
-
-Nel dubbio, lascia deselezionato.";
-"Waits until the game synchronizes with the emulated GPU before writing the contents of EFB copies to RAM.
-
-Reduces the overhead of EFB RAM copies, providing a performance boost in many games, at the risk of breaking those which do not safely synchronize with the emulated GPU.
-
-If unsure, leave this checked." = "Attende che il gioco si sincronizzi con la GPU emulata prima di scrivere il contenuto delle copie EFB nella RAM.
-
-Riduce l'overhead delle copie EFB RAM, migliorando le performance in molti giochi al rischio di corrompere quelli che non si sincronizzano in maniera sicura con la GPU emulata.
-
-Nel dubbio, lascia selezionato.";
+"Waits for all shaders to finish compiling before starting a game. Enabling this option may reduce stuttering or hitching for a short time after the game is started, at the cost of a longer delay before the game starts. For systems with two or fewer cores, it is recommended to enable this option, as a large shader queue may reduce frame rates.<br><br><dolphin_emphasis>Otherwise, if unsure, leave this unchecked.</dolphin_emphasis>" = "Attende la compilazione di tutti gli shader prima di avviare il gioco. Attivando questa opzione potrebbero ridursi i rallentamenti dopo l'avvio del gioco, al prezzo di un tempo di avvio maggiore. Se possiedi un sistema con due processori o meno ti conviene attivare questa opzione in quanto shader pesanti potrebbero ridurre il framerate.<br><br><dolphin_emphasis>Altrimenti, nel dubbio, lascia disattivato.</dolphin_emphasis>";
+"Waits for vertical blanks in order to prevent tearing.<br><br>Decreases performance if emulation speed is below 100%.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Attende il disegno completo dei frame per ridurre i fenomeni di tearing.<br><br>Riduce le performance se la velocità d'emulazione è inferiore al 100%.<br><br><dolphin_emphasis>Nel dubbio, lascia deselezionato.</dolphin_emphasis>";
+"Waits until the game synchronizes with the emulated GPU before writing the contents of EFB copies to RAM.<br><br>Reduces the overhead of EFB RAM copies, providing a performance boost in many games, at the risk of breaking those which do not safely synchronize with the emulated GPU.<br><br><dolphin_emphasis>If unsure, leave this checked.</dolphin_emphasis>" = "Attende che il gioco si sincronizzi con la GPU emulata prima di scrivere il contenuto delle copie EFB nella RAM.<br><br>Riduce l'overhead delle copie EFB RAM, migliorando le performance in molti giochi al rischio di corrompere quelli che non si sincronizzano in maniera sicura con la GPU emulata.<br><br><dolphin_emphasis>Nel dubbio, lascia selezionato.</dolphin_emphasis>";
 "Warning" = "Attenzione";
 "Warning: Analog inputs may reset to controller values at random. In some cases this can be fixed by adding a deadzone." = "Attenzione: gli input analogici potrebbero resettare i valori dei controller a caso. Spesso il problema si risolve impostando una zona morta.";
-"Warning: Number of blocks indicated by the BAT (%u) does not match that of the loaded file header (%u)" = "Attenzione: Il numero di blocchi indcati dal BAT (%u) non coincide con il file di intestazione caricato (%u)";
-"Warning: You loaded a save that's after the end of the current movie. (byte %u > %zu) (input %u > %u). You should load another save before continuing, or load this state with read-only mode off." = "Attenzione: Hai caricato un salvataggio situato oltre il termine del filmato corrente. (byte %u > %zu) (input %u > %u). Dovresti caricare un'altro salvataggio prima di continuare, o caricare questo stesso stato con modalità sola-lettura off.";
-"Warning: You loaded a save whose movie ends before the current frame in the save (byte %u < %u) (frame %u < %u). You should load another save before continuing." = "Attenzione: Hai caricato un salvataggio il cui filmato termina dopo l'attuale frame nel salvataggio (byte %u < %u) (frame %u < %u). Dovresti caricare un altro salvataggio prima di andare oltre.";
-"Warning: You loaded a save whose movie mismatches on byte %zu (0x%zX). You should load another save before continuing, or load this state with read-only mode off. Otherwise you'll probably get a desync." = "Attenzione: Hai caricato un salvataggio il cui filmato discorda al byte %zu (0x%zX). Dovresti caricare un altro salvataggio prima di continuare, o caricare questo stato in modalità sola-lettura off. Altrimenti probabilmente riscontrerai una desincronizzazione.";
-"Warning: You loaded a save whose movie mismatches on frame %td. You should load another save before continuing, or load this state with read-only mode off. Otherwise you'll probably get a desync.
+"Warning: Number of blocks indicated by the BAT ({0}) does not match that of the loaded file header ({1})" = "Attenzione: Il numero di blocchi indcati dal BAT ({0}) non coincide con il file di intestazione caricato ({1})";
+"Warning: You loaded a save that's after the end of the current movie. (byte {0} > {1}) (input {2} > {3}). You should load another save before continuing, or load this state with read-only mode off." = "Attenzione: Hai caricato un salvataggio situato oltre il termine del filmato corrente. (byte {0} > {1}) (input {2} > {3}). Dovresti caricare un'altro salvataggio prima di continuare, o caricare questo stesso stato con modalità sola-lettura off.";
+"Warning: You loaded a save whose movie ends before the current frame in the save (byte {0} < {1}) (frame {2} < {3}). You should load another save before continuing." = "Attenzione: Hai caricato un salvataggio il cui filmato termina dopo l'attuale frame nel salvataggio (byte {0} < {1}) (frame {2} < {3}). Dovresti caricare un altro salvataggio prima di andare oltre.";
+"Warning: You loaded a save whose movie mismatches on byte {0} ({1:#x}). You should load another save before continuing, or load this state with read-only mode off. Otherwise you'll probably get a desync." = "Attenzione: Hai caricato un salvataggio il cui filmato discorda al byte {0} ({1:#x}). Dovresti caricare un altro salvataggio prima di continuare, o caricare questo stato in modalità sola-lettura off. Altrimenti probabilmente riscontrerai una desincronizzazione.";
+"Warning: You loaded a save whose movie mismatches on frame {0}. You should load another save before continuing, or load this state with read-only mode off. Otherwise you'll probably get a desync.
 
-More information: The current movie is %d frames long and the savestate's movie is %d frames long.
+More information: The current movie is {1} frames long and the savestate's movie is {2} frames long.
 
-On frame %td, the current movie presses:
-Start=%d, A=%d, B=%d, X=%d, Y=%d, Z=%d, DUp=%d, DDown=%d, DLeft=%d, DRight=%d, L=%d, R=%d, LT=%d, RT=%d, AnalogX=%d, AnalogY=%d, CX=%d, CY=%d, Connected=%d
+On frame {3}, the current movie presses:
+Start={4}, A={5}, B={6}, X={7}, Y={8}, Z={9}, DUp={10}, DDown={11}, DLeft={12}, DRight={13}, L={14}, R={15}, LT={16}, RT={17}, AnalogX={18}, AnalogY={19}, CX={20}, CY={21}, Connected={22}
 
-On frame %td, the savestate's movie presses:
-Start=%d, A=%d, B=%d, X=%d, Y=%d, Z=%d, DUp=%d, DDown=%d, DLeft=%d, DRight=%d, L=%d, R=%d, LT=%d, RT=%d, AnalogX=%d, AnalogY=%d, CX=%d, CY=%d, Connected=%d" = "Attenzione: hai caricato un salvataggio il cui filmato discorda al frame %td. Dovresti caricare un altro salvataggio prima di continuare, o caricare questo stato in modalità sola-lettura off. Altrimenti riscontrerai probabilmente una desincronizzazione.
+On frame {23}, the savestate's movie presses:
+Start={24}, A={25}, B={26}, X={27}, Y={28}, Z={29}, DUp={30}, DDown={31}, DLeft={32}, DRight={33}, L={34}, R={35}, LT={36}, RT={37}, AnalogX={38}, AnalogY={39}, CX={40}, CY={41}, Connected={42}" = "Attenzione: hai caricato un salvataggio il cui filmato discorda al frame {0}. Dovresti caricare un altro salvataggio prima di continuare, o caricare questo stato in modalità sola-lettura off. Altrimenti riscontrerai probabilmente una desincronizzazione.
 
-Maggiori informazioni: Il filmato attuale è lungo %d frame e il filmato dello stato di gioco è lungo %d frame.
+Maggiori informazioni: Il filmato attuale è lungo {1} frame e il filmato dello stato di gioco è lungo {2} frame.
 
-Al frame %td, il filmato attuale preme:
-Start=%d, A=%d, B=%d, X=%d, Y=%d, Z=%d, DUp=%d, DDown=%d, DLeft=%d, DRight=%d, L=%d, R=%d, LT=%d, RT=%d, AnalogX=%d, AnalogY=%d, CX=%d, CY=%d, Connesso=%d
+Al frame {3}, il filmato attuale preme:
+Start={4}, A={5}, B={6}, X={7}, Y={8}, Z={9}, DUp={10}, DDown={11}, DLeft={12}, DRight={13}, L={14}, R={15}, LT={16}, RT={17}, AnalogX={18}, AnalogY={19}, CX={20}, CY={21}, Connesso={22}
 
-Al frame %td, il filmato del salvataggio dello stato di gioco preme:
-Start=%d, A=%d, B=%d, X=%d, Y=%d, Z=%d, DUp=%d, DDown=%d, DLeft=%d, DRight=%d, L=%d, R=%d, LT=%d, RT=%d, AnalogX=%d, AnalogY=%d, CX=%d, CY=%d, Connesso=%d";
+Al frame {23}, il filmato del salvataggio dello stato di gioco preme:
+Start={24}, A={25}, B={26}, X={27}, Y={28}, Z={29}, DUp={30}, DDown={31}, DLeft={32}, DRight={33}, L={34}, R={35}, LT={36}, RT={37}, AnalogX={38}, AnalogY={39}, CX={40}, CY={41}, Connesso={42}";
 "Watch" = "Espressione di controllo";
-"WaveFileWriter - file not open." = "WaveFileWriter - file non aperto.";
 "Website" = "Website";
 "Western (Windows-1252)" = "Occidentale (Windows-1252)";
 "Whammy" = "Tremolo";
-"Whether to dump base game textures to User/Dump/Textures/<game_id>/.  This includes arbitrary base textures if 'Arbitrary Mipmap Detection' is enabled in Enhancements.
-
-If unsure, leave this checked." = "Whether to dump base game textures to User/Dump/Textures/<game_id>/.  This includes arbitrary base textures if 'Arbitrary Mipmap Detection' is enabled in Enhancements.
-
-If unsure, leave this checked.";
-"Whether to dump mipmapped game textures to User/Dump/Textures/<game_id>/.  This includes arbitrary mipmapped textures if 'Arbitrary Mipmap Detection' is enabled in Enhancements.
-
-If unsure, leave this checked." = "Whether to dump mipmapped game textures to User/Dump/Textures/<game_id>/.  This includes arbitrary mipmapped textures if 'Arbitrary Mipmap Detection' is enabled in Enhancements.
-
-If unsure, leave this checked.";
+"Whether to dump base game textures to User/Dump/Textures/lt;game_idgt;/.  This includes arbitrary base textures if 'Arbitrary Mipmap Detection' is enabled in Enhancements.<br><br><dolphin_emphasis>If unsure, leave this checked.</dolphin_emphasis>" = "Per salvare le texture base di gioco in User/Dump/Textures/lt;game_idgt;/.  Sono incluse le texture arbitrarie base se 'Mipmap Detection Arbitraria' è abilitato in Miglioramenti.<br><br><dolphin_emphasis>Nel dubbio, lascia selezionato.</dolphin_emphasis>";
+"Whether to dump mipmapped game textures to User/Dump/Textures/lt;game_idgt;/.  This includes arbitrary mipmapped textures if 'Arbitrary Mipmap Detection' is enabled in Enhancements.<br><br><dolphin_emphasis>If unsure, leave this checked.</dolphin_emphasis>" = "Per salvare le texture di mipmap di gioco in User/Dump/Textures/lt;game_idgt;/.  Sono incluse le texture arbitrarie di mipmap se 'Mipmap Detection Arbitraria' è abilitato in Miglioramenti.<br><br><dolphin_emphasis>Nel dubbio, lascia selezionato.</dolphin_emphasis>";
 "Whitelisted USB Passthrough Devices" = "Dispositivi USB Ponte Accettati";
 "Widescreen Hack" = "Hack Widescreen";
 "Wii" = "Wii";
@@ -2760,6 +2430,7 @@ If unsure, leave this checked.";
 "Write to Log" = "Scrivi su Log";
 "Write to Log and Break" = "Scrivi su Log e Interrompi";
 "Write to Window" = "Scrivi in Finestra";
+"Wrong Version" = "Versione Errata";
 "X" = "X";
 "XF register " = "Registro XF";
 "Y" = "Y";
@@ -2767,27 +2438,26 @@ If unsure, leave this checked.";
 "Yaw Right" = "Imbardata a Destra";
 "Yellow" = "Giallo";
 "Yes" = "Sì";
+"Yes to All" = "Sì a Tutto";
 "You are about to run an NKit disc image. NKit disc images cause problems that don't happen with normal disc images. These problems include:
 
 • The emulated loading times are longer
 • You can't use NetPlay with people who have normal disc images
 • Input recordings are not compatible between NKit disc images and normal disc images
 • Savestates are not compatible between NKit disc images and normal disc images
-• Some games crash, such as Super Paper Mario
+• Some games can crash, such as Super Paper Mario and Metal Gear Solid: The Twin Snakes
 • Wii games don't work at all in older versions of Dolphin and in many other programs
 
-Are you sure you want to continue anyway?
-" = "You are about to run an NKit disc image. NKit disc images cause problems that don't happen with normal disc images. These problems include:
+Are you sure you want to continue anyway?" = "Stai per avviare un'immagine disco NKit. Le immagini disco NKit causano problemi che non capitano con normali immagini disco. Questi problemi includono:
 
-• The emulated loading times are longer
-• You can't use NetPlay with people who have normal disc images
-• Input recordings are not compatible between NKit disc images and normal disc images
-• Savestates are not compatible between NKit disc images and normal disc images
-• Some games crash, such as Super Paper Mario
-• Wii games don't work at all in older versions of Dolphin and in many other programs
+• I tempi di caricamento emulati sono maggiori
+• Non puoi usare NetPlay con chi possiede normali immagini disco
+• Le registrazioni degli input non sono intercambiabili tra le immagini disco NKit e quelle normali
+• I salvataggi di stato non sono intercambiabili tra le immagini disco NKit e quelle normali
+• Alcuni giochi potrebbero crashare, come Super Paper Mario o Metal Gear Solid: The Twin Snakes
+• I giochi Wii non funzioneranno su versioni vecchie di Dolphin e in molti altri programmi
 
-Are you sure you want to continue anyway?
-";
+Sei sicuro di voler continuare lo stesso?";
 "You are attempting to use the Vulkan (Metal) backend on an unsupported operating system. For all functionality to be enabled, you must use macOS 10.14 (Mojave) or newer. Please do not report any issues encountered unless they also occur on 10.14+." = "Stai tentando di usare il backend Vulkan (Metal) su un sistema operativo non supportato. Per abilitare tutte le funzionalità, devi usare un macOS 10.14 (Mojave) o successivo. Per favore non riferire alcun problema che potresti riscontrare a meno che non accada anche con versione 10.14 o successiva.";
 "You are running the latest version available on this update track." = "Stai eseguendo l'ultima versione disponibile dello stream di sviluppo scelto.";
 "You cannot use the Wii Shop Channel without using your own device credentials.
@@ -2805,7 +2475,7 @@ Vuoi interrompere ora l'emulazione per correggere il problema?
 Se scegli \"No\", l'audio potrebbe essere disturbato.";
 "Z" = "Z";
 "Zero 3 code not supported" = "Zero 3 codice non supportato";
-"Zero code unknown to Dolphin: %08x" = "Codice Zero sconosciuto a Dolphin: %08x";
+"Zero code unknown to Dolphin: {0:08x}" = "Codice Zero sconosciuto a Dolphin: {0:08x}";
 "^ Xor" = "^ Xor";
 "auto" = "auto";
 "cm" = "cm";
@@ -2815,12 +2485,21 @@ Se scegli \"No\", l'audio potrebbe essere disturbato.";
 "fake-completion" = "esecuzione finta";
 "m/s" = "m/s";
 "none" = "inattivo";
+"off" = "off";
 "on" = "su";
 "or select a device" = "o seleziona un dispositivo";
 "s" = "s";
 "uDraw GameTablet" = "uDraw GameTablet";
-"{} failed to synchronize codes." = "{} fallita sincronizzazione dei codici.";
-"{} failed to synchronize." = "{} fallita sincronizzazione.";
+"{0} (Masterpiece)" = "{0} (Capolavori)";
+"{0} (NKit)" = "{0} (NKit)";
+"{0} IPL found in {1} directory. The disc might not be recognized" = "{0} IPL trovato nella directory {1}. Il disco potrebbe non venire riconosciuto";
+"{0} failed to synchronize codes." = "{0} ha fallito la sincronizzazione dei codici.";
+"{0} failed to synchronize." = "{0} ha fallito la sincronizzazione.";
+"{0} is not a directory, failed to move to *.original.
+ Verify your write permissions or move the file outside of Dolphin" = "{0} non è una directory, ed è stato impossibile spostare in *.original.
+ Si prega di verificare i permessi di scrittura o di spostare il file al di fuori di Dolphin";
+"{0} of {1} blocks. Compression ratio {2}%" = "{0} blocchi su {1}. Rapporto di compressione {2}%";
+"{0} was not a directory, moved to *.original" = "{0} non è una directory, spostato in *.original";
 "| Or" = "| Or";
 "© 2003-2015+ Dolphin Team. “GameCube” and “Wii” are trademarks of Nintendo. Dolphin is not affiliated with Nintendo in any way." = "© 2003-2015+ Dolphin Team. “GameCube” e “Wii” sono marchi registrati Nintendo. Dolphin non è in alcun modo associato con Nintendo.";
 "°" = "°";
