@@ -7,7 +7,7 @@
 #import "InputCommon/ControllerEmu/Control/Control.h"
 #import "InputCommon/ControllerEmu/Setting/NumericSetting.h"
 #import "InputCommon/ControllerInterface/ControllerInterface.h"
-#import "InputCommon/ControllerInterface/Device.h"
+#import "InputCommon/ControllerInterface/CoreDevice.h"
 #import "InputCommon/ControlReference/ControlReference.h"
 
 #import "ControllerGroupButtonCell.h"
