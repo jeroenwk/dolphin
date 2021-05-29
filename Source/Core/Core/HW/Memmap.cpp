@@ -321,7 +321,6 @@ bool InitFastmemArena()
   if (use_hacky_fastmem && SConfig::GetInstance().bMMU)
     return false;
 
-  u32 flags = GetFlags();
   physical_base = Common::MemArena::FindMemoryBase(use_hacky_fastmem);
 
   if (!physical_base)
