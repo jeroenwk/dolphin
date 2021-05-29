@@ -60,7 +60,7 @@
       self.m_last_selected = indexPath.row;
     };
     
-    auto warning_message = g_available_video_backends[indexPath.row]->GetWarningMessage();
+    auto warning_message = VideoBackendBase::GetAvailableBackends()[indexPath.row]->GetWarningMessage();
     
     if (warning_message)
     {
