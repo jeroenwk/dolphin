@@ -13,7 +13,7 @@ struct GCController;
 struct GCMotion;
 #endif
 
-#include "InputCommon/ControllerInterface/Device.h"
+#include "InputCommon/ControllerInterface/CoreDevice.h"
 
 namespace ciface::iOS
 {
