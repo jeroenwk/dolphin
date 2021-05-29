@@ -47,7 +47,13 @@ void* AllocateExecutableMemory(size_t size)
   if (__builtin_available(macOS 10.14, *))
     map_flags |= MAP_JIT;
 #endif
-  void* ptr = mmap(nullptr, size, PROT_READ | PROT_WRITE | PROT_EXEC, map_flags, -1, 0);
+  int prot_flags = PROT_READ | PROT_EXEC;
+
+#ifndef IPHONEOS
+  prot_flags |= PROT_WRITE;
+#endif
+
+  void* ptr = mmap(nullptr, size, prot_flags, map_flags, -1, 0);
   if (ptr == MAP_FAILED)
     ptr = nullptr;
 #endif
