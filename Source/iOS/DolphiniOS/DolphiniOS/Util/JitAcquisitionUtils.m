@@ -92,22 +92,7 @@ void AcquireJit()
   }
   else if (@available(iOS 14, *))
   {
-    if (!GetCpuArchitecture())
-    {
-      SetJitAcquisitionErrorMessage(dlerror());
-      s_acquisition_error = DOLJitErrorGestaltFailed;
-    }
-    else
-    {
-      if (s_is_arm64e)
-      {
-        s_acquisition_error = DOLJitErrorNeedUpdate;
-      }
-      else
-      {
-        s_acquisition_error = DOLJitErrorNotArm64e;
-      }
-    }
+    s_acquisition_error = DOLJitErrorNeedUpdate;
   }
   else if (@available(iOS 13.5, *))
   {
