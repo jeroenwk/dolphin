@@ -33,6 +33,9 @@
     case DOLJitErrorNeedUpdate:
       error_message = @"Non-jailbroken devices with A12 processors and newer running iOS 14.0 or iOS 14.1 are not supported. Please update to iOS 14.2.";
       break;
+    case DOLJitErrorWorkaroundRequired:
+      error_message = @"Non-jailbroken devices on iOS 14.4 and newer are not officially supported in this version. However, a workaround is available. Please go to https://dolphinios.oatmealdome.me for more information.";
+      break;
     case DOLJitErrorGestaltFailed:
       error_message = @"Failed to query MobileGestalt.";
       break;

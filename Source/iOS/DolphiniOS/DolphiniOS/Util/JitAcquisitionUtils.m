@@ -79,29 +79,20 @@ void AcquireJit()
   return;
 #endif
   
-  if (@available(iOS 14.2, *))
+#ifdef NONJAILBROKEN
+  if (@available(iOS 14.4, *))
+  {
+    s_acquisition_error = DOLJitErrorWorkaroundRequired;
+  }
+  else if (@available(iOS 14.2, *))
   {
     s_acquisition_error = AcquireJitWithAllowUnsigned();
     if (s_acquisition_error == DOLJitErrorNone)
     {
       s_has_jit = true;
-      return;
     }
-    
-#ifndef NONJAILBROKEN
-    // Reset on jailbroken devices - we have a chance still to acquire JIT
-    // via jailbreakd or csdbgd
-    s_acquisition_error = DOLJitErrorNone;
-    s_acquisition_error_message[0] = '\0';
-#else
-    // On non-jailbroken devices running iOS 14.2, this is our only chance
-    // to get JIT.
-    return;
-#endif
   }
-  
-#ifdef NONJAILBROKEN
-  if (@available(iOS 14, *))
+  else if (@available(iOS 14, *))
   {
     if (!GetCpuArchitecture())
     {
