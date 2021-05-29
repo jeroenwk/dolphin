@@ -37,6 +37,7 @@ private:
   QCheckBox* m_checkbox_show_debugging_ui;
   QCheckBox* m_checkbox_focused_hotkeys;
   QCheckBox* m_checkbox_use_covers;
+  QCheckBox* m_checkbox_disable_screensaver;
 
   QCheckBox* m_checkbox_confirm_on_stop;
   QCheckBox* m_checkbox_use_panic_handlers;
@@ -44,4 +45,5 @@ private:
   QCheckBox* m_checkbox_show_active_title;
   QCheckBox* m_checkbox_pause_on_focus_lost;
   QCheckBox* m_checkbox_hide_mouse;
+  QCheckBox* m_checkbox_lock_mouse;
 };

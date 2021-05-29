@@ -191,6 +191,7 @@
 
 #ifndef __APPLE__
 /* Define to 1 if you have the `pthread_condattr_setclock' function. */
+#ifndef __APPLE__
 #define HAVE_PTHREAD_CONDATTR_SETCLOCK 1
 #endif
 

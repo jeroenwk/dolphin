@@ -8,7 +8,9 @@
 #include <QDir>
 #include <QFile>
 #include <QFileInfo>
+#include <QFontDatabase>
 #include <QSize>
+#include <QWidget>
 
 #include "AudioCommon/AudioCommon.h"
 
@@ -23,7 +25,6 @@
 #include "Core/NetPlayClient.h"
 #include "Core/NetPlayServer.h"
 
-#include "DolphinQt/GameList/GameListModel.h"
 #include "DolphinQt/QtUtils/QueueOnObject.h"
 
 #include "InputCommon/ControllerInterface/ControllerInterface.h"
@@ -36,7 +37,7 @@
 Settings::Settings()
 {
   qRegisterMetaType<Core::State>();
-  Core::SetOnStateChangedCallback([this](Core::State new_state) {
+  Core::AddOnStateChangedCallback([this](Core::State new_state) {
     QueueOnObject(this, [this, new_state] { emit EmulationStateChanged(new_state); });
   });
 
@@ -45,8 +46,6 @@ Settings::Settings()
 
   g_controller_interface.RegisterDevicesChangedCallback(
       [this] { QueueOnObject(this, [this] { emit DevicesChanged(); }); });
-
-  SetCurrentUserStyle(GetCurrentUserStyle());
 }
 
 Settings::~Settings() = default;
@@ -80,10 +79,13 @@ QString Settings::GetCurrentUserStyle() const
   return QFileInfo(GetQSettings().value(QStringLiteral("userstyle/path")).toString()).fileName();
 }
 
+// Calling this before the main window has been created breaks the style of some widgets on
+// Windows 10/Qt 5.15.0. But only if we set a stylesheet that isn't an empty string.
 void Settings::SetCurrentUserStyle(const QString& stylesheet_name)
 {
   QString stylesheet_contents;
 
+  // If we haven't found one, we continue with an empty (default) style
   if (!stylesheet_name.isEmpty() && AreUserStylesEnabled())
   {
     // Load custom user stylesheet
@@ -92,6 +94,26 @@ void Settings::SetCurrentUserStyle(const QString& stylesheet_name)
 
     if (stylesheet.open(QFile::ReadOnly))
       stylesheet_contents = QString::fromUtf8(stylesheet.readAll().data());
+  }
+
+  // Define tooltips style if not already defined
+  if (!stylesheet_contents.contains(QStringLiteral("QToolTip"), Qt::CaseSensitive))
+  {
+    const QPalette& palette = qApp->palette();
+    QColor window_color;
+    QColor text_color;
+    QColor unused_text_emphasis_color;
+    QColor border_color;
+    GetToolTipStyle(window_color, text_color, unused_text_emphasis_color, border_color, palette,
+                    palette);
+
+    const auto tooltip_stylesheet =
+        QStringLiteral("QToolTip { background-color: #%1; color: #%2; padding: 8px; "
+                       "border: 1px; border-style: solid; border-color: #%3; }")
+            .arg(window_color.rgba(), 0, 16)
+            .arg(text_color.rgba(), 0, 16)
+            .arg(border_color.rgba(), 0, 16);
+    stylesheet_contents.append(QStringLiteral("%1").arg(tooltip_stylesheet));
   }
 
   qApp->setStyleSheet(stylesheet_contents);
@@ -107,6 +129,32 @@ bool Settings::AreUserStylesEnabled() const
 void Settings::SetUserStylesEnabled(bool enabled)
 {
   GetQSettings().setValue(QStringLiteral("userstyle/enabled"), enabled);
+}
+
+void Settings::GetToolTipStyle(QColor& window_color, QColor& text_color,
+                               QColor& emphasis_text_color, QColor& border_color,
+                               const QPalette& palette, const QPalette& high_contrast_palette) const
+{
+  const auto theme_window_color = palette.color(QPalette::Base);
+  const auto theme_window_hsv = theme_window_color.toHsv();
+  const auto brightness = theme_window_hsv.value();
+  const bool brightness_over_threshold = brightness > 128;
+  const QColor emphasis_text_color_1 = Qt::yellow;
+  const QColor emphasis_text_color_2 = QColor(QStringLiteral("#0090ff"));  // ~light blue
+  if (Config::Get(Config::MAIN_USE_HIGH_CONTRAST_TOOLTIPS))
+  {
+    window_color = brightness_over_threshold ? QColor(72, 72, 72) : Qt::white;
+    text_color = brightness_over_threshold ? Qt::white : Qt::black;
+    emphasis_text_color = brightness_over_threshold ? emphasis_text_color_1 : emphasis_text_color_2;
+    border_color = high_contrast_palette.color(QPalette::Window).darker(160);
+  }
+  else
+  {
+    window_color = palette.color(QPalette::Window);
+    text_color = palette.color(QPalette::Text);
+    emphasis_text_color = brightness_over_threshold ? emphasis_text_color_2 : emphasis_text_color_1;
+    border_color = palette.color(QPalette::Text);
+  }
 }
 
 QStringList Settings::GetPaths() const
@@ -145,6 +193,11 @@ void Settings::RemovePath(const QString& qpath)
 void Settings::RefreshGameList()
 {
   emit GameListRefreshRequested();
+}
+
+void Settings::NotifyRefreshGameListStarted()
+{
+  emit GameListRefreshStarted();
 }
 
 void Settings::NotifyRefreshGameListComplete()
@@ -227,6 +280,17 @@ bool Settings::GetHideCursor() const
   return SConfig::GetInstance().bHideCursor;
 }
 
+void Settings::SetLockCursor(bool lock_cursor)
+{
+  SConfig::GetInstance().bLockCursor = lock_cursor;
+  emit LockCursorChanged();
+}
+
+bool Settings::GetLockCursor() const
+{
+  return SConfig::GetInstance().bLockCursor;
+}
+
 void Settings::SetKeepWindowOnTop(bool top)
 {
   if (IsKeepWindowOnTopEnabled() == top)
@@ -293,12 +357,6 @@ void Settings::SetLogConfigVisible(bool visible)
     GetQSettings().setValue(QStringLiteral("logging/logconfigvisible"), visible);
     emit LogConfigVisibilityChanged(visible);
   }
-}
-
-GameListModel* Settings::GetGameListModel() const
-{
-  static GameListModel* model = new GameListModel;
-  return model;
 }
 
 std::shared_ptr<NetPlay::NetPlayClient> Settings::GetNetPlayClient()
@@ -489,8 +547,7 @@ void Settings::SetDebugFont(QFont font)
 
 QFont Settings::GetDebugFont() const
 {
-  QFont default_font = QFont(QStringLiteral("Monospace"));
-  default_font.setStyleHint(QFont::TypeWriter);
+  QFont default_font = QFont(QFontDatabase::systemFont(QFontDatabase::FixedFont).family());
 
   return GetQSettings().value(QStringLiteral("debugger/font"), default_font).value<QFont>();
 }
@@ -510,19 +567,34 @@ QString Settings::GetAutoUpdateTrack() const
   return QString::fromStdString(SConfig::GetInstance().m_auto_update_track);
 }
 
+void Settings::SetFallbackRegion(const DiscIO::Region& region)
+{
+  if (region == GetFallbackRegion())
+    return;
+
+  Config::SetBase(Config::MAIN_FALLBACK_REGION, region);
+
+  emit FallbackRegionChanged(region);
+}
+
+DiscIO::Region Settings::GetFallbackRegion() const
+{
+  return Config::Get(Config::MAIN_FALLBACK_REGION);
+}
+
 void Settings::SetAnalyticsEnabled(bool enabled)
 {
   if (enabled == IsAnalyticsEnabled())
     return;
 
-  SConfig::GetInstance().m_analytics_enabled = enabled;
+  Config::SetBase(Config::MAIN_ANALYTICS_ENABLED, enabled);
 
   emit AnalyticsToggled(enabled);
 }
 
 bool Settings::IsAnalyticsEnabled() const
 {
-  return SConfig::GetInstance().m_analytics_enabled;
+  return Config::Get(Config::MAIN_ANALYTICS_ENABLED);
 }
 
 void Settings::SetToolBarVisible(bool visible)

@@ -25,6 +25,8 @@
 #include <sys/types.h>
 #endif
 
+// Refer to docs/autoupdate_overview.md for a detailed overview of the autoupdate process
+
 namespace
 {
 // Where to log updater output.
@@ -755,10 +757,10 @@ bool RunUpdater(std::vector<std::string> args)
   UI::SetDescription("Performing Update...");
 
   bool ok = PerformUpdate(todo, opts.install_base_path, opts.content_store_url, temp_dir);
+  CleanUpTempDir(temp_dir, todo);
   if (!ok)
   {
     FatalError("Failed to apply the update.");
-    CleanUpTempDir(temp_dir, todo);
     return false;
   }
 

@@ -11,6 +11,8 @@ add_library(discio
   DiscExtractor.h
   DiscScrubber.cpp
   DiscScrubber.h
+  DiscUtils.cpp
+  DiscUtils.h
   Enums.cpp
   Enums.h
   FileBlob.cpp
@@ -63,11 +65,13 @@ endif()
 
 target_link_libraries(discio
 PUBLIC
+  common
   BZip2::BZip2
-  LibLZMA::LibLZMA
+  lzma
   zstd
 
 PRIVATE
+  fmt::fmt
   minizip
   pugixml
   ZLIB::ZLIB

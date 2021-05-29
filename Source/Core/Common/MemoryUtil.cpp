@@ -16,26 +16,17 @@
 #include <windows.h>
 #include "Common/StringUtil.h"
 #else
+#include <pthread.h>
 #include <stdio.h>
 #include <sys/mman.h>
 #include <sys/types.h>
-#if defined __APPLE__ || defined __FreeBSD__ || defined __OpenBSD__
-#ifdef __APPLE__
-#include <mach/mach.h>
-#include <mach/vm_map.h>
-#include <mach/vm_param.h>
-#endif
+#if defined __APPLE__ || defined __FreeBSD__ || defined __OpenBSD__ || defined __NetBSD__
 #include <sys/sysctl.h>
 #elif defined __HAIKU__
 #include <OS.h>
 #else
 #include <sys/sysinfo.h>
 #endif
-#include <unistd.h>
-#endif
-
-#ifdef IPHONEOS
-extern "C" bool HasJitWithPsychicpaper(void);
 #endif
 
 namespace Common
@@ -46,60 +37,99 @@ namespace Common
 void* AllocateExecutableMemory(size_t size)
 {
 #if defined(_WIN32)
-  DWORD protection;
-#ifndef _WX_EXCLUSIVITY
-  protection = PAGE_EXECUTE_READWRITE;
+  void* ptr = VirtualAlloc(nullptr, size, MEM_COMMIT, PAGE_EXECUTE_READWRITE);
 #else
-  protection = PAGE_READWRITE;
+  int map_flags = MAP_ANON | MAP_PRIVATE;
+#if defined(__APPLE__)
+  // This check is in place to prepare for x86_64 MAP_JIT support. While MAP_JIT did exist
+  // prior to 10.14, it had restrictions on the number of JIT allocations that were removed
+  // in 10.14.
+  if (__builtin_available(macOS 10.14, *))
+    map_flags |= MAP_JIT;
 #endif
-
-  void* ptr = VirtualAlloc(nullptr, size, MEM_COMMIT, protection);
-#else
-  int protection = PROT_READ | PROT_WRITE;
-#ifndef _WX_EXCLUSIVITY
-  protection |= PROT_EXEC;
-#endif
-
-  int flags = MAP_ANON | MAP_PRIVATE;
-#ifdef IPHONEOS
-  if (HasJitWithPsychicpaper())
-  {
-    flags |= MAP_JIT;
-  }
-#endif
-
-  void* ptr = mmap(nullptr, size, protection, flags, -1, 0);
-
+  void* ptr = mmap(nullptr, size, PROT_READ | PROT_WRITE | PROT_EXEC, map_flags, -1, 0);
   if (ptr == MAP_FAILED)
     ptr = nullptr;
 #endif
 
   if (ptr == nullptr)
-    PanicAlert("Failed to allocate executable memory");
+    PanicAlertFmt("Failed to allocate executable memory");
 
   return ptr;
 }
-
-#ifdef _BULLETPROOF_JIT
-void* RemapExecutableRegion(void* region, size_t size)
+// This function is used to provide a counter for the JITPageWrite*Execute*
+// functions to enable nesting. The static variable is wrapped in a a function
+// to allow those functions to be called inside of the constructor of a static
+// variable portably.
+//
+// The variable is thread_local as the W^X mode is specific to each running thread.
+static int& JITPageWriteNestCounter()
 {
-  vm_address_t new_region;
-  vm_address_t target = reinterpret_cast<vm_address_t>(region);
-  vm_prot_t cur_protection = 0;
-  vm_prot_t max_protection = 0;
-
-  kern_return_t retval =
-      vm_remap(mach_task_self(), &new_region, size, 0, true, mach_task_self(), target, false,
-               &cur_protection, &max_protection, VM_INHERIT_DEFAULT);
-  if (retval != KERN_SUCCESS)
-  {
-    PanicAlert("vm_remap failed for RemapExecutableRegion (0x%x)", retval);
-    return nullptr;
-  }
-
-  return reinterpret_cast<void*>(new_region);
+  static thread_local int nest_counter = 0;
+  return nest_counter;
 }
+
+// Certain platforms (Mac OS on ARM) enforce that a single thread can only have write or
+// execute permissions to pages at any given point of time. The two below functions
+// are used to toggle between having write permissions or execute permissions.
+//
+// The default state of these allocations in Dolphin is for them to be executable,
+// but not writeable. So, functions that are updating these pages should wrap their
+// writes like below:
+
+// JITPageWriteEnableExecuteDisable();
+// PrepareInstructionStreamForJIT();
+// JITPageWriteDisableExecuteEnable();
+
+// These functions can be nested, in which case execution will only be enabled
+// after the call to the JITPageWriteDisableExecuteEnable from the top most
+// nesting level. Example:
+
+// [JIT page is in execute mode for the thread]
+// JITPageWriteEnableExecuteDisable();
+//   [JIT page is in write mode for the thread]
+//   JITPageWriteEnableExecuteDisable();
+//     [JIT page is in write mode for the thread]
+//   JITPageWriteDisableExecuteEnable();
+//   [JIT page is in write mode for the thread]
+// JITPageWriteDisableExecuteEnable();
+// [JIT page is in execute mode for the thread]
+
+// Allows a thread to write to executable memory, but not execute the data.
+void JITPageWriteEnableExecuteDisable()
+{
+#if defined(_M_ARM_64) && defined(__APPLE__)
+  if (JITPageWriteNestCounter() == 0)
+  {
+    if (__builtin_available(macOS 11.0, *))
+    {
+      pthread_jit_write_protect_np(0);
+    }
+  }
 #endif
+  JITPageWriteNestCounter()++;
+}
+// Allows a thread to execute memory allocated for execution, but not write to it.
+void JITPageWriteDisableExecuteEnable()
+{
+  JITPageWriteNestCounter()--;
+
+  // Sanity check the NestCounter to identify underflow
+  // This can indicate the calls to JITPageWriteDisableExecuteEnable()
+  // are not matched with previous calls to JITPageWriteEnableExecuteDisable()
+  if (JITPageWriteNestCounter() < 0)
+    PanicAlertFmt("JITPageWriteNestCounter() underflowed");
+
+#if defined(_M_ARM_64) && defined(__APPLE__)
+  if (JITPageWriteNestCounter() == 0)
+  {
+    if (__builtin_available(macOS 11.0, *))
+    {
+      pthread_jit_write_protect_np(1);
+    }
+  }
+#endif
+}
 
 void* AllocateMemoryPages(size_t size)
 {
@@ -113,7 +143,7 @@ void* AllocateMemoryPages(size_t size)
 #endif
 
   if (ptr == nullptr)
-    PanicAlert("Failed to allocate raw memory");
+    PanicAlertFmt("Failed to allocate raw memory");
 
   return ptr;
 }
@@ -125,11 +155,11 @@ void* AllocateAlignedMemory(size_t size, size_t alignment)
 #else
   void* ptr = nullptr;
   if (posix_memalign(&ptr, alignment, size) != 0)
-    ERROR_LOG(MEMMAP, "Failed to allocate aligned memory");
+    ERROR_LOG_FMT(MEMMAP, "Failed to allocate aligned memory");
 #endif
 
   if (ptr == nullptr)
-    PanicAlert("Failed to allocate aligned memory");
+    PanicAlertFmt("Failed to allocate aligned memory");
 
   return ptr;
 }
@@ -140,10 +170,10 @@ void FreeMemoryPages(void* ptr, size_t size)
   {
 #ifdef _WIN32
     if (!VirtualFree(ptr, 0, MEM_RELEASE))
-      PanicAlert("FreeMemoryPages failed!\nVirtualFree: %s", GetLastErrorString().c_str());
+      PanicAlertFmt("FreeMemoryPages failed!\nVirtualFree: {}", GetLastErrorString());
 #else
     if (munmap(ptr, size) != 0)
-      PanicAlert("FreeMemoryPages failed!\nmunmap: %s", LastStrerrorString().c_str());
+      PanicAlertFmt("FreeMemoryPages failed!\nmunmap: {}", LastStrerrorString());
 #endif
   }
 }
@@ -165,10 +195,10 @@ void ReadProtectMemory(void* ptr, size_t size)
 #ifdef _WIN32
   DWORD oldValue;
   if (!VirtualProtect(ptr, size, PAGE_NOACCESS, &oldValue))
-    PanicAlert("ReadProtectMemory failed!\nVirtualProtect: %s", GetLastErrorString().c_str());
+    PanicAlertFmt("ReadProtectMemory failed!\nVirtualProtect: {}", GetLastErrorString());
 #else
   if (mprotect(ptr, size, PROT_NONE) != 0)
-    PanicAlert("ReadProtectMemory failed!\nmprotect: %s", LastStrerrorString().c_str());
+    PanicAlertFmt("ReadProtectMemory failed!\nmprotect: {}", LastStrerrorString());
 #endif
 }
 
@@ -177,87 +207,33 @@ void WriteProtectMemory(void* ptr, size_t size, bool allowExecute)
 #ifdef _WIN32
   DWORD oldValue;
   if (!VirtualProtect(ptr, size, allowExecute ? PAGE_EXECUTE_READ : PAGE_READONLY, &oldValue))
-    PanicAlert("WriteProtectMemory failed!\nVirtualProtect: %s", GetLastErrorString().c_str());
-#else
+    PanicAlertFmt("WriteProtectMemory failed!\nVirtualProtect: {}", GetLastErrorString());
+#elif !(defined(_M_ARM_64) && defined(__APPLE__))
+  // MacOS 11.2 on ARM does not allow for changing the access permissions of pages
+  // that were marked executable, instead it uses the protections offered by MAP_JIT
+  // for write protection.
   if (mprotect(ptr, size, allowExecute ? (PROT_READ | PROT_EXEC) : PROT_READ) != 0)
-    PanicAlert("WriteProtectMemory failed!\nmprotect: %s", LastStrerrorString().c_str());
+    PanicAlertFmt("WriteProtectMemory failed!\nmprotect: {}", LastStrerrorString());
 #endif
 }
 
 void UnWriteProtectMemory(void* ptr, size_t size, bool allowExecute)
 {
 #ifdef _WIN32
-  DWORD protection = PAGE_READWRITE;
-  if (allowExecute)
-  {
-#ifndef _WX_EXCLUSIVITY
-    protection = PAGE_EXECUTE_READWRITE;
-#else
-    WARN_LOG(COMMON, "UnWriteProtectMemory: Memory can't be executable and writable simultaneously "
-                     "on W^X platform");
-#endif
-  }
-
   DWORD oldValue;
-  if (!VirtualProtect(ptr, size, protection, &oldValue))
-    PanicAlert("UnWriteProtectMemory failed!\nVirtualProtect: %s", GetLastErrorString().c_str());
-#else
-  int protection = PROT_READ | PROT_WRITE;
-  if (allowExecute)
+  if (!VirtualProtect(ptr, size, allowExecute ? PAGE_EXECUTE_READWRITE : PAGE_READWRITE, &oldValue))
+    PanicAlertFmt("UnWriteProtectMemory failed!\nVirtualProtect: {}", GetLastErrorString());
+#elif !(defined(_M_ARM_64) && defined(__APPLE__))
+  // MacOS 11.2 on ARM does not allow for changing the access permissions of pages
+  // that were marked executable, instead it uses the protections offered by MAP_JIT
+  // for write protection.
+  if (mprotect(ptr, size,
+               allowExecute ? (PROT_READ | PROT_WRITE | PROT_EXEC) : PROT_WRITE | PROT_READ) != 0)
   {
-#ifndef _WX_EXCLUSIVITY
-    protection |= PROT_EXEC;
-#else
-    WARN_LOG(COMMON, "UnWriteProtectMemory: Memory can't be executable and writable simultaneously "
-                     "on W^X platform");
-#endif
-  }
-
-  if (mprotect(ptr, size, protection) != 0)
-  {
-    PanicAlert("UnWriteProtectMemory failed!\nmprotect: %s", LastStrerrorString().c_str());
+    PanicAlertFmt("UnWriteProtectMemory failed!\nmprotect: {}", LastStrerrorString());
   }
 #endif
 }
-
-#ifdef _WX_EXCLUSIVITY
-// Used on WX exclusive platforms
-bool IsMemoryPageExecutable(void* ptr)
-{
-#ifdef _WIN32
-  MEMORY_BASIC_INFORMATION memory_info;
-  if (!VirtualQuery(ptr, &memory_info, sizeof(memory_info)))
-  {
-    PanicAlert("IsMemoryPageExecutable failed!\nVirtualQuery: %s", GetLastErrorString().c_str());
-    return false;
-  }
-
-  return (memory_info.Protect & PAGE_EXECUTE_READ) == PAGE_EXECUTE_READ;
-#elif defined(__APPLE__)
-  vm_address_t address = reinterpret_cast<vm_address_t>(ptr);
-  vm_size_t size;
-  vm_region_basic_info_data_64_t region_info;
-  mach_msg_type_number_t info_count = VM_REGION_BASIC_INFO_COUNT_64;
-  memory_object_name_t object;
-
-  kern_return_t retval =
-      vm_region_64(mach_task_self(), &address, &size, VM_REGION_BASIC_INFO_64,
-                   reinterpret_cast<vm_region_info_t>(&region_info), &info_count, &object);
-  if (retval != KERN_SUCCESS)
-  {
-    PanicAlert("IsMemoryPageExecutable failed!\nvm_region_64: 0x%x", retval);
-    return false;
-  }
-
-  return (region_info.protection & VM_PROT_EXECUTE) == VM_PROT_EXECUTE;
-#else
-  // There is no POSIX API to get the current protection of a memory page. The commonly suggested
-  // workaround for Linux is to parse /proc/self/maps, but this may be too slow for a JIT, and
-  // may not work on other platforms (*BSD, for example). A workaround is needed.
-#error W^X is not supported on this platform.
-#endif
-}
-#endif
 
 size_t MemPhysical()
 {
@@ -266,7 +242,7 @@ size_t MemPhysical()
   memInfo.dwLength = sizeof(MEMORYSTATUSEX);
   GlobalMemoryStatusEx(&memInfo);
   return memInfo.ullTotalPhys;
-#elif defined __APPLE__ || defined __FreeBSD__ || defined __OpenBSD__
+#elif defined __APPLE__ || defined __FreeBSD__ || defined __OpenBSD__ || defined __NetBSD__
   int mib[2];
   size_t physical_memory;
   mib[0] = CTL_HW;
@@ -274,8 +250,8 @@ size_t MemPhysical()
   mib[1] = HW_MEMSIZE;
 #elif defined __FreeBSD__
   mib[1] = HW_REALMEM;
-#elif defined __OpenBSD__
-  mib[1] = HW_PHYSMEM;
+#elif defined __OpenBSD__ || defined __NetBSD__
+  mib[1] = HW_PHYSMEM64;
 #endif
   size_t length = sizeof(size_t);
   sysctl(mib, 2, &physical_memory, &length, NULL, 0);
@@ -288,18 +264,6 @@ size_t MemPhysical()
   struct sysinfo memInfo;
   sysinfo(&memInfo);
   return (size_t)memInfo.totalram * memInfo.mem_unit;
-#endif
-}
-
-size_t PageSize()
-{
-#ifdef _WIN32
-  SYSTEM_INFO system_info;
-  GetNativeSystemInfo(&system_info);
-
-  return system_info.dwPageSize;
-#else
-  return sysconf(_SC_PAGESIZE);
 #endif
 }
 

@@ -101,19 +101,9 @@ ReadHandlingMethod<T>* DirectRead(const T* addr, u32 mask)
   return new DirectHandlingMethod<T>(const_cast<T*>(addr), mask);
 }
 template <typename T>
-ReadHandlingMethod<T>* DirectRead(volatile const T* addr, u32 mask)
-{
-  return new DirectHandlingMethod<T>((T*)addr, mask);
-}
-template <typename T>
 WriteHandlingMethod<T>* DirectWrite(T* addr, u32 mask)
 {
   return new DirectHandlingMethod<T>(addr, mask);
-}
-template <typename T>
-WriteHandlingMethod<T>* DirectWrite(volatile T* addr, u32 mask)
-{
-  return new DirectHandlingMethod<T>((T*)addr, mask);
 }
 
 // Complex: holds a lambda that is called when a read or a write is executed.
@@ -184,8 +174,8 @@ template <typename T>
 ReadHandlingMethod<T>* InvalidRead()
 {
   return ComplexRead<T>([](u32 addr) {
-    ERROR_LOG(MEMMAP, "Trying to read %zu bits from an invalid MMIO (addr=%08x)", 8 * sizeof(T),
-              addr);
+    ERROR_LOG_FMT(MEMMAP, "Trying to read {} bits from an invalid MMIO (addr={:08x})",
+                  8 * sizeof(T), addr);
     return -1;
   });
 }
@@ -193,8 +183,8 @@ template <typename T>
 WriteHandlingMethod<T>* InvalidWrite()
 {
   return ComplexWrite<T>([](u32 addr, T val) {
-    ERROR_LOG(MEMMAP, "Trying to write %zu bits to an invalid MMIO (addr=%08x, val=%08x)",
-              8 * sizeof(T), addr, (u32)val);
+    ERROR_LOG_FMT(MEMMAP, "Trying to write {} bits to an invalid MMIO (addr={:08x}, val={:08x})",
+                  8 * sizeof(T), addr, val);
   });
 }
 

@@ -66,8 +66,7 @@ FlowLayout::FlowLayout(int margin, int h_spacing, int v_spacing)
 
 FlowLayout::~FlowLayout()
 {
-  QLayoutItem* item;
-  while ((item = takeAt(0)))
+  while (QLayoutItem* item = takeAt(0))
     delete item;
 }
 
@@ -120,7 +119,7 @@ QLayoutItem* FlowLayout::takeAt(int index)
 
 Qt::Orientations FlowLayout::expandingDirections() const
 {
-  return 0;
+  return {};
 }
 
 bool FlowLayout::hasHeightForWidth() const
@@ -151,7 +150,11 @@ QSize FlowLayout::minimumSize() const
   for (const auto& item : m_item_list)
     size = size.expandedTo(item->minimumSize());
 
-  size += QSize(2 * margin(), 2 * margin());
+  // Any direction's margin works, as they all set the same within the constructor.
+  int margin = 0;
+  getContentsMargins(&margin, nullptr, nullptr, nullptr);
+
+  size += QSize(2 * margin, 2 * margin);
   return size;
 }
 

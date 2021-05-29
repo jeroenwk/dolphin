@@ -8,6 +8,7 @@
 #include <map>
 #include <unordered_set>
 
+#include "Common/BitSet.h"
 #include "Common/CommonTypes.h"
 #include "Common/x64Emitter.h"
 #include "Core/ConfigManager.h"
@@ -45,6 +46,19 @@
 class JitBase : public CPUCoreBase
 {
 protected:
+  enum class CarryFlag
+  {
+    InPPCState,
+    InHostCarry,
+#ifdef _M_X86_64
+    InHostCarryInverted,
+#endif
+#ifdef _M_ARM_64
+    ConstantTrue,
+    ConstantFalse,
+#endif
+  };
+
   struct JitOptions
   {
     bool enableBlocklink;
@@ -76,8 +90,7 @@ protected:
     bool firstFPInstructionFound;
     bool isLastInstruction;
     int skipInstructions;
-    bool carryFlagSet;
-    bool carryFlagInverted;
+    CarryFlag carryFlag;
 
     bool generatingTrampoline = false;
     u8* trampolineExceptionHandler;
@@ -89,6 +102,7 @@ protected:
     PPCAnalyst::BlockRegStats gpa;
     PPCAnalyst::BlockRegStats fpa;
     PPCAnalyst::CodeOp* op;
+    BitSet32 fpr_is_store_safe;
 
     JitBlock* curBlock;
 

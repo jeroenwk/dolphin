@@ -8,8 +8,10 @@
 #include <string>
 #include <thread>
 
-#ifdef ANDROID
+#if !defined(_WIN32) && !defined(__APPLE__)
+#ifndef __FreeBSD__
 #include <asm/hwcap.h>
+#endif
 #include <sys/auxv.h>
 #include <unistd.h>
 #endif
@@ -26,7 +28,7 @@
 #include "Common/CommonTypes.h"
 #include "Common/FileUtil.h"
 
-#ifdef ANDROID
+#ifndef WIN32
 
 const char procfile[] = "/proc/cpuinfo";
 
@@ -54,13 +56,6 @@ static std::string GetCPUString()
   return cpu_string;
 }
 
-#elif defined(IPHONEOS)
-
-static std::string GetCPUString()
-{
-  return "Apple A-series CPU";
-}
-
 #endif
 
 CPUInfo cpu_info;
@@ -80,51 +75,30 @@ void CPUInfo::Detect()
   CPU64bit = true;
   Mode64bit = true;
   vendor = CPUVendor::ARM;
+  bFlushToZero = true;
 
-#ifdef _WIN32
+#ifdef __APPLE__
   num_cores = std::thread::hardware_concurrency();
 
-  // Windows does not provide any mechanism for querying the system registers on ARMv8, unlike Linux
-  // which traps the register reads and emulates them in the kernel. There are environment variables
-  // containing some of the CPU-specific values, which we could use for a lookup table in the
-  // future. For now, assume all features are present as all known devices which are Windows-on-ARM
-  // compatible also support these extensions.
+  // M-series CPUs have all of these
   bFP = true;
   bASIMD = true;
   bAES = true;
-  bCRC32 = false;
   bSHA1 = true;
   bSHA2 = true;
-#else
-  // Get the information about the CPU
-  num_cores = sysconf(_SC_NPROCESSORS_CONF);
-  strncpy(cpu_string, GetCPUString().c_str(), sizeof(cpu_string));
+  bCRC32 = true;
 
 #ifdef IPHONEOS
-  // A-series CPUs have all of these
-  bFP = true;
-  bASIMD = true;
-  bAES = true;
-
-  // Need to tweak compiler settings to have these
-  bSHA1 = false;
-  bSHA2 = false;
-
-  // Default to no CRC32 support
-  bCRC32 = false;
-
-  // Check for CRC32 intrinsics support via the device's model.
-  // (Apple doesn't provide a better way to do this.)
-  // Devices with A10 processors and above should support this.
+  // Check for CRC32 intrinsics support via the device's model. (Apple doesn't provide a better way
+  // to do this.) A10 processors and above should support this.
+  //
   // These include:
   //
   // iPhone9,1 and above
   // iPad7,1 and above
   // iPod9,1 and above
   // AppleTV6,2 and above
-  utsname system_info;
-  uname(&system_info);
-
+  //
   const std::string model = std::string(system_info.machine);
   std::regex number_regex("[0-9]+");
   std::smatch match;
@@ -151,20 +125,40 @@ void CPUInfo::Detect()
       minimum_model = 6;
     }
 
-    if (model_number >= minimum_model)
-    {
-      bCRC32 = true;
-    }
+    bCRC32 = model_number >= minimum_model;
   }
+#endif
+#elif defined(_WIN32)
+  num_cores = std::thread::hardware_concurrency();
+
+  // Windows does not provide any mechanism for querying the system registers on ARMv8, unlike Linux
+  // which traps the register reads and emulates them in the kernel. There are environment variables
+  // containing some of the CPU-specific values, which we could use for a lookup table in the
+  // future. For now, assume all features are present as all known devices which are Windows-on-ARM
+  // compatible also support these extensions.
+  bFP = true;
+  bASIMD = true;
+  bAES = true;
+  bCRC32 = true;
+  bSHA1 = true;
+  bSHA2 = true;
+#else
+  // Get the information about the CPU
+  num_cores = sysconf(_SC_NPROCESSORS_CONF);
+  strncpy(cpu_string, GetCPUString().c_str(), sizeof(cpu_string));
+
+#ifdef __FreeBSD__
+  u_long hwcaps = 0;
+  elf_aux_info(AT_HWCAP, &hwcaps, sizeof(u_long));
 #else
   unsigned long hwcaps = getauxval(AT_HWCAP);
+#endif
   bFP = hwcaps & HWCAP_FP;
   bASIMD = hwcaps & HWCAP_ASIMD;
   bAES = hwcaps & HWCAP_AES;
   bCRC32 = hwcaps & HWCAP_CRC32;
   bSHA1 = hwcaps & HWCAP_SHA1;
   bSHA2 = hwcaps & HWCAP_SHA2;
-#endif
 #endif
 }
 

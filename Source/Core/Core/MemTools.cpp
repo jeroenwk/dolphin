@@ -9,6 +9,7 @@
 #include <cstring>
 #include <vector>
 
+#include "Common/Assert.h"
 #include "Common/CommonFuncs.h"
 #include "Common/CommonTypes.h"
 #include "Common/MsgHandler.h"
@@ -17,7 +18,7 @@
 #include "Core/MachineContext.h"
 #include "Core/PowerPC/JitInterface.h"
 
-#ifdef __FreeBSD__
+#if defined(__FreeBSD__) || defined(__NetBSD__)
 #include <signal.h>
 #endif
 #ifndef _WIN32
@@ -28,11 +29,11 @@
 #ifdef _M_X86_64
 #define THREAD_STATE64_COUNT x86_THREAD_STATE64_COUNT
 #define THREAD_STATE64 x86_THREAD_STATE64
-#define THREAD_STATE64_t x86_thread_state64_t
+#define thread_state64_t x86_thread_state64_t
 #elif defined(_M_ARM_64)
 #define THREAD_STATE64_COUNT ARM_THREAD_STATE64_COUNT
 #define THREAD_STATE64 ARM_THREAD_STATE64
-#define THREAD_STATE64_t arm_thread_state64_t
+#define thread_state64_t arm_thread_state64_t
 #else
 #error Unsupported architecture
 #endif
@@ -42,30 +43,32 @@ namespace EMM
 {
 #ifdef _WIN32
 
+static PVOID s_veh_handle;
+
 static LONG NTAPI Handler(PEXCEPTION_POINTERS pPtrs)
 {
   switch (pPtrs->ExceptionRecord->ExceptionCode)
   {
   case EXCEPTION_ACCESS_VIOLATION:
   {
-    int accessType = (int)pPtrs->ExceptionRecord->ExceptionInformation[0];
-    if (accessType == 8)  // Rule out DEP
+    ULONG_PTR access_type = pPtrs->ExceptionRecord->ExceptionInformation[0];
+    if (access_type == 8)  // Rule out DEP
     {
-      return (DWORD)EXCEPTION_CONTINUE_SEARCH;
+      return EXCEPTION_CONTINUE_SEARCH;
     }
 
     // virtual address of the inaccessible data
-    uintptr_t badAddress = (uintptr_t)pPtrs->ExceptionRecord->ExceptionInformation[1];
-    CONTEXT* ctx = pPtrs->ContextRecord;
+    uintptr_t fault_address = (uintptr_t)pPtrs->ExceptionRecord->ExceptionInformation[1];
+    SContext* ctx = pPtrs->ContextRecord;
 
-    if (JitInterface::HandleFault(badAddress, ctx))
+    if (JitInterface::HandleFault(fault_address, ctx))
     {
-      return (DWORD)EXCEPTION_CONTINUE_EXECUTION;
+      return EXCEPTION_CONTINUE_EXECUTION;
     }
     else
     {
       // Let's not prevent debugging.
-      return (DWORD)EXCEPTION_CONTINUE_SEARCH;
+      return EXCEPTION_CONTINUE_SEARCH;
     }
   }
 
@@ -98,18 +101,17 @@ static LONG NTAPI Handler(PEXCEPTION_POINTERS pPtrs)
 
 void InstallExceptionHandler()
 {
-  // Make sure this is only called once per process execution
-  // Instead, could make a Uninstall function, but whatever..
-  static bool handlerInstalled = false;
-  if (handlerInstalled)
-    return;
-
-  AddVectoredExceptionHandler(TRUE, Handler);
-  handlerInstalled = true;
+  ASSERT(!s_veh_handle);
+  s_veh_handle = AddVectoredExceptionHandler(TRUE, Handler);
+  ASSERT(s_veh_handle);
 }
 
 void UninstallExceptionHandler()
 {
+  ULONG status = RemoveVectoredExceptionHandler(s_veh_handle);
+  ASSERT(status);
+  if (status)
+    s_veh_handle = nullptr;
 }
 
 #elif defined(__APPLE__) && !defined(USE_SIGACTION_ON_APPLE)
@@ -118,7 +120,7 @@ static void CheckKR(const char* name, kern_return_t kr)
 {
   if (kr)
   {
-    PanicAlert("%s failed: kr=%x", name, kr);
+    PanicAlertFmt("{} failed: kr={:x}", name, kr);
   }
 }
 
@@ -173,17 +175,17 @@ static void ExceptionThread(mach_port_t port)
 
     if (msg_in.Head.msgh_id != 2406)
     {
-      PanicAlert("unknown message received");
+      PanicAlertFmt("unknown message received");
       return;
     }
 
     if (msg_in.flavor != THREAD_STATE64)
     {
-      PanicAlert("unknown flavor %d (expected %d)", msg_in.flavor, THREAD_STATE64);
+      PanicAlertFmt("unknown flavor {} (expected {})", msg_in.flavor, THREAD_STATE64);
       return;
     }
 
-    THREAD_STATE64_t* state = (THREAD_STATE64_t*)msg_in.old_state;
+    thread_state64_t* state = (thread_state64_t*)msg_in.old_state;
 
     bool ok = JitInterface::HandleFault((uintptr_t)msg_in.code[1], state);
 

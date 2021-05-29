@@ -6,6 +6,8 @@ import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.annotation.Nullable;
+
 import org.dolphinemu.dolphinemu.R;
 import org.dolphinemu.dolphinemu.features.settings.model.view.InputBindingSetting;
 import org.dolphinemu.dolphinemu.features.settings.model.view.SettingsItem;
@@ -41,14 +43,30 @@ public final class InputBindingSettingViewHolder extends SettingViewHolder
 
     mItem = (InputBindingSetting) item;
 
-    mTextSettingName.setText(mItem.getNameId());
+    mTextSettingName.setText(mItem.getName());
     mTextSettingDescription
             .setText(sharedPreferences.getString(mItem.getKey() + mItem.getGameId(), ""));
+
+    setStyle(mTextSettingName, mItem);
   }
 
   @Override
   public void onClick(View clicked)
   {
+    if (!mItem.isEditable())
+    {
+      showNotRuntimeEditableError();
+      return;
+    }
+
     getAdapter().onInputBindingClick(mItem, getAdapterPosition());
+
+    setStyle(mTextSettingName, mItem);
+  }
+
+  @Nullable @Override
+  protected SettingsItem getItem()
+  {
+    return mItem;
   }
 }

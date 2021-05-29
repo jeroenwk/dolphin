@@ -1,6 +1,6 @@
 # Dolphin - A GameCube and Wii Emulator
 
-[Homepage](https://dolphin-emu.org/) | [Project Site](https://github.com/dolphin-emu/dolphin) | [Forums](https://forums.dolphin-emu.org/) | [Wiki](https://wiki.dolphin-emu.org/) | [Issue Tracker](https://bugs.dolphin-emu.org/projects/emulator/issues) | [Coding Style](https://github.com/dolphin-emu/dolphin/blob/master/Contributing.md) | [Transifex Page](https://www.transifex.com/projects/p/dolphin-emu/)
+[Homepage](https://dolphin-emu.org/) | [Project Site](https://github.com/dolphin-emu/dolphin) | [Buildbot](https://dolphin.ci) | [Forums](https://forums.dolphin-emu.org/) | [Wiki](https://wiki.dolphin-emu.org/) | [Issue Tracker](https://bugs.dolphin-emu.org/projects/emulator/issues) | [Coding Style](https://github.com/dolphin-emu/dolphin/blob/master/Contributing.md) | [Transifex Page](https://www.transifex.com/projects/p/dolphin-emu/)
 
 Dolphin is an emulator for running GameCube and Wii games on Windows,
 Linux, macOS, and recent Android devices. It's licensed under the terms
@@ -115,12 +115,26 @@ missing packages yourself.
 
 ### macOS Build Steps:
 
+A binary supporting a single architecture can be built using the following steps: 
+
 1. `mkdir build`
 2. `cd build`
 3. `cmake ..`
 4. `make`
 
 An application bundle will be created in `./Binaries`.
+
+A script is also provided to build universal binaries supporting both x64 and ARM in the same
+application bundle using the following steps:
+
+1. `mkdir build`
+2. `cd build`
+3. `python ../BuildMacOSUniversalBinary.py`
+4. Universal binaries will be available in the `universal` folder
+
+Doing this is more complex as it requires installation of library dependencies for both x64 and ARM (or universal library
+equivalents) and may require specifying additional arguments to point to relevant library locations. 
+Execute BuildMacOSUniversalBinary.py --help for more details.  
 
 ### Linux Global Build Steps:
 
@@ -192,7 +206,7 @@ see where it's stored) if you don't plan to reinstall Dolphin.
 
 Available DSP emulation engines are HLE (High Level Emulation) and
 LLE (Low Level Emulation). HLE is faster but less accurate whereas
-LLE is slower but close to perfect. Note that LLE has two submodes (Interpreter and Recompiler) 
+LLE is slower but close to perfect. Note that LLE has two submodes (Interpreter and Recompiler)
 but they cannot be selected from the command line.
 
 Available video backends are "D3D" and "D3D12" (they are only available on Windows), "OGL", and "Vulkan".
@@ -209,8 +223,8 @@ is intended for debugging purposes only.
 * `GC/dsp_coef.bin`: DSP dumps
 * `GC/dsp_rom.bin`: DSP dumps
 * `Wii/clientca.pem`: Wii network certificate
-* `Wii/clientcacakey.pem`: Wii network certificate
-* `Wii/rootca.pem`: Wii network certificate
+* `Wii/clientcakey.pem`: Wii network certificate key
+* `Wii/rootca.pem`: Wii network certificate issuer / CA
 
 The DSP dumps included with Dolphin have been written from scratch and do not
 contain any copyrighted material. They should work for most purposes, however

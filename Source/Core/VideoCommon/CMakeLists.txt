@@ -42,8 +42,6 @@ add_library(videocommon
   HiresTextures.cpp
   HiresTextures.h
   HiresTextures_DDSLoader.cpp
-  ImageWrite.cpp
-  ImageWrite.h
   IndexGenerator.cpp
   IndexGenerator.h
   LightingShaderGen.cpp
@@ -90,6 +88,8 @@ add_library(videocommon
   TextureDecoder.h
   TextureDecoder_Common.cpp
   TextureDecoder_Util.h
+  TextureInfo.cpp
+  TextureInfo.h
   UberShaderCommon.cpp
   UberShaderCommon.h
   UberShaderPixel.cpp

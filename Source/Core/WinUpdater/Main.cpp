@@ -16,25 +16,7 @@
 #include "UpdaterCommon/UI.h"
 #include "UpdaterCommon/UpdaterCommon.h"
 
-namespace
-{
-std::vector<std::string> CommandLineToUtf8Argv(PCWSTR command_line)
-{
-  int nargs;
-  LPWSTR* tokenized = CommandLineToArgvW(command_line, &nargs);
-  if (!tokenized)
-    return {};
-
-  std::vector<std::string> argv(nargs);
-  for (int i = 0; i < nargs; ++i)
-  {
-    argv[i] = WStringToUTF8(tokenized[i]);
-  }
-
-  LocalFree(tokenized);
-  return argv;
-}
-};  // namespace
+// Refer to docs/autoupdate_overview.md for a detailed overview of the autoupdate process
 
 int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine, int nCmdShow)
 {
