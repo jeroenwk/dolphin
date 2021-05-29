@@ -401,11 +401,11 @@
 #ifdef NONJAILBROKEN
   bool can_enable_fastmem = CanEnableFastmem();
   
-  SConfig::GetInstance().bFastmem = can_enable_fastmem;
+  Config::SetBase(Config::MAIN_FAST_DISC_SPEED, can_enable_fastmem);
   
   if (can_enable_fastmem && !hacky_fastmem_disable)
   {
-    Config::SetBaseOrCurrent(Config::MAIN_DEBUG_HACKY_FASTMEM, GetFastmemType() == DOLFastmemTypeHacky);
+    Config::SetBase(Config::MAIN_DEBUG_HACKY_FASTMEM, GetFastmemType() == DOLFastmemTypeHacky);
   }
 #endif
   
