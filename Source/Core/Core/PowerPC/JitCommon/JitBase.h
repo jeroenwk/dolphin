@@ -40,9 +40,6 @@
 #define JITDISABLE(setting)                                                                        \
   FALLBACK_IF(SConfig::GetInstance().bJITOff || SConfig::GetInstance().setting)
 
-#define JITDISABLE_LAYERED(setting)                                                                \
-  FALLBACK_IF(Config::Get(Config::setting))
-
 class JitBase : public CPUCoreBase
 {
 protected:
