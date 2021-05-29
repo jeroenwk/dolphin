@@ -462,6 +462,9 @@ if(IOS)
     message(STATUS "Building for non-jailbroken iOS devices")
   endif()
 
+  # See macOS block above.
+  add_definitions(-DFMT_EXCEPTIONS=0)
+
   # We are cross compiling, search only the toolchain for libraries and includes
   SET(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
   SET(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
