@@ -49,7 +49,7 @@
 
   for (const PatchEngine::Patch& patch : m_patches)
   {
-    if (patch.active)
+    if (patch.enabled)
       lines_enabled.push_back("$" + patch.name);
 
     if (!patch.user_defined)
@@ -77,7 +77,7 @@
 
 - (IBAction)EnabledChanged:(UISwitch*)sender
 {
-  self->m_patches[sender.tag].active = [sender isOn];
+  self->m_patches[sender.tag].enabled = [sender isOn];
 }
 
 #pragma mark - Table view data source
@@ -98,7 +98,7 @@
   PatchEngine::Patch code = self->m_patches[indexPath.row];
   
   [cell.m_name_label setText:CppToFoundationString(code.name)];
-  [cell.m_enabled_switch setOn:code.active];
+  [cell.m_enabled_switch setOn:code.enabled];
   [cell.m_enabled_switch setTag:indexPath.row];
   
   return cell;
