@@ -322,7 +322,7 @@
   
   [actions addObject:delete_action];
   
-  return [UIMenu menuWithTitle:CppToFoundationString(game_file->GetUniqueIdentifier()) children:[actions copy]];
+  return [UIMenu menuWithTitle:CppToFoundationString(game_file->GetGameID()) children:[actions copy]];
 }
 
 #pragma mark - Long press
@@ -346,7 +346,7 @@
   
   const UICommon::GameFile* game_file = self.m_cache->Get(index_path.row).get();
   
-  UIAlertController* action_sheet = [UIAlertController alertControllerWithTitle:nil message:CppToFoundationString(game_file->GetUniqueIdentifier()) preferredStyle:UIAlertControllerStyleActionSheet];
+  UIAlertController* action_sheet = [UIAlertController alertControllerWithTitle:nil message:CppToFoundationString(game_file->GetGameID()) preferredStyle:UIAlertControllerStyleActionSheet];
   
   [action_sheet addAction:[UIAlertAction actionWithTitle:DOLocalizedString(@"Properties") style:UIAlertActionStyleDefault handler:^(UIAlertAction*)
   {
