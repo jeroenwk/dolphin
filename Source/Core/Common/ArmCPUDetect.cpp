@@ -99,6 +99,9 @@ void CPUInfo::Detect()
   // iPod9,1 and above
   // AppleTV6,2 and above
   //
+  utsname system_info;
+  uname(&system_info);
+  
   const std::string model = std::string(system_info.machine);
   std::regex number_regex("[0-9]+");
   std::smatch match;
