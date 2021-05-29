@@ -4,10 +4,13 @@
 
 #import "ConfigInterfaceViewController.h"
 
-#import "Common/MsgHandler.h"
-
 #import "Core/Config/MainSettings.h"
 #import "Core/ConfigManager.h"
+
+namespace Common
+{
+extern void SetEnableAlert(bool enable);
+};
 
 @interface ConfigInterfaceViewController ()
 
