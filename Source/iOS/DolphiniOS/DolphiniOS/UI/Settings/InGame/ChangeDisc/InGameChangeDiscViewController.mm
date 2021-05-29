@@ -78,7 +78,7 @@
     cell_contents = [cell_contents stringByAppendingString:@"[Wii] "];
   }
   
-  cell_contents = [cell_contents stringByAppendingString:CppToFoundationString(file->GetUniqueIdentifier())];
+  cell_contents = [cell_contents stringByAppendingString:CppToFoundationString(file->GetGameID())];
   
   // Set the cell label text
   cell.fileNameLabel.text = cell_contents;
