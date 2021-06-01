@@ -243,7 +243,6 @@
 		B97DDCC12666035A0083896C /* DebugLogger.ini in Resources */ = {isa = PBXBuildFile; fileRef = B92243E824E9F5D50085632F /* DebugLogger.ini */; };
 		B97DDCC22666035A0083896C /* WiiSystemUpdate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B946AF13245BFBCD0043767A /* WiiSystemUpdate.storyboard */; };
 		B97DDCC42666035A0083896C /* NonJailbrokenNotice.xib in Resources */ = {isa = PBXBuildFile; fileRef = B971E1C7245E210400D2A698 /* NonJailbrokenNotice.xib */; };
-		B97DDCC52666035A0083896C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B9E983E524592A6800119883 /* GoogleService-Info.plist */; };
 		B97DDCC72666035A0083896C /* Dolphin.strings in Resources */ = {isa = PBXBuildFile; fileRef = B996C85423D50FC600700D6F /* Dolphin.strings */; };
 		B97DDCC92666035A0083896C /* NKitWarningNotice.xib in Resources */ = {isa = PBXBuildFile; fileRef = B92243E024E9C7FA0085632F /* NKitWarningNotice.xib */; };
 		B97DDCCA2666035A0083896C /* UnofficialBuildNotice.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9B536DD23DE707F00F03106 /* UnofficialBuildNotice.xib */; };
@@ -1943,7 +1942,6 @@
 				B97DDCC12666035A0083896C /* DebugLogger.ini in Resources */,
 				B97DDCC22666035A0083896C /* WiiSystemUpdate.storyboard in Resources */,
 				B97DDCC42666035A0083896C /* NonJailbrokenNotice.xib in Resources */,
-				B97DDCC52666035A0083896C /* GoogleService-Info.plist in Resources */,
 				B97DDCC72666035A0083896C /* Dolphin.strings in Resources */,
 				B97DDCC92666035A0083896C /* NKitWarningNotice.xib in Resources */,
 				B97DDCCA2666035A0083896C /* UnofficialBuildNotice.xib in Resources */,
