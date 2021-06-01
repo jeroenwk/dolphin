@@ -56,7 +56,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint* m_eagl_bottom_constraint;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint* m_eagl_half_constraint;
 
+#if !TARGET_OS_TV
 @property (strong, nonatomic) IBOutlet UIScreenEdgePanGestureRecognizer* m_edge_pan_recognizer;
+#endif
 
 @property (weak, nonatomic) IBOutlet UINavigationItem* m_navigation_item;
 @property (weak, nonatomic) IBOutlet UIButton* m_pull_down_button;
