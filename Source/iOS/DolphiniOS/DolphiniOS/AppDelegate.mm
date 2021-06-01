@@ -31,7 +31,11 @@
 #import "Core/PowerPC/PowerPC.h"
 #import "Core/State.h"
 
+#if TARGET_OS_TV
+#import "DolphinATV-Swift.h"
+#else
 #import "DolphiniOS-Swift.h"
+#endif
 
 #import "DonationNoticeViewController.h"
 
