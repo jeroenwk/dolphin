@@ -25,7 +25,9 @@
 #import "SoftwarePropertiesViewController.h"
 #import "SoftwareTableViewCell.h"
 
+#if !TARGET_OS_TV
 #import "UICollectionViewLeftAlignedLayout.h"
+#endif
 
 #import "UICommon/GameFile.h"
 
@@ -202,6 +204,8 @@
   [self.m_collection_view deselectItemAtIndexPath:indexPath animated:true];
 }
 
+#if !TARGET_OS_TV
+
 - (UIContextMenuConfiguration*)collectionView:(UICollectionView*)collectionView contextMenuConfigurationForItemAtIndexPath:(NSIndexPath*)indexPath point:(CGPoint)point API_AVAILABLE(ios(13.0))
 {
   return [UIContextMenuConfiguration configurationWithIdentifier:nil previewProvider:nil actionProvider:^(NSArray<UIMenuElement*>*)
@@ -209,6 +213,8 @@
     return [self CreateContextMenuAtIndexPath:indexPath];
   }];
 }
+
+#endif
 
 #pragma mark - Table View
 
@@ -269,6 +275,8 @@
   [self.m_table_view deselectRowAtIndexPath:indexPath animated:true];
 }
 
+#if !TARGET_OS_TV
+
 - (UIContextMenuConfiguration*)tableView:(UITableView*)tableView contextMenuConfigurationForRowAtIndexPath:(NSIndexPath*)indexPath point:(CGPoint)point API_AVAILABLE(ios(13.0))
 {
   return [UIContextMenuConfiguration configurationWithIdentifier:nil previewProvider:nil actionProvider:^(NSArray<UIMenuElement*>*)
@@ -276,6 +284,8 @@
     return [self CreateContextMenuAtIndexPath:indexPath];
   }];
 }
+
+#endif
 
 #pragma mark - Context menu
 
