@@ -133,6 +133,7 @@ constexpr auto INPUT_DETECT_MAXIMUM_TIME = std::chrono::seconds(5);
   return nil;
 }
 
+#if !TARGET_OS_TV
 - (UISwipeActionsConfiguration*)tableView:(UITableView*)tableView trailingSwipeActionsConfigurationForRowAtIndexPath:(NSIndexPath*)indexPath
 {
   if (indexPath.section == SECTION_BUTTONS && ![ControllerSettingsUtils IsControllerConnectedToTouchscreen:self.m_controller])
@@ -158,6 +159,7 @@ constexpr auto INPUT_DETECT_MAXIMUM_TIME = std::chrono::seconds(5);
     return nil;
   }
 }
+#endif
 
 - (NSIndexPath*)tableView:(UITableView*)tableView willSelectRowAtIndexPath:(NSIndexPath*)indexPath
 {
