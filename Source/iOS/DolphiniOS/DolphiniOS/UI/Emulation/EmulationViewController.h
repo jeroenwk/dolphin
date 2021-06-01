@@ -14,7 +14,11 @@
 
 #import "DiscIO/Enums.h"
 
+#if TARGET_OS_TV
+#import "DolphinATV-Swift.h"
+#else
 #import "DolphiniOS-Swift.h"
+#endif
 
 #import "EAGLView.h"
 
