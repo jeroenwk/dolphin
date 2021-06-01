@@ -47,7 +47,7 @@ VertexLoaderX64::VertexLoaderX64(const TVtxDesc& vtx_desc, const VAT& vtx_att)
 {
   AllocCodeSpace(4096);
   ClearCodeSpace();
-  WriteCode([&] { GenerateVertexLoader(); });
+  GenerateVertexLoader();
   WriteProtect();
 
   const std::string name =
