@@ -15,8 +15,50 @@
 #include "Common/MsgHandler.h"
 #include "Common/Thread.h"
 
+#ifdef __APPLE__
+#include <TargetConditionals.h>
+#endif
+
+#if TARGET_OS_TV
+// On tvOS, these functions are marked as unavailable. We can get around this
+// by defining their names as something else. After the mach headers are included,
+// we undefine them and redefine them as function prototypes.
+#define mach_msg_overwrite unavailable_mach_msg_overwrite 
+#define thread_set_exception_ports unavailable_thread_set_exception_ports
+#endif
+
 #include "Core/MachineContext.h"
 #include "Core/PowerPC/JitInterface.h"
+
+#if TARGET_OS_TV
+#undef mach_msg_overwrite
+#undef thread_set_exception_ports
+
+extern "C"
+{
+// mach/message.h
+mach_msg_return_t mach_msg_overwrite(
+	mach_msg_header_t *msg,
+	mach_msg_option_t option,
+	mach_msg_size_t send_size,
+	mach_msg_size_t rcv_size,
+	mach_port_name_t rcv_name,
+	mach_msg_timeout_t timeout,
+	mach_port_name_t notify,
+	mach_msg_header_t *rcv_msg,
+	mach_msg_size_t rcv_limit);
+
+// mach/thread_act.h 
+kern_return_t thread_set_exception_ports
+(
+	thread_act_t thread,
+	exception_mask_t exception_mask,
+	mach_port_t new_port,
+	exception_behavior_t behavior,
+	thread_state_flavor_t new_flavor
+);
+}
+#endif
 
 #if defined(__FreeBSD__) || defined(__NetBSD__)
 #include <signal.h>
