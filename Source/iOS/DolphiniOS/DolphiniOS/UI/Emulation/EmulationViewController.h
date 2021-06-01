@@ -36,16 +36,20 @@ NS_ASSUME_NONNULL_BEGIN
 @interface EmulationViewController : UIViewController <NKitWarningNoticeDelegate>
 {
   @public std::unique_ptr<BootParameters> m_boot_parameters;
+#if !TARGET_OS_TV
   @public std::vector<std::pair<int, TCView*>> m_controllers;
+#endif
 }
 
 @property (weak, nonatomic) IBOutlet MTKView* m_metal_view;
 @property (weak, nonatomic) IBOutlet EAGLView* m_eagl_view;
 
+#if !TARGET_OS_TV
 @property (weak, nonatomic) IBOutlet TCView* m_gc_pad;
 @property (weak, nonatomic) IBOutlet TCView* m_wii_normal_pad;
 @property (weak, nonatomic) IBOutlet TCView* m_wii_sideways_pad;
 @property (weak, nonatomic) IBOutlet TCView* m_wii_classic_pad;
+#endif
 
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint* m_metal_bottom_constraint;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint* m_metal_half_constraint;
@@ -67,7 +71,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic) DOLTopBarPullDownMode m_pull_down_mode;
 @property(nonatomic) NSTimer* m_pull_down_button_timer;
 @property(nonatomic) NSUInteger m_pull_down_button_visibility_left;
+#if !TARGET_OS_TV
 @property(weak, nonatomic) TCView* m_ts_active_view;
+#endif
 @property(nonatomic) UIBarButtonItem* m_stop_button;
 @property(nonatomic) UIBarButtonItem* m_pause_button;
 @property(nonatomic) UIBarButtonItem* m_play_button;
