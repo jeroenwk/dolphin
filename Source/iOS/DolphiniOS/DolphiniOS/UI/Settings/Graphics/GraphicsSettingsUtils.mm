@@ -10,7 +10,7 @@
 
 @implementation GraphicsSettingsUtils
 
-+ (void)SetInitialForBoolSetting:(const Config::Info<bool>&)setting isInverted:(bool)inverted forSwitch:(UISwitch*)sw label:(UILabel*)label
++ (void)SetInitialForBoolSetting:(const Config::Info<bool>&)setting isInverted:(bool)inverted forSwitch:(DOLSwitch*)sw label:(UILabel*)label
 {
   [sw setOn:Config::Get(setting) ^ inverted];
   

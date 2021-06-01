@@ -8,12 +8,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ControllerTouchscreenSettingsViewController : UITableViewController
 
-@property (weak, nonatomic) IBOutlet UISwitch* m_haptic_switch;
-@property (weak, nonatomic) IBOutlet UISwitch* m_rumble_switch;
-@property (weak, nonatomic) IBOutlet UISwitch* m_3d_touch_switch;
-@property (weak, nonatomic) IBOutlet UISwitch* m_motion_switch;
-@property (weak, nonatomic) IBOutlet UISwitch* m_motion_pointer_switch;
-@property (weak, nonatomic) IBOutlet UISwitch* m_recentering_switch;
+@property (weak, nonatomic) IBOutlet DOLSwitch* m_haptic_switch;
+@property (weak, nonatomic) IBOutlet DOLSwitch* m_rumble_switch;
+@property (weak, nonatomic) IBOutlet DOLSwitch* m_3d_touch_switch;
+@property (weak, nonatomic) IBOutlet DOLSwitch* m_motion_switch;
+@property (weak, nonatomic) IBOutlet DOLSwitch* m_motion_pointer_switch;
+@property (weak, nonatomic) IBOutlet DOLSwitch* m_recentering_switch;
 @property (weak, nonatomic) IBOutlet UISlider* m_button_opacity_slider;
 
 @end

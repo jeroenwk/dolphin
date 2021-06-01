@@ -6,3 +6,11 @@
 
 #import "LocalizerUtils.h"
 #import "StringUtils.h"
+
+#if TARGET_OS_TV
+#import "DOLATVSwitch.h"
+
+typedef DOLATVSwitch DOLSwitch;
+#else
+typedef UISwitch DOLSwitch;
+#endif

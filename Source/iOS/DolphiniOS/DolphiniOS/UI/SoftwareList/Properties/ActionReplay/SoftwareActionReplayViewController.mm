@@ -57,7 +57,7 @@
   game_ini_local.Save(ini_path);
 }
 
-- (IBAction)EnabledChanged:(UISwitch*)sender
+- (IBAction)EnabledChanged:(DOLSwitch*)sender
 {
   self->m_ar_codes[sender.tag].enabled = [sender isOn];
 }

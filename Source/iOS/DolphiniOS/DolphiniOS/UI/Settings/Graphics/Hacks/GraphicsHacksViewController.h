@@ -21,17 +21,17 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel* m_vertex_rounding_label;
 @property (weak, nonatomic) IBOutlet UILabel* m_save_texture_cache_label;
 
-@property (weak, nonatomic) IBOutlet UISwitch* m_skip_efb_cpu_switch;
-@property (weak, nonatomic) IBOutlet UISwitch* m_ignore_format_changes_switch;
-@property (weak, nonatomic) IBOutlet UISwitch* m_store_efb_copies_switch;
-@property (weak, nonatomic) IBOutlet UISwitch* m_defer_efb_copies_switch;
-@property (weak, nonatomic) IBOutlet UISwitch* m_gpu_decoding_switch;
-@property (weak, nonatomic) IBOutlet UISwitch* m_store_xfb_copies_switch;
-@property (weak, nonatomic) IBOutlet UISwitch* m_immediate_xfb_switch;
-@property (weak, nonatomic) IBOutlet UISwitch* m_fast_depth_switch;
-@property (weak, nonatomic) IBOutlet UISwitch* m_bbox_switch;
-@property (weak, nonatomic) IBOutlet UISwitch* m_vertex_rounding_switch;
-@property (weak, nonatomic) IBOutlet UISwitch* m_save_texture_cache_switch;
+@property (weak, nonatomic) IBOutlet DOLSwitch* m_skip_efb_cpu_switch;
+@property (weak, nonatomic) IBOutlet DOLSwitch* m_ignore_format_changes_switch;
+@property (weak, nonatomic) IBOutlet DOLSwitch* m_store_efb_copies_switch;
+@property (weak, nonatomic) IBOutlet DOLSwitch* m_defer_efb_copies_switch;
+@property (weak, nonatomic) IBOutlet DOLSwitch* m_gpu_decoding_switch;
+@property (weak, nonatomic) IBOutlet DOLSwitch* m_store_xfb_copies_switch;
+@property (weak, nonatomic) IBOutlet DOLSwitch* m_immediate_xfb_switch;
+@property (weak, nonatomic) IBOutlet DOLSwitch* m_fast_depth_switch;
+@property (weak, nonatomic) IBOutlet DOLSwitch* m_bbox_switch;
+@property (weak, nonatomic) IBOutlet DOLSwitch* m_vertex_rounding_switch;
+@property (weak, nonatomic) IBOutlet DOLSwitch* m_save_texture_cache_switch;
 
 @property (weak, nonatomic) IBOutlet UISlider* m_accuracy_slider;
 

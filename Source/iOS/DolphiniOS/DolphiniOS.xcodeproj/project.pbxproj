@@ -254,6 +254,7 @@
 		B97DDCCE2666035A0083896C /* libjailbreak.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = B94C4A022559230500EBF06B /* libjailbreak.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		B97DDCCF2666035A0083896C /* MoltenVK.xcframework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B97DDC112665E5000083896C /* MoltenVK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B97DDCE5266617B80083896C /* TCButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95A0944238533DC00DBBB01 /* TCButtonType.swift */; };
+		B97DDCEA2666A7410083896C /* DOLATVSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = B97DDCE92666A7410083896C /* DOLATVSwitch.m */; };
 		B98584C723CEDFB800BE94B0 /* ConfigInterfaceViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B98584C623CEDFB800BE94B0 /* ConfigInterfaceViewController.mm */; };
 		B988D7F623B5A90E0092CB6C /* ControllerGroupExtensionButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B988D7F523B5A90E0092CB6C /* ControllerGroupExtensionButtonCell.m */; };
 		B988D7FA23B604690092CB6C /* ControllerLoadProfileViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B988D7F923B604690092CB6C /* ControllerLoadProfileViewController.mm */; };
@@ -616,6 +617,8 @@
 		B97DDC112665E5000083896C /* MoltenVK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = MoltenVK.xcframework; path = ../../../Externals/MoltenVK/MoltenVK.xcframework; sourceTree = "<group>"; };
 		B97DDCDA2666035A0083896C /* DolphinATV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DolphinATV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B97DDCDF266603CB0083896C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B97DDCE82666A7410083896C /* DOLATVSwitch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DOLATVSwitch.h; sourceTree = "<group>"; };
+		B97DDCE92666A7410083896C /* DOLATVSwitch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DOLATVSwitch.m; sourceTree = "<group>"; };
 		B98584C523CEDFB800BE94B0 /* ConfigInterfaceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConfigInterfaceViewController.h; sourceTree = "<group>"; };
 		B98584C623CEDFB800BE94B0 /* ConfigInterfaceViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ConfigInterfaceViewController.mm; sourceTree = "<group>"; };
 		B988D7F423B5A90E0092CB6C /* ControllerGroupExtensionButtonCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ControllerGroupExtensionButtonCell.h; sourceTree = "<group>"; };
@@ -1256,9 +1259,27 @@
 		B97DDCDE266603B60083896C /* DolphinATV */ = {
 			isa = PBXGroup;
 			children = (
+				B97DDCE626662F7A0083896C /* UI */,
 				B97DDCDF266603CB0083896C /* Info.plist */,
 			);
 			path = DolphinATV;
+			sourceTree = "<group>";
+		};
+		B97DDCE626662F7A0083896C /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				B97DDCE726662F890083896C /* Util */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		B97DDCE726662F890083896C /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				B97DDCE82666A7410083896C /* DOLATVSwitch.h */,
+				B97DDCE92666A7410083896C /* DOLATVSwitch.m */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 		B98584C223CEDE3900BE94B0 /* Config */ = {
@@ -2444,6 +2465,7 @@
 				B97DDC722666035A0083896C /* ConfigWiiViewController.mm in Sources */,
 				B97DDC732666035A0083896C /* SoftwareGeckoEditViewController.mm in Sources */,
 				B97DDC752666035A0083896C /* SettingsDebugViewController.mm in Sources */,
+				B97DDCEA2666A7410083896C /* DOLATVSwitch.m in Sources */,
 				B97DDC762666035A0083896C /* WiiLanguageViewController.mm in Sources */,
 				B97DDC772666035A0083896C /* ShaderModeViewController.mm in Sources */,
 				B97DDC782666035A0083896C /* InvalidCpuCoreNoticeViewController.mm in Sources */,

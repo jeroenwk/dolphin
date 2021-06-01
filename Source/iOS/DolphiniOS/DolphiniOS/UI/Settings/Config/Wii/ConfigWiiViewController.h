@@ -8,12 +8,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ConfigWiiViewController : UITableViewController
 
-@property (weak, nonatomic) IBOutlet UISwitch* m_pal60_switch;
-@property (weak, nonatomic) IBOutlet UISwitch* m_screen_saver_switch;
-@property (weak, nonatomic) IBOutlet UISwitch* m_sd_card_switch;
+@property (weak, nonatomic) IBOutlet DOLSwitch* m_pal60_switch;
+@property (weak, nonatomic) IBOutlet DOLSwitch* m_screen_saver_switch;
+@property (weak, nonatomic) IBOutlet DOLSwitch* m_sd_card_switch;
 @property (weak, nonatomic) IBOutlet UISlider* m_ir_slider;
 @property (weak, nonatomic) IBOutlet UISlider* m_volume_slider;
-@property (weak, nonatomic) IBOutlet UISwitch* m_rumble_switch;
+@property (weak, nonatomic) IBOutlet DOLSwitch* m_rumble_switch;
 
 @end
 
