@@ -28,10 +28,7 @@ void Jit64AsmRoutineManager::Init(u8* stack_top)
 {
   m_const_pool.Init(AllocChildCodeSpace(4096), 4096);
   m_stack_top = stack_top;
-
-  Jit64& jit = static_cast<Jit64&>(m_jit);
-  jit.WriteCode([&] { Generate(); });
-
+  Generate();
   WriteProtect();
 }
 

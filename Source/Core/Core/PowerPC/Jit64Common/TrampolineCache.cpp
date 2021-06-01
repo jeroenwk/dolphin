@@ -45,12 +45,10 @@ const u8* TrampolineCache::GenerateReadTrampoline(const TrampolineInfo& info)
 
   const u8* trampoline = GetCodePtr();
 
-  WriteCode([&] {
-    SafeLoadToReg(info.op_reg, info.op_arg, info.accessSize << 3, info.offset, info.registersInUse,
-                  info.signExtend, info.flags | SAFE_LOADSTORE_FORCE_SLOWMEM);
+  SafeLoadToReg(info.op_reg, info.op_arg, info.accessSize << 3, info.offset, info.registersInUse,
+                info.signExtend, info.flags | SAFE_LOADSTORE_FORCE_SLOWMEM);
 
-    JMP(info.start + info.len, true);
-  });
+  JMP(info.start + info.len, true);
 
   JitRegister::Register(trampoline, GetCodePtr(), "JIT_ReadTrampoline_%x", info.pc);
   return trampoline;
@@ -66,12 +64,10 @@ const u8* TrampolineCache::GenerateWriteTrampoline(const TrampolineInfo& info)
   // Don't treat FIFO writes specially for now because they require a burst
   // check anyway.
 
-  WriteCode([&] {
-    SafeWriteRegToReg(info.op_arg, info.op_reg, info.accessSize << 3, info.offset,
-                      info.registersInUse, info.flags | SAFE_LOADSTORE_FORCE_SLOWMEM);
+  SafeWriteRegToReg(info.op_arg, info.op_reg, info.accessSize << 3, info.offset,
+                    info.registersInUse, info.flags | SAFE_LOADSTORE_FORCE_SLOWMEM);
 
-    JMP(info.start + info.len, true);
-  });
+  JMP(info.start + info.len, true);
 
   JitRegister::Register(trampoline, GetCodePtr(), "JIT_WriteTrampoline_%x", info.pc);
   return trampoline;

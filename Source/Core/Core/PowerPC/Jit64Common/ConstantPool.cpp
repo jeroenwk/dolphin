@@ -9,7 +9,6 @@
 #include <utility>
 
 #include "Common/Assert.h"
-#include "Common/MemoryUtil.h"
 
 ConstantPool::ConstantPool() = default;
 
@@ -19,11 +18,6 @@ void ConstantPool::Init(void* memory, size_t size)
 {
   m_region = memory;
   m_region_size = size;
-#ifdef _WX_EXCLUSIVITY
-  // The constant pool's memory region should be writable by default. This area needs to be
-  // writable when generating the common ASM.
-  Common::UnWriteProtectMemory(m_region, m_region_size, false);
-#endif
   Clear();
 }
 
