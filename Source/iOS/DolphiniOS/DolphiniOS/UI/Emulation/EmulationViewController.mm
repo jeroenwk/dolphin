@@ -26,8 +26,10 @@
 #import "Core/HW/SI/SI_Device.h"
 #import "Core/State.h"
 
+#ifdef ANALYTICS
 #import <FirebaseAnalytics/FirebaseAnalytics.h>
 #import <FirebaseCrashlytics/FirebaseCrashlytics.h>
+#endif
 
 #import "GameFileCacheHolder.h"
 

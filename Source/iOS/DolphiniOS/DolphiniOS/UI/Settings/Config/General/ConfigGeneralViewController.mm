@@ -9,8 +9,10 @@
 #import "Core/Core.h"
 #import "Core/DolphinAnalytics.h"
 
+#ifdef ANALYTICS
 #import <FirebaseAnalytics/FirebaseAnalytics.h>
 #import <FirebaseCrashlytics/FirebaseCrashlytics.h>
+#endif
 
 @interface ConfigGeneralViewController ()
 

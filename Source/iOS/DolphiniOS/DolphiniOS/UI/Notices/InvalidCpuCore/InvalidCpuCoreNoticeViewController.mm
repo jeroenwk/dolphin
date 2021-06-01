@@ -4,7 +4,9 @@
 
 #import "InvalidCpuCoreNoticeViewController.h"
 
+#ifdef ANALYTICS
 #import <FirebaseAnalytics/FirebaseAnalytics.h>
+#endif
 
 @interface InvalidCpuCoreNoticeViewController ()
 

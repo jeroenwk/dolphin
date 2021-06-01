@@ -2,6 +2,8 @@
 // Licensed under GPLv2+
 // Refer to the license.txt file included.
 
+#ifdef ANALYTICS
+
 #import "AnalyticsNoticeViewController.h"
 
 #import "Core/Config/MainSettings.h"
@@ -40,3 +42,5 @@
 }
 
 @end
+
+#endif // ANALYTICS

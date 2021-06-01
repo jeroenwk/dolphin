@@ -35,9 +35,11 @@
 
 #import "DonationNoticeViewController.h"
 
+#ifdef ANALYTICS
 #import <Firebase/Firebase.h>
 #import <FirebaseAnalytics/FirebaseAnalytics.h>
 #import <FirebaseCrashlytics/FirebaseCrashlytics.h>
+#endif
 
 #import "FastmemUtil.h"
 
