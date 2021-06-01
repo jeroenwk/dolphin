@@ -65,6 +65,7 @@
     self.m_list_button.image = [UIImage imageNamed:@"list_dash_legacy.png"];
   }
   
+#if !TARGET_OS_TV
   // Create UIRefreshControls
   UIRefreshControl* table_refresh = [[UIRefreshControl alloc] init];
   [table_refresh addTarget:self action:@selector(handleRefresh:) forControlEvents:UIControlEventValueChanged];
@@ -73,6 +74,7 @@
   UIRefreshControl* collection_refresh = [[UIRefreshControl alloc] init];
   [collection_refresh addTarget:self action:@selector(handleRefresh:) forControlEvents:UIControlEventValueChanged];
   self.m_collection_view.refreshControl = collection_refresh;
+#endif
   
   // Left align on devices that aren't compact horizontally
   /*if (self.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClassRegular)
@@ -518,6 +520,8 @@
 
 #pragma mark - Refreshing
 
+#if !TARGET_OS_TV
+
 - (void)handleRefresh:(UIRefreshControl*)control
 {
   [self rescanWithCompletionHandler:^{
@@ -526,6 +530,8 @@
     });
   }];
 }
+
+#endif
 
 #pragma mark - Menu
 
