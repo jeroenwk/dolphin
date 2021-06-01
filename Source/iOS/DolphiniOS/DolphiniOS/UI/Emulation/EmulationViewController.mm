@@ -267,7 +267,9 @@
   
   [[NSNotificationCenter defaultCenter] postNotificationName:@"me.oatmealdome.DolphiniOS.emulation_stop" object:self];
   
+#ifdef ANALYTICS
   [[FIRCrashlytics crashlytics] setCustomValue:@"none" forKey:@"current-game"];
+#endif
   
 #ifdef NONJAILBROKEN
   if (HasJitWithPTrace())
@@ -390,7 +392,9 @@
     [[NSUserDefaults standardUserDefaults] setObject:mutable_games_array forKey:@"unique_games"];
   }
   
+#ifdef ANALYTICS
   [[FIRCrashlytics crashlytics] setCustomValue:uid forKey:@"current-game"];
+#endif
   
   dispatch_async(dispatch_get_main_queue(), ^{
     [self PopulatePortDictionary];

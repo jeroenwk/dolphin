@@ -84,7 +84,9 @@
 - (IBAction)CrashReportingChanged:(id)sender
 {
   [[NSUserDefaults standardUserDefaults] setBool:[self.m_crash_report_switch isOn] forKey:@"crash_reporting_enabled"];
+#ifdef ANALYTICS
   [[FIRCrashlytics crashlytics] setCrashlyticsCollectionEnabled:[self.m_crash_report_switch isOn]];
+#endif
 }
 
 - (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath
@@ -93,7 +95,9 @@
   {
     DolphinAnalytics::Instance().GenerateNewIdentity();
     DolphinAnalytics::Instance().ReloadConfig();
+#ifdef ANALYTICS
     [FIRAnalytics resetAnalyticsData];
+#endif
     [[NSUserDefaults standardUserDefaults] setObject:[[NSArray alloc] init] forKey:@"unique_games"];
     
     UIAlertController* alert_controller = [UIAlertController alertControllerWithTitle:DOLocalizedString(@"Identity Generation") message:DOLocalizedString(@"New identity generated.") preferredStyle:UIAlertControllerStyleAlert];
