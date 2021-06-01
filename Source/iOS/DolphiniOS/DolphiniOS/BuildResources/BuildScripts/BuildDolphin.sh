@@ -44,6 +44,3 @@ if [ -f "$CMAKE_BUILD_DIR/libs/Externals/libfmtd.a" ]; then
     rm $CMAKE_BUILD_DIR/libs/Externals/libfmt.a || true
     cp $CMAKE_BUILD_DIR/libs/Externals/libfmtd.a $CMAKE_BUILD_DIR/libs/Externals/libfmt.a
 fi
-
-rm $PROJECT_DIR/libMoltenVK.dylib || true
-ln -s $ROOT_DOLPHIN_DIR/Externals/MoltenVK/libvulkan_iOS.dylib $PROJECT_DIR/libMoltenVK.dylib
