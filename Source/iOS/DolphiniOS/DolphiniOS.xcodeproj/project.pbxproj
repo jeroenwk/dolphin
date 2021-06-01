@@ -144,7 +144,6 @@
 		B97DDC512666035A0083896C /* LoadStateViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B971155923E03056001C6BD6 /* LoadStateViewController.mm */; };
 		B97DDC532666035A0083896C /* SoftwareCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E983ED245A1F2700119883 /* SoftwareCollectionViewCell.m */; };
 		B97DDC542666035A0083896C /* WiiSensorBarViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B99D361F23E3F42F005627CE /* WiiSensorBarViewController.mm */; };
-		B97DDC552666035A0083896C /* InGamePortSelectorViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9B948B623BF22C900E244FF /* InGamePortSelectorViewController.mm */; };
 		B97DDC562666035A0083896C /* SoftwareActionReplayEditViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B96E2C9B24D7B9C300AB4319 /* SoftwareActionReplayEditViewController.mm */; };
 		B97DDC572666035A0083896C /* SoftwareActionReplayCodeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B964B16024901ED200EE5A3B /* SoftwareActionReplayCodeCell.m */; };
 		B97DDC582666035A0083896C /* StateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B971155623E02FAA001C6BD6 /* StateCell.m */; };
@@ -2439,7 +2438,6 @@
 				B97DDC512666035A0083896C /* LoadStateViewController.mm in Sources */,
 				B97DDC532666035A0083896C /* SoftwareCollectionViewCell.m in Sources */,
 				B97DDC542666035A0083896C /* WiiSensorBarViewController.mm in Sources */,
-				B97DDC552666035A0083896C /* InGamePortSelectorViewController.mm in Sources */,
 				B97DDC562666035A0083896C /* SoftwareActionReplayEditViewController.mm in Sources */,
 				B97DDC572666035A0083896C /* SoftwareActionReplayCodeCell.m in Sources */,
 				B97DDC582666035A0083896C /* StateCell.m in Sources */,
