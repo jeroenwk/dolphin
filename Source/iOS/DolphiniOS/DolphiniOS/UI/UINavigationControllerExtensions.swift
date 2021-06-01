@@ -5,8 +5,10 @@
 // https://stackoverflow.com/a/56583774
 extension UINavigationController
 {
+#if os(iOS)
   open override var childForHomeIndicatorAutoHidden: UIViewController?
   {
     return topViewController
   }
+#endif
 }
