@@ -193,7 +193,6 @@
 		B97DDC882666035A0083896C /* GameCubeLanguageViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9D1E1B023E2B5E0008A6EE2 /* GameCubeLanguageViewController.mm */; };
 		B97DDC892666035A0083896C /* ControllerDsuClientViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B988D80723B83AB40092CB6C /* ControllerDsuClientViewController.mm */; };
 		B97DDC8B2666035A0083896C /* CodeSignatureUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B992D27E25528E0B00CB02FD /* CodeSignatureUtils.m */; };
-		B97DDC8C2666035A0083896C /* ControllerTouchscreenSettingsViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9A7AD6623C1960000C70473 /* ControllerTouchscreenSettingsViewController.mm */; };
 		B97DDC8D2666035A0083896C /* NonJailbrokenNoticeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B971E1CA245E288B00D2A698 /* NonJailbrokenNoticeViewController.m */; };
 		B97DDC8E2666035A0083896C /* JitAcquisitionFailureNoticeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B94C4A0025590DA100EBF06B /* JitAcquisitionFailureNoticeViewController.m */; };
 		B97DDC902666035A0083896C /* CoreHaptics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9B7E4B02560725900CC725E /* CoreHaptics.framework */; };
@@ -2491,7 +2490,6 @@
 				B97DDC882666035A0083896C /* GameCubeLanguageViewController.mm in Sources */,
 				B97DDC892666035A0083896C /* ControllerDsuClientViewController.mm in Sources */,
 				B97DDC8B2666035A0083896C /* CodeSignatureUtils.m in Sources */,
-				B97DDC8C2666035A0083896C /* ControllerTouchscreenSettingsViewController.mm in Sources */,
 				B97DDC8D2666035A0083896C /* NonJailbrokenNoticeViewController.m in Sources */,
 				B97DDC8E2666035A0083896C /* JitAcquisitionFailureNoticeViewController.m in Sources */,
 			);
