@@ -401,7 +401,7 @@
 #ifdef NONJAILBROKEN
   bool can_enable_fastmem = CanEnableFastmem();
   
-  Config::SetBase(Config::MAIN_FAST_DISC_SPEED, can_enable_fastmem);
+  Config::SetBase(Config::MAIN_FASTMEM, can_enable_fastmem);
   
   if (can_enable_fastmem && !hacky_fastmem_disable)
   {
