@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		25254A18E7FFADF311C2FB99 /* libPods-DolphinATV.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8245A52A54D03040E671EAF0 /* libPods-DolphinATV.a */; };
-		2FC542D2157D8D814369C67D /* libPods-DolphiniOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 93227A79A53E50FE37648CB5 /* libPods-DolphiniOS.a */; };
 		4EDF824B246C7F4200ED9FFA /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDF824A246C7F4200ED9FFA /* MainTabBarController.m */; };
 		4EDF824D246CA06F00ED9FFA /* UIImageView+FixVectorTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDF824C246CA06F00ED9FFA /* UIImageView+FixVectorTemplate.swift */; };
 		4EF97B4E23B6B8F300F13FCF /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4EF97B4D23B6B8F300F13FCF /* DefaultPreferences.plist */; };
@@ -851,7 +850,6 @@
 				B927118824A3FFB200A21182 /* liblzma.tbd in Frameworks */,
 				B945A3972362D99000B21680 /* libz.tbd in Frameworks */,
 				B945A3F52362E25500B21680 /* libc++.tbd in Frameworks */,
-				2FC542D2157D8D814369C67D /* libPods-DolphiniOS.a in Frameworks */,
 				558238957584C8F8B25A58EF /* libPods-DolphiniOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
