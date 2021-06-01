@@ -503,12 +503,16 @@
     @"org.dolphin-emu.ios.wii-software"
   ];
   
+#if !TARGET_OS_TV
   UIDocumentPickerViewController* pickerController = [[UIDocumentPickerViewController alloc] initWithDocumentTypes:types inMode:UIDocumentPickerModeOpen];
   pickerController.delegate = self;
   pickerController.modalPresentationStyle = UIModalPresentationPageSheet;
   
   [self presentViewController:pickerController animated:true completion:nil];
+#endif
 }
+
+#if !TARGET_OS_TV
 
 - (void)documentPicker:(UIDocumentPickerViewController*)controller didPickDocumentsAtURLs:(NSArray<NSURL*>*)urls
 {
@@ -517,6 +521,8 @@
   
   [self rescanWithCompletionHandler:nil];
 }
+
+#endif
 
 #pragma mark - Refreshing
 
