@@ -29,6 +29,7 @@
     return;
   }
   
+#if !TARGET_OS_TV
   bool was_dict_empty = emulation_controller->m_controllers.size() == 0;
   [emulation_controller PopulatePortDictionary];
   
@@ -39,6 +40,7 @@
   }
   
   [emulation_controller ChangeVisibleTouchControllerToPort:target_port];
+#endif
 }
 
 @end
