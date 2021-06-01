@@ -14,6 +14,8 @@
 typedef DOLATVSwitch DOLSwitch;
 typedef DOLATVSlider DOLSlider;
 #else
+#import <UIKit/UIKit.h>
+
 typedef UISwitch DOLSwitch;
 typedef UISlider DOLSlider;
 #endif
