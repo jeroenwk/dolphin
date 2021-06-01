@@ -139,8 +139,10 @@
     self.m_pause_button
   ];
   
+#if !TARGET_OS_TV
   // Update status bar appearance so it's the proper color if "Show Status Bar" is enabled
   [self setNeedsStatusBarAppearanceUpdate];
+#endif
 }
 
 
@@ -172,10 +174,12 @@
   }
 }
 
+#if !TARGET_OS_TV
 - (UIStatusBarStyle)preferredStatusBarStyle
 {
   return UIStatusBarStyleLightContent;
 }
+#endif
 
 #pragma mark - NKit Warning Delegate
 
@@ -438,6 +442,8 @@
   });
 }
 
+#if !TARGET_OS_TV
+
 - (UIRectEdge)preferredScreenEdgesDeferringSystemGestures
 {
   return self.m_pull_down_mode == DOLTopBarPullDownModeSwipe ? UIRectEdgeTop : UIRectEdgeNone;
@@ -456,10 +462,14 @@
   }
 }
 
+#endif
+
 - (void)UpdateNavigationBar:(bool)hidden
 {
   [self.navigationController setNavigationBarHidden:hidden animated:true];
+#if !TARGET_OS_TV
   [self setNeedsStatusBarAppearanceUpdate];
+#endif
   
   // Adjust the safe area insets
   UIEdgeInsets insets = self.additionalSafeAreaInsets;
