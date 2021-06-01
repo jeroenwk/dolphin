@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet DOLSwitch* m_motion_switch;
 @property (weak, nonatomic) IBOutlet DOLSwitch* m_motion_pointer_switch;
 @property (weak, nonatomic) IBOutlet DOLSwitch* m_recentering_switch;
-@property (weak, nonatomic) IBOutlet UISlider* m_button_opacity_slider;
+@property (weak, nonatomic) IBOutlet DOLSlider* m_button_opacity_slider;
 
 @end
 

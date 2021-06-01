@@ -255,6 +255,7 @@
 		B97DDCCF2666035A0083896C /* MoltenVK.xcframework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B97DDC112665E5000083896C /* MoltenVK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B97DDCE5266617B80083896C /* TCButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95A0944238533DC00DBBB01 /* TCButtonType.swift */; };
 		B97DDCEA2666A7410083896C /* DOLATVSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = B97DDCE92666A7410083896C /* DOLATVSwitch.m */; };
+		B97DDCF02666B0100083896C /* DOLATVSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = B97DDCEF2666B0100083896C /* DOLATVSlider.m */; };
 		B98584C723CEDFB800BE94B0 /* ConfigInterfaceViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B98584C623CEDFB800BE94B0 /* ConfigInterfaceViewController.mm */; };
 		B988D7F623B5A90E0092CB6C /* ControllerGroupExtensionButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B988D7F523B5A90E0092CB6C /* ControllerGroupExtensionButtonCell.m */; };
 		B988D7FA23B604690092CB6C /* ControllerLoadProfileViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B988D7F923B604690092CB6C /* ControllerLoadProfileViewController.mm */; };
@@ -619,6 +620,8 @@
 		B97DDCDF266603CB0083896C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B97DDCE82666A7410083896C /* DOLATVSwitch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DOLATVSwitch.h; sourceTree = "<group>"; };
 		B97DDCE92666A7410083896C /* DOLATVSwitch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DOLATVSwitch.m; sourceTree = "<group>"; };
+		B97DDCEE2666B0100083896C /* DOLATVSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOLATVSlider.h; sourceTree = "<group>"; };
+		B97DDCEF2666B0100083896C /* DOLATVSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOLATVSlider.m; sourceTree = "<group>"; };
 		B98584C523CEDFB800BE94B0 /* ConfigInterfaceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConfigInterfaceViewController.h; sourceTree = "<group>"; };
 		B98584C623CEDFB800BE94B0 /* ConfigInterfaceViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ConfigInterfaceViewController.mm; sourceTree = "<group>"; };
 		B988D7F423B5A90E0092CB6C /* ControllerGroupExtensionButtonCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ControllerGroupExtensionButtonCell.h; sourceTree = "<group>"; };
@@ -1276,6 +1279,8 @@
 		B97DDCE726662F890083896C /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				B97DDCEE2666B0100083896C /* DOLATVSlider.h */,
+				B97DDCEF2666B0100083896C /* DOLATVSlider.m */,
 				B97DDCE82666A7410083896C /* DOLATVSwitch.h */,
 				B97DDCE92666A7410083896C /* DOLATVSwitch.m */,
 			);
@@ -2445,6 +2450,7 @@
 				B97DDC5C2666035A0083896C /* InternalResolutionViewController.mm in Sources */,
 				B97DDC5D2666035A0083896C /* AnalyticsNoticeViewController.mm in Sources */,
 				B97DDC5E2666035A0083896C /* ControllerTypePickerViewController.mm in Sources */,
+				B97DDCF02666B0100083896C /* DOLATVSlider.m in Sources */,
 				B97DDC5F2666035A0083896C /* JitAcquisitionUtils.m in Sources */,
 				B97DDC602666035A0083896C /* ControllerExtensionCell.m in Sources */,
 				B97DDC612666035A0083896C /* SoftwareVerifyStartViewController.mm in Sources */,

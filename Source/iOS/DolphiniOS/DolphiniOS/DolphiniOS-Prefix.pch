@@ -9,8 +9,11 @@
 
 #if TARGET_OS_TV
 #import "DOLATVSwitch.h"
+#import "DOLATVSlider.h"
 
 typedef DOLATVSwitch DOLSwitch;
+typedef DOLATVSlider DOLSlider;
 #else
 typedef UISwitch DOLSwitch;
+typedef UISlider DOLSlider;
 #endif

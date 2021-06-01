@@ -33,7 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet DOLSwitch* m_vertex_rounding_switch;
 @property (weak, nonatomic) IBOutlet DOLSwitch* m_save_texture_cache_switch;
 
-@property (weak, nonatomic) IBOutlet UISlider* m_accuracy_slider;
+@property (weak, nonatomic) IBOutlet DOLSlider* m_accuracy_slider;
 
 @end
 
