@@ -7,6 +7,8 @@
 
 #include <MetalKit/MetalKit.h>
 
+#include <TargetConditionals.h>
+
 #include "Core/Boot/Boot.h"
 
 #include "Common/CommonTypes.h"
@@ -262,9 +264,17 @@ void UpdateWiiPointer()
 
     std::string gfx_backend;
 
+    // Check if the GPU is at least the A9
+    MTLFeatureSet featureSet;
+#if TARGET_OS_TV
+    featureSet = MTLFeatureSet_tvOS_GPUFamily2_v2;
+#else
+    featureSet = MTLFeatureSet_iOS_GPUFamily3_v2;
+#endif
+
     // Check if GPU Family 3 is supported
     id<MTLDevice> metalDevice = MTLCreateSystemDefaultDevice();
-    if ([metalDevice supportsFeatureSet:MTLFeatureSet_iOS_GPUFamily3_v2])
+    if ([metalDevice supportsFeatureSet:featureSet])
     {
       gfx_backend = "Vulkan";
     }
