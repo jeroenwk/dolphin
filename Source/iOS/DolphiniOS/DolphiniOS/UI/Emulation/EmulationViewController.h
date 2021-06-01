@@ -81,8 +81,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic) UIBarButtonItem* m_play_button;
 
 - (void)RunningTitleUpdated;
+#if !TARGET_OS_TV
 - (void)PopulatePortDictionary;
 - (void)ChangeVisibleTouchControllerToPort:(int)port;
+#endif
 
 @end
 

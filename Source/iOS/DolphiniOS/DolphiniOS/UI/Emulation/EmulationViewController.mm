@@ -263,7 +263,9 @@
   
   [MainiOS startEmulationWithBootParameters:std::move(self->m_boot_parameters) viewController:self view:self.m_renderer_view];
   
+#if !TARGET_OS_TV
   [[TCDeviceMotion shared] stopMotionUpdates];
+#endif
   
   [[NSNotificationCenter defaultCenter] postNotificationName:@"me.oatmealdome.DolphiniOS.emulation_stop" object:self];
   
@@ -396,6 +398,7 @@
   [[FIRCrashlytics crashlytics] setCustomValue:uid forKey:@"current-game"];
 #endif
   
+#if !TARGET_OS_TV
   dispatch_async(dispatch_get_main_queue(), ^{
     [self PopulatePortDictionary];
     
@@ -409,6 +412,7 @@
     
     [self ChangeVisibleTouchControllerToPort:self.m_ts_active_port];
   });
+#endif
 }
 
 - (bool)prefersHomeIndicatorAutoHidden
@@ -486,8 +490,10 @@
 
 - (void)viewDidLayoutSubviews
 {
+#if !TARGET_OS_TV
   [[TCDeviceMotion shared] statusBarOrientationChanged];
-  
+#endif
+
   if (g_renderer)
   {
     g_renderer->ResizeSurface();
@@ -496,6 +502,7 @@
 
 - (void)UpdateWiiPointer
 {
+#if !TARGET_OS_TV
   if (g_renderer && [self.m_ts_active_view isKindOfClass:[TCWiiPad class]])
   {
     const MathUtil::Rectangle<int>& draw_rect = g_renderer->GetTargetRectangle();
@@ -506,6 +513,7 @@
       [wii_pad recalculatePointerValuesWithNew_rect:rect game_aspect:g_renderer->CalculateDrawAspectRatio()];
     });
   }
+#endif
 }
 
 #pragma mark - Bar buttons
@@ -567,6 +575,8 @@
 }
 
 #pragma mark - Touchscreen Controller Switcher
+
+#if !TARGET_OS_TV
 
 - (void)PopulatePortDictionary
 {
@@ -721,6 +731,8 @@
     self.m_ts_active_view = nil;
   }
 }
+
+#endif
 
 #pragma mark - Memory warning
 
