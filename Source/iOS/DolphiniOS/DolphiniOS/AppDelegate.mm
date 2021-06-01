@@ -647,8 +647,10 @@
     // Spin while Core stops
     while (Core::GetState() != Core::State::Uninitialized);
   }
-  
+
+#if !TARGET_OS_TV
   [[TCDeviceMotion shared] stopMotionUpdates];
+#endif
   ButtonManager::Shutdown();
   Pad::Shutdown();
   Keyboard::Shutdown();
