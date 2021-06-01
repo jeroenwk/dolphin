@@ -205,49 +205,24 @@
 		B97DDC982666035A0083896C /* liblzma.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B927118724A3FFB200A21182 /* liblzma.tbd */; };
 		B97DDC992666035A0083896C /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B945A3962362D99000B21680 /* libz.tbd */; };
 		B97DDC9A2666035A0083896C /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B945A3F32362E24000B21680 /* libc++.tbd */; };
-		B97DDC9D2666035A0083896C /* ReloadFailedNotice.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9B536E923DE976B00F03106 /* ReloadFailedNotice.xib */; };
-		B97DDC9E2666035A0083896C /* SoftwareProperties.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9E4EA7624E07AE700CED657 /* SoftwareProperties.storyboard */; };
 		B97DDC9F2666035A0083896C /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = B9766AF423A5EACD00FF7F17 /* license.txt */; };
-		B97DDCA02666035A0083896C /* Emulation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B99B05B423A182B20076C7D8 /* Emulation.storyboard */; };
-		B97DDCA12666035A0083896C /* OSTooNewNotice.xib in Resources */ = {isa = PBXBuildFile; fileRef = B971E1CD245E7F2200D2A698 /* OSTooNewNotice.xib */; };
 		B97DDCA22666035A0083896C /* SpecialThanks.txt in Resources */ = {isa = PBXBuildFile; fileRef = B99B05BC23A2E8BD0076C7D8 /* SpecialThanks.txt */; };
-		B97DDCA32666035A0083896C /* AnalyticsNotice.xib in Resources */ = {isa = PBXBuildFile; fileRef = B98911A02444F12200A24522 /* AnalyticsNotice.xib */; };
 		B97DDCA42666035A0083896C /* GCPadNew.ini in Resources */ = {isa = PBXBuildFile; fileRef = B99B05A123A067560076C7D8 /* GCPadNew.ini */; };
 		B97DDCA52666035A0083896C /* TouchGCPadProfile.ini in Resources */ = {isa = PBXBuildFile; fileRef = B988D80223B801F40092CB6C /* TouchGCPadProfile.ini */; };
-		B97DDCA62666035A0083896C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B945A3812362909500B21680 /* LaunchScreen.storyboard */; };
 		B97DDCA72666035A0083896C /* Sys in Resources */ = {isa = PBXBuildFile; fileRef = B99B05A623A067D00076C7D8 /* Sys */; };
 		B97DDCA82666035A0083896C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B945A37F2362909500B21680 /* Assets.xcassets */; };
 		B97DDCA92666035A0083896C /* WiimoteProfile.ini in Resources */ = {isa = PBXBuildFile; fileRef = B99B05A223A067560076C7D8 /* WiimoteProfile.ini */; };
-		B97DDCAA2666035A0083896C /* ReloadStateNotice.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9B536E323DE822B00F03106 /* ReloadStateNotice.xib */; };
-		B97DDCAB2666035A0083896C /* UpdateNotice.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9B536CC23DD8B8000F03106 /* UpdateNotice.xib */; };
-		B97DDCAC2666035A0083896C /* InvalidCpuCoreNotice.xib in Resources */ = {isa = PBXBuildFile; fileRef = B971155023DF44C3001C6BD6 /* InvalidCpuCoreNotice.xib */; };
-		B97DDCAD2666035A0083896C /* ImproperlySignedNotice.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9C956232461007C0095EC98 /* ImproperlySignedNotice.xib */; };
-		B97DDCAE2666035A0083896C /* UnsupportedDeviceNotice.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9B536D123DE4FE400F03106 /* UnsupportedDeviceNotice.xib */; };
 		B97DDCAF2666035A0083896C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B9AAAB4323D7F5660094F159 /* Localizable.strings */; };
-		B97DDCB02666035A0083896C /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B924DCA423DA873000831A1A /* Settings.storyboard */; };
-		B97DDCB12666035A0083896C /* ConfigSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B996C86023D590D500700D6F /* ConfigSettings.storyboard */; };
-		B97DDCB22666035A0083896C /* ControllerSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B996C86823D5F49500700D6F /* ControllerSettings.storyboard */; };
-		B97DDCB32666035A0083896C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B945A37C2362908500B21680 /* Main.storyboard */; };
 		B97DDCB42666035A0083896C /* WiimoteNew.ini in Resources */ = {isa = PBXBuildFile; fileRef = B99B05A023A067560076C7D8 /* WiimoteNew.ini */; };
-		B97DDCB52666035A0083896C /* DonationNotice.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9B536D423DE609900F03106 /* DonationNotice.xib */; };
 		B97DDCB62666035A0083896C /* DolphinImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B95A093D2384E82D00DBBB01 /* DolphinImages.xcassets */; };
 		B97DDCB72666035A0083896C /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4EF97B4D23B6B8F300F13FCF /* DefaultPreferences.plist */; };
 		B97DDCB82666035A0083896C /* MFiWiimoteProfile.ini in Resources */ = {isa = PBXBuildFile; fileRef = B988D7FF23B60B510092CB6C /* MFiWiimoteProfile.ini */; };
 		B97DDCB92666035A0083896C /* Entitlements_NJB_Universal.plist in Resources */ = {isa = PBXBuildFile; fileRef = B9B68AAF255DC06200480009 /* Entitlements_NJB_Universal.plist */; };
-		B97DDCBB2666035A0083896C /* JitAcquisitionFailureNotice.xib in Resources */ = {isa = PBXBuildFile; fileRef = B94C49FD25590D4300EBF06B /* JitAcquisitionFailureNotice.xib */; };
-		B97DDCBC2666035A0083896C /* KilledBuildNotice.xib in Resources */ = {isa = PBXBuildFile; fileRef = B99577A024664F90008C5115 /* KilledBuildNotice.xib */; };
 		B97DDCBD2666035A0083896C /* MFiGCPadProfile.ini in Resources */ = {isa = PBXBuildFile; fileRef = B988D7FE23B60B510092CB6C /* MFiGCPadProfile.ini */; };
 		B97DDCBE2666035A0083896C /* Entitlements_NJB.plist in Resources */ = {isa = PBXBuildFile; fileRef = B971E1C4245E040500D2A698 /* Entitlements_NJB.plist */; };
-		B97DDCBF2666035A0083896C /* GraphicsSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B92431C52400DFC600D5FF0A /* GraphicsSettings.storyboard */; };
-		B97DDCC02666035A0083896C /* NetPlaySetup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B99577AC24673EBF008C5115 /* NetPlaySetup.storyboard */; };
 		B97DDCC12666035A0083896C /* DebugLogger.ini in Resources */ = {isa = PBXBuildFile; fileRef = B92243E824E9F5D50085632F /* DebugLogger.ini */; };
-		B97DDCC22666035A0083896C /* WiiSystemUpdate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B946AF13245BFBCD0043767A /* WiiSystemUpdate.storyboard */; };
-		B97DDCC42666035A0083896C /* NonJailbrokenNotice.xib in Resources */ = {isa = PBXBuildFile; fileRef = B971E1C7245E210400D2A698 /* NonJailbrokenNotice.xib */; };
 		B97DDCC72666035A0083896C /* Dolphin.strings in Resources */ = {isa = PBXBuildFile; fileRef = B996C85423D50FC600700D6F /* Dolphin.strings */; };
-		B97DDCC92666035A0083896C /* NKitWarningNotice.xib in Resources */ = {isa = PBXBuildFile; fileRef = B92243E024E9C7FA0085632F /* NKitWarningNotice.xib */; };
-		B97DDCCA2666035A0083896C /* UnofficialBuildNotice.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9B536DD23DE707F00F03106 /* UnofficialBuildNotice.xib */; };
 		B97DDCCB2666035A0083896C /* TouchWiimoteProfile.ini in Resources */ = {isa = PBXBuildFile; fileRef = B988D80323B801F40092CB6C /* TouchWiimoteProfile.ini */; };
-		B97DDCCC2666035A0083896C /* InGameSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B924321D2401F61300D5FF0A /* InGameSettings.storyboard */; };
 		B97DDCCE2666035A0083896C /* libjailbreak.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = B94C4A022559230500EBF06B /* libjailbreak.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		B97DDCCF2666035A0083896C /* MoltenVK.xcframework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B97DDC112665E5000083896C /* MoltenVK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B97DDCE5266617B80083896C /* TCButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95A0944238533DC00DBBB01 /* TCButtonType.swift */; };
@@ -1904,49 +1879,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B97DDC9D2666035A0083896C /* ReloadFailedNotice.xib in Resources */,
-				B97DDC9E2666035A0083896C /* SoftwareProperties.storyboard in Resources */,
 				B97DDC9F2666035A0083896C /* license.txt in Resources */,
-				B97DDCA02666035A0083896C /* Emulation.storyboard in Resources */,
-				B97DDCA12666035A0083896C /* OSTooNewNotice.xib in Resources */,
 				B97DDCA22666035A0083896C /* SpecialThanks.txt in Resources */,
-				B97DDCA32666035A0083896C /* AnalyticsNotice.xib in Resources */,
 				B97DDCA42666035A0083896C /* GCPadNew.ini in Resources */,
 				B97DDCA52666035A0083896C /* TouchGCPadProfile.ini in Resources */,
-				B97DDCA62666035A0083896C /* LaunchScreen.storyboard in Resources */,
 				B97DDCA72666035A0083896C /* Sys in Resources */,
 				B97DDCA82666035A0083896C /* Assets.xcassets in Resources */,
 				B97DDCA92666035A0083896C /* WiimoteProfile.ini in Resources */,
-				B97DDCAA2666035A0083896C /* ReloadStateNotice.xib in Resources */,
-				B97DDCAB2666035A0083896C /* UpdateNotice.xib in Resources */,
-				B97DDCAC2666035A0083896C /* InvalidCpuCoreNotice.xib in Resources */,
-				B97DDCAD2666035A0083896C /* ImproperlySignedNotice.xib in Resources */,
-				B97DDCAE2666035A0083896C /* UnsupportedDeviceNotice.xib in Resources */,
 				B97DDCAF2666035A0083896C /* Localizable.strings in Resources */,
-				B97DDCB02666035A0083896C /* Settings.storyboard in Resources */,
-				B97DDCB12666035A0083896C /* ConfigSettings.storyboard in Resources */,
-				B97DDCB22666035A0083896C /* ControllerSettings.storyboard in Resources */,
-				B97DDCB32666035A0083896C /* Main.storyboard in Resources */,
 				B97DDCB42666035A0083896C /* WiimoteNew.ini in Resources */,
-				B97DDCB52666035A0083896C /* DonationNotice.xib in Resources */,
 				B97DDCB62666035A0083896C /* DolphinImages.xcassets in Resources */,
 				B97DDCB72666035A0083896C /* DefaultPreferences.plist in Resources */,
 				B97DDCB82666035A0083896C /* MFiWiimoteProfile.ini in Resources */,
 				B97DDCB92666035A0083896C /* Entitlements_NJB_Universal.plist in Resources */,
-				B97DDCBB2666035A0083896C /* JitAcquisitionFailureNotice.xib in Resources */,
-				B97DDCBC2666035A0083896C /* KilledBuildNotice.xib in Resources */,
 				B97DDCBD2666035A0083896C /* MFiGCPadProfile.ini in Resources */,
 				B97DDCBE2666035A0083896C /* Entitlements_NJB.plist in Resources */,
-				B97DDCBF2666035A0083896C /* GraphicsSettings.storyboard in Resources */,
-				B97DDCC02666035A0083896C /* NetPlaySetup.storyboard in Resources */,
 				B97DDCC12666035A0083896C /* DebugLogger.ini in Resources */,
-				B97DDCC22666035A0083896C /* WiiSystemUpdate.storyboard in Resources */,
-				B97DDCC42666035A0083896C /* NonJailbrokenNotice.xib in Resources */,
 				B97DDCC72666035A0083896C /* Dolphin.strings in Resources */,
-				B97DDCC92666035A0083896C /* NKitWarningNotice.xib in Resources */,
-				B97DDCCA2666035A0083896C /* UnofficialBuildNotice.xib in Resources */,
 				B97DDCCB2666035A0083896C /* TouchWiimoteProfile.ini in Resources */,
-				B97DDCCC2666035A0083896C /* InGameSettings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
