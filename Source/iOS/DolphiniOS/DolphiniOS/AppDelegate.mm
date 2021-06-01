@@ -150,7 +150,9 @@
   
   if (@available(iOS 13, *))
   {
+#if !TARGET_OS_TV
     [nav_controller setModalPresentationStyle:UIModalPresentationFormSheet];
+#endif
     nav_controller.modalInPresentation = true;
   }
   else
