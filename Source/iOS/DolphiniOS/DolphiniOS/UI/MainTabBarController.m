@@ -15,7 +15,7 @@
   [super viewDidLoad];
   
   // Load SF Symbols on iOS 13 only, otherwise revert to legacy PNGs
-  if (@available(iOS 13, *))
+  if (@available(iOS 13, tvOS 13, *))
   {
     self.tabBar.items[0].image = [UIImage imageNamed:@"SF_gamecontroller"];
     self.tabBar.items[1].image = [UIImage imageNamed:@"SF_gear"];
