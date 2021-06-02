@@ -43,6 +43,7 @@
 {
   [super viewDidLoad];
   
+#if !TARGET_OS_TV
   NSInteger preferred_view = [[NSUserDefaults standardUserDefaults] integerForKey:@"software_list_view"];
   
   [self.m_table_view setHidden:preferred_view == 0];
@@ -67,7 +68,6 @@
     self.m_list_button.image = [UIImage imageNamed:@"list_dash_legacy.png"];
   }
   
-#if !TARGET_OS_TV
   // Create UIRefreshControls
   UIRefreshControl* table_refresh = [[UIRefreshControl alloc] init];
   [table_refresh addTarget:self action:@selector(handleRefresh:) forControlEvents:UIControlEventValueChanged];
