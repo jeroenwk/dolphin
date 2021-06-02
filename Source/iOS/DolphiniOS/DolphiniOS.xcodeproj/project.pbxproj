@@ -229,6 +229,7 @@
 		B97DDCEA2666A7410083896C /* DOLATVSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = B97DDCE92666A7410083896C /* DOLATVSwitch.m */; };
 		B97DDCF02666B0100083896C /* DOLATVSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = B97DDCEF2666B0100083896C /* DOLATVSlider.m */; };
 		B97DDCF22666E3400083896C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B97DDCF12666E3400083896C /* LaunchScreen.storyboard */; };
+		B97DDCF42666E5340083896C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B97DDCF32666E5340083896C /* Main.storyboard */; };
 		B98584C723CEDFB800BE94B0 /* ConfigInterfaceViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B98584C623CEDFB800BE94B0 /* ConfigInterfaceViewController.mm */; };
 		B988D7F623B5A90E0092CB6C /* ControllerGroupExtensionButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B988D7F523B5A90E0092CB6C /* ControllerGroupExtensionButtonCell.m */; };
 		B988D7FA23B604690092CB6C /* ControllerLoadProfileViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B988D7F923B604690092CB6C /* ControllerLoadProfileViewController.mm */; };
@@ -596,6 +597,7 @@
 		B97DDCEE2666B0100083896C /* DOLATVSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOLATVSlider.h; sourceTree = "<group>"; };
 		B97DDCEF2666B0100083896C /* DOLATVSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOLATVSlider.m; sourceTree = "<group>"; };
 		B97DDCF12666E3400083896C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B97DDCF32666E5340083896C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B98584C523CEDFB800BE94B0 /* ConfigInterfaceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConfigInterfaceViewController.h; sourceTree = "<group>"; };
 		B98584C623CEDFB800BE94B0 /* ConfigInterfaceViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ConfigInterfaceViewController.mm; sourceTree = "<group>"; };
 		B988D7F423B5A90E0092CB6C /* ControllerGroupExtensionButtonCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ControllerGroupExtensionButtonCell.h; sourceTree = "<group>"; };
@@ -1237,6 +1239,7 @@
 			isa = PBXGroup;
 			children = (
 				B97DDCE626662F7A0083896C /* UI */,
+				B97DDCF32666E5340083896C /* Main.storyboard */,
 				B97DDCF12666E3400083896C /* LaunchScreen.storyboard */,
 				B97DDCDF266603CB0083896C /* Info.plist */,
 			);
@@ -1893,6 +1896,7 @@
 				B97DDCAF2666035A0083896C /* Localizable.strings in Resources */,
 				B97DDCB42666035A0083896C /* WiimoteNew.ini in Resources */,
 				B97DDCB62666035A0083896C /* DolphinImages.xcassets in Resources */,
+				B97DDCF42666E5340083896C /* Main.storyboard in Resources */,
 				B97DDCB72666035A0083896C /* DefaultPreferences.plist in Resources */,
 				B97DDCB82666035A0083896C /* MFiWiimoteProfile.ini in Resources */,
 				B97DDCB92666035A0083896C /* Entitlements_NJB_Universal.plist in Resources */,
