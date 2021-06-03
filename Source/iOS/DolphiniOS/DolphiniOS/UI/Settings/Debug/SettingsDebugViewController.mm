@@ -54,6 +54,22 @@
   [self.m_fastmem_switch setEnabled:can_enable_fastmem];
   [self.m_hacky_fastmem_switch setEnabled:GetFastmemType() == DOLFastmemTypeProper];
 #endif
+  
+#if TARGET_OS_TV
+  CELL_SWITCH_CHANGED(self.m_load_store_switch, LoadStoreChanged);
+  CELL_SWITCH_CHANGED(self.m_load_store_fp_switch, LoadStoreFpChanged);
+  CELL_SWITCH_CHANGED(self.m_load_store_p_switch, LoadStorePChanged);
+  CELL_SWITCH_CHANGED(self.m_fp_switch, FpChanged);
+  CELL_SWITCH_CHANGED(self.m_integer_switch, IntegerChanged);
+  CELL_SWITCH_CHANGED(self.m_p_switch, PChanged);
+  CELL_SWITCH_CHANGED(self.m_system_registers_switch, SystemRegistersChanged);
+  CELL_SWITCH_CHANGED(self.m_branch_switch, BranchChanged);
+  CELL_SWITCH_CHANGED(self.m_register_cache_switch, RegisterCacheChanged);
+  
+  CELL_SWITCH_CHANGED(self.m_skip_idle_switch, SkipIdleChanged);
+  CELL_SWITCH_CHANGED(self.m_fastmem_switch, FastmemChanged);
+  CELL_SWITCH_CHANGED(self.m_hacky_fastmem_switch, HackyFastmemChanged);
+#endif
 }
 
 - (IBAction)LoadStoreChanged:(id)sender
