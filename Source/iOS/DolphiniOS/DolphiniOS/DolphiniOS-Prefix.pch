@@ -8,10 +8,10 @@
 #import "StringUtils.h"
 
 #if TARGET_OS_TV
-#import "DOLATVSwitch.h"
+#import "DOLATVSwitchCell.h"
 #import "DOLATVSlider.h"
 
-typedef DOLATVSwitch DOLSwitch;
+typedef DOLATVSwitchCell DOLSwitch;
 typedef DOLATVSlider DOLSlider;
 #else
 #import <UIKit/UIKit.h>

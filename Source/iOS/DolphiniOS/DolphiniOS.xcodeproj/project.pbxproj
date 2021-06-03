@@ -226,7 +226,6 @@
 		B97DDCCE2666035A0083896C /* libjailbreak.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = B94C4A022559230500EBF06B /* libjailbreak.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		B97DDCCF2666035A0083896C /* MoltenVK.xcframework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B97DDC112665E5000083896C /* MoltenVK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B97DDCE5266617B80083896C /* TCButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95A0944238533DC00DBBB01 /* TCButtonType.swift */; };
-		B97DDCEA2666A7410083896C /* DOLATVSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = B97DDCE92666A7410083896C /* DOLATVSwitch.m */; };
 		B97DDCF02666B0100083896C /* DOLATVSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = B97DDCEF2666B0100083896C /* DOLATVSlider.m */; };
 		B97DDCF22666E3400083896C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B97DDCF12666E3400083896C /* LaunchScreen.storyboard */; };
 		B97DDCF42666E5340083896C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B97DDCF32666E5340083896C /* Main.storyboard */; };
@@ -302,6 +301,7 @@
 		B9B948BB23BFC4EC00E244FF /* PortSelectorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B9B948BA23BFC4EC00E244FF /* PortSelectorCell.m */; };
 		B9BEADE123AF08320014617A /* ControllerSettingsUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9BEADE023AF08320014617A /* ControllerSettingsUtils.mm */; };
 		B9BEADE423AF1A310014617A /* ControllerRootViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9BEADE323AF1A310014617A /* ControllerRootViewController.mm */; };
+		B9C3F3F9266943AE0053E501 /* DOLATVSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C3F3F8266943AE0053E501 /* DOLATVSwitchCell.m */; };
 		B9C85E0D23A9FECF008A4DD1 /* TCDeviceMotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C85E0C23A9FECF008A4DD1 /* TCDeviceMotion.swift */; };
 		B9C956242461007C0095EC98 /* ImproperlySignedNotice.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9C956232461007C0095EC98 /* ImproperlySignedNotice.xib */; };
 		B9D1E1AB23E2B4B6008A6EE2 /* ConfigGameCubeViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9D1E1AA23E2B4B6008A6EE2 /* ConfigGameCubeViewController.mm */; };
@@ -592,8 +592,6 @@
 		B97DDC112665E5000083896C /* MoltenVK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = MoltenVK.xcframework; path = ../../../Externals/MoltenVK/MoltenVK.xcframework; sourceTree = "<group>"; };
 		B97DDCDA2666035A0083896C /* DolphinATV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DolphinATV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B97DDCDF266603CB0083896C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B97DDCE82666A7410083896C /* DOLATVSwitch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DOLATVSwitch.h; sourceTree = "<group>"; };
-		B97DDCE92666A7410083896C /* DOLATVSwitch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DOLATVSwitch.m; sourceTree = "<group>"; };
 		B97DDCEE2666B0100083896C /* DOLATVSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOLATVSlider.h; sourceTree = "<group>"; };
 		B97DDCEF2666B0100083896C /* DOLATVSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOLATVSlider.m; sourceTree = "<group>"; };
 		B97DDCF12666E3400083896C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -728,6 +726,8 @@
 		B9BEADE023AF08320014617A /* ControllerSettingsUtils.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ControllerSettingsUtils.mm; sourceTree = "<group>"; };
 		B9BEADE223AF1A310014617A /* ControllerRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ControllerRootViewController.h; sourceTree = "<group>"; };
 		B9BEADE323AF1A310014617A /* ControllerRootViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ControllerRootViewController.mm; sourceTree = "<group>"; };
+		B9C3F3F7266943AE0053E501 /* DOLATVSwitchCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DOLATVSwitchCell.h; sourceTree = "<group>"; };
+		B9C3F3F8266943AE0053E501 /* DOLATVSwitchCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DOLATVSwitchCell.m; sourceTree = "<group>"; };
 		B9C85E0C23A9FECF008A4DD1 /* TCDeviceMotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCDeviceMotion.swift; sourceTree = "<group>"; };
 		B9C956232461007C0095EC98 /* ImproperlySignedNotice.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ImproperlySignedNotice.xib; path = DolphiniOS/UI/Notices/ImproperlySigned/ImproperlySignedNotice.xib; sourceTree = SOURCE_ROOT; };
 		B9D1E1A923E2B4B6008A6EE2 /* ConfigGameCubeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConfigGameCubeViewController.h; sourceTree = "<group>"; };
@@ -1259,8 +1259,8 @@
 			children = (
 				B97DDCEE2666B0100083896C /* DOLATVSlider.h */,
 				B97DDCEF2666B0100083896C /* DOLATVSlider.m */,
-				B97DDCE82666A7410083896C /* DOLATVSwitch.h */,
-				B97DDCE92666A7410083896C /* DOLATVSwitch.m */,
+				B9C3F3F7266943AE0053E501 /* DOLATVSwitchCell.h */,
+				B9C3F3F8266943AE0053E501 /* DOLATVSwitchCell.m */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -2340,6 +2340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B97DDC1B2666035A0083896C /* ControllerLoadProfileViewController.mm in Sources */,
+				B9C3F3F9266943AE0053E501 /* DOLATVSwitchCell.m in Sources */,
 				B97DDC1C2666035A0083896C /* GraphicsBackendViewController.mm in Sources */,
 				B97DDC1D2666035A0083896C /* GraphicsHacksViewController.mm in Sources */,
 				B97DDC1E2666035A0083896C /* EmulationViewController.mm in Sources */,
@@ -2424,7 +2425,6 @@
 				B97DDC722666035A0083896C /* ConfigWiiViewController.mm in Sources */,
 				B97DDC732666035A0083896C /* SoftwareGeckoEditViewController.mm in Sources */,
 				B97DDC752666035A0083896C /* SettingsDebugViewController.mm in Sources */,
-				B97DDCEA2666A7410083896C /* DOLATVSwitch.m in Sources */,
 				B97DDC762666035A0083896C /* WiiLanguageViewController.mm in Sources */,
 				B97DDC772666035A0083896C /* ShaderModeViewController.mm in Sources */,
 				B97DDC782666035A0083896C /* InvalidCpuCoreNoticeViewController.mm in Sources */,
