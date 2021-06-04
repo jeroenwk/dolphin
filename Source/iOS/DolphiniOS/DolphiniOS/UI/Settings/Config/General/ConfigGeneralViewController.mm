@@ -49,6 +49,15 @@
   [self.m_statistics_switch setEnabled:false];
   [self.m_crash_report_switch setEnabled:false];
 #endif
+  
+#if TARGET_OS_TV
+  CELL_SWITCH_CHANGED(self.m_dual_core_switch, DualCoreChanged);
+  CELL_SWITCH_CHANGED(self.m_cheats_switch, EnableCheatsChanged);
+  CELL_SWITCH_CHANGED(self.m_mismatched_region_switch, MismatchedRegionChanged);
+  CELL_SWITCH_CHANGED(self.m_change_discs_switch, ChangeDiscsChanged);
+  CELL_SWITCH_CHANGED(self.m_statistics_switch, StatisticsChanged);
+  CELL_SWITCH_CHANGED(self.m_crash_report_switch, CrashReportingChanged);
+#endif
 }
 
 - (IBAction)DualCoreChanged:(id)sender
