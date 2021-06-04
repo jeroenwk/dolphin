@@ -270,50 +270,6 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="Q9N-8C-Guf">
-                                        <rect key="frame" x="96" y="207.5" width="1728" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Q9N-8C-Guf" id="TUq-Ex-tJG">
-                                            <rect key="frame" x="0.0" y="0.0" width="1728" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Center Game Image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6K0-Zw-CzT">
-                                                    <rect key="frame" x="30" y="10" width="1698" height="46"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="centerY" secondItem="TUq-Ex-tJG" secondAttribute="centerY" id="1PA-NS-r9j"/>
-                                                <constraint firstItem="6K0-Zw-CzT" firstAttribute="centerY" secondItem="TUq-Ex-tJG" secondAttribute="centerY" id="Kpy-xD-I1y"/>
-                                                <constraint firstAttribute="trailing" secondItem="6K0-Zw-CzT" secondAttribute="trailing" id="RkT-Z6-MNm"/>
-                                                <constraint firstItem="6K0-Zw-CzT" firstAttribute="leading" secondItem="TUq-Ex-tJG" secondAttribute="leadingMargin" id="W3a-3O-fZB"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="gVI-Pa-3eY">
-                                        <rect key="frame" x="96" y="265" width="1728" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gVI-Pa-3eY" id="RaO-gr-WRS">
-                                            <rect key="frame" x="0.0" y="0.0" width="1728" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Show Status Bar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Dge-z6-TXb">
-                                                    <rect key="frame" x="30" y="10" width="1698" height="46"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="Dge-z6-TXb" firstAttribute="centerY" secondItem="RaO-gr-WRS" secondAttribute="centerY" id="2Mk-YN-qCv"/>
-                                                <constraint firstAttribute="trailing" secondItem="Dge-z6-TXb" secondAttribute="trailing" id="8XO-K2-Da4"/>
-                                                <constraint firstItem="Dge-z6-TXb" firstAttribute="leading" secondItem="RaO-gr-WRS" secondAttribute="leadingMargin" id="k5F-zg-F4l"/>
-                                                <constraint firstAttribute="centerY" secondItem="RaO-gr-WRS" secondAttribute="centerY" id="kty-Te-7MJ"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
