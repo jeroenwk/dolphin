@@ -25,9 +25,7 @@
 #import "SoftwarePropertiesViewController.h"
 #import "SoftwareTableViewCell.h"
 
-#if !TARGET_OS_TV
 #import "UICollectionViewLeftAlignedLayout.h"
-#endif
 
 #import "UICommon/GameFile.h"
 
@@ -79,12 +77,13 @@
 #endif
   
   // Left align on devices that aren't compact horizontally
-  /*if (self.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClassRegular)
+  UIUserInterfaceIdiom idiom = [[UIDevice currentDevice] userInterfaceIdiom];
+  if (idiom == UIUserInterfaceIdiomPad || idiom == UIUserInterfaceIdiomTV)
   {
     UICollectionViewFlowLayout* layout = [[UICollectionViewLeftAlignedLayout alloc] init];
     layout.estimatedItemSize = UICollectionViewFlowLayoutAutomaticSize;
     self.m_collection_view.collectionViewLayout = layout;
-  }*/
+  }
   
   // Load the GameFileCache
   self.m_cache = [[GameFileCacheHolder sharedInstance] m_cache];
