@@ -39,6 +39,12 @@ extern void SetEnableAlert(bool enable);
   [self.m_osd_switch setOn:Config::Get(Config::MAIN_OSD_MESSAGES)];
   [self.m_center_image_switch setOn:[[NSUserDefaults standardUserDefaults] boolForKey:@"do_not_raise_rendering_view"]];
   [self.m_status_bar_switch setOn:[[NSUserDefaults standardUserDefaults] boolForKey:@"show_status_bar"]];
+  
+#if TARGET_OS_TV
+  CELL_SWITCH_CHANGED(self.m_confirm_stop_switch, ConfirmStopChanged);
+  CELL_SWITCH_CHANGED(self.m_panic_handlers_switch, UsePanicHandlersChanged);
+  CELL_SWITCH_CHANGED(self.m_osd_switch, ShowOsdChanged);
+#endif
 }
 
 - (IBAction)ConfirmStopChanged:(id)sender
