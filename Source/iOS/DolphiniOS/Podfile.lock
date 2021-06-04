@@ -84,7 +84,7 @@ PODS:
 DEPENDENCIES:
   - Firebase/Analytics
   - Firebase/Crashlytics
-  - UICollectionViewLeftAlignedLayout
+  - UICollectionViewLeftAlignedLayout (from `https://github.com/OatmealDome/UICollectionViewLeftAlignedLayout/`)
 
 SPEC REPOS:
   trunk:
@@ -102,7 +102,15 @@ SPEC REPOS:
     - GoogleUtilities
     - nanopb
     - PromisesObjC
-    - UICollectionViewLeftAlignedLayout
+
+EXTERNAL SOURCES:
+  UICollectionViewLeftAlignedLayout:
+    :git: https://github.com/OatmealDome/UICollectionViewLeftAlignedLayout/
+
+CHECKOUT OPTIONS:
+  UICollectionViewLeftAlignedLayout:
+    :commit: 17e8c00ad45bb1808307dd0897f8f35a400ca7dc
+    :git: https://github.com/OatmealDome/UICollectionViewLeftAlignedLayout/
 
 SPEC CHECKSUMS:
   Firebase: 585ae467b3edda6a5444e788fda6888f024d8d6f
@@ -119,8 +127,8 @@ SPEC CHECKSUMS:
   GoogleUtilities: 39530bc0ad980530298e9c4af8549e991fd033b1
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
-  UICollectionViewLeftAlignedLayout: 830bf6fa5bab9f9b464f62e3384f9d2e00b3c0f6
+  UICollectionViewLeftAlignedLayout: 15d711839fc89595b59dd7956c6953657b14fa8a
 
-PODFILE CHECKSUM: 4654dd3dc0a6507b8be3d68e7f3a34f6d0f30772
+PODFILE CHECKSUM: 2cd90fac8a119e017d041e69c81f51553b4b6e57
 
 COCOAPODS: 1.9.3
