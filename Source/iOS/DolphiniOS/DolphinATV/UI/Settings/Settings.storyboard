@@ -100,6 +100,9 @@
                                                 <constraint firstAttribute="trailing" secondItem="n0Q-3C-VDC" secondAttribute="trailing" id="mUy-Pi-tZO"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="AGx-gc-1eT" kind="show" id="fnR-zT-xDG"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="VR7-7r-GB2">
                                         <rect key="frame" x="96" y="223.5" width="1728" height="43.5"/>
@@ -214,6 +217,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mR5-zL-KMx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1828" y="417"/>
+        </scene>
+        <!--Root-->
+        <scene sceneID="B4b-gY-aeQ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ConfigSettings" referencedIdentifier="Root" id="AGx-gc-1eT" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Cpo-4u-gRV"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="acs-gJ-hNa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3115" y="417"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="NRw-gI-4Ob">
