@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "AltKit",
+        "repositoryURL": "https://github.com/rileytestut/AltKit.git",
+        "state": {
+          "branch": "main",
+          "revision": "e02828d16f834f5ed64af914696345e6373d5d2a",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
