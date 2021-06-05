@@ -22,5 +22,5 @@ do
   cp "$TWOX_DIR/$FILENAME.png" "$ROOT_SRC_DIR/DolphinImages.xcassets/$FILENAME.imageset/$FILENAME\@2x.png"
   cp "$THREEX_DIR/$FILENAME.png" "$ROOT_SRC_DIR/DolphinImages.xcassets/$FILENAME.imageset/$FILENAME\@3x.png"
   
-  sed "s/FILENAME/$FILENAME/g" "$ROOT_SRC_DIR/BuildResources/DolphinImageTemplate.json.in" > "$ROOT_SRC_DIR/DolphinImages.xcassets/$FILENAME.imageset/Contents.json"
+  sed "s/FILENAME/$FILENAME/g" "$ROOT_SRC_DIR/../Common/Build Resources/DolphinImageTemplate.json.in" > "$ROOT_SRC_DIR/DolphinImages.xcassets/$FILENAME.imageset/Contents.json"
 done
