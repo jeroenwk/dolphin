@@ -90,6 +90,8 @@
 - (BOOL)application:(UIApplication*)application
     didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
 {
+  [UIViewController swizzleViewDidDisappear];
+  
   // Check the device compatibility
 #ifndef SUPPRESS_UNSUPPORTED_DEVICE
   // Provide a way to bypass this check for debugging purposes
