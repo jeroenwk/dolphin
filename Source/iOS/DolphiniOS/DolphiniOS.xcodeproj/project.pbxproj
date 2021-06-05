@@ -209,7 +209,6 @@
 		B97DDCA22666035A0083896C /* SpecialThanks.txt in Resources */ = {isa = PBXBuildFile; fileRef = B99B05BC23A2E8BD0076C7D8 /* SpecialThanks.txt */; };
 		B97DDCA42666035A0083896C /* GCPadNew.ini in Resources */ = {isa = PBXBuildFile; fileRef = B99B05A123A067560076C7D8 /* GCPadNew.ini */; };
 		B97DDCA52666035A0083896C /* TouchGCPadProfile.ini in Resources */ = {isa = PBXBuildFile; fileRef = B988D80223B801F40092CB6C /* TouchGCPadProfile.ini */; };
-		B97DDCA72666035A0083896C /* Sys in Resources */ = {isa = PBXBuildFile; fileRef = B99B05A623A067D00076C7D8 /* Sys */; };
 		B97DDCA82666035A0083896C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B945A37F2362909500B21680 /* Assets.xcassets */; };
 		B97DDCA92666035A0083896C /* WiimoteProfile.ini in Resources */ = {isa = PBXBuildFile; fileRef = B99B05A223A067560076C7D8 /* WiimoteProfile.ini */; };
 		B97DDCAF2666035A0083896C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B9AAAB4323D7F5660094F159 /* Localizable.strings */; };
@@ -256,7 +255,6 @@
 		B99B05A323A067570076C7D8 /* WiimoteNew.ini in Resources */ = {isa = PBXBuildFile; fileRef = B99B05A023A067560076C7D8 /* WiimoteNew.ini */; };
 		B99B05A423A067570076C7D8 /* GCPadNew.ini in Resources */ = {isa = PBXBuildFile; fileRef = B99B05A123A067560076C7D8 /* GCPadNew.ini */; };
 		B99B05A523A067570076C7D8 /* WiimoteProfile.ini in Resources */ = {isa = PBXBuildFile; fileRef = B99B05A223A067560076C7D8 /* WiimoteProfile.ini */; };
-		B99B05A723A067D10076C7D8 /* Sys in Resources */ = {isa = PBXBuildFile; fileRef = B99B05A623A067D00076C7D8 /* Sys */; };
 		B99B05B523A182B20076C7D8 /* Emulation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B99B05B423A182B20076C7D8 /* Emulation.storyboard */; };
 		B99B05B923A20F3D0076C7D8 /* TCView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99B05B823A20F3D0076C7D8 /* TCView.swift */; };
 		B99B05BB23A2118B0076C7D8 /* TCWiiPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99B05BA23A2118B0076C7D8 /* TCWiiPad.swift */; };
@@ -313,6 +311,8 @@
 		B9D1E1B123E2B5E0008A6EE2 /* GameCubeLanguageViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9D1E1B023E2B5E0008A6EE2 /* GameCubeLanguageViewController.mm */; };
 		B9D5D54B266B39F90068049F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D5D54A266B39F90068049F /* AppDelegate.swift */; };
 		B9D5D54C266B3FD00068049F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D5D54A266B39F90068049F /* AppDelegate.swift */; };
+		B9D5D556266B48D70068049F /* Sys in Resources */ = {isa = PBXBuildFile; fileRef = B9D5D555266B48D60068049F /* Sys */; };
+		B9D5D557266B48D70068049F /* Sys in Resources */ = {isa = PBXBuildFile; fileRef = B9D5D555266B48D60068049F /* Sys */; };
 		B9DBDEAD24DAA2BB00014137 /* SoftwareGeckoViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9DBDEAC24DAA2BB00014137 /* SoftwareGeckoViewController.mm */; };
 		B9DBDEB024DAA67700014137 /* SoftwareGeckoEditViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9DBDEAF24DAA67700014137 /* SoftwareGeckoEditViewController.mm */; };
 		B9DCAC8523AAC46E002B95C8 /* TCSidewaysWiiPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9DCAC8423AAC46E002B95C8 /* TCSidewaysWiiPad.xib */; };
@@ -654,7 +654,6 @@
 		B99B05A023A067560076C7D8 /* WiimoteNew.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = WiimoteNew.ini; path = ../../../Android/app/src/main/assets/WiimoteNew.ini; sourceTree = "<group>"; };
 		B99B05A123A067560076C7D8 /* GCPadNew.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = GCPadNew.ini; path = ../../../Android/app/src/main/assets/GCPadNew.ini; sourceTree = "<group>"; };
 		B99B05A223A067560076C7D8 /* WiimoteProfile.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = WiimoteProfile.ini; path = ../../../Android/app/src/main/assets/WiimoteProfile.ini; sourceTree = "<group>"; };
-		B99B05A623A067D00076C7D8 /* Sys */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Sys; path = ../../../../Data/Sys; sourceTree = "<group>"; };
 		B99B05AA23A09DDF0076C7D8 /* control.in */ = {isa = PBXFileReference; lastKnownFileType = text; name = control.in; path = BuildResources/DebFiles/control.in; sourceTree = "<group>"; };
 		B99B05AC23A0AAC60076C7D8 /* Entitlements_JB.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Entitlements_JB.plist; path = BuildResources/Entitlements_JB.plist; sourceTree = "<group>"; };
 		B99B05B423A182B20076C7D8 /* Emulation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Emulation.storyboard; sourceTree = "<group>"; };
@@ -745,6 +744,7 @@
 		B9D1E1AF23E2B5E0008A6EE2 /* GameCubeLanguageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameCubeLanguageViewController.h; sourceTree = "<group>"; };
 		B9D1E1B023E2B5E0008A6EE2 /* GameCubeLanguageViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = GameCubeLanguageViewController.mm; sourceTree = "<group>"; };
 		B9D5D54A266B39F90068049F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B9D5D555266B48D60068049F /* Sys */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Sys; path = ../../../../../Data/Sys; sourceTree = "<group>"; };
 		B9DBDEAB24DAA2BB00014137 /* SoftwareGeckoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SoftwareGeckoViewController.h; sourceTree = "<group>"; };
 		B9DBDEAC24DAA2BB00014137 /* SoftwareGeckoViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SoftwareGeckoViewController.mm; sourceTree = "<group>"; };
 		B9DBDEAE24DAA67700014137 /* SoftwareGeckoEditViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SoftwareGeckoEditViewController.h; sourceTree = "<group>"; };
@@ -1401,7 +1401,6 @@
 		B99B059F23A067090076C7D8 /* Bundle Resources */ = {
 			isa = PBXGroup;
 			children = (
-				B99B05A623A067D00076C7D8 /* Sys */,
 				B99B05A123A067560076C7D8 /* GCPadNew.ini */,
 				B99B05A023A067560076C7D8 /* WiimoteNew.ini */,
 				B99B05A223A067560076C7D8 /* WiimoteProfile.ini */,
@@ -1646,6 +1645,7 @@
 		B9D5D554266B48850068049F /* Bundle Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B9D5D555266B48D60068049F /* Sys */,
 				B988D7FE23B60B510092CB6C /* MFiGCPadProfile.ini */,
 				B988D7FF23B60B510092CB6C /* MFiWiimoteProfile.ini */,
 				B988D80223B801F40092CB6C /* TouchGCPadProfile.ini */,
@@ -1894,8 +1894,8 @@
 				B99B05A423A067570076C7D8 /* GCPadNew.ini in Resources */,
 				B988D80423B801F40092CB6C /* TouchGCPadProfile.ini in Resources */,
 				B945A3832362909500B21680 /* LaunchScreen.storyboard in Resources */,
-				B99B05A723A067D10076C7D8 /* Sys in Resources */,
 				B945A3802362909500B21680 /* Assets.xcassets in Resources */,
+				B9D5D556266B48D70068049F /* Sys in Resources */,
 				B99B05A523A067570076C7D8 /* WiimoteProfile.ini in Resources */,
 				B9B536E423DE822B00F03106 /* ReloadStateNotice.xib in Resources */,
 				B9B536CD23DD8B8000F03106 /* UpdateNotice.xib in Resources */,
@@ -1943,7 +1943,7 @@
 				B97DDCA22666035A0083896C /* SpecialThanks.txt in Resources */,
 				B97DDCA42666035A0083896C /* GCPadNew.ini in Resources */,
 				B97DDCA52666035A0083896C /* TouchGCPadProfile.ini in Resources */,
-				B97DDCA72666035A0083896C /* Sys in Resources */,
+				B9D5D557266B48D70068049F /* Sys in Resources */,
 				B97DDCA82666035A0083896C /* Assets.xcassets in Resources */,
 				B97DDCF7266728A30083896C /* Settings.storyboard in Resources */,
 				B97DDCF22666E3400083896C /* LaunchScreen.storyboard in Resources */,
