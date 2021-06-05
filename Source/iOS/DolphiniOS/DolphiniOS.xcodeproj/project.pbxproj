@@ -311,6 +311,8 @@
 		B9C956242461007C0095EC98 /* ImproperlySignedNotice.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9C956232461007C0095EC98 /* ImproperlySignedNotice.xib */; };
 		B9D1E1AB23E2B4B6008A6EE2 /* ConfigGameCubeViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9D1E1AA23E2B4B6008A6EE2 /* ConfigGameCubeViewController.mm */; };
 		B9D1E1B123E2B5E0008A6EE2 /* GameCubeLanguageViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9D1E1B023E2B5E0008A6EE2 /* GameCubeLanguageViewController.mm */; };
+		B9D5D54B266B39F90068049F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D5D54A266B39F90068049F /* AppDelegate.swift */; };
+		B9D5D54C266B3FD00068049F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D5D54A266B39F90068049F /* AppDelegate.swift */; };
 		B9DBDEAD24DAA2BB00014137 /* SoftwareGeckoViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9DBDEAC24DAA2BB00014137 /* SoftwareGeckoViewController.mm */; };
 		B9DBDEB024DAA67700014137 /* SoftwareGeckoEditViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9DBDEAF24DAA67700014137 /* SoftwareGeckoEditViewController.mm */; };
 		B9DCAC8523AAC46E002B95C8 /* TCSidewaysWiiPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9DCAC8423AAC46E002B95C8 /* TCSidewaysWiiPad.xib */; };
@@ -742,6 +744,7 @@
 		B9D1E1AA23E2B4B6008A6EE2 /* ConfigGameCubeViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ConfigGameCubeViewController.mm; sourceTree = "<group>"; };
 		B9D1E1AF23E2B5E0008A6EE2 /* GameCubeLanguageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameCubeLanguageViewController.h; sourceTree = "<group>"; };
 		B9D1E1B023E2B5E0008A6EE2 /* GameCubeLanguageViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = GameCubeLanguageViewController.mm; sourceTree = "<group>"; };
+		B9D5D54A266B39F90068049F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9DBDEAB24DAA2BB00014137 /* SoftwareGeckoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SoftwareGeckoViewController.h; sourceTree = "<group>"; };
 		B9DBDEAC24DAA2BB00014137 /* SoftwareGeckoViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SoftwareGeckoViewController.mm; sourceTree = "<group>"; };
 		B9DBDEAE24DAA67700014137 /* SoftwareGeckoEditViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SoftwareGeckoEditViewController.h; sourceTree = "<group>"; };
@@ -1027,6 +1030,7 @@
 				B98963C92553E362007CCA0D /* Util */,
 				B945A3732362908500B21680 /* AppDelegate.h */,
 				B945A3742362908500B21680 /* AppDelegate.mm */,
+				B9D5D54A266B39F90068049F /* AppDelegate.swift */,
 				B989119E244451D300A24522 /* StringUtils.h */,
 				4EF97B4D23B6B8F300F13FCF /* DefaultPreferences.plist */,
 				B945A37C2362908500B21680 /* Main.storyboard */,
@@ -2284,6 +2288,7 @@
 				4EDF824D246CA06F00ED9FFA /* UIImageView+FixVectorTemplate.swift in Sources */,
 				B9BEADE423AF1A310014617A /* ControllerRootViewController.mm in Sources */,
 				B946AF17245BFF110043767A /* WiiSystemUpdateViewController.mm in Sources */,
+				B9D5D54B266B39F90068049F /* AppDelegate.swift in Sources */,
 				B971E1F9245EB63E00D2A698 /* DebuggerUtils.m in Sources */,
 				B930A5D12467B01000C7F1B5 /* NPSConnectionTypeViewController.mm in Sources */,
 				B988D7FD23B604AB0092CB6C /* ControllerProfileCell.m in Sources */,
@@ -2446,6 +2451,7 @@
 				B97DDC602666035A0083896C /* ControllerExtensionCell.m in Sources */,
 				B97DDC612666035A0083896C /* SoftwareVerifyStartViewController.mm in Sources */,
 				B97DDC622666035A0083896C /* AntiAliasingCell.m in Sources */,
+				B9D5D54C266B3FD00068049F /* AppDelegate.swift in Sources */,
 				B9C3F408266B23CD0053E501 /* UIViewController+ModalPresentationQueue.swift in Sources */,
 				B97DDC632666035A0083896C /* EAGLView.m in Sources */,
 				B97DDC642666035A0083896C /* MainTabBarController.m in Sources */,

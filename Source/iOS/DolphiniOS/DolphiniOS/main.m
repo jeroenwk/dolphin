@@ -2,12 +2,15 @@
 // Licensed under GPLv2+
 // Refer to the license.txt file included.
 
-#import "AppDelegate.h"
+#if TARGET_OS_TV
+#import "DolphinATV-Swift.h"
+#else
+#import "DolphiniOS-Swift.h"
+#endif
 
 #import "JitAcquisitionUtils.h"
 
 #import <UIKit/UIKit.h>
-
 
 int main(int argc, char* argv[])
 {
