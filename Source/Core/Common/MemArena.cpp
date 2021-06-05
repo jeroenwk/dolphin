@@ -187,7 +187,7 @@ u8* MemArena::FindMemoryBase(bool hacky)
   if (retval != KERN_SUCCESS)
   {
     PanicAlert("Failed to map enough memory space: 0x%x", retval);
-    exit(0);
+    return nullptr;
   }
 
   vm_deallocate(mach_task_self(), addr, memory_size);
