@@ -2191,7 +2191,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"$PROJECT_DIR/DolphiniOS/Build Resources/Scripts/PreBuildTasks.sh\"\n";
+			shellScript = "\"$PROJECT_DIR/Common/Build Resources/Scripts/PreBuildTasks.sh\"\n";
 		};
 		B9E1ACB423B34F540072EDF0 /* Clean Bundle */ = {
 			isa = PBXShellScriptBuildPhase;
