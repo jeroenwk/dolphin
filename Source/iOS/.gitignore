@@ -71,7 +71,7 @@ iOSInjectionProject/
 #
 # A script automatically copies these images from the Android sources, so don't
 # commit these.
-DolphiniOS/DolphiniOS/DolphinImages.xcassets/*.imageset
+DolphiniOS/Common/DolphinImages.xcassets/*.imageset
 
 # csdbgd
 csdbgd/csdbgd
