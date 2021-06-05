@@ -82,7 +82,6 @@
 		B971156423E15004001C6BD6 /* SpeedLimitViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B971156323E15004001C6BD6 /* SpeedLimitViewController.mm */; };
 		B971156723E1511A001C6BD6 /* SpeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B971156623E1511A001C6BD6 /* SpeedCell.m */; };
 		B971156B23E1D378001C6BD6 /* ConfigSoundViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B971156A23E1D378001C6BD6 /* ConfigSoundViewController.mm */; };
-		B971E1C5245E040500D2A698 /* Entitlements_NJB.plist in Resources */ = {isa = PBXBuildFile; fileRef = B971E1C4245E040500D2A698 /* Entitlements_NJB.plist */; };
 		B971E1C8245E210400D2A698 /* NonJailbrokenNotice.xib in Resources */ = {isa = PBXBuildFile; fileRef = B971E1C7245E210400D2A698 /* NonJailbrokenNotice.xib */; };
 		B971E1CB245E288B00D2A698 /* NonJailbrokenNoticeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B971E1CA245E288B00D2A698 /* NonJailbrokenNoticeViewController.m */; };
 		B971E1CE245E7F2200D2A698 /* OSTooNewNotice.xib in Resources */ = {isa = PBXBuildFile; fileRef = B971E1CD245E7F2200D2A698 /* OSTooNewNotice.xib */; };
@@ -207,18 +206,13 @@
 		B97DDC9A2666035A0083896C /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B945A3F32362E24000B21680 /* libc++.tbd */; };
 		B97DDC9F2666035A0083896C /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = B9766AF423A5EACD00FF7F17 /* license.txt */; };
 		B97DDCA22666035A0083896C /* SpecialThanks.txt in Resources */ = {isa = PBXBuildFile; fileRef = B99B05BC23A2E8BD0076C7D8 /* SpecialThanks.txt */; };
-		B97DDCA42666035A0083896C /* GCPadNew.ini in Resources */ = {isa = PBXBuildFile; fileRef = B99B05A123A067560076C7D8 /* GCPadNew.ini */; };
 		B97DDCA52666035A0083896C /* TouchGCPadProfile.ini in Resources */ = {isa = PBXBuildFile; fileRef = B988D80223B801F40092CB6C /* TouchGCPadProfile.ini */; };
 		B97DDCA82666035A0083896C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B945A37F2362909500B21680 /* Assets.xcassets */; };
-		B97DDCA92666035A0083896C /* WiimoteProfile.ini in Resources */ = {isa = PBXBuildFile; fileRef = B99B05A223A067560076C7D8 /* WiimoteProfile.ini */; };
 		B97DDCAF2666035A0083896C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B9AAAB4323D7F5660094F159 /* Localizable.strings */; };
-		B97DDCB42666035A0083896C /* WiimoteNew.ini in Resources */ = {isa = PBXBuildFile; fileRef = B99B05A023A067560076C7D8 /* WiimoteNew.ini */; };
 		B97DDCB62666035A0083896C /* DolphinImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B95A093D2384E82D00DBBB01 /* DolphinImages.xcassets */; };
 		B97DDCB72666035A0083896C /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4EF97B4D23B6B8F300F13FCF /* DefaultPreferences.plist */; };
 		B97DDCB82666035A0083896C /* MFiWiimoteProfile.ini in Resources */ = {isa = PBXBuildFile; fileRef = B988D7FF23B60B510092CB6C /* MFiWiimoteProfile.ini */; };
-		B97DDCB92666035A0083896C /* Entitlements_NJB_Universal.plist in Resources */ = {isa = PBXBuildFile; fileRef = B9B68AAF255DC06200480009 /* Entitlements_NJB_Universal.plist */; };
 		B97DDCBD2666035A0083896C /* MFiGCPadProfile.ini in Resources */ = {isa = PBXBuildFile; fileRef = B988D7FE23B60B510092CB6C /* MFiGCPadProfile.ini */; };
-		B97DDCBE2666035A0083896C /* Entitlements_NJB.plist in Resources */ = {isa = PBXBuildFile; fileRef = B971E1C4245E040500D2A698 /* Entitlements_NJB.plist */; };
 		B97DDCC12666035A0083896C /* DebugLogger.ini in Resources */ = {isa = PBXBuildFile; fileRef = B92243E824E9F5D50085632F /* DebugLogger.ini */; };
 		B97DDCC72666035A0083896C /* Dolphin.strings in Resources */ = {isa = PBXBuildFile; fileRef = B996C85423D50FC600700D6F /* Dolphin.strings */; };
 		B97DDCCB2666035A0083896C /* TouchWiimoteProfile.ini in Resources */ = {isa = PBXBuildFile; fileRef = B988D80323B801F40092CB6C /* TouchWiimoteProfile.ini */; };
@@ -252,9 +246,6 @@
 		B996C85223D50FC600700D6F /* Dolphin.strings in Resources */ = {isa = PBXBuildFile; fileRef = B996C85423D50FC600700D6F /* Dolphin.strings */; };
 		B996C85E23D590D500700D6F /* ConfigSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B996C86023D590D500700D6F /* ConfigSettings.storyboard */; };
 		B996C86623D5F49500700D6F /* ControllerSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B996C86823D5F49500700D6F /* ControllerSettings.storyboard */; };
-		B99B05A323A067570076C7D8 /* WiimoteNew.ini in Resources */ = {isa = PBXBuildFile; fileRef = B99B05A023A067560076C7D8 /* WiimoteNew.ini */; };
-		B99B05A423A067570076C7D8 /* GCPadNew.ini in Resources */ = {isa = PBXBuildFile; fileRef = B99B05A123A067560076C7D8 /* GCPadNew.ini */; };
-		B99B05A523A067570076C7D8 /* WiimoteProfile.ini in Resources */ = {isa = PBXBuildFile; fileRef = B99B05A223A067560076C7D8 /* WiimoteProfile.ini */; };
 		B99B05B523A182B20076C7D8 /* Emulation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B99B05B423A182B20076C7D8 /* Emulation.storyboard */; };
 		B99B05B923A20F3D0076C7D8 /* TCView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99B05B823A20F3D0076C7D8 /* TCView.swift */; };
 		B99B05BB23A2118B0076C7D8 /* TCWiiPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99B05BA23A2118B0076C7D8 /* TCWiiPad.swift */; };
@@ -293,7 +284,6 @@
 		B9B536E423DE822B00F03106 /* ReloadStateNotice.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9B536E323DE822B00F03106 /* ReloadStateNotice.xib */; };
 		B9B536E723DE824800F03106 /* ReloadStateNoticeViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9B536E623DE824800F03106 /* ReloadStateNoticeViewController.mm */; };
 		B9B536EA23DE976B00F03106 /* ReloadFailedNotice.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9B536E923DE976B00F03106 /* ReloadFailedNotice.xib */; };
-		B9B68AB0255DC06200480009 /* Entitlements_NJB_Universal.plist in Resources */ = {isa = PBXBuildFile; fileRef = B9B68AAF255DC06200480009 /* Entitlements_NJB_Universal.plist */; };
 		B9B7E4B12560725900CC725E /* CoreHaptics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9B7E4B02560725900CC725E /* CoreHaptics.framework */; };
 		B9B948B123BDC95E00E244FF /* EmulationViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9B948B023BDC95E00E244FF /* EmulationViewController.mm */; };
 		B9B948B723BF22C900E244FF /* InGamePortSelectorViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9B948B623BF22C900E244FF /* InGamePortSelectorViewController.mm */; };
@@ -313,6 +303,12 @@
 		B9D5D54C266B3FD00068049F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D5D54A266B39F90068049F /* AppDelegate.swift */; };
 		B9D5D556266B48D70068049F /* Sys in Resources */ = {isa = PBXBuildFile; fileRef = B9D5D555266B48D60068049F /* Sys */; };
 		B9D5D557266B48D70068049F /* Sys in Resources */ = {isa = PBXBuildFile; fileRef = B9D5D555266B48D60068049F /* Sys */; };
+		B9D5D55E266B4AD90068049F /* GCPadNew.ini in Resources */ = {isa = PBXBuildFile; fileRef = B9D5D55B266B4AD90068049F /* GCPadNew.ini */; };
+		B9D5D55F266B4AD90068049F /* GCPadNew.ini in Resources */ = {isa = PBXBuildFile; fileRef = B9D5D55B266B4AD90068049F /* GCPadNew.ini */; };
+		B9D5D560266B4AD90068049F /* WiimoteProfile.ini in Resources */ = {isa = PBXBuildFile; fileRef = B9D5D55C266B4AD90068049F /* WiimoteProfile.ini */; };
+		B9D5D561266B4AD90068049F /* WiimoteProfile.ini in Resources */ = {isa = PBXBuildFile; fileRef = B9D5D55C266B4AD90068049F /* WiimoteProfile.ini */; };
+		B9D5D562266B4AD90068049F /* WiimoteNew.ini in Resources */ = {isa = PBXBuildFile; fileRef = B9D5D55D266B4AD90068049F /* WiimoteNew.ini */; };
+		B9D5D563266B4AD90068049F /* WiimoteNew.ini in Resources */ = {isa = PBXBuildFile; fileRef = B9D5D55D266B4AD90068049F /* WiimoteNew.ini */; };
 		B9DBDEAD24DAA2BB00014137 /* SoftwareGeckoViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9DBDEAC24DAA2BB00014137 /* SoftwareGeckoViewController.mm */; };
 		B9DBDEB024DAA67700014137 /* SoftwareGeckoEditViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9DBDEAF24DAA67700014137 /* SoftwareGeckoEditViewController.mm */; };
 		B9DCAC8523AAC46E002B95C8 /* TCSidewaysWiiPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9DCAC8423AAC46E002B95C8 /* TCSidewaysWiiPad.xib */; };
@@ -528,7 +524,6 @@
 		B95A09332382782600DBBB01 /* TCGameCubePad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCGameCubePad.swift; sourceTree = "<group>"; };
 		B95A09372382D89600DBBB01 /* TCJoystick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCJoystick.swift; sourceTree = "<group>"; };
 		B95A093D2384E82D00DBBB01 /* DolphinImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = DolphinImages.xcassets; sourceTree = "<group>"; };
-		B95A09402384F32900DBBB01 /* DolphinImageTemplate.json.in */ = {isa = PBXFileReference; lastKnownFileType = text; name = DolphinImageTemplate.json.in; path = BuildResources/DolphinImageTemplate.json.in; sourceTree = "<group>"; };
 		B95A0944238533DC00DBBB01 /* TCButtonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCButtonType.swift; sourceTree = "<group>"; };
 		B95A09462385DE9500DBBB01 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		B95A09472385DE9600DBBB01 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -585,15 +580,12 @@
 		B971156623E1511A001C6BD6 /* SpeedCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpeedCell.m; sourceTree = "<group>"; };
 		B971156923E1D378001C6BD6 /* ConfigSoundViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConfigSoundViewController.h; sourceTree = "<group>"; };
 		B971156A23E1D378001C6BD6 /* ConfigSoundViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ConfigSoundViewController.mm; sourceTree = "<group>"; };
-		B971E1C3245E034E00D2A698 /* BuildIpa.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = BuildIpa.sh; path = BuildResources/BuildScripts/BuildIpa.sh; sourceTree = "<group>"; };
-		B971E1C4245E040500D2A698 /* Entitlements_NJB.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Entitlements_NJB.plist; path = BuildResources/Entitlements_NJB.plist; sourceTree = "<group>"; };
 		B971E1C7245E210400D2A698 /* NonJailbrokenNotice.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NonJailbrokenNotice.xib; path = DolphiniOS/UI/Notices/NonJailbroken/NonJailbrokenNotice.xib; sourceTree = SOURCE_ROOT; };
 		B971E1C9245E288B00D2A698 /* NonJailbrokenNoticeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NonJailbrokenNoticeViewController.h; sourceTree = "<group>"; };
 		B971E1CA245E288B00D2A698 /* NonJailbrokenNoticeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NonJailbrokenNoticeViewController.m; sourceTree = "<group>"; };
 		B971E1CD245E7F2200D2A698 /* OSTooNewNotice.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = OSTooNewNotice.xib; path = DolphiniOS/UI/Notices/OSTooNew/OSTooNewNotice.xib; sourceTree = SOURCE_ROOT; };
 		B971E1F7245EB63E00D2A698 /* DebuggerUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DebuggerUtils.h; sourceTree = "<group>"; };
 		B971E1F8245EB63E00D2A698 /* DebuggerUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DebuggerUtils.m; sourceTree = "<group>"; };
-		B9766AF123A4A26900FF7F17 /* postinst.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = postinst.sh; path = BuildResources/DebFiles/postinst.sh; sourceTree = "<group>"; };
 		B9766AF423A5EACD00FF7F17 /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = license.txt; path = ../../../../license.txt; sourceTree = "<group>"; };
 		B97C9E2423C1308300C99067 /* TCClassicWiiPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCClassicWiiPad.swift; sourceTree = "<group>"; };
 		B97DDC112665E5000083896C /* MoltenVK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = MoltenVK.xcframework; path = ../../../Externals/MoltenVK/MoltenVK.xcframework; sourceTree = "<group>"; };
@@ -639,23 +631,15 @@
 		B99577AC24673EBF008C5115 /* NetPlaySetup.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NetPlaySetup.storyboard; sourceTree = "<group>"; };
 		B99585D324673F89008C5115 /* NetPlayHolder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetPlayHolder.h; sourceTree = "<group>"; };
 		B99585D424673F89008C5115 /* NetPlayHolder.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = NetPlayHolder.mm; sourceTree = "<group>"; };
-		B996C83B23D45B5A00700D6F /* PreBuildTasks.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = PreBuildTasks.sh; path = BuildResources/BuildScripts/PreBuildTasks.sh; sourceTree = "<group>"; };
 		B996C85323D50FC600700D6F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Dolphin.strings; sourceTree = "<group>"; };
-		B996C85723D5884300700D6F /* UpdateDolphinStrings.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = UpdateDolphinStrings.py; sourceTree = "<group>"; };
 		B996C85F23D590D500700D6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ConfigSettings.storyboard; sourceTree = "<group>"; };
 		B996C86223D590E500700D6F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ConfigSettings.strings; sourceTree = "<group>"; };
-		B996C86323D5927800700D6F /* UpdateUIStrings.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = UpdateUIStrings.py; sourceTree = "<group>"; };
 		B996C86423D5A6CC00700D6F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/ConfigSettings.strings; sourceTree = "<group>"; };
 		B996C86523D5A6CC00700D6F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Dolphin.strings; sourceTree = "<group>"; };
 		B996C86723D5F49500700D6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ControllerSettings.storyboard; sourceTree = "<group>"; };
 		B996C86A23D5F4AB00700D6F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ControllerSettings.strings; sourceTree = "<group>"; };
 		B996C86C23D5F4AF00700D6F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/ControllerSettings.strings; sourceTree = "<group>"; };
 		B996C86D23D6F0D000700D6F /* DolphiniOS-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DolphiniOS-Prefix.pch"; sourceTree = "<group>"; };
-		B99B05A023A067560076C7D8 /* WiimoteNew.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = WiimoteNew.ini; path = ../../../Android/app/src/main/assets/WiimoteNew.ini; sourceTree = "<group>"; };
-		B99B05A123A067560076C7D8 /* GCPadNew.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = GCPadNew.ini; path = ../../../Android/app/src/main/assets/GCPadNew.ini; sourceTree = "<group>"; };
-		B99B05A223A067560076C7D8 /* WiimoteProfile.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = WiimoteProfile.ini; path = ../../../Android/app/src/main/assets/WiimoteProfile.ini; sourceTree = "<group>"; };
-		B99B05AA23A09DDF0076C7D8 /* control.in */ = {isa = PBXFileReference; lastKnownFileType = text; name = control.in; path = BuildResources/DebFiles/control.in; sourceTree = "<group>"; };
-		B99B05AC23A0AAC60076C7D8 /* Entitlements_JB.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Entitlements_JB.plist; path = BuildResources/Entitlements_JB.plist; sourceTree = "<group>"; };
 		B99B05B423A182B20076C7D8 /* Emulation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Emulation.storyboard; sourceTree = "<group>"; };
 		B99B05B823A20F3D0076C7D8 /* TCView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCView.swift; sourceTree = "<group>"; };
 		B99B05BA23A2118B0076C7D8 /* TCWiiPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCWiiPad.swift; sourceTree = "<group>"; };
@@ -721,7 +705,6 @@
 		B9B536E623DE824800F03106 /* ReloadStateNoticeViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ReloadStateNoticeViewController.mm; sourceTree = "<group>"; };
 		B9B536E923DE976B00F03106 /* ReloadFailedNotice.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ReloadFailedNotice.xib; path = DolphiniOS/UI/Notices/ReloadFailed/ReloadFailedNotice.xib; sourceTree = SOURCE_ROOT; };
 		B9B536EB23DE97B000F03106 /* ReloadFailedNoticeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReloadFailedNoticeViewController.h; path = DolphiniOS/UI/Notices/ReloadFailed/ReloadFailedNoticeViewController.h; sourceTree = SOURCE_ROOT; };
-		B9B68AAF255DC06200480009 /* Entitlements_NJB_Universal.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Entitlements_NJB_Universal.plist; path = BuildResources/Entitlements_NJB_Universal.plist; sourceTree = "<group>"; };
 		B9B7E4B02560725900CC725E /* CoreHaptics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreHaptics.framework; path = System/Library/Frameworks/CoreHaptics.framework; sourceTree = SDKROOT; };
 		B9B948AF23BDC95E00E244FF /* EmulationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmulationViewController.h; sourceTree = "<group>"; };
 		B9B948B023BDC95E00E244FF /* EmulationViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = EmulationViewController.mm; sourceTree = "<group>"; };
@@ -745,21 +728,34 @@
 		B9D1E1B023E2B5E0008A6EE2 /* GameCubeLanguageViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = GameCubeLanguageViewController.mm; sourceTree = "<group>"; };
 		B9D5D54A266B39F90068049F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9D5D555266B48D60068049F /* Sys */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Sys; path = ../../../../../Data/Sys; sourceTree = "<group>"; };
+		B9D5D55B266B4AD90068049F /* GCPadNew.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = GCPadNew.ini; path = ../../../../Android/app/src/main/assets/GCPadNew.ini; sourceTree = "<group>"; };
+		B9D5D55C266B4AD90068049F /* WiimoteProfile.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = WiimoteProfile.ini; path = ../../../../Android/app/src/main/assets/WiimoteProfile.ini; sourceTree = "<group>"; };
+		B9D5D55D266B4AD90068049F /* WiimoteNew.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = WiimoteNew.ini; path = ../../../../Android/app/src/main/assets/WiimoteNew.ini; sourceTree = "<group>"; };
+		B9D5D566266B5FE40068049F /* DolphinImageTemplate.json.in */ = {isa = PBXFileReference; lastKnownFileType = text; path = DolphinImageTemplate.json.in; sourceTree = "<group>"; };
+		B9D5D567266B5FE40068049F /* Entitlements_NJB_Universal.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Entitlements_NJB_Universal.plist; sourceTree = "<group>"; };
+		B9D5D569266B5FE40068049F /* Entitlements_NJB.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Entitlements_NJB.plist; sourceTree = "<group>"; };
+		B9D5D56A266B5FE40068049F /* Entitlements_JB.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Entitlements_JB.plist; sourceTree = "<group>"; };
+		B9D5D56C266B60120068049F /* UpdateUIStrings.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = UpdateUIStrings.py; sourceTree = "<group>"; };
+		B9D5D56D266B60130068049F /* UpdateDolphinStrings.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = UpdateDolphinStrings.py; sourceTree = "<group>"; };
+		B9D5D589266B60890068049F /* BuildDebs.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = BuildDebs.sh; sourceTree = "<group>"; };
+		B9D5D58A266B60890068049F /* BuildDolphin.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = BuildDolphin.sh; sourceTree = "<group>"; };
+		B9D5D58B266B60890068049F /* PreBuildTasks.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = PreBuildTasks.sh; sourceTree = "<group>"; };
+		B9D5D58C266B60890068049F /* UpdateEntitlements.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = UpdateEntitlements.sh; sourceTree = "<group>"; };
+		B9D5D58D266B60890068049F /* CleanBundle.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = CleanBundle.sh; sourceTree = "<group>"; };
+		B9D5D58E266B608A0068049F /* BuildIpa.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = BuildIpa.sh; sourceTree = "<group>"; };
+		B9D5D58F266B608A0068049F /* BuildCsdbgd.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = BuildCsdbgd.sh; sourceTree = "<group>"; };
+		B9D5D590266B608A0068049F /* CopyDolphinImages.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = CopyDolphinImages.sh; sourceTree = "<group>"; };
+		B9D5D591266B60C40068049F /* control-patreon.in */ = {isa = PBXFileReference; lastKnownFileType = text; path = "control-patreon.in"; sourceTree = "<group>"; };
+		B9D5D592266B60C40068049F /* control.in */ = {isa = PBXFileReference; lastKnownFileType = text; path = control.in; sourceTree = "<group>"; };
+		B9D5D593266B60C40068049F /* postrm.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = postrm.sh; sourceTree = "<group>"; };
+		B9D5D594266B60C40068049F /* postinst.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = postinst.sh; sourceTree = "<group>"; };
 		B9DBDEAB24DAA2BB00014137 /* SoftwareGeckoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SoftwareGeckoViewController.h; sourceTree = "<group>"; };
 		B9DBDEAC24DAA2BB00014137 /* SoftwareGeckoViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SoftwareGeckoViewController.mm; sourceTree = "<group>"; };
 		B9DBDEAE24DAA67700014137 /* SoftwareGeckoEditViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SoftwareGeckoEditViewController.h; sourceTree = "<group>"; };
 		B9DBDEAF24DAA67700014137 /* SoftwareGeckoEditViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SoftwareGeckoEditViewController.mm; sourceTree = "<group>"; };
 		B9DCAC8423AAC46E002B95C8 /* TCSidewaysWiiPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TCSidewaysWiiPad.xib; sourceTree = "<group>"; };
 		B9DCAC8F23AAD98D002B95C8 /* TCSidewaysWiiPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCSidewaysWiiPad.swift; sourceTree = "<group>"; };
-		B9DCAC9523AB38F4002B95C8 /* control-patreon.in */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "control-patreon.in"; path = "BuildResources/DebFiles/control-patreon.in"; sourceTree = "<group>"; };
-		B9DCAC9A23AB43FA002B95C8 /* BuildDolphin.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = BuildDolphin.sh; path = BuildResources/BuildScripts/BuildDolphin.sh; sourceTree = "<group>"; };
-		B9DCAC9B23AB4435002B95C8 /* BuildCsdbgd.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = BuildCsdbgd.sh; path = BuildResources/BuildScripts/BuildCsdbgd.sh; sourceTree = "<group>"; };
-		B9DCAC9C23AB4456002B95C8 /* CopyDolphinImages.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = CopyDolphinImages.sh; path = BuildResources/BuildScripts/CopyDolphinImages.sh; sourceTree = "<group>"; };
-		B9DCAC9D23AB4486002B95C8 /* UpdateEntitlements.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = UpdateEntitlements.sh; path = BuildResources/BuildScripts/UpdateEntitlements.sh; sourceTree = "<group>"; };
 		B9DCAC9E23AC9C83002B95C8 /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = System/Library/Frameworks/GameController.framework; sourceTree = SDKROOT; };
-		B9E1ACB323B34DBE0072EDF0 /* CleanBundle.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = CleanBundle.sh; path = BuildResources/BuildScripts/CleanBundle.sh; sourceTree = "<group>"; };
-		B9E1ACB623B355050072EDF0 /* postrm.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = postrm.sh; path = BuildResources/DebFiles/postrm.sh; sourceTree = "<group>"; };
-		B9E1ACB723B355860072EDF0 /* BuildDebs.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = BuildDebs.sh; path = BuildResources/BuildScripts/BuildDebs.sh; sourceTree = "<group>"; };
 		B9E4EA6B24E078D200CED657 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/ConfigSettings.strings"; sourceTree = "<group>"; };
 		B9E4EA6C24E078D300CED657 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/ControllerSettings.strings"; sourceTree = "<group>"; };
 		B9E4EA6D24E078D300CED657 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/GraphicsSettings.strings"; sourceTree = "<group>"; };
@@ -1026,7 +1022,6 @@
 				B996C84F23D50E3600700D6F /* Localizables */,
 				B95A092B2382715E00DBBB01 /* DolphiniOS-Bridging-Header.h */,
 				B996C86D23D6F0D000700D6F /* DolphiniOS-Prefix.pch */,
-				B99B05A923A09CDC0076C7D8 /* Build Resources */,
 				B91BF364236B3DFF00199BA7 /* UI */,
 				B98963C92553E362007CCA0D /* Util */,
 				B945A37C2362908500B21680 /* Main.storyboard */,
@@ -1388,40 +1383,13 @@
 			path = Localizables;
 			sourceTree = "<group>";
 		};
-		B996C85623D586F900700D6F /* Tools */ = {
-			isa = PBXGroup;
-			children = (
-				B996C85723D5884300700D6F /* UpdateDolphinStrings.py */,
-				B996C86323D5927800700D6F /* UpdateUIStrings.py */,
-			);
-			name = Tools;
-			path = BuildResources/Tools;
-			sourceTree = "<group>";
-		};
 		B99B059F23A067090076C7D8 /* Bundle Resources */ = {
 			isa = PBXGroup;
 			children = (
-				B99B05A123A067560076C7D8 /* GCPadNew.ini */,
-				B99B05A023A067560076C7D8 /* WiimoteNew.ini */,
-				B99B05A223A067560076C7D8 /* WiimoteProfile.ini */,
 				B9766AF423A5EACD00FF7F17 /* license.txt */,
 				B99B05BC23A2E8BD0076C7D8 /* SpecialThanks.txt */,
 			);
 			name = "Bundle Resources";
-			sourceTree = "<group>";
-		};
-		B99B05A923A09CDC0076C7D8 /* Build Resources */ = {
-			isa = PBXGroup;
-			children = (
-				B9DCAC9923AB43B3002B95C8 /* Build Scripts */,
-				B9DCAC9823AB42CA002B95C8 /* Deb FIles */,
-				B996C85623D586F900700D6F /* Tools */,
-				B95A09402384F32900DBBB01 /* DolphinImageTemplate.json.in */,
-				B99B05AC23A0AAC60076C7D8 /* Entitlements_JB.plist */,
-				B971E1C4245E040500D2A698 /* Entitlements_NJB.plist */,
-				B9B68AAF255DC06200480009 /* Entitlements_NJB_Universal.plist */,
-			);
-			name = "Build Resources";
 			sourceTree = "<group>";
 		};
 		B99D361723E3F2D5005627CE /* Wii */ = {
@@ -1632,6 +1600,7 @@
 		B9D5D552266B463A0068049F /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				B9D5D565266B5FC90068049F /* Build Resources */,
 				B9D5D554266B48850068049F /* Bundle Resources */,
 				B945A3732362908500B21680 /* AppDelegate.h */,
 				B945A3742362908500B21680 /* AppDelegate.mm */,
@@ -1646,6 +1615,9 @@
 			isa = PBXGroup;
 			children = (
 				B9D5D555266B48D60068049F /* Sys */,
+				B9D5D55B266B4AD90068049F /* GCPadNew.ini */,
+				B9D5D55D266B4AD90068049F /* WiimoteNew.ini */,
+				B9D5D55C266B4AD90068049F /* WiimoteProfile.ini */,
 				B988D7FE23B60B510092CB6C /* MFiGCPadProfile.ini */,
 				B988D7FF23B60B510092CB6C /* MFiWiimoteProfile.ini */,
 				B988D80223B801F40092CB6C /* TouchGCPadProfile.ini */,
@@ -1653,6 +1625,55 @@
 				B92243E824E9F5D50085632F /* DebugLogger.ini */,
 			);
 			path = "Bundle Resources";
+			sourceTree = "<group>";
+		};
+		B9D5D565266B5FC90068049F /* Build Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B9D5D56F266B603F0068049F /* Scripts */,
+				B9D5D56B266B5FFC0068049F /* Tools */,
+				B9D5D588266B606E0068049F /* Package Files */,
+				B9D5D566266B5FE40068049F /* DolphinImageTemplate.json.in */,
+				B9D5D56A266B5FE40068049F /* Entitlements_JB.plist */,
+				B9D5D569266B5FE40068049F /* Entitlements_NJB.plist */,
+				B9D5D567266B5FE40068049F /* Entitlements_NJB_Universal.plist */,
+			);
+			path = "Build Resources";
+			sourceTree = "<group>";
+		};
+		B9D5D56B266B5FFC0068049F /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				B9D5D56D266B60130068049F /* UpdateDolphinStrings.py */,
+				B9D5D56C266B60120068049F /* UpdateUIStrings.py */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		B9D5D56F266B603F0068049F /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				B9D5D58F266B608A0068049F /* BuildCsdbgd.sh */,
+				B9D5D589266B60890068049F /* BuildDebs.sh */,
+				B9D5D58A266B60890068049F /* BuildDolphin.sh */,
+				B9D5D58E266B608A0068049F /* BuildIpa.sh */,
+				B9D5D58D266B60890068049F /* CleanBundle.sh */,
+				B9D5D590266B608A0068049F /* CopyDolphinImages.sh */,
+				B9D5D58B266B60890068049F /* PreBuildTasks.sh */,
+				B9D5D58C266B60890068049F /* UpdateEntitlements.sh */,
+			);
+			path = Scripts;
+			sourceTree = "<group>";
+		};
+		B9D5D588266B606E0068049F /* Package Files */ = {
+			isa = PBXGroup;
+			children = (
+				B9D5D591266B60C40068049F /* control-patreon.in */,
+				B9D5D592266B60C40068049F /* control.in */,
+				B9D5D594266B60C40068049F /* postinst.sh */,
+				B9D5D593266B60C40068049F /* postrm.sh */,
+			);
+			path = "Package Files";
 			sourceTree = "<group>";
 		};
 		B9DBDEAA24DA9C4900014137 /* Gecko */ = {
@@ -1664,32 +1685,6 @@
 				B9DBDEAC24DAA2BB00014137 /* SoftwareGeckoViewController.mm */,
 			);
 			path = Gecko;
-			sourceTree = "<group>";
-		};
-		B9DCAC9823AB42CA002B95C8 /* Deb FIles */ = {
-			isa = PBXGroup;
-			children = (
-				B99B05AA23A09DDF0076C7D8 /* control.in */,
-				B9DCAC9523AB38F4002B95C8 /* control-patreon.in */,
-				B9766AF123A4A26900FF7F17 /* postinst.sh */,
-				B9E1ACB623B355050072EDF0 /* postrm.sh */,
-			);
-			name = "Deb FIles";
-			sourceTree = "<group>";
-		};
-		B9DCAC9923AB43B3002B95C8 /* Build Scripts */ = {
-			isa = PBXGroup;
-			children = (
-				B9E1ACB723B355860072EDF0 /* BuildDebs.sh */,
-				B9DCAC9A23AB43FA002B95C8 /* BuildDolphin.sh */,
-				B9DCAC9B23AB4435002B95C8 /* BuildCsdbgd.sh */,
-				B971E1C3245E034E00D2A698 /* BuildIpa.sh */,
-				B9E1ACB323B34DBE0072EDF0 /* CleanBundle.sh */,
-				B9DCAC9C23AB4456002B95C8 /* CopyDolphinImages.sh */,
-				B996C83B23D45B5A00700D6F /* PreBuildTasks.sh */,
-				B9DCAC9D23AB4486002B95C8 /* UpdateEntitlements.sh */,
-			);
-			name = "Build Scripts";
 			sourceTree = "<group>";
 		};
 		B9DCACA223ADDD34002B95C8 /* Controller */ = {
@@ -1891,36 +1886,34 @@
 				B971E1CE245E7F2200D2A698 /* OSTooNewNotice.xib in Resources */,
 				B99B05BD23A2E8BD0076C7D8 /* SpecialThanks.txt in Resources */,
 				B98911A12444F12200A24522 /* AnalyticsNotice.xib in Resources */,
-				B99B05A423A067570076C7D8 /* GCPadNew.ini in Resources */,
 				B988D80423B801F40092CB6C /* TouchGCPadProfile.ini in Resources */,
 				B945A3832362909500B21680 /* LaunchScreen.storyboard in Resources */,
 				B945A3802362909500B21680 /* Assets.xcassets in Resources */,
 				B9D5D556266B48D70068049F /* Sys in Resources */,
-				B99B05A523A067570076C7D8 /* WiimoteProfile.ini in Resources */,
 				B9B536E423DE822B00F03106 /* ReloadStateNotice.xib in Resources */,
 				B9B536CD23DD8B8000F03106 /* UpdateNotice.xib in Resources */,
 				B971155123DF44C3001C6BD6 /* InvalidCpuCoreNotice.xib in Resources */,
 				B9C956242461007C0095EC98 /* ImproperlySignedNotice.xib in Resources */,
 				B9B536D223DE4FE400F03106 /* UnsupportedDeviceNotice.xib in Resources */,
+				B9D5D560266B4AD90068049F /* WiimoteProfile.ini in Resources */,
 				B9AAAB4123D7F5660094F159 /* Localizable.strings in Resources */,
 				B924DCA223DA873000831A1A /* Settings.storyboard in Resources */,
 				B996C85E23D590D500700D6F /* ConfigSettings.storyboard in Resources */,
 				B996C86623D5F49500700D6F /* ControllerSettings.storyboard in Resources */,
 				B945A37E2362908500B21680 /* Main.storyboard in Resources */,
-				B99B05A323A067570076C7D8 /* WiimoteNew.ini in Resources */,
 				B9B536D523DE609900F03106 /* DonationNotice.xib in Resources */,
 				B95A093E2384E82D00DBBB01 /* DolphinImages.xcassets in Resources */,
+				B9D5D55E266B4AD90068049F /* GCPadNew.ini in Resources */,
 				4EF97B4E23B6B8F300F13FCF /* DefaultPreferences.plist in Resources */,
 				B988D80123B60B510092CB6C /* MFiWiimoteProfile.ini in Resources */,
-				B9B68AB0255DC06200480009 /* Entitlements_NJB_Universal.plist in Resources */,
 				B95A094D2386FAAB00DBBB01 /* TCWiiPad.xib in Resources */,
 				B94C49FE25590D4300EBF06B /* JitAcquisitionFailureNotice.xib in Resources */,
 				B99577A124664F90008C5115 /* KilledBuildNotice.xib in Resources */,
 				B988D80023B60B510092CB6C /* MFiGCPadProfile.ini in Resources */,
-				B971E1C5245E040500D2A698 /* Entitlements_NJB.plist in Resources */,
 				B92431C32400DFC600D5FF0A /* GraphicsSettings.storyboard in Resources */,
 				B99577AD24673EC0008C5115 /* NetPlaySetup.storyboard in Resources */,
 				B92243E924E9F5D50085632F /* DebugLogger.ini in Resources */,
+				B9D5D562266B4AD90068049F /* WiimoteNew.ini in Resources */,
 				B946AF14245BFBCD0043767A /* WiiSystemUpdate.storyboard in Resources */,
 				B928112623C0A24700B53145 /* TCClassicWiiPad.xib in Resources */,
 				B971E1C8245E210400D2A698 /* NonJailbrokenNotice.xib in Resources */,
@@ -1941,23 +1934,21 @@
 			files = (
 				B97DDC9F2666035A0083896C /* license.txt in Resources */,
 				B97DDCA22666035A0083896C /* SpecialThanks.txt in Resources */,
-				B97DDCA42666035A0083896C /* GCPadNew.ini in Resources */,
 				B97DDCA52666035A0083896C /* TouchGCPadProfile.ini in Resources */,
 				B9D5D557266B48D70068049F /* Sys in Resources */,
+				B9D5D563266B4AD90068049F /* WiimoteNew.ini in Resources */,
 				B97DDCA82666035A0083896C /* Assets.xcassets in Resources */,
 				B97DDCF7266728A30083896C /* Settings.storyboard in Resources */,
 				B97DDCF22666E3400083896C /* LaunchScreen.storyboard in Resources */,
-				B97DDCA92666035A0083896C /* WiimoteProfile.ini in Resources */,
+				B9D5D55F266B4AD90068049F /* GCPadNew.ini in Resources */,
 				B9C3F3FF266AACDC0053E501 /* ConfigSettings.storyboard in Resources */,
+				B9D5D561266B4AD90068049F /* WiimoteProfile.ini in Resources */,
 				B97DDCAF2666035A0083896C /* Localizable.strings in Resources */,
-				B97DDCB42666035A0083896C /* WiimoteNew.ini in Resources */,
 				B97DDCB62666035A0083896C /* DolphinImages.xcassets in Resources */,
 				B97DDCF42666E5340083896C /* Main.storyboard in Resources */,
 				B97DDCB72666035A0083896C /* DefaultPreferences.plist in Resources */,
 				B97DDCB82666035A0083896C /* MFiWiimoteProfile.ini in Resources */,
-				B97DDCB92666035A0083896C /* Entitlements_NJB_Universal.plist in Resources */,
 				B97DDCBD2666035A0083896C /* MFiGCPadProfile.ini in Resources */,
-				B97DDCBE2666035A0083896C /* Entitlements_NJB.plist in Resources */,
 				B97DDCC12666035A0083896C /* DebugLogger.ini in Resources */,
 				B97DDCC72666035A0083896C /* Dolphin.strings in Resources */,
 				B97DDCCB2666035A0083896C /* TouchWiimoteProfile.ini in Resources */,
@@ -2005,7 +1996,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "$PROJECT_DIR/DolphiniOS/BuildResources/BuildScripts/BuildDolphin.sh\n";
+			shellScript = "\"$PROJECT_DIR/Common/Build Resources/Scripts/BuildDolphin.sh\"\n";
 		};
 		B95A093F2384F18600DBBB01 /* Copy Dolphin Images */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2023,7 +2014,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "$PROJECT_DIR/DolphiniOS/BuildResources/BuildScripts/CopyDolphinImages.sh\n";
+			shellScript = "\"$PROJECT_DIR/Common/Build Resources/Scripts/CopyDolphinImages.sh\"\n";
 		};
 		B9766AF023A4964B00FF7F17 /* Build csdbgd */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2041,7 +2032,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "$PROJECT_DIR/DolphiniOS/BuildResources/BuildScripts/BuildCsdbgd.sh\n";
+			shellScript = "\"$PROJECT_DIR/Common/Build Resources/Scripts/BuildCsdbgd.sh\"\n";
 		};
 		B97DDC142666035A0083896C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2081,7 +2072,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "$PROJECT_DIR/DolphiniOS/BuildResources/BuildScripts/PreBuildTasks.sh\n";
+			shellScript = "\"$PROJECT_DIR/Common/Build Resources/Scripts/PreBuildTasks.sh\"\n";
 		};
 		B97DDC162666035A0083896C /* Build Dolphin */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2099,7 +2090,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "$PROJECT_DIR/DolphiniOS/BuildResources/BuildScripts/BuildDolphin.sh\n";
+			shellScript = "\"$PROJECT_DIR/Common/Build Resources/Scripts/BuildDolphin.sh\"\n";
 		};
 		B97DDC172666035A0083896C /* Build csdbgd */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2117,7 +2108,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "$PROJECT_DIR/DolphiniOS/BuildResources/BuildScripts/BuildCsdbgd.sh\n";
+			shellScript = "\"$PROJECT_DIR/Common/Build Resources/Scripts/BuildCsdbgd.sh\"\n";
 		};
 		B97DDC182666035A0083896C /* Copy Dolphin Images */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2135,7 +2126,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "$PROJECT_DIR/DolphiniOS/BuildResources/BuildScripts/CopyDolphinImages.sh\n";
+			shellScript = "\"$PROJECT_DIR/Common/Build Resources/Scripts/CopyDolphinImages.sh\"\n";
 		};
 		B97DDC192666035A0083896C /* Update Entitlements */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2153,7 +2144,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "$PROJECT_DIR/DolphiniOS/BuildResources/BuildScripts/UpdateEntitlements.sh\n";
+			shellScript = "\"$PROJECT_DIR/Common/Build Resources/Scripts/UpdateEntitlements.sh\"\n";
 		};
 		B97DDCD02666035A0083896C /* Clean Bundle */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2171,7 +2162,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "$PROJECT_DIR/DolphiniOS/BuildResources/BuildScripts/CleanBundle.sh\n";
+			shellScript = "\"$PROJECT_DIR/Common/Build Resources/Scripts/CleanBundle.sh\"\n";
 		};
 		B97DDCD12666035A0083896C /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2208,7 +2199,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "$PROJECT_DIR/DolphiniOS/BuildResources/BuildScripts/PreBuildTasks.sh\n";
+			shellScript = "\"$PROJECT_DIR/DolphiniOS/Build Resources/Scripts/PreBuildTasks.sh\"\n";
 		};
 		B9E1ACB423B34F540072EDF0 /* Clean Bundle */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2226,7 +2217,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "$PROJECT_DIR/DolphiniOS/BuildResources/BuildScripts/CleanBundle.sh\n";
+			shellScript = "\"$PROJECT_DIR/Common/Build Resources/Scripts/CleanBundle.sh\"\n";
 		};
 		B9E983E72459475900119883 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2263,7 +2254,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "$PROJECT_DIR/DolphiniOS/BuildResources/BuildScripts/UpdateEntitlements.sh\n";
+			shellScript = "\"$PROJECT_DIR/Common/Build Resources/Scripts/UpdateEntitlements.sh\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
