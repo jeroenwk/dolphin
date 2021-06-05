@@ -312,6 +312,9 @@
 		B9D5D5A4266BFAA70068049F /* DOLJitManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D5D5A3266BFAA70068049F /* DOLJitManager.m */; };
 		B9D5D5A5266BFAA70068049F /* DOLJitManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D5D5A3266BFAA70068049F /* DOLJitManager.m */; };
 		B9D5D5A8266C2B670068049F /* JitAcquisitionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D5D5A7266C2B670068049F /* JitAcquisitionService.swift */; };
+		B9D5D5AB266C30580068049F /* JitWaitScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9D5D5AA266C30580068049F /* JitWaitScreen.xib */; };
+		B9D5D5AD266C33310068049F /* JitWaitScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D5D5AC266C33300068049F /* JitWaitScreenViewController.swift */; };
+		B9D5D5AF266C338A0068049F /* JitWaitScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D5D5AE266C338A0068049F /* JitWaitScreenDelegate.swift */; };
 		B9DBDEAD24DAA2BB00014137 /* SoftwareGeckoViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9DBDEAC24DAA2BB00014137 /* SoftwareGeckoViewController.mm */; };
 		B9DBDEB024DAA67700014137 /* SoftwareGeckoEditViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9DBDEAF24DAA67700014137 /* SoftwareGeckoEditViewController.mm */; };
 		B9DCAC8523AAC46E002B95C8 /* TCSidewaysWiiPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9DCAC8423AAC46E002B95C8 /* TCSidewaysWiiPad.xib */; };
@@ -755,6 +758,9 @@
 		B9D5D5A2266BFAA70068049F /* DOLJitManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DOLJitManager.h; sourceTree = "<group>"; };
 		B9D5D5A3266BFAA70068049F /* DOLJitManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DOLJitManager.m; sourceTree = "<group>"; };
 		B9D5D5A7266C2B670068049F /* JitAcquisitionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JitAcquisitionService.swift; sourceTree = "<group>"; };
+		B9D5D5AA266C30580068049F /* JitWaitScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JitWaitScreen.xib; sourceTree = "<group>"; };
+		B9D5D5AC266C33300068049F /* JitWaitScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JitWaitScreenViewController.swift; sourceTree = "<group>"; };
+		B9D5D5AE266C338A0068049F /* JitWaitScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JitWaitScreenDelegate.swift; sourceTree = "<group>"; };
 		B9DBDEAB24DAA2BB00014137 /* SoftwareGeckoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SoftwareGeckoViewController.h; sourceTree = "<group>"; };
 		B9DBDEAC24DAA2BB00014137 /* SoftwareGeckoViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SoftwareGeckoViewController.mm; sourceTree = "<group>"; };
 		B9DBDEAE24DAA67700014137 /* SoftwareGeckoEditViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SoftwareGeckoEditViewController.h; sourceTree = "<group>"; };
@@ -924,6 +930,7 @@
 		B91BF368236B3E3900199BA7 /* Emulation */ = {
 			isa = PBXGroup;
 			children = (
+				B9D5D5A9266C2FDE0068049F /* JitWaitScreen */,
 				B95A09252382667000DBBB01 /* TouchController */,
 				B9B948AF23BDC95E00E244FF /* EmulationViewController.h */,
 				B9B948B023BDC95E00E244FF /* EmulationViewController.mm */,
@@ -1701,6 +1708,16 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		B9D5D5A9266C2FDE0068049F /* JitWaitScreen */ = {
+			isa = PBXGroup;
+			children = (
+				B9D5D5AC266C33300068049F /* JitWaitScreenViewController.swift */,
+				B9D5D5AE266C338A0068049F /* JitWaitScreenDelegate.swift */,
+				B9D5D5AA266C30580068049F /* JitWaitScreen.xib */,
+			);
+			path = JitWaitScreen;
+			sourceTree = "<group>";
+		};
 		B9DBDEAA24DA9C4900014137 /* Gecko */ = {
 			isa = PBXGroup;
 			children = (
@@ -1934,6 +1951,7 @@
 				B95A094D2386FAAB00DBBB01 /* TCWiiPad.xib in Resources */,
 				B94C49FE25590D4300EBF06B /* JitAcquisitionFailureNotice.xib in Resources */,
 				B99577A124664F90008C5115 /* KilledBuildNotice.xib in Resources */,
+				B9D5D5AB266C30580068049F /* JitWaitScreen.xib in Resources */,
 				B988D80023B60B510092CB6C /* MFiGCPadProfile.ini in Resources */,
 				B92431C32400DFC600D5FF0A /* GraphicsSettings.storyboard in Resources */,
 				B99577AD24673EC0008C5115 /* NetPlaySetup.storyboard in Resources */,
@@ -2315,6 +2333,7 @@
 				B971155D23E03256001C6BD6 /* SaveStateViewController.mm in Sources */,
 				B99D362B23E415A0005627CE /* ConfigAdvancedViewController.mm in Sources */,
 				B99D362E23E49461005627CE /* CpuEmulationEngineViewController.mm in Sources */,
+				B9D5D5AF266C338A0068049F /* JitWaitScreenDelegate.swift in Sources */,
 				B9AAAB3E23D789CD0094F159 /* LocalizerUtils.m in Sources */,
 				B971156723E1511A001C6BD6 /* SpeedCell.m in Sources */,
 				B9EFBFA323AF582400593A20 /* ControllerDetailsViewController.mm in Sources */,
@@ -2407,6 +2426,7 @@
 				B95A09382382D89600DBBB01 /* TCJoystick.swift in Sources */,
 				B992D27F25528E0B00CB02FD /* CodeSignatureUtils.m in Sources */,
 				B9A7AD6723C1960000C70473 /* ControllerTouchscreenSettingsViewController.mm in Sources */,
+				B9D5D5AD266C33310068049F /* JitWaitScreenViewController.swift in Sources */,
 				B971E1CB245E288B00D2A698 /* NonJailbrokenNoticeViewController.m in Sources */,
 				B94C4A0125590DA100EBF06B /* JitAcquisitionFailureNoticeViewController.m in Sources */,
 			);
