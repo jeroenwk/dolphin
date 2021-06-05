@@ -33,7 +33,7 @@ typedef NS_ENUM(NSUInteger, DOLTopBarPullDownMode) {
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface EmulationViewController : UIViewController <NKitWarningNoticeDelegate>
+@interface EmulationViewController : UIViewController <NKitWarningNoticeDelegate, JitWaitScreenDelegate>
 {
   @public std::unique_ptr<BootParameters> m_boot_parameters;
 #if !TARGET_OS_TV
@@ -65,6 +65,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic) bool m_did_show_nkit_warning;
 @property(nonatomic) bool m_nkit_warning_dismissed;
+@property(nonatomic) bool m_did_show_jit_wait;
+@property(nonatomic) bool m_jit_wait_dismissed;
 @property(nonatomic) bool m_emulation_started;
 @property(nonatomic) bool m_memory_warning_shown_for_session;
 @property(nonatomic) UIView* m_renderer_view;

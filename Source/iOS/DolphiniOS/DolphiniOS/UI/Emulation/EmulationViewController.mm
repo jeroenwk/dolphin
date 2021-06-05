@@ -145,6 +145,16 @@
   [self setNeedsStatusBarAppearanceUpdate];
 #endif
   
+  if (![[DOLJitManager sharedManager] appHasAcquiredJit])
+  {
+    JitWaitScreenViewController* controller = [[JitWaitScreenViewController alloc] initWithNibName:@"JitWaitScreen" bundle:nil];
+    controller.delegate = self;
+    
+    [self addViewControllerToPresentationQueueWithViewControllerToPresent:controller animated:true completion:nil];
+    
+    self.m_did_show_jit_wait = true;
+  }
+  
   if (std::holds_alternative<BootParameters::Disc>(self->m_boot_parameters->parameters))
   {
     if (std::get<BootParameters::Disc>(self->m_boot_parameters->parameters).volume->IsNKit())
@@ -197,6 +207,24 @@
   }
 }
 
+#pragma mark - JIT Wait Screen Delegate
+
+- (void)DidFinishJitAcquisitionWithResult:(bool)result sender:(id)sender
+{
+  [sender dismissViewControllerAnimated:true completion:nil];
+  
+  if (!result)
+  {
+    [self performSegueWithIdentifier:@"toSoftwareTable" sender:nil];
+  }
+  else
+  {
+    self.m_jit_wait_dismissed = true;
+    
+    [self CheckIfEmulationShouldStart];
+  }
+}
+
 #pragma mark - Emulation
 
 - (void)CheckIfEmulationShouldStart
@@ -206,6 +234,10 @@
     return;
   }
   else if (self.m_did_show_nkit_warning && !self.m_nkit_warning_dismissed)
+  {
+    return;
+  }
+  else if (self.m_did_show_jit_wait && !self.m_jit_wait_dismissed)
   {
     return;
   }
