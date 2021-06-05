@@ -2,7 +2,7 @@
 
 set -e
 
-XCENT_FILE=$DERIVED_SOURCES_DIR/../DolphiniOS.app.xcent
+XCENT_FILE="$DERIVED_SOURCES_DIR/../DolphiniOS.app.xcent"
 
 if [ ! -f "$XCENT_FILE" ]
 then
