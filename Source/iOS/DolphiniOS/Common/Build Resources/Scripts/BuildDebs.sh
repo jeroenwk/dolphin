@@ -7,7 +7,7 @@ EXPORT_UUID=`uuidgen`
 EXPORT_PATH="/tmp/DolphiniOS-$EXPORT_UUID"
 DOLPHIN_EXPORT_PATH="$EXPORT_PATH/dolphin_deb_root/"
 CSDBGD_EXPORT_PATH="$EXPORT_PATH/csdbgd_deb_root/"
-CONTROL_FILE="$ROOT_SRC_DIR/DolphiniOS/DolphiniOS/BuildResources/DebFiles/control.in"
+CONTROL_FILE="$ROOT_SRC_DIR/DolphiniOS/Common/Build Resources/Package Files/control.in"
 APPLICATION_DESTINATION_PATH="$DOLPHIN_EXPORT_PATH/Applications/DolphiniOS.app"
 CODESIGN_ARGS='-f -s 0059C24602FCB60DA511DCAA08727C70C1FF9A99'
 BUNDLE_ID="me.oatmealdome.DolphiniOS"
@@ -19,7 +19,7 @@ if [ -n "$IS_CI" ]; then
 fi
 
 if [ $BUILD_FOR_PATREON == "YES" ]; then
-  CONTROL_FILE="$ROOT_SRC_DIR/DolphiniOS/DolphiniOS/BuildResources/DebFiles/control-patreon.in"
+  CONTROL_FILE="$ROOT_SRC_DIR/DolphiniOS/Common/Build Resources/Package Files/control-patreon.in"
   APPLICATION_DESTINATION_PATH="$DOLPHIN_EXPORT_PATH/Applications/DiOSPatreon.app"
   BUNDLE_ID="me.oatmealdome.DolphiniOS-patreon-beta"
 fi
@@ -44,8 +44,8 @@ fi
 
 # Copy resources
 cp -r "$ARCHIVE_PATH/Products/Applications/DolphiniOS.app" "$APPLICATION_DESTINATION_PATH"
-cp "$ROOT_SRC_DIR/DolphiniOS/DolphiniOS/BuildResources/DebFiles/postinst.sh" "$DOLPHIN_EXPORT_PATH/DEBIAN/postinst"
-cp "$ROOT_SRC_DIR/DolphiniOS/DolphiniOS/BuildResources/DebFiles/postrm.sh" "$DOLPHIN_EXPORT_PATH/DEBIAN/postrm"
+cp "$ROOT_SRC_DIR/DolphiniOS/Common/Build Resources/Package Files/postinst.sh" "$DOLPHIN_EXPORT_PATH/DEBIAN/postinst"
+cp "$ROOT_SRC_DIR/DolphiniOS/Common/Build Resources/Package Files/postrm.sh" "$DOLPHIN_EXPORT_PATH/DEBIAN/postrm"
 chmod -R 755 "$DOLPHIN_EXPORT_PATH/DEBIAN/"*
 sed "s/VERSION_NUMBER/$VERSION_STRING-$BUILD_NUMBER/g" "$CONTROL_FILE" > "$DOLPHIN_EXPORT_PATH/DEBIAN/control"
 
@@ -61,8 +61,8 @@ sed "s/VERSION_NUMBER/$VERSION_STRING-$BUILD_NUMBER/g" "$ROOT_SRC_DIR/csdbgd/Deb
 plutil -replace "CFBundleIdentifier" -string "$BUNDLE_ID" "$APPLICATION_DESTINATION_PATH/Info.plist"
 
 # Resign the application
-codesign $CODESIGN_ARGS --entitlements "$ROOT_SRC_DIR/DolphiniOS/DolphiniOS/BuildResources/Entitlements_JB.plist" "$APPLICATION_DESTINATION_PATH"
-codesign $CODESIGN_ARGS --entitlements "$ROOT_SRC_DIR/DolphiniOS/DolphiniOS/BuildResources/Entitlements_JB.plist" "$APPLICATION_DESTINATION_PATH/Frameworks/"*
+codesign $CODESIGN_ARGS --entitlements "$ROOT_SRC_DIR/DolphiniOS/Common/Build Resources/Entitlements_JB.plist" "$APPLICATION_DESTINATION_PATH"
+codesign $CODESIGN_ARGS --entitlements "$ROOT_SRC_DIR/DolphiniOS/Common/Build Resources/Entitlements_JB.plist" "$APPLICATION_DESTINATION_PATH/Frameworks/"*
 codesign $CODESIGN_ARGS --entitlements "$ROOT_SRC_DIR/csdbgd/Entitlements.plist" "$CSDBGD_EXPORT_PATH/usr/libexec/csdbgd"
 
 # Remove the mobileprovision file
