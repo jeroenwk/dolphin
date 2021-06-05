@@ -304,6 +304,7 @@
 		B9BEADE423AF1A310014617A /* ControllerRootViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9BEADE323AF1A310014617A /* ControllerRootViewController.mm */; };
 		B9C3F3F9266943AE0053E501 /* DOLATVSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C3F3F8266943AE0053E501 /* DOLATVSwitchCell.m */; };
 		B9C3F3FF266AACDC0053E501 /* ConfigSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9C3F3FE266AACDC0053E501 /* ConfigSettings.storyboard */; };
+		B9C3F402266B03E60053E501 /* AltKit in Frameworks */ = {isa = PBXBuildFile; productRef = B9C3F401266B03E60053E501 /* AltKit */; };
 		B9C85E0D23A9FECF008A4DD1 /* TCDeviceMotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C85E0C23A9FECF008A4DD1 /* TCDeviceMotion.swift */; };
 		B9C956242461007C0095EC98 /* ImproperlySignedNotice.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9C956232461007C0095EC98 /* ImproperlySignedNotice.xib */; };
 		B9D1E1AB23E2B4B6008A6EE2 /* ConfigGameCubeViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9D1E1AA23E2B4B6008A6EE2 /* ConfigGameCubeViewController.mm */; };
@@ -812,6 +813,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9C3F402266B03E60053E501 /* AltKit in Frameworks */,
 				B9B7E4B12560725900CC725E /* CoreHaptics.framework in Frameworks */,
 				B95A09492385DE9600DBBB01 /* CoreAudio.framework in Frameworks */,
 				B95A094A2385DE9600DBBB01 /* AudioToolbox.framework in Frameworks */,
@@ -1772,6 +1774,9 @@
 			dependencies = (
 			);
 			name = DolphiniOS;
+			packageProductDependencies = (
+				B9C3F401266B03E60053E501 /* AltKit */,
+			);
 			productName = DolphiniOS;
 			productReference = B945A3702362908500B21680 /* DolphiniOS.app */;
 			productType = "com.apple.product-type.application";
@@ -1837,6 +1842,9 @@
 				"zh-Hans",
 			);
 			mainGroup = B945A3672362908400B21680;
+			packageReferences = (
+				B9C3F400266B03E60053E501 /* XCRemoteSwiftPackageReference "AltKit" */,
+			);
 			productRefGroup = B945A3712362908500B21680 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -4156,6 +4164,25 @@
 			defaultConfigurationName = "Release (Jailbroken)";
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B9C3F400266B03E60053E501 /* XCRemoteSwiftPackageReference "AltKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rileytestut/AltKit.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B9C3F401266B03E60053E501 /* AltKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B9C3F400266B03E60053E501 /* XCRemoteSwiftPackageReference "AltKit" */;
+			productName = AltKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B945A3682362908400B21680 /* Project object */;
 }
