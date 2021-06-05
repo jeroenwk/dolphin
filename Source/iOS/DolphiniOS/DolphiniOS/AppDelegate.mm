@@ -81,11 +81,11 @@
 
 #import "UpdateNoticeViewController.h"
 
-@interface AppDelegate ()
+@interface AppDelegateLegacy ()
 
 @end
 
-@implementation AppDelegate
+@implementation AppDelegateLegacy
 
 - (BOOL)application:(UIApplication*)application
     didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
@@ -558,7 +558,7 @@
 
 - (void)applicationWillTerminate:(UIApplication*)application
 {
-  [AppDelegate Shutdown];
+  [AppDelegateLegacy Shutdown];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication*)application

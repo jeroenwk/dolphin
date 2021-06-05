@@ -68,7 +68,7 @@
   }
   else if (indexPath.section == 2) // Quit button
   {
-    [AppDelegate Shutdown];
+    [AppDelegateLegacy Shutdown];
   }
 }
 

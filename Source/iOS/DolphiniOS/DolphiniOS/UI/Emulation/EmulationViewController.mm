@@ -284,7 +284,7 @@
 #ifdef NONJAILBROKEN
   if (HasJitWithPTrace())
   {
-    [AppDelegate Shutdown];
+    [AppDelegateLegacy Shutdown];
     return;
   }
 #endif
