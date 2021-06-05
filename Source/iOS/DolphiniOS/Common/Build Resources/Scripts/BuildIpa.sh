@@ -8,8 +8,8 @@ EXPORT_PATH="/tmp/DolphiniOS-NJB-$EXPORT_UUID"
 DOLPHIN_EXPORT_PATH="$EXPORT_PATH/dolphin_ipa_root/"
 APPLICATION_DESTINATION_PATH="$DOLPHIN_EXPORT_PATH/Payload/DolphiniOS.app"
 CODESIGN_ARGS='-f -s 0059C24602FCB60DA511DCAA08727C70C1FF9A99'
-ENTITLEMENTS_FILE="$ROOT_SRC_DIR/DolphiniOS/DolphiniOS/BuildResources/Entitlements_NJB.plist"
-ENTITLEMENTS_FILE_UNI="$ROOT_SRC_DIR/DolphiniOS/DolphiniOS/BuildResources/Entitlements_NJB_Universal.plist"
+ENTITLEMENTS_FILE="$ROOT_SRC_DIR/DolphiniOS/Common/Build Resources/Entitlements_NJB.plist"
+ENTITLEMENTS_FILE_UNI="$ROOT_SRC_DIR/DolphiniOS/Common/Build Resources/Entitlements_NJB_Universal.plist"
 BUNDLE_ID="me.oatmealdome.DolphiniOS-njb"
 BUILD_NUMBER=$(/usr/libexec/PlistBuddy -c "Print CFBundleVersion" "$PROJECT_DIR/DolphiniOS/Info.plist")
 
