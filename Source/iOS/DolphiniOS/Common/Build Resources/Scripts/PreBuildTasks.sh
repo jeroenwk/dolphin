@@ -26,8 +26,8 @@ cd "$PROJECT_DIR"
 bartycrouch update -x
 
 # Update the strings
-/usr/local/bin/python3 "$PROJECT_DIR/DolphiniOS/BuildResources/Tools/UpdateDolphinStrings.py" "$ROOT_DOLPHIN_DIR/Languages/po" "$PROJECT_DIR/DolphiniOS/Localizables/"
-/usr/local/bin/python3 "$PROJECT_DIR/DolphiniOS/BuildResources/Tools/UpdateUIStrings.py" "$ROOT_DOLPHIN_DIR/Languages/po" "$PROJECT_DIR/$PRODUCT_NAME/"
+/usr/local/bin/python3 "$PROJECT_DIR/Common/Build Resources/Tools/UpdateDolphinStrings.py" "$ROOT_DOLPHIN_DIR/Languages/po" "$PROJECT_DIR/DolphiniOS/Localizables/"
+/usr/local/bin/python3 "$PROJECT_DIR/Common/Build Resources/Tools/UpdateUIStrings.py" "$ROOT_DOLPHIN_DIR/Languages/po" "$PROJECT_DIR/$PRODUCT_NAME/"
 
 # Increment the build number
 INFO_FILE="$PROJECT_DIR/$PRODUCT_NAME/Info.plist"
