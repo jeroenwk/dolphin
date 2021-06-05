@@ -580,7 +580,7 @@
       stop();
     }]];
     
-    [self presentViewController:alert animated:true completion:nil];
+    [self addViewControllerToPresentationQueueWithViewControllerToPresent:alert animated:true completion:nil];
   }
   else
   {
