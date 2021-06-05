@@ -921,8 +921,6 @@
 				B928112323C095F000B53145 /* UINavigationControllerExtensions.swift */,
 				4EDF824C246CA06F00ED9FFA /* UIImageView+FixVectorTemplate.swift */,
 				B9C3F406266B23240053E501 /* UIViewController+ModalPresentationQueue.swift */,
-				B9AAAB3C23D789CD0094F159 /* LocalizerUtils.h */,
-				B9AAAB3D23D789CD0094F159 /* LocalizerUtils.m */,
 				4EDF8249246C7F4200ED9FFA /* MainTabBarController.h */,
 				4EDF824A246C7F4200ED9FFA /* MainTabBarController.m */,
 			);
@@ -1334,6 +1332,8 @@
 				B992D27B25528BAF00CB02FD /* JitAcquisitionUtils.h */,
 				B992D27925528B9700CB02FD /* JitAcquisitionUtils.m */,
 				B989119E244451D300A24522 /* StringUtils.h */,
+				B9AAAB3C23D789CD0094F159 /* LocalizerUtils.h */,
+				B9AAAB3D23D789CD0094F159 /* LocalizerUtils.m */,
 			);
 			path = Util;
 			sourceTree = "<group>";
