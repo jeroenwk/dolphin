@@ -915,14 +915,6 @@
 				B91BF363236B3DEC00199BA7 /* SoftwareList */,
 				B91BF35F236B390900199BA7 /* Settings */,
 				B946AF12245BFB950043767A /* WiiSystemUpdate */,
-				B99577A62466A185008C5115 /* DOLAutoStateBootType.h */,
-				B966124C2488DF7200006392 /* GameFileCacheHolder.h */,
-				B966124D2488DF7200006392 /* GameFileCacheHolder.mm */,
-				B928112323C095F000B53145 /* UINavigationControllerExtensions.swift */,
-				4EDF824C246CA06F00ED9FFA /* UIImageView+FixVectorTemplate.swift */,
-				B9C3F406266B23240053E501 /* UIViewController+ModalPresentationQueue.swift */,
-				4EDF8249246C7F4200ED9FFA /* MainTabBarController.h */,
-				4EDF824A246C7F4200ED9FFA /* MainTabBarController.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -1591,6 +1583,7 @@
 				B9D5D565266B5FC90068049F /* Build Resources */,
 				B9D5D554266B48850068049F /* Bundle Resources */,
 				B996C84F23D50E3600700D6F /* Localizables */,
+				B9D5D598266B68D30068049F /* UI */,
 				B98963C92553E362007CCA0D /* Util */,
 				B945A3732362908500B21680 /* AppDelegate.h */,
 				B945A3742362908500B21680 /* AppDelegate.mm */,
@@ -1666,6 +1659,21 @@
 				B9D5D593266B60C40068049F /* postrm.sh */,
 			);
 			path = "Package Files";
+			sourceTree = "<group>";
+		};
+		B9D5D598266B68D30068049F /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				B99577A62466A185008C5115 /* DOLAutoStateBootType.h */,
+				B966124C2488DF7200006392 /* GameFileCacheHolder.h */,
+				B966124D2488DF7200006392 /* GameFileCacheHolder.mm */,
+				B928112323C095F000B53145 /* UINavigationControllerExtensions.swift */,
+				4EDF824C246CA06F00ED9FFA /* UIImageView+FixVectorTemplate.swift */,
+				B9C3F406266B23240053E501 /* UIViewController+ModalPresentationQueue.swift */,
+				4EDF8249246C7F4200ED9FFA /* MainTabBarController.h */,
+				4EDF824A246C7F4200ED9FFA /* MainTabBarController.m */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 		B9DBDEAA24DA9C4900014137 /* Gecko */ = {
