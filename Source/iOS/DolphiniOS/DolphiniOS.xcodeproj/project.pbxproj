@@ -205,7 +205,6 @@
 		B97DDC9A2666035A0083896C /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B945A3F32362E24000B21680 /* libc++.tbd */; };
 		B97DDCA22666035A0083896C /* SpecialThanks.txt in Resources */ = {isa = PBXBuildFile; fileRef = B99B05BC23A2E8BD0076C7D8 /* SpecialThanks.txt */; };
 		B97DDCA52666035A0083896C /* TouchGCPadProfile.ini in Resources */ = {isa = PBXBuildFile; fileRef = B988D80223B801F40092CB6C /* TouchGCPadProfile.ini */; };
-		B97DDCA82666035A0083896C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B945A37F2362909500B21680 /* Assets.xcassets */; };
 		B97DDCAF2666035A0083896C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B9AAAB4323D7F5660094F159 /* Localizable.strings */; };
 		B97DDCB62666035A0083896C /* DolphinImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B95A093D2384E82D00DBBB01 /* DolphinImages.xcassets */; };
 		B97DDCB72666035A0083896C /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4EF97B4D23B6B8F300F13FCF /* DefaultPreferences.plist */; };
@@ -309,6 +308,8 @@
 		B9D5D563266B4AD90068049F /* WiimoteNew.ini in Resources */ = {isa = PBXBuildFile; fileRef = B9D5D55D266B4AD90068049F /* WiimoteNew.ini */; };
 		B9D5D596266B65C00068049F /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = B9D5D595266B65B80068049F /* license.txt */; };
 		B9D5D597266B65C00068049F /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = B9D5D595266B65B80068049F /* license.txt */; };
+		B9D5D59E266BF7980068049F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9D5D59D266BF7980068049F /* Assets.xcassets */; };
+		B9D5D59F266BF7980068049F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9D5D59D266BF7980068049F /* Assets.xcassets */; };
 		B9DBDEAD24DAA2BB00014137 /* SoftwareGeckoViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9DBDEAC24DAA2BB00014137 /* SoftwareGeckoViewController.mm */; };
 		B9DBDEB024DAA67700014137 /* SoftwareGeckoEditViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9DBDEAF24DAA67700014137 /* SoftwareGeckoEditViewController.mm */; };
 		B9DCAC8523AAC46E002B95C8 /* TCSidewaysWiiPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9DCAC8423AAC46E002B95C8 /* TCSidewaysWiiPad.xib */; };
@@ -749,6 +750,7 @@
 		B9D5D593266B60C40068049F /* postrm.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = postrm.sh; sourceTree = "<group>"; };
 		B9D5D594266B60C40068049F /* postinst.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = postinst.sh; sourceTree = "<group>"; };
 		B9D5D595266B65B80068049F /* license.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = license.txt; path = ../../../../../license.txt; sourceTree = "<group>"; };
+		B9D5D59D266BF7980068049F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B9DBDEAB24DAA2BB00014137 /* SoftwareGeckoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SoftwareGeckoViewController.h; sourceTree = "<group>"; };
 		B9DBDEAC24DAA2BB00014137 /* SoftwareGeckoViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SoftwareGeckoViewController.mm; sourceTree = "<group>"; };
 		B9DBDEAE24DAA67700014137 /* SoftwareGeckoEditViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SoftwareGeckoEditViewController.h; sourceTree = "<group>"; };
@@ -1585,6 +1587,7 @@
 				B9D5D54A266B39F90068049F /* AppDelegate.swift */,
 				B945A3852362909500B21680 /* main.m */,
 				B95A093D2384E82D00DBBB01 /* DolphinImages.xcassets */,
+				B9D5D59D266BF7980068049F /* Assets.xcassets */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1911,6 +1914,7 @@
 				B9B536D523DE609900F03106 /* DonationNotice.xib in Resources */,
 				B95A093E2384E82D00DBBB01 /* DolphinImages.xcassets in Resources */,
 				B9D5D55E266B4AD90068049F /* GCPadNew.ini in Resources */,
+				B9D5D59E266BF7980068049F /* Assets.xcassets in Resources */,
 				4EF97B4E23B6B8F300F13FCF /* DefaultPreferences.plist in Resources */,
 				B988D80123B60B510092CB6C /* MFiWiimoteProfile.ini in Resources */,
 				B95A094D2386FAAB00DBBB01 /* TCWiiPad.xib in Resources */,
@@ -1944,7 +1948,7 @@
 				B97DDCA52666035A0083896C /* TouchGCPadProfile.ini in Resources */,
 				B9D5D557266B48D70068049F /* Sys in Resources */,
 				B9D5D563266B4AD90068049F /* WiimoteNew.ini in Resources */,
-				B97DDCA82666035A0083896C /* Assets.xcassets in Resources */,
+				B9D5D59F266BF7980068049F /* Assets.xcassets in Resources */,
 				B97DDCF7266728A30083896C /* Settings.storyboard in Resources */,
 				B97DDCF22666E3400083896C /* LaunchScreen.storyboard in Resources */,
 				B9D5D55F266B4AD90068049F /* GCPadNew.ini in Resources */,
