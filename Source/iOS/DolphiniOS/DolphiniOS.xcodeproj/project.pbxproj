@@ -388,7 +388,7 @@
 		B92243E224E9CB650085632F /* NKitWarningNoticeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NKitWarningNoticeViewController.h; path = DolphiniOS/UI/Notices/NKitWarning/NKitWarningNoticeViewController.h; sourceTree = SOURCE_ROOT; };
 		B92243E324E9CB650085632F /* NKitWarningNoticeViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = NKitWarningNoticeViewController.mm; path = DolphiniOS/UI/Notices/NKitWarning/NKitWarningNoticeViewController.mm; sourceTree = SOURCE_ROOT; };
 		B92243E524E9D4DA0085632F /* NKitWarningNoticeDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NKitWarningNoticeDelegate.h; sourceTree = "<group>"; };
-		B92243E824E9F5D50085632F /* DebugLogger.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = DebugLogger.ini; path = BundleResources/DebugLogger.ini; sourceTree = "<group>"; };
+		B92243E824E9F5D50085632F /* DebugLogger.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DebugLogger.ini; sourceTree = "<group>"; };
 		B92431C42400DFC600D5FF0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/GraphicsSettings.storyboard; sourceTree = "<group>"; };
 		B92431C72400DFD100D5FF0A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/GraphicsSettings.strings; sourceTree = "<group>"; };
 		B92431C92400DFDC00D5FF0A /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/GraphicsSettings.strings; sourceTree = "<group>"; };
@@ -612,10 +612,10 @@
 		B988D7F923B604690092CB6C /* ControllerLoadProfileViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ControllerLoadProfileViewController.mm; sourceTree = "<group>"; };
 		B988D7FB23B604AB0092CB6C /* ControllerProfileCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ControllerProfileCell.h; sourceTree = "<group>"; };
 		B988D7FC23B604AB0092CB6C /* ControllerProfileCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ControllerProfileCell.m; sourceTree = "<group>"; };
-		B988D7FE23B60B510092CB6C /* MFiGCPadProfile.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = MFiGCPadProfile.ini; path = BundleResources/MFiGCPadProfile.ini; sourceTree = "<group>"; };
-		B988D7FF23B60B510092CB6C /* MFiWiimoteProfile.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = MFiWiimoteProfile.ini; path = BundleResources/MFiWiimoteProfile.ini; sourceTree = "<group>"; };
-		B988D80223B801F40092CB6C /* TouchGCPadProfile.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = TouchGCPadProfile.ini; path = BundleResources/TouchGCPadProfile.ini; sourceTree = "<group>"; };
-		B988D80323B801F40092CB6C /* TouchWiimoteProfile.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = TouchWiimoteProfile.ini; path = BundleResources/TouchWiimoteProfile.ini; sourceTree = "<group>"; };
+		B988D7FE23B60B510092CB6C /* MFiGCPadProfile.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MFiGCPadProfile.ini; sourceTree = "<group>"; };
+		B988D7FF23B60B510092CB6C /* MFiWiimoteProfile.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MFiWiimoteProfile.ini; sourceTree = "<group>"; };
+		B988D80223B801F40092CB6C /* TouchGCPadProfile.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TouchGCPadProfile.ini; sourceTree = "<group>"; };
+		B988D80323B801F40092CB6C /* TouchWiimoteProfile.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TouchWiimoteProfile.ini; sourceTree = "<group>"; };
 		B988D80623B83AB40092CB6C /* ControllerDsuClientViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ControllerDsuClientViewController.h; sourceTree = "<group>"; };
 		B988D80723B83AB40092CB6C /* ControllerDsuClientViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ControllerDsuClientViewController.mm; sourceTree = "<group>"; };
 		B989119E244451D300A24522 /* StringUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StringUtils.h; sourceTree = "<group>"; };
@@ -1405,11 +1405,6 @@
 				B99B05A123A067560076C7D8 /* GCPadNew.ini */,
 				B99B05A023A067560076C7D8 /* WiimoteNew.ini */,
 				B99B05A223A067560076C7D8 /* WiimoteProfile.ini */,
-				B988D7FE23B60B510092CB6C /* MFiGCPadProfile.ini */,
-				B988D7FF23B60B510092CB6C /* MFiWiimoteProfile.ini */,
-				B988D80223B801F40092CB6C /* TouchGCPadProfile.ini */,
-				B988D80323B801F40092CB6C /* TouchWiimoteProfile.ini */,
-				B92243E824E9F5D50085632F /* DebugLogger.ini */,
 				B9766AF423A5EACD00FF7F17 /* license.txt */,
 				B99B05BC23A2E8BD0076C7D8 /* SpecialThanks.txt */,
 			);
@@ -1638,6 +1633,7 @@
 		B9D5D552266B463A0068049F /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				B9D5D554266B48850068049F /* Bundle Resources */,
 				B945A3732362908500B21680 /* AppDelegate.h */,
 				B945A3742362908500B21680 /* AppDelegate.mm */,
 				B9D5D54A266B39F90068049F /* AppDelegate.swift */,
@@ -1645,6 +1641,18 @@
 				B945A3852362909500B21680 /* main.m */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		B9D5D554266B48850068049F /* Bundle Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B988D7FE23B60B510092CB6C /* MFiGCPadProfile.ini */,
+				B988D7FF23B60B510092CB6C /* MFiWiimoteProfile.ini */,
+				B988D80223B801F40092CB6C /* TouchGCPadProfile.ini */,
+				B988D80323B801F40092CB6C /* TouchWiimoteProfile.ini */,
+				B92243E824E9F5D50085632F /* DebugLogger.ini */,
+			);
+			path = "Bundle Resources";
 			sourceTree = "<group>";
 		};
 		B9DBDEAA24DA9C4900014137 /* Gecko */ = {
