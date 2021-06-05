@@ -107,6 +107,12 @@
   };
   
   dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    if (self->_m_jit_type != DOLJitTypeNone)
+    {
+      jit_acquisition_succeeded(DOLJitTypeNone);
+      return;
+    }
+    
     if (IsProcessDebugged())
     {
       jit_acquisition_succeeded(DOLJitTypeDebugger);
