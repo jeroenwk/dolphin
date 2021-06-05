@@ -159,6 +159,16 @@
       }
     }
   }
+  
+  if (![[NSUserDefaults standardUserDefaults] boolForKey:@"seen_top_bar_swipe_down_notice"])
+  {
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Tutorial" message:@"You can change settings and stop the emulation from the top bar.\n\nTo reveal the top bar while using the touchscreen controller, swipe down from the top of the screen.\n\nIf you are using a physical controller, tap the arrow button on the top left of the screen to reveal the top bar. You can also press the center button (MFi) / menu button (Xbox Wireless and Amazon Luna) / options button (DualShock 4 and DualSense) on your controller." preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+    
+    [self addViewControllerToPresentationQueueWithViewControllerToPresent:alert animated:true completion:nil];
+    
+    [[NSUserDefaults standardUserDefaults] setBool:true forKey:@"seen_top_bar_swipe_down_notice"];
+  }
 }
 
 #if !TARGET_OS_TV
@@ -207,17 +217,6 @@
 - (void)StartEmulation
 {
   dispatch_async(dispatch_get_main_queue(), ^{
-    NSUserDefaults* user_defaults = [NSUserDefaults standardUserDefaults];
-    
-    if (![user_defaults boolForKey:@"seen_top_bar_swipe_down_notice"])
-    {
-      UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Tutorial" message:@"You can change settings and stop the emulation from the top bar.\n\nTo reveal the top bar while using the touchscreen controller, swipe down from the top of the screen.\n\nIf you are using a physical controller, tap the arrow button on the top left of the screen to reveal the top bar. You can also press the center button (MFi) / menu button (Xbox Wireless and Amazon Luna) / options button (DualShock 4 and DualSense) on your controller." preferredStyle:UIAlertControllerStyleAlert];
-      [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
-      [self presentViewController:alert animated:true completion:nil];
-      
-      [user_defaults setBool:true forKey:@"seen_top_bar_swipe_down_notice"];
-    }
-    
     self.m_pull_down_button_visibility_left = 5;
     self.m_pull_down_button_timer = [NSTimer scheduledTimerWithTimeInterval:1 repeats:true block:^(NSTimer*)
     {
