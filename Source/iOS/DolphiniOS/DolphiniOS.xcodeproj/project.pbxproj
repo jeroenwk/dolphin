@@ -626,7 +626,7 @@
 		B99577A024664F90008C5115 /* KilledBuildNotice.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KilledBuildNotice.xib; path = DolphiniOS/UI/Notices/KilledBuild/KilledBuildNotice.xib; sourceTree = SOURCE_ROOT; };
 		B99577A224665004008C5115 /* KilledBuildNoticeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = KilledBuildNoticeViewController.h; path = KilledBuild/KilledBuildNoticeViewController.h; sourceTree = "<group>"; };
 		B99577A324665004008C5115 /* KilledBuildNoticeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = KilledBuildNoticeViewController.m; path = KilledBuild/KilledBuildNoticeViewController.m; sourceTree = "<group>"; };
-		B99577A62466A185008C5115 /* AutoStates.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutoStates.h; sourceTree = "<group>"; };
+		B99577A62466A185008C5115 /* DOLAutoStateBootType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DOLAutoStateBootType.h; sourceTree = "<group>"; };
 		B99577AC24673EBF008C5115 /* NetPlaySetup.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NetPlaySetup.storyboard; sourceTree = "<group>"; };
 		B99585D324673F89008C5115 /* NetPlayHolder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetPlayHolder.h; sourceTree = "<group>"; };
 		B99585D424673F89008C5115 /* NetPlayHolder.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = NetPlayHolder.mm; sourceTree = "<group>"; };
@@ -915,7 +915,7 @@
 				B91BF363236B3DEC00199BA7 /* SoftwareList */,
 				B91BF35F236B390900199BA7 /* Settings */,
 				B946AF12245BFB950043767A /* WiiSystemUpdate */,
-				B99577A62466A185008C5115 /* AutoStates.h */,
+				B99577A62466A185008C5115 /* DOLAutoStateBootType.h */,
 				B966124C2488DF7200006392 /* GameFileCacheHolder.h */,
 				B966124D2488DF7200006392 /* GameFileCacheHolder.mm */,
 				B928112323C095F000B53145 /* UINavigationControllerExtensions.swift */,

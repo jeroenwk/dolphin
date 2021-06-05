@@ -2,9 +2,9 @@
 // Licensed under GPLv2+
 // Refer to the license.txt file included.
 
-#import "AutoStates.h"
-
 #import "Common/FileUtil.h"
+
+#import "DOLAutoStateBootType.h"
 
 #import "EmulationViewController.h"
 

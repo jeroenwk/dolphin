@@ -8,7 +8,6 @@
 #import <variant>
 
 #import "AppDelegate.h"
-#import "AutoStates.h"
 
 #import "ControllerSettingsUtils.h"
 
@@ -25,6 +24,8 @@
 #import "Core/HW/SI/SI.h"
 #import "Core/HW/SI/SI_Device.h"
 #import "Core/State.h"
+
+#import "DOLAutoStateBootType.h"
 
 #ifdef ANALYTICS
 #import <FirebaseAnalytics/FirebaseAnalytics.h>
