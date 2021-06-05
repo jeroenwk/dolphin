@@ -86,7 +86,6 @@
 		B971E1CB245E288B00D2A698 /* NonJailbrokenNoticeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B971E1CA245E288B00D2A698 /* NonJailbrokenNoticeViewController.m */; };
 		B971E1CE245E7F2200D2A698 /* OSTooNewNotice.xib in Resources */ = {isa = PBXBuildFile; fileRef = B971E1CD245E7F2200D2A698 /* OSTooNewNotice.xib */; };
 		B971E1F9245EB63E00D2A698 /* DebuggerUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B971E1F8245EB63E00D2A698 /* DebuggerUtils.m */; };
-		B9766AF523A5EACD00FF7F17 /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = B9766AF423A5EACD00FF7F17 /* license.txt */; };
 		B97C9E2523C1308300C99067 /* TCClassicWiiPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97C9E2423C1308300C99067 /* TCClassicWiiPad.swift */; };
 		B97DDC122665E5030083896C /* MoltenVK.xcframework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B97DDC112665E5000083896C /* MoltenVK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B97DDC1B2666035A0083896C /* ControllerLoadProfileViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B988D7F923B604690092CB6C /* ControllerLoadProfileViewController.mm */; };
@@ -204,7 +203,6 @@
 		B97DDC982666035A0083896C /* liblzma.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B927118724A3FFB200A21182 /* liblzma.tbd */; };
 		B97DDC992666035A0083896C /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B945A3962362D99000B21680 /* libz.tbd */; };
 		B97DDC9A2666035A0083896C /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B945A3F32362E24000B21680 /* libc++.tbd */; };
-		B97DDC9F2666035A0083896C /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = B9766AF423A5EACD00FF7F17 /* license.txt */; };
 		B97DDCA22666035A0083896C /* SpecialThanks.txt in Resources */ = {isa = PBXBuildFile; fileRef = B99B05BC23A2E8BD0076C7D8 /* SpecialThanks.txt */; };
 		B97DDCA52666035A0083896C /* TouchGCPadProfile.ini in Resources */ = {isa = PBXBuildFile; fileRef = B988D80223B801F40092CB6C /* TouchGCPadProfile.ini */; };
 		B97DDCA82666035A0083896C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B945A37F2362909500B21680 /* Assets.xcassets */; };
@@ -309,6 +307,8 @@
 		B9D5D561266B4AD90068049F /* WiimoteProfile.ini in Resources */ = {isa = PBXBuildFile; fileRef = B9D5D55C266B4AD90068049F /* WiimoteProfile.ini */; };
 		B9D5D562266B4AD90068049F /* WiimoteNew.ini in Resources */ = {isa = PBXBuildFile; fileRef = B9D5D55D266B4AD90068049F /* WiimoteNew.ini */; };
 		B9D5D563266B4AD90068049F /* WiimoteNew.ini in Resources */ = {isa = PBXBuildFile; fileRef = B9D5D55D266B4AD90068049F /* WiimoteNew.ini */; };
+		B9D5D596266B65C00068049F /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = B9D5D595266B65B80068049F /* license.txt */; };
+		B9D5D597266B65C00068049F /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = B9D5D595266B65B80068049F /* license.txt */; };
 		B9DBDEAD24DAA2BB00014137 /* SoftwareGeckoViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9DBDEAC24DAA2BB00014137 /* SoftwareGeckoViewController.mm */; };
 		B9DBDEB024DAA67700014137 /* SoftwareGeckoEditViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9DBDEAF24DAA67700014137 /* SoftwareGeckoEditViewController.mm */; };
 		B9DCAC8523AAC46E002B95C8 /* TCSidewaysWiiPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9DCAC8423AAC46E002B95C8 /* TCSidewaysWiiPad.xib */; };
@@ -586,7 +586,6 @@
 		B971E1CD245E7F2200D2A698 /* OSTooNewNotice.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = OSTooNewNotice.xib; path = DolphiniOS/UI/Notices/OSTooNew/OSTooNewNotice.xib; sourceTree = SOURCE_ROOT; };
 		B971E1F7245EB63E00D2A698 /* DebuggerUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DebuggerUtils.h; sourceTree = "<group>"; };
 		B971E1F8245EB63E00D2A698 /* DebuggerUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DebuggerUtils.m; sourceTree = "<group>"; };
-		B9766AF423A5EACD00FF7F17 /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = license.txt; path = ../../../../license.txt; sourceTree = "<group>"; };
 		B97C9E2423C1308300C99067 /* TCClassicWiiPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCClassicWiiPad.swift; sourceTree = "<group>"; };
 		B97DDC112665E5000083896C /* MoltenVK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = MoltenVK.xcframework; path = ../../../Externals/MoltenVK/MoltenVK.xcframework; sourceTree = "<group>"; };
 		B97DDCDA2666035A0083896C /* DolphinATV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DolphinATV.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -643,7 +642,7 @@
 		B99B05B423A182B20076C7D8 /* Emulation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Emulation.storyboard; sourceTree = "<group>"; };
 		B99B05B823A20F3D0076C7D8 /* TCView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCView.swift; sourceTree = "<group>"; };
 		B99B05BA23A2118B0076C7D8 /* TCWiiPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCWiiPad.swift; sourceTree = "<group>"; };
-		B99B05BC23A2E8BD0076C7D8 /* SpecialThanks.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = SpecialThanks.txt; path = BundleResources/SpecialThanks.txt; sourceTree = "<group>"; };
+		B99B05BC23A2E8BD0076C7D8 /* SpecialThanks.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = SpecialThanks.txt; sourceTree = "<group>"; };
 		B99B05BE23A323600076C7D8 /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
 		B99D361823E3F305005627CE /* WiiLanguageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WiiLanguageViewController.h; path = DolphiniOS/UI/Settings/Config/Wii/WiiLanguageViewController.h; sourceTree = SOURCE_ROOT; };
 		B99D361923E3F313005627CE /* WiiLanguageViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = WiiLanguageViewController.mm; path = DolphiniOS/UI/Settings/Config/Wii/WiiLanguageViewController.mm; sourceTree = SOURCE_ROOT; };
@@ -749,6 +748,7 @@
 		B9D5D592266B60C40068049F /* control.in */ = {isa = PBXFileReference; lastKnownFileType = text; path = control.in; sourceTree = "<group>"; };
 		B9D5D593266B60C40068049F /* postrm.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = postrm.sh; sourceTree = "<group>"; };
 		B9D5D594266B60C40068049F /* postinst.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = postinst.sh; sourceTree = "<group>"; };
+		B9D5D595266B65B80068049F /* license.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = license.txt; path = ../../../../../license.txt; sourceTree = "<group>"; };
 		B9DBDEAB24DAA2BB00014137 /* SoftwareGeckoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SoftwareGeckoViewController.h; sourceTree = "<group>"; };
 		B9DBDEAC24DAA2BB00014137 /* SoftwareGeckoViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SoftwareGeckoViewController.mm; sourceTree = "<group>"; };
 		B9DBDEAE24DAA67700014137 /* SoftwareGeckoEditViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SoftwareGeckoEditViewController.h; sourceTree = "<group>"; };
@@ -1018,7 +1018,6 @@
 		B945A3722362908500B21680 /* DolphiniOS */ = {
 			isa = PBXGroup;
 			children = (
-				B99B059F23A067090076C7D8 /* Bundle Resources */,
 				B996C84F23D50E3600700D6F /* Localizables */,
 				B95A092B2382715E00DBBB01 /* DolphiniOS-Bridging-Header.h */,
 				B996C86D23D6F0D000700D6F /* DolphiniOS-Prefix.pch */,
@@ -1383,15 +1382,6 @@
 			path = Localizables;
 			sourceTree = "<group>";
 		};
-		B99B059F23A067090076C7D8 /* Bundle Resources */ = {
-			isa = PBXGroup;
-			children = (
-				B9766AF423A5EACD00FF7F17 /* license.txt */,
-				B99B05BC23A2E8BD0076C7D8 /* SpecialThanks.txt */,
-			);
-			name = "Bundle Resources";
-			sourceTree = "<group>";
-		};
 		B99D361723E3F2D5005627CE /* Wii */ = {
 			isa = PBXGroup;
 			children = (
@@ -1623,6 +1613,8 @@
 				B988D80223B801F40092CB6C /* TouchGCPadProfile.ini */,
 				B988D80323B801F40092CB6C /* TouchWiimoteProfile.ini */,
 				B92243E824E9F5D50085632F /* DebugLogger.ini */,
+				B99B05BC23A2E8BD0076C7D8 /* SpecialThanks.txt */,
+				B9D5D595266B65B80068049F /* license.txt */,
 			);
 			path = "Bundle Resources";
 			sourceTree = "<group>";
@@ -1881,7 +1873,6 @@
 			files = (
 				B9B536EA23DE976B00F03106 /* ReloadFailedNotice.xib in Resources */,
 				B9E4EA7424E07AE700CED657 /* SoftwareProperties.storyboard in Resources */,
-				B9766AF523A5EACD00FF7F17 /* license.txt in Resources */,
 				B99B05B523A182B20076C7D8 /* Emulation.storyboard in Resources */,
 				B971E1CE245E7F2200D2A698 /* OSTooNewNotice.xib in Resources */,
 				B99B05BD23A2E8BD0076C7D8 /* SpecialThanks.txt in Resources */,
@@ -1922,6 +1913,7 @@
 				B996C85223D50FC600700D6F /* Dolphin.strings in Resources */,
 				B9DCAC8523AAC46E002B95C8 /* TCSidewaysWiiPad.xib in Resources */,
 				B92243E124E9C7FA0085632F /* NKitWarningNotice.xib in Resources */,
+				B9D5D596266B65C00068049F /* license.txt in Resources */,
 				B9B536DE23DE707F00F03106 /* UnofficialBuildNotice.xib in Resources */,
 				B988D80523B801F40092CB6C /* TouchWiimoteProfile.ini in Resources */,
 				B924321B2401F61300D5FF0A /* InGameSettings.storyboard in Resources */,
@@ -1932,7 +1924,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B97DDC9F2666035A0083896C /* license.txt in Resources */,
 				B97DDCA22666035A0083896C /* SpecialThanks.txt in Resources */,
 				B97DDCA52666035A0083896C /* TouchGCPadProfile.ini in Resources */,
 				B9D5D557266B48D70068049F /* Sys in Resources */,
@@ -1949,6 +1940,7 @@
 				B97DDCB72666035A0083896C /* DefaultPreferences.plist in Resources */,
 				B97DDCB82666035A0083896C /* MFiWiimoteProfile.ini in Resources */,
 				B97DDCBD2666035A0083896C /* MFiGCPadProfile.ini in Resources */,
+				B9D5D597266B65C00068049F /* license.txt in Resources */,
 				B97DDCC12666035A0083896C /* DebugLogger.ini in Resources */,
 				B97DDCC72666035A0083896C /* Dolphin.strings in Resources */,
 				B97DDCCB2666035A0083896C /* TouchWiimoteProfile.ini in Resources */,
