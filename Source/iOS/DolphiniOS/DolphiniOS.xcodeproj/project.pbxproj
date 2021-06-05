@@ -1001,6 +1001,7 @@
 		B945A3672362908400B21680 = {
 			isa = PBXGroup;
 			children = (
+				B9D5D552266B463A0068049F /* Common */,
 				B945A3722362908500B21680 /* DolphiniOS */,
 				B97DDCDE266603B60083896C /* DolphinATV */,
 				B945A3712362908500B21680 /* Products */,
@@ -1028,17 +1029,12 @@
 				B99B05A923A09CDC0076C7D8 /* Build Resources */,
 				B91BF364236B3DFF00199BA7 /* UI */,
 				B98963C92553E362007CCA0D /* Util */,
-				B945A3732362908500B21680 /* AppDelegate.h */,
-				B945A3742362908500B21680 /* AppDelegate.mm */,
-				B9D5D54A266B39F90068049F /* AppDelegate.swift */,
-				4EF97B4D23B6B8F300F13FCF /* DefaultPreferences.plist */,
 				B945A37C2362908500B21680 /* Main.storyboard */,
 				B945A37F2362909500B21680 /* Assets.xcassets */,
 				B95A093D2384E82D00DBBB01 /* DolphinImages.xcassets */,
 				B945A3812362909500B21680 /* LaunchScreen.storyboard */,
 				B945A3842362909500B21680 /* Info.plist */,
 				B9E983E524592A6800119883 /* GoogleService-Info.plist */,
-				B945A3852362909500B21680 /* main.m */,
 			);
 			path = DolphiniOS;
 			sourceTree = "<group>";
@@ -1637,6 +1633,18 @@
 				B9D1E1B023E2B5E0008A6EE2 /* GameCubeLanguageViewController.mm */,
 			);
 			path = GameCube;
+			sourceTree = "<group>";
+		};
+		B9D5D552266B463A0068049F /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				B945A3732362908500B21680 /* AppDelegate.h */,
+				B945A3742362908500B21680 /* AppDelegate.mm */,
+				B9D5D54A266B39F90068049F /* AppDelegate.swift */,
+				4EF97B4D23B6B8F300F13FCF /* DefaultPreferences.plist */,
+				B945A3852362909500B21680 /* main.m */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		B9DBDEAA24DA9C4900014137 /* Gecko */ = {
