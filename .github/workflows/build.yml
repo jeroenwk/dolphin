@@ -25,7 +25,7 @@ jobs:
         security default-keychain -s build.keychain
         security unlock-keychain -p alpine build.keychain
         security set-keychain-settings -t 36000 build.keychain
-        security import Source/iOS/DolphiniOS/DolphiniOS/BuildResources/OatmealDomeSoftware.p12 -k build.keychain -P ${{ secrets.CERTIFICATE_GPG_PASSWORD }} -A
+        security import "Source/iOS/DolphiniOS/Common/Build Resources/OatmealDomeSoftware.p12" -k build.keychain -P ${{ secrets.CERTIFICATE_GPG_PASSWORD }} -A
         security set-key-partition-list -S apple-tool:,apple: -s -k alpine build.keychain
         
     - name: Prepare Resources
@@ -67,7 +67,7 @@ jobs:
       run: |
         mkdir -p ${{ env.ARCHIVE_PATH }}/Products/Applications/
         cp -R "${{ github.workspace }}/build-Xcode/Release (Jailbroken)-iphoneos/DolphiniOS.app" ${{ env.ARCHIVE_PATH }}/Products/Applications/
-        Source/iOS/DolphiniOS/DolphiniOS/BuildResources/BuildScripts/BuildDebs.sh build.keychain JB_DEB_PATH
+        "Source/iOS/DolphiniOS/Common/Build Resources/Scripts/BuildDebs.sh" build.keychain JB_DEB_PATH
         
     - name: Package (Patreon)
       env:
@@ -78,7 +78,7 @@ jobs:
       run: |
         mkdir -p ${{ env.ARCHIVE_PATH }}/Products/Applications/
         cp -R "${{ github.workspace }}/build-Xcode/Release (Patreon)-iphoneos/DolphiniOS.app" ${{ env.ARCHIVE_PATH }}/Products/Applications/
-        Source/iOS/DolphiniOS/DolphiniOS/BuildResources/BuildScripts/BuildDebs.sh build.keychain JB_PATREON_DEB_PATH
+        "Source/iOS/DolphiniOS/Common/Build Resources/Scripts/BuildDebs.sh" build.keychain JB_PATREON_DEB_PATH
         
     - name: Upload
       env:
@@ -106,7 +106,7 @@ jobs:
         security default-keychain -s build.keychain
         security unlock-keychain -p alpine build.keychain
         security set-keychain-settings -t 36000 build.keychain
-        security import Source/iOS/DolphiniOS/DolphiniOS/BuildResources/OatmealDomeSoftware.p12 -k build.keychain -P ${{ secrets.CERTIFICATE_GPG_PASSWORD }} -A
+        security import "Source/iOS/DolphiniOS/Common/Build Resources/OatmealDomeSoftware.p12" -k build.keychain -P ${{ secrets.CERTIFICATE_GPG_PASSWORD }} -A
         security set-key-partition-list -S apple-tool:,apple: -s -k alpine build.keychain
         
     - name: Prepare Resources
@@ -148,7 +148,7 @@ jobs:
       run: |
         mkdir -p ${{ env.ARCHIVE_PATH }}/Products/Applications/
         cp -R "${{ github.workspace }}/build-Xcode/Release (Non-Jailbroken)-iphoneos/DolphiniOS.app" ${{ env.ARCHIVE_PATH }}/Products/Applications/
-        Source/iOS/DolphiniOS/DolphiniOS/BuildResources/BuildScripts/BuildIpa.sh build.keychain NJB_IPA_PATH
+        "Source/iOS/DolphiniOS/Common/Build Resources/Scripts/BuildIpa.sh" build.keychain NJB_IPA_PATH
     
     - name: Package (Patreon)
       env:
@@ -159,7 +159,7 @@ jobs:
       run: |
         mkdir -p ${{ env.ARCHIVE_PATH }}/Products/Applications/
         cp -R "${{ github.workspace }}/build-Xcode/Release (Patreon Non-Jailbroken)-iphoneos/DolphiniOS.app" ${{ env.ARCHIVE_PATH }}/Products/Applications/
-        Source/iOS/DolphiniOS/DolphiniOS/BuildResources/BuildScripts/BuildIpa.sh build.keychain NJB_PATREON_IPA_PATH
+        "Source/iOS/DolphiniOS/Common/Build Resources/Scripts/BuildIpa.sh" build.keychain NJB_PATREON_IPA_PATH
         
     - name: Upload
       env:
