@@ -1018,7 +1018,6 @@
 		B945A3722362908500B21680 /* DolphiniOS */ = {
 			isa = PBXGroup;
 			children = (
-				B996C84F23D50E3600700D6F /* Localizables */,
 				B95A092B2382715E00DBBB01 /* DolphiniOS-Bridging-Header.h */,
 				B996C86D23D6F0D000700D6F /* DolphiniOS-Prefix.pch */,
 				B91BF364236B3DFF00199BA7 /* UI */,
@@ -1591,6 +1590,7 @@
 			children = (
 				B9D5D565266B5FC90068049F /* Build Resources */,
 				B9D5D554266B48850068049F /* Bundle Resources */,
+				B996C84F23D50E3600700D6F /* Localizables */,
 				B98963C92553E362007CCA0D /* Util */,
 				B945A3732362908500B21680 /* AppDelegate.h */,
 				B945A3742362908500B21680 /* AppDelegate.mm */,
