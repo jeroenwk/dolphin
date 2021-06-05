@@ -18,23 +18,23 @@ CheckCommand "/usr/local/bin/python3"
 
 CheckCommand "bartycrouch"
 
-ROOT_DOLPHIN_DIR=$PROJECT_DIR/../../..
+ROOT_DOLPHIN_DIR="$PROJECT_DIR/../../.."
 
-cd $PROJECT_DIR
+cd "$PROJECT_DIR"
 
 # Run BartyCrouch to update storyboard strings
 bartycrouch update -x
 
 # Update the strings
-/usr/local/bin/python3 $PROJECT_DIR/DolphiniOS/BuildResources/Tools/UpdateDolphinStrings.py $ROOT_DOLPHIN_DIR/Languages/po $PROJECT_DIR/DolphiniOS/Localizables/
-/usr/local/bin/python3 $PROJECT_DIR/DolphiniOS/BuildResources/Tools/UpdateUIStrings.py $ROOT_DOLPHIN_DIR/Languages/po $PROJECT_DIR/$PRODUCT_NAME/
+/usr/local/bin/python3 "$PROJECT_DIR/DolphiniOS/BuildResources/Tools/UpdateDolphinStrings.py" "$ROOT_DOLPHIN_DIR/Languages/po" "$PROJECT_DIR/DolphiniOS/Localizables/"
+/usr/local/bin/python3 "$PROJECT_DIR/DolphiniOS/BuildResources/Tools/UpdateUIStrings.py" "$ROOT_DOLPHIN_DIR/Languages/po" "$PROJECT_DIR/$PRODUCT_NAME/"
 
 # Increment the build number
-INFO_FILE=$PROJECT_DIR/$PRODUCT_NAME/Info.plist
+INFO_FILE="$PROJECT_DIR/$PRODUCT_NAME/Info.plist"
 BUILD_NUMBER=$(/usr/libexec/PlistBuddy -c "Print CFBundleVersion" "$INFO_FILE")
 /usr/libexec/PlistBuddy -c "Set :CFBundleVersion $(($BUILD_NUMBER + 1))" "$INFO_FILE"
 
 # Copy a dummy google service info plist if it doesn't exist (if we don't care about firebase)
 if [ ! -f "$PROJECT_DIR/DolphiniOS/GoogleService-Info.plist" ]; then
-  cp $PROJECT_DIR/DolphiniOS/GoogleService-Info-Placeholder.plist $PROJECT_DIR/DolphiniOS/GoogleService-Info.plist
+  cp "$PROJECT_DIR/DolphiniOS/GoogleService-Info-Placeholder.plist" "$PROJECT_DIR/DolphiniOS/GoogleService-Info.plist"
 fi
