@@ -1595,7 +1595,6 @@
 				B945A3732362908500B21680 /* AppDelegate.h */,
 				B945A3742362908500B21680 /* AppDelegate.mm */,
 				B9D5D54A266B39F90068049F /* AppDelegate.swift */,
-				4EF97B4D23B6B8F300F13FCF /* DefaultPreferences.plist */,
 				B945A3852362909500B21680 /* main.m */,
 			);
 			path = Common;
@@ -1613,6 +1612,7 @@
 				B988D80223B801F40092CB6C /* TouchGCPadProfile.ini */,
 				B988D80323B801F40092CB6C /* TouchWiimoteProfile.ini */,
 				B92243E824E9F5D50085632F /* DebugLogger.ini */,
+				4EF97B4D23B6B8F300F13FCF /* DefaultPreferences.plist */,
 				B99B05BC23A2E8BD0076C7D8 /* SpecialThanks.txt */,
 				B9D5D595266B65B80068049F /* license.txt */,
 			);
