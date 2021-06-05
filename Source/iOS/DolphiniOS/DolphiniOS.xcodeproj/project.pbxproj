@@ -1022,7 +1022,6 @@
 				B95A092B2382715E00DBBB01 /* DolphiniOS-Bridging-Header.h */,
 				B996C86D23D6F0D000700D6F /* DolphiniOS-Prefix.pch */,
 				B91BF364236B3DFF00199BA7 /* UI */,
-				B98963C92553E362007CCA0D /* Util */,
 				B945A37C2362908500B21680 /* Main.storyboard */,
 				B945A37F2362909500B21680 /* Assets.xcassets */,
 				B95A093D2384E82D00DBBB01 /* DolphinImages.xcassets */,
@@ -1592,6 +1591,7 @@
 			children = (
 				B9D5D565266B5FC90068049F /* Build Resources */,
 				B9D5D554266B48850068049F /* Bundle Resources */,
+				B98963C92553E362007CCA0D /* Util */,
 				B945A3732362908500B21680 /* AppDelegate.h */,
 				B945A3742362908500B21680 /* AppDelegate.mm */,
 				B9D5D54A266B39F90068049F /* AppDelegate.swift */,
