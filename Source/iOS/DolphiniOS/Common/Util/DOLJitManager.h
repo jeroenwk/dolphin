@@ -28,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface DOLJitManager : NSObject
 
-+ (id)sharedManager;
++ (DOLJitManager*)sharedManager;
 
 - (void)attemptToAcquireJitWithCallback:(nullable void(^)(DOLJitError))callback;
 - (DOLJitType)jitType;

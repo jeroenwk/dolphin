@@ -16,7 +16,7 @@
   NSString* _m_aux_error;
 }
 
-+ (id)sharedManager
++ (DOLJitManager*)sharedManager
 {
   static dispatch_once_t _once_token = 0;
   static DOLJitManager* _shared_manager = nil;
