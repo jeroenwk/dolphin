@@ -11,6 +11,7 @@ import Foundation
   var services: [UIApplicationDelegate] =
   [
     // Put services here in order of initialization
+    JitAcqusitionService()
   ]
   
   override init()

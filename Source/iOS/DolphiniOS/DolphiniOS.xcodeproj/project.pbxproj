@@ -311,6 +311,7 @@
 		B9D5D5A1266BF8170068049F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9D5D5A0266BF8170068049F /* Assets.xcassets */; };
 		B9D5D5A4266BFAA70068049F /* DOLJitManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D5D5A3266BFAA70068049F /* DOLJitManager.m */; };
 		B9D5D5A5266BFAA70068049F /* DOLJitManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D5D5A3266BFAA70068049F /* DOLJitManager.m */; };
+		B9D5D5A8266C2B670068049F /* JitAcquisitionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D5D5A7266C2B670068049F /* JitAcquisitionService.swift */; };
 		B9DBDEAD24DAA2BB00014137 /* SoftwareGeckoViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9DBDEAC24DAA2BB00014137 /* SoftwareGeckoViewController.mm */; };
 		B9DBDEB024DAA67700014137 /* SoftwareGeckoEditViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9DBDEAF24DAA67700014137 /* SoftwareGeckoEditViewController.mm */; };
 		B9DCAC8523AAC46E002B95C8 /* TCSidewaysWiiPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9DCAC8423AAC46E002B95C8 /* TCSidewaysWiiPad.xib */; };
@@ -753,6 +754,7 @@
 		B9D5D5A0266BF8170068049F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B9D5D5A2266BFAA70068049F /* DOLJitManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DOLJitManager.h; sourceTree = "<group>"; };
 		B9D5D5A3266BFAA70068049F /* DOLJitManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DOLJitManager.m; sourceTree = "<group>"; };
+		B9D5D5A7266C2B670068049F /* JitAcquisitionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JitAcquisitionService.swift; sourceTree = "<group>"; };
 		B9DBDEAB24DAA2BB00014137 /* SoftwareGeckoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SoftwareGeckoViewController.h; sourceTree = "<group>"; };
 		B9DBDEAC24DAA2BB00014137 /* SoftwareGeckoViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SoftwareGeckoViewController.mm; sourceTree = "<group>"; };
 		B9DBDEAE24DAA67700014137 /* SoftwareGeckoEditViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SoftwareGeckoEditViewController.h; sourceTree = "<group>"; };
@@ -1583,6 +1585,7 @@
 				B9D5D565266B5FC90068049F /* Build Resources */,
 				B9D5D554266B48850068049F /* Bundle Resources */,
 				B996C84F23D50E3600700D6F /* Localizables */,
+				B9D5D5A6266C2B480068049F /* Services */,
 				B9D5D598266B68D30068049F /* UI */,
 				B98963C92553E362007CCA0D /* Util */,
 				B945A3732362908500B21680 /* AppDelegate.h */,
@@ -1688,6 +1691,14 @@
 				B9EEFBF823DA261600EAF92A /* AboutViewController.m */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		B9D5D5A6266C2B480068049F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B9D5D5A7266C2B670068049F /* JitAcquisitionService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		B9DBDEAA24DA9C4900014137 /* Gecko */ = {
@@ -2315,6 +2326,7 @@
 				B971E1F9245EB63E00D2A698 /* DebuggerUtils.m in Sources */,
 				B930A5D12467B01000C7F1B5 /* NPSConnectionTypeViewController.mm in Sources */,
 				B988D7FD23B604AB0092CB6C /* ControllerProfileCell.m in Sources */,
+				B9D5D5A8266C2B670068049F /* JitAcquisitionService.swift in Sources */,
 				B971156423E15004001C6BD6 /* SpeedLimitViewController.mm in Sources */,
 				B930A5D42467BDDA00C7F1B5 /* NPSJoinViewController.mm in Sources */,
 				B971156B23E1D378001C6BD6 /* ConfigSoundViewController.mm in Sources */,

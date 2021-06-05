@@ -14,11 +14,6 @@
 
 int main(int argc, char* argv[])
 {
-  @autoreleasepool
-  {
-    [[DOLJitManager sharedManager] attemptToAcquireJitWithCallback:nil];
-  }
-  
   NSString* appDelegateClassName;
   @autoreleasepool
   {

@@ -3,5 +3,6 @@
 // Refer to the license.txt file included.
 
 #import "AppDelegate.h" // legacy delegate
+#import "DOLJitManager.h"
 #import "EAGLView.h"
 #import "MainiOS.h"
