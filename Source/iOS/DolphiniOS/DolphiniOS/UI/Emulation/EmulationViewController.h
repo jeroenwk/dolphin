@@ -63,7 +63,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UINavigationItem* m_navigation_item;
 @property (weak, nonatomic) IBOutlet UIButton* m_pull_down_button;
 
-@property(nonatomic) bool m_first_appear_done;
+@property(nonatomic) bool m_did_show_nkit_warning;
+@property(nonatomic) bool m_nkit_warning_dismissed;
+@property(nonatomic) bool m_emulation_started;
 @property(nonatomic) bool m_memory_warning_shown_for_session;
 @property(nonatomic) UIView* m_renderer_view;
 @property(nonatomic) bool m_is_wii;

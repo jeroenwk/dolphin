@@ -143,34 +143,21 @@
   // Update status bar appearance so it's the proper color if "Show Status Bar" is enabled
   [self setNeedsStatusBarAppearanceUpdate];
 #endif
-}
-
-
-- (void)viewWillAppear:(BOOL)animated
-{
-  [super viewWillAppear:animated];
   
-  if (!self.m_first_appear_done)
+  if (std::holds_alternative<BootParameters::Disc>(self->m_boot_parameters->parameters))
   {
-    self.m_first_appear_done = true;
-    
-    if (std::holds_alternative<BootParameters::Disc>(self->m_boot_parameters->parameters))
+    if (std::get<BootParameters::Disc>(self->m_boot_parameters->parameters).volume->IsNKit())
     {
-      if (std::get<BootParameters::Disc>(self->m_boot_parameters->parameters).volume->IsNKit())
+      if (!Config::GetBase(Config::MAIN_SKIP_NKIT_WARNING))
       {
-        if (!Config::GetBase(Config::MAIN_SKIP_NKIT_WARNING))
-        {
-          NKitWarningNoticeViewController* controller = [[NKitWarningNoticeViewController alloc] initWithNibName:@"NKitWarningNotice" bundle:nil];
-          controller.delegate = self;
-          
-          [self presentViewController:controller animated:true completion:nil];
-          
-          return;
-        }
+        NKitWarningNoticeViewController* controller = [[NKitWarningNoticeViewController alloc] initWithNibName:@"NKitWarningNotice" bundle:nil];
+        controller.delegate = self;
+        
+        [self addViewControllerToPresentationQueueWithViewControllerToPresent:controller animated:true completion:nil];
+        
+        self.m_did_show_nkit_warning = true;
       }
     }
-    
-    [NSThread detachNewThreadSelector:@selector(StartEmulation) toTarget:self withObject:nil];
   }
 }
 
@@ -187,17 +174,35 @@
 {
   [sender dismissViewControllerAnimated:true completion:nil];
   
-  if (result)
+  if (!result)
   {
-    [NSThread detachNewThreadSelector:@selector(StartEmulation) toTarget:self withObject:nil];
+    [self performSegueWithIdentifier:@"toSoftwareTable" sender:nil];
   }
   else
   {
-    [self performSegueWithIdentifier:@"toSoftwareTable" sender:nil];
+    self.m_nkit_warning_dismissed = true;
+    
+    [self CheckIfEmulationShouldStart];
   }
 }
 
 #pragma mark - Emulation
+
+- (void)CheckIfEmulationShouldStart
+{
+  if (self.m_emulation_started)
+  {
+    return;
+  }
+  else if (self.m_did_show_nkit_warning && !self.m_nkit_warning_dismissed)
+  {
+    return;
+  }
+  
+  self.m_emulation_started = true;
+  
+  [NSThread detachNewThreadSelector:@selector(StartEmulation) toTarget:self withObject:nil];
+}
 
 - (void)StartEmulation
 {
