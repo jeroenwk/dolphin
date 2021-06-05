@@ -52,7 +52,7 @@ private struct AssociatedKeys {
     }
     
     /** Removes all view controllers which were not yet presented from presentation queue */
-    func emptyPresentationQueue() {
+    @objc func emptyPresentationQueue() {
         presentationQueue.cancelAllOperations()
     }
     
