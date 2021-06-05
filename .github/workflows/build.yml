@@ -30,10 +30,10 @@ jobs:
         
     - name: Prepare Resources
       run: |
-        cd Source/iOS/DolphiniOS/Common
+        cd Source/iOS/DolphiniOS/DolphiniOS
         gpg --quiet --batch --yes --decrypt --passphrase="${{ secrets.FIREBASE_GPG_PASSWORD }}" --output GoogleService-Info.plist GoogleService-Info.plist.gpg
         /usr/libexec/PlistBuddy -c "Set :CFBundleVersion $((${{ github.run_number }} - 1))" Info.plist
-        cd "Bundle Resources"
+        cd "../Common/Bundle Resources"
         rm SpecialThanks.txt
         wget -O SpecialThanks.txt https://smash.oatmealdome.me/parts/patrons.txt
         dos2unix SpecialThanks.txt
@@ -111,10 +111,10 @@ jobs:
         
     - name: Prepare Resources
       run: |
-        cd Source/iOS/DolphiniOS/Common
+        cd Source/iOS/DolphiniOS/DolphiniOS
         gpg --quiet --batch --yes --decrypt --passphrase="${{ secrets.FIREBASE_GPG_PASSWORD }}" --output GoogleService-Info.plist GoogleService-Info.plist.gpg
         /usr/libexec/PlistBuddy -c "Set :CFBundleVersion $((${{ github.run_number }} - 1))" Info.plist
-        cd "Bundle Resources"
+        cd "../Common/Bundle Resources"
         rm SpecialThanks.txt
         wget -O SpecialThanks.txt https://smash.oatmealdome.me/parts/patrons.txt
         dos2unix SpecialThanks.txt
