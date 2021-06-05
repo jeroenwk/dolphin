@@ -6,8 +6,6 @@
 
 #import "AppDelegate.h"
 
-#import "AutoStates.h"
-
 #import "Common/CommonPaths.h"
 #import "Common/Config/Config.h"
 #import "Common/FileUtil.h"
@@ -36,6 +34,8 @@
 #else
 #import "DolphiniOS-Swift.h"
 #endif
+
+#import "DOLAutoStateBootType.h"
 
 #import "DonationNoticeViewController.h"
 
