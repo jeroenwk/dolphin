@@ -197,7 +197,7 @@
   
   if (!result)
   {
-    [self performSegueWithIdentifier:@"toSoftwareTable" sender:nil];
+    [self GoBackToSoftwareTable];
   }
   else
   {
@@ -215,7 +215,7 @@
   
   if (!result)
   {
-    [self performSegueWithIdentifier:@"toSoftwareTable" sender:nil];
+    [self GoBackToSoftwareTable];
   }
   else
   {
@@ -323,9 +323,7 @@
 #endif
   
   dispatch_sync(dispatch_get_main_queue(), ^{
-    [self.m_pull_down_button_timer invalidate];
-    
-    [self performSegueWithIdentifier:@"toSoftwareTable" sender:nil];
+    [self GoBackToSoftwareTable];
   });
 }
 
@@ -816,6 +814,17 @@
   [self addViewControllerToPresentationQueueWithViewControllerToPresent:alert animated:true completion:nil];
   
   self.m_memory_warning_shown_for_session = true;
+}
+
+#pragma mark - Exit
+
+- (void)GoBackToSoftwareTable
+{
+  [self.m_pull_down_button_timer invalidate];
+  
+  [self emptyPresentationQueue];
+  
+  [self performSegueWithIdentifier:@"toSoftwareTable" sender:nil];
 }
 
 #pragma mark - Rewind segue
