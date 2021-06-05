@@ -1,19 +1,15 @@
-// Copyright 2020 Dolphin Emulator Project
+// Copyright 2021 Dolphin Emulator Project
 // Licensed under GPLv2+
 // Refer to the license.txt file included.
 
-#pragma once
-
-#ifdef __cplusplus
-extern "C"
-{
-#endif
+#import <Foundation/Foundation.h>
 
 typedef NS_ENUM(NSUInteger, DOLJitType)
 {
   DOLJitTypeNone,
   DOLJitTypeDebugger,
-  DOLJitTypeAllowUnsigned
+  DOLJitTypeAllowUnsigned,
+  DOLJitTypePTrace
 };
 
 typedef NS_ENUM(NSUInteger, DOLJitError)
@@ -28,14 +24,19 @@ typedef NS_ENUM(NSUInteger, DOLJitError)
   DOLJitErrorCsdbgdFailed // an error occurred with contacting csdbgd
 };
 
-void AcquireJit(void);
-bool HasJit(void);
-bool HasJitWithPTrace(void);
-bool HasJitWithPsychicpaper(void);
-DOLJitError GetJitAcqusitionError(void);
-char* GetJitAcquisitionErrorMessage(void);
-void SetJitAcquisitionErrorMessage(char* error);
+NS_ASSUME_NONNULL_BEGIN
 
-#ifdef __cplusplus
-}
-#endif
+@interface DOLJitManager : NSObject
+
++ (id)sharedManager;
+
+- (void)attemptToAcquireJitWithCallback:(nullable void(^)(DOLJitError))callback;
+- (DOLJitType)jitType;
+- (bool)appHasAcquiredJit;
+- (DOLJitError)getJitErrorType;
+- (void)setAuxillaryError:(NSString*)error;
+- (NSString*)getAuxiliaryError;
+
+@end
+
+NS_ASSUME_NONNULL_END

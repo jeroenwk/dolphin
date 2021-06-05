@@ -38,7 +38,7 @@
 #import "InputCommon/ControllerEmu/ControllerEmu.h"
 #import "InputCommon/InputConfig.h"
 
-#import "JitAcquisitionUtils.h"
+#import "DOLJitManager.h"
 
 #import <mach/mach.h>
 
@@ -283,7 +283,7 @@
 #endif
   
 #ifdef NONJAILBROKEN
-  if (HasJitWithPTrace())
+  if ([[DOLJitManager sharedManager] jitType] == DOLJitTypePTrace)
   {
     [AppDelegateLegacy Shutdown];
     return;
@@ -567,7 +567,7 @@
     NSString* message = DOLocalizedString(@"Do you want to stop the current emulation?");
     
 #ifdef NONJAILBROKEN
-    if (HasJitWithPTrace())
+    if (([[DOLJitManager sharedManager] jitType] == DOLJitTypePTrace))
     {
       message = [message stringByAppendingString:@"\n\nDolphiniOS will quit if the emulation is stopped."];
     }

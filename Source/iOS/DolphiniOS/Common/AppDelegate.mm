@@ -59,7 +59,7 @@
 #import "InvalidCpuCoreNoticeViewController.h"
 
 #import "JitAcquisitionFailureNoticeViewController.h"
-#import "JitAcquisitionUtils.h"
+#import "DOLJitManager.h"
 
 #import "KilledBuildNoticeViewController.h"
 
@@ -112,7 +112,7 @@
   }
 #endif
   
-  if (!HasJit())
+  if (![[DOLJitManager sharedManager] appHasAcquiredJit])
   {
     // Show the incompatibilty warning
     self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
@@ -666,7 +666,7 @@
   UICommon::Shutdown();
   
 #ifdef NONJAILBROKEN
-  if (HasJitWithPTrace())
+  if ([[DOLJitManager sharedManager] jitType] == DOLJitTypePTrace)
   {
     exit(0);
   }

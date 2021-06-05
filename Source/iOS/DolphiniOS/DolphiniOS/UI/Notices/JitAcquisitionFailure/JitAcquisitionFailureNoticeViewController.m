@@ -4,7 +4,7 @@
 
 #import "JitAcquisitionFailureNoticeViewController.h"
 
-#import "JitAcquisitionUtils.h"
+#import "DOLJitManager.h"
 
 @interface JitAcquisitionFailureNoticeViewController ()
 
@@ -22,7 +22,7 @@
   [super viewWillAppear:animated];
   
   NSString* error_message;
-  switch (GetJitAcqusitionError())
+  switch ([[DOLJitManager sharedManager] getJitErrorType])
   {
     case DOLJitErrorNotArm64e:
       error_message = @"Non-jailbroken devices with A11 processors and lower running iOS 14 are not supported at this time. If you wish to run DolphiniOS, your device must be jailbroken.";
@@ -53,10 +53,10 @@
   
   [self.m_error_label setText:NSLocalizedString(error_message, nil)];
   
-  char* specific_message = GetJitAcquisitionErrorMessage();
-  if (strlen(specific_message) > 0)
+  NSString* specific_message = [[DOLJitManager sharedManager] getAuxiliaryError];
+  if (specific_message != nil)
   {
-    [self.m_specific_label setText:CToFoundationString(specific_message)];
+    [self.m_specific_label setText:specific_message];
     [self.m_specific_label setHidden:false];
   }
 }

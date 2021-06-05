@@ -12,6 +12,7 @@
 
 static bool s_has_jit = false;
 static bool s_has_jit_with_ptrace = false;
+static bool s_has_jit_with_debugger = false;
 static bool s_is_arm64e = false;
 static DOLJitError s_acquisition_error = DOLJitErrorNone;
 static char s_acquisition_error_message[256];
@@ -80,7 +81,9 @@ void AcquireJit()
 #ifdef NONJAILBROKEN
   if (@available(iOS 14.4, *))
   {
-    s_acquisition_error = DOLJitErrorWorkaroundRequired;
+    // "Yes", we do have JIT. At least, we will later when AltServer/Jitterbug/
+    // Xcode/etc connnects to us.
+    s_has_jit = true;
   }
   else if (@available(iOS 14.2, *))
   {

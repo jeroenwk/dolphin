@@ -6,7 +6,7 @@
 
 #import "AppDelegate.h"
 
-#import "JitAcquisitionUtils.h"
+#import "DOLJitManager.h"
 
 @interface SettingsTableViewController ()
 
@@ -80,7 +80,7 @@
 #if !defined(NONJAILBROKEN) || DEBUG
     return CGFLOAT_MIN;
 #else
-    return HasJitWithPTrace() ? real_height : CGFLOAT_MIN;
+    return [[DOLJitManager sharedManager] jitType] == DOLJitTypePTrace;
 #endif
   }
   

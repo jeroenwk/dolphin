@@ -151,7 +151,6 @@
 		B97DDC5C2666035A0083896C /* InternalResolutionViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9B47C8A23FB86B40077375A /* InternalResolutionViewController.mm */; };
 		B97DDC5D2666035A0083896C /* AnalyticsNoticeViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B98911A3244521E400A24522 /* AnalyticsNoticeViewController.mm */; };
 		B97DDC5E2666035A0083896C /* ControllerTypePickerViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9EFBFAB23AF892B00593A20 /* ControllerTypePickerViewController.mm */; };
-		B97DDC5F2666035A0083896C /* JitAcquisitionUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B992D27925528B9700CB02FD /* JitAcquisitionUtils.m */; };
 		B97DDC602666035A0083896C /* ControllerExtensionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B989DFCC23B4AE33005C7773 /* ControllerExtensionCell.m */; };
 		B97DDC612666035A0083896C /* SoftwareVerifyStartViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B964B144248F613700EE5A3B /* SoftwareVerifyStartViewController.mm */; };
 		B97DDC622666035A0083896C /* AntiAliasingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B9B47C9323FC7B830077375A /* AntiAliasingCell.m */; };
@@ -234,7 +233,6 @@
 		B989DFC623B48B7D005C7773 /* ControllerGroupDoubleCell.mm in Sources */ = {isa = PBXBuildFile; fileRef = B989DFC523B48B7D005C7773 /* ControllerGroupDoubleCell.mm */; };
 		B989DFCA23B4ADF0005C7773 /* ControllerExtensionsViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B989DFC923B4ADF0005C7773 /* ControllerExtensionsViewController.mm */; };
 		B989DFCD23B4AE33005C7773 /* ControllerExtensionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B989DFCC23B4AE33005C7773 /* ControllerExtensionCell.m */; };
-		B992D27A25528B9800CB02FD /* JitAcquisitionUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B992D27925528B9700CB02FD /* JitAcquisitionUtils.m */; };
 		B992D27F25528E0B00CB02FD /* CodeSignatureUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B992D27E25528E0B00CB02FD /* CodeSignatureUtils.m */; };
 		B99577A124664F90008C5115 /* KilledBuildNotice.xib in Resources */ = {isa = PBXBuildFile; fileRef = B99577A024664F90008C5115 /* KilledBuildNotice.xib */; };
 		B99577A424665004008C5115 /* KilledBuildNoticeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B99577A324665004008C5115 /* KilledBuildNoticeViewController.m */; };
@@ -311,6 +309,8 @@
 		B9D5D59E266BF7980068049F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9D5D59D266BF7980068049F /* Assets.xcassets */; };
 		B9D5D59F266BF7980068049F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9D5D59D266BF7980068049F /* Assets.xcassets */; };
 		B9D5D5A1266BF8170068049F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9D5D5A0266BF8170068049F /* Assets.xcassets */; };
+		B9D5D5A4266BFAA70068049F /* DOLJitManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D5D5A3266BFAA70068049F /* DOLJitManager.m */; };
+		B9D5D5A5266BFAA70068049F /* DOLJitManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D5D5A3266BFAA70068049F /* DOLJitManager.m */; };
 		B9DBDEAD24DAA2BB00014137 /* SoftwareGeckoViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9DBDEAC24DAA2BB00014137 /* SoftwareGeckoViewController.mm */; };
 		B9DBDEB024DAA67700014137 /* SoftwareGeckoEditViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9DBDEAF24DAA67700014137 /* SoftwareGeckoEditViewController.mm */; };
 		B9DCAC8523AAC46E002B95C8 /* TCSidewaysWiiPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9DCAC8423AAC46E002B95C8 /* TCSidewaysWiiPad.xib */; };
@@ -621,8 +621,6 @@
 		B989DFC923B4ADF0005C7773 /* ControllerExtensionsViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ControllerExtensionsViewController.mm; sourceTree = "<group>"; };
 		B989DFCB23B4AE1A005C7773 /* ControllerExtensionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControllerExtensionCell.h; sourceTree = "<group>"; };
 		B989DFCC23B4AE33005C7773 /* ControllerExtensionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControllerExtensionCell.m; sourceTree = "<group>"; };
-		B992D27925528B9700CB02FD /* JitAcquisitionUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JitAcquisitionUtils.m; sourceTree = "<group>"; };
-		B992D27B25528BAF00CB02FD /* JitAcquisitionUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JitAcquisitionUtils.h; sourceTree = "<group>"; };
 		B992D27E25528E0B00CB02FD /* CodeSignatureUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CodeSignatureUtils.m; sourceTree = "<group>"; };
 		B992D28025528F2300CB02FD /* CodeSignatureUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CodeSignatureUtils.h; sourceTree = "<group>"; };
 		B99577A024664F90008C5115 /* KilledBuildNotice.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KilledBuildNotice.xib; path = DolphiniOS/UI/Notices/KilledBuild/KilledBuildNotice.xib; sourceTree = SOURCE_ROOT; };
@@ -753,6 +751,8 @@
 		B9D5D595266B65B80068049F /* license.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = license.txt; path = ../../../../../license.txt; sourceTree = "<group>"; };
 		B9D5D59D266BF7980068049F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B9D5D5A0266BF8170068049F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B9D5D5A2266BFAA70068049F /* DOLJitManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DOLJitManager.h; sourceTree = "<group>"; };
+		B9D5D5A3266BFAA70068049F /* DOLJitManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DOLJitManager.m; sourceTree = "<group>"; };
 		B9DBDEAB24DAA2BB00014137 /* SoftwareGeckoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SoftwareGeckoViewController.h; sourceTree = "<group>"; };
 		B9DBDEAC24DAA2BB00014137 /* SoftwareGeckoViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SoftwareGeckoViewController.mm; sourceTree = "<group>"; };
 		B9DBDEAE24DAA67700014137 /* SoftwareGeckoEditViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SoftwareGeckoEditViewController.h; sourceTree = "<group>"; };
@@ -1315,17 +1315,17 @@
 		B98963C92553E362007CCA0D /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				B971E1F7245EB63E00D2A698 /* DebuggerUtils.h */,
-				B971E1F8245EB63E00D2A698 /* DebuggerUtils.m */,
 				B992D28025528F2300CB02FD /* CodeSignatureUtils.h */,
 				B992D27E25528E0B00CB02FD /* CodeSignatureUtils.m */,
+				B971E1F7245EB63E00D2A698 /* DebuggerUtils.h */,
+				B971E1F8245EB63E00D2A698 /* DebuggerUtils.m */,
+				B9D5D5A2266BFAA70068049F /* DOLJitManager.h */,
+				B9D5D5A3266BFAA70068049F /* DOLJitManager.m */,
 				B96400742553E8FE00AD68EC /* FastmemUtil.h */,
 				B96400752553E90E00AD68EC /* FastmemUtil.m */,
-				B992D27B25528BAF00CB02FD /* JitAcquisitionUtils.h */,
-				B992D27925528B9700CB02FD /* JitAcquisitionUtils.m */,
-				B989119E244451D300A24522 /* StringUtils.h */,
 				B9AAAB3C23D789CD0094F159 /* LocalizerUtils.h */,
 				B9AAAB3D23D789CD0094F159 /* LocalizerUtils.m */,
+				B989119E244451D300A24522 /* StringUtils.h */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -2336,6 +2336,7 @@
 				B9B536E123DE722800F03106 /* UnofficialBuildNoticeViewController.m in Sources */,
 				B971155A23E03056001C6BD6 /* LoadStateViewController.mm in Sources */,
 				B95A09342382782600DBBB01 /* TCGameCubePad.swift in Sources */,
+				B9D5D5A4266BFAA70068049F /* DOLJitManager.m in Sources */,
 				B9E983EE245A1F2700119883 /* SoftwareCollectionViewCell.m in Sources */,
 				B99D362023E3F42F005627CE /* WiiSensorBarViewController.mm in Sources */,
 				B9B948B723BF22C900E244FF /* InGamePortSelectorViewController.mm in Sources */,
@@ -2348,7 +2349,6 @@
 				B9B47C8B23FB86B40077375A /* InternalResolutionViewController.mm in Sources */,
 				B98911A4244521E400A24522 /* AnalyticsNoticeViewController.mm in Sources */,
 				B9EFBFAC23AF892B00593A20 /* ControllerTypePickerViewController.mm in Sources */,
-				B992D27A25528B9800CB02FD /* JitAcquisitionUtils.m in Sources */,
 				B989DFCD23B4AE33005C7773 /* ControllerExtensionCell.m in Sources */,
 				B964B145248F613700EE5A3B /* SoftwareVerifyStartViewController.mm in Sources */,
 				B9B47C9423FC7B830077375A /* AntiAliasingCell.m in Sources */,
@@ -2421,6 +2421,7 @@
 				B97DDC282666035A0083896C /* SoftwareInfoViewController.mm in Sources */,
 				B97DDC292666035A0083896C /* PortSelectorCell.m in Sources */,
 				B97DDC2A2666035A0083896C /* SettingsTableViewController.mm in Sources */,
+				B9D5D5A5266BFAA70068049F /* DOLJitManager.m in Sources */,
 				B97DDC2B2666035A0083896C /* SoftwareVerifyResultsHashCell.m in Sources */,
 				B97DDC2C2666035A0083896C /* AppDelegate.mm in Sources */,
 				B97DDC2D2666035A0083896C /* SoftwareTableViewCell.m in Sources */,
@@ -2470,7 +2471,6 @@
 				B97DDC5D2666035A0083896C /* AnalyticsNoticeViewController.mm in Sources */,
 				B97DDC5E2666035A0083896C /* ControllerTypePickerViewController.mm in Sources */,
 				B97DDCF02666B0100083896C /* DOLATVSlider.m in Sources */,
-				B97DDC5F2666035A0083896C /* JitAcquisitionUtils.m in Sources */,
 				B97DDC602666035A0083896C /* ControllerExtensionCell.m in Sources */,
 				B97DDC612666035A0083896C /* SoftwareVerifyStartViewController.mm in Sources */,
 				B97DDC622666035A0083896C /* AntiAliasingCell.m in Sources */,

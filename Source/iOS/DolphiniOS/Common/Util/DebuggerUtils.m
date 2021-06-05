@@ -8,7 +8,7 @@
 #import <stdio.h>
 #import <unistd.h>
 
-#import "JitAcquisitionUtils.h"
+#import "DOLJitManager.h"
 
 #define CS_OPS_STATUS 0 /* OK */
 #define CS_DEBUGGED 0x10000000 /* process is or has been debugged */
@@ -68,7 +68,7 @@ bool SetProcessDebuggedWithDaemon()
   CFMessagePortRef port = CFMessagePortCreateRemote(kCFAllocatorDefault, CFSTR("me.oatmealdome.csdbgd-port"));
   if (port == NULL)
   {
-    SetJitAcquisitionErrorMessage("Unable to open port");
+    [[DOLJitManager sharedManager] setAuxillaryError:@"Unable to open port"];
     return false;
   }
   
@@ -76,7 +76,7 @@ bool SetProcessDebuggedWithDaemon()
   SInt32 ret = CFMessagePortSendRequest(port, 1, (__bridge CFDataRef)data, 1000, 0, NULL, NULL);
   if (ret != kCFMessagePortSuccess)
   {
-    SetJitAcquisitionErrorMessage("Failed to send message through port");
+    [[DOLJitManager sharedManager] setAuxillaryError:@"Failed to send message through port"];
     return false;
   }
   
@@ -84,7 +84,7 @@ bool SetProcessDebuggedWithDaemon()
   bool success = WaitUntilProcessDebugged(5);
   if (!success)
   {
-    SetJitAcquisitionErrorMessage("csdbgd timed out");
+    [[DOLJitManager sharedManager] setAuxillaryError:@"csdbgd timed out"];
   }
   
   return success;
@@ -111,7 +111,7 @@ bool SetProcessDebuggedWithJailbreakd()
   void* dylib_handle = LoadLibJailbreak();
   if (!dylib_handle)
   {
-    SetJitAcquisitionErrorMessage(dlerror());
+    [[DOLJitManager sharedManager] setAuxillaryError:CToFoundationString(dlerror())];
     return false;
   }
   
@@ -121,7 +121,8 @@ bool SetProcessDebuggedWithJailbreakd()
   
   if (!ptr)
   {
-    SetJitAcquisitionErrorMessage(dlerror());
+    [[DOLJitManager sharedManager] setAuxillaryError:CToFoundationString(dlerror())];
+    
     dlclose(dylib_handle);
     return false;
   }

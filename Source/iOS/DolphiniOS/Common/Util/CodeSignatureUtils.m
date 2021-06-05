@@ -12,7 +12,7 @@
 #import <mach-o/loader.h>
 #import <mach-o/getsect.h>
 
-#import "JitAcquisitionUtils.h"
+#import "DOLJitManager.h"
 
 // partly adapted from iSH: app/AppGroup.m
 
@@ -131,7 +131,7 @@ bool HasValidCodeSignature()
         char error[128];
         sprintf(error, "CodeDirectory version is 0x%x. Should be 0x20400 or higher.", version);
         
-        SetJitAcquisitionErrorMessage(error);
+        [[DOLJitManager sharedManager] setAuxillaryError:CToFoundationString(error)];
         
         continue;
       }
@@ -141,7 +141,7 @@ bool HasValidCodeSignature()
         char error[128];
         sprintf(error, "CS_EXECSEG_ALLOW_UNSIGNED is not set. The current executable segment flags are 0x%llx.", execSegmentFlags);
         
-        SetJitAcquisitionErrorMessage(error);
+        [[DOLJitManager sharedManager] setAuxillaryError:CToFoundationString(error)];
         
         continue;
       }
@@ -152,7 +152,7 @@ bool HasValidCodeSignature()
   
   if (entitlementsData == nil)
   {
-    SetJitAcquisitionErrorMessage("Could not find entitlements data within the code signature.");
+    [[DOLJitManager sharedManager] setAuxillaryError:@"Could not find entitlements data within the code signature."];
     
     return false;
   }
@@ -166,14 +166,14 @@ bool HasValidCodeSignature()
   if (ent_error)
   {
     NSString* error_str = [NSString stringWithFormat:@"Entitlement data parsing failed with error \"%@\".", [ent_error localizedDescription]];
-    SetJitAcquisitionErrorMessage((char*)FoundationToCString(error_str));
+    [[DOLJitManager sharedManager] setAuxillaryError:error_str];
     
     return false;
   }
   
   if (![[entitlements objectForKey:@"get-task-allow"] boolValue])
   {
-    SetJitAcquisitionErrorMessage("get-task-allow entitlement is not set to true.");
+    [[DOLJitManager sharedManager] setAuxillaryError:@"get-task-allow entitlement is not set to true."];
     
     return false;
   }

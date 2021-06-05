@@ -4,7 +4,7 @@
 
 #import "NonJailbrokenNoticeViewController.h"
 
-#import "JitAcquisitionUtils.h"
+#import "DOLJitManager.h"
 
 @interface NonJailbrokenNoticeViewController ()
 
@@ -19,7 +19,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-  if (!HasJitWithPTrace())
+  if ([[DOLJitManager sharedManager] jitType] != DOLJitTypePTrace)
   {
     [self.m_quit_label setHidden:true];
     [self.m_bug_label setHidden:true];
@@ -32,7 +32,7 @@
 {
   [super viewDidAppear:animated];
   
-  if (HasJitWithPTrace())
+  if ([[DOLJitManager sharedManager] jitType] == DOLJitTypePTrace)
   {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
       [self.m_ok_button setEnabled:true];

@@ -8,7 +8,7 @@
 #import "DolphiniOS-Swift.h"
 #endif
 
-#import "JitAcquisitionUtils.h"
+#import "DOLJitManager.h"
 
 #import <UIKit/UIKit.h>
 
@@ -16,7 +16,7 @@ int main(int argc, char* argv[])
 {
   @autoreleasepool
   {
-    AcquireJit();
+    [[DOLJitManager sharedManager] attemptToAcquireJitWithCallback:nil];
   }
   
   NSString* appDelegateClassName;
