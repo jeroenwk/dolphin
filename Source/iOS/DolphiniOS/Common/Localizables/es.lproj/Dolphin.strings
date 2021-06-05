@@ -110,7 +110,7 @@ Fotograma actual: %3";
 "Lock Widgets In Place" = "Bloquear posición de ventanas";
 "Memory" = "Memoria";
 "Movie" = "Grabar película";
-"Network" = "Rojo";
+"Network" = "Red";
 "No" = "No";
 "Open..." = "Abrir...";
 "Options" = "Opciones";
@@ -1500,7 +1500,7 @@ La carpeta de la ranura {1} se ha cambiado a
 "Netherlands" = "Holanda";
 "Netplay has desynced in NetPlay_GetButtonPress()" = "Desincronización en «NetPlay_GetButtonPress()»";
 "Netplay has desynced. There is no way to recover from this." = "Juego en red desincronizado. No hay forma de recuperarlo.";
-"Network" = "Rojo";
+"Network" = "Red";
 "Network dump format" = "Formato del volcado de la red";
 "Never Auto-Update" = "Sin actualizaciones automáticas";
 "New" = "Nuevo";

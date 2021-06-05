@@ -1062,7 +1062,7 @@ This can take a while." = "업데이트를 완료중입니다...
 "French" = "프랑스어";
 "Frequency" = "주파수";
 "Frets" = "프렛들";
-"From" = "에서";
+"From" = "From";
 "From" = "에서";
 "FullScr" = "전체화면";
 "Function" = "함수";
@@ -2220,7 +2220,7 @@ EFB 읽기를 사용하는 일부 게임에서 비동기화를 막을지도 모�
 "Tilt" = "기울기";
 "Time period of stable input to trigger calibration. (zero to disable)" = "측정을 작동시키기 위한 안정적 입력 기간. (제로는 비활성)";
 "Title" = "제목";
-"To" = "까지";
+"To" = "To";
 "To" = "까지";
 "Toggle Fullscreen" = "전체화면 토글";
 "Toggle 3D Anaglyph" = "3D 애너글리프 토글";
