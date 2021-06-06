@@ -31,6 +31,8 @@ typedef NS_ENUM(NSUInteger, DOLJitError)
   DOLJitErrorCsdbgdFailed // an error occurred with contacting csdbgd
 };
 
+extern NSString* const DOLJitAcquiredNotification;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface DOLJitManager : NSObject

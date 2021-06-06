@@ -9,6 +9,8 @@
 #import "CodeSignatureUtils.h"
 #import "DebuggerUtils.h"
 
+NSString* const DOLJitAcquiredNotification = @"me.oatmealdome.dolphinios.jit-acquired";
+
 @implementation DOLJitManager
 {
   DOLJitType _m_jit_type;
@@ -183,6 +185,8 @@
     }
     
     self->_m_has_acquired_jit = true;
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:DOLJitAcquiredNotification object:self];
   });
 }
 
