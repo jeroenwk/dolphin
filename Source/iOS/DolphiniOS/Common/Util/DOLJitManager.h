@@ -4,11 +4,8 @@
 
 #import <Foundation/Foundation.h>
 
-#if TARGET_OS_TV
-#import "DolphinATV-Swift.h"
-#else
-#import "DolphiniOS-Swift.h"
-#endif
+// Use forward declaration here instead of the Swift header to avoid a build failure
+@class DOLCancellationToken;
 
 typedef NS_ENUM(NSUInteger, DOLJitType)
 {
@@ -45,7 +42,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (bool)appHasAcquiredJit;
 - (DOLJitError)getJitErrorType;
 - (void)setAuxillaryError:(NSString*)error;
-- (NSString*)getAuxiliaryError;
+- (nullable NSString*)getAuxiliaryError;
 
 @end
 

@@ -6,6 +6,12 @@
 
 #import <dlfcn.h>
 
+#if TARGET_OS_TV
+#import "DolphinATV-Swift.h"
+#else
+#import "DolphiniOS-Swift.h"
+#endif
+
 #import "CodeSignatureUtils.h"
 #import "DebuggerUtils.h"
 
@@ -210,7 +216,7 @@ NSString* const DOLJitAcquiredNotification = @"me.oatmealdome.dolphinios.jit-acq
   self->_m_aux_error = error;
 }
 
-- (NSString*)getAuxiliaryError
+- (nullable NSString*)getAuxiliaryError
 {
   return self->_m_aux_error;
 }
