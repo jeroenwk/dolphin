@@ -69,7 +69,7 @@ jobs:
         cp -R "${{ github.workspace }}/build-Xcode/Release (Jailbroken)-iphoneos/DolphiniOS.app" ${{ env.ARCHIVE_PATH }}/Products/Applications/
         "Source/iOS/DolphiniOS/Common/Build Resources/Scripts/BuildDebs.sh" build.keychain JB_DEB_PATH
         
-    - name: Package (Patreon)
+    - name: Package (Beta)
       env:
         PROJECT_DIR: "${{ github.workspace }}/Source/iOS/DolphiniOS"
         ARCHIVE_PATH: "${{ github.workspace }}/build-Xcode/archive-root-jb-patreon"
@@ -150,7 +150,7 @@ jobs:
         cp -R "${{ github.workspace }}/build-Xcode/Release (Non-Jailbroken)-iphoneos/DolphiniOS.app" ${{ env.ARCHIVE_PATH }}/Products/Applications/
         "Source/iOS/DolphiniOS/Common/Build Resources/Scripts/BuildIpa.sh" build.keychain NJB_IPA_PATH
     
-    - name: Package (Patreon)
+    - name: Package (Beta)
       env:
         PROJECT_DIR: "${{ github.workspace }}/Source/iOS/DolphiniOS"
         ARCHIVE_PATH: "${{ github.workspace }}/build-Xcode/archive-root-njb-patreon"
