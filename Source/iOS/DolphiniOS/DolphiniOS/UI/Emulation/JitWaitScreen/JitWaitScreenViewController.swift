@@ -6,7 +6,7 @@ import Foundation
 
 @objc class JitWaitScreenViewController : UIViewController
 {
-  @objc weak var delegate: JitWaitScreenDelegate?
+  @objc weak var delegate: JitScreenDelegate?
   var cancellation_token = DOLCancellationToken()
   
   override func viewDidLoad()
@@ -19,7 +19,7 @@ import Foundation
   @objc func jitAcquired(notification: Notification)
   {
     DispatchQueue.main.async {
-      self.delegate?.DidFinishJitAcquisition(result: true, sender: self)
+      self.delegate?.DidFinishJitScreen(result: true, sender: self)
     }
   }
   
@@ -27,7 +27,7 @@ import Foundation
   {
     self.cancellation_token.cancel()
     
-    self.delegate?.DidFinishJitAcquisition(result: false, sender: self)
+    self.delegate?.DidFinishJitScreen(result: false, sender: self)
   }
   
 }

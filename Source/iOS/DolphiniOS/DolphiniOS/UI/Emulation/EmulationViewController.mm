@@ -209,9 +209,9 @@
   }
 }
 
-#pragma mark - JIT Wait Screen Delegate
+#pragma mark - JIT Screen Delegate
 
-- (void)DidFinishJitAcquisitionWithResult:(bool)result sender:(id)sender
+- (void)DidFinishJitScreenWithResult:(bool)result sender:(id)sender
 {
   [sender dismissViewControllerAnimated:true completion:nil];
   

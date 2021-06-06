@@ -314,7 +314,7 @@
 		B9D5D5A8266C2B670068049F /* JitAcquisitionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D5D5A7266C2B670068049F /* JitAcquisitionService.swift */; };
 		B9D5D5AB266C30580068049F /* JitWaitScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9D5D5AA266C30580068049F /* JitWaitScreen.xib */; };
 		B9D5D5AD266C33310068049F /* JitWaitScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D5D5AC266C33300068049F /* JitWaitScreenViewController.swift */; };
-		B9D5D5AF266C338A0068049F /* JitWaitScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D5D5AE266C338A0068049F /* JitWaitScreenDelegate.swift */; };
+		B9D5D5AF266C338A0068049F /* JitScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D5D5AE266C338A0068049F /* JitScreenDelegate.swift */; };
 		B9DB01C3266D40C500A78E99 /* DOLCancellationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DB01C2266D40C500A78E99 /* DOLCancellationToken.swift */; };
 		B9DB01C4266D40C500A78E99 /* DOLCancellationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DB01C2266D40C500A78E99 /* DOLCancellationToken.swift */; };
 		B9DBDEAD24DAA2BB00014137 /* SoftwareGeckoViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9DBDEAC24DAA2BB00014137 /* SoftwareGeckoViewController.mm */; };
@@ -762,7 +762,7 @@
 		B9D5D5A7266C2B670068049F /* JitAcquisitionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JitAcquisitionService.swift; sourceTree = "<group>"; };
 		B9D5D5AA266C30580068049F /* JitWaitScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JitWaitScreen.xib; sourceTree = "<group>"; };
 		B9D5D5AC266C33300068049F /* JitWaitScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JitWaitScreenViewController.swift; sourceTree = "<group>"; };
-		B9D5D5AE266C338A0068049F /* JitWaitScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JitWaitScreenDelegate.swift; sourceTree = "<group>"; };
+		B9D5D5AE266C338A0068049F /* JitScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JitScreenDelegate.swift; sourceTree = "<group>"; };
 		B9DB01C2266D40C500A78E99 /* DOLCancellationToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DOLCancellationToken.swift; sourceTree = "<group>"; };
 		B9DBDEAB24DAA2BB00014137 /* SoftwareGeckoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SoftwareGeckoViewController.h; sourceTree = "<group>"; };
 		B9DBDEAC24DAA2BB00014137 /* SoftwareGeckoViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SoftwareGeckoViewController.mm; sourceTree = "<group>"; };
@@ -935,6 +935,7 @@
 			children = (
 				B9D5D5A9266C2FDE0068049F /* JitWaitScreen */,
 				B95A09252382667000DBBB01 /* TouchController */,
+				B9D5D5AE266C338A0068049F /* JitScreenDelegate.swift */,
 				B9B948AF23BDC95E00E244FF /* EmulationViewController.h */,
 				B9B948B023BDC95E00E244FF /* EmulationViewController.mm */,
 				B945A3902362D90200B21680 /* EAGLView.h */,
@@ -1716,7 +1717,6 @@
 			isa = PBXGroup;
 			children = (
 				B9D5D5AC266C33300068049F /* JitWaitScreenViewController.swift */,
-				B9D5D5AE266C338A0068049F /* JitWaitScreenDelegate.swift */,
 				B9D5D5AA266C30580068049F /* JitWaitScreen.xib */,
 			);
 			path = JitWaitScreen;
@@ -2337,7 +2337,7 @@
 				B971155D23E03256001C6BD6 /* SaveStateViewController.mm in Sources */,
 				B99D362B23E415A0005627CE /* ConfigAdvancedViewController.mm in Sources */,
 				B99D362E23E49461005627CE /* CpuEmulationEngineViewController.mm in Sources */,
-				B9D5D5AF266C338A0068049F /* JitWaitScreenDelegate.swift in Sources */,
+				B9D5D5AF266C338A0068049F /* JitScreenDelegate.swift in Sources */,
 				B9AAAB3E23D789CD0094F159 /* LocalizerUtils.m in Sources */,
 				B971156723E1511A001C6BD6 /* SpeedCell.m in Sources */,
 				B9EFBFA323AF582400593A20 /* ControllerDetailsViewController.mm in Sources */,

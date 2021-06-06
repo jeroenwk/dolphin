@@ -4,7 +4,7 @@
 
 import Foundation
 
-@objc protocol JitWaitScreenDelegate : AnyObject
+@objc protocol JitScreenDelegate : AnyObject
 {
-  func DidFinishJitAcquisition(result: Bool, sender: Any)
+  func DidFinishJitScreen(result: Bool, sender: Any)
 }
