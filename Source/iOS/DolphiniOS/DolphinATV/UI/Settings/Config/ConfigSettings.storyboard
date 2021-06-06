@@ -439,30 +439,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="gpE-iX-0Nm" customClass="DOLATVSwitchCell">
-                                        <rect key="frame" x="96" y="516" width="1728" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gpE-iX-0Nm" id="gFi-um-CfO">
-                                            <rect key="frame" x="0.0" y="0.0" width="1728" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enable Crash Reporting" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Wb9-Jo-pkA">
-                                                    <rect key="frame" x="30" y="10" width="1698" height="46"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="Wb9-Jo-pkA" secondAttribute="trailing" id="0Bz-wD-Aic"/>
-                                                <constraint firstItem="Wb9-Jo-pkA" firstAttribute="centerY" secondItem="gFi-um-CfO" secondAttribute="centerY" id="612-bV-RA6"/>
-                                                <constraint firstItem="Wb9-Jo-pkA" firstAttribute="leading" secondItem="gFi-um-CfO" secondAttribute="leadingMargin" id="QBb-Ub-pmJ"/>
-                                                <constraint firstAttribute="centerY" secondItem="gFi-um-CfO" secondAttribute="centerY" id="gzk-OO-XBK"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="rBJ-LN-SDX">
-                                        <rect key="frame" x="96" y="573.5" width="1728" height="43.5"/>
+                                        <rect key="frame" x="96" y="516" width="1728" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rBJ-LN-SDX" id="D4O-Qh-aAp">
                                             <rect key="frame" x="0.0" y="0.0" width="1728" height="43.5"/>
@@ -495,7 +473,6 @@
                     <connections>
                         <outlet property="m_change_discs_switch" destination="ZNC-CZ-Xiv" id="7KW-Vf-LoI"/>
                         <outlet property="m_cheats_switch" destination="nbj-1C-JAz" id="nCY-Xv-GNk"/>
-                        <outlet property="m_crash_report_switch" destination="gpE-iX-0Nm" id="lo0-qN-X7x"/>
                         <outlet property="m_dual_core_switch" destination="Fkc-dE-0aq" id="img-R9-WqB"/>
                         <outlet property="m_mismatched_region_switch" destination="Nhj-3x-Vbi" id="6DG-hh-rmt"/>
                         <outlet property="m_statistics_switch" destination="ruz-da-hFU" id="dpJ-la-N17"/>

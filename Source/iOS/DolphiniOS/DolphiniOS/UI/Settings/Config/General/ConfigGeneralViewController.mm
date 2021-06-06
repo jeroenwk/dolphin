@@ -38,7 +38,6 @@
   [self.m_mismatched_region_switch setOn:Config::Get(Config::MAIN_OVERRIDE_REGION_SETTINGS)];
   [self.m_change_discs_switch setOn:Config::Get(Config::MAIN_AUTO_DISC_CHANGE)];
   [self.m_statistics_switch setOn:Config::GetBase(Config::MAIN_ANALYTICS_ENABLED)];
-  [self.m_crash_report_switch setOn:[[NSUserDefaults standardUserDefaults] boolForKey:@"crash_reporting_enabled"]];
   
   bool running = Core::GetState() != Core::State::Uninitialized;
   [self.m_dual_core_switch setEnabled:!running];
@@ -47,7 +46,6 @@
   
 #ifdef DEBUG
   [self.m_statistics_switch setEnabled:false];
-  [self.m_crash_report_switch setEnabled:false];
 #endif
   
 #if TARGET_OS_TV
@@ -56,7 +54,6 @@
   CELL_SWITCH_CHANGED(self.m_mismatched_region_switch, MismatchedRegionChanged);
   CELL_SWITCH_CHANGED(self.m_change_discs_switch, ChangeDiscsChanged);
   CELL_SWITCH_CHANGED(self.m_statistics_switch, StatisticsChanged);
-  CELL_SWITCH_CHANGED(self.m_crash_report_switch, CrashReportingChanged);
 #endif
 }
 
@@ -83,24 +80,20 @@
 
 - (IBAction)StatisticsChanged:(id)sender
 {
-  Config::SetBaseOrCurrent(Config::MAIN_ANALYTICS_ENABLED, [self.m_statistics_switch isOn]);
+  bool enable_analytics = [self.m_statistics_switch isOn];
+  
+  Config::SetBaseOrCurrent(Config::MAIN_ANALYTICS_ENABLED, enable_analytics);
   DolphinAnalytics::Instance().ReloadConfig();
+  
 #ifdef ANALYTICS
-  [FIRAnalytics setAnalyticsCollectionEnabled:[self.m_statistics_switch isOn]];
-#endif
-}
-
-- (IBAction)CrashReportingChanged:(id)sender
-{
-  [[NSUserDefaults standardUserDefaults] setBool:[self.m_crash_report_switch isOn] forKey:@"crash_reporting_enabled"];
-#ifdef ANALYTICS
-  [[FIRCrashlytics crashlytics] setCrashlyticsCollectionEnabled:[self.m_crash_report_switch isOn]];
+  [FIRAnalytics setAnalyticsCollectionEnabled:enable_analytics];
+  [[FIRCrashlytics crashlytics] setCrashlyticsCollectionEnabled:enable_analytics];
 #endif
 }
 
 - (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath
 {
-  if (indexPath.section == 1 && indexPath.row == 2)
+  if (indexPath.section == 1 && indexPath.row == 1)
   {
     DolphinAnalytics::Instance().GenerateNewIdentity();
     DolphinAnalytics::Instance().ReloadConfig();
