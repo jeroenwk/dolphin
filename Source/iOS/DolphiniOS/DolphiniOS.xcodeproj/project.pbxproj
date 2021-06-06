@@ -317,6 +317,8 @@
 		B9D5D5AF266C338A0068049F /* JitScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D5D5AE266C338A0068049F /* JitScreenDelegate.swift */; };
 		B9DB01C3266D40C500A78E99 /* DOLCancellationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DB01C2266D40C500A78E99 /* DOLCancellationToken.swift */; };
 		B9DB01C4266D40C500A78E99 /* DOLCancellationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DB01C2266D40C500A78E99 /* DOLCancellationToken.swift */; };
+		B9DB01C7266D5EE900A78E99 /* JitFailedJailbreakScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9DB01C6266D5EE900A78E99 /* JitFailedJailbreakScreen.xib */; };
+		B9DB01C9266D615000A78E99 /* JitFailedJailbreakScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DB01C8266D615000A78E99 /* JitFailedJailbreakScreenViewController.swift */; };
 		B9DBDEAD24DAA2BB00014137 /* SoftwareGeckoViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9DBDEAC24DAA2BB00014137 /* SoftwareGeckoViewController.mm */; };
 		B9DBDEB024DAA67700014137 /* SoftwareGeckoEditViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9DBDEAF24DAA67700014137 /* SoftwareGeckoEditViewController.mm */; };
 		B9DCAC8523AAC46E002B95C8 /* TCSidewaysWiiPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9DCAC8423AAC46E002B95C8 /* TCSidewaysWiiPad.xib */; };
@@ -764,6 +766,8 @@
 		B9D5D5AC266C33300068049F /* JitWaitScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JitWaitScreenViewController.swift; sourceTree = "<group>"; };
 		B9D5D5AE266C338A0068049F /* JitScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JitScreenDelegate.swift; sourceTree = "<group>"; };
 		B9DB01C2266D40C500A78E99 /* DOLCancellationToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DOLCancellationToken.swift; sourceTree = "<group>"; };
+		B9DB01C6266D5EE900A78E99 /* JitFailedJailbreakScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JitFailedJailbreakScreen.xib; sourceTree = "<group>"; };
+		B9DB01C8266D615000A78E99 /* JitFailedJailbreakScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JitFailedJailbreakScreenViewController.swift; sourceTree = "<group>"; };
 		B9DBDEAB24DAA2BB00014137 /* SoftwareGeckoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SoftwareGeckoViewController.h; sourceTree = "<group>"; };
 		B9DBDEAC24DAA2BB00014137 /* SoftwareGeckoViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SoftwareGeckoViewController.mm; sourceTree = "<group>"; };
 		B9DBDEAE24DAA67700014137 /* SoftwareGeckoEditViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SoftwareGeckoEditViewController.h; sourceTree = "<group>"; };
@@ -933,6 +937,7 @@
 		B91BF368236B3E3900199BA7 /* Emulation */ = {
 			isa = PBXGroup;
 			children = (
+				B9DB01C5266D5EB300A78E99 /* JitFailedJailbreakScreen */,
 				B9D5D5A9266C2FDE0068049F /* JitWaitScreen */,
 				B95A09252382667000DBBB01 /* TouchController */,
 				B9D5D5AE266C338A0068049F /* JitScreenDelegate.swift */,
@@ -1722,6 +1727,15 @@
 			path = JitWaitScreen;
 			sourceTree = "<group>";
 		};
+		B9DB01C5266D5EB300A78E99 /* JitFailedJailbreakScreen */ = {
+			isa = PBXGroup;
+			children = (
+				B9DB01C8266D615000A78E99 /* JitFailedJailbreakScreenViewController.swift */,
+				B9DB01C6266D5EE900A78E99 /* JitFailedJailbreakScreen.xib */,
+			);
+			path = JitFailedJailbreakScreen;
+			sourceTree = "<group>";
+		};
 		B9DBDEAA24DA9C4900014137 /* Gecko */ = {
 			isa = PBXGroup;
 			children = (
@@ -1932,6 +1946,7 @@
 				B99B05BD23A2E8BD0076C7D8 /* SpecialThanks.txt in Resources */,
 				B98911A12444F12200A24522 /* AnalyticsNotice.xib in Resources */,
 				B988D80423B801F40092CB6C /* TouchGCPadProfile.ini in Resources */,
+				B9DB01C7266D5EE900A78E99 /* JitFailedJailbreakScreen.xib in Resources */,
 				B945A3832362909500B21680 /* LaunchScreen.storyboard in Resources */,
 				B945A3802362909500B21680 /* Assets.xcassets in Resources */,
 				B9D5D556266B48D70068049F /* Sys in Resources */,
@@ -2405,6 +2420,7 @@
 				B99D362523E3F949005627CE /* ConfigWiiViewController.mm in Sources */,
 				B9DBDEB024DAA67700014137 /* SoftwareGeckoEditViewController.mm in Sources */,
 				B9C85E0D23A9FECF008A4DD1 /* TCDeviceMotion.swift in Sources */,
+				B9DB01C9266D615000A78E99 /* JitFailedJailbreakScreenViewController.swift in Sources */,
 				B92CCE602431266D0057BC75 /* SettingsDebugViewController.mm in Sources */,
 				B9DB01C3266D40C500A78E99 /* DOLCancellationToken.swift in Sources */,
 				B99D361A23E3F313005627CE /* WiiLanguageViewController.mm in Sources */,

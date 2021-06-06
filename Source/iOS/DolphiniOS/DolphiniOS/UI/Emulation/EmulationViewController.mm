@@ -145,17 +145,19 @@
   [self setNeedsStatusBarAppearanceUpdate];
 #endif
   
-#ifdef NONJAILBROKEN
   if (![[DOLJitManager sharedManager] appHasAcquiredJit])
   {
+#ifdef NONJAILBROKEN
     JitWaitScreenViewController* controller = [[JitWaitScreenViewController alloc] initWithNibName:@"JitWaitScreen" bundle:nil];
+#else
+    JitFailedJailbreakScreenViewController* controller = [[JitFailedJailbreakScreenViewController alloc] initWithNibName:@"JitFailedJailbreakScreen" bundle:nil];
+#endif
     controller.delegate = self;
     
     [self addViewControllerToPresentationQueueWithViewControllerToPresent:controller animated:true completion:nil];
     
     self.m_did_show_jit_wait = true;
   }
-#endif
   
   if (std::holds_alternative<BootParameters::Disc>(self->m_boot_parameters->parameters))
   {
