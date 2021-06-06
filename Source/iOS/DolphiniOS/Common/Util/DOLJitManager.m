@@ -86,10 +86,6 @@
   return DOLJitErrorNone;
 }
 
-- (void)setJitTypeToAcquire
-{
-}
-
 - (void)attemptToAcquireJitOnStartup
 {
 #if TARGET_OS_SIMULATOR

@@ -37,7 +37,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (DOLJitManager*)sharedManager;
 
-- (void)setJitTypeToAcquire;
 - (void)attemptToAcquireJitOnStartup;
 - (void)attemptToAcquireJitByRemoteDebuggerUsingCancellationToken:(DOLCancellationToken*)token;
 - (DOLJitType)jitType;
