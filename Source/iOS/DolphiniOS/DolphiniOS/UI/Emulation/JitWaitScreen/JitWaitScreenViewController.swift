@@ -11,12 +11,16 @@ import Foundation
   
   override func viewDidLoad()
   {
+    NotificationCenter.default.addObserver(self, selector: #selector(jitAcquired), name: NSNotification.Name.DOLJitAcquired, object: nil)
+    
     DOLJitManager.shared().attemptToAcquireJitByRemoteDebugger(using: cancellation_token)
   }
   
-  func jitAcquired()
+  @objc func jitAcquired(notification: Notification)
   {
-    self.delegate?.DidFinishJitAcquisition(result: true, sender: self)
+    DispatchQueue.main.async {
+      self.delegate?.DidFinishJitAcquisition(result: true, sender: self)
+    }
   }
   
   @IBAction func cancelPressed(_ sender: Any)
