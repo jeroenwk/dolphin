@@ -179,8 +179,6 @@
         return;
       }
       
-      NSLog(@"performed check");
-      
       sleep(1);
     }
     
