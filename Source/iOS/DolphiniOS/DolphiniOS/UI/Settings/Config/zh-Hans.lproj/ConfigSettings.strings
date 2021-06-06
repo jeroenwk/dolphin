@@ -157,9 +157,6 @@
 /* Class = "UINavigationItem"; title = "General"; ObjectID = "VNc-Ms-o2f"; */
 "VNc-Ms-o2f.title" = "常规";
 
-/* Class = "UILabel"; text = "Enable Crash Reporting"; ObjectID = "Wb9-Jo-pkA"; */
-"Wb9-Jo-pkA.text" = "Enable Crash Reporting";
-
 /* Class = "UILabel"; text = "100% (486MHz)"; ObjectID = "ab2-Af-AKe"; */
 "ab2-Af-AKe.text" = "100% (486MHz)";
 
