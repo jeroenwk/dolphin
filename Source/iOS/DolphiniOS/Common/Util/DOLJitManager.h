@@ -4,12 +4,19 @@
 
 #import <Foundation/Foundation.h>
 
+#if TARGET_OS_TV
+#import "DolphinATV-Swift.h"
+#else
+#import "DolphiniOS-Swift.h"
+#endif
+
 typedef NS_ENUM(NSUInteger, DOLJitType)
 {
   DOLJitTypeNone,
   DOLJitTypeDebugger,
   DOLJitTypeAllowUnsigned,
-  DOLJitTypePTrace
+  DOLJitTypePTrace,
+  DOLJitTypeNotRestricted
 };
 
 typedef NS_ENUM(NSUInteger, DOLJitError)
@@ -30,7 +37,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (DOLJitManager*)sharedManager;
 
-- (void)attemptToAcquireJitWithCallback:(nullable void(^)(DOLJitError))callback;
+- (void)setJitTypeToAcquire;
+- (void)attemptToAcquireJitOnStartup;
+- (void)attemptToAcquireJitByRemoteDebuggerUsingCancellationToken:(DOLCancellationToken*)token;
 - (DOLJitType)jitType;
 - (bool)appHasAcquiredJit;
 - (DOLJitError)getJitErrorType;

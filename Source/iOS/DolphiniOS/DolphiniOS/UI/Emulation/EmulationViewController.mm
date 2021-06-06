@@ -145,6 +145,7 @@
   [self setNeedsStatusBarAppearanceUpdate];
 #endif
   
+#ifdef NONJAILBROKEN
   if (![[DOLJitManager sharedManager] appHasAcquiredJit])
   {
     JitWaitScreenViewController* controller = [[JitWaitScreenViewController alloc] initWithNibName:@"JitWaitScreen" bundle:nil];
@@ -154,6 +155,7 @@
     
     self.m_did_show_jit_wait = true;
   }
+#endif
   
   if (std::holds_alternative<BootParameters::Disc>(self->m_boot_parameters->parameters))
   {

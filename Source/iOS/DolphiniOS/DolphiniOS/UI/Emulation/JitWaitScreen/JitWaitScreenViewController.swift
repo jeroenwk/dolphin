@@ -7,49 +7,23 @@ import Foundation
 @objc class JitWaitScreenViewController : UIViewController
 {
   @objc weak var delegate: JitWaitScreenDelegate?
-  var been_cancelled = false
+  var cancellation_token = DOLCancellationToken()
   
   override func viewDidLoad()
   {
-    DOLJitManager.shared().attemptToAcquireJit { error in
-      DispatchQueue.main.async {
-        if (error != .none)
-        {
-          let alert = UIAlertController.init(title: "Failed", message: "DolphiniOS failed to acquire JIT: \(error)", preferredStyle: .alert)
-          alert.addAction(UIAlertAction.init(title: "OK", style: .default, handler: { action in
-            if (self.been_cancelled)
-            {
-              return
-            }
-            
-            self.didFinishAcquisition(result: false)
-          }))
-          
-          self.present(alert, animated: true, completion: nil)
-        }
-        else
-        {
-          if (self.been_cancelled)
-          {
-            return
-          }
-          
-          self.didFinishAcquisition(result: true)
-        }
-      }
-    }
+    DOLJitManager.shared().attemptToAcquireJitByRemoteDebugger(using: cancellation_token)
+  }
+  
+  func jitAcquired()
+  {
+    self.delegate?.DidFinishJitAcquisition(result: true, sender: self)
   }
   
   @IBAction func cancelPressed(_ sender: Any)
   {
-    self.been_cancelled = true
+    self.cancellation_token.cancel()
     
-    self.didFinishAcquisition(result: false)
-  }
-  
-  func didFinishAcquisition(result: Bool)
-  {
-    self.delegate?.DidFinishJitAcquisition(result: result, sender: self)
+    self.delegate?.DidFinishJitAcquisition(result: false, sender: self)
   }
   
 }

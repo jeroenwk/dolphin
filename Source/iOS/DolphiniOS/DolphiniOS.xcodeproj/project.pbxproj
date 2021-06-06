@@ -315,6 +315,8 @@
 		B9D5D5AB266C30580068049F /* JitWaitScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9D5D5AA266C30580068049F /* JitWaitScreen.xib */; };
 		B9D5D5AD266C33310068049F /* JitWaitScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D5D5AC266C33300068049F /* JitWaitScreenViewController.swift */; };
 		B9D5D5AF266C338A0068049F /* JitWaitScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D5D5AE266C338A0068049F /* JitWaitScreenDelegate.swift */; };
+		B9DB01C3266D40C500A78E99 /* DOLCancellationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DB01C2266D40C500A78E99 /* DOLCancellationToken.swift */; };
+		B9DB01C4266D40C500A78E99 /* DOLCancellationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DB01C2266D40C500A78E99 /* DOLCancellationToken.swift */; };
 		B9DBDEAD24DAA2BB00014137 /* SoftwareGeckoViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9DBDEAC24DAA2BB00014137 /* SoftwareGeckoViewController.mm */; };
 		B9DBDEB024DAA67700014137 /* SoftwareGeckoEditViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9DBDEAF24DAA67700014137 /* SoftwareGeckoEditViewController.mm */; };
 		B9DCAC8523AAC46E002B95C8 /* TCSidewaysWiiPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9DCAC8423AAC46E002B95C8 /* TCSidewaysWiiPad.xib */; };
@@ -761,6 +763,7 @@
 		B9D5D5AA266C30580068049F /* JitWaitScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JitWaitScreen.xib; sourceTree = "<group>"; };
 		B9D5D5AC266C33300068049F /* JitWaitScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JitWaitScreenViewController.swift; sourceTree = "<group>"; };
 		B9D5D5AE266C338A0068049F /* JitWaitScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JitWaitScreenDelegate.swift; sourceTree = "<group>"; };
+		B9DB01C2266D40C500A78E99 /* DOLCancellationToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DOLCancellationToken.swift; sourceTree = "<group>"; };
 		B9DBDEAB24DAA2BB00014137 /* SoftwareGeckoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SoftwareGeckoViewController.h; sourceTree = "<group>"; };
 		B9DBDEAC24DAA2BB00014137 /* SoftwareGeckoViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SoftwareGeckoViewController.mm; sourceTree = "<group>"; };
 		B9DBDEAE24DAA67700014137 /* SoftwareGeckoEditViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SoftwareGeckoEditViewController.h; sourceTree = "<group>"; };
@@ -1328,6 +1331,7 @@
 				B992D27E25528E0B00CB02FD /* CodeSignatureUtils.m */,
 				B971E1F7245EB63E00D2A698 /* DebuggerUtils.h */,
 				B971E1F8245EB63E00D2A698 /* DebuggerUtils.m */,
+				B9DB01C2266D40C500A78E99 /* DOLCancellationToken.swift */,
 				B9D5D5A2266BFAA70068049F /* DOLJitManager.h */,
 				B9D5D5A3266BFAA70068049F /* DOLJitManager.m */,
 				B96400742553E8FE00AD68EC /* FastmemUtil.h */,
@@ -2402,6 +2406,7 @@
 				B9DBDEB024DAA67700014137 /* SoftwareGeckoEditViewController.mm in Sources */,
 				B9C85E0D23A9FECF008A4DD1 /* TCDeviceMotion.swift in Sources */,
 				B92CCE602431266D0057BC75 /* SettingsDebugViewController.mm in Sources */,
+				B9DB01C3266D40C500A78E99 /* DOLCancellationToken.swift in Sources */,
 				B99D361A23E3F313005627CE /* WiiLanguageViewController.mm in Sources */,
 				B9B47C8323FB4A1C0077375A /* ShaderModeViewController.mm in Sources */,
 				B971154F23DF449F001C6BD6 /* InvalidCpuCoreNoticeViewController.mm in Sources */,
@@ -2488,6 +2493,7 @@
 				B97DDC4C2666035A0083896C /* ControllerDeviceCell.m in Sources */,
 				B97DDC4D2666035A0083896C /* AboutViewController.m in Sources */,
 				B97DDC4E2666035A0083896C /* ControllerGroupEnabledCell.mm in Sources */,
+				B9DB01C4266D40C500A78E99 /* DOLCancellationToken.swift in Sources */,
 				B97DDC4F2666035A0083896C /* GraphicsRootViewController.mm in Sources */,
 				B97DDC502666035A0083896C /* UnofficialBuildNoticeViewController.m in Sources */,
 				B97DDC512666035A0083896C /* LoadStateViewController.mm in Sources */,

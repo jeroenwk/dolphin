@@ -14,6 +14,7 @@
   DOLJitType _m_jit_type;
   DOLJitError _m_jit_error;
   NSString* _m_aux_error;
+  bool _m_has_acquired_jit;
 }
 
 + (DOLJitManager*)sharedManager
@@ -35,6 +36,7 @@
     _m_jit_type = DOLJitTypeNone;
     _m_jit_error = DOLJitErrorNone;
     _m_aux_error = nil;
+    _m_has_acquired_jit = false;
   }
   
   return self;
@@ -64,7 +66,7 @@
   return cpu_architecture;
 }
 
-- (DOLJitError)acquireJitByAllowUnsigned
+- (DOLJitError)canAcquireJitByUnsigned
 {
   NSString* cpu_architecture = [self getCpuArchitecture];
   
@@ -84,114 +86,109 @@
   return DOLJitErrorNone;
 }
 
-- (void)attemptToAcquireJitWithCallback:(nullable void(^)(DOLJitError))callback
+- (void)setJitTypeToAcquire
 {
-  void(^jit_acquisition_succeeded)(DOLJitType) = ^(DOLJitType type) {
-    self->_m_jit_type = type;
-    self->_m_jit_error = DOLJitErrorNone;
-    
-    if (callback)
-    {
-      callback(DOLJitErrorNone);
-    }
-  };
-  
-  void(^jit_acquisition_failed)(DOLJitError) = ^(DOLJitError error) {
-    self->_m_jit_type = DOLJitTypeNone;
-    self->_m_jit_error = error;
-    
-    if (callback)
-    {
-      callback(error);
-    }
-  };
-  
-  dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-    if (self->_m_jit_type != DOLJitTypeNone)
-    {
-      jit_acquisition_succeeded(DOLJitTypeNone);
-      return;
-    }
-    
-    if (IsProcessDebugged())
-    {
-      jit_acquisition_succeeded(DOLJitTypeDebugger);
-      return;
-    }
-    
+}
+
+- (void)attemptToAcquireJitOnStartup
+{
 #if TARGET_OS_SIMULATOR
-    jit_acquisition_succeeded(DOLJitTypeDebugger);
-    return;
-#endif
-    
-#ifdef NONJAILBROKEN
-    if (@available(iOS 14.4, *))
+  // We're running on macOS, so JITs aren't restricted.
+  self->_m_jit_type = DOLJitTypeNotRestricted;
+#elif defined(NONJAILBROKEN)
+  if (@available(iOS 14.4, *))
+  {
+    self->_m_jit_type = DOLJitTypeDebugger;
+  }
+  else if (@available(iOS 14.2, *))
+  {
+    DOLJitError error = [self canAcquireJitByUnsigned];
+    if (error == DOLJitErrorNone)
     {
-      // TODO
-      jit_acquisition_failed(DOLJitErrorWorkaroundRequired);
+      self->_m_jit_type = DOLJitTypeAllowUnsigned;
     }
-    else if (@available(iOS 14.2, *))
+    else
     {
-      DOLJitError error = [self acquireJitByAllowUnsigned];
-      if (error == DOLJitErrorNone)
+      self->_m_jit_type = DOLJitTypeDebugger;
+    }
+  }
+  else if (@available(iOS 14, *))
+  {
+    self->_m_jit_type = DOLJitTypeDebugger;
+  }
+  else if (@available(iOS 13.5, *))
+  {
+    self->_m_jit_type = DOLJitTypePTrace;
+  }
+  else
+  {
+    self->_m_jit_type = DOLJitTypeDebugger;
+  }
+#else // jailbroken
+  self->_m_jit_type = DOLJitTypeDebugger;
+#endif
+  
+  switch (self->_m_jit_type)
+  {
+    case DOLJitTypeDebugger:
+#ifdef NONJAILBROKEN
+      self->_m_has_acquired_jit = IsProcessDebugged();
+#else
+      // Check for jailbreakd (Chimera, Electra, Odyssey...)
+      if ([[NSFileManager defaultManager] fileExistsAtPath:@"/var/run/jailbreakd.pid"])
       {
-        jit_acquisition_succeeded(DOLJitTypeAllowUnsigned);
+        self->_m_has_acquired_jit = SetProcessDebuggedWithJailbreakd();
       }
       else
       {
-        jit_acquisition_failed(error);
+        self->_m_has_acquired_jit = SetProcessDebuggedWithDaemon();
       }
+#endif
+      break;
+    case DOLJitTypeAllowUnsigned:
+    case DOLJitTypeNotRestricted:
+      self->_m_has_acquired_jit = true;
       
-      // TODO: attempt by remote debugger
-    }
-    else if (@available(iOS 14, *))
-    {
-      // TODO: attempt by remote debugger
-      
-      jit_acquisition_failed(DOLJitErrorNeedUpdate);
-    }
-    else if (@available(iOS 13.5, *))
-    {
+      break;
+    case DOLJitTypePTrace:
       SetProcessDebuggedWithPTrace();
       
-      jit_acquisition_succeeded(DOLJitTypePTrace);
-    }
-    else
-    {
-      // TODO: attempt by remote debugger
+      self->_m_has_acquired_jit = true;
       
-      jit_acquisition_failed(DOLJitErrorNeedUpdate);
+      break;
+    case DOLJitTypeNone: // should never happen
+      break;
+  }
+}
+
+- (void)attemptToAcquireJitByRemoteDebuggerUsingCancellationToken:(DOLCancellationToken*)token
+{
+  if (self->_m_jit_type != DOLJitTypeDebugger)
+  {
+    return;
+  }
+  
+  if (self->_m_has_acquired_jit)
+  {
+    return;
+  }
+  
+  // TODO: check if app has AltJIT support
+  
+  dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INTERACTIVE, 0), ^{
+    while (!IsProcessDebugged())
+    {
+      if ([token isCancelled])
+      {
+        return;
+      }
+      
+      NSLog(@"performed check");
+      
+      sleep(1);
     }
-#else // jailbroken
-    bool success = false;
     
-    // Check for jailbreakd (Chimera, Electra, Odyssey...)
-    NSFileManager* file_manager = [NSFileManager defaultManager];
-    if ([file_manager fileExistsAtPath:@"/var/run/jailbreakd.pid"])
-    {
-      success = SetProcessDebuggedWithJailbreakd();
-      if (success)
-      {
-        jit_acquisition_succeeded(DOLJitTypeDebugger);
-      }
-      else
-      {
-        jit_acquisition_failed(DOLJitErrorJailbreakdFailed);
-      }
-    }
-    else
-    {
-      success = SetProcessDebuggedWithDaemon();
-      if (success)
-      {
-        jit_acquisition_succeeded(DOLJitTypeDebugger);
-      }
-      else
-      {
-        jit_acquisition_failed(DOLJitErrorCsdbgdFailed);
-      }
-    }
-#endif
+    self->_m_has_acquired_jit = true;
   });
 }
 
@@ -202,7 +199,7 @@
 
 - (bool)appHasAcquiredJit
 {
-  return _m_jit_type != DOLJitTypeNone;
+  return _m_has_acquired_jit;
 }
 
 - (DOLJitError)getJitErrorType
