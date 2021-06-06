@@ -515,8 +515,10 @@
 #ifdef ANALYTICS
   [FIRApp configure];
 #if !defined(DEBUG) && !TARGET_OS_SIMULATOR
-  [FIRAnalytics setAnalyticsCollectionEnabled:Config::GetBase(Config::MAIN_ANALYTICS_ENABLED)];
-  [[FIRCrashlytics crashlytics] setCrashlyticsCollectionEnabled:[[NSUserDefaults standardUserDefaults] boolForKey:@"crash_reporting_enabled"]];
+  bool analytics_enabled = Config::GetBase(Config::MAIN_ANALYTICS_ENABLED);
+  
+  [FIRAnalytics setAnalyticsCollectionEnabled:analytics_enabled];
+  [[FIRCrashlytics crashlytics] setCrashlyticsCollectionEnabled:analytics_enabled];
 #else
   [FIRAnalytics setAnalyticsCollectionEnabled:false];
   [[FIRCrashlytics crashlytics] setCrashlyticsCollectionEnabled:false];
