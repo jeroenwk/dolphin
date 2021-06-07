@@ -187,22 +187,20 @@ void Renderer::ReinterpretPixelData(EFBReinterpretType convtype)
 
 u16 Renderer::BBoxRead(int index)
 {
-  u16 value = BBoxReadImpl(index);
+  if (!g_ActiveConfig.bBBoxEnable || !g_ActiveConfig.backend_info.bSupportsBBox)
+    return m_bounding_box_fallback[index];
 
-  // The GC/Wii GPU rasterizes in 2x2 pixel groups, so bounding box values will be rounded to the
-  // extents of these groups, rather than the exact pixel.
-  // This would have been handled in the pixel shader, but all attempts to do so did not work on
-  // OpenGL/NVIDIA, due to presumably mystical driver behavior with atomics.
-  if (index == 0 || index == 2)
-    value &= ~1;
-  else
-    value |= 1;
-
-  return value;
+  return BBoxReadImpl(index);
 }
 
 void Renderer::BBoxWrite(int index, u16 value)
 {
+  if (!g_ActiveConfig.bBBoxEnable || !g_ActiveConfig.backend_info.bSupportsBBox)
+  {
+    m_bounding_box_fallback[index] = value;
+    return;
+  }
+
   BBoxWriteImpl(index, value);
 }
 
@@ -1765,6 +1763,7 @@ void Renderer::DoState(PointerWrap& p)
   p.Do(m_last_xfb_width);
   p.Do(m_last_xfb_stride);
   p.Do(m_last_xfb_height);
+  p.DoArray(m_bounding_box_fallback);
 
   if (p.GetMode() == PointerWrap::MODE_READ)
   {
