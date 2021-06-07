@@ -319,6 +319,8 @@
 		B9DB01C4266D40C500A78E99 /* DOLCancellationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DB01C2266D40C500A78E99 /* DOLCancellationToken.swift */; };
 		B9DB01C7266D5EE900A78E99 /* JitFailedJailbreakScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9DB01C6266D5EE900A78E99 /* JitFailedJailbreakScreen.xib */; };
 		B9DB01C9266D615000A78E99 /* JitFailedJailbreakScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DB01C8266D615000A78E99 /* JitFailedJailbreakScreenViewController.swift */; };
+		B9DB01CB266D6A4500A78E99 /* CpuEmulationEngineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DB01CA266D6A4500A78E99 /* CpuEmulationEngineCell.swift */; };
+		B9DB01CC266D6A4500A78E99 /* CpuEmulationEngineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DB01CA266D6A4500A78E99 /* CpuEmulationEngineCell.swift */; };
 		B9DBDEAD24DAA2BB00014137 /* SoftwareGeckoViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9DBDEAC24DAA2BB00014137 /* SoftwareGeckoViewController.mm */; };
 		B9DBDEB024DAA67700014137 /* SoftwareGeckoEditViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9DBDEAF24DAA67700014137 /* SoftwareGeckoEditViewController.mm */; };
 		B9DCAC8523AAC46E002B95C8 /* TCSidewaysWiiPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9DCAC8423AAC46E002B95C8 /* TCSidewaysWiiPad.xib */; };
@@ -768,6 +770,7 @@
 		B9DB01C2266D40C500A78E99 /* DOLCancellationToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DOLCancellationToken.swift; sourceTree = "<group>"; };
 		B9DB01C6266D5EE900A78E99 /* JitFailedJailbreakScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JitFailedJailbreakScreen.xib; sourceTree = "<group>"; };
 		B9DB01C8266D615000A78E99 /* JitFailedJailbreakScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JitFailedJailbreakScreenViewController.swift; sourceTree = "<group>"; };
+		B9DB01CA266D6A4500A78E99 /* CpuEmulationEngineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CpuEmulationEngineCell.swift; sourceTree = "<group>"; };
 		B9DBDEAB24DAA2BB00014137 /* SoftwareGeckoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SoftwareGeckoViewController.h; sourceTree = "<group>"; };
 		B9DBDEAC24DAA2BB00014137 /* SoftwareGeckoViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SoftwareGeckoViewController.mm; sourceTree = "<group>"; };
 		B9DBDEAE24DAA67700014137 /* SoftwareGeckoEditViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SoftwareGeckoEditViewController.h; sourceTree = "<group>"; };
@@ -1411,6 +1414,7 @@
 			children = (
 				B99D362723E414AC005627CE /* ConfigAdvancedViewController.h */,
 				B99D362A23E415A0005627CE /* ConfigAdvancedViewController.mm */,
+				B9DB01CA266D6A4500A78E99 /* CpuEmulationEngineCell.swift */,
 				B99D362C23E4944F005627CE /* CpuEmulationEngineViewController.h */,
 				B99D362D23E49461005627CE /* CpuEmulationEngineViewController.mm */,
 			);
@@ -2362,6 +2366,7 @@
 				B946AF17245BFF110043767A /* WiiSystemUpdateViewController.mm in Sources */,
 				B9D5D54B266B39F90068049F /* AppDelegate.swift in Sources */,
 				B971E1F9245EB63E00D2A698 /* DebuggerUtils.m in Sources */,
+				B9DB01CB266D6A4500A78E99 /* CpuEmulationEngineCell.swift in Sources */,
 				B930A5D12467B01000C7F1B5 /* NPSConnectionTypeViewController.mm in Sources */,
 				B988D7FD23B604AB0092CB6C /* ControllerProfileCell.m in Sources */,
 				B9D5D5A8266C2B670068049F /* JitAcquisitionService.swift in Sources */,
@@ -2465,6 +2470,7 @@
 				B97DDC1F2666035A0083896C /* SoftwareVerifyResultsProblemCell.m in Sources */,
 				B97DDC202666035A0083896C /* SoftwareVerifyProblem.mm in Sources */,
 				B97DDC212666035A0083896C /* ControllerSettingsUtils.mm in Sources */,
+				B9DB01CC266D6A4500A78E99 /* CpuEmulationEngineCell.swift in Sources */,
 				B97DDC222666035A0083896C /* AspectRatioViewController.mm in Sources */,
 				B97DDCE5266617B80083896C /* TCButtonType.swift in Sources */,
 				B97DDC242666035A0083896C /* InGameSettingsViewController.mm in Sources */,

@@ -40,7 +40,7 @@
 /* Class = "UILabel"; text = "Sensor Bar Position"; ObjectID = "6Qs-g2-BTZ"; */
 "6Qs-g2-BTZ.text" = "感应条位置";
 
-/* Class = "UILabel"; text = "Interpreter (slowest)"; ObjectID = "6dX-G1-g6C"; */
+/* Class = "UILabel"; text = "Engine"; ObjectID = "6dX-G1-g6C"; */
 "6dX-G1-g6C.text" = "解释器（最慢）";
 
 /* Class = "UILabel"; text = "German"; ObjectID = "6hU-jR-80J"; */
@@ -126,9 +126,6 @@
 
 /* Class = "UILabel"; text = "Simplified Chinese"; ObjectID = "QAt-xr-bbV"; */
 "QAt-xr-bbV.text" = "简体中文";
-
-/* Class = "UILabel"; text = "JIT Recompiler (recommended)"; ObjectID = "QLN-FA-k5N"; */
-"QLN-FA-k5N.text" = "JIT 重编译器（推荐）";
 
 /* Class = "UILabel"; text = "Enable MMU"; ObjectID = "RvK-8a-gsf"; */
 "RvK-8a-gsf.text" = "启用 MMU";
@@ -216,9 +213,6 @@
 
 /* Class = "UILabel"; text = "English"; ObjectID = "riQ-Hp-p07"; */
 "riQ-Hp-p07.text" = "英语";
-
-/* Class = "UILabel"; text = "Cached Interpreter (slower)"; ObjectID = "s3k-Uc-UWw"; */
-"s3k-Uc-UWw.text" = "缓存解释器（较慢）";
 
 /* Class = "UINavigationItem"; title = "System Language"; ObjectID = "txG-ij-PdN"; */
 "txG-ij-PdN.title" = "系统语言";

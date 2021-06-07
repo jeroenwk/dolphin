@@ -196,7 +196,7 @@
 /* Class = "UITableViewSection"; headerTitle = "CPU Options"; ObjectID = "3FW-wh-rEp"; */
 "3FW-wh-rEp.headerTitle" = "CPU Options";
 
-/* Class = "UILabel"; text = "Interpreter (slowest)"; ObjectID = "6dX-G1-g6C"; */
+/* Class = "UILabel"; text = "Engine"; ObjectID = "6dX-G1-g6C"; */
 "6dX-G1-g6C.text" = "Interpreter (slowest)";
 
 /* Class = "UILabel"; text = "Help"; ObjectID = "7wX-hc-fac"; */
@@ -204,9 +204,6 @@
 
 /* Class = "UILabel"; text = "Enable"; ObjectID = "PUW-7n-hkA"; */
 "PUW-7n-hkA.text" = "Enable";
-
-/* Class = "UILabel"; text = "JIT Recompiler (recommended)"; ObjectID = "QLN-FA-k5N"; */
-"QLN-FA-k5N.text" = "JIT Recompiler (recommended)";
 
 /* Class = "UILabel"; text = "Enable MMU"; ObjectID = "RvK-8a-gsf"; */
 "RvK-8a-gsf.text" = "Enable MMU";
@@ -222,9 +219,6 @@
 
 /* Class = "UILabel"; text = "Advanced"; ObjectID = "ffY-kZ-p24"; */
 "ffY-kZ-p24.text" = "Advanced";
-
-/* Class = "UILabel"; text = "Cached Interpreter (slower)"; ObjectID = "s3k-Uc-UWw"; */
-"s3k-Uc-UWw.text" = "Cached Interpreter (slower)";
 
 /* Class = "UITableViewSection"; headerTitle = "Usage Statistics Reporting Settings"; ObjectID = "5Ht-g1-iR3"; */
 "5Ht-g1-iR3.headerTitle" = "Usage Statistics Reporting Settings";

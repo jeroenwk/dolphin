@@ -37,7 +37,7 @@
 /* Class = "UILabel"; text = "Sensor Bar Position"; ObjectID = "6Qs-g2-BTZ"; */
 "6Qs-g2-BTZ.text" = "Position der Sensorleiste";
 
-/* Class = "UILabel"; text = "Interpreter (slowest)"; ObjectID = "6dX-G1-g6C"; */
+/* Class = "UILabel"; text = "Engine"; ObjectID = "6dX-G1-g6C"; */
 "6dX-G1-g6C.text" = "Interpreter (am langsamsten)";
 
 /* Class = "UILabel"; text = "German"; ObjectID = "6hU-jR-80J"; */
@@ -108,9 +108,6 @@
 
 /* Class = "UILabel"; text = "Simplified Chinese"; ObjectID = "QAt-xr-bbV"; */
 "QAt-xr-bbV.text" = "Chinesisch (Vereinfacht)";
-
-/* Class = "UILabel"; text = "JIT Recompiler (recommended)"; ObjectID = "QLN-FA-k5N"; */
-"QLN-FA-k5N.text" = "JIT-Recompiler (Empfohlen)";
 
 /* Class = "UILabel"; text = "Enable MMU"; ObjectID = "RvK-8a-gsf"; */
 "RvK-8a-gsf.text" = "MMU aktivieren";
@@ -186,9 +183,6 @@
 
 /* Class = "UILabel"; text = "English"; ObjectID = "riQ-Hp-p07"; */
 "riQ-Hp-p07.text" = "Englisch";
-
-/* Class = "UILabel"; text = "Cached Interpreter (slower)"; ObjectID = "s3k-Uc-UWw"; */
-"s3k-Uc-UWw.text" = "Cached Interpreter (langsamer)";
 
 /* Class = "UINavigationItem"; title = "System Language"; ObjectID = "txG-ij-PdN"; */
 "txG-ij-PdN.title" = "Systemsprache";
