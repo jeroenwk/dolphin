@@ -49,7 +49,7 @@ cp "$ROOT_SRC_DIR/DolphiniOS/Common/Build Resources/Package Files/postrm.sh" "$D
 chmod -R 755 "$DOLPHIN_EXPORT_PATH/DEBIAN/"*
 sed "s/VERSION_NUMBER/$VERSION_STRING-$BUILD_NUMBER/g" "$CONTROL_FILE" > "$DOLPHIN_EXPORT_PATH/DEBIAN/control"
 
-cp "$ROOT_SRC_DIR/csdbgd/csdbgd $CSDBGD_EXPORT_PATH/usr/libexec"
+cp "$ROOT_SRC_DIR/csdbgd/csdbgd" "$CSDBGD_EXPORT_PATH/usr/libexec"
 cp "$ROOT_SRC_DIR/csdbgd/me.oatmealdome.csdbgd.plist" "$CSDBGD_EXPORT_PATH/Library/LaunchDaemons"
 cp "$ROOT_SRC_DIR/csdbgd/DebFiles/preinst.sh" "$CSDBGD_EXPORT_PATH/DEBIAN/preinst"
 cp "$ROOT_SRC_DIR/csdbgd/DebFiles/postinst.sh" "$CSDBGD_EXPORT_PATH/DEBIAN/postinst"
