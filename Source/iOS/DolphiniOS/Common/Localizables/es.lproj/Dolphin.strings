@@ -22,6 +22,7 @@ Lanzar o ejecutar estos títulos también puede ayudar a arreglarlos.";
 " (Disc %1)" = " (Disco %1)";
 "! Not" = "! No";
 "\"{0}\" is an invalid GCM/ISO file, or is not a GC/Wii ISO." = "\"{0}\" no es un archivo GCM/ISO válido, o no es una ISO GC/Wii.";
+"$ User Variable" = "$ User Variable";
 "%" = "%";
 "% Modulo" = "% Módulo";
 "%1
@@ -756,6 +757,7 @@ Double-click here to set a games directory..." = "Dolphin no ha podido encontrar
 "Dump Texture Fetches" = "Volcar capturas de textura";
 "Dump Texture Fetches to User/Dump/Objects/.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Volcado de textura en Usuario/Volcado/Objetos/.<br><br><dolphin_emphasis>Si no estas seguro, deja esto sin marcar.</dolphin_emphasis>";
 "Dump Textures" = "Volcar texturas";
+"Dump XFB Target" = "Dump XFB Target";
 "Dump at Internal Resolution" = "Volcado en resolución interna";
 "Dump decoded game textures to User/Dump/Textures/lt;game_idgt;/.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Dump decoded game textures to User/Dump/Textures/lt;game_idgt;/.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>";
 "Dump decrypted SSL reads" = "Volcar lecturas SSL descifradas";
@@ -766,6 +768,7 @@ Double-click here to set a games directory..." = "Dolphin no ha podido encontrar
 "Dump root CA certificates" = "Volcar certificados CA raíz";
 "Dumps decoded game textures based on the other flags to User/Dump/Textures/lt;game_idgt;/.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Volcar texturas del juego decodificadas basándose en las otras configuraciones a User/Dump/Textures/lt;game_idgt;/. <br><br><dolphin_emphasis>Si no estás seguro, no lo actives.</dolphin_emphasis>";
 "Dumps the contents of EFB copies to User/Dump/Textures/.<br><br /><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Vuelca el contenido de las copias de EFB en User/Dump/Textures/.<br><br /><dolphin_emphasis>Si no estás seguro, deja esto sin marcar.</dolphin_emphasis>";
+"Dumps the contents of XFB copies to User/Dump/Textures/.<br><br /><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Dumps the contents of XFB copies to User/Dump/Textures/.<br><br /><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>";
 "Duration of Turbo Button Press (frames)" = "Duracion de presion del boton turbo (fotogramas)";
 "Duration of Turbo Button Release (frames)" = "Duración de liberación del botón turbo (fotogramas)";
 "Dutch" = "Holandés";
@@ -869,6 +872,7 @@ PAra más información consulta https://www.teamxlink.co.uk/wiki/Dolphin";
 "Expected name of input." = "Nombre esperado de la entrada.";
 "Expected opening paren." = "Se espera el paréntesis de apertura.";
 "Expected start of expression." = "Inicio esperado de la expresión.";
+"Expected variable name." = "Expected variable name.";
 "Experimental" = "Experimental";
 "Export All Wii Saves" = "Exportar todas las partidas guardadas de Wii";
 "Export Failed" = "Hubo un fallo al exportar";
@@ -1411,6 +1415,7 @@ Click medio para borrar.";
 "Loads custom textures from User/Load/Textures/lt;game_idgt;/ and User/Load/DynamicInputTextures/lt;game_idgt;/.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Carga texturas personalizadas desde Usuario/Load/Textures/lt;game_idgt;/ y de Usuario/Load/DynamicInputTextures/lt;game_idgt;/<br><br><dolphin_emphasis>Si dudas, déjalo sin marcar</dolphin_emphasis>";
 "Local" = "Local";
 "Lock" = "Bloquear";
+"Lock Mouse Cursor" = "Lock Mouse Cursor";
 "Log" = "Registrar";
 "Log Configuration" = "Configuración de registro";
 "Log JIT Instruction Coverage" = "Registros de cobertura de instrucciones JIT";
@@ -1729,6 +1734,7 @@ Puede tardar un poco.";
 "Reset Traversal Server" = "Restablecer servidor de paso";
 "Reset Traversal Server to %1:%2" = "Restablecer servidor de paso a %1:%2";
 "Reset Traversal Settings" = "Restablecer ajustes de paso";
+"Reset Values" = "Reset Values";
 "Reset View" = "Restablecer vista";
 "Reset all saved Wii Remote pairings" = "Revierte todas las vinculaciones de mandos de Wii existentes.";
 "Resource Pack Manager" = "Administrador de paquetes de recursos";
@@ -2129,7 +2135,6 @@ Por favor, vuelva a comprobar que tiene el código correcto.";
 "The region code does not match the game ID. If this is because the region code has been modified, the game might run at the wrong speed, graphical elements might be offset, or the game might not run at all." = "El código de región no coincide con el ID del juego. Esto se debe a que el código de región ha sido modificado, es posible que el juego se ejecute a una velocidad incorrecta, que los elementos gráficos se desplacen o que el juego no se ejecute en absoluto.";
 "The resulting decrypted AR code doesn't contain any lines." = "El código AR descifrado que se ha obtenido no contiene ninguna línea.";
 "The same file can't be used in both slots." = "No puedes utilizar el mismo archivo en ambas ranuras.";
-"The selected CPU emulation core ({0}) is not available. Please select a different CPU emulation core in the settings." = "El núcleo ({0}) de la CPU elegido  no está disponible. Por favor elige otro en los ajustes.";
 "The server and client's NetPlay versions are incompatible." = "Las versiones de juego en red del servidor y del cliente son incompatibles.";
 "The server is full." = "El servidor está lleno.";
 "The server sent an unknown error message." = "El servidor envió un mensaje de error desconocido.";
@@ -2295,6 +2300,7 @@ Would you like to ignore this line and continue parsing?" = "La línea %1 del c�
 "Unknown message received with id : {0}" = "Se recibió un mensaje desconocido con identificador: {0}";
 "Unknown message with id:{0} received from player:{1} Kicking player!" = "Mensaje desconocido con id:{0} recibido del jugador:{1} ¡Expulsando jugador!";
 "Unlimited" = "Ilimitado";
+"Unlock Cursor" = "Unlock Cursor";
 "Unpacking" = "Descomprimiendo";
 "Unsigned Integer" = "Entero sin signo";
 "Up" = "Arriba";
@@ -2321,6 +2327,12 @@ Puede tardar un poco.";
 "User Config" = "Configuración del usuario";
 "User Interface" = "Interfaz de usuario";
 "User Style" = "Estilo de usuario";
+"User Variables" = "User Variables";
+"User defined variables usable in the control expression.
+You can use them to save or retrieve values between
+inputs and outputs of the same parent controller." = "User defined variables usable in the control expression.
+You can use them to save or retrieve values between
+inputs and outputs of the same parent controller.";
 "Uses a less accurate algorithm to calculate depth values.<br><br>Causes issues in a few games, but can result in a decent speed increase depending on the game and/or GPU.<br><br><dolphin_emphasis>If unsure, leave this checked.</dolphin_emphasis>" = "Usa un algoritmo menos preciso para calcular los valores de profundidad.<br><br> Causa problemas visuales en unos pocos juegos pero aumenta la velocidad de forma notable dependiendo del juego y tu GPU.<br><br><dolphin_emphasis>Si no estás seguro, déjala sin marcar.</dolphin_emphasis>";
 "Uses the entire screen for rendering.<br><br>If disabled, a render window will be created instead.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Usa la pantalla completa para renderizar.<br><br>Si se desactiva se creará una ventana de renderizado independiente en su lugar.<br><br><dolphin_emphasis>Si no estás seguro, deja esto sin marcar</dolphin_emphasis>";
 "Uses the main Dolphin window for rendering rather than a separate render window.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Usa la ventana principal de Dolphin para renderizar en vez de hacerlo en una ventana independiente.<br><br><dolphin_emphasis>Si no estás seguro, deja esto sin marcar.</dolphin_emphasis>";
@@ -2414,6 +2426,10 @@ Start={24}, A={25}, B={26}, X={27}, Y={28}, Z={29}, DUp={30}, DDown={31}, DLeft=
 "Wii data is not public yet" = "Datos de Wii no son públicos aun";
 "Wii save files (*.bin);;All Files (*)" = "Archivos de partida Wii (*.bin);;Todos los archivos (*)";
 "WiiTools Signature MEGA File" = "Archivo de firmas MEGA de WiiTools";
+"Will immediately hide the Mouse Cursor when it hovers on top of the Render Widget, otherwise there is a delay.
+If \"Lock Mouse Cursor\" is enabled, it will hide on Mouse locked" = "Will immediately hide the Mouse Cursor when it hovers on top of the Render Widget, otherwise there is a delay.
+If \"Lock Mouse Cursor\" is enabled, it will hide on Mouse locked";
+"Will lock the Mouse Cursor to the Render Widget as long as it has focus. You can set a hotkey to unlock it." = "Will lock the Mouse Cursor to the Render Widget as long as it has focus. You can set a hotkey to unlock it.";
 "Word Wrap" = "Ajuste de línea";
 "World" = "Mundo";
 "Write" = "Escribir";

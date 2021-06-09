@@ -22,6 +22,7 @@ Launching these titles may also fix the issues.";
 " (Disc %1)" = " (Disc %1)";
 "! Not" = "! Not";
 "\"{0}\" is an invalid GCM/ISO file, or is not a GC/Wii ISO." = "\"{0}\" is an invalid GCM/ISO file, or is not a GC/Wii ISO.";
+"$ User Variable" = "$ User Variable";
 "%" = "%";
 "% Modulo" = "% Modulo";
 "%1
@@ -758,6 +759,7 @@ Double-click here to set a games directory...";
 "Dump Texture Fetches" = "Dump Texture Fetches";
 "Dump Texture Fetches to User/Dump/Objects/.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Dump Texture Fetches to User/Dump/Objects/.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>";
 "Dump Textures" = "Depositar Texturas";
+"Dump XFB Target" = "Dump XFB Target";
 "Dump at Internal Resolution" = "Dump at Internal Resolution";
 "Dump decoded game textures to User/Dump/Textures/lt;game_idgt;/.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Dump decoded game textures to User/Dump/Textures/lt;game_idgt;/.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>";
 "Dump decrypted SSL reads" = "Dump decrypted SSL reads";
@@ -768,6 +770,7 @@ Double-click here to set a games directory...";
 "Dump root CA certificates" = "Dump root CA certificates";
 "Dumps decoded game textures based on the other flags to User/Dump/Textures/lt;game_idgt;/.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Dumps decoded game textures based on the other flags to User/Dump/Textures/lt;game_idgt;/.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>";
 "Dumps the contents of EFB copies to User/Dump/Textures/.<br><br /><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Dumps the contents of EFB copies to User/Dump/Textures/.<br><br /><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>";
+"Dumps the contents of XFB copies to User/Dump/Textures/.<br><br /><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Dumps the contents of XFB copies to User/Dump/Textures/.<br><br /><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>";
 "Duration of Turbo Button Press (frames)" = "Duration of Turbo Button Press (frames)";
 "Duration of Turbo Button Release (frames)" = "Duration of Turbo Button Release (frames)";
 "Dutch" = "Holandês";
@@ -871,6 +874,7 @@ For more information see https://www.teamxlink.co.uk/wiki/Dolphin";
 "Expected name of input." = "Expected name of input.";
 "Expected opening paren." = "Expected opening paren.";
 "Expected start of expression." = "Expected start of expression.";
+"Expected variable name." = "Expected variable name.";
 "Experimental" = "Experimental";
 "Export All Wii Saves" = "Exportar Todos os Jogos Guardados Wii";
 "Export Failed" = "Export Failed";
@@ -1414,6 +1418,7 @@ Middle-click to clear.";
 "Loads custom textures from User/Load/Textures/lt;game_idgt;/ and User/Load/DynamicInputTextures/lt;game_idgt;/.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Loads custom textures from User/Load/Textures/lt;game_idgt;/ and User/Load/DynamicInputTextures/lt;game_idgt;/.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>";
 "Local" = "Local";
 "Lock" = "Lock";
+"Lock Mouse Cursor" = "Lock Mouse Cursor";
 "Log" = "Relatório";
 "Log Configuration" = "Configuração de Relatório";
 "Log JIT Instruction Coverage" = "Log JIT Instruction Coverage";
@@ -1732,6 +1737,7 @@ This can take a while.";
 "Reset Traversal Server" = "Reset Traversal Server";
 "Reset Traversal Server to %1:%2" = "Reset Traversal Server to %1:%2";
 "Reset Traversal Settings" = "Reset Traversal Settings";
+"Reset Values" = "Reset Values";
 "Reset View" = "Reset View";
 "Reset all saved Wii Remote pairings" = "Reset all saved Wii Remote pairings";
 "Resource Pack Manager" = "Resource Pack Manager";
@@ -2132,7 +2138,6 @@ Please recheck that you have the correct code.";
 "The region code does not match the game ID. If this is because the region code has been modified, the game might run at the wrong speed, graphical elements might be offset, or the game might not run at all." = "The region code does not match the game ID. If this is because the region code has been modified, the game might run at the wrong speed, graphical elements might be offset, or the game might not run at all.";
 "The resulting decrypted AR code doesn't contain any lines." = "O resultado do código AR desencriptado não contém quaisquer linhas.";
 "The same file can't be used in both slots." = "The same file can't be used in both slots.";
-"The selected CPU emulation core ({0}) is not available. Please select a different CPU emulation core in the settings." = "The selected CPU emulation core ({0}) is not available. Please select a different CPU emulation core in the settings.";
 "The server and client's NetPlay versions are incompatible." = "The server and client's NetPlay versions are incompatible.";
 "The server is full." = "The server is full.";
 "The server sent an unknown error message." = "The server sent an unknown error message.";
@@ -2298,6 +2303,7 @@ Would you like to ignore this line and continue parsing?";
 "Unknown message received with id : {0}" = "Unknown message received with id : {0}";
 "Unknown message with id:{0} received from player:{1} Kicking player!" = "Unknown message with id:{0} received from player:{1} Kicking player!";
 "Unlimited" = "Unlimited";
+"Unlock Cursor" = "Unlock Cursor";
 "Unpacking" = "Unpacking";
 "Unsigned Integer" = "Unsigned Integer";
 "Up" = "Cima";
@@ -2324,6 +2330,12 @@ This can take a while.";
 "User Config" = "User Config";
 "User Interface" = "User Interface";
 "User Style" = "User Style";
+"User Variables" = "User Variables";
+"User defined variables usable in the control expression.
+You can use them to save or retrieve values between
+inputs and outputs of the same parent controller." = "User defined variables usable in the control expression.
+You can use them to save or retrieve values between
+inputs and outputs of the same parent controller.";
 "Uses a less accurate algorithm to calculate depth values.<br><br>Causes issues in a few games, but can result in a decent speed increase depending on the game and/or GPU.<br><br><dolphin_emphasis>If unsure, leave this checked.</dolphin_emphasis>" = "Uses a less accurate algorithm to calculate depth values.<br><br>Causes issues in a few games, but can result in a decent speed increase depending on the game and/or GPU.<br><br><dolphin_emphasis>If unsure, leave this checked.</dolphin_emphasis>";
 "Uses the entire screen for rendering.<br><br>If disabled, a render window will be created instead.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Uses the entire screen for rendering.<br><br>If disabled, a render window will be created instead.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>";
 "Uses the main Dolphin window for rendering rather than a separate render window.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Uses the main Dolphin window for rendering rather than a separate render window.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>";
@@ -2417,6 +2429,10 @@ Start={24}, A={25}, B={26}, X={27}, Y={28}, Z={29}, DUp={30}, DDown={31}, DLeft=
 "Wii data is not public yet" = "Wii data is not public yet";
 "Wii save files (*.bin);;All Files (*)" = "Wii save files (*.bin);;All Files (*)";
 "WiiTools Signature MEGA File" = "WiiTools Signature MEGA File";
+"Will immediately hide the Mouse Cursor when it hovers on top of the Render Widget, otherwise there is a delay.
+If \"Lock Mouse Cursor\" is enabled, it will hide on Mouse locked" = "Will immediately hide the Mouse Cursor when it hovers on top of the Render Widget, otherwise there is a delay.
+If \"Lock Mouse Cursor\" is enabled, it will hide on Mouse locked";
+"Will lock the Mouse Cursor to the Render Widget as long as it has focus. You can set a hotkey to unlock it." = "Will lock the Mouse Cursor to the Render Widget as long as it has focus. You can set a hotkey to unlock it.";
 "Word Wrap" = "Moldar o texto";
 "World" = "World";
 "Write" = "Write";

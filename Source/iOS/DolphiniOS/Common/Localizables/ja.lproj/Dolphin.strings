@@ -22,6 +22,7 @@ Launching these titles may also fix the issues." = "
 " (Disc %1)" = "(ディスク %1)";
 "! Not" = "! Not（否定）";
 "\"{0}\" is an invalid GCM/ISO file, or is not a GC/Wii ISO." = "\"{0}\" は無効なファイル、またはゲームキューブ／Wii のISOではありません";
+"$ User Variable" = "$ User Variable";
 "%" = "%";
 "% Modulo" = "% Modulo（剰余）";
 "%1
@@ -260,7 +261,7 @@ Master codes are not needed. Do not use master codes." = "Action Replay エラ�
 "Add breakpoint" = "Add breakpoint";
 "Add New DSU Server" = "DSU Serverの追加";
 "Add New USB Device" = "USBデバイスを追加";
-"Add Shortcut to Desktop" = "Add Shortcut to Desktop";
+"Add Shortcut to Desktop" = "ショートカットをデスクトップに追加";
 "Add a Breakpoint" = "Add a Breakpoint";
 "Add a Memory Breakpoint" = "Add a Memory Breakpoint";
 "Add memory breakpoint" = "Add memory breakpoint";
@@ -764,6 +765,7 @@ Double-click here to set a games directory..." = "ゲームリストは空です
 "Dump Texture Fetches" = "Dump Texture Fetches";
 "Dump Texture Fetches to User/Dump/Objects/.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Dump Texture Fetches to User/Dump/Objects/.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>";
 "Dump Textures" = "テクスチャのダンプを行う";
+"Dump XFB Target" = "Dump XFB Target";
 "Dump at Internal Resolution" = "Dump at Internal Resolution";
 "Dump decoded game textures to User/Dump/Textures/lt;game_idgt;/.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Dump decoded game textures to User/Dump/Textures/lt;game_idgt;/.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>";
 "Dump decrypted SSL reads" = "Dump decrypted SSL reads";
@@ -774,6 +776,7 @@ Double-click here to set a games directory..." = "ゲームリストは空です
 "Dump root CA certificates" = "Dump root CA certificates";
 "Dumps decoded game textures based on the other flags to User/Dump/Textures/lt;game_idgt;/.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Dumps decoded game textures based on the other flags to User/Dump/Textures/lt;game_idgt;/.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>";
 "Dumps the contents of EFB copies to User/Dump/Textures/.<br><br /><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Dumps the contents of EFB copies to User/Dump/Textures/.<br><br /><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>";
+"Dumps the contents of XFB copies to User/Dump/Textures/.<br><br /><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Dumps the contents of XFB copies to User/Dump/Textures/.<br><br /><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>";
 "Duration of Turbo Button Press (frames)" = "Duration of Turbo Button Press (frames)";
 "Duration of Turbo Button Release (frames)" = "Duration of Turbo Button Release (frames)";
 "Dutch" = "オランダ語";
@@ -879,6 +882,7 @@ For more information see https://www.teamxlink.co.uk/wiki/Dolphin" = "XLink Kai 
 "Expected name of input." = "Expected name of input.";
 "Expected opening paren." = "Expected opening paren.";
 "Expected start of expression." = "入力値の検証：入力待ち";
+"Expected variable name." = "Expected variable name.";
 "Experimental" = "実験的";
 "Export All Wii Saves" = "全てのWiiセーブデータをエクスポート";
 "Export Failed" = "Export Failed";
@@ -1431,6 +1435,7 @@ Middle-click to clear.";
 "Loads custom textures from User/Load/Textures/lt;game_idgt;/ and User/Load/DynamicInputTextures/lt;game_idgt;/.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "Loads custom textures from User/Load/Textures/lt;game_idgt;/ and User/Load/DynamicInputTextures/lt;game_idgt;/.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>";
 "Local" = "IPアドレスと使用ポート番号";
 "Lock" = "Lock";
+"Lock Mouse Cursor" = "Lock Mouse Cursor";
 "Log" = "ログ";
 "Log Configuration" = "ログの設定";
 "Log JIT Instruction Coverage" = "Log JIT Instruction Coverage";
@@ -1752,6 +1757,7 @@ This can take a while." = "更新の準備中...
 "Reset Traversal Server" = "中継サーバーをリセット";
 "Reset Traversal Server to %1:%2" = "中継サーバーを次にリセットしました：%1:%2";
 "Reset Traversal Settings" = "中継サーバーをリセット";
+"Reset Values" = "Reset Values";
 "Reset View" = "Reset View";
 "Reset all saved Wii Remote pairings" = "全てのペアリングを初期化する";
 "Resource Pack Manager" = "リソースパックマネージャ";
@@ -2152,7 +2158,6 @@ Please recheck that you have the correct code." = "ホストコードが長す�
 "The region code does not match the game ID. If this is because the region code has been modified, the game might run at the wrong speed, graphical elements might be offset, or the game might not run at all." = "The region code does not match the game ID. If this is because the region code has been modified, the game might run at the wrong speed, graphical elements might be offset, or the game might not run at all.";
 "The resulting decrypted AR code doesn't contain any lines." = "復号化しましたが、このコードにはひとつも行が含まれていません。";
 "The same file can't be used in both slots." = "同じファイルを両方のスロットで使うことはできません";
-"The selected CPU emulation core ({0}) is not available. Please select a different CPU emulation core in the settings." = "The selected CPU emulation core ({0}) is not available. Please select a different CPU emulation core in the settings.";
 "The server and client's NetPlay versions are incompatible." = "サーバー側とクライアント側のバージョンに互換性がありません";
 "The server is full." = "このサーバーは満員です";
 "The server sent an unknown error message." = "The server sent an unknown error message.";
@@ -2319,6 +2324,7 @@ Would you like to ignore this line and continue parsing?" = "暗号化または�
 "Unknown message received with id : {0}" = "Unknown message received with id : {0}";
 "Unknown message with id:{0} received from player:{1} Kicking player!" = "Unknown message with id:{0} received from player:{1} Kicking player!";
 "Unlimited" = "制限なし";
+"Unlock Cursor" = "Unlock Cursor";
 "Unpacking" = "復元処理を行っています...";
 "Unsigned Integer" = "Unsigned Integer";
 "Up" = "上";
@@ -2345,6 +2351,12 @@ This can take a while." = "次のタイトルを更新中... %1
 "User Config" = "ユーザー設定";
 "User Interface" = "Dolphinの表示に関する設定";
 "User Style" = "カスタムテーマ";
+"User Variables" = "User Variables";
+"User defined variables usable in the control expression.
+You can use them to save or retrieve values between
+inputs and outputs of the same parent controller." = "User defined variables usable in the control expression.
+You can use them to save or retrieve values between
+inputs and outputs of the same parent controller.";
 "Uses a less accurate algorithm to calculate depth values.<br><br>Causes issues in a few games, but can result in a decent speed increase depending on the game and/or GPU.<br><br><dolphin_emphasis>If unsure, leave this checked.</dolphin_emphasis>" = "不正確なアルゴリズムで深度の値を求めるようにします。<br><br>タイトルと使用中のGPUの種類によっては動作速度の向上が見込めますが、単に問題を引き起こすだけの場合もあります。<br><br><dolphin_emphasis>よく分からなければ、チェックを外さないでください。</dolphin_emphasis>";
 "Uses the entire screen for rendering.<br><br>If disabled, a render window will be created instead.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "エミュレーションを画面全体に表示して行います。<br><br>無効にするとウィンドウ画面でのエミュレーションとなります。<br><br><dolphin_emphasis>よく分からなければ、チェックを入れないでください。</dolphin_emphasis>";
 "Uses the main Dolphin window for rendering rather than a separate render window.<br><br><dolphin_emphasis>If unsure, leave this unchecked.</dolphin_emphasis>" = "ゲーム画面として別のウィンドウではなくゲームリスト部分を使用します。<br><br><dolphin_emphasis>よく分からなければ、チェックを入れないでください。</dolphin_emphasis>";
@@ -2438,6 +2450,10 @@ Start={24}, A={25}, B={26}, X={27}, Y={28}, Z={29}, DUp={30}, DDown={31}, DLeft=
 "Wii data is not public yet" = "Wii data is not public yet";
 "Wii save files (*.bin);;All Files (*)" = "Wii セーブファイル (*.bin);;すべてのファイル (*)";
 "WiiTools Signature MEGA File" = "WiiTools Signature MEGA File";
+"Will immediately hide the Mouse Cursor when it hovers on top of the Render Widget, otherwise there is a delay.
+If \"Lock Mouse Cursor\" is enabled, it will hide on Mouse locked" = "Will immediately hide the Mouse Cursor when it hovers on top of the Render Widget, otherwise there is a delay.
+If \"Lock Mouse Cursor\" is enabled, it will hide on Mouse locked";
+"Will lock the Mouse Cursor to the Render Widget as long as it has focus. You can set a hotkey to unlock it." = "Will lock the Mouse Cursor to the Render Widget as long as it has focus. You can set a hotkey to unlock it.";
 "Word Wrap" = "ワードラップ";
 "World" = "地域なし";
 "Write" = "Write";
