@@ -184,6 +184,8 @@
     
     [[NSUserDefaults standardUserDefaults] setBool:true forKey:@"seen_top_bar_swipe_down_notice"];
   }
+  
+  [self CheckIfEmulationShouldStart];
 }
 
 #if !TARGET_OS_TV
