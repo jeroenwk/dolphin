@@ -93,7 +93,7 @@
   [UIViewController swizzleViewDidDisappear];
   
   // Check the device compatibility
-#ifndef SUPPRESS_UNSUPPORTED_DEVICE
+#if !DEBUG
   // Provide a way to bypass this check for debugging purposes
   NSString* bypass_flag_file = [[MainiOS getUserFolder] stringByAppendingPathComponent:@"bypass_unsupported_device"];
   if (![[NSFileManager defaultManager] fileExistsAtPath:bypass_flag_file])
