@@ -165,6 +165,23 @@ NSString* const DOLJitAcquiredNotification = @"me.oatmealdome.dolphinios.jit-acq
   }
 }
 
+- (void)attemptToAcquireJitByWaitingForDebugger:(DOLCancellationToken*)token
+{
+  while (!IsProcessDebugged())
+  {
+    if ([token isCancelled])
+    {
+      return;
+    }
+    
+    sleep(1);
+  }
+  
+  self->_m_has_acquired_jit = true;
+  
+  [[NSNotificationCenter defaultCenter] postNotificationName:DOLJitAcquiredNotification object:self];
+}
+
 - (void)attemptToAcquireJitByRemoteDebuggerUsingCancellationToken:(DOLCancellationToken*)token
 {
   if (self->_m_jit_type != DOLJitTypeDebugger)
@@ -177,22 +194,9 @@ NSString* const DOLJitAcquiredNotification = @"me.oatmealdome.dolphinios.jit-acq
     return;
   }
   
-  // TODO: check if app has AltJIT support
-  
   dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INTERACTIVE, 0), ^{
-    while (!IsProcessDebugged())
-    {
-      if ([token isCancelled])
-      {
-        return;
-      }
-      
-      sleep(1);
-    }
-    
-    self->_m_has_acquired_jit = true;
-    
-    [[NSNotificationCenter defaultCenter] postNotificationName:DOLJitAcquiredNotification object:self];
+    // TODO: check if app has AltJIT support
+    [self attemptToAcquireJitByWaitingForDebugger:token];
   });
 }
 
