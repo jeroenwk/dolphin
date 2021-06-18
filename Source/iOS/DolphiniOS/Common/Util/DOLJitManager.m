@@ -4,6 +4,8 @@
 
 #import "DOLJitManager.h"
 
+@import AltKit;
+
 #import <dlfcn.h>
 
 #if TARGET_OS_TV
@@ -16,6 +18,7 @@
 #import "DebuggerUtils.h"
 
 NSString* const DOLJitAcquiredNotification = @"me.oatmealdome.dolphinios.jit-acquired";
+NSString* const DOLJitAltJitFailureNotification = @"me.oatmealdome.dolphinios.jit-altjit-failure";
 
 @implementation DOLJitManager
 {
@@ -165,24 +168,7 @@ NSString* const DOLJitAcquiredNotification = @"me.oatmealdome.dolphinios.jit-acq
   }
 }
 
-- (void)attemptToAcquireJitByWaitingForDebugger:(DOLCancellationToken*)token
-{
-  while (!IsProcessDebugged())
-  {
-    if ([token isCancelled])
-    {
-      return;
-    }
-    
-    sleep(1);
-  }
-  
-  self->_m_has_acquired_jit = true;
-  
-  [[NSNotificationCenter defaultCenter] postNotificationName:DOLJitAcquiredNotification object:self];
-}
-
-- (void)attemptToAcquireJitByRemoteDebuggerUsingCancellationToken:(DOLCancellationToken*)token
+- (void)attemptToAcquireJitByWaitingForDebuggerUsingCancellationToken:(DOLCancellationToken*)token
 {
   if (self->_m_jit_type != DOLJitTypeDebugger)
   {
@@ -195,8 +181,68 @@ NSString* const DOLJitAcquiredNotification = @"me.oatmealdome.dolphinios.jit-acq
   }
   
   dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INTERACTIVE, 0), ^{
-    // TODO: check if app has AltJIT support
-    [self attemptToAcquireJitByWaitingForDebugger:token];
+    while (!IsProcessDebugged())
+    {
+      if ([token isCancelled])
+      {
+        return;
+      }
+      
+      sleep(1);
+    }
+    
+    self->_m_has_acquired_jit = true;
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:DOLJitAcquiredNotification object:self];
+  });
+}
+
+- (void)attemptToAcquireJitByAltJIT
+{
+  if (self->_m_jit_type != DOLJitTypeDebugger)
+  {
+    return;
+  }
+  
+  if (self->_m_has_acquired_jit)
+  {
+    return;
+  }
+  
+  dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INTERACTIVE, 0), ^{
+    [[ALTServerManager sharedManager] startDiscovering];
+    
+    [[ALTServerManager sharedManager] autoconnectWithCompletionHandler:^(ALTServerConnection* connection, NSError* error) {
+      if (error)
+      {
+        [[ALTServerManager sharedManager] stopDiscovering];
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:DOLJitAltJitFailureNotification object:self userInfo:@{
+          @"nserror": error
+        }];
+      }
+      
+      [connection enableUnsignedCodeExecutionWithCompletionHandler:^(bool success, NSError* error)
+       {
+        if (success)
+        {
+          [[ALTServerManager sharedManager] stopDiscovering];
+          
+          // Don't post a notification here, since attemptToAcquireJitByWaitingForDebuggerUsingCancellationToken
+          // will do it for us.
+        }
+        else
+        {
+          [[ALTServerManager sharedManager] stopDiscovering];
+          
+          [[NSNotificationCenter defaultCenter] postNotificationName:DOLJitAltJitFailureNotification object:self userInfo:@{
+            @"nserror": error
+          }];
+        }
+        
+        [connection disconnect];
+      }];
+    }];
   });
 }
 

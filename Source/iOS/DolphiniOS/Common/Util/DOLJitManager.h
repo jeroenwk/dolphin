@@ -29,6 +29,7 @@ typedef NS_ENUM(NSUInteger, DOLJitError)
 };
 
 extern NSString* const DOLJitAcquiredNotification;
+extern NSString* const DOLJitAltJitFailureNotification;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -37,7 +38,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (DOLJitManager*)sharedManager;
 
 - (void)attemptToAcquireJitOnStartup;
-- (void)attemptToAcquireJitByRemoteDebuggerUsingCancellationToken:(DOLCancellationToken*)token;
+- (void)attemptToAcquireJitByWaitingForDebuggerUsingCancellationToken:(DOLCancellationToken*)token;
+- (void)attemptToAcquireJitByAltJIT;
 - (DOLJitType)jitType;
 - (bool)appHasAcquiredJit;
 - (DOLJitError)getJitErrorType;
