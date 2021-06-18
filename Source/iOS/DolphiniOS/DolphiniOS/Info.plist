@@ -67,6 +67,12 @@
 	<true/>
 	<key>LSSupportsOpeningDocumentsInPlace</key>
 	<true/>
+	<key>NSBonjourServices</key>
+	<array>
+		<string>_altserver._tcp</string>
+	</array>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>DolphiniOS uses the local network to find and communicate with AltServer.</string>
 	<key>NSMotionUsageDescription</key>
 	<string>DolphiniOS uses your device's accelerometer and gyroscope to emulate the Wii Remote's built-in accelerometer and gyroscope.</string>
 	<key>UIFileSharingEnabled</key>
