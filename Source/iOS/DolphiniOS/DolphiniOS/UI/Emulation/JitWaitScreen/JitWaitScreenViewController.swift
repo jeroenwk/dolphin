@@ -12,7 +12,7 @@ import Foundation
   override func viewDidLoad()
   {
     NotificationCenter.default.addObserver(self, selector: #selector(jitAcquired), name: NSNotification.Name.DOLJitAcquired, object: nil)
-    NotificationCenter.default.addObserver(self, selector: #selector(jitAcquired), name: NSNotification.Name.DOLJitAltJitFailure, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(altJitFailed), name: NSNotification.Name.DOLJitAltJitFailure, object: nil)
     
     DOLJitManager.shared().attemptToAcquireJitByWaitingForDebugger(using: cancellation_token)
     
