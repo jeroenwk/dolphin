@@ -23,7 +23,6 @@ NSString* const DOLJitAltJitFailureNotification = @"me.oatmealdome.dolphinios.ji
 @implementation DOLJitManager
 {
   DOLJitType _m_jit_type;
-  DOLJitError _m_jit_error;
   NSString* _m_aux_error;
   bool _m_has_acquired_jit;
   bool _m_is_discovering_altserver;
@@ -46,7 +45,6 @@ NSString* const DOLJitAltJitFailureNotification = @"me.oatmealdome.dolphinios.ji
   if ((self = [super init]))
   {
     _m_jit_type = DOLJitTypeNone;
-    _m_jit_error = DOLJitErrorNone;
     _m_aux_error = nil;
     _m_has_acquired_jit = false;
     _m_is_discovering_altserver = false;
@@ -79,24 +77,24 @@ NSString* const DOLJitAltJitFailureNotification = @"me.oatmealdome.dolphinios.ji
   return cpu_architecture;
 }
 
-- (DOLJitError)canAcquireJitByUnsigned
+- (bool)canAcquireJitByUnsigned
 {
   NSString* cpu_architecture = [self getCpuArchitecture];
   
   if (cpu_architecture == nil)
   {
-    return DOLJitErrorGestaltFailed;
+    return false;
   }
   else if (![cpu_architecture isEqualToString:@"arm64e"])
   {
-    return DOLJitErrorNotArm64e;
+    return false;
   }
   else if (!HasValidCodeSignature())
   {
-    return DOLJitErrorImproperlySigned;
+    return false;
   }
   
-  return DOLJitErrorNone;
+  return true;
 }
 
 - (void)attemptToAcquireJitOnStartup
@@ -111,8 +109,8 @@ NSString* const DOLJitAltJitFailureNotification = @"me.oatmealdome.dolphinios.ji
   }
   else if (@available(iOS 14.2, *))
   {
-    DOLJitError error = [self canAcquireJitByUnsigned];
-    if (error == DOLJitErrorNone)
+    bool success = [self canAcquireJitByUnsigned];
+    if (success)
     {
       self->_m_jit_type = DOLJitTypeAllowUnsigned;
     }
@@ -263,11 +261,6 @@ NSString* const DOLJitAltJitFailureNotification = @"me.oatmealdome.dolphinios.ji
 - (bool)appHasAcquiredJit
 {
   return _m_has_acquired_jit;
-}
-
-- (DOLJitError)getJitErrorType
-{
-  return self->_m_jit_error;
 }
 
 - (void)setAuxillaryError:(NSString*)error
