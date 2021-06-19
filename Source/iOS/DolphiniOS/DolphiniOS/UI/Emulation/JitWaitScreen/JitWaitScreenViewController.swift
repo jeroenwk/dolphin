@@ -34,12 +34,11 @@ import Foundation
   
   @objc func altJitFailed(notification: Notification)
   {
-    let error = notification.userInfo!["nserror"] as? NSError
     let error_string: String
     
-    if (error != nil)
+    if let error = notification.userInfo!["nserror"] as? NSError
     {
-      error_string = error!.localizedDescription
+      error_string = error.localizedDescription
     }
     else
     {
