@@ -218,6 +218,8 @@ NSString* const DOLJitAltJitFailureNotification = @"me.oatmealdome.dolphinios.ji
         [[NSNotificationCenter defaultCenter] postNotificationName:DOLJitAltJitFailureNotification object:self userInfo:@{
           @"nserror": error
         }];
+        
+        return;
       }
       
       [connection enableUnsignedCodeExecutionWithCompletionHandler:^(bool success, NSError* error)
