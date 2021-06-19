@@ -215,8 +215,6 @@ NSString* const DOLJitAltJitFailureNotification = @"me.oatmealdome.dolphinios.ji
     [[ALTServerManager sharedManager] autoconnectWithCompletionHandler:^(ALTServerConnection* connection, NSError* error) {
       if (error)
       {
-        [[ALTServerManager sharedManager] stopDiscovering];
-        
         [[NSNotificationCenter defaultCenter] postNotificationName:DOLJitAltJitFailureNotification object:self userInfo:@{
           @"nserror": error
         }];
@@ -233,8 +231,6 @@ NSString* const DOLJitAltJitFailureNotification = @"me.oatmealdome.dolphinios.ji
         }
         else
         {
-          [[ALTServerManager sharedManager] stopDiscovering];
-          
           [[NSNotificationCenter defaultCenter] postNotificationName:DOLJitAltJitFailureNotification object:self userInfo:@{
             @"nserror": error
           }];
