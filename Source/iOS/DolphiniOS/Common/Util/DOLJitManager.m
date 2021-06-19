@@ -212,6 +212,8 @@ NSString* const DOLJitAltJitFailureNotification = @"me.oatmealdome.dolphinios.ji
   [[ALTServerManager sharedManager] startDiscovering];
   
   [[ALTServerManager sharedManager] autoconnectWithCompletionHandler:^(ALTServerConnection* connection, NSError* error) {
+    [[ALTServerManager sharedManager] stopDiscovering];
+    
     if (error)
     {
       [[NSNotificationCenter defaultCenter] postNotificationName:DOLJitAltJitFailureNotification object:self userInfo:@{
@@ -225,8 +227,6 @@ NSString* const DOLJitAltJitFailureNotification = @"me.oatmealdome.dolphinios.ji
      {
       if (success)
       {
-        [[ALTServerManager sharedManager] stopDiscovering];
-        
         // Don't post a notification here, since attemptToAcquireJitByWaitingForDebuggerUsingCancellationToken
         // will do it for us.
       }
