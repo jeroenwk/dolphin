@@ -209,39 +209,37 @@ NSString* const DOLJitAltJitFailureNotification = @"me.oatmealdome.dolphinios.ji
     return;
   }
   
-  dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INTERACTIVE, 0), ^{
-    [[ALTServerManager sharedManager] startDiscovering];
+  [[ALTServerManager sharedManager] startDiscovering];
+  
+  [[ALTServerManager sharedManager] autoconnectWithCompletionHandler:^(ALTServerConnection* connection, NSError* error) {
+    if (error)
+    {
+      [[NSNotificationCenter defaultCenter] postNotificationName:DOLJitAltJitFailureNotification object:self userInfo:@{
+        @"nserror": error
+      }];
+      
+      return;
+    }
     
-    [[ALTServerManager sharedManager] autoconnectWithCompletionHandler:^(ALTServerConnection* connection, NSError* error) {
-      if (error)
+    [connection enableUnsignedCodeExecutionWithCompletionHandler:^(bool success, NSError* error)
+     {
+      if (success)
+      {
+        [[ALTServerManager sharedManager] stopDiscovering];
+        
+        // Don't post a notification here, since attemptToAcquireJitByWaitingForDebuggerUsingCancellationToken
+        // will do it for us.
+      }
+      else
       {
         [[NSNotificationCenter defaultCenter] postNotificationName:DOLJitAltJitFailureNotification object:self userInfo:@{
           @"nserror": error
         }];
-        
-        return;
       }
       
-      [connection enableUnsignedCodeExecutionWithCompletionHandler:^(bool success, NSError* error)
-       {
-        if (success)
-        {
-          [[ALTServerManager sharedManager] stopDiscovering];
-          
-          // Don't post a notification here, since attemptToAcquireJitByWaitingForDebuggerUsingCancellationToken
-          // will do it for us.
-        }
-        else
-        {
-          [[NSNotificationCenter defaultCenter] postNotificationName:DOLJitAltJitFailureNotification object:self userInfo:@{
-            @"nserror": error
-          }];
-        }
-        
-        [connection disconnect];
-      }];
+      [connection disconnect];
     }];
-  });
+  }];
 }
 
 - (DOLJitType)jitType
