@@ -58,7 +58,6 @@
 
 #import "InvalidCpuCoreNoticeViewController.h"
 
-#import "JitAcquisitionFailureNoticeViewController.h"
 #import "DOLJitManager.h"
 
 #import "KilledBuildNoticeViewController.h"
