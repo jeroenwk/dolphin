@@ -26,6 +26,7 @@ NSString* const DOLJitAltJitFailureNotification = @"me.oatmealdome.dolphinios.ji
   DOLJitError _m_jit_error;
   NSString* _m_aux_error;
   bool _m_has_acquired_jit;
+  bool _m_is_discovering_altserver;
 }
 
 + (DOLJitManager*)sharedManager
@@ -48,6 +49,7 @@ NSString* const DOLJitAltJitFailureNotification = @"me.oatmealdome.dolphinios.ji
     _m_jit_error = DOLJitErrorNone;
     _m_aux_error = nil;
     _m_has_acquired_jit = false;
+    _m_is_discovering_altserver = false;
   }
   
   return self;
@@ -209,6 +211,13 @@ NSString* const DOLJitAltJitFailureNotification = @"me.oatmealdome.dolphinios.ji
     return;
   }
   
+  if (_m_is_discovering_altserver)
+  {
+    return;
+  }
+  
+  self->_m_is_discovering_altserver = true;
+  
   [[ALTServerManager sharedManager] startDiscovering];
   
   [[ALTServerManager sharedManager] autoconnectWithCompletionHandler:^(ALTServerConnection* connection, NSError* error) {
@@ -219,6 +228,8 @@ NSString* const DOLJitAltJitFailureNotification = @"me.oatmealdome.dolphinios.ji
       [[NSNotificationCenter defaultCenter] postNotificationName:DOLJitAltJitFailureNotification object:self userInfo:@{
         @"nserror": error
       }];
+      
+      self->_m_is_discovering_altserver = false;
       
       return;
     }
@@ -238,6 +249,8 @@ NSString* const DOLJitAltJitFailureNotification = @"me.oatmealdome.dolphinios.ji
       }
       
       [connection disconnect];
+      
+      self->_m_is_discovering_altserver = false;
     }];
   }];
 }
