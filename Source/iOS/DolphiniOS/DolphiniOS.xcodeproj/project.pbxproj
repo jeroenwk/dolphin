@@ -290,6 +290,8 @@
 		B9D1E1AB23E2B4B6008A6EE2 /* ConfigGameCubeViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9D1E1AA23E2B4B6008A6EE2 /* ConfigGameCubeViewController.mm */; };
 		B9D1E1B123E2B5E0008A6EE2 /* GameCubeLanguageViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9D1E1B023E2B5E0008A6EE2 /* GameCubeLanguageViewController.mm */; };
 		B9D3073B267D910200AA7CB2 /* JitAcquisitionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D5D5A7266C2B670068049F /* JitAcquisitionService.swift */; };
+		B9D3073E267D931700AA7CB2 /* DOLJitManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D5D5A3266BFAA70068049F /* DOLJitManager.m */; };
+		B9D3073F267D936F00AA7CB2 /* JitScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D5D5AE266C338A0068049F /* JitScreenDelegate.swift */; };
 		B9D5D54B266B39F90068049F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D5D54A266B39F90068049F /* AppDelegate.swift */; };
 		B9D5D54C266B3FD00068049F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D5D54A266B39F90068049F /* AppDelegate.swift */; };
 		B9D5D556266B48D70068049F /* Sys in Resources */ = {isa = PBXBuildFile; fileRef = B9D5D555266B48D60068049F /* Sys */; };
@@ -306,7 +308,6 @@
 		B9D5D59F266BF7980068049F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9D5D59D266BF7980068049F /* Assets.xcassets */; };
 		B9D5D5A1266BF8170068049F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9D5D5A0266BF8170068049F /* Assets.xcassets */; };
 		B9D5D5A4266BFAA70068049F /* DOLJitManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D5D5A3266BFAA70068049F /* DOLJitManager.m */; };
-		B9D5D5A5266BFAA70068049F /* DOLJitManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D5D5A3266BFAA70068049F /* DOLJitManager.m */; };
 		B9D5D5A8266C2B670068049F /* JitAcquisitionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D5D5A7266C2B670068049F /* JitAcquisitionService.swift */; };
 		B9D5D5AB266C30580068049F /* JitWaitScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9D5D5AA266C30580068049F /* JitWaitScreen.xib */; };
 		B9D5D5AD266C33310068049F /* JitWaitScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D5D5AC266C33300068049F /* JitWaitScreenViewController.swift */; };
@@ -2424,6 +2425,7 @@
 				B9C3F3F9266943AE0053E501 /* DOLATVSwitchCell.m in Sources */,
 				B97DDC1C2666035A0083896C /* GraphicsBackendViewController.mm in Sources */,
 				B97DDC1D2666035A0083896C /* GraphicsHacksViewController.mm in Sources */,
+				B9D3073F267D936F00AA7CB2 /* JitScreenDelegate.swift in Sources */,
 				B97DDC1E2666035A0083896C /* EmulationViewController.mm in Sources */,
 				B97DDC1F2666035A0083896C /* SoftwareVerifyResultsProblemCell.m in Sources */,
 				B97DDC202666035A0083896C /* SoftwareVerifyProblem.mm in Sources */,
@@ -2438,7 +2440,6 @@
 				B97DDC282666035A0083896C /* SoftwareInfoViewController.mm in Sources */,
 				B97DDC292666035A0083896C /* PortSelectorCell.m in Sources */,
 				B97DDC2A2666035A0083896C /* SettingsTableViewController.mm in Sources */,
-				B9D5D5A5266BFAA70068049F /* DOLJitManager.m in Sources */,
 				B97DDC2B2666035A0083896C /* SoftwareVerifyResultsHashCell.m in Sources */,
 				B97DDC2C2666035A0083896C /* AppDelegate.mm in Sources */,
 				B97DDC2D2666035A0083896C /* SoftwareTableViewCell.m in Sources */,
@@ -2473,6 +2474,7 @@
 				B97DDC4B2666035A0083896C /* UpdateNoticeViewController.mm in Sources */,
 				B97DDC4C2666035A0083896C /* ControllerDeviceCell.m in Sources */,
 				B97DDC4D2666035A0083896C /* AboutViewController.m in Sources */,
+				B9D3073E267D931700AA7CB2 /* DOLJitManager.m in Sources */,
 				B97DDC4E2666035A0083896C /* ControllerGroupEnabledCell.mm in Sources */,
 				B9DB01C4266D40C500A78E99 /* DOLCancellationToken.swift in Sources */,
 				B97DDC4F2666035A0083896C /* GraphicsRootViewController.mm in Sources */,
