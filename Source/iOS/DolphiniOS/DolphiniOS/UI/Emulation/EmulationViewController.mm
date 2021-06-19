@@ -152,7 +152,13 @@
 #else
     JitFailedJailbreakScreenViewController* controller = [[JitFailedJailbreakScreenViewController alloc] initWithNibName:@"JitFailedJailbreakScreen" bundle:nil];
 #endif
+    
     controller.delegate = self;
+    
+    if (@available(iOS 13, *))
+    {
+      [controller setModalInPresentation:true];
+    }
     
     [self addViewControllerToPresentationQueueWithViewControllerToPresent:controller animated:true completion:nil];
     
