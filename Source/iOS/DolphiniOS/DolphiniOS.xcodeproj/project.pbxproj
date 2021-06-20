@@ -2840,6 +2840,11 @@
 					"$(SRCROOT)/../../../Externals/fmt/include",
 					"$(SRCROOT)/../../../Externals/soundtouch",
 				);
+				USER_HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../../Core/**",
+					"$(SRCROOT)/../Interface/**",
+					"$(SRCROOT)/../../../Externals/**",
+				);
 				VALIDATE_PRODUCT = YES;
 			};
 			name = "Release (Non-Jailbroken No Analytics)";
@@ -2881,11 +2886,6 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "DolphiniOS/DolphiniOS-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../Core/**",
-					"$(SRCROOT)/../Interface/**",
-					"$(SRCROOT)/../../../Externals/**",
-				);
 				VERSIONING_SYSTEM = "";
 			};
 			name = "Release (Non-Jailbroken No Analytics)";
@@ -2998,6 +2998,11 @@
 					"$(SRCROOT)/../../../Externals/fmt/include",
 					"$(SRCROOT)/../../../Externals/soundtouch",
 				);
+				USER_HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../../Core/**",
+					"$(SRCROOT)/../Interface/**",
+					"$(SRCROOT)/../../../Externals/**",
+				);
 			};
 			name = "Debug (Jailbroken)";
 		};
@@ -3105,6 +3110,11 @@
 					"$(SRCROOT)/../../../Externals/fmt/include",
 					"$(SRCROOT)/../../../Externals/soundtouch",
 				);
+				USER_HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../../Core/**",
+					"$(SRCROOT)/../Interface/**",
+					"$(SRCROOT)/../../../Externals/**",
+				);
 				VALIDATE_PRODUCT = YES;
 			};
 			name = "Release (Jailbroken)";
@@ -3147,11 +3157,6 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../Core/**",
-					"$(SRCROOT)/../Interface/**",
-					"$(SRCROOT)/../../../Externals/**",
-				);
 				VERSIONING_SYSTEM = "";
 			};
 			name = "Debug (Jailbroken)";
@@ -3194,11 +3199,6 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "DolphiniOS/DolphiniOS-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../Core/**",
-					"$(SRCROOT)/../Interface/**",
-					"$(SRCROOT)/../../../Externals/**",
-				);
 				VERSIONING_SYSTEM = "";
 			};
 			name = "Release (Jailbroken)";
@@ -3303,6 +3303,11 @@
 					"$(SRCROOT)/../../../Externals/fmt/include",
 					"$(SRCROOT)/../../../Externals/soundtouch",
 				);
+				USER_HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../../Core/**",
+					"$(SRCROOT)/../Interface/**",
+					"$(SRCROOT)/../../../Externals/**",
+				);
 				VALIDATE_PRODUCT = YES;
 			};
 			name = "Release (Non-Jailbroken)";
@@ -3345,11 +3350,6 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "DolphiniOS/DolphiniOS-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../Core/**",
-					"$(SRCROOT)/../Interface/**",
-					"$(SRCROOT)/../../../Externals/**",
-				);
 				VERSIONING_SYSTEM = "";
 			};
 			name = "Release (Non-Jailbroken)";
@@ -3396,11 +3396,6 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 14.1;
-				USER_HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../Core/**",
-					"$(SRCROOT)/../Interface/**",
-					"$(SRCROOT)/../../../Externals/**",
-				);
 				VERSIONING_SYSTEM = "";
 			};
 			name = "Debug (Jailbroken)";
@@ -3446,11 +3441,6 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 14.1;
-				USER_HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../Core/**",
-					"$(SRCROOT)/../Interface/**",
-					"$(SRCROOT)/../../../Externals/**",
-				);
 				VERSIONING_SYSTEM = "";
 			};
 			name = "Debug (Non-Jailbroken)";
@@ -3496,11 +3486,6 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 14.1;
-				USER_HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../Core/**",
-					"$(SRCROOT)/../Interface/**",
-					"$(SRCROOT)/../../../Externals/**",
-				);
 				VERSIONING_SYSTEM = "";
 			};
 			name = "Release (Jailbroken)";
@@ -3546,11 +3531,6 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 14.1;
-				USER_HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../Core/**",
-					"$(SRCROOT)/../Interface/**",
-					"$(SRCROOT)/../../../Externals/**",
-				);
 				VERSIONING_SYSTEM = "";
 			};
 			name = "Release (Non-Jailbroken)";
@@ -3595,11 +3575,6 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 14.1;
-				USER_HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../Core/**",
-					"$(SRCROOT)/../Interface/**",
-					"$(SRCROOT)/../../../Externals/**",
-				);
 				VERSIONING_SYSTEM = "";
 			};
 			name = "Release (Non-Jailbroken No Analytics)";
@@ -3645,11 +3620,6 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 14.1;
-				USER_HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../Core/**",
-					"$(SRCROOT)/../Interface/**",
-					"$(SRCROOT)/../../../Externals/**",
-				);
 				VERSIONING_SYSTEM = "";
 			};
 			name = "Release (Patreon)";
@@ -3694,11 +3664,6 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 14.1;
-				USER_HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../Core/**",
-					"$(SRCROOT)/../Interface/**",
-					"$(SRCROOT)/../../../Externals/**",
-				);
 				VERSIONING_SYSTEM = "";
 			};
 			name = "Release (Patreon Non-Jailbroken)";
@@ -3803,6 +3768,11 @@
 					"$(SRCROOT)/../../../Externals/fmt/include",
 					"$(SRCROOT)/../../../Externals/soundtouch",
 				);
+				USER_HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../../Core/**",
+					"$(SRCROOT)/../Interface/**",
+					"$(SRCROOT)/../../../Externals/**",
+				);
 				VALIDATE_PRODUCT = YES;
 			};
 			name = "Release (Patreon Non-Jailbroken)";
@@ -3844,11 +3814,6 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "DolphiniOS/DolphiniOS-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../Core/**",
-					"$(SRCROOT)/../Interface/**",
-					"$(SRCROOT)/../../../Externals/**",
-				);
 				VERSIONING_SYSTEM = "";
 			};
 			name = "Release (Patreon Non-Jailbroken)";
@@ -3957,6 +3922,11 @@
 					"$(SRCROOT)/../../../Externals/fmt/include",
 					"$(SRCROOT)/../../../Externals/soundtouch",
 				);
+				USER_HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../../Core/**",
+					"$(SRCROOT)/../Interface/**",
+					"$(SRCROOT)/../../../Externals/**",
+				);
 			};
 			name = "Debug (Non-Jailbroken)";
 		};
@@ -3997,11 +3967,6 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../Core/**",
-					"$(SRCROOT)/../Interface/**",
-					"$(SRCROOT)/../../../Externals/**",
-				);
 				VERSIONING_SYSTEM = "";
 			};
 			name = "Debug (Non-Jailbroken)";
@@ -4110,6 +4075,11 @@
 					"$(SRCROOT)/../../../Externals/fmt/include",
 					"$(SRCROOT)/../../../Externals/soundtouch",
 				);
+				USER_HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../../Core/**",
+					"$(SRCROOT)/../Interface/**",
+					"$(SRCROOT)/../../../Externals/**",
+				);
 				VALIDATE_PRODUCT = YES;
 			};
 			name = "Release (Patreon)";
@@ -4152,11 +4122,6 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "DolphiniOS/DolphiniOS-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../Core/**",
-					"$(SRCROOT)/../Interface/**",
-					"$(SRCROOT)/../../../Externals/**",
-				);
 				VERSIONING_SYSTEM = "";
 			};
 			name = "Release (Patreon)";
