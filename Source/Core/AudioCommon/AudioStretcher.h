@@ -6,11 +6,7 @@
 
 #include <array>
 
-#ifndef XCODE_APP_BUILD
 #include <SoundTouch.h>
-#else
-#include "soundtouch/SoundTouch.h"
-#endif
 
 namespace AudioCommon
 {
