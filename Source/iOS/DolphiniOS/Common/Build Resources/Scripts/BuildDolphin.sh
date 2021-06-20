@@ -61,8 +61,3 @@ rm -f "$CMAKE_BUILD_DIR/libs/Externals/"*.a
 find Source/ -name '*.a' -exec ln '{}' "$CMAKE_BUILD_DIR/libs/Dolphin/" ';'
 
 find Externals/ -name '*.a' -exec ln '{}' "$CMAKE_BUILD_DIR/libs/Externals/" ';'
-
-if [ -f "$CMAKE_BUILD_DIR/libs/Externals/libfmtd.a" ]; then
-    rm "$CMAKE_BUILD_DIR/libs/Externals/libfmt.a" || true
-    cp "$CMAKE_BUILD_DIR/libs/Externals/libfmtd.a" "$CMAKE_BUILD_DIR/libs/Externals/libfmt.a"
-fi
