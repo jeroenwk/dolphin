@@ -2994,7 +2994,6 @@
 				"EXCLUDED_SOURCE_FILE_NAMES[sdk=iphonesimulator*]" = libjailbreak.dylib;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DolphiniOS/DolphiniOS-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = DolphiniOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3032,7 +3031,6 @@
 				"EXCLUDED_SOURCE_FILE_NAMES[sdk=iphonesimulator*]" = libjailbreak.dylib;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DolphiniOS/DolphiniOS-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = DolphiniOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3182,7 +3180,6 @@
 				EXCLUDED_SOURCE_FILE_NAMES = libjailbreak.dylib;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DolphiniOS/DolphiniOS-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = DolphiniOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3221,7 +3218,6 @@
 				"EXCLUDED_SOURCE_FILE_NAMES[sdk=iphonesimulator*]" = libjailbreak.dylib;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DolphiniOS/DolphiniOS-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = "$(SRCROOT)/DolphinATV/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3261,7 +3257,6 @@
 				EXCLUDED_SOURCE_FILE_NAMES = libjailbreak.dylib;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DolphiniOS/DolphiniOS-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = "$(SRCROOT)/DolphinATV/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3302,7 +3297,6 @@
 				"EXCLUDED_SOURCE_FILE_NAMES[sdk=iphonesimulator*]" = libjailbreak.dylib;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DolphiniOS/DolphiniOS-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = "$(SRCROOT)/DolphinATV/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3342,7 +3336,6 @@
 				EXCLUDED_SOURCE_FILE_NAMES = libjailbreak.dylib;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DolphiniOS/DolphiniOS-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = "$(SRCROOT)/DolphinATV/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3383,10 +3376,6 @@
 				"EXCLUDED_SOURCE_FILE_NAMES[sdk=iphonesimulator*]" = libjailbreak.dylib;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DolphiniOS/DolphiniOS-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"$(inherited)",
-					"PATREON=1",
-				);
 				INFOPLIST_FILE = "$(SRCROOT)/DolphinATV/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3424,10 +3413,6 @@
 				EXCLUDED_SOURCE_FILE_NAMES = libjailbreak.dylib;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DolphiniOS/DolphiniOS-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"$(inherited)",
-					"PATREON=1",
-				);
 				INFOPLIST_FILE = "$(SRCROOT)/DolphinATV/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3491,6 +3476,7 @@
 					"USE_GDBSTUB=1",
 					"NONJAILBROKEN=1",
 					"ANALYTICS=1",
+					"PATREON=1",
 				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -3578,10 +3564,6 @@
 				EXCLUDED_SOURCE_FILE_NAMES = libjailbreak.dylib;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DolphiniOS/DolphiniOS-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"$(inherited)",
-					"PATREON=1",
-				);
 				INFOPLIST_FILE = DolphiniOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3730,7 +3712,6 @@
 				EXCLUDED_SOURCE_FILE_NAMES = libjailbreak.dylib;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DolphiniOS/DolphiniOS-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = DolphiniOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3791,6 +3772,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"USE_GDBSTUB=1",
 					"ANALYTICS=1",
+					"PATREON=1",
 				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -3884,10 +3866,6 @@
 				"EXCLUDED_SOURCE_FILE_NAMES[sdk=iphonesimulator*]" = libjailbreak.dylib;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DolphiniOS/DolphiniOS-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"$(inherited)",
-					"PATREON=1",
-				);
 				INFOPLIST_FILE = DolphiniOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
