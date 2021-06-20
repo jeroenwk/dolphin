@@ -157,6 +157,12 @@
       
       // Reload
       SConfig::GetInstance().LoadSettings();
+      
+      UIAlertController* controller = [UIAlertController alertControllerWithTitle:DOLocalizedString(@"Notice") message:NSLocalizedString(@"The embedded Logger.ini has been copied to the configuration directory. DolphiniOS must be restarted before the settings will take effect.", nil) preferredStyle:UIAlertControllerStyleAlert];
+      
+      [controller addAction:[UIAlertAction actionWithTitle:DOLocalizedString(@"OK") style:UIAlertActionStyleDefault handler:nil]];
+      
+      [self presentViewController:controller animated:true completion:nil];
     }
   }
   
