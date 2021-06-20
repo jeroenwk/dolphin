@@ -8,7 +8,7 @@ of the GNU General Public License, version 2 or later (GPLv2+).
 
 Please read the [FAQ](https://dolphin-emu.org/docs/faq/) before using Dolphin.
 
-## Building for iOS
+## Building for iOS/tvOS
 
 You'll need:
 
@@ -38,7 +38,7 @@ Install polib:
 pip3 install --upgrade polib
 ```
 
-Finally, use CocoaPods to install some iOS libraries:
+Finally, use CocoaPods to install some libraries:
 ```
 cd Source/iOS/DolphiniOS/
 pod install
@@ -48,9 +48,9 @@ pod install
 
 Open the Xcode project: `open DolphiniOS.xcworkspace/` (Make sure to open the xcworkspace!)
 
-* Click the Project in the Navigator Pane and choose "Signing & Capabilities" for the DolphiniOS target
+* Click the Project in the Navigator Pane and choose "Signing & Capabilities" for the DolphiniOS (or DolphinATV for tvOS) target
 * Change the Team to your Developer ID (Only change the Team to the scheme you want to avoid running out of App IDs on free accounts)
-* Edit the Scheme (or create a new one), and choose the build configuration (JB/Non-JB) you want for building/archiving 
+* Select the scheme for the Dolphin version you want to build (iOS/tvOS), and choose the build configuration (JB/Non-JB) you want for building/archiving 
 
 🚀 Build and Run! 
 
