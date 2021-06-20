@@ -2740,155 +2740,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		9228A6612469BC6E00C82ED4 /* Release (Non-Jailbroken No Analytics) */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				EXCLUDED_ARCHS = "i386 armv7s armv7";
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = "USE_GDBSTUB=1";
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "$(SRCROOT)/../Interface";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LIBRARY_SEARCH_PATHS = (
-					"$(SRCROOT)/../../../build-$(PLATFORM_NAME)-$(DOLPHIN_BUILD_TYPE)/libs/Dolphin",
-					"$(SRCROOT)/../../../build-$(PLATFORM_NAME)-$(DOLPHIN_BUILD_TYPE)/libs/Externals/**",
-				);
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = (
-					"-lFreeSurround",
-					"-lSoundTouch",
-					"-lcpp-optparse",
-					"-lmbedcrypto",
-					"-lmbedx509",
-					"-lmbedtls",
-					"-lcurl",
-					"-led25519",
-					"-lenet",
-					"-lfmt",
-					"-lglslang",
-					"-liconv",
-					"-limgui",
-					"-llzma",
-					"-llzo2",
-					"-lminizip",
-					"-lpng",
-					"-lpugixml",
-					"-lsfml-network",
-					"-lsfml-system",
-					"-lxxhash",
-					"-lzstd",
-					"-lcommon",
-					"-luicommon",
-					"-laudiocommon",
-					"-linputcommon",
-					"-lvideocommon",
-					"-ldiscio",
-					"-lcore",
-					"-lvideonull",
-					"-lvideoogl",
-					"-lvideosoftware",
-					"-lvideovulkan",
-					"-lmain",
-				);
-				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SYSTEM_HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../../Externals/mbedtls/include",
-					"$(SRCROOT)/../../../Externals/fmt/include",
-					"$(SRCROOT)/../../../Externals/soundtouch",
-				);
-				USER_HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../Core/**",
-					"$(SRCROOT)/../Interface/**",
-					"$(SRCROOT)/../../../Externals/**",
-				);
-				VALIDATE_PRODUCT = YES;
-			};
-			name = "Release (Non-Jailbroken No Analytics)";
-		};
-		9228A6622469BC6E00C82ED4 /* Release (Non-Jailbroken No Analytics) */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 731BA247DEFFCA151CF77CC8 /* Pods-DolphiniOS.release (non-jailbroken no analytics).xcconfig */;
-			buildSettings = {
-				APP_NAME = DolphiniOS;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				BUILD_FOR_JAILBROKEN_DEVICE = NO;
-				BUILD_FOR_PATREON = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-				CLANG_CXX_LIBRARY = "compiler-default";
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 46669ZA7J4;
-				DOLPHIN_BUILD_TYPE = Release;
-				ENABLE_BITCODE = NO;
-				EXCLUDED_SOURCE_FILE_NAMES = libjailbreak.dylib;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DolphiniOS/DolphiniOS-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"$(inherited)",
-					"NONJAILBROKEN=1",
-				);
-				INFOPLIST_FILE = DolphiniOS/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 3.2.0b2;
-				PRODUCT_BUNDLE_IDENTIFIER = "use.your.own.bundle.id.DolphiniOS-njb";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "DolphiniOS/DolphiniOS-Bridging-Header.h";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "";
-			};
-			name = "Release (Non-Jailbroken No Analytics)";
-		};
 		B945A3872362909500B21680 /* Debug (Jailbroken) */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -3525,49 +3376,6 @@
 			};
 			name = "Release (Non-Jailbroken)";
 		};
-		B97DDCD72666035A0083896C /* Release (Non-Jailbroken No Analytics) */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1F48440FD7593E4AE76B70D3 /* Pods-DolphinATV.release (non-jailbroken no analytics).xcconfig */;
-			buildSettings = {
-				APP_NAME = DolphinATV;
-				ASSETCATALOG_COMPILER_APPICON_NAME = "Brand Assets";
-				BUILD_FOR_JAILBROKEN_DEVICE = NO;
-				BUILD_FOR_PATREON = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-				CLANG_CXX_LIBRARY = "compiler-default";
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 46669ZA7J4;
-				DOLPHIN_BUILD_TYPE = Release;
-				ENABLE_BITCODE = NO;
-				EXCLUDED_SOURCE_FILE_NAMES = libjailbreak.dylib;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DolphiniOS/DolphiniOS-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"$(inherited)",
-					"NONJAILBROKEN=1",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/DolphinATV/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 3.2.0b2;
-				PRODUCT_BUNDLE_IDENTIFIER = "use.your.own.bundle.id.DolphinATV-njb";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SDKROOT = appletvos;
-				SUPPORTED_PLATFORMS = "appletvsimulator appletvos";
-				SWIFT_OBJC_BRIDGING_HEADER = "DolphiniOS/DolphiniOS-Bridging-Header.h";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 14.1;
-				VERSIONING_SYSTEM = "";
-			};
-			name = "Release (Non-Jailbroken No Analytics)";
-		};
 		B97DDCD82666035A0083896C /* Release (Patreon) */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3178F474A5EAB6BCB3C24EBA /* Pods-DolphinATV.release (patreon).xcconfig */;
@@ -4120,7 +3928,6 @@
 				B9DCAC9123AB3665002B95C8 /* Debug (Non-Jailbroken) */,
 				B945A3882362909500B21680 /* Release (Jailbroken) */,
 				B971E1C1245DF29300D2A698 /* Release (Non-Jailbroken) */,
-				9228A6612469BC6E00C82ED4 /* Release (Non-Jailbroken No Analytics) */,
 				B9DCAC9323AB384F002B95C8 /* Release (Patreon) */,
 				B99577A724672FF8008C5115 /* Release (Patreon Non-Jailbroken) */,
 			);
@@ -4134,7 +3941,6 @@
 				B9DCAC9223AB3665002B95C8 /* Debug (Non-Jailbroken) */,
 				B945A38B2362909500B21680 /* Release (Jailbroken) */,
 				B971E1C2245DF29300D2A698 /* Release (Non-Jailbroken) */,
-				9228A6622469BC6E00C82ED4 /* Release (Non-Jailbroken No Analytics) */,
 				B9DCAC9423AB384F002B95C8 /* Release (Patreon) */,
 				B99577A824672FF8008C5115 /* Release (Patreon Non-Jailbroken) */,
 			);
@@ -4148,7 +3954,6 @@
 				B97DDCD42666035A0083896C /* Debug (Non-Jailbroken) */,
 				B97DDCD52666035A0083896C /* Release (Jailbroken) */,
 				B97DDCD62666035A0083896C /* Release (Non-Jailbroken) */,
-				B97DDCD72666035A0083896C /* Release (Non-Jailbroken No Analytics) */,
 				B97DDCD82666035A0083896C /* Release (Patreon) */,
 				B97DDCD92666035A0083896C /* Release (Patreon Non-Jailbroken) */,
 			);
