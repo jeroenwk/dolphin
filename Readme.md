@@ -32,12 +32,10 @@ Use Homebrew to install software:
 brew install cmake ninja bartycrouch python3
 ```
 
-Install some python stuff:
+Install polib:
 
 ```
-curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-python get-pip.py
-/usr/local/bin/python3 -m pip install --upgrade polib
+pip3 install --upgrade polib
 ```
 
 Finally, use CocoaPods to install some iOS libraries:
