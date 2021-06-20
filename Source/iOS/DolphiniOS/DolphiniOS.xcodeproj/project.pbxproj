@@ -2871,7 +2871,6 @@
 				GCC_PREFIX_HEADER = "DolphiniOS/DolphiniOS-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
-					"XCODE_APP_BUILD=1",
 					"NONJAILBROKEN=1",
 				);
 				INFOPLIST_FILE = DolphiniOS/Info.plist;
@@ -3141,10 +3140,7 @@
 				"EXCLUDED_SOURCE_FILE_NAMES[sdk=iphonesimulator*]" = libjailbreak.dylib;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DolphiniOS/DolphiniOS-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"$(inherited)",
-					"XCODE_APP_BUILD=1",
-				);
+				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = DolphiniOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3184,7 +3180,6 @@
 				GCC_PREFIX_HEADER = "DolphiniOS/DolphiniOS-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
-					"XCODE_APP_BUILD=1",
 					"ANALYTICS=1",
 				);
 				INFOPLIST_FILE = DolphiniOS/Info.plist;
@@ -3334,7 +3329,6 @@
 				GCC_PREFIX_HEADER = "DolphiniOS/DolphiniOS-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
-					"XCODE_APP_BUILD=1",
 					"NONJAILBROKEN=1",
 					"ANALYTICS=1",
 				);
@@ -3379,7 +3373,6 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"SUPPRESS_UNSUPPORTED_DEVICE=1",
-					"XCODE_APP_BUILD=1",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/DolphinATV/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3423,7 +3416,6 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"SUPPRESS_UNSUPPORTED_DEVICE=1",
-					"XCODE_APP_BUILD=1",
 					"NONJAILBROKEN=1",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/DolphinATV/Info.plist";
@@ -3468,7 +3460,6 @@
 				GCC_PREFIX_HEADER = "DolphiniOS/DolphiniOS-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
-					"XCODE_APP_BUILD=1",
 					"ANALYTICS=1",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/DolphinATV/Info.plist";
@@ -3512,7 +3503,6 @@
 				GCC_PREFIX_HEADER = "DolphiniOS/DolphiniOS-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
-					"XCODE_APP_BUILD=1",
 					"NONJAILBROKEN=1",
 					"ANALYTICS=1",
 				);
@@ -3557,7 +3547,6 @@
 				GCC_PREFIX_HEADER = "DolphiniOS/DolphiniOS-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
-					"XCODE_APP_BUILD=1",
 					"NONJAILBROKEN=1",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/DolphinATV/Info.plist";
@@ -3603,7 +3592,6 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"PATREON=1",
-					"XCODE_APP_BUILD=1",
 					"ANALYTICS=1",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/DolphinATV/Info.plist";
@@ -3646,7 +3634,6 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"PATREON=1",
-					"XCODE_APP_BUILD=1",
 					"NONJAILBROKEN=1",
 					"ANALYTICS=1",
 				);
@@ -3799,7 +3786,6 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"PATREON=1",
-					"XCODE_APP_BUILD=1",
 					"NONJAILBROKEN=1",
 					"ANALYTICS=1",
 				);
@@ -3952,7 +3938,6 @@
 				GCC_PREFIX_HEADER = "DolphiniOS/DolphiniOS-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
-					"XCODE_APP_BUILD=1",
 					"NONJAILBROKEN=1",
 				);
 				INFOPLIST_FILE = DolphiniOS/Info.plist;
@@ -4108,7 +4093,6 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"PATREON=1",
-					"XCODE_APP_BUILD=1",
 					"ANALYTICS=1",
 				);
 				INFOPLIST_FILE = DolphiniOS/Info.plist;
