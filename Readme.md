@@ -20,7 +20,7 @@ You'll need:
 ### Clone the repo
 
 ```
-git clone -b ios-jb https://github.com/OatmealDome/dolphin.git
+git clone --recursive -b ios-jb https://github.com/OatmealDome/dolphin.git
 ```
 
 ### Install required dependencies
