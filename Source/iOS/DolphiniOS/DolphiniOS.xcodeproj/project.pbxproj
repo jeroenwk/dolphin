@@ -2878,6 +2878,7 @@
 				SYSTEM_HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/../../../Externals/mbedtls/include",
 					"$(SRCROOT)/../../../Externals/fmt/include",
+					"$(SRCROOT)/../../../Externals/soundtouch/**",
 				);
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = (
@@ -3138,6 +3139,7 @@
 				SYSTEM_HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/../../../Externals/mbedtls/include",
 					"$(SRCROOT)/../../../Externals/fmt/include",
+					"$(SRCROOT)/../../../Externals/soundtouch/**",
 				);
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = (
@@ -3189,6 +3191,7 @@
 				SYSTEM_HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/../../../Externals/mbedtls/include",
 					"$(SRCROOT)/../../../Externals/fmt/include",
+					"$(SRCROOT)/../../../Externals/soundtouch/**",
 				);
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = (
@@ -3339,6 +3342,7 @@
 				SYSTEM_HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/../../../Externals/mbedtls/include",
 					"$(SRCROOT)/../../../Externals/fmt/include",
+					"$(SRCROOT)/../../../Externals/soundtouch/**",
 				);
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = (
@@ -3865,6 +3869,7 @@
 				SYSTEM_HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/../../../Externals/mbedtls/include",
 					"$(SRCROOT)/../../../Externals/fmt/include",
+					"$(SRCROOT)/../../../Externals/soundtouch/**",
 				);
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = (
@@ -4017,6 +4022,7 @@
 				SYSTEM_HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/../../../Externals/mbedtls/include",
 					"$(SRCROOT)/../../../Externals/fmt/include",
+					"$(SRCROOT)/../../../Externals/soundtouch/**",
 				);
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = (
@@ -4171,6 +4177,7 @@
 				SYSTEM_HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/../../../Externals/mbedtls/include",
 					"$(SRCROOT)/../../../Externals/fmt/include",
+					"$(SRCROOT)/../../../Externals/soundtouch/**",
 				);
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = (
