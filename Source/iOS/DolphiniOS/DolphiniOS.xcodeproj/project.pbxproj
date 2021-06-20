@@ -292,6 +292,7 @@
 		B9D3073B267D910200AA7CB2 /* JitAcquisitionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D5D5A7266C2B670068049F /* JitAcquisitionService.swift */; };
 		B9D3073E267D931700AA7CB2 /* DOLJitManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D5D5A3266BFAA70068049F /* DOLJitManager.m */; };
 		B9D3073F267D936F00AA7CB2 /* JitScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D5D5AE266C338A0068049F /* JitScreenDelegate.swift */; };
+		B9D30741267F192700AA7CB2 /* AltKit in Frameworks */ = {isa = PBXBuildFile; productRef = B9D30740267F192700AA7CB2 /* AltKit */; };
 		B9D5D54B266B39F90068049F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D5D54A266B39F90068049F /* AppDelegate.swift */; };
 		B9D5D54C266B3FD00068049F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D5D54A266B39F90068049F /* AppDelegate.swift */; };
 		B9D5D556266B48D70068049F /* Sys in Resources */ = {isa = PBXBuildFile; fileRef = B9D5D555266B48D60068049F /* Sys */; };
@@ -849,6 +850,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9D30741267F192700AA7CB2 /* AltKit in Frameworks */,
 				B97DDC902666035A0083896C /* CoreHaptics.framework in Frameworks */,
 				B97DDC912666035A0083896C /* CoreAudio.framework in Frameworks */,
 				B97DDC922666035A0083896C /* AudioToolbox.framework in Frameworks */,
@@ -1849,6 +1851,9 @@
 			dependencies = (
 			);
 			name = DolphinATV;
+			packageProductDependencies = (
+				B9D30740267F192700AA7CB2 /* AltKit */,
+			);
 			productName = DolphiniOS;
 			productReference = B97DDCDA2666035A0083896C /* DolphinATV.app */;
 			productType = "com.apple.product-type.application";
@@ -3906,6 +3911,11 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		B9C3F401266B03E60053E501 /* AltKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B9C3F400266B03E60053E501 /* XCRemoteSwiftPackageReference "AltKit" */;
+			productName = AltKit;
+		};
+		B9D30740267F192700AA7CB2 /* AltKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B9C3F400266B03E60053E501 /* XCRemoteSwiftPackageReference "AltKit" */;
 			productName = AltKit;
