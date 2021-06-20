@@ -21,6 +21,7 @@ You'll need:
 
 ```
 git clone --recursive -b ios-jb https://github.com/OatmealDome/dolphin.git
+cd dolphin
 ```
 
 ### Install required dependencies
