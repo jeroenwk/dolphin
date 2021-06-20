@@ -2784,6 +2784,8 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				EXCLUDED_ARCHS = "i386 armv7s armv7";
+				"EXCLUDED_SOURCE_FILE_NAMES[sdk=appletvsimulator*]" = libjailbreak.dylib;
+				"EXCLUDED_SOURCE_FILE_NAMES[sdk=iphonesimulator*]" = libjailbreak.dylib;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -2905,6 +2907,8 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				EXCLUDED_ARCHS = "i386 armv7s armv7";
+				"EXCLUDED_SOURCE_FILE_NAMES[sdk=appletvsimulator*]" = libjailbreak.dylib;
+				"EXCLUDED_SOURCE_FILE_NAMES[sdk=iphonesimulator*]" = libjailbreak.dylib;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -2996,8 +3000,6 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 46669ZA7J4;
 				ENABLE_BITCODE = NO;
-				EXCLUDED_SOURCE_FILE_NAMES = "";
-				"EXCLUDED_SOURCE_FILE_NAMES[sdk=iphonesimulator*]" = libjailbreak.dylib;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DolphiniOS/DolphiniOS-Prefix.pch";
 				INFOPLIST_FILE = DolphiniOS/Info.plist;
@@ -3030,7 +3032,6 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 46669ZA7J4;
 				ENABLE_BITCODE = NO;
-				"EXCLUDED_SOURCE_FILE_NAMES[sdk=iphonesimulator*]" = libjailbreak.dylib;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DolphiniOS/DolphiniOS-Prefix.pch";
 				INFOPLIST_FILE = DolphiniOS/Info.plist;
@@ -3091,6 +3092,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				EXCLUDED_ARCHS = "i386 armv7s armv7";
+				EXCLUDED_SOURCE_FILE_NAMES = libjailbreak.dylib;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -3179,7 +3181,6 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 46669ZA7J4;
 				ENABLE_BITCODE = NO;
-				EXCLUDED_SOURCE_FILE_NAMES = libjailbreak.dylib;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DolphiniOS/DolphiniOS-Prefix.pch";
 				INFOPLIST_FILE = DolphiniOS/Info.plist;
@@ -3212,8 +3213,6 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 46669ZA7J4;
 				ENABLE_BITCODE = NO;
-				EXCLUDED_SOURCE_FILE_NAMES = "";
-				"EXCLUDED_SOURCE_FILE_NAMES[sdk=iphonesimulator*]" = libjailbreak.dylib;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DolphiniOS/DolphiniOS-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/DolphinATV/Info.plist";
@@ -3249,7 +3248,6 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 46669ZA7J4;
 				ENABLE_BITCODE = NO;
-				EXCLUDED_SOURCE_FILE_NAMES = libjailbreak.dylib;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DolphiniOS/DolphiniOS-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/DolphinATV/Info.plist";
@@ -3285,7 +3283,6 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 46669ZA7J4;
 				ENABLE_BITCODE = NO;
-				"EXCLUDED_SOURCE_FILE_NAMES[sdk=iphonesimulator*]" = libjailbreak.dylib;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DolphiniOS/DolphiniOS-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/DolphinATV/Info.plist";
@@ -3321,7 +3318,6 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 46669ZA7J4;
 				ENABLE_BITCODE = NO;
-				EXCLUDED_SOURCE_FILE_NAMES = libjailbreak.dylib;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DolphiniOS/DolphiniOS-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/DolphinATV/Info.plist";
@@ -3356,8 +3352,6 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 46669ZA7J4;
 				ENABLE_BITCODE = NO;
-				EXCLUDED_SOURCE_FILE_NAMES = "";
-				"EXCLUDED_SOURCE_FILE_NAMES[sdk=iphonesimulator*]" = libjailbreak.dylib;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DolphiniOS/DolphiniOS-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/DolphinATV/Info.plist";
@@ -3391,7 +3385,6 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 46669ZA7J4;
 				ENABLE_BITCODE = NO;
-				EXCLUDED_SOURCE_FILE_NAMES = libjailbreak.dylib;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DolphiniOS/DolphiniOS-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/DolphinATV/Info.plist";
@@ -3454,6 +3447,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				EXCLUDED_ARCHS = "i386 armv7s armv7";
+				EXCLUDED_SOURCE_FILE_NAMES = libjailbreak.dylib;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -3542,7 +3536,6 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 46669ZA7J4;
 				ENABLE_BITCODE = NO;
-				EXCLUDED_SOURCE_FILE_NAMES = libjailbreak.dylib;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DolphiniOS/DolphiniOS-Prefix.pch";
 				INFOPLIST_FILE = DolphiniOS/Info.plist;
@@ -3602,6 +3595,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				EXCLUDED_ARCHS = "i386 armv7s armv7";
+				EXCLUDED_SOURCE_FILE_NAMES = libjailbreak.dylib;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -3690,7 +3684,6 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 46669ZA7J4;
 				ENABLE_BITCODE = NO;
-				EXCLUDED_SOURCE_FILE_NAMES = libjailbreak.dylib;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DolphiniOS/DolphiniOS-Prefix.pch";
 				INFOPLIST_FILE = DolphiniOS/Info.plist;
@@ -3753,6 +3746,8 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				EXCLUDED_ARCHS = "i386 armv7s armv7";
+				"EXCLUDED_SOURCE_FILE_NAMES[sdk=appletvsimulator*]" = libjailbreak.dylib;
+				"EXCLUDED_SOURCE_FILE_NAMES[sdk=iphonesimulator*]" = libjailbreak.dylib;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -3844,8 +3839,6 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 46669ZA7J4;
 				ENABLE_BITCODE = NO;
-				EXCLUDED_SOURCE_FILE_NAMES = "";
-				"EXCLUDED_SOURCE_FILE_NAMES[sdk=iphonesimulator*]" = libjailbreak.dylib;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DolphiniOS/DolphiniOS-Prefix.pch";
 				INFOPLIST_FILE = DolphiniOS/Info.plist;
