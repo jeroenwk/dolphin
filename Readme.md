@@ -29,10 +29,7 @@ cd dolphin
 Use Homebrew to install software:
 
 ```
-brew install cmake
-brew install ninja
-brew install bartycrouch
-brew install python
+brew install cmake ninja bartycrouch python3
 ```
 
 Install some python stuff:
