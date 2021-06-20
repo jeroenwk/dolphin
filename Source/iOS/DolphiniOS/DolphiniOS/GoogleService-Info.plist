@@ -5,9 +5,9 @@
 	<key>APY_KEY</key>
 	<string>APIKEYHERE</string>
 	<key>CLIENT_ID</key>
-  <string>123456789012-clientidcharactersgohere.apps.googleusercontent.com</string>
+	<string>123456789012-clientidcharactersgohere.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-  <string>com.googleusercontent.apps.123456789012-clientidcharactersgohere</string>
+	<string>com.googleusercontent.apps.123456789012-clientidcharactersgohere</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
