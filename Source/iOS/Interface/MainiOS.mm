@@ -336,14 +336,18 @@ void UpdateWiiPointer()
     {
       // Move the file
       NSError* error = nil;
-      [file_manager moveItemAtPath:file toPath:destination_path error:&error];
-      
-      if (error != nil)
-      {
-        return;
-      }
+      bool success = [file_manager moveItemAtPath:file toPath:destination_path error:&error];
       
       [url stopAccessingSecurityScopedResource];
+      
+      if (!success)
+      {
+        CriticalAlertFmtT("Failed to import the software.\n\n{0}", [[error localizedDescription] UTF8String]);
+      }
+    }
+    else
+    {
+      CriticalAlertFmtT("This software file already exists in Dolphin's software folder.");
     }
   }
 }
