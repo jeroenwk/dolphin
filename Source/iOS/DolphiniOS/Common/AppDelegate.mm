@@ -473,7 +473,13 @@
     
     [[NSUserDefaults standardUserDefaults] setInteger:latest_mfi_config_version forKey:@"mfi_config_version"];
   }
-
+  
+  DOLTopBarPullDownMode mode = (DOLTopBarPullDownMode)[[NSUserDefaults standardUserDefaults] integerForKey:@"top_bar_pull_down_mode"];
+  if (mode == DOLTopBarPullDownModeSwipe)
+  {
+    [[NSUserDefaults standardUserDefaults] setInteger:DOLTopBarPullDownModeButton forKey:@"top_bar_pull_down_mode"];
+  }
+  
   [[GameFileCacheHolder sharedInstance] scanSoftwareFolder];
 
 #ifdef ANALYTICS
