@@ -51,7 +51,7 @@ jobs:
       
     - name: Build
       env:
-        XCODEBUILD_ARGS: "BUILD_DIR=${{ github.workspace }}/build-Xcode CODE_SIGNING_ALLOWED=\"NO\" CODE_SIGNING_REQUIRED=\"NO\" CODE_SIGN_ENTITLEMENTS=\"\" CODE_SIGN_IDENTITY=\"\"" 
+        XCODEBUILD_ARGS: "BUILD_DIR=${{ github.workspace }}/build-Xcode GCC_PREPROCESSOR_DEFINITIONS='$GCC_PREPROCESSOR_DEFINITIONS ANALYTICS=1' CODE_SIGNING_ALLOWED=\"NO\" CODE_SIGNING_REQUIRED=\"NO\" CODE_SIGN_ENTITLEMENTS=\"\" CODE_SIGN_IDENTITY=\"\"" 
       run: |
         mkdir build-Xcode
         cd Source/iOS/DolphiniOS
@@ -132,7 +132,7 @@ jobs:
       
     - name: Build
       env:
-        XCODEBUILD_ARGS: "BUILD_DIR=${{ github.workspace }}/build-Xcode CODE_SIGNING_ALLOWED=\"NO\" CODE_SIGNING_REQUIRED=\"NO\" CODE_SIGN_ENTITLEMENTS=\"\" CODE_SIGN_IDENTITY=\"\"" 
+        XCODEBUILD_ARGS: "BUILD_DIR=${{ github.workspace }}/build-Xcode GCC_PREPROCESSOR_DEFINITIONS='$GCC_PREPROCESSOR_DEFINITIONS ANALYTICS=1' CODE_SIGNING_ALLOWED=\"NO\" CODE_SIGNING_REQUIRED=\"NO\" CODE_SIGN_ENTITLEMENTS=\"\" CODE_SIGN_IDENTITY=\"\"" 
       run: |
         mkdir build-Xcode
         cd Source/iOS/DolphiniOS
