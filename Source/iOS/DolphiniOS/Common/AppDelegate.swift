@@ -33,7 +33,21 @@ import Foundation
       
       if let metalDevice = MTLCreateSystemDefaultDevice()
       {
-        hasFeatureSet = metalDevice.supportsFamily(.apple3)
+        if #available(iOS 13.0, tvOS 13.0, *)
+        {
+          hasFeatureSet = metalDevice.supportsFamily(.apple3)
+        }
+        else
+        {
+          let featureSet: MTLFeatureSet
+#if os(tvOS)
+          featureSet = MTLFeatureSet.tvOS_GPUFamily2_v2
+#else
+          featureSet = MTLFeatureSet.iOS_GPUFamily3_v2
+#endif
+          
+          hasFeatureSet = metalDevice.supportsFeatureSet(featureSet)
+        }
       }
       
       if (!hasFeatureSet)
