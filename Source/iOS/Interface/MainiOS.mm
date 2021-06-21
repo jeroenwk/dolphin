@@ -198,6 +198,11 @@ static bool MsgAlert(const char* caption, const char* text, bool yes_no, Common:
     [condition lock];
     [condition wait];
     [condition unlock];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+      [window setHidden:true];
+      window = nil;
+    });
 
     return yes_pressed;
   }
