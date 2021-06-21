@@ -591,7 +591,9 @@
 
 - (BOOL)application:(UIApplication*)app openURL:(NSURL*)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id>*)options
 {
-  [MainiOS importFiles:[NSSet setWithObject:url]];
+  dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0), ^{
+    [MainiOS importFiles:[NSSet setWithObject:url]];
+  });
   
   return YES;
 }
