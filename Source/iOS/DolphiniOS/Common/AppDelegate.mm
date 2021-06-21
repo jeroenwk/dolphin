@@ -111,15 +111,6 @@
   }
 #endif
   
-  if ([[NSUserDefaults standardUserDefaults] boolForKey:@"is_killed"])
-  {
-    self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
-    self.window.rootViewController = [[KilledBuildNoticeViewController alloc] initWithNibName:@"KilledBuildNotice" bundle:nil];
-    [self.window makeKeyAndVisible];
-    
-    return true;
-  }
-  
   // Default settings values should be set in DefaultPreferences.plist in the future
   NSURL *defaultPrefsFile = [[NSBundle mainBundle] URLForResource:@"DefaultPreferences" withExtension:@"plist"];
   NSDictionary *defaultPrefs = [NSDictionary dictionaryWithContentsOfURL:defaultPrefsFile];

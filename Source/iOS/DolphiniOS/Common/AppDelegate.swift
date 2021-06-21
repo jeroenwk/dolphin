@@ -25,6 +25,17 @@ import Foundation
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool
   {
+    if (UserDefaults.standard.bool(forKey: "is_killed"))
+    {
+      let alertWindow = UIWindow.init(frame: UIScreen.main.bounds)
+      alertWindow.rootViewController = KilledBuildNoticeViewController.init(nibName: "KilledBuildNotice", bundle: nil)
+      alertWindow.makeKeyAndVisible()
+    
+      self.window = alertWindow
+      
+      return true
+    }
+    
     var returnedResult: Bool = true
     
     for service in services

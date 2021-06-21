@@ -5,4 +5,5 @@
 #import "AppDelegate.h" // legacy delegate
 #import "DOLJitManager.h"
 #import "EAGLView.h"
+#import "KilledBuildNoticeViewController.h"
 #import "MainiOS.h"
