@@ -25,6 +25,30 @@ import Foundation
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool
   {
+#if !DEBUG
+    let bypassFilePath = URL(fileURLWithPath: MainiOS.getUserFolder()).appendingPathComponent("bypass_unsupported_device")
+    if (!FileManager.default.fileExists(atPath: bypassFilePath.path))
+    {
+      var hasFeatureSet = false
+      
+      if let metalDevice = MTLCreateSystemDefaultDevice()
+      {
+        hasFeatureSet = metalDevice.supportsFeatureSet(.iOS_GPUFamily3_v2)
+      }
+      
+      if (!hasFeatureSet)
+      {
+        let alertWindow = UIWindow.init(frame: UIScreen.main.bounds)
+        alertWindow.rootViewController = UIViewController.init(nibName: "UnsupportedDeviceNotice", bundle: nil)
+        alertWindow.makeKeyAndVisible()
+      
+        self.window = alertWindow
+        
+        return true
+      }
+    }
+#endif
+    
     if (UserDefaults.standard.bool(forKey: "is_killed"))
     {
       let alertWindow = UIWindow.init(frame: UIScreen.main.bounds)

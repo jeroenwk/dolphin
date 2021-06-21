@@ -91,26 +91,6 @@
 {
   [UIViewController swizzleViewDidDisappear];
   
-  // Check the device compatibility
-#if !DEBUG
-  // Provide a way to bypass this check for debugging purposes
-  NSString* bypass_flag_file = [[MainiOS getUserFolder] stringByAppendingPathComponent:@"bypass_unsupported_device"];
-  if (![[NSFileManager defaultManager] fileExistsAtPath:bypass_flag_file])
-  {
-    // Check for GPU Family 3
-    id<MTLDevice> metalDevice = MTLCreateSystemDefaultDevice();
-    if (![metalDevice supportsFeatureSet:MTLFeatureSet_iOS_GPUFamily3_v2])
-    {
-      // Show the incompatibilty warning
-      self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
-      self.window.rootViewController = [[UIViewController alloc] initWithNibName:@"UnsupportedDeviceNotice" bundle:nil];
-      [self.window makeKeyAndVisible];
-      
-      return true;
-    }
-  }
-#endif
-  
   // Default settings values should be set in DefaultPreferences.plist in the future
   NSURL *defaultPrefsFile = [[NSBundle mainBundle] URLForResource:@"DefaultPreferences" withExtension:@"plist"];
   NSDictionary *defaultPrefs = [NSDictionary dictionaryWithContentsOfURL:defaultPrefsFile];
