@@ -79,9 +79,6 @@
 /* Class = "UILabel"; text = "Enable Cheats"; ObjectID = "DAs-t0-7XG"; */
 "DAs-t0-7XG.text" = "启用金手指";
 
-/* Class = "UILabel"; text = "Swipe Down to Reveal"; ObjectID = "DKD-3b-KpQ"; */
-"DKD-3b-KpQ.text" = "Swipe Down to Reveal";
-
 /* Class = "UILabel"; text = "Show Status Bar"; ObjectID = "Dge-z6-TXb"; */
 "Dge-z6-TXb.text" = "Show Status Bar";
 

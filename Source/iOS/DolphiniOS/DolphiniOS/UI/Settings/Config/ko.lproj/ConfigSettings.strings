@@ -232,9 +232,6 @@
 /* Class = "UITableViewSection"; headerTitle = "Basic Settings"; ObjectID = "gdG-9I-xOW"; */
 "gdG-9I-xOW.headerTitle" = "기본 설정";
 
-/* Class = "UILabel"; text = "Swipe Down to Reveal"; ObjectID = "DKD-3b-KpQ"; */
-"DKD-3b-KpQ.text" = "Swipe Down to Reveal";
-
 /* Class = "UILabel"; text = "Top Bar Mode"; ObjectID = "GpF-ug-PIN"; */
 "GpF-ug-PIN.text" = "Top Bar Mode";
 
