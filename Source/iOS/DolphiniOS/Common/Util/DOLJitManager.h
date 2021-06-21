@@ -16,8 +16,8 @@ typedef NS_ENUM(NSUInteger, DOLJitType)
   DOLJitTypeNotRestricted
 };
 
-extern NSString* const DOLJitAcquiredNotification;
-extern NSString* const DOLJitAltJitFailureNotification;
+extern NSString* _Nonnull const DOLJitAcquiredNotification;
+extern NSString* _Nonnull const DOLJitAltJitFailureNotification;
 
 NS_ASSUME_NONNULL_BEGIN
 
