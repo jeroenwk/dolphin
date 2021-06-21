@@ -526,9 +526,12 @@
 - (void)documentPicker:(UIDocumentPickerViewController*)controller didPickDocumentsAtURLs:(NSArray<NSURL*>*)urls
 {
   NSSet<NSURL*>* set = [NSSet setWithArray:urls];
-  [MainiOS importFiles:set];
   
-  [self rescanWithCompletionHandler:nil];
+  dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0), ^{
+    [MainiOS importFiles:set];
+    
+    [self rescanWithCompletionHandler:nil];
+  });
 }
 
 #endif
