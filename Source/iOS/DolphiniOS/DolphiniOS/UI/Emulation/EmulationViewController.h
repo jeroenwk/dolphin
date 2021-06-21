@@ -24,13 +24,6 @@
 
 #import "UICommon/GameFile.h"
 
-typedef NS_ENUM(NSUInteger, DOLTopBarPullDownMode) {
-  DOLTopBarPullDownModeSwipe = 0,
-  DOLTopBarPullDownModeButton,
-  DOLTopBarPullDownModeAlwaysVisible,
-  DOLTopBarPullDownModeAlwaysHidden
-};
-
 NS_ASSUME_NONNULL_BEGIN
 
 @interface EmulationViewController : UIViewController <NKitWarningNoticeDelegate, JitScreenDelegate>
