@@ -365,7 +365,7 @@
   bool can_enable_fastmem = CanEnableFastmem();
   
   Config::SetBase(Config::MAIN_FASTMEM, can_enable_fastmem);
-  SConfig::GetInstance().bFastmem = CanEnableFastmem();
+  SConfig::GetInstance().bFastmem = can_enable_fastmem;
   
   if (can_enable_fastmem)
   {
