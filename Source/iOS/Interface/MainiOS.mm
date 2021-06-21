@@ -151,15 +151,10 @@ static bool MsgAlert(const char* caption, const char* text, bool yes_no, Common:
     // Log to console as a backup
     NSLog(@"MsgAlert - %s: %s (yes_no: %d)", caption, text, yes_no ? 1 : 0);
 
-    // Don't continue if the view controller isn't available
-    if (!s_view_controller)
-    {
-      return false;
-    }
-
     NSCondition* condition = [[NSCondition alloc] init];
     
     __block bool yes_pressed = false;
+    __block UIWindow* window;
 
     dispatch_async(dispatch_get_main_queue(), ^{
       UIAlertController* alert = [UIAlertController alertControllerWithTitle:[NSString stringWithUTF8String:caption]
@@ -190,7 +185,13 @@ static bool MsgAlert(const char* caption, const char* text, bool yes_no, Common:
         }]];
       }
 
-      [s_view_controller presentViewController:alert animated:YES completion:nil];
+      window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+      window.rootViewController = [[UIViewController alloc] init];
+      window.windowLevel = UIWindowLevelAlert;
+
+      [window makeKeyAndVisible];
+
+      [window.rootViewController presentViewController:alert animated:true completion:nil];
     });
 
     // Wait for a button press
