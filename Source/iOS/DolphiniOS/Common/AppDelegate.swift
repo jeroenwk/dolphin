@@ -33,7 +33,7 @@ import Foundation
       
       if let metalDevice = MTLCreateSystemDefaultDevice()
       {
-        hasFeatureSet = metalDevice.supportsFeatureSet(.iOS_GPUFamily3_v2)
+        hasFeatureSet = metalDevice.supportsFamily(.apple3)
       }
       
       if (!hasFeatureSet)
