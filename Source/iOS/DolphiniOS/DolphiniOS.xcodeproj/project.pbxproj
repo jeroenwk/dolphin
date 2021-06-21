@@ -2854,6 +2854,7 @@
 					"-lvideovulkan",
 					"-lmain",
 				);
+				OTHER_SWIFT_FLAGS = "-D DEBUG";
 				SDKROOT = iphoneos;
 				SYSTEM_HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/../../../Externals/mbedtls/include",
@@ -3655,6 +3656,7 @@
 					"-lvideovulkan",
 					"-lmain",
 				);
+				OTHER_SWIFT_FLAGS = "-D DEBUG";
 				SDKROOT = iphoneos;
 				SYSTEM_HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/../../../Externals/mbedtls/include",
