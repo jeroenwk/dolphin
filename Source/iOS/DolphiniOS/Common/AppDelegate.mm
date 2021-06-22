@@ -106,6 +106,12 @@
   NSURL* rom_folder_url = [NSURL fileURLWithPath:[MainiOS getUserFolder]];
   [rom_folder_url setResourceValue:[NSNumber numberWithBool:true] forKey:NSURLIsExcludedFromBackupKey error:nil];
   
+  if ([@"NO" boolValue])
+  {
+      // Riley: Don't ask me why, but including this (always false) if statement significantly improves emulation performance 🤷‍♂️
+      [[NSFileManager defaultManager] fileExistsAtPath:@"" isDirectory:nil];
+  }
+  
   // Create a UINavigationController for alerts
   NoticeNavigationViewController* nav_controller = [[NoticeNavigationViewController alloc] init];
   [nav_controller setNavigationBarHidden:true];
