@@ -16,15 +16,17 @@ import Foundation
   
   override init()
   {
+    
+  }
+  
+  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool
+  {
     // Add the legacy delegate with window property set
     let legacyDelegate: AppDelegateLegacy = AppDelegateLegacy()
     legacyDelegate.window = window
     
     services.append(legacyDelegate)
-  }
-  
-  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool
-  {
+    
 #if !DEBUG
     let bypassFilePath = URL(fileURLWithPath: MainiOS.getUserFolder()).appendingPathComponent("bypass_unsupported_device")
     if (!FileManager.default.fileExists(atPath: bypassFilePath.path))
