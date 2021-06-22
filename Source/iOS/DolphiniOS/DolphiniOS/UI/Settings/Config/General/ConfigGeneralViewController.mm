@@ -59,6 +59,7 @@
 
 - (IBAction)DualCoreChanged:(id)sender
 {
+  SConfig::GetInstance().bCPUThread = [self.m_dual_core_switch isOn];
   Config::SetBaseOrCurrent(Config::MAIN_CPU_THREAD, [self.m_dual_core_switch isOn]);
 }
 
