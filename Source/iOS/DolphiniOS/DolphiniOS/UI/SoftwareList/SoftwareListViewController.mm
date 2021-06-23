@@ -333,7 +333,8 @@
   
   [actions addObject:delete_action];
   
-  return [UIMenu menuWithTitle:CppToFoundationString(game_file->GetGameID()) children:[actions copy]];
+  NSString* game_name = CppToFoundationString(game_file->GetName(UICommon::GameFile::Variant::LongAndPossiblyCustom));
+  return [UIMenu menuWithTitle:game_name children:[actions copy]];
 }
 
 #pragma mark - Long press
@@ -356,8 +357,9 @@
   UIView* source_view = table_view ? [self.m_table_view cellForRowAtIndexPath:index_path] : [self.m_collection_view cellForItemAtIndexPath:index_path];
   
   const UICommon::GameFile* game_file = self.m_cache->Get(index_path.row).get();
+  NSString* game_name = CppToFoundationString(game_file->GetName(UICommon::GameFile::Variant::LongAndPossiblyCustom));
   
-  UIAlertController* action_sheet = [UIAlertController alertControllerWithTitle:nil message:CppToFoundationString(game_file->GetGameID()) preferredStyle:UIAlertControllerStyleActionSheet];
+  UIAlertController* action_sheet = [UIAlertController alertControllerWithTitle:nil message:game_name preferredStyle:UIAlertControllerStyleActionSheet];
   
   [action_sheet addAction:[UIAlertAction actionWithTitle:DOLocalizedString(@"Properties") style:UIAlertActionStyleDefault handler:^(UIAlertAction*)
   {
