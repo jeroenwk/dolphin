@@ -8,6 +8,7 @@
 
 #import "Core/Core.h"
 #import "Core/HW/DVD/DVDInterface.h"
+#import "Core/TitleDatabase.h"
 
 #import "GameFileCacheHolder.h"
 
@@ -16,6 +17,9 @@
 #import "UICommon/GameFile.h"
 
 @interface InGameChangeDiscViewController ()
+{
+  const Core::TitleDatabase _m_title_database;
+}
 
 @end
 
@@ -78,7 +82,7 @@
     cell_contents = [cell_contents stringByAppendingString:@"[Wii] "];
   }
   
-  cell_contents = [cell_contents stringByAppendingString:CppToFoundationString(file->GetGameID())];
+  cell_contents = [cell_contents stringByAppendingString:CppToFoundationString(file->GetNetPlayName(self->_m_title_database))];
   
   // Set the cell label text
   cell.fileNameLabel.text = cell_contents;
