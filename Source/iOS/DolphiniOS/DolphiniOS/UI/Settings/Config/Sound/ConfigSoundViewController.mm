@@ -52,6 +52,11 @@
 {
   SConfig::GetInstance().m_audio_stretch = [self.m_stretching_switch isOn];
   [self.m_buffer_size_slider setEnabled:[self.m_stretching_switch isOn]];
+
+  // On some iOS 14 versions, the slider's appearance won't change unless we
+  // force a layout update due to a bug.
+  [self.m_buffer_size_slider setNeedsLayout];
+  [self.m_buffer_size_slider layoutIfNeeded];
 }
 
 - (IBAction)BufferSizeChanged:(id)sender
