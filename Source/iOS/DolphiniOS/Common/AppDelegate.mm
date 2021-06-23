@@ -281,7 +281,7 @@
   }
 
 #ifdef ANALYTICS
-  if (Config::GetBase(Config::MAIN_ANALYTICS_ENABLED))
+  if (!Config::GetBase(Config::MAIN_ANALYTICS_PERMISSION_ASKED))
   {
     [nav_controller pushViewController:[[AnalyticsNoticeViewController alloc] initWithNibName:@"AnalyticsNotice" bundle:nil] animated:true];
   }
