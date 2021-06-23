@@ -145,6 +145,8 @@
   [self setNeedsStatusBarAppearanceUpdate];
 #endif
   
+  [[DOLJitManager sharedManager] recheckHasAcquiredJit];
+  
   if (![[DOLJitManager sharedManager] appHasAcquiredJit])
   {
 #ifdef NONJAILBROKEN

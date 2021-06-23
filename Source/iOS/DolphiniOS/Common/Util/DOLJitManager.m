@@ -168,6 +168,21 @@ NSString* const DOLJitAltJitFailureNotification = @"me.oatmealdome.dolphinios.ji
   }
 }
 
+- (void)recheckHasAcquiredJit
+{
+  if (self->_m_has_acquired_jit)
+  {
+    return;
+  }
+  
+#ifdef NONJAILBROKEN
+  if (self->_m_jit_type == DOLJitTypeDebugger)
+  {
+    self->_m_has_acquired_jit = IsProcessDebugged();
+  }
+#endif
+}
+
 - (void)attemptToAcquireJitByWaitingForDebuggerUsingCancellationToken:(DOLCancellationToken*)token
 {
   if (self->_m_jit_type != DOLJitTypeDebugger)
