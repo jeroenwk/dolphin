@@ -46,8 +46,10 @@
 
 - (IBAction)OverclockEnabledChanged:(id)sender
 {
-  SConfig::GetInstance().m_OCEnable = [self.m_overclock_switch isOn];
-  Config::SetBaseOrCurrent(Config::MAIN_OVERCLOCK_ENABLE, [self.m_overclock_switch isOn]);
+  bool enable_overclock = [self.m_overclock_switch isOn];
+  
+  SConfig::GetInstance().m_OCEnable = enable_overclock;
+  Config::SetBaseOrCurrent(Config::MAIN_OVERCLOCK_ENABLE, enable_overclock);
   
   [self UpdateOverclockSlider];
 }
@@ -67,6 +69,11 @@
   bool oc_slider_enabled = !running && [self.m_overclock_switch isOn];
   
   [self.m_overclock_slider setEnabled:oc_slider_enabled];
+  
+  // On some iOS 14 versions, the slider's appearance won't change unless we
+  // force a layout update due to a bug.
+  [self.m_overclock_slider setNeedsLayout];
+  [self.m_overclock_slider layoutIfNeeded];
   
   int core_clock = SystemTimers::GetTicksPerSecond() / std::pow(10, 6);
   int percent = static_cast<int>(std::round(SConfig::GetInstance().m_OCFactor * 100.f));
