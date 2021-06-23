@@ -352,7 +352,7 @@
     std::shared_ptr<const UICommon::GameFile> game_file = cache->Get(i);
     if (SConfig::GetInstance().GetGameID() == game_file->GetGameID() && game_file->GetPlatform() != DiscIO::Platform::ELFOrDOL)
     {
-      uid = CppToFoundationString(game_file->GetGameID());
+      uid = CppToFoundationString(game_file->GetName(UICommon::GameFile::Variant::LongAndPossiblyCustom));
       location = CppToFoundationString(game_file->GetFilePath());
       boot_type = DOLAutoStateBootTypeFile;
       self.m_is_wii = DiscIO::IsWii(game_file->GetPlatform());
