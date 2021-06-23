@@ -42,6 +42,7 @@
       break;
     default:
       [self.m_accuracy_slider setEnabled:false];
+      break;
   }
   
   GSUSetInitialForBool(Config::GFX_ENABLE_GPU_TEXTURE_DECODING, false, self.m_gpu_decoding_switch, self.m_gpu_decoding_label);
