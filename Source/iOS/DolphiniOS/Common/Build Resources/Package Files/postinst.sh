@@ -15,8 +15,5 @@ mkdir -p /private/var/mobile/Documents/DolphiniOS || true
 echo "Setting user directory permissions"
 chown -R mobile:mobile /private/var/mobile/Documents/DolphiniOS
 
-echo "IF DOLPHINIOS DOES NOT APPEAR ON YOUR HOME SCREEN, RESTART YOUR DEVICE!"
-echo "IF DOLPHINIOS DOES NOT APPEAR ON YOUR HOME SCREEN, RESTART YOUR DEVICE!"
-echo "IF DOLPHINIOS DOES NOT APPEAR ON YOUR HOME SCREEN, RESTART YOUR DEVICE!"
-
-#uicache
+echo "Running uicache"
+uicache
