@@ -85,6 +85,7 @@ NSString* const DOLJitAltJitFailureNotification = @"me.oatmealdome.dolphinios.ji
   
   if (cpu_architecture == nil)
   {
+    [self setAuxillaryError:@"CPU architecture check failed."];
     return false;
   }
   else if (![cpu_architecture isEqualToString:@"arm64e"])
