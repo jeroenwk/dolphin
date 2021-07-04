@@ -8,6 +8,7 @@ import Foundation
 {
   @objc weak var delegate: JitScreenDelegate?
   var cancellation_token = DOLCancellationToken()
+  var is_presenting_alert = false
   
   override func viewDidLoad()
   {
@@ -45,20 +46,34 @@ import Foundation
       error_string = "No error message available."
     }
     
+    while (self.is_presenting_alert)
+    {
+      // Wait for the alert to be dismissed.
+      sleep(1)
+    }
+    
     DispatchQueue.main.async {
       let alert = UIAlertController.init(title: "Failed to Contact AltJIT", message: error_string, preferredStyle: .alert)
       
-      alert.addAction(UIAlertAction.init(title: "Wait for Other Debugger", style: .default, handler: nil))
+      alert.addAction(UIAlertAction.init(title: "Wait for Other Debugger", style: .default, handler: { _ in
+        self.is_presenting_alert = false
+      }))
       
       alert.addAction(UIAlertAction.init(title: "Retry AltJIT", style: .default, handler: { _ in
+        self.is_presenting_alert = false
+        
         DOLJitManager.shared().attemptToAcquireJitByAltJIT()
       }))
       
       alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: { _ in
+        self.is_presenting_alert = false
+        
         self.cancellation_token.cancel()
         
         self.delegate?.DidFinishJitScreen(result: false, sender: self)
       }))
+      
+      self.is_presenting_alert = true
       
       self.present(alert, animated: true, completion: nil)
     }
