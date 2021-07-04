@@ -8,6 +8,8 @@
 
 #import <dlfcn.h>
 
+#import <sys/sysctl.h>
+
 #if TARGET_OS_TV
 #import "DolphinATV-Swift.h"
 #else
@@ -105,7 +107,23 @@ NSString* const DOLJitAltJitFailureNotification = @"me.oatmealdome.dolphinios.ji
 #elif defined(NONJAILBROKEN)
   if (@available(iOS 14.4, *))
   {
-    self->_m_jit_type = DOLJitTypeDebugger;
+    size_t build_str_size;
+    sysctlbyname("kern.osversion", NULL, &build_str_size, NULL, 0);
+    
+    char build_c_str[build_str_size];
+    sysctlbyname("kern.osversion", &build_c_str, &build_str_size, NULL, 0);
+    
+    // iOS 14.4 developer beta 1 still has the JIT workaround, so check if we're running
+    // that version
+    NSString* build_str = CToFoundationString(build_c_str);
+    if ([build_str isEqualToString:@"18D5030e"] && [self canAcquireJitByUnsigned])
+    {
+      self->_m_jit_type = DOLJitTypeAllowUnsigned;
+    }
+    else
+    {
+      self->_m_jit_type = DOLJitTypeDebugger;
+    }
   }
   else if (@available(iOS 14.2, *))
   {
