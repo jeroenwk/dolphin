@@ -106,7 +106,11 @@ NSString* const DOLJitAltJitFailureNotification = @"me.oatmealdome.dolphinios.ji
   // We're running on macOS, so JITs aren't restricted.
   self->_m_jit_type = DOLJitTypeNotRestricted;
 #elif defined(NONJAILBROKEN)
-  if (@available(iOS 14.4, *))
+  if (@available(iOS 14.5, *))
+  {
+    self->_m_jit_type = DOLJitTypeDebugger;
+  }
+  else if (@available(iOS 14.4, *))
   {
     size_t build_str_size;
     sysctlbyname("kern.osversion", NULL, &build_str_size, NULL, 0);
