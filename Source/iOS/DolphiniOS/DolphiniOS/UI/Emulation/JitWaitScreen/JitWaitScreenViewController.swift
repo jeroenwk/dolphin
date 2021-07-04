@@ -26,6 +26,21 @@ import Foundation
     }
   }
   
+  override func viewDidAppear(_ animated: Bool)
+  {
+    if let auxError = DOLJitManager.shared().getAuxiliaryError()
+    {
+      self.is_presenting_alert = true
+      
+      let controller = UIAlertController(title: "Failed to Activate Workaround", message: "DolphiniOS attempted to enable JIT with a different workaround, but the following error was returned:\n\n\(auxError)\n\nDolphiniOS will now fallback to waiting for a remote debugger.", preferredStyle: .alert)
+      controller.addAction(UIAlertAction.init(title: "OK", style: .default, handler: { _ in
+        self.is_presenting_alert = false
+      }))
+      
+      self.present(controller, animated: true, completion: nil)
+    }
+  }
+  
   @objc func jitAcquired(notification: Notification)
   {
     DispatchQueue.main.async {
