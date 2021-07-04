@@ -45,21 +45,21 @@ import Foundation
       error_string = "No error message available."
     }
     
-    let alert = UIAlertController.init(title: "Failed to Contact AltJIT", message: error_string, preferredStyle: .alert)
-    
-    alert.addAction(UIAlertAction.init(title: "Wait for Other Debugger", style: .default, handler: nil))
-    
-    alert.addAction(UIAlertAction.init(title: "Retry AltJIT", style: .default, handler: { action in
-      DOLJitManager.shared().attemptToAcquireJitByAltJIT()
-    }))
-    
-    alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: { _ in
-      self.cancellation_token.cancel()
-      
-      self.delegate?.DidFinishJitScreen(result: false, sender: self)
-    }))
-    
     DispatchQueue.main.async {
+      let alert = UIAlertController.init(title: "Failed to Contact AltJIT", message: error_string, preferredStyle: .alert)
+      
+      alert.addAction(UIAlertAction.init(title: "Wait for Other Debugger", style: .default, handler: nil))
+      
+      alert.addAction(UIAlertAction.init(title: "Retry AltJIT", style: .default, handler: { _ in
+        DOLJitManager.shared().attemptToAcquireJitByAltJIT()
+      }))
+      
+      alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: { _ in
+        self.cancellation_token.cancel()
+        
+        self.delegate?.DidFinishJitScreen(result: false, sender: self)
+      }))
+      
       self.present(alert, animated: true, completion: nil)
     }
   }
