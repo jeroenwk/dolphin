@@ -33,9 +33,10 @@
 {
   [super viewWillAppear:animated];
   
-  [self.m_dual_core_switch setOn:Config::Get(Config::MAIN_CPU_THREAD)];
-  [self.m_cheats_switch setOn:Config::Get(Config::MAIN_ENABLE_CHEATS)];
-  [self.m_mismatched_region_switch setOn:Config::Get(Config::MAIN_OVERRIDE_REGION_SETTINGS)];
+  SConfig& config = SConfig::GetInstance();
+  [self.m_dual_core_switch setOn:config.bCPUThread];
+  [self.m_cheats_switch setOn:config.bEnableCheats];
+  [self.m_mismatched_region_switch setOn:config.bOverrideRegionSettings];
   [self.m_change_discs_switch setOn:Config::Get(Config::MAIN_AUTO_DISC_CHANGE)];
   [self.m_statistics_switch setOn:Config::GetBase(Config::MAIN_ANALYTICS_ENABLED)];
   
@@ -59,19 +60,23 @@
 
 - (IBAction)DualCoreChanged:(id)sender
 {
-  SConfig::GetInstance().bCPUThread = [self.m_dual_core_switch isOn];
-  Config::SetBaseOrCurrent(Config::MAIN_CPU_THREAD, [self.m_dual_core_switch isOn]);
+  bool on = [self.m_dual_core_switch isOn];
+  SConfig::GetInstance().bCPUThread = on;
+  Config::SetBaseOrCurrent(Config::MAIN_CPU_THREAD, on);
 }
 
 - (IBAction)EnableCheatsChanged:(id)sender
 {
-  Config::SetBaseOrCurrent(Config::MAIN_ENABLE_CHEATS, [self.m_cheats_switch isOn]);
+  bool on = [self.m_cheats_switch isOn];
+  SConfig::GetInstance().bEnableCheats = on;
+  Config::SetBaseOrCurrent(Config::MAIN_ENABLE_CHEATS, on);
 }
 
 - (IBAction)MismatchedRegionChanged:(id)sender
 {
-  Config::SetBaseOrCurrent(Config::MAIN_OVERRIDE_REGION_SETTINGS,
-                           [self.m_mismatched_region_switch isOn]);
+  bool on = [self.m_mismatched_region_switch isOn];
+  SConfig::GetInstance().bOverrideRegionSettings = on;
+  Config::SetBaseOrCurrent(Config::MAIN_OVERRIDE_REGION_SETTINGS, on);
 }
 
 - (IBAction)ChangeDiscsChanged:(id)sender
