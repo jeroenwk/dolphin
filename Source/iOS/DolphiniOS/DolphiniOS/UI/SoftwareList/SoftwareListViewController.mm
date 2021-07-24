@@ -97,6 +97,17 @@
   }];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+  [super viewDidAppear:animated];
+  
+  if (self.m_external_file != nil)
+  {
+    [self.m_external_file stopAccessingSecurityScopedResource];
+    self.m_external_file = nil;
+  }
+}
+
 - (void)rescanWithCompletionHandler:(void (^)())completionHandler
 {
   if ([[GameFileCacheHolder sharedInstance] m_is_busy])
@@ -508,13 +519,15 @@
 
 - (IBAction)AddPressed:(id)sender
 {
+#if !TARGET_OS_TV
   NSArray* types = @[
     @"org.dolphin-emu.ios.generic-software",
     @"org.dolphin-emu.ios.gamecube-software",
     @"org.dolphin-emu.ios.wii-software"
   ];
   
-#if !TARGET_OS_TV
+  self.m_is_loading_external_file = false;
+
   UIDocumentPickerViewController* pickerController = [[UIDocumentPickerViewController alloc] initWithDocumentTypes:types inMode:UIDocumentPickerModeOpen];
   pickerController.delegate = self;
   pickerController.modalPresentationStyle = UIModalPresentationPageSheet;
@@ -529,11 +542,23 @@
 {
   NSSet<NSURL*>* set = [NSSet setWithArray:urls];
   
-  dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0), ^{
-    [MainiOS importFiles:set];
+  if (self.m_is_loading_external_file)
+  {
+    self.m_external_file = [[set allObjects] objectAtIndex:0];
     
-    [self rescanWithCompletionHandler:nil];
-  });
+    [self.m_external_file startAccessingSecurityScopedResource];
+    
+    self.m_boot_type = DOLBootTypeExternalFile;
+    [self performSegueWithIdentifier:@"to_emulation" sender:nil];
+  }
+  else
+  {
+    dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0), ^{
+      [MainiOS importFiles:set];
+      
+      [self rescanWithCompletionHandler:nil];
+    });
+  }
 }
 
 #endif
@@ -676,6 +701,26 @@
     }
   }]];
   
+#if !TARGET_OS_TV
+  [action_sheet addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Load External File", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction*)
+  {
+    NSArray* types = @[
+      @"org.dolphin-emu.ios.generic-software",
+      @"org.dolphin-emu.ios.gamecube-software",
+      @"org.dolphin-emu.ios.wii-software",
+      @"org.dolphin-emu.ios.fifo-log"
+    ];
+    
+    self.m_is_loading_external_file = true;
+    
+    UIDocumentPickerViewController* pickerController = [[UIDocumentPickerViewController alloc] initWithDocumentTypes:types inMode:UIDocumentPickerModeOpen];
+    pickerController.delegate = self;
+    pickerController.modalPresentationStyle = UIModalPresentationPageSheet;
+    
+    [self presentViewController:pickerController animated:true completion:nil];
+  }]];
+#endif
+  
   [action_sheet addAction:[UIAlertAction actionWithTitle:DOLocalizedString(@"Close") style:UIAlertActionStyleCancel handler:nil]];
   
   if (action_sheet.popoverPresentationController != nil)
@@ -704,6 +749,10 @@
     else if (self.m_boot_type == DOLBootTypeGCIPL)
     {
       viewController->m_boot_parameters = std::make_unique<BootParameters>(BootParameters::IPL{self.m_ipl_region});
+    }
+    else if (self.m_boot_type == DOLBootTypeExternalFile)
+    {
+      viewController->m_boot_parameters = BootParameters::GenerateFromFile(FoundationToCppString([self.m_external_file path]));
     }
     else
     {

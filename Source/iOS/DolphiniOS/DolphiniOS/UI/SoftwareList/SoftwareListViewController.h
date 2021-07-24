@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 typedef NS_ENUM(NSUInteger, DOLBootType)
 {
   DOLBootTypeGame,
+  DOLBootTypeExternalFile,
   DOLBootTypeWiiMenu,
   DOLBootTypeGCIPL
 };
@@ -28,6 +29,8 @@ typedef NS_ENUM(NSUInteger, DOLBootType)
 @property(nonatomic) const UICommon::GameFile* m_selected_file;
 @property(nonatomic) DiscIO::Region m_ipl_region;
 @property(nonatomic) DOLBootType m_boot_type;
+@property(nonatomic) bool m_is_loading_external_file;
+@property(nonatomic, nullable) NSURL* m_external_file;
 @property (weak, nonatomic) IBOutlet UINavigationItem* m_navigation_item;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem* m_menu_button;
 @property (nonatomic) IBOutlet UIBarButtonItem* m_grid_button;
