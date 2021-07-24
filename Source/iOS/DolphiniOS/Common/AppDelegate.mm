@@ -19,6 +19,7 @@
 #import "Core/Config/UISettings.h"
 #import "Core/ConfigManager.h"
 #import "Core/Core.h"
+#import "Core/DolphinAnalytics.h"
 #import "Core/HW/GCKeyboard.h"
 #import "Core/HW/GCPad.h"
 #import "Core/HW/GCPadEmu.h"
@@ -487,6 +488,8 @@
   }
   
   [[GameFileCacheHolder sharedInstance] scanSoftwareFolder];
+  
+  DolphinAnalytics::Instance().ReloadConfig();
 
 #ifdef ANALYTICS
   [FIRApp configure];
