@@ -582,7 +582,9 @@
       File::Delete(real_path);
       
       // Save out a save state
-      State::SaveAs(temp_path, true);
+      dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0), ^{
+        State::SaveAs(temp_path, true);
+      });
     }
     
     File::Rename(temp_path, real_path);
@@ -600,7 +602,9 @@
   
   if (Core::IsRunning())
   {
-    State::SaveAs(state_path, true);
+    dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0), ^{
+      State::SaveAs(state_path, true);
+    });
   }
 }
 
