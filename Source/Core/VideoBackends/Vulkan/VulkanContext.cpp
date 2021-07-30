@@ -900,6 +900,11 @@ void VulkanContext::InitDriverDetails()
     vendor = DriverDetails::VENDOR_IMGTEC;
     driver = DriverDetails::DRIVER_IMGTEC;
   }
+  else if (device_name.find("Apple") != std::string::npos)
+  {
+    vendor = DriverDetails::VENDOR_APPLE;
+    // Driver is set below. Apple GPUs only function on macOS as of now.
+  }
   else
   {
     WARN_LOG_FMT(VIDEO, "Unknown Vulkan driver vendor, please report it to us.");
