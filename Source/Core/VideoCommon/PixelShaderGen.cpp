@@ -1687,5 +1687,5 @@ static void WriteBlend(ShaderCode& out, const pixel_shader_uid_data* uid_data)
     out.Write("\tfloat4 blend_result = ocol0;\n");
   }
 
-  out.Write("\treal_ocol0 = blend_result;\n");
+  out.Write("\tFRAGMENT_BLEND_OUTPUT = blend_result;\n");
 }

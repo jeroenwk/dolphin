@@ -1358,10 +1358,10 @@ ShaderCode GenPixelShader(APIType ApiType, const ShaderHostConfig& host_config,
               "    else\n"
               "      blend_result.a = initial_ocol0.a * blend_dst.a + ocol0.a * blend_src.a;\n");
 
-    out.Write("    real_ocol0 = blend_result;\n");
+    out.Write("    FRAGMENT_BLEND_OUTPUT = blend_result;\n");
 
     out.Write("  }} else {{\n"
-              "    real_ocol0 = ocol0;\n"
+              "    FRAGMENT_BLEND_OUTPUT = ocol0;\n"
               "  }}\n");
   }
 
