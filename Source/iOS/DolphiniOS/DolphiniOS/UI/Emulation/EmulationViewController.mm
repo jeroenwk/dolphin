@@ -316,6 +316,12 @@
     [MainiOS gamepadEventIrRecenter:0];
   });*/
   
+  // Wait for the core to shutdown
+  while (Core::GetState() != Core::State::Uninitialized)
+  {
+    sleep(1);
+  }
+  
   [MainiOS startEmulationWithBootParameters:std::move(self->m_boot_parameters) viewController:self view:self.m_renderer_view];
   
 #if !TARGET_OS_TV
@@ -603,7 +609,9 @@
     // Delete the automatic save state
     File::Delete(File::GetUserPath(D_STATESAVES_IDX) + "backgroundAuto.sav");
     
-    [MainiOS stopEmulation];
+    dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0), ^{
+      [MainiOS stopEmulation];
+    });
   };
   
   if (SConfig::GetInstance().bConfirmStop)
