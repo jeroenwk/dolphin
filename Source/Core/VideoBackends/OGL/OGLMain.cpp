@@ -89,6 +89,7 @@ std::optional<std::string> VideoBackend::GetWarningMessage() const
 void VideoBackend::InitBackendInfo()
 {
   g_Config.backend_info.api_type = APIType::OpenGL;
+  g_Config.backend_info.real_api_type = APIType::Nothing;
   g_Config.backend_info.MaxTextureSize = 16384;
   g_Config.backend_info.bUsesLowerLeftOrigin = true;
   g_Config.backend_info.bSupportsExclusiveFullscreen = false;

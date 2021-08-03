@@ -183,6 +183,7 @@ struct VideoConfig final
   struct
   {
     APIType api_type;
+    APIType real_api_type; // the underlying API (for example, Metal if using MoltenVK)
 
     std::vector<std::string> Adapters;  // for D3D
     std::vector<u32> AAModes;
