@@ -56,6 +56,8 @@ ShaderCode GenPixelShader(APIType ApiType, const ShaderHostConfig& host_config,
   const bool stereo = host_config.stereo;
   const bool use_dual_source = host_config.backend_dual_source_blend;
   const bool use_shader_blend = !use_dual_source && host_config.backend_shader_framebuffer_fetch;
+  const bool use_shader_logic_op =
+      !host_config.backend_logic_op && host_config.backend_shader_framebuffer_fetch;
   const bool early_depth = uid_data->early_depth != 0;
   const bool per_pixel_depth = uid_data->per_pixel_depth != 0;
   const bool bounding_box = host_config.bounding_box;
@@ -72,7 +74,29 @@ ShaderCode GenPixelShader(APIType ApiType, const ShaderHostConfig& host_config,
   // Shader inputs/outputs in GLSL (HLSL is in main).
   if (ApiType == APIType::OpenGL || ApiType == APIType::Vulkan)
   {
-    if (use_dual_source)
+    if (g_ActiveConfig.backend_info.real_api_type == APIType::Metal)
+    {
+      if (use_dual_source)
+      {
+        out.Write("FRAGMENT_OUTPUT_LOCATION_INDEXED(0, 0) out vec4 ocol0;\n"
+                  "FRAGMENT_OUTPUT_LOCATION_INDEXED(0, 1) out vec4 ocol1;\n");
+      }
+      else if (use_shader_blend)
+      {
+        // TODO
+      }
+      else
+      {
+        out.Write("FRAGMENT_OUTPUT_LOCATION(0) out vec4 ocol0;\n");
+      }
+
+      if (use_shader_blend || use_shader_logic_op)
+      {
+        // Subpass inputs will be converted to framebuffer fetch by SPIRV-Cross.
+        out.Write("INPUT_ATTACHMENT_BINDING(0, 0, 0) uniform subpassInput in_ocol0;\n");
+      }
+    }
+    else if (use_dual_source)
     {
       if (DriverDetails::HasBug(DriverDetails::BUG_BROKEN_FRAGMENT_SHADER_INDEX_DECORATION))
       {
@@ -1232,6 +1256,40 @@ ShaderCode GenPixelShader(APIType ApiType, const ShaderHostConfig& host_config,
             "    TevResult.rgb = (TevResult.rgb * (256 - ifog) + " I_FOGCOLOR ".rgb * ifog) >> 8;\n"
             "  }}\n"
             "\n");
+
+  if (use_shader_logic_op)
+  {
+    static constexpr std::array<const char*, 16> logic_op_mode{
+        "int4(0, 0, 0, 0)",          // CLEAR
+        "TevResult & fb_value",      // AND
+        "TevResult & ~fb_value",     // AND_REVERSE
+        "TevResult",                 // COPY
+        "~TevResult & fb_value",     // AND_INVERTED
+        "fb_value",                  // NOOP
+        "TevResult ^ fb_value",      // XOR
+        "TevResult | fb_value",      // OR
+        "~(TevResult | fb_value)",   // NOR
+        "~(TevResult ^ fb_value)",   // EQUIV
+        "~fb_value",                 // INVERT
+        "TevResult | ~fb_value",     // OR_REVERSE
+        "~TevResult",                // COPY_INVERTED
+        "~TevResult | fb_value",     // OR_INVERTED
+        "~(TevResult & fb_value)",   // NAND
+        "int4(255, 255, 255, 255)",  // SET
+    };
+
+    out.Write("  // Logic Ops\n"
+              "  if (logic_op_enable) {{\n"
+              "    int4 fb_value = int4(FB_FETCH_VALUE * 255.0);"
+              "    switch (logic_op_mode) {{\n");
+    for (size_t i = 0; i < logic_op_mode.size(); i++)
+    {
+      out.Write("      case {}u: TevResult = {}; break;\n", i, logic_op_mode[i]);
+    }
+
+    out.Write("    }}\n"
+              "  }}\n");
+  }
 
   // D3D requires that the shader outputs be uint when writing to a uint render target for logic op.
   if (ApiType == APIType::D3D && uid_data->uint_output)
