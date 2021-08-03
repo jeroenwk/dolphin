@@ -307,6 +307,15 @@ enum Bug
   // Started version: -1
   // Ended version: -1
   BUG_BROKEN_SSBO_FIELD_ATOMICS,
+
+  // BUG: Some driver and Apple Silicon GPU combinations have problems with fragment discard when
+  // early depth test is enabled. If a fragment is discarded, all fragments may be rendered as
+  // completely black (Sonic Adventure 2: Battle) or be colored black in coordinates where the
+  // a fragment was discarded (M-shaped warp in Super Mario Sunshine).
+  // Affected devices: Apple Silicon GPUs of Apple family 4 and newer.
+  // Started version: -1
+  // Ended version: -1
+  BUG_BROKEN_DISCARD_WITH_EARLY_Z,
 };
 
 // Initializes our internal vendor, device family, and driver version

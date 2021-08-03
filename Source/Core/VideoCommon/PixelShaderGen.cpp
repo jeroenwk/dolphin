@@ -630,7 +630,9 @@ ShaderCode GeneratePixelShaderCode(APIType api_type, const ShaderHostConfig& hos
       }
       else if (use_shader_blend)
       {
-        // TODO
+        // Metal doesn't support one unified "inout" variable, so we need declare the
+        // fragment output separately. The input variable is declared later below.
+        out.Write("FRAGMENT_OUTPUT_LOCATION(0) out vec4 out_ocol0;\n");
       }
       else
       {
@@ -1526,9 +1528,28 @@ static void WriteAlphaTest(ShaderCode& out, const pixel_shader_uid_data* uid_dat
   // ZCOMPLOC HACK:
   if (!uid_data->alpha_test_use_zcomploc_hack)
   {
-    out.Write("\t\tdiscard;\n");
-    if (api_type == APIType::D3D)
-      out.Write("\t\treturn;\n");
+    if (g_ActiveConfig.backend_info.real_api_type == APIType::Metal)
+    {
+      if (uid_data->forced_early_z &&
+          DriverDetails::HasBug(DriverDetails::BUG_BROKEN_DISCARD_WITH_EARLY_Z))
+      {
+        // Instead of using discard, fetch the framebuffer's color value and use it as the output
+        // for this fragment.
+        out.Write("\t\t{} = float4(FB_FETCH_VALUE.xyz, 1.0);\n",
+                  use_dual_source ? "FRAGMENT_BLEND_OUTPUT" : "ocol0");
+        out.Write("\t\treturn;\n");
+      }
+      else
+      {
+        out.Write("\t\tdiscard;\n");
+      }
+    }
+    else
+    {
+      out.Write("\t\tdiscard;\n");
+      if (api_type == APIType::D3D)
+        out.Write("\t\treturn;\n");
+    }
   }
 
   out.Write("\t}}\n");

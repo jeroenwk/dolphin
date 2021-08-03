@@ -83,7 +83,9 @@ ShaderCode GenPixelShader(APIType ApiType, const ShaderHostConfig& host_config,
       }
       else if (use_shader_blend)
       {
-        // TODO
+        // Metal doesn't support one unified "inout" variable, so we need declare the
+        // fragment output separately. The input variable is declared later below.
+        out.Write("FRAGMENT_OUTPUT_LOCATION(0) out vec4 out_ocol0;\n");
       }
       else
       {
@@ -1155,8 +1157,22 @@ ShaderCode GenPixelShader(APIType ApiType, const ShaderHostConfig& host_config,
       out.Write("  depth = float(zbuffer_zCoord) / 16777216.0;\n");
   }
 
-  out.Write("  // Alpha Test\n"
-            "  if (bpmem_alphaTest != 0u) {{\n"
+  out.Write("  // Alpha Test\n");
+
+  if (g_ActiveConfig.backend_info.real_api_type == APIType::Metal && early_depth &&
+      DriverDetails::HasBug(DriverDetails::BUG_BROKEN_DISCARD_WITH_EARLY_Z))
+  {
+    // Instead of using discard, fetch the framebuffer's color value and use it as the output
+    // for this fragment.
+    out.Write("  #define discard_fragment {{ {} = float4(FB_FETCH_VALUE.xyz, 1.0); return; }}\n",
+              use_shader_blend ? "FRAGMENT_BLEND_OUTPUT" : "ocol0");
+  }
+  else
+  {
+    out.Write("  #define discard_fragment discard\n");
+  }
+
+  out.Write("  if (bpmem_alphaTest != 0u) {{\n"
             "    bool comp0 = alphaCompare(TevResult.a, " I_ALPHA ".r, {});\n",
             BitfieldExtract<&AlphaTest::comp0>("bpmem_alphaTest"));
   out.Write("    bool comp1 = alphaCompare(TevResult.a, " I_ALPHA ".g, {});\n",
@@ -1167,13 +1183,13 @@ ShaderCode GenPixelShader(APIType ApiType, const ShaderHostConfig& host_config,
             "    switch ({}) {{\n",
             BitfieldExtract<&AlphaTest::logic>("bpmem_alphaTest"));
   out.Write("    case 0u: // AND\n"
-            "      if (comp0 && comp1) break; else discard; break;\n"
+            "      if (comp0 && comp1) break; else discard_fragment; break;\n"
             "    case 1u: // OR\n"
-            "      if (comp0 || comp1) break; else discard; break;\n"
+            "      if (comp0 || comp1) break; else discard_fragment; break;\n"
             "    case 2u: // XOR\n"
-            "      if (comp0 != comp1) break; else discard; break;\n"
+            "      if (comp0 != comp1) break; else discard_fragment; break;\n"
             "    case 3u: // XNOR\n"
-            "      if (comp0 == comp1) break; else discard; break;\n"
+            "      if (comp0 == comp1) break; else discard_fragment; break;\n"
             "    }}\n"
             "  }}\n"
             "\n");
