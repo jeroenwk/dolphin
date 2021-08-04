@@ -254,12 +254,6 @@ VulkanContext::GPUList VulkanContext::EnumerateGPUs(VkInstance instance)
 void VulkanContext::PopulateBackendInfo(VideoConfig* config)
 {
   config->backend_info.api_type = APIType::Vulkan;
-#ifdef __APPLE__
-  // We use MoltenVK to translate Vulkan to Metal.
-  config->backend_info.real_api_type = APIType::Metal;
-#else
-  config->backend_info.real_api_type = APIType::Nothing;
-#endif
   config->backend_info.bSupports3DVision = false;                  // D3D-exclusive.
   config->backend_info.bSupportsOversizedViewports = true;         // Assumed support.
   config->backend_info.bSupportsEarlyZ = true;                     // Assumed support.

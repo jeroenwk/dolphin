@@ -74,7 +74,6 @@ void VideoBackend::InitBackendInfo()
 void VideoBackend::FillBackendInfo()
 {
   g_Config.backend_info.api_type = APIType::D3D;
-  g_Config.backend_info.real_api_type = APIType::Nothing;
   g_Config.backend_info.MaxTextureSize = D3D11_REQ_TEXTURE2D_U_OR_V_DIMENSION;
   g_Config.backend_info.bUsesLowerLeftOrigin = false;
   g_Config.backend_info.bSupportsExclusiveFullscreen = true;
