@@ -74,7 +74,8 @@ ShaderCode GenPixelShader(APIType ApiType, const ShaderHostConfig& host_config,
   // Shader inputs/outputs in GLSL (HLSL is in main).
   if (ApiType == APIType::OpenGL || ApiType == APIType::Vulkan)
   {
-    if (g_ActiveConfig.backend_info.real_api_type == APIType::Metal)
+#ifdef __APPLE__
+    if (ApiType == APIType::Vulkan)
     {
       if (use_dual_source)
       {
@@ -99,6 +100,9 @@ ShaderCode GenPixelShader(APIType ApiType, const ShaderHostConfig& host_config,
       }
     }
     else if (use_dual_source)
+#else
+    if (use_dual_source)
+#endif
     {
       if (DriverDetails::HasBug(DriverDetails::BUG_BROKEN_FRAGMENT_SHADER_INDEX_DECORATION))
       {
