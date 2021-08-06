@@ -1025,6 +1025,8 @@ static void SetSamplerState(u32 index, float custom_tex_scale, bool custom_tex,
     state.anisotropic_filtering = 0;
   }
 
+  PixelShaderManager::SetLodBias(index, state.lod_bias / 256.0f);
+
   g_renderer->SetSamplerState(index, state);
 }
 
