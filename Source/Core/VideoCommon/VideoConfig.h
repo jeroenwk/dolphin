@@ -226,6 +226,7 @@ struct VideoConfig final
     bool bSupportsDepthReadback;
     bool bSupportsShaderBinaries;
     bool bSupportsPipelineCacheData;
+    bool bSupportsLodBiasInSampler;
   } backend_info;
 
   // Utility
