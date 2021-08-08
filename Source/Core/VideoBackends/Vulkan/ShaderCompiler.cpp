@@ -57,7 +57,6 @@ static const char SHADER_HEADER[] = R"(
 
   // Metal framebuffer fetch helpers.
   #define FB_FETCH_VALUE subpassLoad(in_ocol0)
-  #define FRAGMENT_BLEND_OUTPUT out_ocol0
 
   // hlsl to glsl function translation
   #define API_VULKAN 1

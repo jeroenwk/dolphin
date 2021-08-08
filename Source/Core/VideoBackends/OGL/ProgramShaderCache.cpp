@@ -694,13 +694,11 @@ void ProgramShaderCache::CreateHeader()
   case EsFbFetchType::FbFetchExt:
     framebuffer_fetch_string = "#extension GL_EXT_shader_framebuffer_fetch: enable\n"
                                "#define FB_FETCH_VALUE real_ocol0\n"
-                               "#define FRAGMENT_BLEND_OUTPUT real_ocol0\n"
                                "#define FRAGMENT_INOUT inout";
     break;
   case EsFbFetchType::FbFetchArm:
     framebuffer_fetch_string = "#extension GL_ARM_shader_framebuffer_fetch: enable\n"
                                "#define FB_FETCH_VALUE gl_LastFragColorARM\n"
-                               "#define FRAGMENT_BLEND_OUTPUT real_ocol0\n"
                                "#define FRAGMENT_INOUT out";
     break;
   case EsFbFetchType::FbFetchNone:

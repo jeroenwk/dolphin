@@ -1569,7 +1569,7 @@ static void WriteAlphaTest(ShaderCode& out, const pixel_shader_uid_data* uid_dat
       // Instead of using discard, fetch the framebuffer's color value and use it as the output
       // for this fragment.
       out.Write("\t\t{} = float4(FB_FETCH_VALUE.xyz, 1.0);\n",
-                use_dual_source ? "FRAGMENT_BLEND_OUTPUT" : "ocol0");
+                use_dual_source ? "real_ocol0" : "ocol0");
       out.Write("\t\treturn;\n");
     }
     else
@@ -1792,5 +1792,5 @@ static void WriteBlend(ShaderCode& out, const pixel_shader_uid_data* uid_data)
     out.Write("\tfloat4 blend_result = ocol0;\n");
   }
 
-  out.Write("\tFRAGMENT_BLEND_OUTPUT = blend_result;\n");
+  out.Write("\treal_ocol0 = blend_result;\n");
 }

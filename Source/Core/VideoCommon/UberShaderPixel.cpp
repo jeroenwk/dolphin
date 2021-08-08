@@ -1169,7 +1169,7 @@ ShaderCode GenPixelShader(APIType ApiType, const ShaderHostConfig& host_config,
     // Instead of using discard, fetch the framebuffer's color value and use it as the output
     // for this fragment.
     out.Write("  #define discard_fragment {{ {} = float4(FB_FETCH_VALUE.xyz, 1.0); return; }}\n",
-              use_shader_blend ? "FRAGMENT_BLEND_OUTPUT" : "ocol0");
+              use_shader_blend ? "real_ocol0" : "ocol0");
   }
   else
   {
@@ -1436,10 +1436,10 @@ ShaderCode GenPixelShader(APIType ApiType, const ShaderHostConfig& host_config,
               "    else\n"
               "      blend_result.a = initial_ocol0.a * blend_dst.a + ocol0.a * blend_src.a;\n");
 
-    out.Write("    FRAGMENT_BLEND_OUTPUT = blend_result;\n");
+    out.Write("    real_ocol0 = blend_result;\n");
 
     out.Write("  }} else {{\n"
-              "    FRAGMENT_BLEND_OUTPUT = ocol0;\n"
+              "    real_ocol0 = ocol0;\n"
               "  }}\n");
   }
 
