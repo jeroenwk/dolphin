@@ -2,6 +2,8 @@
 
 set -e
 
+PATH=$PATH:/opt/homebrew/bin
+
 ROOT_SRC_DIR="$PROJECT_DIR/../"
 EXPORT_UUID=`uuidgen`
 EXPORT_PATH="/tmp/DolphiniOS-NJB-$EXPORT_UUID"
