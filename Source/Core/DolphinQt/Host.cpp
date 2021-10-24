@@ -202,6 +202,10 @@ void Host_RequestRenderWindowSize(int w, int h)
   emit Host::GetInstance()->RequestRenderSize(w, h);
 }
 
+void Host_TargetRectangleWasUpdated()
+{
+}
+
 bool Host_UIBlocksControllerState()
 {
   return ImGui::GetCurrentContext() && ImGui::GetIO().WantCaptureKeyboard;

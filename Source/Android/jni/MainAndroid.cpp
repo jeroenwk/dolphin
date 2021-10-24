@@ -146,6 +146,10 @@ void Host_RequestRenderWindowSize(int width, int height)
   jnicall.join();
 }
 
+void Host_TargetRectangleWasUpdated()
+{
+}
+
 bool Host_RendererHasFocus()
 {
   return true;

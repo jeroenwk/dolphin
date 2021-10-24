@@ -35,6 +35,9 @@ void Host_UpdateMainFrame()
 void Host_RequestRenderWindowSize(int, int)
 {
 }
+void Host_TargetRectangleWasUpdated()
+{
+}
 bool Host_UIBlocksControllerState()
 {
   return false;

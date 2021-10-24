@@ -93,6 +93,10 @@ void Host_RequestRenderWindowSize(int width, int height)
 {
 }
 
+void Host_TargetRectangleWasUpdated()
+{
+}
+
 bool Host_RendererHasFocus()
 {
   return s_platform->IsWindowFocused();
