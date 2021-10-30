@@ -17,6 +17,7 @@
 #import "Core/ConfigManager.h"
 #import "Core/Config/MainSettings.h"
 #import "Core/Core.h"
+#import "Core/Host.h"
 #import "Core/HW/GCPad.h"
 #import "Core/HW/Wiimote.h"
 #import "Core/HW/WiimoteEmu/Extension/Classic.h"
@@ -609,9 +610,7 @@
     // Delete the automatic save state
     File::Delete(File::GetUserPath(D_STATESAVES_IDX) + "backgroundAuto.sav");
     
-    dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0), ^{
-      [MainiOS stopEmulation];
-    });
+    Host_Message(HostMessageID::WMUserStop);
   };
   
   if (SConfig::GetInstance().bConfirmStop)

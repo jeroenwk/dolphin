@@ -21,7 +21,6 @@ void UpdateWiiPointer();
 #ifdef __cplusplus
 + (void)startEmulationWithBootParameters:(std::unique_ptr<BootParameters>)params viewController:(UIViewController*)viewController view:(UIView*)view;
 #endif
-+ (void)stopEmulation;
 + (UIViewController*)getEmulationViewController;
 + (void)gamepadEventOnPad:(int)pad button:(int)button action:(int)action;
 + (void)gamepadMoveEventOnPad:(int)pad axis:(int)axis value:(CGFloat)value;

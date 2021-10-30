@@ -417,13 +417,6 @@ void UpdateWiiPointer()
   s_view_controller = nullptr;
 }
 
-+ (void)stopEmulation
-{
-  std::lock_guard<std::mutex> guard(s_host_identity_lock);
-  Core::Stop();
-  s_update_main_frame_event.Set();
-}
-
 + (EmulationViewController*)getEmulationViewController
 {
   return s_view_controller;
