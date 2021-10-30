@@ -17,7 +17,7 @@ jobs:
       run: |
         sudo xcode-select -s /Applications/Xcode_13.1.app/Contents/Developer
         brew install ninja bartycrouch dpkg s3cmd libmagic dos2unix
-        pip3 install polib python-magic
+        /Applications/Xcode_13.1.app/Contents/Developer/usr/bin/python3 -m pip3 install polib python-magic
         
     - name: Create Keychain
       run: |
@@ -98,7 +98,7 @@ jobs:
       run: |
         sudo xcode-select -s /Applications/Xcode_13.1.app/Contents/Developer
         brew install ninja bartycrouch dpkg s3cmd libmagic dos2unix
-        pip3 install polib python-magic
+        /Applications/Xcode_13.1.app/Contents/Developer/usr/bin/python3 -m pip3 install polib python-magic
         
     - name: Create Keychain
       run: |
