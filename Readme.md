@@ -29,13 +29,24 @@ cd dolphin
 Use Homebrew to install software:
 
 ```
-brew install cmake ninja bartycrouch python3
+brew install cmake ninja bartycrouch
 ```
 
 Install polib:
 
 ```
 pip3 install --upgrade polib
+```
+
+It may be necessary to specify the exact `python3` to install polib into. For example, running `pip3` directly will into the `python3` that is on the `$PATH`. However, the build script may run a different `python3`. If this is the case, run this command instead, specifying the exact path to the python3 being used by the build script:
+
+```
+/path/to/python3 -m pip install polib
+```
+
+For reference, a reference to the system built-in `python3` can be found at:
+```
+/path/to/Xcode.app/Contents/Developer/usr/bin/python3
 ```
 
 Finally, use CocoaPods to install some libraries:
