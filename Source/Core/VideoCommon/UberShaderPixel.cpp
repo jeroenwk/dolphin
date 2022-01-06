@@ -1357,8 +1357,8 @@ ShaderCode GenPixelShader(APIType ApiType, const ShaderHostConfig& host_config,
         "float3(1,1,1);",                      // ONE
         "initial_ocol0.rgb;",                  // DSTCLR
         "float3(1,1,1) - initial_ocol0.rgb;",  // INVDSTCLR
-        "ocol1.aaa;",                          // SRCALPHA
-        "float3(1,1,1) - ocol1.aaa;",          // INVSRCALPHA
+        "src_color.aaa;",                      // SRCALPHA
+        "float3(1,1,1) - src_color.aaa;",      // INVSRCALPHA
         "initial_ocol0.aaa;",                  // DSTALPHA
         "float3(1,1,1) - initial_ocol0.aaa;",  // INVDSTALPHA
     }};
@@ -1367,8 +1367,8 @@ ShaderCode GenPixelShader(APIType ApiType, const ShaderHostConfig& host_config,
         "1.0;",                    // ONE
         "initial_ocol0.a;",        // DSTCLR
         "1.0 - initial_ocol0.a;",  // INVDSTCLR
-        "ocol1.a;",                // SRCALPHA
-        "1.0 - ocol1.a;",          // INVSRCALPHA
+        "src_color.a;",            // SRCALPHA
+        "1.0 - src_color.a;",      // INVSRCALPHA
         "initial_ocol0.a;",        // DSTALPHA
         "1.0 - initial_ocol0.a;",  // INVDSTALPHA
     }};
@@ -1377,8 +1377,8 @@ ShaderCode GenPixelShader(APIType ApiType, const ShaderHostConfig& host_config,
         "float3(1,1,1);",                      // ONE
         "ocol0.rgb;",                          // SRCCLR
         "float3(1,1,1) - ocol0.rgb;",          // INVSRCCLR
-        "ocol1.aaa;",                          // SRCALHA
-        "float3(1,1,1) - ocol1.aaa;",          // INVSRCALPHA
+        "src_color.aaa;",                      // SRCALHA
+        "float3(1,1,1) - src_color.aaa;",      // INVSRCALPHA
         "initial_ocol0.aaa;",                  // DSTALPHA
         "float3(1,1,1) - initial_ocol0.aaa;",  // INVDSTALPHA
     }};
@@ -1387,13 +1387,19 @@ ShaderCode GenPixelShader(APIType ApiType, const ShaderHostConfig& host_config,
         "1.0;",                    // ONE
         "ocol0.a;",                // SRCCLR
         "1.0 - ocol0.a;",          // INVSRCCLR
-        "ocol1.a;",                // SRCALPHA
-        "1.0 - ocol1.a;",          // INVSRCALPHA
+        "src_color.a;",            // SRCALPHA
+        "1.0 - src_color.a;",      // INVSRCALPHA
         "initial_ocol0.a;",        // DSTALPHA
         "1.0 - initial_ocol0.a;",  // INVDSTALPHA
     }};
 
     out.Write("  if (blend_enable) {{\n"
+              "    float4 src_color;\n"
+              "    if (bpmem_dstalpha != 0u) {{\n"
+              "      src_color = ocol1;\n"
+              "    }} else {{\n"
+              "      src_color = ocol0;\n"
+              "    }}"
               "    float4 blend_src;\n"
               "    switch (blend_src_factor) {{\n");
     for (size_t i = 0; i < blendSrcFactor.size(); i++)
