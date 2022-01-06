@@ -1726,8 +1726,8 @@ static void WriteBlend(ShaderCode& out, const pixel_shader_uid_data* uid_data)
         "float3(1,1,1);",                      // ONE
         "initial_ocol0.rgb;",                  // DSTCLR
         "float3(1,1,1) - initial_ocol0.rgb;",  // INVDSTCLR
-        "ocol1.aaa;",                          // SRCALPHA
-        "float3(1,1,1) - ocol1.aaa;",          // INVSRCALPHA
+        "src_color.aaa;",                      // SRCALPHA
+        "float3(1,1,1) - src_color.aaa;",      // INVSRCALPHA
         "initial_ocol0.aaa;",                  // DSTALPHA
         "float3(1,1,1) - initial_ocol0.aaa;",  // INVDSTALPHA
     };
@@ -1736,8 +1736,8 @@ static void WriteBlend(ShaderCode& out, const pixel_shader_uid_data* uid_data)
         "1.0;",                    // ONE
         "initial_ocol0.a;",        // DSTCLR
         "1.0 - initial_ocol0.a;",  // INVDSTCLR
-        "ocol1.a;",                // SRCALPHA
-        "1.0 - ocol1.a;",          // INVSRCALPHA
+        "src_color.a;",            // SRCALPHA
+        "1.0 - src_color.a;",      // INVSRCALPHA
         "initial_ocol0.a;",        // DSTALPHA
         "1.0 - initial_ocol0.a;",  // INVDSTALPHA
     };
@@ -1746,8 +1746,8 @@ static void WriteBlend(ShaderCode& out, const pixel_shader_uid_data* uid_data)
         "float3(1,1,1);",                      // ONE
         "ocol0.rgb;",                          // SRCCLR
         "float3(1,1,1) - ocol0.rgb;",          // INVSRCCLR
-        "ocol1.aaa;",                          // SRCALHA
-        "float3(1,1,1) - ocol1.aaa;",          // INVSRCALPHA
+        "src_color.aaa;",                      // SRCALHA
+        "float3(1,1,1) - src_color.aaa;",      // INVSRCALPHA
         "initial_ocol0.aaa;",                  // DSTALPHA
         "float3(1,1,1) - initial_ocol0.aaa;",  // INVDSTALPHA
     };
@@ -1756,12 +1756,14 @@ static void WriteBlend(ShaderCode& out, const pixel_shader_uid_data* uid_data)
         "1.0;",                    // ONE
         "ocol0.a;",                // SRCCLR
         "1.0 - ocol0.a;",          // INVSRCCLR
-        "ocol1.a;",                // SRCALPHA
-        "1.0 - ocol1.a;",          // INVSRCALPHA
+        "src_color.a;",            // SRCALPHA
+        "1.0 - src_color.a;",      // INVSRCALPHA
         "initial_ocol0.a;",        // DSTALPHA
         "1.0 - initial_ocol0.a;",  // INVDSTALPHA
     };
-    out.Write("\tfloat4 blend_src;\n");
+    out.Write("\tfloat4 src_color = {};\n"
+              "\tfloat4 blend_src;",
+              uid_data->useDstAlpha ? "ocol1" : "ocol0");
     out.Write("\tblend_src.rgb = {}\n", blend_src_factor[u32(uid_data->blend_src_factor)]);
     out.Write("\tblend_src.a = {}\n",
               blend_src_factor_alpha[u32(uid_data->blend_src_factor_alpha)]);
