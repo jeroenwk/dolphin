@@ -94,6 +94,12 @@ import Foundation
     }
   }
   
+  @IBAction func helpPressed(_ sender: Any)
+  {
+    let url = URL.init(string: "https://dolphinios.oatmealdome.me/jit-help")
+    UIApplication.shared.open(url!, options: [:], completionHandler: nil)
+  }
+  
   @IBAction func cancelPressed(_ sender: Any)
   {
     self.cancellation_token.cancel()
