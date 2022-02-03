@@ -15,6 +15,8 @@
 #include "VideoBackends/Vulkan/VKVertexFormat.h"
 #include "VideoBackends/Vulkan/VulkanContext.h"
 
+#include "VideoCommon/DriverDetails.h"
+
 namespace Vulkan
 {
 VKPipeline::VKPipeline(VkPipeline pipeline, VkPipelineLayout pipeline_layout,
