@@ -326,7 +326,9 @@ PixelShaderUid GetPixelShaderUid()
   BlendingState state = {};
   state.Generate(bpmem);
 
-  if (state.usedualsrc && g_ActiveConfig.backend_info.bSupportsFramebufferFetch &&
+  if (((state.usedualsrc && state.dstalpha) ||
+       DriverDetails::HasBug(DriverDetails::BUG_BROKEN_DISCARD_WITH_EARLY_Z)) &&
+      g_ActiveConfig.backend_info.bSupportsFramebufferFetch &&
       !g_ActiveConfig.backend_info.bSupportsDualSourceBlend)
   {
     uid_data->blend_enable = state.blendenable;
