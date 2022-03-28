@@ -41,25 +41,23 @@
                     <rect key="frame" x="0.0" y="247.66666666666666" width="375" height="390.33333333333337"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="90n-Az-9Cs" userLabel="Content Stack">
-                            <rect key="frame" x="20" y="0.0" width="335" height="385.33333333333331"/>
+                            <rect key="frame" x="20" y="0.0" width="335" height="324.33333333333331"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Lp-si-dj1" userLabel="Warning Text">
-                                    <rect key="frame" x="3.3333333333333428" y="0.0" width="328.66666666666663" height="365.33333333333331"/>
-                                    <string key="text">DolphiniOS is waiting for a remote debugger to connect before emulation can start.
+                                    <rect key="frame" x="1.3333333333333428" y="0.0" width="332.66666666666663" height="304.33333333333331"/>
+                                    <string key="text">DolphiniOS is waiting for a remote debugger to connect before emulation can start. You will not be able to play until the debugger is connected.
 
-If you are using the AltJIT beta, make sure your computer running AltServer is connected to the same Wi-Fi network as your device.
+DolphiniOS uses a technique called "JIT" to emulate the GameCube and Wii's CPU at fast speeds. Without JIT, DolphiniOS would run at unplayably slow speeds.
 
-If you are using Jitterbug, please select DolphiniOS in the app list now.
+Apple does not allow JIT to be used on iOS by default. However, by attaching a debugger, iOS will allow JIT to be used.
 
-If you are using Xcode, go to Debug in the menu bar and select DolphiniOS under Attach to Process.
-
-If you are using the workaround, run idevicedebug now.</string>
+For more information, press "Help".</string>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6uo-Rc-2vE">
-                                    <rect key="frame" x="47.666666666666686" y="385.33333333333337" width="240" height="0.0"/>
+                                    <rect key="frame" x="47.666666666666686" y="324.33333333333337" width="240" height="0.0"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" id="kge-k2-qnG"/>
