@@ -24,6 +24,9 @@ import Foundation
       // of just sitting around and waiting for a debugger.
       DOLJitManager.shared().attemptToAcquireJitByAltJIT()
     }
+    
+    // We can always try this. If the device is not connected to the VPN, then this request will just silently fail.
+    DOLJitManager.shared().attemptToAcquireJitByJitStreamer()
   }
   
   override func viewDidAppear(_ animated: Bool)
