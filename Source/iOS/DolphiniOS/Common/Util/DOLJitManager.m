@@ -303,7 +303,7 @@ NSString* const DOLJitAltJitFailureNotification = @"me.oatmealdome.dolphinios.ji
     return;
   }
   
-  NSString* url_string = [NSString stringWithFormat:@"http://69.69.0.1/attach/%ld", (long)getpid()];
+  NSString* url_string = [NSString stringWithFormat:@"http://69.69.0.1/attach/%ld/", (long)getpid()];
   
   [[[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:url_string]] resume];
 }
