@@ -291,6 +291,23 @@ NSString* const DOLJitAltJitFailureNotification = @"me.oatmealdome.dolphinios.ji
   }];
 }
 
+- (void)attemptToAcquireJitByJitStreamer
+{
+  if (self->_m_jit_type != DOLJitTypeDebugger)
+  {
+    return;
+  }
+  
+  if (self->_m_has_acquired_jit)
+  {
+    return;
+  }
+  
+  NSString* url_string = [NSString stringWithFormat:@"http://69.69.0.1/attach/%ld", (long)getpid()];
+  
+  [[[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:url_string]] resume];
+}
+
 - (DOLJitType)jitType
 {
   return _m_jit_type;

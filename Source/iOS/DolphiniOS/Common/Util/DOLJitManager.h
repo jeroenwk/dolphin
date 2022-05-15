@@ -29,6 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)recheckHasAcquiredJit;
 - (void)attemptToAcquireJitByWaitingForDebuggerUsingCancellationToken:(DOLCancellationToken*)token;
 - (void)attemptToAcquireJitByAltJIT;
+- (void)attemptToAcquireJitByJitStreamer;
 - (DOLJitType)jitType;
 - (bool)appHasAcquiredJit;
 - (void)setAuxillaryError:(NSString*)error;
