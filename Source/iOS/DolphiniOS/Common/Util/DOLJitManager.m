@@ -305,7 +305,11 @@ NSString* const DOLJitAltJitFailureNotification = @"me.oatmealdome.dolphinios.ji
   
   NSString* url_string = [NSString stringWithFormat:@"http://69.69.0.1/attach/%ld/", (long)getpid()];
   
-  [[[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:url_string]] resume];
+  NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url_string]];
+  [request setHTTPMethod:@"POST"];
+  [request setHTTPBody:[@"" dataUsingEncoding:NSUTF8StringEncoding]];
+  
+  [[[NSURLSession sharedSession] dataTaskWithRequest:request] resume];
 }
 
 - (DOLJitType)jitType
