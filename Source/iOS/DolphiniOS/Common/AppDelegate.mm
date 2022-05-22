@@ -262,7 +262,7 @@
   }
   
 #ifdef NONJAILBROKEN
-  if (![[NSUserDefaults standardUserDefaults] boolForKey:@"seen_njb_notice"])
+  if (![[NSUserDefaults standardUserDefaults] boolForKey:@"seen_njb_notice"] && [[DOLJitManager sharedManager] jitType] == DOLJitTypePTrace)
   {
     [nav_controller pushViewController:[[NonJailbrokenNoticeViewController alloc] initWithNibName:@"NonJailbrokenNotice" bundle:nil] animated:true];
     
