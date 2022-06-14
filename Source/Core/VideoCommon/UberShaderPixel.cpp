@@ -86,7 +86,7 @@ ShaderCode GenPixelShader(APIType ApiType, const ShaderHostConfig& host_config,
       {
         // Metal doesn't support one unified "inout" variable, so we need declare the
         // fragment output separately. The input variable is declared later below.
-        out.Write("FRAGMENT_OUTPUT_LOCATION(0) out vec4 out_ocol0;\n");
+        out.Write("FRAGMENT_OUTPUT_LOCATION(0) out vec4 real_ocol0;\n");
       }
       else
       {
