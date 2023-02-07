@@ -325,6 +325,7 @@ struct SConfig
 
   // Save settings
   void SaveSettings();
+  void SetLanguage(int language);
 
   // Load settings
   void LoadSettings();

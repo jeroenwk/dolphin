@@ -83,6 +83,11 @@ SConfig::~SConfig()
   SaveSettings();
 }
 
+void SConfig::SetLanguage(int language)
+{
+    SelectedLanguage = language;
+}
+
 void SConfig::SaveSettings()
 {
   NOTICE_LOG_FMT(BOOT, "Saving settings to {}", File::GetUserPath(F_DOLPHINCONFIG_IDX));

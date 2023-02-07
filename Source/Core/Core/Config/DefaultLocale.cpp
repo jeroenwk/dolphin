@@ -32,7 +32,7 @@ static std::vector<std::string> GetPreferredLocales()
 
 static std::optional<DiscIO::Language> TryParseLanguage(const std::string& locale)
 {
-  const std::vector<std::string> split_locale = SplitString(locale, '-');
+  const std::vector<std::string> split_locale = SplitString(locale, '_');
   if (split_locale.empty())
     return std::nullopt;
 
